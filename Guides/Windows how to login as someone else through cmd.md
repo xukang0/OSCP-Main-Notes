@@ -1,0 +1,5 @@
+
+
+```
+runas /user:[USERNAME] cmd
+```

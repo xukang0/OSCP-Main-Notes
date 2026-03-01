@@ -1,0 +1,1 @@
+curl https://static-labs.tryhackme.cloud/sites/favicon/images/favicon.ico | md5sum
