@@ -1,4 +1,4 @@
-IP::10.129.229.88
+IP::10.129.231.223
 ```dataviewjs
 const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
 

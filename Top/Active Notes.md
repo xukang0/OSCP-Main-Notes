@@ -46,7 +46,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-|      |         |       |
+| 22   | SSH     |       |
+| 80   | http    |       |
 
 ---
 
