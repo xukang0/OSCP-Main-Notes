@@ -1,6 +1,6 @@
 Rockyou
 ```
-usr/share/wordlists/rockyou.txt
+/usr/share/wordlists/rockyou.txt
 ```
 
 FFUZ
@@ -28,4 +28,10 @@ Parameter
 
 ```
 /usr/share/seclists/Discovery/Web-Content/burp-parameter-names.txt
+```
+
+Spring Boot.txt
+
+```
+/usr/share/wordlists/spring-boot.txt
 ```

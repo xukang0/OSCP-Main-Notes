@@ -21,21 +21,17 @@ dv.paragraph("```bash\n" + command + "\n```");
 Use GoBuster to enumerate vhosts and directories
 
 Directories
-```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `gobuster dir --url http://${ip}/ --wordlist /usr/share/wordlists/dirb/big.txt`;
-
-dv.paragraph("```bash\n" + command + "\n```");
 ```
+gobuster dir --url http://[domain.com]/ --wordlist /usr/share/wordlists/dirb/big.txt
+```
+
 VHosts
-```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `sudo gobuster vhost -u http://${ip} -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain`;
-
-dv.paragraph("```bash\n" + command + "\n```");
 ```
+sudo gobuster vhost -u http://[domain.com]/ -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain
+```
+
 Add newfound vhost to /etc/hosts
 ```dataviewjs
 const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
@@ -54,6 +50,15 @@ Google for default credentials
 | -------- | ---------------- | ----- | -------- | -------- |
 | Dolibarr | 17.0.0           | Admin | admin    | admin    |
 | Jetty    | 9.4.39.v20210325 | Admin | admin    | admin    |
+
+---
+
+Observe any suspicious error pages and conduct further research
+
+Examples : 
+1. Whitelabel Error Page > Sprint Boot Java Framework
+
+---
 
 Look for php code inclusion
 

