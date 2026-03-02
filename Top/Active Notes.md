@@ -34,12 +34,24 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+| Username  | Password     | Notes   |
+| --------- | ------------ | ------- |
+| postgres  | Vg&nvzAQ7XxR | postres |
+| kanderson |              |         |
 C6F80D230A1F6D73EA4AFEFE77F50A9D
 ---
 
+```kanderson
+$2a$10$E/Vcd9ecflmPudWeLSEIv.cvK6QjxjWlWXpij1NVNV3Mm6eH58zim
+```
+
+```admin
+$2a$10$SpKYdHLB0FOaT7n3x72wtuS0yR8uqqbNNpIPjUb2MZib3H9kVO8dm
+```
+
+```admin
+manchesterunited
+```
 
 ## Open Ports
 ---

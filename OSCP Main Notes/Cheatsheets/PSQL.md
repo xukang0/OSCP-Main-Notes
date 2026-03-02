@@ -3,8 +3,47 @@
 Magic words:
 
 ```shell
-psql -U postgres
+psql -h 127.0.0.1 -U postgres
 ```
+
+---
+
+NOTE: Press Q to back, do not upgrade shell
+
+Listing all the available databases, we observe the presence of the cozyhosting database
+
+```
+\list
+``` 
+
+![[Pasted image 20260302222749.png]]
+
+We connect to the database by utilizing the \connect directive.
+
+```
+\connect cozyhosting
+```
+
+![[Pasted image 20260302222830.png]]
+
+Once we've successfully connected to the database, we can use the \dt command to list all the available tables within the database.
+
+```
+\dt
+```
+
+![[Pasted image 20260302222901.png]]
+
+We proceed by utilizing the SELECT statement to view all the data present in the users table.
+
+```
+select * from users;
+```
+
+![[Pasted image 20260302222941.png]]
+
+---
+
 
 Some interesting flags (to see all, use `-h` or `--help` depending on your psql version):
 
