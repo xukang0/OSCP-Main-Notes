@@ -35,3 +35,9 @@ Spring Boot.txt
 ```
 /usr/share/wordlists/spring-boot.txt
 ```
+
+Numbers.txt (from 1 to 100)
+
+```
+/usr/share/wordlists/numbers.txt
+```

@@ -50,6 +50,7 @@ Google for default credentials
 | -------- | ---------------- | ----- | -------- | -------- |
 | Dolibarr | 17.0.0           | Admin | admin    | admin    |
 | Jetty    | 9.4.39.v20210325 | Admin | admin    | admin    |
+|          |                  |       |          |          |
 
 ---
 
