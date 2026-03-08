@@ -1,5 +1,5 @@
 
-[[Cracking/Password Cracker/Wordlists|Wordlists]]
+[[Synced OSCP Notes/Small Toolkit/Wordlists|Wordlists]]
 
 ```dataviewjs
 const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
