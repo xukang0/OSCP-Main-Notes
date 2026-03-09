@@ -20,6 +20,8 @@ sudo /usr/local/bin/bee --root=/var/www/html eval "echo shell_exec('whoami && id
 
 [[Knife]]
 
+/usr/bin/knife
+
 ```
 sudo knife data bag create 1 2 -e vi
 ```
@@ -31,4 +33,16 @@ This opens up the vim editor. We type the below character sequence in the editor
 ```
 
 ---
+
+[[Ruby]]
+
+```
+sudo /usr/bin/ruby /opt/update_dependencies.rb
+```
+
+executes whatever is inside dependencies.yml
+
+---
+
+
 
