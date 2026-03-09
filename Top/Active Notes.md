@@ -17,7 +17,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 Editing Box
 
 ```
-
+scp lnorgaard@10.129.229.41:/home/lnorgaard/KeePassDumpFull.dmp .
 ```
 
 wget from local python server
@@ -61,9 +61,10 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Discovered Credentials
 ---
 
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+| Username  | Password        | Notes           |
+| --------- | --------------- | --------------- |
+| lnorgaard | Welcome2023!    |                 |
+|           | dgrød med fløde | Master Password |
 
 ---
 
