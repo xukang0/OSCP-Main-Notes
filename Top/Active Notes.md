@@ -61,10 +61,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Discovered Credentials
 ---
 
-| Username  | Password        | Notes           |
-| --------- | --------------- | --------------- |
-| lnorgaard | Welcome2023!    |                 |
-|           | dgrød med fløde | Master Password |
+| Username  | Password          | Notes           |
+| --------- | ----------------- | --------------- |
+| lnorgaard | Welcome2023!      |                 |
+|           | rødgrød med fløde | Master Password |
+|           | F4><3K0nd!        |                 |
 
 ---
 
