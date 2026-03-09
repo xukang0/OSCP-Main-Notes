@@ -17,7 +17,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 Editing Box
 
 ```
-
+feroxbuster -u http://10.129.233.95/nibbleblog -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -x php,html,txt,bak,zip -t 80
 ```
 
 wget from local python server
