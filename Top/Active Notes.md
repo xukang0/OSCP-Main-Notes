@@ -34,9 +34,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+| Username                    | Password      | Notes |
+| --------------------------- | ------------- | ----- |
+| prtgadmin              <br> | PrTg@dmin2018 |       |
 
 ---
 
@@ -46,7 +46,12 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-|      |         |       |
+| 21   | ftp     |       |
+| 80   | http    |       |
+| 135  | ms RPC  |       |
+| 139  | SMB     |       |
+| 445  | SMB     |       |
+| 5985 | win-RM  |       |
 
 ---
 
