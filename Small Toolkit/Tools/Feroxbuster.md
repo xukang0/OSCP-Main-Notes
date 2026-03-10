@@ -2,7 +2,9 @@
 
 ## 1️⃣ Basic Scan
 
-feroxbuster -u http://target.com -w /usr/share/wordlists/dirb/common.txt
+```
+feroxbuster -u http://[domain.com] -w /usr/share/wordlists/dirb/common.txt
+```
 
 **What it does**
 

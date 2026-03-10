@@ -19,7 +19,7 @@
 | 138       | UDP      | NetBIOS Datagram                        | Windows LAN communication                                 |
 | 139       | TCP      | NetBIOS Session [[139 445 SMB\|SMB]]    | SMB over NetBIOS; OSCP: Windows share enumeration         |
 | 143       | TCP      | IMAP                                    | Email retrieval                                           |
-| 161       | UDP      | SNMP                                    | Network management; OSCP: community string enumeration    |
+| 161       | UDP      | [[SNMP Check\|SNMP]]                    | Network management; OSCP: community string enumeration    |
 | 162       | UDP      | SNMP Trap                               | Alerts                                                    |
 | 179       | TCP      | BGP                                     | Border Gateway Protocol (rare for OSCP labs)              |
 | 389       | TCP/UDP  | LDAP                                    | Directory services; OSCP: user enumeration                |
