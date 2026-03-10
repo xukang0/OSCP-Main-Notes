@@ -7,6 +7,14 @@ Common ones to memorize:
 - `$6$` → SHA512 (crypt)
 - `$2a$`, `$2b$`, `$2y$` → bcrypt
 
+# Quick pentester rule
+
+|Hash length|Assume|
+|---|---|
+|32|MD5|
+|40|SHA1|
+|64|SHA256|
+
 ```
 hashid [hash]
 ```
@@ -32,7 +40,8 @@ https://hashcat.net/wiki/doku.php?id=example_hashes
 
 | Hashcat code | Type                     |
 | ------------ | ------------------------ |
-| 500          | MD5                      |
+| 0            | MD5                      |
+| 500          | MD5crypt                 |
 | 1000         | NTLM                     |
 | 1800         | SHA512                   |
 | 3200         | Bcrypt                   |

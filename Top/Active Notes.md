@@ -44,11 +44,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Open Ports
 ---
 
-| Port                                                                                                                                                                                                                                                                                                                                                                                                              | Service | Notes |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- | ----- |
-| 22                                                                                                                                                                                                                                                                                                                                                                                                                | ssh     |       |
-| 80                                                                                                                                                                                                                                                                                                                                                                                                                | http    |       |
-| PORT      STATE         SERVICE<br>68/udp    open\|filtered dhcpc<br>161/udp   open          snmp<br>497/udp   open\|filtered retrospect<br>593/udp   open\|filtered http-rpc-epmap<br>631/udp   open\|filtered ipp<br>1023/udp  open\|filtered unknown<br>1812/udp  open\|filtered radius<br>1813/udp  open\|filtered radacct<br>5632/udp  open\|filtered pcanywherestat<br>49200/udp open\|filtered unknown<br> |         |       |
+| Port | Service | Notes |
+| ---- | ------- | ----- |
+|      |         |       |
 
 ---
 
