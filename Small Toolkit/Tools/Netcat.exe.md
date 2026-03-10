@@ -10,7 +10,7 @@ wget https://github.com/int0x33/nc.exe/blob/master/nc.exe
 
 nc64.exe
 ```
-wget https://github.com/int0x33/nc.exe/blob/master/nc64.exe
+wget https://raw.githubusercontent.com/int0x33/nc.exe/master/nc64.exe
 ```
 
 Start a python server on attacker
