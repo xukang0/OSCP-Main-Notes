@@ -1,0 +1,4 @@
+```
+Expand-Archive [file.zip]
+```
+

