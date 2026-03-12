@@ -1,4 +1,9 @@
-IP::   10.129.95.241
+IP::   IP
+
+| Machine | IP Address | Notes |
+| ------- | ---------- | ----- |
+|         |            |       |
+
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -6,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  10.10.16.66
+KALI IP::  KALIIP
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -22,12 +27,12 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   printer.return.local
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `http://${discoveredDomain}/`;
+const command = `${discoveredDomain}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -44,9 +49,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
-| Username    | Password     | Notes |
-| ----------- | ------------ | ----- |
-| svc-printer | 1edFg43012!! |       |
+| Username | Password | Notes |
+| -------- | -------- | ----- |
+|          |          |       |
 
 ---
 
