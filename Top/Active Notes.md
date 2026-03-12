@@ -44,9 +44,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+| Username    | Password     | Notes |
+| ----------- | ------------ | ----- |
+| svc-printer | 1edFg43012!! |       |
 
 ---
 
