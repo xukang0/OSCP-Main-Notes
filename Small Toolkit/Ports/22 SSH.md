@@ -4,7 +4,7 @@
 
 These keys work together like a lock and key. The public key (`id_rsa.pub`) is installed on remote machines you want to connect to, while the private key (`id_rsa`) on your local machine proves your identity. Now, let’s download the private key and exit the FTP connection.
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ssh [USER]@${ip} -p [portno]`;
 
@@ -14,7 +14,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 chmod 600 id_rsa
 ```
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ssh -i id_rsa [user]@${ip}`;
 

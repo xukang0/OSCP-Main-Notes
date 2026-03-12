@@ -1,6 +1,6 @@
 Anonymous creds
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ftp anonymous@${ip}`;
 
@@ -14,7 +14,7 @@ ftp -h
 
 ftp {target_IP}
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ftp ${ip}`;
 
@@ -24,7 +24,7 @@ Name : Anonymous. Password : {Blank}
 
 ![[Pasted image 20250512172652.png]]
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ftp -p ${ip} [portno]`;
 
@@ -34,7 +34,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 HYDRA CRACK
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `hydra -l "[user]" -P /usr/share/wordlists/rockyou.txt -f ftp://${ip}/`;
 
@@ -68,7 +68,7 @@ Can use [[Medusa]] to crack password
 FTP Bounce attack
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `nmap -Pn -v -n -p80 -b anonymous:password@${ip} [2ndip]`;
 

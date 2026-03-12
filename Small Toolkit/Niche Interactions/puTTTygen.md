@@ -24,7 +24,7 @@ cat id_rsa
 
 ---
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ssh -i id_rsa root@${ip}`;
 

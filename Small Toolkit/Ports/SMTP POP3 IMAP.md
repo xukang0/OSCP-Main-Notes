@@ -35,7 +35,7 @@ Host - A Records Address
 host -t A [domain]
 ```
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `sudo nmap -Pn -sV -sC -p25,143,110,465,587,993,995 ${ip}`;
 
