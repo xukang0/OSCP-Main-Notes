@@ -1,4 +1,4 @@
-IP::   10.129.229.25
+IP::   10.129.228.234
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,12 +27,12 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   editorial.htb
+Discovered Web Domain::   help.htb
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `${discoveredDomain}`;
+const command = `http://${discoveredDomain}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -49,9 +49,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+```
+godhelpmeplz
+```
+
+```
+
+```
 
 ---
 
@@ -59,10 +63,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Open Ports
 ---
 
-| Port | Service | Notes |
-| ---- | ------- | ----- |
-| 22   | ssh     |       |
-| 80   | http    |       |
+| Port | Service        | Notes |
+| ---- | -------------- | ----- |
+| 22   | SSH            |       |
+| 80   | http           |       |
+| 3000 | Node Framework |       |
 
 ---
 

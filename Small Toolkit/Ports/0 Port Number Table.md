@@ -49,6 +49,7 @@
 | 2083      | TCP      | cPanel SSL                                           | Secure hosting control panel                                                         |
 | 2095      | TCP      | Webmail                                              | Hosting email access                                                                 |
 | 2096      | TCP      | Webmail SSL                                          | Secure webmail                                                                       |
+| 3000      | TCP      | Node.js Express framework                            |                                                                                      |
 | 3128      | TCP      | Squid Proxy                                          | HTTP proxy; pivoting possible                                                        |
 | 3306      | TCP      | [[3306 MySQL\|MySQL / MariaDB]]                      | Database enumeration/exploitation                                                    |
 | 3389      | TCP      | RDP                                                  | Remote Desktop; OSCP: brute-force if allowed                                         |

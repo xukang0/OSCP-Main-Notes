@@ -49,9 +49,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+```
+
+```
+
+```
+
+```
 
 ---
 
