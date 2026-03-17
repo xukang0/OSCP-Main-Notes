@@ -1,4 +1,4 @@
-IP::   10.129.228.234
+IP::   10.129.227.241
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   help.htb
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -50,7 +50,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-godhelpmeplz
+
 ```
 
 ```
@@ -63,11 +63,11 @@ godhelpmeplz
 ## Open Ports
 ---
 
-| Port | Service        | Notes |
-| ---- | -------------- | ----- |
-| 22   | SSH            |       |
-| 80   | http           |       |
-| 3000 | Node Framework |       |
+| Port | Service | Notes |
+| ---- | ------- | ----- |
+| 22   | SSH     |       |
+| 80   | http    |       |
+| 111  | rpcbind |       |
 
 ---
 
