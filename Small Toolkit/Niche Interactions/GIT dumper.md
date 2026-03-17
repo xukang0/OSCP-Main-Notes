@@ -1,3 +1,13 @@
+```
+wget https://raw.githubusercontent.com/arthaud/git-dumper/refs/heads/master/git_dumper.py
+```
+
+Also installed in 
+
+```
+cd /home/kali/Desktop/MyTools/[git_dumper.py]
+```
+
 Start external python environment
 
 ```
