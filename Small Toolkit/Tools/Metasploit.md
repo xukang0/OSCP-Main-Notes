@@ -8,6 +8,8 @@ show options
 
 set RHOSTS 10.10.10.10
 
+---
+
 show payloads
 
 run

@@ -1,4 +1,4 @@
-IP::   10.129.227.241
+IP::   10.129.227.255
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   linkvortex.htb
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -65,9 +65,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-| 22   | SSH     |       |
-| 80   | http    |       |
-| 111  | rpcbind |       |
+| 22   |         |       |
+| 80   |         |       |
 
 ---
 

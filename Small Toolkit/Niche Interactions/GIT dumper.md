@@ -17,7 +17,10 @@ pip install git-dumper
 ```
 
 ---
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
-```
-git-dumper http://10.129.231.223/.git ~/.git
+const command = `git-dumper http://${ip}/.git ~/.git`;
+
+dv.paragraph("```bash\n" + command + "\n```");
 ```
