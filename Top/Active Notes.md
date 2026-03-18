@@ -1,4 +1,4 @@
-IP::   10.129.227.255
+IP::   10.129.227.116
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   linkvortex.htb
+Discovered Web Domain::   10.129.227.116
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -50,11 +50,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-OctopiFociPilfer45
+
 ```
 
 ```
-fibber-talented-worth
+
 ```
 
 ---
@@ -65,8 +65,9 @@ fibber-talented-worth
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-| 22   |         |       |
-| 80   |         |       |
+| 22   | ssh     |       |
+| 80   | http    |       |
+| 443  | https   |       |
 
 ---
 
