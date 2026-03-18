@@ -86,3 +86,8 @@ sudo /usr/bin/python3 /opt/internal_apps/clone_changes/clone_prod_change.py 'ext
 
 ---
 
+/usr/bin/bash /opt/ghost/clean_symlink.sh
+
+[[ghost symlink]]
+
+---

