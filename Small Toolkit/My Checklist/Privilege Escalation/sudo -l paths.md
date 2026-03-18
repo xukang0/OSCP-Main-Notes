@@ -91,3 +91,14 @@ sudo /usr/bin/python3 /opt/internal_apps/clone_changes/clone_prod_change.py 'ext
 [[ghost symlink]]
 
 ---
+
+/usr/local/sbin/changename.sh
+
+```
+sudo /usr/local/sbin/changename.sh
+```
+
+![[Pasted image 20260318221934.png]]
+
+---
+
