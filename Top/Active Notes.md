@@ -1,4 +1,4 @@
-IP::   10.129.227.126
+IP::   10.129.227.110
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   10.129.227.116
+Discovered Web Domain::   10.129.227.110
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -50,11 +50,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-
+n1nj4W4rri0R!
 ```
 
 ```
-
+Revealed
 ```
 
 ---
@@ -65,9 +65,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-| 22   | ssh     |       |
-| 80   | http    |       |
-| 443  | https   |       |
+| 22   |         |       |
+| 80   |         |       |
 
 ---
 

