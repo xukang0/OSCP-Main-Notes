@@ -1,4 +1,4 @@
-IP::   10.129.227.110
+IP::   10.129.226.249
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   10.129.227.110
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -48,13 +48,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ## Provided Credentials
 ---
+-u daniel 
+```
+HotelBabylon23
+```
 
 ```
-n1nj4W4rri0R!
-```
 
-```
-Revealed
 ```
 
 ---

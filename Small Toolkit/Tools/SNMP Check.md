@@ -1,3 +1,11 @@
+Let us use this command-line utility known as snmpwalk to scan the SNMP service and obtain all variables of the managed systems and displays them.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `snmpwalk -v 1 -c public ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 **snmp-check** is a quick enumeration tool for **SNMP services** (usually UDP port **161**) that automatically pulls useful info like users, running processes, network interfaces, etc.
 
 Here’s a **fast practical guide** you’d use during HTB / pentesting. 🧠
