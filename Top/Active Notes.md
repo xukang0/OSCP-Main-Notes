@@ -1,4 +1,4 @@
-IP::   10.129.226.249
+IP::   10.129.227.12
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  10.10.16.66
+KALI IP::  KALIIP
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -48,9 +48,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ## Provided Credentials
 ---
--u daniel 
+
 ```
-HotelBabylon23
+
 ```
 
 ```
@@ -65,8 +65,7 @@ HotelBabylon23
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-| 22   |         |       |
-| 80   |         |       |
+|      |         |       |
 
 ---
 
