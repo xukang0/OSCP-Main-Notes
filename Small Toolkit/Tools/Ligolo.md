@@ -39,11 +39,13 @@ $env:PROCESSOR_ARCHITECTURE
 ## 🔹 Step 2 — Transfer Agent to Target
 
 Example using SCP:
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
-```
-scp agent ubuntu@[IP]:~/Desktop
-```
+const command = `scp agent ubuntu@${ip}:~/[filename]`;
 
+dv.paragraph("```bash\n" + command + "\n```");
+```
 On target:
 
 ```
@@ -91,6 +93,10 @@ sudo ip link set ligolo up
 ---
 
 ## 🔹 Step 4 — Start Ligolo Proxy (Kali)
+
+```
+cd ~/Desktop/MyTools/ligolo/
+```
 
 ```
 ./proxy -selfcert

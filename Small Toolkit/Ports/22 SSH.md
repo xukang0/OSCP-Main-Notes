@@ -27,7 +27,32 @@ ssh jan@10.10.35.240 2121
 
 copy id_rsa and login SSH and
 
+---
 
+port forward our connection to the remote host's internal port
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `ssh -D 9090 [user]@${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+We will also need to configure a SOCKS proxy in the foxy-proxy browser extension in order to make the
+browser route the traffic through the port which is forwarded.
+
+![[Pasted image 20260319201941.png]]
+
+Proxy Type : SOCKS5
+IP Address : 127.0.0.1
+Port : 9090
+
+Visit
+
+```
+http://127.0.0.1:80/
+```
+
+---
 
 
 uname -r 
