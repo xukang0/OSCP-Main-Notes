@@ -1,4 +1,4 @@
-IP::   10.129.224.151
+IP::   10.129.224.172
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   sea.htb
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -50,7 +50,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-mychemicalromance
+
 ```
 
 ```
@@ -65,8 +65,12 @@ mychemicalromance
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-| 22   |         |       |
-| 80   |         |       |
+| 79   | Finger  |       |
+| 111  | rpcbind |       |
+| 465  | smtps   |       |
+| 515  | printer |       |
+| 726  |         |       |
+| 4445 |         |       |
 
 ---
 
@@ -92,12 +96,6 @@ mychemicalromance
 ---
 
 ## User Flag
-
-/home/amay/user.txt
-
-Pivot into amay
-
-geo permission denied
 
 ```
 

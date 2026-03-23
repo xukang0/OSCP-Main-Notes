@@ -10,10 +10,11 @@
 | 67        | UDP      | DHCP Server                                          | Dynamic IP assignment                                                                |
 | 68        | UDP      | DHCP Client                                          | Dynamic IP assignment                                                                |
 | 69        | UDP      | TFTP                                                 | Trivial File Transfer; unauthenticated uploads possible                              |
+| 79        | TCP      | [[79 Finger\|Finger]]                                |                                                                                      |
 | 80        | TCP      | [[80 - WEB\|HTTP]]                                   | Web services; OSCP: web app enumeration                                              |
 | 88        | TCP      | Kerberos                                             | Kerberos Authen Protocol for secure, ticket-based network authentication (microsoft) |
 | 110       | TCP      | [[110 POP3]]                                         | Email retrieval                                                                      |
-| 111       | TCP/UDP  | RPC / portmapper                                     | Common on Linux; OSCP: NFS enumeration                                               |
+| 111       | TCP/UDP  | [[111 RPCBind]]                                      | Common on Linux; OSCP: NFS enumeration                                               |
 | 123       | UDP      | NTP                                                  | Time synchronization                                                                 |
 | 135       | TCP      | RPC                                                  | Microsoft Remote Procedure Call Service                                              |
 | 137       | UDP      | NetBIOS Name Service                                 | Windows name resolution; enumeration with nbtscan                                    |
@@ -26,9 +27,9 @@
 | 389       | TCP/UDP  | [[Synced OSCP Notes/Small Toolkit/Ports/LDAP\|LDAP]] | Directory services; OSCP: user enumeration                                           |
 | 443       | TCP      | HTTPS                                                | Secure web; OSCP: web app enumeration, SSL/TLS tests                                 |
 | 445       | TCP      | [[139 445 SMB\|SMB]]                                 | Windows file sharing; OSCP: SMB enumeration, exploit                                 |
-| 465       | TCP      | SMTPS                                                | Secure SMTP                                                                          |
+| 465       | TCP      | [[465 SMTPS\|SMTPS]]                                 | Secure SMTP                                                                          |
 | 514       | UDP      | Syslog                                               | Log collection                                                                       |
-| 515       | TCP      | LPR                                                  | Printer service                                                                      |
+| 515       | TCP      | [[515 Printer]]                                      | Printer service                                                                      |
 | 520       | UDP      | RIP                                                  | Routing Information Protocol                                                         |
 | 546       | UDP      | DHCPv6 Client                                        | IPv6 Dynamic IP                                                                      |
 | 547       | UDP      | DHCPv6 Server                                        | IPv6 Dynamic IP                                                                      |
