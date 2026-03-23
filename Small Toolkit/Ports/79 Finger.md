@@ -5,7 +5,10 @@
     - Shows logged-in users
     - Can reveal usernames, home dirs, shells
 -
-```
-finger @10.129.224.168
-```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
+const command = `finger @${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
