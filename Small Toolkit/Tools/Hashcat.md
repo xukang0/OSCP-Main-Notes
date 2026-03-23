@@ -62,6 +62,15 @@ List Rules
 ls -l /usr/share/hashcat/rules
 ```
 
+---
+
+TAKE NOTE : 
+
+If `\/` seen in hash, correct it to just '/' 
+
+---
+
+
 Masks
 
 | Symbol | Charset                             |
