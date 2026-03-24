@@ -50,11 +50,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-
+sammy
 ```
 
 ```
-
+sunny
 ```
 
 ---

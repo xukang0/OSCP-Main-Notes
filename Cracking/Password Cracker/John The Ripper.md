@@ -33,3 +33,12 @@ Crack with wordlist
 ```
 john --wordlist=/usr/share/wordlists/rockyou.txt office_hash.txt
 ```
+
+---
+
+Shadow.backup
+
+```
+john shadow.backup --wordlist=/usr/share/wordlists/rockyou.txt
+```
+

