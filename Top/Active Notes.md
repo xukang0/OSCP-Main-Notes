@@ -1,4 +1,4 @@
-IP::   10.129.223.251
+IP::   10.129.224.5
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   swagshop.htb
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -50,13 +50,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-root
-fMVWh7bDHpgZkyfqQXreTjU9
-swagshop
+
 ```
 
 ```
-b355a9e0cd018d3f7f03607141518419
+
 ```
 
 ---
@@ -69,6 +67,7 @@ b355a9e0cd018d3f7f03607141518419
 | ---- | ------- | ----- |
 | 22   |         |       |
 | 80   |         |       |
+| 8080 |         |       |
 
 ---
 
