@@ -153,4 +153,12 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ---
 
+/usr/bin/vi
+
+```
+sudo /usr/bin/vi /var/www/html/php.ini.sample -c ':!/bin/bash'
+```
+
+---
+
 

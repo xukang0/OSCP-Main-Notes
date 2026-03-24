@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   swagshop.htb
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -50,11 +50,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-
+root
+fMVWh7bDHpgZkyfqQXreTjU9
+swagshop
 ```
 
 ```
-
+b355a9e0cd018d3f7f03607141518419
 ```
 
 ---
@@ -65,7 +67,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-|      |         |       |
+| 22   |         |       |
+| 80   |         |       |
 
 ---
 
