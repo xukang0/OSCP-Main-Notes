@@ -17,6 +17,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 Version 1.9.0.0
 
+Create new admin
+
 ```
 wget https://raw.githubusercontent.com/joren485/Magento-Shoplift-SQLI/master/poc.py
 ```
