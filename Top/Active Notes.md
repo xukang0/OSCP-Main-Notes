@@ -1,4 +1,4 @@
-IP::   10.129.224.172
+IP::   10.129.229.138
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -50,11 +50,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-sammy
+
 ```
 
 ```
-sunny
+
 ```
 
 ---
@@ -65,12 +65,7 @@ sunny
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
-| 79   | Finger  |       |
-| 111  | rpcbind |       |
-| 465  | smtps   |       |
-| 515  | printer |       |
-| 726  |         |       |
-| 4445 |         |       |
+|      |         |       |
 
 ---
 

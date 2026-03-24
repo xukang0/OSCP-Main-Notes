@@ -1,5 +1,5 @@
 ```
-medusa -u sammy -P /usr/share/wordlists/rockyou.txt -h 10.129.224.172 -M ssh
+
 ```
 
 ```
