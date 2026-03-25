@@ -30,8 +30,38 @@ Brute Forcing
 - [ ] Curl -i newfound directory
 - [ ] Vhost brute force
 
+---
 ## 3. Privilege Escalation
 
+- [ ] sudo -l
+- [ ] ls -la /var/www
+- [ ] cat /etc/crontab
+- [ ] crontab -l
+- [ ] cat /etc/passwd
+- [ ] ls -a ~
+	- [ ] cat .bash_history
+	- [ ] Look at any non-standard file
+- [ ] Run LinPEAS
+	- [ ] Yellow Text
+	- [ ] Unknown SUID binaries or GUID binaries
+	- [ ] Interesting Writable Files owned by me
+- [ ] whoami /priv
+- [ ] whoami /groups
+- [ ] Check for cached creds
+- [ ] Check PowerShell History
+- [ ] Writable Files/Configs/Cron Jobs
+- [ ] Capabilities
+- [ ] SUID binaries
+- [ ] Kernel Exploits
+
+---
 ## 4. Lateral Movement
+
+[[4. Lateral Movement]]
+
+- [ ] Check internal local ports
+- [ ] Check currently running processes
+- [ ] /etc/passwd
+- [ ] Look through SSH History
 
 ## 5. Post Access
