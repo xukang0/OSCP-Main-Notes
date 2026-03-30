@@ -58,7 +58,12 @@
 > - [ ] 
 >
 > #### Reset Password (Email)
-> - [ ] If invalid email = does not match our records, SQLi (test' or 1=1;-- -)  [[SQL Injection]]
+> - [ ] If invalid email = does not match our records, SQLi (test' or 1=1;-- -)  [[SQL Injection|link]]
+>
+> #### Admin Dashboards
+> - [ ] Search for framework CVEs
+> - [ ] Search for dependencies CVEs
+> - [ ] File Uploads for PHP arbitrary code execution [[Arbitrary File Upload Vulnerability|link]]
 
 #### If Found: .git
 > [!tip]- Git Dump
@@ -89,31 +94,43 @@ Brute Forcing
 
 ## 4. Privilege Escalation
 
-> [!note]- Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] uname -a
-
-> [!note]- Sudo
-> - [ ] sudo -l
-
-> [!note]- Files
-> - [ ] ls -la /var/www
-> - [ ] ls -a ~
->   - [ ] .bash_history
->   - [ ] interesting files
-
-> [!note]- Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] crontab -l
-
-> [!note]- SUID / Capabilities
-> - [ ] find / -perm -4000 2>/dev/null
-> - [ ] getcap -r / 2>/dev/null
 
 > [!note]- LinPEAS
 > - [ ] Run LinPEAS
 > - [ ] Review yellow findings
+
+
+### Privilege Escalation
+
+> [!note]- Priv Esc
+> #### Basic Enumeration
+> - [ ] whoami
+> - [ ] id
+> - [ ] uname -a
+>
+> #### Sudo
+> - [ ] sudo -l
+>
+> #### Vulnerability Testing
+> - [ ] ls -la /var/www
+> - [ ] ls -a ~
+>   - [ ] .bash_history
+>   - [ ] interesting files
+>
+> #### Scheduled Tasks
+> - [ ] cat /etc/crontab
+> - [ ] crontab -l
+> 
+>  #### SUID / Capabilities
+> - [ ] find / -perm -4000 2>/dev/null
+> - [ ] getcap -r / 2>/dev/null
+> 
+>  #### LinPEAS
+> - [ ] Run LinPEAS
+> - [ ] Review yellow findings
+
+
+
 ## 3. Privilege Escalation
 
 - [ ] sudo -l

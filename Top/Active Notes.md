@@ -48,9 +48,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ## Provided Credentials
 ---
-
+admin
 ```
-
+whatever1
 ```
 
 ```
@@ -78,9 +78,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Discovered Credentials
 ---
 
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+| Username                                                     | Password | Notes |
+| ------------------------------------------------------------ | -------- | ----- |
+| $2y$10$ohq2kLpBH/ri.P5wR0P3UOmc24Ydvl9DA9H1S6ooOMgH5xVfUPrL2 |          |       |
 
 ---
 
