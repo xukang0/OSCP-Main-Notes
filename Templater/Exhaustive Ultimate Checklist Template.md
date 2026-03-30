@@ -95,7 +95,7 @@ Brute Forcing
 
 > [!note]- Lateral Movement
 > - [ ] Check internal local ports | ss -tlpn
-> - [ ] Check currently running processes
+> - [ ] Check currently running processes | ps aux
 > - [ ] /etc/passwd
 > - [ ] Look through SSH History
 
