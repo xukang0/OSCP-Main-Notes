@@ -91,23 +91,26 @@ Brute Forcing
 - [ ] Vhost brute force
 
 ---
+## 3. Lateral Movement
 
+> [!note]- Lateral Movement
+> - [ ] Check internal local ports
+> - [ ] Check currently running processes
+> - [ ] /etc/passwd
+> - [ ] Look through SSH History
+
+---
 ## 4. Privilege Escalation
-
-
-> [!note]- LinPEAS
-> - [ ] Run LinPEAS
-> - [ ] Review yellow findings
-
-
-### Privilege Escalation
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
 > - [ ] whoami
 > - [ ] id
 > - [ ] uname -a
->
+> 
+> #### Easy wins
+> - [ ] cat /etc/passwd
+> 
 > #### Sudo
 > - [ ] sudo -l
 >
@@ -116,6 +119,11 @@ Brute Forcing
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
+>   
+>#### Priv Checks
+> - [ ] sudo -l
+> - [ ] whoami /priv
+> - [ ] whoami /groups
 >
 > #### Scheduled Tasks
 > - [ ] cat /etc/crontab
@@ -133,11 +141,8 @@ Brute Forcing
 
 ## 3. Privilege Escalation
 
-- [ ] sudo -l
-- [ ] ls -la /var/www
-- [ ] cat /etc/crontab
-- [ ] crontab -l
-- [ ] cat /etc/passwd
+
+
 - [ ] ls -a ~
 	- [ ] cat .bash_history
 	- [ ] Look at any non-standard file
@@ -145,8 +150,6 @@ Brute Forcing
 	- [ ] Yellow Text
 	- [ ] Unknown SUID binaries or GUID binaries
 	- [ ] Interesting Writable Files owned by me
-- [ ] whoami /priv
-- [ ] whoami /groups
 - [ ] Check for cached creds
 - [ ] Check PowerShell History
 - [ ] Writable Files/Configs/Cron Jobs
