@@ -94,10 +94,16 @@ Brute Forcing
 ## 3. Lateral Movement
 
 > [!note]- Lateral Movement
+>  #### Basic Enumeration
+> - [ ] /etc/passwd
 > - [ ] Check internal local ports | ss -tlpn
 > - [ ] Check currently running processes | ps aux
-> - [ ] /etc/passwd
+> - [ ] cat /etc/fstab | grep hidepid
+> 
 > - [ ] Look through SSH History
+> 
+> #### 
+> - [ ] 
 
 ---
 ## 4. Privilege Escalation
@@ -110,9 +116,6 @@ Brute Forcing
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
-> 
-> #### Sudo
-> - [ ] sudo -l
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -124,6 +127,7 @@ Brute Forcing
 > - [ ] sudo -l
 > - [ ] whoami /priv
 > - [ ] whoami /groups
+> - [ ] strings /usr/bin/usage_management
 >
 > #### Scheduled Tasks
 > - [ ] cat /etc/crontab

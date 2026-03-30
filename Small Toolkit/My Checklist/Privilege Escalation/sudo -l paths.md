@@ -161,4 +161,7 @@ sudo /usr/bin/vi /var/www/html/php.ini.sample -c ':!/bin/bash'
 
 ---
 
+/usr/bin/usage_management
+
+
 
