@@ -158,13 +158,5 @@ Brute Forcing
 - [ ] Kernel Exploits
 
 ---
-## 4. Lateral Movement
-
-[[4. Lateral Movement]]
-
-- [ ] Check internal local ports
-- [ ] Check currently running processes
-- [ ] /etc/passwd
-- [ ] Look through SSH History
 
 ## 5. Post Access
