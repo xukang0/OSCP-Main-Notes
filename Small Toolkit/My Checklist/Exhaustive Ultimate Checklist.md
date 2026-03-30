@@ -18,7 +18,6 @@
 > - [ ] Visit site
 > - [ ] View source
 > - [ ] Identify tech/CMS
-> - [ ] Try default creds
 > - [ ] Test parameters (?id=1, ?page=)
 >
 > #### Brute Force
@@ -37,12 +36,24 @@
 > - [ ] Check comments
 > - [ ] Check backups (.bak, .zip)
 
-#### If Found : Admin Page
+#### If Found : Login Pages
 > [!tip]- Admin Page
+> 
+> > #### Admin Login
 > - [ ] Discover software version
 > - [ ] Research about software
 > - [ ] Search and Try Default credentials
 > - [ ] Research CVEs related to version
+>
+> #### Registration
+> - [ ] Register an account
+> - [ ] Login using registered account
+>
+> #### User Login
+> - [ ] Default credentials
+>
+> #### Reset Password (Email)
+> 
 
 #### If Found: .git
 > [!tip]- Git Dump
