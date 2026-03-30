@@ -30,7 +30,7 @@
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
-> - [ ] SQLi (' OR 1=1 --)
+> - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
 > - [ ] Command Injection (; whoami)
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)
@@ -55,9 +55,10 @@
 >
 > #### User Login
 > - [ ] Default credentials
+> - [ ] 
 >
 > #### Reset Password (Email)
-> 
+> - [ ] If invalid email = does not match our records, SQLi (test' or 1=1;-- -)  [[SQL Injection]]
 
 #### If Found: .git
 > [!tip]- Git Dump
