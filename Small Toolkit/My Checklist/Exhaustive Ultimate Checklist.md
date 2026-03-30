@@ -19,16 +19,20 @@
 > - [ ] View source
 > - [ ] Identify tech/CMS
 > - [ ] Test parameters (?id=1, ?page=)
+> - [ ] Analyze error page
+> - [ ] curl -i domain
 >
 > #### Brute Force
 > - [ ] Directory brute force (common)
 > - [ ] Directory brute force (big)
 > - [ ] Vhost brute force
+> - [ ] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
 > - [ ] SQLi (' OR 1=1 --)
 > - [ ] Command Injection (; whoami)
+> - [ ] PHP code inclusion
 > - [ ] File upload (if available)
 >
 > #### Hidden Content
