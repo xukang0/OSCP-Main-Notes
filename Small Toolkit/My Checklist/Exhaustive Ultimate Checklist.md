@@ -58,11 +58,11 @@
 > - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [ ] find / -perm -4000 2>/dev/null
+> - [x] find / -perm -4000 2>/dev/null
 > - [ ] getcap -r / 2>/dev/null
 > 
 >  #### LinPEAS
-> - [ ] Run LinPEAS
+> - [x] Run LinPEAS
 > - [ ] Review yellow findings
 
 
