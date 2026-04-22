@@ -1,4 +1,4 @@
-IP::   192.168.185.249
+IP::   192.168.185.239
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  192.168.45.217
+KALI IP::  KALIIP
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -66,15 +66,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 | Port | Service | Notes |
 | ---- | ------- | ----- |
 |      |         |       |
-21/tcp    open  ftp     vsftpd 3.0.3
-| ftp-anon: Anonymous FTP login allowed (FTP code 230)
-
-25022/tcp open  ssh     OpenSSH 8.6 (protocol 2.0)
-
-33414/tcp open  http    Werkzeug httpd 2.2.3 (Python 3.9.13)
-
-40080/tcp open  http    Apache httpd 2.4.53 ((Fedora))
-
 
 ---
 

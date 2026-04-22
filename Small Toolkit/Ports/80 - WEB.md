@@ -79,27 +79,6 @@ Brute Forcing
 - [ ] Vhost brute force
 
 ---
-
-Visit the web Address
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `http://${ip}/`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-If find any domain names,
-
-Add hosts to /etc/hosts 
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `echo "${ip} [domain_name]" | sudo tee -a /etc/hosts`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
----
-
 Visit the web Address
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
@@ -262,29 +241,6 @@ If .git found, [[GIT dumper]]
 
 Search for credentials
 
----
-Use GoBuster to enumerate vhosts and directories
-
-Directories
-
-```
-gobuster dir --url http://[domain.com]/ --wordlist /usr/share/wordlists/dirb/big.txt
-```
-
-VHosts
-
-```
-sudo gobuster vhost -u http://[domain.com]/ -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain
-```
-
-Add newfound vhost to /etc/hosts
-```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `echo "${ip} [domain_name]" | sudo tee -a /etc/hosts`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
 ---
 
 If admin login page is found,
