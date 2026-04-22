@@ -25,9 +25,6 @@
 > - [ ] cat /etc/fstab | grep hidepid
 > 
 > - [ ] Look through SSH History
-> 
-> #### 
-> - [ ] 
 
 ---
 ## 4. Privilege Escalation
@@ -47,11 +44,13 @@
 >   - [ ] .bash_history
 >   - [ ] interesting files
 >   
->#### Priv Checks
+>#### Priv Checks (LINUX)
 > - [ ] sudo -l
+> - [ ] strings /usr/bin/usage_management
+> 
+>#### Priv Checks (Windows)
 > - [ ] whoami /priv
 > - [ ] whoami /groups
-> - [ ] strings /usr/bin/usage_management
 >
 > #### Scheduled Tasks
 > - [ ] cat /etc/crontab
@@ -65,25 +64,6 @@
 > - [ ] Run LinPEAS
 > - [ ] Review yellow findings
 
-
-
-## 3. Privilege Escalation
-
-
-
-- [ ] ls -a ~
-	- [ ] cat .bash_history
-	- [ ] Look at any non-standard file
-- [ ] Run LinPEAS
-	- [ ] Yellow Text
-	- [ ] Unknown SUID binaries or GUID binaries
-	- [ ] Interesting Writable Files owned by me
-- [ ] Check for cached creds
-- [ ] Check PowerShell History
-- [ ] Writable Files/Configs/Cron Jobs
-- [ ] Capabilities
-- [ ] SUID binaries
-- [ ] Kernel Exploits
 
 ---
 

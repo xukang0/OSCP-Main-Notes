@@ -105,5 +105,5 @@ f6084196d8fd9b5be067965d48c40972
 ## Root Flag
 
 ```
-
+wqFGZWxpY2lkYWRlcywgbcOhcXVpbmEgY29tcGxldGFkYSE=
 ```
