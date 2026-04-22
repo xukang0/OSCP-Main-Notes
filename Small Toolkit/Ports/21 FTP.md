@@ -1,3 +1,5 @@
+## Login
+
 Anonymous creds
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
@@ -47,6 +49,10 @@ passive
 ```
 
 To turn passive mode off
+
+---
+
+## Manual
 
 "dir" 
 	lists directories
