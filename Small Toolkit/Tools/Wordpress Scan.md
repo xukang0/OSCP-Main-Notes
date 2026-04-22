@@ -58,3 +58,12 @@ const command = `wpscan --url http://${discoveredDomain} -U admin -P /usr/share/
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 
+URL to get to themes code execution
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `http://${discoveredDomain}/wp-content/themes/twentyfifteen/404.php`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```

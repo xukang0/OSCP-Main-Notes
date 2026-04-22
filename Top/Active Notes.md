@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP::  192.168.45.217
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -50,7 +50,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-
+c0ldd / 9876543210
 ```
 
 ```
