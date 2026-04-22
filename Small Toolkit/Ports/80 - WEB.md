@@ -58,6 +58,12 @@
 > - [ ] Search for creds
 > - [ ] Check commit history
 
+#### If Found: wordpress
+> [!tip]- Wordpress
+> - [ ] Default creds
+> - [ ] wpscan
+
+
 ---
 ## 2. Footholds
 
