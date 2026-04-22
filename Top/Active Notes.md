@@ -62,6 +62,14 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
+80/tcp   open  http    Apache httpd 2.4.18 ((Ubuntu))
+|_http-title: ColddBox | One more machine
+|_http-generator: WordPress 4.1.31
+|_http-server-header: Apache/2.4.18 (Ubuntu)
+
+
+4512/tcp open  ssh     OpenSSH 7.2p2 Ubuntu 4ubuntu2.10 (Ubuntu Linux; protocol 2.0)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
