@@ -58,7 +58,7 @@
 > - [ ] Search for creds
 > - [ ] Check commit history
 
-#### If Found: wordpress
+#### If Found: Wordpress [[Wordpress Scan]]
 > [!tip]- Wordpress
 > - [ ] Default creds
 > - [ ] wpscan
