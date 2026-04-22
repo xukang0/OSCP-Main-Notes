@@ -58,8 +58,6 @@ c0ldd / 9876543210
 ```
 
 ---
-
-
 ## Open Ports
 ---
 80/tcp   open  http    Apache httpd 2.4.18 ((Ubuntu))
