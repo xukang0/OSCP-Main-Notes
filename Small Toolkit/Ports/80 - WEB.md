@@ -249,18 +249,6 @@ Search for credentials
 
 ---
 
-If admin login page is found,
-
-Google for default credentials
-
-| Service  | Version          | User  | Username | Password |
-| -------- | ---------------- | ----- | -------- | -------- |
-| Dolibarr | 17.0.0           | Admin | admin    | admin    |
-| Jetty    | 9.4.39.v20210325 | Admin | admin    | admin    |
-|          |                  |       |          |          |
-
----
-
 Observe any suspicious error pages and conduct further research
 
 Examples : 
