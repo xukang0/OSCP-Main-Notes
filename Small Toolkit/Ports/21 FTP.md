@@ -4,7 +4,7 @@ Anonymous creds
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `ftp anonymous@${ip}`;
+const command = `lftp anonymous@${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -18,7 +18,7 @@ ftp {target_IP}
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `ftp ${ip}`;
+const command = `lftp ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -28,7 +28,7 @@ Name : Anonymous. Password : {Blank}
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `ftp -p ${ip} [portno]`;
+const command = `lftp -p ${ip} [portno]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
