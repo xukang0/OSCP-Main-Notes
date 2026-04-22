@@ -1,4 +1,4 @@
-IP::   10.129.220.186
+IP::   192.168.185.249
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  10.10.16.66
+KALI IP::  192.168.45.217
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   admin.usage.htb
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -48,13 +48,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ## Provided Credentials
 ---
-admin
-```
-whatever1
+
 ```
 
 ```
-3nc0d3d_pa$$w0rd
+
+```
+
 ```
 
 ---
@@ -66,6 +66,9 @@ whatever1
 | Port | Service | Notes |
 | ---- | ------- | ----- |
 |      |         |       |
+PORT      STATE  SERVICE          VERSION
+21/tcp    open   ftp              vsftpd 3.0.3
+
 
 ---
 
@@ -78,9 +81,9 @@ whatever1
 ## Discovered Credentials
 ---
 
-| Username                                                     | Password | Notes |
-| ------------------------------------------------------------ | -------- | ----- |
-| $2y$10$ohq2kLpBH/ri.P5wR0P3UOmc24Ydvl9DA9H1S6ooOMgH5xVfUPrL2 |          |       |
+| Username | Password | Notes |
+| -------- | -------- | ----- |
+|          |          |       |
 
 ---
 
