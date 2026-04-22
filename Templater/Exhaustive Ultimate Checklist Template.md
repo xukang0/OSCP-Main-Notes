@@ -12,6 +12,7 @@
 
 ---
 
+[[0 Port Number Table]]
 
 ---
 ## 3. Lateral Movement

@@ -77,6 +77,7 @@ Brute Forcing
 - [ ] Curl -i newfound directory
 - [ ] Vhost brute force
 
+---
 
 Visit the web Address
 ```dataviewjs
