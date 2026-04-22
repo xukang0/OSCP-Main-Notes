@@ -66,8 +66,14 @@ dv.paragraph("```bash\n" + command + "\n```");
 | Port | Service | Notes |
 | ---- | ------- | ----- |
 |      |         |       |
-PORT      STATE  SERVICE          VERSION
-21/tcp    open   ftp              vsftpd 3.0.3
+21/tcp    open  ftp     vsftpd 3.0.3
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+
+25022/tcp open  ssh     OpenSSH 8.6 (protocol 2.0)
+
+33414/tcp open  http    Werkzeug httpd 2.2.3 (Python 3.9.13)
+
+40080/tcp open  http    Apache httpd 2.4.53 ((Fedora))
 
 
 ---
