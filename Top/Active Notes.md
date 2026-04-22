@@ -99,7 +99,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ## User Flag
 
 ```
-
+f6084196d8fd9b5be067965d48c40972
 ```
 
 ## Root Flag

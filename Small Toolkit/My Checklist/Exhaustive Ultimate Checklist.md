@@ -34,15 +34,15 @@
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
+> - [x] whoami
+> - [x] id
 > - [ ] uname -a
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
+> - [x] cat /etc/passwd
 >
 > #### Vulnerability Testing
-> - [ ] ls -la /var/www
+> - [x] ls -la /var/www
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
