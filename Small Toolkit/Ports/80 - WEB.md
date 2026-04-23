@@ -1,88 +1,3 @@
-## 2. Service Enumeration
-
-### 🌐 Web (80/443)
-> [!note]- Web Checklist
-> - [ ] Visit site
-> - [ ] View source
-> - [ ] Identify tech/CMS
-> - [ ] Test parameters (?id=1, ?page=)
-> - [ ] Analyze error page
-> - [ ] curl -i domain
->
-> #### Brute Force
-> - [ ] Directory brute force (common)
-> - [ ] Directory brute force (big)
-> - [ ] Vhost brute force
-> - [ ] Feroxbuster File directories sweep
->
-> #### Vulnerability Testing
-> - [ ] LFI (../../../../etc/passwd)
-> - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
-> - [ ] Command Injection (; whoami)
-> - [ ] PHP code inclusion
-> - [ ] File upload (if available)
->
-> #### Hidden Content
-> - [ ] Check JS files
-> - [ ] Check comments
-> - [ ] Check backups (.bak, .zip)
-
-#### If Found : Login Pages
-> [!tip]- Admin Page
-> 
-> > #### Admin Login
-> - [ ] Discover software version
-> - [ ] Research about software
-> - [ ] Search and Try Default credentials
-> - [ ] Research CVEs related to version
->
-> #### Registration
-> - [ ] Register an account
-> - [ ] Login using registered account
->
-> #### User Login
-> - [ ] Default credentials
-> - [ ] 
->
-> #### Reset Password (Email)
-> - [ ] If invalid email = does not match our records, SQLi (test' or 1=1;-- -)  [[SQL Injection|link]]
->
-> #### Admin Dashboards
-> - [ ] Search for framework CVEs
-> - [ ] Search for dependencies CVEs
-> - [ ] File Uploads for PHP arbitrary code execution [[Arbitrary File Upload Vulnerability|link]]
-
-#### If Found: .git
-> [!tip]- Git Dump
-> - [ ] Run git-dumper
-> - [ ] Search for creds
-> - [ ] Check commit history
-
-#### If Found: Wordpress [[Wordpress Scan]]
-> [!tip]- Wordpress
-> - [ ] Default creds
-> - [ ] wpscan
-
-
----
-## 2. Footholds
-
-[[2. Footholds]]
-### 80 Web
-
-Web Testing
-- [ ] Visit web address
-- [ ] Try default credentials
-- [ ] Test for php execution
-- [ ] Test for Server Side Request Forgery (SSRF)
-- [ ] If .git, GIT Dump
-
-Brute Forcing
-- [ ] Directory brute force (Big.txt)
-- [ ] Directory brute force (Common.txt)
-- [ ] Feroxbuster sweep through file directories
-- [ ] Curl -i newfound directory
-- [ ] Vhost brute force
 
 ---
 Visit the web Address
@@ -101,6 +16,17 @@ const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `echo "${ip} ${discoveredDomain}" | sudo tee -a /etc/hosts`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
+
+Identify CMS
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `whatweb http://${discoveredDomain}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -171,6 +97,8 @@ const command = `echo "${ip} ${discoveredDomain}" | sudo tee -a /etc/hosts`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
+
+
 
 If admin login page is found,
 
