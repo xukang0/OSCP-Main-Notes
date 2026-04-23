@@ -31,10 +31,10 @@
 > - [ ] curl -i domain
 >
 > #### Brute Force
-> - [ ] Directory brute force (common)
-> - [ ] Directory brute force (big)
-> - [ ] Vhost brute force
-> - [ ] Feroxbuster File directories sweep
+> - [x] Directory brute force (common)
+> - [x] Directory brute force (big)
+> - [x] Vhost brute force
+> - [x] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [x] LFI (../../../../etc/passwd)
