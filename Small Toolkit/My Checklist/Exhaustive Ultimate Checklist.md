@@ -38,10 +38,10 @@
 >
 > #### Vulnerability Testing
 > - [x] LFI (../../../../etc/passwd)
-> - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
-> - [ ] Command Injection (; whoami)
-> - [ ] PHP code inclusion
-> - [ ] File upload (if available)
+> - [x] SQLi (test' or 1=1;-- -) [[SQL Injection]]
+> - [x] Command Injection (; whoami)
+> - [x] PHP code inclusion
+> - [x] File upload (if available)
 >
 > #### Hidden Content
 > - [ ] Check JS files
