@@ -11,6 +11,11 @@
 - [ ] Add discovered hosts to /etc/hosts
 
 ---
+## 2. Foothold
+
+> [!note]- General
+>  #### General
+> - [ ] steghide --extract -sf image.jpg
 
 [[0 Port Number Table]]
 
