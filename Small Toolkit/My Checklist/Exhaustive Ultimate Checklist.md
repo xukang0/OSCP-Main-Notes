@@ -25,8 +25,8 @@
 > [!note]- Web Checklist
 > - [x] Visit site
 > - [x] View source
-> - [ ] Identify tech/CMS
-> - [ ] Test parameters (?id=1, ?page=)
+> - [x] Identify tech/CMS
+> - [x] Test parameters (?id=1, ?page=)
 > - [ ] Analyze error page
 > - [ ] curl -i domain
 >
@@ -37,7 +37,7 @@
 > - [ ] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
-> - [ ] LFI (../../../../etc/passwd)
+> - [x] LFI (../../../../etc/passwd)
 > - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
 > - [ ] Command Injection (; whoami)
 > - [ ] PHP code inclusion

