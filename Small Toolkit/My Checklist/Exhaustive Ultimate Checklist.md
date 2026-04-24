@@ -128,13 +128,13 @@ Brute Forcing
 > - [ ] cat /etc/passwd
 >
 > #### Vulnerability Testing
-> - [ ] ls -la /var/www
+> - [x] ls -la /var/www
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
 >   
 >#### Priv Checks (LINUX)
-> - [ ] sudo -l
+> - [x] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -142,8 +142,8 @@ Brute Forcing
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] crontab -l
+> - [x] cat /etc/crontab
+> - [x] crontab -l
 > 
 >  #### SUID / Capabilities
 > - [ ] find / -perm -4000 2>/dev/null

