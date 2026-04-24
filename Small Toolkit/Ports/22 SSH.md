@@ -29,6 +29,16 @@ copy id_rsa and login SSH and
 
 ---
 
+Look through foreign systems for authorized_keys
+
+Likely file locations
+
+```
+/home/user/.ssh/authorized_keys
+```
+
+---
+
 port forward our connection to the remote host's internal port
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
