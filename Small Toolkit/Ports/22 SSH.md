@@ -11,7 +11,11 @@ const command = `ssh [USER]@${ip} -p [portno]`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```
-chmod 600 id_rsa
+gedit id_rsa
+```
+
+```
+sudo chmod 600 id_rsa
 ```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
@@ -20,12 +24,17 @@ const command = `ssh -i id_rsa [user]@${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+If encrypted with a passphrase,
 
-ssh jan@10.10.35.240
+use ssh2john to convert the key into a crackable hash format and then John the Ripper with the rockyou.txt wordlist. 
 
-ssh jan@10.10.35.240 2121 
+```
+ssh2john id_rsa >> ssh.hash
+```
 
-copy id_rsa and login SSH and
+```
+john --wordlist=/usr/share/wordlists/rockyou.txt ssh.hash
+```
 
 ---
 
@@ -35,6 +44,12 @@ Likely file locations
 
 ```
 /home/user/.ssh/authorized_keys
+```
+
+SSH Private Key
+
+```
+/home/user/.ssh/id_ed25519
 ```
 
 ---
