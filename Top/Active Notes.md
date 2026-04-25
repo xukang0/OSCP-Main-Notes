@@ -1,4 +1,4 @@
-IP::   10.129.244.156
+IP::   IP
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  10.10.17.59
+KALI IP::  KALIIP
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::  cctv.htb
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -48,16 +48,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ## Provided Credentials
 ---
-```
-superadmin | $2y$10$cmytVWFRnt1XfqsItsJRVe/ApxWxcIFQcURnm5N.rhlULwM0jrtbm
-```
 
 ```
-admin | $2y$10$t5z8uIT.n9uCdHCNidcLF.39T1Ui9nrlCkdXrzJMnJgkTiAvRUM6m
-```
 
-```
-mark | opensesame $2y$10$SprZGnazejKcuTv5bKNexXOGLyQaok0hq07LW7AJ/QNqZolbXkFFG
 ```
 
 ```
@@ -67,9 +60,9 @@ mark | opensesame $2y$10$SprZGnazejKcuTv5bKNexXOGLyQaok0hq07LW7AJ/QNqZolbXkFFG
 ---
 ## Software Versions
 
-Apache[2.4.58]
 
-zoneminder v1.37.63
+
+
 
 
 
@@ -79,9 +72,6 @@ zoneminder v1.37.63
 
 ## Open Ports
 ---
-PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.14 (Ubuntu Linux; protocol 2.0)
-80/tcp open  http    Apache httpd 2.4.58
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |

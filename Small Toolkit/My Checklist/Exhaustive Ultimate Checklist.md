@@ -2,13 +2,13 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+- [ ] Quick Scan
+- [ ] Full Port Scan
+- [ ] Service Scan
+- [ ] UDP Scan
 
 ### Post
-- [x] Add discovered hosts to /etc/hosts
+- [ ] Add discovered hosts to /etc/hosts
 
 ---
 ## 2. Foothold
@@ -23,18 +23,18 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [x] Visit site
-> - [x] View source
-> - [x] Identify tech/CMS
+> - [ ] Visit site
+> - [ ] View source
+> - [ ] Identify tech/CMS
 > - [ ] Test parameters (?id=1, ?page=)
 > - [ ] Analyze error page
 > - [ ] curl -i domain
 >
 > #### Brute Force
-> - [x] Directory brute force (common)
-> - [x] Directory brute force (big)
-> - [x] Vhost brute force
-> - [x] Feroxbuster File directories sweep
+> - [ ] Directory brute force (common)
+> - [ ] Directory brute force (big)
+> - [ ] Vhost brute force
+> - [ ] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
@@ -108,7 +108,7 @@ Brute Forcing
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [x] /etc/passwd
+> - [ ] /etc/passwd
 > - [ ] Check internal local ports | ss -tlpn
 > - [ ] Check currently running processes | ps aux
 > - [ ] cat /etc/fstab | grep hidepid
