@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::  cctv.htb
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -60,7 +60,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## Software Versions
 
-
+Apache[2.4.58]
 
 
 
@@ -72,6 +72,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.14 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.58
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
