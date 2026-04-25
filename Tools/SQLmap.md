@@ -1,3 +1,13 @@
+To answer all qns with yes
+```
+--batch
+```
+
+speed
+```
+--batch --threads 10 --level 5 --risk 3 --technique=BEU
+```
+
 ```
 sqlmap -h
 ```

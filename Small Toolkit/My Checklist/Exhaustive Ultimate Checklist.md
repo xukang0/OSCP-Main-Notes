@@ -108,7 +108,7 @@ Brute Forcing
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [ ] /etc/passwd
+> - [x] /etc/passwd
 > - [ ] Check internal local ports | ss -tlpn
 > - [ ] Check currently running processes | ps aux
 > - [ ] cat /etc/fstab | grep hidepid

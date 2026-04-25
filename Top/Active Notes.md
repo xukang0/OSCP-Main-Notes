@@ -48,9 +48,16 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ## Provided Credentials
 ---
-
+```
+superadmin | $2y$10$cmytVWFRnt1XfqsItsJRVe/ApxWxcIFQcURnm5N.rhlULwM0jrtbm
 ```
 
+```
+admin | $2y$10$t5z8uIT.n9uCdHCNidcLF.39T1Ui9nrlCkdXrzJMnJgkTiAvRUM6m
+```
+
+```
+mark | opensesame $2y$10$SprZGnazejKcuTv5bKNexXOGLyQaok0hq07LW7AJ/QNqZolbXkFFG
 ```
 
 ```
@@ -62,7 +69,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 Apache[2.4.58]
 
-
+zoneminder v1.37.63
 
 
 
