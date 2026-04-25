@@ -2,13 +2,13 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+- [ ] Quick Scan
+- [ ] Full Port Scan
+- [ ] Service Scan
+- [ ] UDP Scan
 
 ### Post
-- [x] Add discovered hosts to /etc/hosts
+- [ ] Add discovered hosts to /etc/hosts
 
 ---
 ## 2. Foothold
@@ -23,25 +23,25 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [x] Visit site
-> - [x] View source
-> - [x] Identify tech/CMS
-> - [x] Test parameters (?id=1, ?page=)
+> - [ ] Visit site
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] Test parameters (?id=1, ?page=)
 > - [ ] Analyze error page
 > - [ ] curl -i domain
 >
 > #### Brute Force
-> - [x] Directory brute force (common)
-> - [x] Directory brute force (big)
-> - [x] Vhost brute force
-> - [x] Feroxbuster File directories sweep
+> - [ ] Directory brute force (common)
+> - [ ] Directory brute force (big)
+> - [ ] Vhost brute force
+> - [ ] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
-> - [x] LFI (../../../../etc/passwd)
-> - [x] SQLi (test' or 1=1;-- -) [[SQL Injection]]
-> - [x] Command Injection (; whoami)
-> - [x] PHP code inclusion
-> - [x] File upload (if available)
+> - [ ] LFI (../../../../etc/passwd)
+> - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
+> - [ ] Command Injection (; whoami)
+> - [ ] PHP code inclusion
+> - [ ] File upload (if available)
 >
 > #### Hidden Content
 > - [ ] Check JS files
@@ -128,13 +128,13 @@ Brute Forcing
 > - [ ] cat /etc/passwd
 >
 > #### Vulnerability Testing
-> - [x] ls -la /var/www
+> - [ ] ls -la /var/www
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
 >   
 >#### Priv Checks (LINUX)
-> - [x] sudo -l
+> - [ ] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -142,8 +142,8 @@ Brute Forcing
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] crontab -l
+> - [ ] cat /etc/crontab
+> - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
 > - [ ] find / -perm -4000 2>/dev/null
