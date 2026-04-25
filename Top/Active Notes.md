@@ -1,4 +1,4 @@
-IP::   IP
+IP::   10.129.244.106
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP::  10.10.17.59
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   wingdata.htb
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -60,7 +60,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## CMS
 
-
+FTP server software powered by Wing FTP Server v7.4.3
 
 
 
@@ -72,6 +72,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
+22/tcp open  ssh     OpenSSH 9.2p1 Debian 2+deb12u7 (protocol 2.0)
+80/tcp open  http    Apache httpd 2.4.66
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
