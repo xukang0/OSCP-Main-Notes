@@ -1,5 +1,9 @@
 Look at the prefix manually.
 
+```
+hash-identifier
+```
+
 Common ones to memorize:
 
 - `$1$` → MD5 (crypt)
