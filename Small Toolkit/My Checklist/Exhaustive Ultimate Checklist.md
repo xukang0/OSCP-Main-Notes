@@ -2,7 +2,7 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [ ] Quick Scan
+- [x] Quick Scan
 - [ ] Full Port Scan
 - [ ] Service Scan
 - [ ] UDP Scan
