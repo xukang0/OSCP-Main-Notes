@@ -27,12 +27,12 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   kobold.htb
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `http://${discoveredDomain}/`;
+const command = `https://${discoveredDomain}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
