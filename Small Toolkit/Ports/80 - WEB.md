@@ -39,7 +39,7 @@ Directories
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `feroxbuster -u http://${discoveredDomain} -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 80 -d 2`;
+const command = `feroxbuster -u http://${discoveredDomain} -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 80`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
