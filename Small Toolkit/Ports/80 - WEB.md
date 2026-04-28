@@ -77,6 +77,16 @@ const command = `sudo gobuster vhost -u http://${discoveredDomain}/ -w /usr/shar
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `feroxbuster -u http://${discoveredDomain} \
+-w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt \
+-H "Host: FUZZ.${discoveredDomain}"`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 Add newfound vhost to /etc/hosts
 ```dataviewjs
