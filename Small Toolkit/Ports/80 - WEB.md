@@ -39,15 +39,7 @@ Directories
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `gobuster dir --url http://${discoveredDomain}/ --wordlist /usr/share/wordlists/dirb/big.txt`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
-const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
-
-const command = `gobuster dir --url http://${discoveredDomain}/ --wordlist /usr/share/wordlists/dirb/common.txt`;
+const command = `feroxbuster -u http://${discoveredDomain} -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 80 -d 2`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

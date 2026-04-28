@@ -31,8 +31,7 @@
 > - [ ] curl -i domain
 >
 > #### Brute Force
-> - [ ] Directory brute force (common)
-> - [ ] Directory brute force (big)
+> - [ ] Feroxbuster brute force (medium)
 > - [ ] Vhost brute force
 > - [ ] Feroxbuster File directories sweep
 >

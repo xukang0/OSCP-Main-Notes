@@ -1,5 +1,5 @@
 ```
-
+feroxbuster -u http://192.168.187.142 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,html,txt,bak,zip -t 80 -d 2
 ```
 
 ```

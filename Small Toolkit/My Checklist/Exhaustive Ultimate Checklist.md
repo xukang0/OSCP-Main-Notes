@@ -4,7 +4,7 @@
 ### Nmap
 - [x] Quick Scan
 - [x] Full Port Scan
-- [ ] Service Scan
+- [x] Service Scan
 - [x] UDP Scan
 
 ### Post
@@ -23,18 +23,18 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [ ] Visit site
-> - [ ] View source
-> - [ ] Identify tech/CMS
+> - [x] Visit site
+> - [x] View source
+> - [x] Identify tech/CMS
 > - [ ] Test parameters (?id=1, ?page=)
 > - [ ] Analyze error page
-> - [ ] curl -i domain
+> - [x] curl -i domain
 >
 > #### Brute Force
-> - [ ] Directory brute force (common)
-> - [ ] Directory brute force (big)
-> - [ ] Vhost brute force
-> - [ ] Feroxbuster File directories sweep
+> - [x] Directory brute force (common)
+> - [x] Directory brute force (big)
+> - [x] Vhost brute force
+> - [x] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
