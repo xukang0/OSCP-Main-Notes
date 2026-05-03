@@ -107,10 +107,11 @@ Brute Forcing
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [x] /etc/passwd
-> - [x] Check internal local ports | ss -tlpn
-> - [x] Check currently running processes | ps aux
-> - [x] cat /etc/fstab | grep hidepid
+> - [ ] env
+> - [ ] /etc/passwd
+> - [ ] Check internal local ports | ss -tlpn
+> - [ ] Check currently running processes | ps aux
+> - [ ] cat /etc/fstab | grep hidepid
 > 
 > - [ ] Look through SSH History
 
@@ -119,39 +120,40 @@ Brute Forcing
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
-> - [x] groups
-> - [x] uname -a
+> - [ ] whoami
+> - [ ] id
+> - [ ] groups
+> - [ ] uname -a
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
-> - [x] docker ps
+> - [ ] cat /etc/passwd
+> - [ ] docker ps
 >
 > #### Vulnerability Testing
-> - [x] ls -la /var/www
+> - [ ] ls -la /var/www
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
 >   
 > #### PE Vectors (Ruling Out)
 > - [ ] Docker
+> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
 > - [ ] sudo -l
-> - [x] strings /usr/bin/usage_management
+> - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] crontab -l
+> - [ ] cat /etc/crontab
+> - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [x] find / -perm -4000 2>/dev/null
-> - [x] getcap -r / 2>/dev/null
+> - [ ] find / -perm -4000 2>/dev/null
+> - [ ] getcap -r / 2>/dev/null
 > 
 >  #### LinPEAS
 > - [ ] Run LinPEAS
