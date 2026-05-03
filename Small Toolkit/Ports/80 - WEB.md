@@ -92,6 +92,18 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
 
+if API endpoint found, FUZZ with FFUF
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `ffuf -w /usr/share/SecLists/Discovery/Web-Content/api/api-endpoints.txt -u http://${discoveredDomain}/FUZZ -ac`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
+
 If admin login page is found,
 
 Google for default credentials

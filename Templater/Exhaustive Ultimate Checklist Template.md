@@ -26,7 +26,7 @@
 > - [ ] Visit site
 > - [ ] View source
 > - [ ] Identify tech/CMS
-> - [ ] Test parameters (?id=1, ?page=)
+> - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
 > - [ ] curl -i domain
 >

