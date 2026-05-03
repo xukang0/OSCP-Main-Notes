@@ -8,7 +8,7 @@
 - [x] UDP Scan
 
 ### Post
-- [ ] Add discovered hosts to /etc/hosts
+- [x] Add discovered hosts to /etc/hosts
 
 ---
 ## 2. Foothold
@@ -28,13 +28,12 @@
 > - [x] Identify tech/CMS
 > - [ ] Test parameters (?id=1, ?page=)
 > - [ ] Analyze error page
-> - [x] curl -i domain
+> - [ ] curl -i domain
 >
 > #### Brute Force
-> - [x] Directory brute force (common)
-> - [x] Directory brute force (big)
-> - [x] Vhost brute force
-> - [x] Feroxbuster File directories sweep
+> - [ ] Feroxbuster brute force (medium)
+> - [ ] Vhost brute force
+> - [ ] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
@@ -122,10 +121,12 @@ Brute Forcing
 > #### Basic Enumeration
 > - [ ] whoami
 > - [ ] id
+> - [ ] groups
 > - [ ] uname -a
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
+> - [ ] docker ps
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -133,6 +134,9 @@ Brute Forcing
 >   - [ ] .bash_history
 >   - [ ] interesting files
 >   
+> #### PE Vectors (Ruling Out)
+> - [ ] Docker
+> 
 >#### Priv Checks (LINUX)
 > - [ ] sudo -l
 > - [ ] strings /usr/bin/usage_management

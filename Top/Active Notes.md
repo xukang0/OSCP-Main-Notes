@@ -1,4 +1,4 @@
-IP::   10.129.245.50
+IP::   10.129.34.95
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   mcp.kobold.htb
+Discovered Web Domain::   staging.silentium.htb
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -72,26 +72,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
-22/tcp  open  ssh      OpenSSH 9.6p1 Ubuntu 3ubuntu13.15 (Ubuntu Linux; protocol 2.0)
-80/tcp  open  http     nginx 1.24.0 (Ubuntu)
-443/tcp open  ssl/http nginx 1.24.0 (Ubuntu)
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.15 (Ubuntu Linux; protocol 2.0)
+80/tcp open  http    nginx 1.24.0 (Ubuntu)
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
 |      |         |       |
-
-ss -tlpn
-State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                         
-LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*                                   
-LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*                                   
-LISTEN 0      4096       127.0.0.1:39247      0.0.0.0:*                                   
-LISTEN 0      511        127.0.0.1:6274       0.0.0.0:*    users:(("node",pid=1642,fd=33))
-LISTEN 0      511          0.0.0.0:80         0.0.0.0:*                                   
-LISTEN 0      4096       127.0.0.1:8080       0.0.0.0:*                                   
-LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*                                   
-LISTEN 0      511          0.0.0.0:443        0.0.0.0:*                                   
-LISTEN 0      4096               *:3552             *:*                                   
-LISTEN 0      4096            [::]:22            [::]:*
 
 ---
 
