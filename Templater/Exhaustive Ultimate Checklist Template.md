@@ -121,10 +121,12 @@ Brute Forcing
 > #### Basic Enumeration
 > - [ ] whoami
 > - [ ] id
+> - [ ] groups
 > - [ ] uname -a
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
+> - [ ] docker ps
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -132,6 +134,9 @@ Brute Forcing
 >   - [ ] .bash_history
 >   - [ ] interesting files
 >   
+> #### PE Vectors (Ruling Out)
+> - [ ] Docker
+> 
 >#### Priv Checks (LINUX)
 > - [ ] sudo -l
 > - [ ] strings /usr/bin/usage_management
