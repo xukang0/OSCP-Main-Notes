@@ -123,6 +123,7 @@ Brute Forcing
 > - [ ] whoami
 > - [ ] id
 > - [ ] groups
+> - [ ] ip a
 > - [ ] uname -a
 > 
 > #### Easy wins

