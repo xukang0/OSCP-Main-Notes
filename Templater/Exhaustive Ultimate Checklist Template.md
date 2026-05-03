@@ -137,6 +137,7 @@ Brute Forcing
 >   
 > #### PE Vectors (Ruling Out)
 > - [ ] Docker
+> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
 > - [ ] sudo -l
