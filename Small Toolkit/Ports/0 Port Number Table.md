@@ -50,6 +50,7 @@
 | 2083      | TCP      | cPanel SSL                                           | Secure hosting control panel                                                         |
 | 2095      | TCP      | Webmail                                              | Hosting email access                                                                 |
 | 2096      | TCP      | Webmail SSL                                          | Secure webmail                                                                       |
+| 2375      |          | Docker API                                           |                                                                                      |
 | 3000      | TCP      | (Node.js Express framework)[[GOGS Port 3001 3000]]   | Root Potential \| ss -tlpn                                                           |
 | 3001      | TCP      | (Gogs)[[GOGS Port 3001 3000]]                        | Root potential \ ss -tlpn                                                            |
 | 3128      | TCP      | Squid Proxy                                          | HTTP proxy; pivoting possible                                                        |
