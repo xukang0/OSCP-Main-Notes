@@ -118,6 +118,7 @@ Brute Forcing
 > - [ ] Check internal local ports | ss -tlpn
 > - [ ] Check currently running processes | ps aux
 > - [ ] cat /etc/fstab | grep hidepid
+> - [ ] enumerate configuration files for passwords
 > 
 > - [ ] Look through SSH History
 
