@@ -2,10 +2,10 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+- [ ] Quick Scan
+- [ ] Full Port Scan
+- [ ] Service Scan
+- [ ] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -23,17 +23,17 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [x] Visit site
-> - [x] View source
-> - [x] Identify tech/CMS
+> - [ ] Visit site
+> - [ ] View source
+> - [ ] Identify tech/CMS
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
 > - [ ] curl -i domain
 >
 > #### Brute Force
-> - [x] Feroxbuster brute force (medium)
-> - [x] Vhost brute force
-> - [x] Feroxbuster File directories sweep
+> - [ ] Feroxbuster brute force (medium)
+> - [ ] Vhost brute force
+> - [ ] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
@@ -78,6 +78,12 @@
 > - [ ] Search for creds
 > - [ ] Check commit history
 
+#### If Found: .Random Hash
+> [!tip]- Try
+> - [ ] SSH as is
+> - [ ] CyberChef
+> - [ ] Hashcat
+
 #### If Found: Wordpress [[Wordpress Scan]]
 > [!tip]- Wordpress
 > - [ ] Default creds
@@ -107,28 +113,28 @@ Brute Forcing
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [x] env
-> - [x] /etc/passwd
-> - [x] Check internal local ports | ss -tlpn
-> - [x] Check currently running processes | ps aux
-> - [x] cat /etc/fstab | grep hidepid
+> - [ ] env
+> - [ ] /etc/passwd
+> - [ ] Check internal local ports | ss -tlpn
+> - [ ] Check currently running processes | ps aux
+> - [ ] cat /etc/fstab | grep hidepid
 > 
-> - [x] Look through SSH History
+> - [ ] Look through SSH History
 
 ---
 ## 4. Privilege Escalation
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
-> - [x] groups
-> - [x] ip a
-> - [x] uname -a
+> - [ ] whoami
+> - [ ] id
+> - [ ] groups
+> - [ ] ip a
+> - [ ] uname -a
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
-> - [x] docker ps
+> - [ ] cat /etc/passwd
+> - [ ] docker ps
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -137,26 +143,29 @@ Brute Forcing
 >   - [ ] interesting files
 >   
 > #### PE Vectors (Ruling Out)
-> - [x] Docker
+> - [ ] Docker
 > 	- [ ] cat /etc/resolv.conf
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [x] sudo -l
-> - [x] strings /usr/bin/usage_management
+> - [ ] sudo -l
+> - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] crontab -l
+> - [ ] cat /etc/crontab
+> - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [x] find / -perm -4000 2>/dev/null
-> - [x] getcap -r / 2>/dev/null
+> - [ ] find / -perm -4000 2>/dev/null
+> - [ ] getcap -r / 2>/dev/null
 > 
+>  #### Special Permissions
+>  - [ ] ls -la /usr/bin/
+>
 >  #### LinPEAS
 > - [ ] Run LinPEAS
 > - [ ] Review yellow findings

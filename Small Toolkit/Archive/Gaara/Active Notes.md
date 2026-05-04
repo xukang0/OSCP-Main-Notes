@@ -1,4 +1,4 @@
-IP::   IP
+IP::   192.168.105.142
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP::  192.168.45.243
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   192.168.105.142
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -50,7 +50,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-
+gaara:iloveyou2
 ```
 
 ```
@@ -61,10 +61,12 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Software Versions
 
 
+/Temari
+/Kazekage
+/iamGaara
 
 
-
-
+f1MgN9mTf9SNbzRygcU
 
 ---
 
@@ -72,11 +74,22 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
+22,80
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
 |      |         |       |
-
+PORT      STATE         SERVICE
+17/udp    open|filtered qotd
+19/udp    open|filtered chargen
+67/udp    open|filtered dhcps
+162/udp   open|filtered snmptrap
+515/udp   open|filtered printer
+1701/udp  open|filtered L2TP
+5060/udp  open|filtered sip
+49181/udp open|filtered unknown
+49188/udp open|filtered unknown
+49193/udp open|filtered unknown
 ---
 
 ## Discovered Subdomains
