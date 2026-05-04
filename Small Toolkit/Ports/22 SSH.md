@@ -106,6 +106,18 @@ medusa -U /home/satwossh/username-anarchy/thomas_smith_usernames.txt \
 
 ```
 
+
+hydra
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `hydra -l [user] -P /usr/share/wordlists/rockyou.txt ssh://${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+
 ---
 
 [[Reaching internal hidden SSH ports]]

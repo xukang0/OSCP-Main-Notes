@@ -31,8 +31,8 @@
 > - [ ] curl -i domain
 >
 > #### Brute Force
-> - [ ] Feroxbuster brute force (medium)
-> - [ ] Vhost brute force
+> - [x] Feroxbuster brute force (medium)
+> - [x] Vhost brute force
 > - [x] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
@@ -107,28 +107,28 @@ Brute Forcing
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [ ] env
-> - [ ] /etc/passwd
-> - [ ] Check internal local ports | ss -tlpn
-> - [ ] Check currently running processes | ps aux
-> - [ ] cat /etc/fstab | grep hidepid
+> - [x] env
+> - [x] /etc/passwd
+> - [x] Check internal local ports | ss -tlpn
+> - [x] Check currently running processes | ps aux
+> - [x] cat /etc/fstab | grep hidepid
 > 
-> - [ ] Look through SSH History
+> - [x] Look through SSH History
 
 ---
 ## 4. Privilege Escalation
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] groups
-> - [ ] ip a
-> - [ ] uname -a
+> - [x] whoami
+> - [x] id
+> - [x] groups
+> - [x] ip a
+> - [x] uname -a
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
-> - [ ] docker ps
+> - [x] cat /etc/passwd
+> - [x] docker ps
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -137,25 +137,25 @@ Brute Forcing
 >   - [ ] interesting files
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] Docker
+> - [x] Docker
 > 	- [ ] cat /etc/resolv.conf
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [ ] sudo -l
-> - [ ] strings /usr/bin/usage_management
+> - [x] sudo -l
+> - [x] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] crontab -l
+> - [x] cat /etc/crontab
+> - [x] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [ ] find / -perm -4000 2>/dev/null
-> - [ ] getcap -r / 2>/dev/null
+> - [x] find / -perm -4000 2>/dev/null
+> - [x] getcap -r / 2>/dev/null
 > 
 >  #### LinPEAS
 > - [ ] Run LinPEAS

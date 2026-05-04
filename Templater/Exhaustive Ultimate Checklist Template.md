@@ -163,6 +163,9 @@ Brute Forcing
 > - [ ] find / -perm -4000 2>/dev/null
 > - [ ] getcap -r / 2>/dev/null
 > 
+>  #### Special Permissions
+>  - [ ] ls -la /usr/bin/
+>
 >  #### LinPEAS
 > - [ ] Run LinPEAS
 > - [ ] Review yellow findings
