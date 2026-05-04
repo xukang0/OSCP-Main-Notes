@@ -23,9 +23,9 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [ ] Visit site
-> - [ ] View source
-> - [ ] Identify tech/CMS
+> - [x] Visit site
+> - [x] View source
+> - [x] Identify tech/CMS
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
 > - [ ] curl -i domain
@@ -33,7 +33,7 @@
 > #### Brute Force
 > - [ ] Feroxbuster brute force (medium)
 > - [ ] Vhost brute force
-> - [ ] Feroxbuster File directories sweep
+> - [x] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
