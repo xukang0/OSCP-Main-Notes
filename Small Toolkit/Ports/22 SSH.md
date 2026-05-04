@@ -105,3 +105,7 @@ medusa -U /home/satwossh/username-anarchy/thomas_smith_usernames.txt \
        -n 21
 
 ```
+
+---
+
+[[Reaching internal hidden SSH ports]]
