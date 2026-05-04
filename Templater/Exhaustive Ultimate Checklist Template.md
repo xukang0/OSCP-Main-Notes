@@ -78,6 +78,12 @@
 > - [ ] Search for creds
 > - [ ] Check commit history
 
+#### If Found: .Random Hash
+> [!tip]- Try
+> - [ ] SSH as is
+> - [ ] CyberChef
+> - [ ] Hashcat
+
 #### If Found: Wordpress [[Wordpress Scan]]
 > [!tip]- Wordpress
 > - [ ] Default creds
