@@ -2,13 +2,13 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+- [ ] Quick Scan
+- [ ] Full Port Scan
+- [ ] Service Scan
+- [ ] UDP Scan
 
 ### Post
-- [x] Add discovered hosts to /etc/hosts
+- [ ] Add discovered hosts to /etc/hosts
 
 ---
 ## 2. Foothold
@@ -23,15 +23,16 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [x] Visit site
-> - [x] View source
-> - [x] Identify tech/CMS
+> - [ ] Visit site
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] whatweb
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
-> - [x] curl -i domain
+> - [ ] curl -i domain
 >
 > #### Brute Force
-> - [x] Feroxbuster brute force (medium)
+> - [ ] Feroxbuster brute force (medium)
 > - [ ] Vhost brute force
 > - [ ] Feroxbuster File directories sweep
 >
@@ -51,10 +52,10 @@
 > [!tip]- Admin Page
 > 
 > > #### Admin Login
-> - [x] Discover software version
-> - [x] Research about software
-> - [x] Search and Try Default credentials
-> - [x] Research CVEs related to version
+> - [ ] Discover software version
+> - [ ] Research about software
+> - [ ] Search and Try Default credentials
+> - [ ] Research CVEs related to version
 >
 > #### Registration
 > - [ ] Register an account
@@ -113,11 +114,11 @@ Brute Forcing
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [x] env
-> - [x] /etc/passwd
-> - [x] Check internal local ports | ss -tlpn
-> - [x] Check currently running processes | ps aux
-> - [x] cat /etc/fstab | grep hidepid
+> - [ ] env
+> - [ ] /etc/passwd
+> - [ ] Check internal local ports | ss -tlpn
+> - [ ] Check currently running processes | ps aux
+> - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > 
 > - [ ] Look through SSH History
@@ -127,15 +128,15 @@ Brute Forcing
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
-> - [x] groups
-> - [x] ip a
-> - [x] uname -a
+> - [ ] whoami
+> - [ ] id
+> - [ ] groups
+> - [ ] ip a
+> - [ ] uname -a
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
-> - [x] docker ps
+> - [ ] cat /etc/passwd
+> - [ ] docker ps
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -144,13 +145,13 @@ Brute Forcing
 >   - [ ] interesting files
 >   
 > #### PE Vectors (Ruling Out)
-> - [x] Docker
+> - [ ] Docker
 > 	- [ ] cat /etc/resolv.conf
-> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [x] sudo -l
-> - [x] strings /usr/bin/usage_management
+> - [ ] sudo -l
+> - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
@@ -158,14 +159,14 @@ Brute Forcing
 >
 > #### Scheduled Tasks
 > - [ ] cat /etc/crontab
-> - [x] crontab -l
+> - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [x] find / -perm -4000 2>/dev/null
-> - [x] getcap -r / 2>/dev/null
+> - [ ] find / -perm -4000 2>/dev/null
+> - [ ] getcap -r / 2>/dev/null
 > 
 >  #### Special Permissions
->  - [x] ls -la /usr/bin/
+>  - [ ] ls -la /usr/bin/
 >
 >  #### LinPEAS
 > - [ ] Run LinPEAS
