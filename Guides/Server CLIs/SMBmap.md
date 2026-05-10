@@ -1,6 +1,6 @@
 Recursively list out all items in a share (after smbclient anonymous share listing)
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `smbmap -H ${ip} -r (sharename)`;
 

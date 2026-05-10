@@ -1,21 +1,21 @@
 ```
-
+crackmapexec smb 192.168.113.42 -u Ph33r -p ifyoudontpwnmeuran00b --shares
 ```
 
 ```
-
+smbclient //192.168.113.42/ADMIN$ -U 'Ph33r%ifyoudontpwnmeuran00b'
 ```
 
 ```
-
+smbclient //192.168.113.42/ADMIN$ -U Ph33r ifyoudontpwnmeuran00b
 ```
 
 ```
-
+enum4linux 192.168.113.42 -u Ph33r -p ifyoudontpwnmeuran00b
 ```
 
 ```
-
+enum4linux-ng 192.168.113.42 -u "Ph33r" -p "ifyoudontpwnmeuran00b"
 ```
 
 ```

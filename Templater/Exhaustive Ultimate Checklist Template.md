@@ -92,21 +92,28 @@
 
 
 ---
-### 80 Web
 
-Web Testing
-- [ ] Visit web address
-- [ ] Try default credentials
-- [ ] Test for php execution
-- [ ] Test for Server Side Request Forgery (SSRF)
-- [ ] If .git, GIT Dump
-
-Brute Forcing
-- [ ] Directory brute force (Big.txt)
-- [ ] Directory brute force (Common.txt)
-- [ ] Feroxbuster sweep through file directories
-- [ ] Curl -i newfound directory
-- [ ] Vhost brute force
+### 🌐 SMB (139/445)
+> [!note]- SMB Checklist
+> #### Enumeration
+> - [ ] enum4linux [IP]
+>
+> #### Brute Force
+> - [ ] Feroxbuster brute force (medium)
+> - [ ] Vhost brute force
+> - [ ] Feroxbuster File directories sweep
+>
+> #### Vulnerability Testing
+> - [ ] LFI (../../../../etc/passwd)
+> - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
+> - [ ] Command Injection (; whoami)
+> - [ ] PHP code inclusion
+> - [ ] File upload (if available)
+>
+> #### Hidden Content
+> - [ ] Check JS files
+> - [ ] Check comments
+> - [ ] Check backups (.bak, .zip)
 
 
 ---

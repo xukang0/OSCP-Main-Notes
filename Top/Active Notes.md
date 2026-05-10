@@ -1,4 +1,4 @@
-IP::   IP
+IP::   192.168.113.42
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP::  192.168.45.173
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   192.168.113.42
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -49,9 +49,10 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
+```Ph33r
+ifyoudontpwnmeuran00b
 ```
-
-```
+Valid for Crackmapexec login
 
 ```
 
@@ -72,6 +73,18 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
+PORT    STATE SERVICE     VERSION
+22/tcp  open  ssh         OpenSSH 3.8.1p1 Debian 8.sarge.6 (protocol 2.0)
+25/tcp  open  smtp        Sendmail 8.13.4/8.13.4/Debian-3sarge3
+80/tcp  open  http        Apache httpd 1.3.33 ((Debian GNU/Linux))
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+199/tcp open  smux        Linux SNMP multiplexer
+445/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+60000/TCP ssh
+
+PORT      STATE         SERVICE
+137/udp   open          netbios-ns
+161/udp   open          snmp
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
