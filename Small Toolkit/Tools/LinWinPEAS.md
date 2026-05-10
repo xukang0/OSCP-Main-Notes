@@ -5,6 +5,10 @@ wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
 ```
 
 ```
+cd ~/Desktop/Tools
+```
+
+```
 python3 -m http.server 8888
 ```
 
