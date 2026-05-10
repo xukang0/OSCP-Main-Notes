@@ -21,8 +21,8 @@
 | 138       | UDP      | NetBIOS Datagram                                     | Windows LAN communication                                                            |
 | 139       | TCP      | NetBIOS Session [[139 445 SMB\|SMB]]                 | SMB over NetBIOS; OSCP: Windows share enumeration                                    |
 | 143       | TCP      | IMAP                                                 | Email retrieval                                                                      |
-| 161       | UDP      | [[SNMP Check\|SNMP]]                                 | Network management; OSCP: community string enumeration                               |
-| 162       | UDP      | SNMP Trap                                            | Alerts                                                                               |
+| 161       | UDP      | [[161 SNMP]]                                         | Network management; OSCP: community string enumeration                               |
+| 162       | UDP      | [[161 SNMP]] Trap                                    | Alerts                                                                               |
 | 179       | TCP      | BGP                                                  | Border Gateway Protocol (rare for OSCP labs)                                         |
 | 389       | TCP/UDP  | [[Synced OSCP Notes/Small Toolkit/Ports/LDAP\|LDAP]] | Directory services; OSCP: user enumeration                                           |
 | 443       | TCP      | HTTPS                                                | Secure web; OSCP: web app enumeration, SSL/TLS tests                                 |
@@ -69,4 +69,6 @@
 | 8443      | TCP      | HTTPS Alternate                                      | Web service                                                                          |
 | 9000      | TCP      | Webmin                                               | Admin panel; OSCP: misconfiguration enumeration                                      |
 | 9090      | TCP      | HTTP Alternate                                       | Web service                                                                          |
+| 10161     | TCP      | [[161 SNMP\|SNMP]]                                   |                                                                                      |
+| 10162     | TCP      | [[161 SNMP\|SNMP]]                                   |                                                                                      |
 | 33060     | TCP      | [[3306 MySQL\|MySQL / MariaDB]]                      | Database enumeration/exploitation                                                    |

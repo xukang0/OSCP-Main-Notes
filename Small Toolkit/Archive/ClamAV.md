@@ -125,3 +125,10 @@ PORT      STATE         SERVICE
 ```
 
 ```
+
+use SNMP Check to realize ClamAV-milter is running, use 
+https://github.com/strikoder/sendmail-clamav-exploit-CVE-2007-4560
+
+to achieve root.
+
+Read proof.txt
