@@ -23,16 +23,16 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [x] Visit site
-> - [x] View source
-> - [x] Identify tech/CMS
-> - [x] whatweb
+> - [ ] Visit site
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] whatweb
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
 > - [ ] curl -i domain
 >
 > #### Brute Force
-> - [x] Feroxbuster brute force (medium)
+> - [ ] Feroxbuster brute force (medium)
 > - [ ] Vhost brute force
 > - [ ] Feroxbuster File directories sweep
 >
@@ -92,21 +92,22 @@
 
 
 ---
-### 80 Web
 
-Web Testing
-- [ ] Visit web address
-- [ ] Try default credentials
-- [ ] Test for php execution
-- [ ] Test for Server Side Request Forgery (SSRF)
-- [ ] If .git, GIT Dump
+### 🌐 SNMP (161/162/10161/10162)
+> [!note]- SNMP Checklist
+> #### Enumeration
+> - [ ] snmpbulkwalk [IP]
+> - [ ] snmp-check
+>
 
-Brute Forcing
-- [ ] Directory brute force (Big.txt)
-- [ ] Directory brute force (Common.txt)
-- [ ] Feroxbuster sweep through file directories
-- [ ] Curl -i newfound directory
-- [ ] Vhost brute force
+
+---
+
+### 🌐 SMB (139/445)
+> [!note]- SMB Checklist
+> #### Enumeration
+> - [ ] enum4linux [IP]
+>
 
 
 ---

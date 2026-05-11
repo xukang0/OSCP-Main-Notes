@@ -1,4 +1,4 @@
-IP::   192.168.113.42
+IP::   192.168.113.98
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  192.168.45.173
+KALI IP::  192.168.45.198
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   192.168.113.42
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -49,10 +49,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Provided Credentials
 ---
 
-```Ph33r
-ifyoudontpwnmeuran00b
 ```
-Valid for Crackmapexec login
+
+```
 
 ```
 
@@ -62,8 +61,7 @@ Valid for Crackmapexec login
 ## Software Versions
 
 
-  3775                  runnable              clamd                 /usr/local/sbin/clamd                      
-  3781                  runnable              clamav-milter         /usr/local/sbin/clamav-milter  --black-hole-mode -l -o -q /var/run/clamav/clamav-milter.ctl
+
 
 
 
@@ -74,18 +72,17 @@ Valid for Crackmapexec login
 
 ## Open Ports
 ---
-PORT    STATE SERVICE     VERSION
-22/tcp  open  ssh         OpenSSH 3.8.1p1 Debian 8.sarge.6 (protocol 2.0)
-25/tcp  open  smtp        Sendmail 8.13.4/8.13.4/Debian-3sarge3
-80/tcp  open  http        Apache httpd 1.3.33 ((Debian GNU/Linux))
-139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
-199/tcp open  smux        Linux SNMP multiplexer
-445/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
-60000/TCP ssh
-
-PORT      STATE         SERVICE
-137/udp   open          netbios-ns
-161/udp   open          snmp
+PORT     STATE SERVICE     VERSION
+22/tcp   open  ssh         OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+631/tcp  open  ipp         CUPS 2.2
+2181/tcp  open  zookeeper   Zookeeper 3.4.6-1569965 (Built on 02/20/2014)
+2222/tcp open  ssh         OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+8080/tcp open  http        Jetty 1.0
+8081/tcp open  http        nginx 1.14.2
+http://192.168.113.98:8080/exhibitor/v1/ui/index.html
+39605/tcp open  java-rmi    Java RMI
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
