@@ -144,6 +144,9 @@
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
+> 
+> #### Password supersearch
+> - [ ] grep -Ff grepcredwords.txt
 >   
 > #### PE Vectors (Ruling Out)
 > - [ ] Docker

@@ -2,10 +2,10 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+- [ ] Quick Scan
+- [ ] Full Port Scan
+- [ ] Service Scan
+- [ ] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -118,7 +118,7 @@
 > - [ ] env
 > - [ ] /etc/passwd
 > - [ ] Check internal local ports | ss -tlpn
-> - [ ] Check currently running processes | ps aux
+> - [ ] Check currently running processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > 
@@ -129,38 +129,41 @@
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
-> - [x] groups
-> - [x] ip a
-> - [x] uname -a
+> - [ ] whoami
+> - [ ] id
+> - [ ] groups
+> - [ ] ip a
+> - [ ] uname -a
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
-> - [x] docker ps
+> - [ ] cat /etc/passwd
+> - [ ] docker ps
 >
 > #### Vulnerability Testing
-> - [x] ls -la /var/www
+> - [ ] ls -la /var/www
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
+> 
+> #### Password supersearch
+> - [ ] grep -Ff grepcredwords.txt
 >   
 > #### PE Vectors (Ruling Out)
-> - [x] Docker
+> - [ ] Docker
 > 	- [ ] cat /etc/resolv.conf
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [x] sudo -l
-> - [x] strings /usr/bin/usage_management
+> - [ ] sudo -l
+> - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] crontab -l
+> - [ ] cat /etc/crontab
+> - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
 > - [ ] find / -perm -4000 2>/dev/null
