@@ -146,7 +146,7 @@
 >   - [ ] interesting files
 > 
 > #### Password supersearch
-> - [ ] grep -Ff grepcredwords.txt
+> - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
 > - [ ] Docker

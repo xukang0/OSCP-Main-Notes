@@ -12,6 +12,9 @@ const command = `wget http://${KaliIP}:8080/grepcredwords.txt`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+```
+grep -Ff grepcredwords.txt -C 2
+```
 
 Edit grepcredwords.txt
 ```
