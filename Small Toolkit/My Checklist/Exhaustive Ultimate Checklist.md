@@ -2,10 +2,10 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [ ] Quick Scan
-- [ ] Full Port Scan
-- [ ] Service Scan
-- [ ] UDP Scan
+- [x] Quick Scan
+- [x] Full Port Scan
+- [x] Service Scan
+- [x] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -23,18 +23,18 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [ ] Visit site
-> - [ ] View source
-> - [ ] Identify tech/CMS
-> - [ ] whatweb
+> - [x] Visit site
+> - [x] View source
+> - [x] Identify tech/CMS
+> - [x] whatweb
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
-> - [ ] curl -i domain
+> - [x] curl -i domain
 >
 > #### Brute Force
-> - [ ] Feroxbuster brute force (medium)
-> - [ ] Vhost brute force
-> - [ ] Feroxbuster File directories sweep
+> - [x] Feroxbuster brute force (medium)
+> - [x] Vhost brute force
+> - [x] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)

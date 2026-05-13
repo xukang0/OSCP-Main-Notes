@@ -1,4 +1,4 @@
-IP::   IP
+IP::   192.168.217.39
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP::  192.168.45.226
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::  192.168.217.39
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -60,9 +60,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## Software Versions
 
-
-
-
+http://192.168.217.39:80/ [200 OK] Apache[2.2.4], CS-Cart, Cookies[cart_languageC,csid,secondary_currencyC], Country[RESERVED][ZZ], HTTPServer[Ubuntu Linux][Apache/2.2.4 (Ubuntu) PHP/5.2.3-1ubuntu6], IP[192.168.217.39], Meta-Author[CS-Cart.com], PHP[5.2.3-1ubuntu6], PasswordField[password], PoweredBy[the], Script[javascript], Title[CS-Cart. Powerful PHP shopping cart software], X-Powered-By[PHP/5.2.3-1ubuntu6] 
 
 
 
@@ -72,6 +70,17 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
+PORT    STATE SERVICE     VERSION
+22/tcp  open  ssh         OpenSSH 4.6p1 Debian 5build1 (protocol 2.0)
+80/tcp  open  http        Apache httpd 2.2.4 ((Ubuntu) PHP/5.2.3-1ubuntu6)
+110/tcp open  pop3        Dovecot pop3d
+139/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: MSHOME)
+143/tcp open  imap        Dovecot imapd
+445/tcp open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: MSHOME)
+993/tcp open  ssl/imap    Dovecot imapd
+995/tcp open  ssl/pop3    Dovecot pop3d
+
+137/udp   open          netbios-ns
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
