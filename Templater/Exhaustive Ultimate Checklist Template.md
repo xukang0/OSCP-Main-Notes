@@ -118,7 +118,7 @@
 > - [ ] env
 > - [ ] /etc/passwd
 > - [ ] Check internal local ports | ss -tlpn
-> - [ ] Check currently running processes | ps aux
+> - [ ] Check currently running processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > 
