@@ -2,10 +2,10 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+- [ ] Quick Scan
+- [ ] Full Port Scan
+- [ ] Service Scan
+- [ ] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -23,18 +23,18 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [x] Visit site
-> - [x] View source
-> - [x] Identify tech/CMS
-> - [x] whatweb
+> - [ ] Visit site
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] whatweb
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
-> - [x] curl -i domain
+> - [ ] curl -i domain
 >
 > #### Brute Force
-> - [x] Feroxbuster brute force (medium)
-> - [x] Vhost brute force
-> - [x] Feroxbuster File directories sweep
+> - [ ] Feroxbuster brute force (medium)
+> - [ ] Vhost brute force
+> - [ ] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
@@ -115,14 +115,23 @@
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [x] env
-> - [x] /etc/passwd
+> - [ ] env
+> - [ ] /etc/passwd
 > - [ ] Check internal local ports | ss -tlpn
 > - [ ] Check currently running processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > 
 > - [ ] Look through SSH History
+> 
+> - [ ]Try username same as password
+> - [ ] Hydra crack
+
+
+
+
+
+
 
 ---
 ## 4. Privilege Escalation
@@ -137,7 +146,7 @@
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
-> - [x] docker ps
+> - [ ] docker ps
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -149,13 +158,13 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [x] Docker
-> 	- [x] cat /etc/resolv.conf
-> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [ ] Docker
+> 	- [ ] cat /etc/resolv.conf
+> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
 > - [ ] sudo -l
-> - [x] strings /usr/bin/usage_management
+> - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
@@ -166,8 +175,8 @@
 > - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [x] find / -perm -4000 2>/dev/null
-> - [x] getcap -r / 2>/dev/null
+> - [ ] find / -perm -4000 2>/dev/null
+> - [ ] getcap -r / 2>/dev/null
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
