@@ -139,3 +139,10 @@ cd /home/patrick/local.txt
 
 ---
 
+su patrick trying patrick as password
+
+sudo -l shows ALL/ALL
+
+sudo su to root
+
+get root flag
