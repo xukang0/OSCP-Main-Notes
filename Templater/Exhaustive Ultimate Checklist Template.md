@@ -123,6 +123,15 @@
 > - [ ] enumerate configuration files for passwords
 > 
 > - [ ] Look through SSH History
+> 
+> - [ ]Try username same as password
+> - [ ] Hydra crack
+
+
+
+
+
+
 
 ---
 ## 4. Privilege Escalation

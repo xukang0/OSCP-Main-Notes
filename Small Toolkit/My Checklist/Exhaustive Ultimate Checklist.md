@@ -115,8 +115,8 @@
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [ ] env
-> - [ ] /etc/passwd
+> - [x] env
+> - [x] /etc/passwd
 > - [ ] Check internal local ports | ss -tlpn
 > - [ ] Check currently running processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
@@ -137,7 +137,7 @@
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
-> - [ ] docker ps
+> - [x] docker ps
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -149,13 +149,13 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] Docker
-> 	- [ ] cat /etc/resolv.conf
-> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [x] Docker
+> 	- [x] cat /etc/resolv.conf
+> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
 > - [ ] sudo -l
-> - [ ] strings /usr/bin/usage_management
+> - [x] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
@@ -166,8 +166,8 @@
 > - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [ ] find / -perm -4000 2>/dev/null
-> - [ ] getcap -r / 2>/dev/null
+> - [x] find / -perm -4000 2>/dev/null
+> - [x] getcap -r / 2>/dev/null
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/

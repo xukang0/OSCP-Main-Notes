@@ -1,4 +1,4 @@
-IP::   192.168.217.39
+IP::   192.168.124.39
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  192.168.45.226
+KALI IP::  192.168.45.232
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -120,3 +120,22 @@ PORT    STATE SERVICE     VERSION
 ```
 
 ```
+
+---
+
+192.168.217.39:80 shows cscart page.
+
+dir busting finds /admin page
+
+def creds admin:admin enters
+
+administration > upgrade center reveals CSCart version 1.3.3
+
+(https://github.com/reatva/CS-Cart-1.3.3-RCE/tree/master)
+
+Receive Reverse shell connection
+
+cd /home/patrick/local.txt
+
+---
+
