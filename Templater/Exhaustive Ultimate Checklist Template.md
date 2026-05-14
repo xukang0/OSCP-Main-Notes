@@ -124,7 +124,7 @@
 > 
 > - [ ] Look through SSH History
 > 
-> - [ ]Try username same as password
+> - [ ] Try username same as password
 > - [ ] Hydra crack
 
 

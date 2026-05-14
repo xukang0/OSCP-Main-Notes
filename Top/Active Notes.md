@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP::  192.168.45.232
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -62,6 +62,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 
 
+http://192.168.124.58/ [200 OK] Apache[2.4.6], Country[RESERVED][ZZ], Google-Analytics[UA-2196019-1], HTML5, HTTPServer[CentOS][Apache/2.4.6 (CentOS) PHP/5.4.16], IP[192.168.124.58], JQuery[1.7.2], Lightbox, PHP[5.4.16], Script, Title[Simple PHP Photo Gallery], X-Powered-By[PHP/5.4.16]
 
 
 
