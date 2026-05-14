@@ -3,6 +3,10 @@ TCP/3306
 ```
 mysql --help 
 ``` 
+
+```
+mysql -u [user] -p
+```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 

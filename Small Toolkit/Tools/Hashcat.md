@@ -11,6 +11,9 @@ Common ones to memorize:
 - `$6$` → SHA512 (crypt)
 - `$2a$`, `$2b$`, `$2y$` → bcrypt
 
+1. IF It ends with ==
+That is a classic Base64 padding indicator.
+
 # Quick pentester rule
 
 |Hash length|Assume|

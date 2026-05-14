@@ -124,7 +124,7 @@
 > 
 > - [ ] Look through SSH History
 > 
-> - [x] Try username same as password
+> - [ ] Try username same as password
 > - [ ] Hydra crack
 
 
@@ -147,6 +147,7 @@
 > #### Easy wins
 > - [ ] cat /etc/passwd
 > - [ ] docker ps
+> - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
