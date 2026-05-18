@@ -16,6 +16,7 @@
 > [!note]- General
 >  #### General
 > - [ ] steghide --extract -sf image.jpg
+> - [ ] searchsploit all port service versions
 
 [[0 Port Number Table]]
 
@@ -115,9 +116,9 @@
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [x] env
-> - [x] /etc/passwd
-> - [x] Check internal local ports | ss -tlpn
+> - [ ] env
+> - [ ] /etc/passwd
+> - [ ] Check internal local ports | ss -tlpn
 > - [ ] Check currently running processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -146,7 +147,7 @@
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
-> - [x] docker ps
+> - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing

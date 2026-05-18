@@ -1,4 +1,4 @@
-IP::   192.168.112.47
+IP::   192.168.112.41
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   192.168.112.47
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -72,13 +72,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
-PORT    STATE  SERVICE      VERSION
-21/tcp  open   ftp          vsftpd 3.0.3
-22/tcp  open   ssh          OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
-80/tcp  open   http         Apache httpd 2.4.38 ((Debian))
-139/tcp closed netbios-ssn
-445/tcp closed microsoft-ds
-5437/tcp open  postgresql PostgreSQL DB 11.3 - 11.9
+22/tcp   open  ssh     OpenSSH 5.3p1 Debian 3ubuntu7 (Ubuntu Linux; protocol 2.0)
+23/tcp   open  ipp     CUPS 1.4
+80/tcp   open  http    Apache httpd 2.2.14 ((Ubuntu))
+3306/tcp open  mysql   MySQL (unauthorized)
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
