@@ -1,14 +1,31 @@
-(https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546#psql
+Manual page (https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546#psql
 
-Magic words:
+[PostgreSQL RCE](https://github.com/squid22/PostgreSQL_RCE?source=post_page-----6560a2a51947---------------------------------------)
 
-```shell
-psql -h 127.0.0.1 -U postgres
+[Manual method RCE](https://medium.com/r3d-buck3t/command-execution-with-postgresql-copy-command-a79aef9c2767)
+
+Magic words
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `psql -h ${ip} -U postgres -p [port]`;
+
+dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
 
 NOTE: Press Q to back, do not upgrade shell
+
+```
+\du+
+```
+
+                                    List of roles
+ Role name |                         Attributes                         | Description 
+-----------+------------------------------------------------------------+-------------
+ postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | 
+
 
 Listing all the available databases, we observe the presence of the cozyhosting database
 
