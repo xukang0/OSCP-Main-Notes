@@ -2,10 +2,10 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+- [ ] Quick Scan
+- [ ] Full Port Scan
+- [ ] Service Scan
+- [ ] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -147,7 +147,7 @@
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
-> - [x] docker ps
+> - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
@@ -186,6 +186,7 @@
 >  #### LinPEAS
 > - [ ] Run LinPEAS
 > - [ ] Review yellow findings
+> - [ ] Linux Exploit Suggester
 
 
 ---

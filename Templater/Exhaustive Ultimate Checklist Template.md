@@ -186,6 +186,7 @@
 >  #### LinPEAS
 > - [ ] Run LinPEAS
 > - [ ] Review yellow findings
+> - [ ] Linux Exploit Suggester
 
 
 ---
