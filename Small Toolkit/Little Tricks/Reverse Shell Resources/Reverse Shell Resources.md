@@ -1,3 +1,5 @@
+https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
+
 One liner reverse-shell
 
 ```dataviewjs
@@ -155,3 +157,6 @@ export TERM=xterm
 ENTER 
 
 Now you have a proper TTY.
+
+---
+
