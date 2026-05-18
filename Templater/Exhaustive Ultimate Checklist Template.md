@@ -16,6 +16,7 @@
 > [!note]- General
 >  #### General
 > - [ ] steghide --extract -sf image.jpg
+> - [ ] searchsploit all port service versions
 
 [[0 Port Number Table]]
 
