@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   192.168.112.41
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -77,6 +77,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 80/tcp   open  http    Apache httpd 2.2.14 ((Ubuntu))
 3306/tcp open  mysql   MySQL (unauthorized)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+
+5353/udp  open          zeroconf
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
