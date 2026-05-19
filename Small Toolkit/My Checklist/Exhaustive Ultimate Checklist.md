@@ -2,10 +2,10 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+- [ ] Quick Scan
+- [ ] Full Port Scan
+- [ ] Service Scan
+- [ ] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -146,7 +146,7 @@
 > - [ ] uname -a
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
+> - [x] cat /etc/passwd
 > - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
@@ -165,7 +165,7 @@
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [ ] sudo -l
+> - [x] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)

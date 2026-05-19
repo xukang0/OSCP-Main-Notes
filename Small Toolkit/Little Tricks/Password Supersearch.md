@@ -1,9 +1,5 @@
 ```
-cd /usr/share/seclists/Miscellaneous/
-```
-
-```
-python3 -m http.server 8888
+cd /usr/share/seclists/Miscellaneous/ && python3 -m http.server 8888
 ```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";

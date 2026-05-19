@@ -1,4 +1,4 @@
-[[John The Ripper]]
+[[Synced OSCP Notes/Cracking/Password Cracker/John The Ripper]]
 
 Linux-based distributions support various authentication mechanisms. One of the most commonly used is [Pluggable Authentication Modules (PAM)](https://web.archive.org/web/20220622215926/http://www.linux-pam.org/Linux-PAM-html/Linux-PAM_SAG.html). The modules responsible for this functionality, such as `pam_unix.so` or `pam_unix2.so`, are typically located in `/usr/lib/x86_64-linux-gnu/security/` on Debian-based systems. These modules manage user information, authentication, sessions, and password changes. For example, when a user changes their password using the `passwd` command, PAM is invoked, which takes the appropriate precautions to handle and store the information accordingly.
 
