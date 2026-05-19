@@ -8,7 +8,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 brute force usernames
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `smtp-user-enum -M RCPT -U /usr/share/wordlists/footprinting-wordlist.txt -t ${ip}`;
 

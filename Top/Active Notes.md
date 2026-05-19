@@ -1,4 +1,4 @@
-IP::   IP
+IP::   192.168.158.97
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP::  192.168.45.168
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   192.168.158.97:8091
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -72,6 +72,15 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
+PORT   STATE SERVICE    VERSION
+22/tcp open  ssh        OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+23/tcp open  telnet     Linux telnetd
+25/tcp open  smtp       Postfix smtpd
+53/tcp open  tcpwrapped
+422/tcp   open  ssh        OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
+8091/tcp  open  http       lighttpd 1.4.53
+|     PHPSESSID: 
+42042/tcp open  ssh        OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
@@ -111,3 +120,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ```
+
+---
+
+address admin:secret
+
+tehre is a web console for reverse shell
+
+trying to find raspAP version number
