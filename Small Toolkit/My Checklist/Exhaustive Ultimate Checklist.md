@@ -146,7 +146,7 @@
 > - [ ] uname -a
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
+> - [ ] cat /etc/passwd
 > - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
@@ -165,7 +165,7 @@
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [x] sudo -l
+> - [ ] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
