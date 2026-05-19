@@ -62,7 +62,7 @@ FEROXBUSTER Sweep through file directories
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `feroxbuster -u http://${discoveredDomain} -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -x php,html,txt,bak,zip -t 80 -d 2`;
+const command = `feroxbuster -u http://${discoveredDomain}/ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -x php,html,txt,bak,zip -t 80 -d 2`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -73,7 +73,7 @@ VHosts
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `gobuster vhost -u http://${discoveredDomain} -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain`
+const command = `gobuster vhost -u http://${discoveredDomain}/ -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain`
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
