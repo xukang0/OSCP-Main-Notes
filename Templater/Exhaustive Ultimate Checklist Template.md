@@ -183,8 +183,11 @@
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
 >
+>  #### Python
+>  - [ ] [[Python Library Hijacking]]
+>
 >  #### LinPEAS
-> - [ ] Run LinPEAS
+> - [ ] Run [[LinWinPEAS]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 
