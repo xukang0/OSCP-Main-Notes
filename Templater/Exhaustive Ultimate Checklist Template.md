@@ -187,13 +187,15 @@
 >  #### FREE WINS
 > - [ ] /usr/bin/[[php7.4]]
 
-
 > [!note]- Priv Esc Techniques
 > #### Ports
 > - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
 > 
 >  #### Python
 >  - [ ] [[Python Library Hijacking]]
+>
+> #### Exiftool
+>  - [ ] [[Vulnerable ExifTool DjVu Priv Esc]]
 
 
 ---
