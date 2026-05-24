@@ -1,4 +1,4 @@
-IP::   192.168.192.27
+IP::   192.168.192.163
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   bullybox.local
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -60,17 +60,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## Software Versions
 
-```powershell
-http://bullybox.local/ [200 OK]
 
- Apache[2.4.52], 
- 
- Cookies[PHPSESSID],
- 
- HTML5, HTTPServer[Ubuntu Linux]
- 
- [Apache/2.4.52 (Ubuntu)], HttpOnly[PHPSESSID]
-```
 
 
 
@@ -82,9 +72,6 @@ http://bullybox.local/ [200 OK]
 
 ## Open Ports
 ---
-PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.1 (Ubuntu Linux; protocol 2.0)
-80/tcp open  http    Apache httpd 2.4.52 ((Ubuntu))
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |

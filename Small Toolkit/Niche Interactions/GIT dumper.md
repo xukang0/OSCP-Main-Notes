@@ -12,20 +12,12 @@ cd /home/kali/Desktop/MyTools/[git_dumper.py]
 Start external python environment
 
 ```
-python3 -m venv .venv
-```
-
-``` 
-source .venv/bin/activate
+python3 -m venv .venv && source .venv/bin/activate && pip install git-dumper
 ```
 
 ---
 
 Install Git Dumper
-
-```
-pip install git-dumper
-```
 
 ---
 
@@ -33,7 +25,9 @@ Dump out .git into current directory
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `git-dumper http://${ip}/.git gitdump`;
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `git-dumper http://${discoveredDomain}/.git gitdump`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
