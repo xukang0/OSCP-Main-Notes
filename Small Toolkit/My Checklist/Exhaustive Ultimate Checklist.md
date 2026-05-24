@@ -114,12 +114,12 @@
 ---
 ## 3. Lateral Movement
 
-> [!note]- Lateral Movement
+> [!note]+ Lateral Movement
 >  #### Basic Enumeration
-> - [ ] env
-> - [ ] /etc/passwd
-> - [ ] Check internal local ports | ss -tlpn
-> - [ ] Check currently running processes | ps auxww
+> - [x] env
+> - [x] /etc/passwd
+> - [x] Check internal local ports | ss -tlpn
+> - [x] Check currently running processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > 
