@@ -174,10 +174,10 @@
 >
 >  #### LinPEAS
 > - [ ] Run [[LinWinPEAS]]
+> - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
-
 
 > [!note]- Database
 >  #### DBMaria
