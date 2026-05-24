@@ -2,10 +2,10 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [ ] Quick Scan
-- [ ] Full Port Scan
-- [ ] Service Scan
-- [ ] UDP Scan
+- [x] Quick Scan
+- [x] Full Port Scan
+- [x] Service Scan
+- [x] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -116,9 +116,9 @@
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [ ] env
-> - [ ] /etc/passwd
-> - [ ] Check internal local ports | ss -tlpn
+> - [x] env
+> - [x] /etc/passwd
+> - [x] Check internal local ports | ss -tlpn
 > - [ ] Check currently running processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords

@@ -180,6 +180,9 @@
 > - [ ] find / -perm -4000 2>/dev/null
 > - [ ] getcap -r / 2>/dev/null
 > 
+>  #### SUID / Capabilities FREE WINS
+> - [ ] /usr/bin/[[php7.4]]
+> 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
 >
