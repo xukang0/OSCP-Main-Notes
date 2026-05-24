@@ -87,6 +87,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 # 🎯 Step 2 — From Web Shell (Target)
 
 If it’s a Linux box (Bashed is), use:
+
+HIGH PROBABILITY
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 

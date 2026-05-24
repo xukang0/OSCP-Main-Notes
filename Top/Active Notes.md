@@ -1,4 +1,4 @@
-IP::   192.168.153.100
+IP::   10.129.65.173
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP:: 192.168.45.235
+KALI IP::  10.10.16.22
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   192.168.153.100
+Discovered Web Domain::  10.129.65.173:3000
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -60,7 +60,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## Software Versions
 
-
+Next JS 15.0.3
+React
 
 
 
@@ -73,16 +74,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Open Ports
 ---
 PORT     STATE SERVICE VERSION
-22/tcp   open  ssh     OpenSSH 7.9p1 Debian 10+deb10u2 (protocol 2.0)
-80/tcp   open  http    nginx
-111/tcp  open  rpcbind 2-4 (RPC #100000)
-2049/tcp open  nfs_acl 3 (RPC #100227)
-8080/tcp open  http    Apache Tomcat 7.0.4
-7742/tcp  open  http     nginx
-33065/tcp open  nlockmgr 1-4 (RPC #100021)
-35835/tcp open  mountd   1-3 (RPC #100005)
-42329/tcp open  mountd   1-3 (RPC #100005)
-43307/tcp open  mountd   1-3 (RPC #100005)
+22/tcp   open  ssh     OpenSSH 9.6p1 Ubuntu 3ubuntu13.16 (Ubuntu Linux; protocol 2.0)
+3000/tcp open  ppp?
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
@@ -92,17 +85,29 @@ PORT     STATE SERVICE VERSION
 
 ## Discovered Subdomains
 ---
-/usr/sbin/start-stop-daemon -S -x /bin/sh -- -p
+
 
 ---
+/opt/reactor-app/reactor.db
+DB_PATH=/opt/reactor-app/reactor.db
+DB_TYPE=sqlite3
 
+admin|a203b22191d744a4e70ada5c101b17b8|administrator|admin@reactor.htb
+2|engineer|39d97110eafe2a9a68639812cd271e8e|operator|engineer@reactor.htb
+
+39d97110eafe2a9a68639812cd271e8e
+
+```
+a203b22191d744a4e70ada5c101b17b8
+```
+
+/usr/bin/node --inspect=127.0.0.1:9229 /opt/uptime-monitor/worker.js
 ## Discovered Credentials
 ---
-username="tomcat" password="VTUD2XxJjf5LPmu6
 
 | Username | Password | Notes |
 | -------- | -------- | ----- |
-|          |          |       |
+| engineer | reactor1 |       |
 
 ---
 

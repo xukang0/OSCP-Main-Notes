@@ -39,7 +39,7 @@ Example download:
 https://github.com/jpillora/chisel/releases/tag/v1.11.5
 
 ```
-wget https://github.com/jpillora/chisel/releases/download/v1.10.1/chisel_1.10.1_windows_amd64.gz
+wget https://github.com/jpillora/chisel/releases/download/v1.10.1/chisel_1.10.1_windows_amd64.gz && gunzip chisel_1.10.1_windows_amd64.gz
 ```
 
 Extract:
@@ -62,13 +62,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 Explanation:
 
-|Section|Meaning|
-|---|---|
-|`client`|Run in client mode|
-|`ATTACKER_IP:9999`|Connect to attacker server|
-|`R:`|Reverse port forward|
-|`8888`|Port opened on attacker|
-|`127.0.0.1:8888`|Target local service|
+| Section            | Meaning                           |
+| ------------------ | --------------------------------- |
+| `client`           | Run in client mode                |
+| `ATTACKER_IP:9999` | Connect to attacker server        |
+| `R:`               | back to the attacker on port 8888 |
+| `8888`             | Port opened on attacker           |
+| `127.0.0.1:8888`   | Target local service              |
 
 ---
 
