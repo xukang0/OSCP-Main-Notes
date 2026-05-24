@@ -1,11 +1,10 @@
 ## 1. Initial Enumeration
 
 [[1. Initial Enumeration]]
-### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+
+> [!note]- NMAP
+> - [ ] Full -A Scan
+> - [ ] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -22,7 +21,9 @@
 
 ## 2. Service Enumeration
 
-### 🌐 Web (80/443)
+### 🌐 [[80 - WEB | Web]] (80/443)
+
+
 > [!note]- Web Checklist
 > - [ ] Visit site
 > - [ ] View source
@@ -49,7 +50,8 @@
 > - [ ] Check comments
 > - [ ] Check backups (.bak, .zip)
 
-#### If Found : Login Pages
+#### Contingencies
+
 > [!tip]- Admin Page
 > 
 > > #### Admin Login
@@ -64,7 +66,7 @@
 >
 > #### User Login
 > - [ ] Default credentials
-> - [ ] 
+> - [ ] admin:admin
 >
 > #### Reset Password (Email)
 > - [ ] If invalid email = does not match our records, SQLi (test' or 1=1;-- -)  [[SQL Injection|link]]
@@ -74,64 +76,37 @@
 > - [ ] Search for dependencies CVEs
 > - [ ] File Uploads for PHP arbitrary code execution [[Arbitrary File Upload Vulnerability|link]]
 
-#### If Found: .git
-> [!tip]- Git Dump
+> [!tip]- Others
+>  #### .git / git dumper
 > - [ ] Run [[GIT dumper]]
 > - [ ] Search for creds
 > - [ ] Check commit history
-
-#### If Found: .Random Hash
-> [!tip]- Try
+> 
+> #### Hash Found
 > - [ ] SSH as is
-> - [ ] CyberChef
-> - [ ] Hashcat
-
-#### If Found: Wordpress [[Wordpress Scan]]
-> [!tip]- Wordpress
+> - [ ] [CyberChef](https://cyberchef.org)
+> - [ ] [[Hashcat]]
+> - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/John The Ripper|John The Ripper]]
+> 
+> #### Wordpress Scan
 > - [ ] Default creds
 > - [ ] wpscan
 
 
 ---
 
-### 🌐 SNMP (161/162/10161/10162)
-> [!note]- SNMP Checklist
+### 🌐 Miscellaneous Ports
+
+> [!note]- SNMP (161/162/10161/10162)
 > #### Enumeration
 > - [ ] snmpbulkwalk [IP]
 > - [ ] snmp-check
 >
 
-
----
-
-### 🌐 SMB (139/445)
-> [!note]- SMB Checklist
+> [!note]- SMB (139/445)
 > #### Enumeration
 > - [ ] enum4linux [IP]
 >
-
-
----
-## 3. Lateral Movement
-
-> [!note]+ Lateral Movement
->  #### Basic Enumeration
-> - [x] env
-> - [x] /etc/passwd
-> - [x] Check internal local ports | ss -tlpn
-> - [x] Check currently running processes | ps auxww
-> - [ ] cat /etc/fstab | grep hidepid
-> - [ ] enumerate configuration files for passwords
-> 
-> - [ ] Look through SSH History
-> 
-> - [ ] Try username same as password
-> - [ ] Hydra crack
-
-
-
-
-
 
 
 ---
@@ -139,19 +114,29 @@
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] groups
-> - [ ] ip a
-> - [ ] uname -a
+> - [x] whoami
+> - [x] id
+> - [x] groups
+> - [x] ip a
+> - [x] uname -a
+> - [x] env
+> 
+> #### Advanced Enumeration 
+> - [x] Internal ports | ss -tlpn
+> - [x] Running Processes | ps auxww
+> - [ ] cat /etc/fstab | grep hidepid
+> - [ ] enumerate configuration files for passwords
+> - [ ] Look through SSH History
+> - [ ] Hydra crack
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
-> - [ ] docker ps
-> - [ ] ls -la /etc/passwd allowing group modification to root grp
+> - [x] cat /etc/passwd
+> - [ ] Try username same as password
+> - [x] docker ps
+> - [x] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
-> - [ ] ls -la /var/www
+> - [x] ls -la /var/www
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
@@ -160,12 +145,12 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] Docker
+> - [x] Docker
 > 	- [ ] cat /etc/resolv.conf
-> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [ ] sudo -l
+> - [x] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -177,11 +162,8 @@
 > - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [ ] find / -perm -4000 2>/dev/null
-> - [ ] getcap -r / 2>/dev/null
-> 
->  #### SUID / Capabilities FREE WINS
-> - [ ] /usr/bin/[[php7.4]]
+> - [x] find / -perm -4000 2>/dev/null
+> - [x] getcap -r / 2>/dev/null
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
@@ -194,9 +176,16 @@
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
-> #### Port 9229 Node Inspector
-> - [ ]  [[Node Inspector]]
->
+
+
+> [!note]- SUID / Capabilities
+>  #### FREE WINS
+> - [ ] /usr/bin/[[php7.4]]
+
+
+> [!note]- Priv Esc Techniques
+> #### Ports
+> - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
 
 
 ---

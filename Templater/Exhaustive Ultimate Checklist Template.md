@@ -84,7 +84,7 @@
 > 
 > #### Hash Found
 > - [ ] SSH as is
-> - [ ] CyberChef
+> - [ ] [CyberChef](https://cyberchef.org)
 > - [ ] [[Hashcat]]
 > - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/John The Ripper|John The Ripper]]
 > 
@@ -168,8 +168,9 @@
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
 >
->  #### Python
->  - [ ] [[Python Library Hijacking]]
+>  #### Writable Content
+>- [ ] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
+>- [ ] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
 >
 >  #### LinPEAS
 > - [ ] Run [[LinWinPEAS]]
@@ -177,6 +178,10 @@
 > - [ ] Linux Exploit Suggester
 > 
 
+
+> [!note]- Database
+>  #### DBMaria
+> - [ ] find / -type f -name "*.db" 2>/dev/null
 
 > [!note]- SUID / Capabilities
 >  #### FREE WINS
@@ -186,6 +191,9 @@
 > [!note]- Priv Esc Techniques
 > #### Ports
 > - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
+> 
+>  #### Python
+>  - [ ] [[Python Library Hijacking]]
 
 
 ---
