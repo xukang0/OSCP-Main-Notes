@@ -76,7 +76,7 @@
 
 #### If Found: .git
 > [!tip]- Git Dump
-> - [ ] Run git-dumper
+> - [ ] Run [[GIT dumper]]
 > - [ ] Search for creds
 > - [ ] Check commit history
 
