@@ -2,10 +2,10 @@
 
 [[1. Initial Enumeration]]
 ### Nmap
-- [x] Quick Scan
-- [x] Full Port Scan
-- [x] Service Scan
-- [x] UDP Scan
+- [ ] Quick Scan
+- [ ] Full Port Scan
+- [ ] Service Scan
+- [ ] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -16,7 +16,7 @@
 > [!note]- General
 >  #### General
 > - [ ] steghide --extract -sf image.jpg
-> - [x] searchsploit all port service versions
+> - [ ] searchsploit all port service versions
 
 [[0 Port Number Table]]
 
@@ -24,18 +24,18 @@
 
 ### 🌐 Web (80/443)
 > [!note]- Web Checklist
-> - [x] Visit site
+> - [ ] Visit site
 > - [ ] View source
-> - [x] Identify tech/CMS
-> - [x] whatweb
+> - [ ] Identify tech/CMS
+> - [ ] whatweb
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
-> - [x] curl -i domain
+> - [ ] curl -i domain
 >
 > #### Brute Force
-> - [x] Feroxbuster brute force (medium)
+> - [ ] Feroxbuster brute force (medium)
 > - [ ] Vhost brute force
-> - [x] Feroxbuster File directories sweep
+> - [ ] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
@@ -116,10 +116,10 @@
 
 > [!note]- Lateral Movement
 >  #### Basic Enumeration
-> - [x] env
-> - [x] /etc/passwd
-> - [x] Check internal local ports | ss -tlpn
-> - [x] Check currently running processes | ps auxww
+> - [ ] env
+> - [ ] /etc/passwd
+> - [ ] Check internal local ports | ss -tlpn
+> - [ ] Check currently running processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > 
@@ -139,11 +139,11 @@
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
-> - [x] groups
-> - [x] ip a
-> - [x] uname -a
+> - [ ] whoami
+> - [ ] id
+> - [ ] groups
+> - [ ] ip a
+> - [ ] uname -a
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
@@ -160,13 +160,13 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [x] Docker
+> - [ ] Docker
 > 	- [ ] cat /etc/resolv.conf
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
 > - [ ] sudo -l
-> - [x] strings /usr/bin/usage_management
+> - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
@@ -177,8 +177,8 @@
 > - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [x] find / -perm -4000 2>/dev/null
-> - [x] getcap -r / 2>/dev/null
+> - [ ] find / -perm -4000 2>/dev/null
+> - [ ] getcap -r / 2>/dev/null
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
@@ -190,6 +190,10 @@
 > - [ ] Run [[LinWinPEAS]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
+> 
+> #### Port 9229 Node Inspector
+> - [ ]  [[Node Inspector]]
+>
 
 
 ---

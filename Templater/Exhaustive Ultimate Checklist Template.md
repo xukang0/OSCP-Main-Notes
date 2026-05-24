@@ -190,6 +190,10 @@
 > - [ ] Run [[LinWinPEAS]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
+> 
+> #### Port 9229 Node Inspector
+> - [ ]  [[Node Inspector]]
+>
 
 
 ---
