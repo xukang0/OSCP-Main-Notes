@@ -1,4 +1,4 @@
-IP::   192.168.138.57
+IP::   192.168.138.69
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   192.168.138.57
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -72,47 +72,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
-21/tcp   open  ftp         vsftpd 3.0.2
-| ftp-syst: 
-| FTP server status:
-|      Logged in as ftp
-|      vsFTPd 3.0.2 - secure, fast, stable
-| ftp-anon: Anonymous FTP login allowed (FTP code 230)
-
-
-22/tcp   open  ssh         OpenSSH 7.4 (protocol 2.0)
-
-80/tcp   open  http        Apache httpd 2.4.6 ((CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16)
-
-|_http-title: Apache HTTP Server Test Page powered by CentOS
-
-|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
-
-111/tcp  open  rpcbind     2-4 (RPC #100000)
-| rpcinfo: 
-|   program version    port/proto  service
-|   100000  2,3,4        111/tcp   rpcbind
-|   100000  2,3,4        111/udp   rpcbind
-|   100000  3,4          111/tcp6  rpcbind
-|_  100000  3,4          111/udp6  rpcbind
-
-
-139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: SAMBA)
-
-        Sharename       Type      Comment
-        ---------       ----      -------
-        print$          Disk      Printer Drivers
-        IPC$            IPC       IPC Service (Samba 4.10.4)
-
-
-445/tcp  open  netbios-ssn Samba smbd 4.10.4 (workgroup: SAMBA)
-
-3306/tcp open  mysql       MariaDB 10.3.23 or earlier (unauthorized)
-
-8081/tcp open  http        Apache httpd 2.4.6 ((CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16)
-
-|_http-title: 400 Bad Request
-|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/5.4.16
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |

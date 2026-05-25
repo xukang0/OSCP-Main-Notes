@@ -3,7 +3,7 @@
 [[1. Initial Enumeration]]
 
 > [!note]- NMAP
-> - [ ] Full -A Scan
+> - [x] Full -A Scan
 > - [x] UDP Scan
 
 ### Post
@@ -122,17 +122,17 @@
 > - [ ] env
 > 
 > #### Advanced Enumeration 
-> - [x] Internal ports | ss -tlpn
-> - [x] Running Processes | ps auxww
+> - [ ] Internal ports | ss -tlpn
+> - [ ] Running Processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
+> - [ ] cat /etc/passwd
 > - [ ] Try username same as password
-> - [x] docker ps
+> - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
@@ -145,9 +145,9 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [x] Docker
-> 	- [x] cat /etc/resolv.conf
-> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [ ] Docker
+> 	- [ ] cat /etc/resolv.conf
+> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
 > - [ ] sudo -l
@@ -164,6 +164,7 @@
 >  #### SUID / Capabilities
 > - [ ] find / -perm -4000 2>/dev/null
 > - [ ] getcap -r / 2>/dev/null
+> - [ ] [[GTFOChecker]]
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
@@ -184,8 +185,9 @@
 > - [ ] find / -type f -name "*.db" 2>/dev/null
 
 > [!note]- SUID / Capabilities
->  #### FREE WINS
+>  #### FREE WINS SUID
 > - [ ] /usr/bin/[[php7.4]]
+> - [ ] /usr/bin/find
 
 > [!note]- Priv Esc Techniques
 > #### Ports
