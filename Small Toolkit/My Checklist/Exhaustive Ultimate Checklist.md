@@ -114,29 +114,29 @@
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
-> - [x] groups
-> - [x] ip a
-> - [x] uname -a
-> - [x] env
+> - [ ] whoami
+> - [ ] id
+> - [ ] groups
+> - [ ] ip a
+> - [ ] uname -a
+> - [ ] env
 > 
 > #### Advanced Enumeration 
-> - [x] Internal ports | ss -tlpn
-> - [x] Running Processes | ps auxww
+> - [ ] Internal ports | ss -tlpn
+> - [ ] Running Processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
+> - [ ] cat /etc/passwd
 > - [ ] Try username same as password
-> - [x] docker ps
-> - [x] ls -la /etc/passwd allowing group modification to root grp
+> - [ ] docker ps
+> - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
-> - [x] ls -la /var/www
+> - [ ] ls -la /var/www
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
@@ -145,12 +145,12 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [x] Docker
+> - [ ] Docker
 > 	- [ ] cat /etc/resolv.conf
-> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [x] sudo -l
+> - [ ] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -162,30 +162,40 @@
 > - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [x] find / -perm -4000 2>/dev/null
-> - [x] getcap -r / 2>/dev/null
+> - [ ] find / -perm -4000 2>/dev/null
+> - [ ] getcap -r / 2>/dev/null
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
 >
->  #### Python
->  - [ ] [[Python Library Hijacking]]
+>  #### Writable Content
+>- [ ] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
+>- [ ] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
 >
 >  #### LinPEAS
 > - [ ] Run [[LinWinPEAS]]
+> - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
 
+> [!note]- Database
+>  #### DBMaria
+> - [ ] find / -type f -name "*.db" 2>/dev/null
 
 > [!note]- SUID / Capabilities
 >  #### FREE WINS
 > - [ ] /usr/bin/[[php7.4]]
 
-
 > [!note]- Priv Esc Techniques
 > #### Ports
 > - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
+> 
+>  #### Python
+>  - [ ] [[Python Library Hijacking]]
+>
+> #### Exiftool
+>  - [ ] [[Vulnerable ExifTool DjVu Priv Esc]]
 
 
 ---

