@@ -164,6 +164,7 @@
 >  #### SUID / Capabilities
 > - [ ] find / -perm -4000 2>/dev/null
 > - [ ] getcap -r / 2>/dev/null
+> - [ ] [[GTFOChecker]]
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
@@ -184,8 +185,9 @@
 > - [ ] find / -type f -name "*.db" 2>/dev/null
 
 > [!note]- SUID / Capabilities
->  #### FREE WINS
+>  #### FREE WINS SUID
 > - [ ] /usr/bin/[[php7.4]]
+> - [ ] /usr/bin/find
 
 > [!note]- Priv Esc Techniques
 > #### Ports

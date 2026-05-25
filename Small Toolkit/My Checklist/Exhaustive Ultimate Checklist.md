@@ -4,7 +4,7 @@
 
 > [!note]- NMAP
 > - [ ] Full -A Scan
-> - [ ] UDP Scan
+> - [x] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -122,17 +122,17 @@
 > - [ ] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | ss -tlpn
-> - [ ] Running Processes | ps auxww
+> - [x] Internal ports | ss -tlpn
+> - [x] Running Processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
+> - [x] cat /etc/passwd
 > - [ ] Try username same as password
-> - [ ] docker ps
+> - [x] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
@@ -145,9 +145,9 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] Docker
-> 	- [ ] cat /etc/resolv.conf
-> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [x] Docker
+> 	- [x] cat /etc/resolv.conf
+> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
 > - [ ] sudo -l

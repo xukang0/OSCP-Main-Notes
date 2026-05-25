@@ -1,5 +1,7 @@
 https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 
+https://www.revshells.com
+
 Find out which architecture is supported
 ```
 which python3 python perl ruby socat script
