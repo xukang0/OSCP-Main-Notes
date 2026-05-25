@@ -63,7 +63,7 @@
 | 5985      | TCP      | [[Tools/Evil-Winrm\|Evil-Winrm]] (HTTP)              | Windows Remote Management; remote PowerShell access                                  |
 | 5986      | TCP      | [[Tools/Evil-Winrm\|Evil-Winrm]] (HTTP)              | Encrypted WinRM; remote PowerShell access                                            |
 | 6000–6005 | TCP      | X11 Display                                          | Linux graphical remote access; OSCP rarely needed                                    |
-| 6379      | TCP      | Redis                                                | In-memory database; OSCP: misconfig exploitation                                     |
+| 6379      | TCP      | [[6379 Redis \| Redis]]                              | In-memory database; OSCP: misconfig exploitation                                     |
 | 6667      | TCP      | IRC                                                  | Chat protocol; OSCP: sometimes pivoting                                              |
 | 8000      | TCP      | HTTP Alternate                                       | Web service; OSCP: custom web apps                                                   |
 | 8080      | TCP      | HTTP Alternate                                       | Web service; OSCP: often used in labs                                                |
