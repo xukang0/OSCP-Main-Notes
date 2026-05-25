@@ -160,6 +160,7 @@
 > #### Scheduled Tasks
 > - [ ] cat /etc/crontab
 > - [ ] crontab -l
+> - [ ] [[pspy]]
 > 
 >  #### SUID / Capabilities
 > - [ ] find / -perm -4000 2>/dev/null

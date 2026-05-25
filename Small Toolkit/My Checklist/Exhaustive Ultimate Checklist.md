@@ -116,13 +116,13 @@
 > #### Basic Enumeration
 > - [ ] whoami
 > - [ ] id
-> - [ ] groups
+> - [x] groups
 > - [ ] ip a
 > - [ ] uname -a
-> - [ ] env
+> - [x] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | ss -tlpn
+> - [x] Internal ports | ss -tlpn
 > - [ ] Running Processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -130,9 +130,9 @@
 > - [ ] Hydra crack
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
+> - [x] cat /etc/passwd
 > - [ ] Try username same as password
-> - [ ] docker ps
+> - [x] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
@@ -145,12 +145,12 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] Docker
-> 	- [ ] cat /etc/resolv.conf
-> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [x] Docker
+> 	- [x] cat /etc/resolv.conf
+> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [ ] sudo -l
+> - [x] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -158,13 +158,13 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
+> - [x] cat /etc/crontab
 > - [ ] crontab -l
 > 
 >  #### SUID / Capabilities
-> - [ ] find / -perm -4000 2>/dev/null
-> - [ ] getcap -r / 2>/dev/null
-> - [ ] [[GTFOChecker]]
+> - [x] find / -perm -4000 2>/dev/null
+> - [x] getcap -r / 2>/dev/null
+> - [x] [[GTFOChecker]]
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
