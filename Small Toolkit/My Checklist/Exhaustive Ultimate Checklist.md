@@ -31,10 +31,10 @@
 
 
 > [!note]- Web Checklist
-> - [ ] [[0000006|Visit site]]
-> - [ ] View source
-> - [ ] Identify tech/CMS
-> - [ ] [[0000008|whatweb]]
+> - [x] [[0000006|Visit site]]
+> - [x] View source
+> - [x] Identify tech/CMS
+> - [x] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
 > - [ ] [[0000010|curl -i domain]]
@@ -46,7 +46,7 @@
 >
 > #### Vulnerability Testing
 > - [ ] [[0000014|LFI (../../../../etc/passwd)]]
-> - [ ] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
+> - [x] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
 > - [ ] [[0000016|Command Injection (;whoami)]]
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)

