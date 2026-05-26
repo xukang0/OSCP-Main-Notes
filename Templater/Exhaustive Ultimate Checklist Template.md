@@ -2,7 +2,11 @@
 
 [[1. Initial Enumeration]]
 
-> [!note]- NMAP
+> [!note]- Initial
+>  #### Setup
+>   - [ ] [[1. Initial Enumeration|Make Box + NMAP Directory ]]
+>
+>  #### NMAP
 > - [ ] [[0000001|Full -A Scan]]
 > - [ ] [[0000002|UDP Scan]]
 > 
