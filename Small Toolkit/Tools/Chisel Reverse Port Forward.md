@@ -54,7 +54,7 @@ Upload to target (webshell / smb / etc).
 
 # 3. Run Chisel Client (Target)
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `chisel.exe client ${KaliIP}:9999 R:8888:127.0.0.1:8888`;
 

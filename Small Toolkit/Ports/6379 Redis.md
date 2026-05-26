@@ -1,6 +1,6 @@
 Redis-cli
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `redis-cli -h ${ip} -p 6379`;
 

