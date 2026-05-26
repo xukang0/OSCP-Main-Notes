@@ -38,9 +38,9 @@
 > - [ ] [[0000013|Feroxbuster File directories sweep]]
 >
 > #### Vulnerability Testing
-> - [ ] LFI (../../../../etc/passwd)
-> - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
-> - [ ] Command Injection (; whoami)
+> - [ ] [[0000014|LFI (../../../../etc/passwd)]]
+> - [ ] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
+> - [ ] [[0000016|Command Injection (;whoami)]]
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)
 > - [ ] [[Hexedit]]
@@ -167,16 +167,16 @@
 > - [ ] [[pspy]]
 > 
 >  #### SUID / Capabilities
-> - [ ] find / -perm -4000 2>/dev/null
-> - [ ] getcap -r / 2>/dev/null
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
 > - [ ] [[GTFOChecker]]
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
 >
 >  #### Writable Content
->- [ ] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
->- [ ] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
+>- [ ] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
+>- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
 >  #### LinPEAS
 > - [ ] Run [[LinWinPEAS]]
