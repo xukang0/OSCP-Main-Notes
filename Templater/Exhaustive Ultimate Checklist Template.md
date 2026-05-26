@@ -129,7 +129,7 @@
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
-> - [ ] ls /opt | usually empty
+> - [ ] ls 
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd

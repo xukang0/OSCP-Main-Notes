@@ -3,8 +3,8 @@
 [[1. Initial Enumeration]]
 
 > [!note]- NMAP
-> - [x] Full -A Scan
-> - [x] UDP Scan
+> - [ ] Full -A Scan
+> - [ ] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -25,30 +25,31 @@
 
 
 > [!note]- Web Checklist
-> - [x] Visit site
-> - [x] View source
-> - [x] Identify tech/CMS
-> - [x] whatweb
+> - [ ] Visit site
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] whatweb
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
 > - [ ] curl -i domain
 >
 > #### Brute Force
-> - [x] Feroxbuster brute force (medium)
+> - [ ] Feroxbuster brute force (medium)
 > - [ ] Vhost brute force
-> - [x] Feroxbuster File directories sweep
+> - [ ] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
 > - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
 > - [ ] Command Injection (; whoami)
-> - [x] PHP code inclusion
-> - [x] File upload (if available)
+> - [ ] PHP code inclusion
+> - [ ] File upload (if available)
+> - [ ] [[Hexedit]]
 >
 > #### Hidden Content
 > - [ ] Check JS files
 > - [ ] Check comments
-> - [x] Check backups (.bak, .zip)
+> - [ ] Check backups (.bak, .zip)
 
 #### Contingencies
 
@@ -114,43 +115,44 @@
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
-> - [x] groups
-> - [x] ip a
-> - [x] uname -a
-> - [x] env
+> - [ ] whoami
+> - [ ] id
+> - [ ] groups
+> - [ ] ip a
+> - [ ] uname -a
+> - [ ] env
 > 
 > #### Advanced Enumeration 
-> - [x] Internal ports | ss -tlpn
-> - [x] Running Processes | ps auxww
+> - [ ] Internal ports | ss -tlpn
+> - [ ] Running Processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
+> - [ ] ls /opt | usually empty
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
-> - [x] Try username same as password
-> - [x] docker ps
+> - [ ] cat /etc/passwd
+> - [ ] Try username same as password
+> - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
-> - [x] ls -la /var/www
-> - [x] ls -a ~
->   - [x] .bash_history
->   - [x] interesting files
+> - [ ] ls -la /var/www
+> - [ ] ls -a ~
+>   - [ ] .bash_history
+>   - [ ] interesting files
 > 
 > #### Password supersearch
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [x] Docker
-> 	- [x] cat /etc/resolv.conf
-> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [ ] Docker
+> 	- [ ] cat /etc/resolv.conf
+> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [x] sudo -l
+> - [ ] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -158,25 +160,29 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] crontab -l
-> - [x] [[pspy]]
+> - [ ] cat /etc/crontab
+> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
+> - [ ] crontab -l
+> - [ ] systemctl list-timers --all
+> - [ ] grep -R "" /etc/cron*
+> - [ ] [[pspy]]
 > 
 >  #### SUID / Capabilities
-> - [x] find / -perm -4000 2>/dev/null
-> - [x] getcap -r / 2>/dev/null
-> - [x] [[GTFOChecker]]
+> - [ ] find / -perm -4000 2>/dev/null
+> - [ ] getcap -r / 2>/dev/null
+> - [ ] [[GTFOChecker]]
 > 
 >  #### Special Permissions
->  - [x] ls -la /usr/bin/
+>  - [ ] ls -la /usr/bin/
 >
 >  #### Writable Content
->- [x] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
->- [x] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
+>- [ ] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
+>- [ ] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
 >
 >  #### LinPEAS
-> - [x] Run [[LinWinPEAS]]
-> - [x] [[3. Privilege Escalation|HackTricks]]
+> - [ ] Run [[LinWinPEAS]]
+> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
@@ -199,6 +205,12 @@
 >
 > #### Exiftool
 >  - [ ] [[Vulnerable ExifTool DjVu Priv Esc]]
+>
+> #### Cron
+>  - [ ] /etc/cron.d | e2scrub_all , PHP
+>
+>  #### Kernel
+>  - [ ] [CVE-2022-0847] Dirtypipe
 
 
 ---
