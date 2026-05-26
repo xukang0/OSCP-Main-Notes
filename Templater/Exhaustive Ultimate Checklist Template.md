@@ -158,6 +158,7 @@
 > - [ ] Try username same as password
 > - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
+> - [ ] [[0000028|mysql --version]]
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www

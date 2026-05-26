@@ -124,24 +124,24 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [x] Run [[0000002|LinWinPEAS [parsePEAS-ng]]]
+> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
 > - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
-> - [x] groups
+> - [ ] whoami
+> - [ ] id
+> - [ ] groups
 > - [ ] ip a
 > - [ ] uname -a
-> - [x] env
+> - [ ] env
 > 
 > #### Advanced Enumeration 
-> - [x] Internal ports | [[0000024|ss -tlpn]]
-> - [x] Running Processes | [[0000025|ps auxww]]
-> - [x] [[0000026|ls -la /etc/systemd/system/]]
+> - [ ] Internal ports | [[0000024|ss -tlpn]]
+> - [ ] Running Processes | [[0000025|ps auxww]]
+> - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
@@ -149,15 +149,16 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities
-> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [x] [[0000018|getcap -r / 2>/dev/null]]
-> - [x] [[GTFOChecker]]
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
 > - [ ] Try username same as password
 > - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
+> - [ ] [[0000028|mysql --version]]
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -187,7 +188,7 @@
 > - [ ] crontab -l
 > - [ ] systemctl list-timers --all
 > - [ ] grep -R "" /etc/cron*
-> - [x] [[pspy]]
+> - [ ] [[pspy]]
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
