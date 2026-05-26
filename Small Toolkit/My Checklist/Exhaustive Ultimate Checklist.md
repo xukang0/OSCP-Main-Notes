@@ -3,21 +3,20 @@
 [[1. Initial Enumeration]]
 
 > [!note]- NMAP
-> - [x] Full -A Scan
-> - [x] UDP Scan
-
-### Post
-- [ ] Add discovered hosts to /etc/hosts
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000002|UDP Scan]]
+> 
+> #### Host
+> - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
 
 ---
 ## 2. Foothold
 
 > [!note]- General
 >  #### General
-> - [ ] steghide --extract -sf image.jpg
-> - [ ] searchsploit all port service versions
-
-[[0 Port Number Table]]
+> - [ ] [[0000004|steghide --extract -sf image.jpg]]
+> - [ ] [[0000005|searchsploit all port service versions]]
+> - [ ] [[0 Port Number Table|Check Port Number Table]]
 
 ## 2. Service Enumeration
 
@@ -25,23 +24,23 @@
 
 
 > [!note]- Web Checklist
-> - [x] Visit site
-> - [x] View source
+> - [ ] [[0000006|Visit site]]
+> - [ ] View source
 > - [ ] Identify tech/CMS
-> - [x] whatweb
-> - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
+> - [ ] [[0000008|whatweb]]
+> - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [x] curl -i domain
+> - [ ] [[0000010|curl -i domain]]
 >
 > #### Brute Force
-> - [ ] Feroxbuster brute force (medium)
-> - [ ] Vhost brute force
-> - [ ] Feroxbuster File directories sweep
+> - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
+> - [ ] [[0000012|Vhost brute force]]
+> - [ ] [[0000013|Feroxbuster File directories sweep]]
 >
 > #### Vulnerability Testing
-> - [ ] LFI (../../../../etc/passwd)
-> - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
-> - [ ] Command Injection (; whoami)
+> - [ ] [[0000014|LFI (../../../../etc/passwd)]]
+> - [ ] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
+> - [ ] [[0000016|Command Injection (;whoami)]]
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)
 > - [ ] [[Hexedit]]
@@ -115,30 +114,30 @@
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
-> - [x] groups
-> - [x] ip a
-> - [x] uname -a
-> - [x] env
+> - [ ] whoami
+> - [ ] id
+> - [ ] groups
+> - [ ] ip a
+> - [ ] uname -a
+> - [ ] env
 > 
 > #### Advanced Enumeration 
-> - [x] Internal ports | ss -tlpn
-> - [x] Running Processes | ps auxww
-> - [x] cat /etc/fstab | grep hidepid
+> - [ ] Internal ports | ss -tlpn
+> - [ ] Running Processes | ps auxww
+> - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
-> - [x] ls /opt | usually empty
+> - [ ] ls 
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
-> - [x] Try username same as password
-> - [x] docker ps
-> - [x] ls -la /etc/passwd allowing group modification to root grp
+> - [ ] cat /etc/passwd
+> - [ ] Try username same as password
+> - [ ] docker ps
+> - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
-> - [x] ls -la /var/www
+> - [ ] ls -la /var/www
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
@@ -147,12 +146,12 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [x] Docker
-> 	- [x] cat /etc/resolv.conf
-> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [ ] Docker
+> 	- [ ] cat /etc/resolv.conf
+> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [x] sudo -l
+> - [ ] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -160,24 +159,24 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] ls -la /etc/cron* | e2scrub_all , PHP
-> - [x] crontab -l
-> - [x] systemctl list-timers --all
-> - [x] grep -R "" /etc/cron*
+> - [ ] cat /etc/crontab
+> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
+> - [ ] crontab -l
+> - [ ] systemctl list-timers --all
+> - [ ] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
 > 
 >  #### SUID / Capabilities
-> - [x] find / -perm -4000 2>/dev/null
-> - [x] getcap -r / 2>/dev/null
-> - [x] [[GTFOChecker]]
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] [[GTFOChecker]]
 > 
 >  #### Special Permissions
->  - [x] ls -la /usr/bin/
+>  - [ ] ls -la /usr/bin/
 >
 >  #### Writable Content
->- [x] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
->- [x] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
+>- [ ] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
+>- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
 >  #### LinPEAS
 > - [ ] Run [[LinWinPEAS]]
