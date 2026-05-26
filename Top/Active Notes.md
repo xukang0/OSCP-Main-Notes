@@ -42,7 +42,7 @@ Apache/2.4.58
 ---
 ## Discovered Subdomains
 
-
+http://192.168.232.214/libspider/ > login page > admin:admin works
 
 
 ---
@@ -52,9 +52,10 @@ contact@spidersociety.offsec.lab
 
 contact@spidersociety.org
 
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+| Username      | Password                                   | Notes     |
+| ------------- | ------------------------------------------ | --------- |
+| ss_ftpbckuser | ss_WeLoveSpiderSociety_From_Tech_Dept5937! | libspider |
+|               |                                            |           |
 
 ---
 ## Attack Angles
