@@ -121,8 +121,8 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [x] Run [[0000002|LinWinPEAS [parsePEAS-ng]]]
-> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [ ] Run [[0000002|LinWinPEAS [parsePEAS-ng]]]
+> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
@@ -136,8 +136,9 @@
 > - [ ] env
 > 
 > #### Advanced Enumeration 
-> - [x] Internal ports | [[0000024|ss -tlpn]]
-> - [x] Running Processes | [[0000025|ps auxww]]
+> - [ ] Internal ports | [[0000024|ss -tlpn]]
+> - [ ] Running Processes | [[0000025|ps auxww]]
+> - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
@@ -145,9 +146,9 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities
-> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [x] [[0000018|getcap -r / 2>/dev/null]]
-> - [x] [[GTFOChecker]]
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
@@ -178,9 +179,9 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] ls -la /etc/cron* | e2scrub_all , PHP
-> - [x] crontab -l
+> - [ ] cat /etc/crontab
+> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
+> - [ ] crontab -l
 > - [ ] systemctl list-timers --all
 > - [ ] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
@@ -197,10 +198,13 @@
 >  #### DBMaria
 > - [ ] find / -type f -name "*.db" 2>/dev/null
 
-> [!note]- SUID / Capabilities
+> [!note]- SUID / Capabilities / Sudo
 >  #### FREE WINS SUID
 > - [ ] /usr/bin/[[php7.4]]
 > - [ ] /usr/bin/find
+> 
+>  #### FREE WINS SUDO
+> - [ ] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
 
 > [!note]- Priv Esc Techniques
 > #### Ports
@@ -217,6 +221,9 @@
 >
 >  #### Kernel
 >  - [ ] [CVE-2022-0847] Dirtypipe
+> 
+>  #### Systemctl modifiication
+> - [ ] [[0000026|Modifying a service in /etc/systemd/system/]]
 
 
 ---

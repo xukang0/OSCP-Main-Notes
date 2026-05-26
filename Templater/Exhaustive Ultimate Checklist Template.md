@@ -138,6 +138,7 @@
 > #### Advanced Enumeration 
 > - [ ] Internal ports | [[0000024|ss -tlpn]]
 > - [ ] Running Processes | [[0000025|ps auxww]]
+> - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
@@ -197,10 +198,13 @@
 >  #### DBMaria
 > - [ ] find / -type f -name "*.db" 2>/dev/null
 
-> [!note]- SUID / Capabilities
+> [!note]- SUID / Capabilities / Sudo
 >  #### FREE WINS SUID
 > - [ ] /usr/bin/[[php7.4]]
 > - [ ] /usr/bin/find
+> 
+>  #### FREE WINS SUDO
+> - [ ] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
 
 > [!note]- Priv Esc Techniques
 > #### Ports
@@ -217,6 +221,9 @@
 >
 >  #### Kernel
 >  - [ ] [CVE-2022-0847] Dirtypipe
+> 
+>  #### Systemctl modifiication
+> - [ ] [[0000026|Modifying a service in /etc/systemd/system/]]
 
 
 ---
