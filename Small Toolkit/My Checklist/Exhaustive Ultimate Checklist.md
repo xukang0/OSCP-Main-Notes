@@ -3,8 +3,8 @@
 [[1. Initial Enumeration]]
 
 > [!note]- NMAP
-> - [ ] Full -A Scan
-> - [ ] UDP Scan
+> - [x] Full -A Scan
+> - [x] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts

@@ -67,6 +67,7 @@
 | 6667      | TCP      | IRC                                                  | Chat protocol; OSCP: sometimes pivoting                                              |
 | 8000      | TCP      | HTTP Alternate                                       | Web service; OSCP: custom web apps                                                   |
 | 8080      | TCP      | HTTP Alternate                                       | Web service; OSCP: often used in labs                                                |
+| 8338      | TCP      | HTTP                                                 | Maltrail                                                                             |
 | 8443      | TCP      | HTTPS Alternate                                      | Web service                                                                          |
 | 9000      | TCP      | Webmin                                               | Admin panel; OSCP: misconfiguration enumeration                                      |
 | 9090      | TCP      | HTTP Alternate                                       | Web service                                                                          |
