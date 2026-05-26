@@ -3,7 +3,7 @@
 | ------- | ---------- | ----- |
 |         |            |       |
 
-MACHINE:: Pebbles
+MACHINE:: Nukem
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 

