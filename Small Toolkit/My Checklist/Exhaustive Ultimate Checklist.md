@@ -121,8 +121,8 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[0000002|LinWinPEAS [parsePEAS-ng]]]
-> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [x] Run [[0000002|LinWinPEAS [parsePEAS-ng]]]
+> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
@@ -136,8 +136,8 @@
 > - [ ] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | ss -tlpn
-> - [ ] Running Processes | ps auxww
+> - [x] Internal ports | [[0000024|ss -tlpn]]
+> - [x] Running Processes | [[0000025|ps auxww]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
@@ -145,9 +145,9 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] [[GTFOChecker]]
+> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [x] [[0000018|getcap -r / 2>/dev/null]]
+> - [x] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
@@ -178,9 +178,9 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
-> - [ ] crontab -l
+> - [x] cat /etc/crontab
+> - [x] ls -la /etc/cron* | e2scrub_all , PHP
+> - [x] crontab -l
 > - [ ] systemctl list-timers --all
 > - [ ] grep -R "" /etc/cron*
 > - [ ] [[pspy]]

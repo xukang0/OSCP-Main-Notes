@@ -73,7 +73,9 @@ spidey
 ---
 ## Attack Angles
 
+/usr/local/bin/spiderbackup.sh
 
+/etc/systemd/system/spiderbackup.service
 
 ---
 ## Steps to User.txt

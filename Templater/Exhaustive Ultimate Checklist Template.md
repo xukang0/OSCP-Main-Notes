@@ -136,8 +136,8 @@
 > - [ ] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | ss -tlpn
-> - [ ] Running Processes | ps auxww
+> - [ ] Internal ports | [[0000024|ss -tlpn]]
+> - [ ] Running Processes | [[0000025|ps auxww]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
