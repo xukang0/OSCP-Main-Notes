@@ -1,3 +1,4 @@
+[[Active Notes Template]]
 ## Provided Credentials
 ---
 
@@ -16,12 +17,17 @@
 | ---- | ------- | ----- |
 |      |         |       |
 
+```powershell
+
+```
 
 
 ---
 ## Software Versions
 
+```powershell
 
+```
 
 
 ---

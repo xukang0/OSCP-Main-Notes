@@ -1,3 +1,4 @@
+[[Active Machine Template]]
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
