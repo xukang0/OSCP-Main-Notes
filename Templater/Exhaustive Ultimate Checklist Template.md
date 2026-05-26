@@ -160,8 +160,8 @@
 >
 > #### Scheduled Tasks
 > - [ ] cat /etc/crontab
+> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
 > - [ ] crontab -l
-> - [ ] /etc/cron.d | e2scrub_all , PHP
 > - [ ] [[pspy]]
 > 
 >  #### SUID / Capabilities
