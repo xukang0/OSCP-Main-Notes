@@ -8,7 +8,7 @@ find / -type f -perm -4000 2>/dev/null
 
 By running ltrace on the binary we can verify it’s actions. First transfer the binary to local machine.
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `scp djmardov@${ip}:/usr/bin/viewuser viewuser`;
 

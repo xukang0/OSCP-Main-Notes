@@ -7,7 +7,7 @@ http://127.0.0.1:52846/
 ```
 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `ssh jimmy@${discoveredDomain} -L 8080:localhost:8080`;
@@ -15,7 +15,7 @@ const command = `ssh jimmy@${discoveredDomain} -L 8080:localhost:8080`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `ssh -L 8888:127.0.0.1:9229 engineer@${ip}`;
 

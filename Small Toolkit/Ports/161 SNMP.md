@@ -7,7 +7,7 @@
 
 SNMP Bulkwalk Enumeration
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `snmpbulkwalk -c [COMM_STRING] -v [VERSION] ${ip} .`;
 
@@ -21,7 +21,7 @@ snmpbulkwalk -c public -v2c 10.10.11.136 .
 
 SNMP Check Enumeration
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `snmp-check ${ip} -c public`;
 

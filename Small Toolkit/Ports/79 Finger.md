@@ -6,7 +6,7 @@
     - Can reveal usernames, home dirs, shells
 -
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `finger @${ip}`;
 
@@ -33,7 +33,7 @@ cd finger-user-enum=1.0
 
 USAGE : 
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `./finger-user-enum.pl -U /usr/share/seclists/Usernames/Names/names.txt -t ${ip}`;
 
