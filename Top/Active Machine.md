@@ -3,7 +3,7 @@
 | ------- | ---------- | ----- |
 |         |            |       |
 
-MACHINE:: Test
+MACHINE:: SpiderSociety
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -11,7 +11,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   IP
+IP::   192.168.232.214
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -19,19 +19,11 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP:: 192.168.45.232
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
 const command = `${KaliIP}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-Web Address
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

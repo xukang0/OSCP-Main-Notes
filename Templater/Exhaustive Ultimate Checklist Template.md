@@ -10,7 +10,7 @@
 >
 >  #### NMAP
 > - [ ] [[0000001|Full -A Scan]]
-> - [ ] [[0000002|UDP Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
