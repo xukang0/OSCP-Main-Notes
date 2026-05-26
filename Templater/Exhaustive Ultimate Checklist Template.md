@@ -44,6 +44,7 @@
 > - [ ] Command Injection (; whoami)
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)
+> - [ ] [[Hexedit]]
 >
 > #### Hidden Content
 > - [ ] Check JS files

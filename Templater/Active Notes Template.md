@@ -58,44 +58,46 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
-## Software Versions
-
-
-
-
-
-
-
----
-
-
-
 ## Open Ports
----
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
 |      |         |       |
 
----
 
+
+---
+## Software Versions
+
+
+
+
+---
 ## Discovered Subdomains
----
+
+
 
 
 ---
-
 ## Discovered Credentials
----
+
 
 | Username | Password | Notes |
 | -------- | -------- | ----- |
 |          |          |       |
 
 ---
-
 ## Attack Angles
+
+
+
 ---
+## Steps to User.txt
+
+
+
+---
+## Steps to root.txt
 
 
 ---

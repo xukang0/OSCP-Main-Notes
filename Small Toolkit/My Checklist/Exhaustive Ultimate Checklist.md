@@ -3,8 +3,8 @@
 [[1. Initial Enumeration]]
 
 > [!note]- NMAP
-> - [ ] Full -A Scan
-> - [ ] UDP Scan
+> - [x] Full -A Scan
+> - [x] UDP Scan
 
 ### Post
 - [ ] Add discovered hosts to /etc/hosts
@@ -25,30 +25,30 @@
 
 
 > [!note]- Web Checklist
-> - [ ] Visit site
-> - [ ] View source
-> - [ ] Identify tech/CMS
-> - [ ] whatweb
+> - [x] Visit site
+> - [x] View source
+> - [x] Identify tech/CMS
+> - [x] whatweb
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
 > - [ ] curl -i domain
 >
 > #### Brute Force
-> - [ ] Feroxbuster brute force (medium)
+> - [x] Feroxbuster brute force (medium)
 > - [ ] Vhost brute force
-> - [ ] Feroxbuster File directories sweep
+> - [x] Feroxbuster File directories sweep
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
 > - [ ] SQLi (test' or 1=1;-- -) [[SQL Injection]]
 > - [ ] Command Injection (; whoami)
-> - [ ] PHP code inclusion
-> - [ ] File upload (if available)
+> - [x] PHP code inclusion
+> - [x] File upload (if available)
 >
 > #### Hidden Content
 > - [ ] Check JS files
 > - [ ] Check comments
-> - [ ] Check backups (.bak, .zip)
+> - [x] Check backups (.bak, .zip)
 
 #### Contingencies
 
@@ -114,25 +114,25 @@
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] groups
-> - [ ] ip a
-> - [ ] uname -a
-> - [ ] env
+> - [x] whoami
+> - [x] id
+> - [x] groups
+> - [x] ip a
+> - [x] uname -a
+> - [x] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | ss -tlpn
-> - [ ] Running Processes | ps auxww
+> - [x] Internal ports | ss -tlpn
+> - [x] Running Processes | ps auxww
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
+> - [x] cat /etc/passwd
 > - [ ] Try username same as password
-> - [ ] docker ps
+> - [x] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
@@ -150,7 +150,7 @@
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [ ] sudo -l
+> - [x] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -158,25 +158,25 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] crontab -l
+> - [x] cat /etc/crontab
+> - [x] crontab -l
 > - [ ] [[pspy]]
 > 
 >  #### SUID / Capabilities
-> - [ ] find / -perm -4000 2>/dev/null
-> - [ ] getcap -r / 2>/dev/null
-> - [ ] [[GTFOChecker]]
+> - [x] find / -perm -4000 2>/dev/null
+> - [x] getcap -r / 2>/dev/null
+> - [x] [[GTFOChecker]]
 > 
 >  #### Special Permissions
->  - [ ] ls -la /usr/bin/
+>  - [x] ls -la /usr/bin/
 >
 >  #### Writable Content
 >- [ ] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
 >- [ ] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
 >
 >  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]]
-> - [ ] [[3. Privilege Escalation|HackTricks]]
+> - [x] Run [[LinWinPEAS]]
+> - [x] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 

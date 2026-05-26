@@ -1,4 +1,4 @@
-IP::   IP
+IP::   192.168.232.33
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
@@ -11,7 +11,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP::  192.168.45.232
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   EXAMPLECOM
+Discovered Web Domain::   192.168.232.33
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -60,7 +60,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## Software Versions
 
-
+Apache[2.4.56]
 
 
 
@@ -72,6 +72,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Open Ports
 ---
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.4p1 Debian 5+deb11u2 (protocol 2.0)
+
+80/tcp open  http    Apache httpd 2.4.56 ((Debian))
+
+|_http-server-header: Apache/2.4.56 (Debian)
+
 
 | Port | Service | Notes |
 | ---- | ------- | ----- |
