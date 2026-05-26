@@ -3,21 +3,20 @@
 [[1. Initial Enumeration]]
 
 > [!note]- NMAP
-> - [ ] Full -A Scan
-> - [ ] UDP Scan
-
-### Post
-- [ ] Add discovered hosts to /etc/hosts
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000002|UDP Scan]]
+> 
+> #### Host
+> - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
 
 ---
 ## 2. Foothold
 
 > [!note]- General
 >  #### General
-> - [ ] steghide --extract -sf image.jpg
-> - [ ] searchsploit all port service versions
-
-[[0 Port Number Table]]
+> - [ ] [[0000004|steghide --extract -sf image.jpg]]
+> - [ ] [[0000005|searchsploit all port service versions]]
+> - [ ] [[0 Port Number Table|Check Port Number Table]]
 
 ## 2. Service Enumeration
 
@@ -25,18 +24,18 @@
 
 
 > [!note]- Web Checklist
-> - [ ] Visit site
+> - [ ] [[0000006|Visit site]]
 > - [ ] View source
 > - [ ] Identify tech/CMS
-> - [ ] whatweb
-> - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
+> - [ ] [[0000008|whatweb]]
+> - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [ ] curl -i domain
+> - [ ] [[0000010|curl -i domain]]
 >
 > #### Brute Force
-> - [ ] Feroxbuster brute force (medium)
-> - [ ] Vhost brute force
-> - [ ] Feroxbuster File directories sweep
+> - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
+> - [ ] [[0000012|Vhost brute force]]
+> - [ ] [[0000013|Feroxbuster File directories sweep]]
 >
 > #### Vulnerability Testing
 > - [ ] LFI (../../../../etc/passwd)
