@@ -3,7 +3,7 @@
 | ------- | ---------- | ----- |
 |         |            |       |
 
-MACHINE:: Exfiltrated
+MACHINE:: machine
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -36,8 +36,6 @@ const command = `http://${discoveredDomain}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-[[Editing Page]]
-
 wget from local python server
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
