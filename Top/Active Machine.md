@@ -1,9 +1,17 @@
-IP::   IP
 
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
 |         |            |       |
 
+MACHINE:: Exfiltrated
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
+
+const command = `${machine}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+IP::   IP
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
