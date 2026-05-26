@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -31,10 +31,10 @@
 
 
 > [!note]- Web Checklist
-> - [x] [[0000006|Visit site]]
-> - [x] View source
-> - [x] Identify tech/CMS
-> - [x] [[0000008|whatweb]]
+> - [ ] [[0000006|Visit site]]
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
 > - [ ] [[0000010|curl -i domain]]
@@ -46,7 +46,9 @@
 >
 > #### Vulnerability Testing
 > - [ ] [[0000014|LFI (../../../../etc/passwd)]]
-> - [x] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
+> - [ ] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
+> - [ ] [[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
+> - [ ] [[0000027|URL Webshell]]
 > - [ ] [[0000016|Command Injection (;whoami)]]
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)
@@ -122,24 +124,24 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[0000002|LinWinPEAS [parsePEAS-ng]]]
+> - [x] Run [[0000002|LinWinPEAS [parsePEAS-ng]]]
 > - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] groups
+> - [x] whoami
+> - [x] id
+> - [x] groups
 > - [ ] ip a
 > - [ ] uname -a
-> - [ ] env
+> - [x] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | [[0000024|ss -tlpn]]
-> - [ ] Running Processes | [[0000025|ps auxww]]
-> - [ ] [[0000026|ls -la /etc/systemd/system/]]
+> - [x] Internal ports | [[0000024|ss -tlpn]]
+> - [x] Running Processes | [[0000025|ps auxww]]
+> - [x] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
@@ -147,9 +149,9 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] [[GTFOChecker]]
+> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [x] [[0000018|getcap -r / 2>/dev/null]]
+> - [x] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
@@ -185,7 +187,7 @@
 > - [ ] crontab -l
 > - [ ] systemctl list-timers --all
 > - [ ] grep -R "" /etc/cron*
-> - [ ] [[pspy]]
+> - [x] [[pspy]]
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/

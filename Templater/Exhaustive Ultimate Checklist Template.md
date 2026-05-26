@@ -124,7 +124,7 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[0000002|LinWinPEAS [parsePEAS-ng]]]
+> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
 > - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings

