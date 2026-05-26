@@ -18,20 +18,13 @@ ftp {target_IP}
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `lftp ${ip}`;
+const command = `lftp ${ip} -p [portno] -u [user]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 Name : Anonymous. Password : {Blank}
 
 ![[Pasted image 20250512172652.png]]
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `lftp -p ${ip} [portno]`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
 
 HYDRA CRACK
 

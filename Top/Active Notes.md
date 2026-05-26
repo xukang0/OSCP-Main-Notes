@@ -55,8 +55,21 @@ contact@spidersociety.org
 | Username      | Password                                   | Notes     |
 | ------------- | ------------------------------------------ | --------- |
 | ss_ftpbckuser | ss_WeLoveSpiderSociety_From_Tech_Dept5937! | libspider |
-|               |                                            |           |
+```
+ss_ftpbckuser
+```
 
+```
+ss_WeLoveSpiderSociety_From_Tech_Dept5937!
+```
+
+```
+WithGreatPowerComesGreatSecurity99!
+```
+
+```
+spidey
+```
 ---
 ## Attack Angles
 

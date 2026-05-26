@@ -119,6 +119,14 @@
 ## 4. Privilege Escalation
 
 > [!note]- Priv Esc
+>
+>  #### LinPEAS
+> - [ ] Run [[LinWinPEAS]]
+> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [ ] [[3. Privilege Escalation|HackTricks]]
+> - [ ] Review yellow findings
+> - [ ] Linux Exploit Suggester
+> 
 > #### Basic Enumeration
 > - [ ] whoami
 > - [ ] id
@@ -135,6 +143,11 @@
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
 > - [ ] ls 
+> 
+>  #### SUID / Capabilities
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
@@ -172,11 +185,6 @@
 > - [ ] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
 > 
->  #### SUID / Capabilities
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] [[GTFOChecker]]
-> 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
 >
@@ -184,13 +192,6 @@
 >- [ ] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
 >- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
->  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]]
-> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
-> - [ ] [[3. Privilege Escalation|HackTricks]]
-> - [ ] Review yellow findings
-> - [ ] Linux Exploit Suggester
-> 
 
 > [!note]- Database
 >  #### DBMaria

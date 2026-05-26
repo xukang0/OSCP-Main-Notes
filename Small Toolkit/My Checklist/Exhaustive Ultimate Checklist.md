@@ -21,7 +21,7 @@
 > [!note]- General
 >  #### General
 > - [ ] [[0000004|steghide --extract -sf image.jpg]]
-> - [ ] [[0000005|searchsploit all port service versions]]
+> - [x] [[0000005|searchsploit all port service versions]]
 > - [ ] [[0 Port Number Table|Check Port Number Table]]
 
 ## 2. Service Enumeration
