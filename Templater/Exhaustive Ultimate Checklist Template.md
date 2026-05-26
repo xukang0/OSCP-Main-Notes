@@ -162,6 +162,8 @@
 > - [ ] cat /etc/crontab
 > - [ ] ls -la /etc/cron* | e2scrub_all , PHP
 > - [ ] crontab -l
+> - [ ] systemctl list-timers --all
+> - [ ] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
 > 
 >  #### SUID / Capabilities
