@@ -4,13 +4,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -21,7 +21,7 @@
 > [!note]- General
 >  #### General
 > - [ ] [[0000004|steghide --extract -sf image.jpg]]
-> - [x] [[0000005|searchsploit all port service versions]]
+> - [ ] [[0000005|searchsploit all port service versions]]
 > - [ ] [[0 Port Number Table|Check Port Number Table]]
 
 ## 2. Service Enumeration
@@ -30,16 +30,16 @@
 
 
 > [!note]- Web Checklist
-> - [x] [[0000006|Visit site]]
-> - [x] View source
-> - [x] Identify tech/CMS
-> - [x] [[0000008|whatweb]]
+> - [ ] [[0000006|Visit site]]
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [x] [[0000010|curl -i domain]]
+> - [ ] [[0000010|curl -i domain]]
 >
 > #### Brute Force
-> - [x] [[0000011|Feroxbuster Directories brute force (medium)]]
+> - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
 > - [ ] [[0000012|Vhost brute force]]
 > - [ ] [[0000013|Feroxbuster File directories sweep]]
 >
@@ -119,6 +119,14 @@
 ## 4. Privilege Escalation
 
 > [!note]- Priv Esc
+>
+>  #### LinPEAS
+> - [ ] Run [[0000002|LinWinPEAS [parsePEAS-ng]]]
+> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [ ] [[3. Privilege Escalation|HackTricks]]
+> - [ ] Review yellow findings
+> - [ ] Linux Exploit Suggester
+> 
 > #### Basic Enumeration
 > - [ ] whoami
 > - [ ] id
@@ -135,6 +143,11 @@
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
 > - [ ] ls 
+> 
+>  #### SUID / Capabilities
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
@@ -172,11 +185,6 @@
 > - [ ] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
 > 
->  #### SUID / Capabilities
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] [[GTFOChecker]]
-> 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
 >
@@ -184,13 +192,6 @@
 >- [ ] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
 >- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
->  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]]
-> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
-> - [ ] [[3. Privilege Escalation|HackTricks]]
-> - [ ] Review yellow findings
-> - [ ] Linux Exploit Suggester
-> 
 
 > [!note]- Database
 >  #### DBMaria
