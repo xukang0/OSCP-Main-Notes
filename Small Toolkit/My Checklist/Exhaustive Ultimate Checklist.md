@@ -25,13 +25,13 @@
 
 
 > [!note]- Web Checklist
-> - [ ] Visit site
-> - [ ] View source
+> - [x] Visit site
+> - [x] View source
 > - [ ] Identify tech/CMS
-> - [ ] whatweb
+> - [x] whatweb
 > - [ ] Test parameters (?id=1, ?page=) | ?[parameter]=0
 > - [ ] Analyze error page
-> - [ ] curl -i domain
+> - [x] curl -i domain
 >
 > #### Brute Force
 > - [ ] Feroxbuster brute force (medium)
@@ -115,30 +115,30 @@
 
 > [!note]- Priv Esc
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] groups
-> - [ ] ip a
-> - [ ] uname -a
-> - [ ] env
+> - [x] whoami
+> - [x] id
+> - [x] groups
+> - [x] ip a
+> - [x] uname -a
+> - [x] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | ss -tlpn
-> - [ ] Running Processes | ps auxww
-> - [ ] cat /etc/fstab | grep hidepid
+> - [x] Internal ports | ss -tlpn
+> - [x] Running Processes | ps auxww
+> - [x] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
 > - [ ] Look through SSH History
 > - [ ] Hydra crack
-> - [ ] ls /opt | usually empty
+> - [x] ls /opt | usually empty
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
-> - [ ] Try username same as password
-> - [ ] docker ps
-> - [ ] ls -la /etc/passwd allowing group modification to root grp
+> - [x] cat /etc/passwd
+> - [x] Try username same as password
+> - [x] docker ps
+> - [x] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
-> - [ ] ls -la /var/www
+> - [x] ls -la /var/www
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
@@ -147,12 +147,12 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] Docker
-> 	- [ ] cat /etc/resolv.conf
-> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [x] Docker
+> 	- [x] cat /etc/resolv.conf
+> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [ ] sudo -l
+> - [x] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -160,24 +160,24 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
-> - [ ] crontab -l
-> - [ ] systemctl list-timers --all
-> - [ ] grep -R "" /etc/cron*
+> - [x] cat /etc/crontab
+> - [x] ls -la /etc/cron* | e2scrub_all , PHP
+> - [x] crontab -l
+> - [x] systemctl list-timers --all
+> - [x] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
 > 
 >  #### SUID / Capabilities
-> - [ ] find / -perm -4000 2>/dev/null
-> - [ ] getcap -r / 2>/dev/null
-> - [ ] [[GTFOChecker]]
+> - [x] find / -perm -4000 2>/dev/null
+> - [x] getcap -r / 2>/dev/null
+> - [x] [[GTFOChecker]]
 > 
 >  #### Special Permissions
->  - [ ] ls -la /usr/bin/
+>  - [x] ls -la /usr/bin/
 >
 >  #### Writable Content
->- [ ] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
->- [ ] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
+>- [x] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
+>- [x] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
 >
 >  #### LinPEAS
 > - [ ] Run [[LinWinPEAS]]

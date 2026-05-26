@@ -27,7 +27,7 @@ const command = `http://${ip}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::  192.168.232.32
+Discovered Web Domain::  192.168.232.32:8338
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Notes");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -81,7 +81,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Software Versions
 
 
-
+Maltrail/0.52
 
 ---
 ## Discovered Subdomains
@@ -92,6 +92,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## Discovered Credentials
 
+```
+$y$j9T$d3tgKD.9dkujxWNbbtZuN1$d6Bcu4MbmSGj.8N2VA1J2tLAT0JvE9OeT9anvuxwA33
+```
+
+```
+$y$j9T$VdNCwN5thdnTPXpr87UrZ/$DOfFXgmuYsSQZ5S9GU5faFj8Z/BPpLMD80aEPFmIxt9
+```
 
 | Username | Password | Notes |
 | -------- | -------- | ----- |
@@ -99,6 +106,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ---
 ## Attack Angles
+
+PS AUXWW \ GREPROOT
+/usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
+
+/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+
+/usr/sbin/irqbalance --foreground
 
 
 

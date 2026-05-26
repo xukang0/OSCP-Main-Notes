@@ -1,5 +1,9 @@
 ```
-echo '[hash]' > hash && john --wordlist=/usr/share/wordlists/rockyou.txt hash
+echo '[hash]' > hash 
+```
+
+```
+john --wordlist=/usr/share/wordlists/rockyou.txt hash
 ```
 
 ```
