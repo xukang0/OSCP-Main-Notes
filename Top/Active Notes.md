@@ -36,7 +36,7 @@ PORT     STATE SERVICE VERSION
 ---
 ## Software Versions
 
-
+Apache/2.4.58
 
 
 ---
@@ -48,6 +48,9 @@ PORT     STATE SERVICE VERSION
 ---
 ## Discovered Credentials
 
+contact@spidersociety.offsec.lab
+
+contact@spidersociety.org
 
 | Username | Password | Notes |
 | -------- | -------- | ----- |
