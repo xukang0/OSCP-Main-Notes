@@ -161,6 +161,7 @@
 > #### Scheduled Tasks
 > - [ ] cat /etc/crontab
 > - [ ] crontab -l
+> - [ ] /etc/cron.d | e2scrub_all , PHP
 > - [ ] [[pspy]]
 > 
 >  #### SUID / Capabilities
@@ -177,6 +178,7 @@
 >
 >  #### LinPEAS
 > - [ ] Run [[LinWinPEAS]]
+> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
@@ -200,6 +202,12 @@
 >
 > #### Exiftool
 >  - [ ] [[Vulnerable ExifTool DjVu Priv Esc]]
+>
+> #### Cron
+>  - [ ] /etc/cron.d | e2scrub_all , PHP
+>
+>  #### Kernel
+>  - [ ] [CVE-2022-0847] Dirtypipe
 
 
 ---

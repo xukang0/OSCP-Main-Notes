@@ -131,23 +131,23 @@
 > 
 > #### Easy wins
 > - [x] cat /etc/passwd
-> - [ ] Try username same as password
+> - [x] Try username same as password
 > - [x] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 >
 > #### Vulnerability Testing
-> - [ ] ls -la /var/www
-> - [ ] ls -a ~
->   - [ ] .bash_history
->   - [ ] interesting files
+> - [x] ls -la /var/www
+> - [x] ls -a ~
+>   - [x] .bash_history
+>   - [x] interesting files
 > 
 > #### Password supersearch
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] Docker
-> 	- [ ] cat /etc/resolv.conf
-> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [x] Docker
+> 	- [x] cat /etc/resolv.conf
+> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
 > - [x] sudo -l
@@ -160,7 +160,7 @@
 > #### Scheduled Tasks
 > - [x] cat /etc/crontab
 > - [x] crontab -l
-> - [ ] [[pspy]]
+> - [x] [[pspy]]
 > 
 >  #### SUID / Capabilities
 > - [x] find / -perm -4000 2>/dev/null
@@ -171,8 +171,8 @@
 >  - [x] ls -la /usr/bin/
 >
 >  #### Writable Content
->- [ ] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
->- [ ] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
+>- [x] find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null | Directories
+>- [x] find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null | Files
 >
 >  #### LinPEAS
 > - [x] Run [[LinWinPEAS]]
