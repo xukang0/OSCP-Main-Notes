@@ -38,7 +38,7 @@
 
 
 > [!note]- Web Checklist
-> - [ ] [[0000006|Visit site]]
+> - [x] [[0000006|Visit site]]
 > - [ ] View source
 > - [ ] Identify tech/CMS
 > - [ ] [[0000008|whatweb]]
@@ -135,15 +135,15 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
 > - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
+> - [x] whoami
+> - [x] id
 > - [ ] groups
 > - [ ] ip a
 > - [ ] uname -a

