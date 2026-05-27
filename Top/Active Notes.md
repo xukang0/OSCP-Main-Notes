@@ -66,7 +66,13 @@
 ## Software Versions
 
 ```powershell
+Apache/2.4.6 (CentOS)
 
+PHP/7.3.22], IP[192.168.107.93],
+
+JQuery, MetaGenerator[HTMLy v2.7.5],
+
+PHP[7.3.22], PoweredBy[HTMLy,], Script[text/javascript], Title[Sybaris - Just another HTMLy blog],
 ```
 
 
