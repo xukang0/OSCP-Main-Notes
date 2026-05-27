@@ -232,15 +232,16 @@
 > - [ ]  [[3000 Grafana| Port 3000 Grafana]]
 > - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
 > 
->  #### Python
+>  #### Path Hijacking
 >  - [ ] [[Python Library Hijacking]]
+>  - [ ] [[LD_LIBRARY_PATH Hijack]] 
+>  - [ ] [[Cronjob Path Hijack]]
 >
 > #### Exiftool
 >  - [ ] [[Vulnerable ExifTool DjVu Priv Esc]]
 >
 > #### Cron
 >  - [ ] /etc/cron.d | e2scrub_all , PHP
->  - [ ] [[LD_LIBRARY_PATH Hijack]] 
 >
 >  #### Kernel
 >  - [ ] [CVE-2022-0847] Dirtypipe

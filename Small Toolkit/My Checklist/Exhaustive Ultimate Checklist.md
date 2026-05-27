@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -38,7 +38,7 @@
 
 
 > [!note]- Web Checklist
-> - [x] [[0000006|Visit site]]
+> - [ ] [[0000006|Visit site]]
 > - [ ] View source
 > - [ ] Identify tech/CMS
 > - [ ] [[0000008|whatweb]]
@@ -135,15 +135,15 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
 > - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [x] whoami
-> - [x] id
+> - [ ] whoami
+> - [ ] id
 > - [ ] groups
 > - [ ] ip a
 > - [ ] uname -a
@@ -232,15 +232,16 @@
 > - [ ]  [[3000 Grafana| Port 3000 Grafana]]
 > - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
 > 
->  #### Python
+>  #### Path Hijacking
 >  - [ ] [[Python Library Hijacking]]
+>  - [ ] [[LD_LIBRARY_PATH Hijack]] 
+>  - [ ] [[Cronjob Path Hijack]]
 >
 > #### Exiftool
 >  - [ ] [[Vulnerable ExifTool DjVu Priv Esc]]
 >
 > #### Cron
 >  - [ ] /etc/cron.d | e2scrub_all , PHP
->  - [ ] [[LD_LIBRARY_PATH Hijack]] 
 >
 >  #### Kernel
 >  - [ ] [CVE-2022-0847] Dirtypipe
