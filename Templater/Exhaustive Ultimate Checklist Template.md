@@ -117,6 +117,10 @@
 > - [ ] enum4linux [IP]
 >
 
+> [!note]- Redis (6379)
+> #### Redis 5.0.9
+> - [ ] [[6379 Redis]]
+>
 
 ---
 ## 4. Privilege Escalation
