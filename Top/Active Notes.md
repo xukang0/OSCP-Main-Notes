@@ -70,7 +70,8 @@
 ---
 ## Attack Angles
 
-
+WordPress Plugin Tutor.1.5.3 - Local File Inclusion                               | php/webapps/48058.txt
+WordPress Plugin tutor.1.5.3 - Persistent Cross-Site Scripting 
 
 
 
