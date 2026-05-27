@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -29,6 +29,8 @@
 > - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
 > - [ ] [[Root Commands]]
 > - [ ] [[4 Shell Upgrade| Shell Upgrade]]
+> - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
+> - [ ] [[Reverse Shell Resources]]
 
 ## 2. Service Enumeration
 
@@ -133,23 +135,23 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
-> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
-> - [ ] [[3. Privilege Escalation|HackTricks]]
+> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [x] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] groups
+> - [x] whoami
+> - [x] id
+> - [x] groups
 > - [ ] ip a
 > - [ ] uname -a
-> - [ ] env
+> - [x] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | [[0000024|ss -tlpn]]
-> - [ ] Running Processes | [[0000025|ps auxww]]
+> - [x] Internal ports | [[0000024|ss -tlpn]]
+> - [x] Running Processes | [[0000025|ps auxww]]
 > - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -158,16 +160,16 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] [[GTFOChecker]]
+> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [x] [[0000018|getcap -r / 2>/dev/null]]
+> - [x] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
 > - [ ] Try username same as password
-> - [ ] [[0000032|docker ps]]
+> - [x] [[0000032|docker ps]]
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
-> - [ ] [[0000028|mysql --version]]
+> - [x] [[0000028|mysql --version]]
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -179,11 +181,11 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] [[2375 Docker API|Docker]]
+> - [x] [[2375 Docker API|Docker]]
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [ ] sudo -l
+> - [x] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)

@@ -29,6 +29,8 @@
 > - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
 > - [ ] [[Root Commands]]
 > - [ ] [[4 Shell Upgrade| Shell Upgrade]]
+> - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
+> - [ ] [[Reverse Shell Resources]]
 
 ## 2. Service Enumeration
 
@@ -157,9 +159,10 @@
 > - [ ] Hydra crack
 > - [ ] ls 
 > 
->  #### SUID / Capabilities
+>  #### SUID / Capabilities / Sudo
 > - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
 > - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] sudo -l
 > - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
@@ -181,10 +184,6 @@
 > #### PE Vectors (Ruling Out)
 > - [ ] [[2375 Docker API|Docker]]
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
-> 
->#### Priv Checks (LINUX)
-> - [ ] sudo -l
-> - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
