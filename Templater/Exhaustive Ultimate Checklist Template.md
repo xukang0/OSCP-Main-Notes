@@ -27,9 +27,7 @@
 > 
 >  #### Toolkit
 > - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
-> 
->  #### Root 
-> - [ ] [[0000030|echo [user] ALL=(ALL) ALL >> /etc/sudoers]]
+> - [ ] [[Root Commands]]
 
 ## 2. Service Enumeration
 
