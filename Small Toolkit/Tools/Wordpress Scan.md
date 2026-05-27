@@ -1,3 +1,7 @@
+```
+wpscan --update
+```
+
 Basic Usage
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");

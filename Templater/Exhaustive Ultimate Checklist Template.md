@@ -99,7 +99,7 @@
 > 
 > #### Wordpress Scan
 > - [ ] Default creds
-> - [ ] wpscan
+> - [ ] [[Wordpress Scan]]
 
 
 ---
