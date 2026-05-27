@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [ ] [[0000021| [PG Practice] Initial Setup ]]
+>   - [x] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [ ] [[0000001|Full -A Scan]]
-> - [ ] [[0000001|UDP Scan]]
+> - [x] [[0000001|Full -A Scan]]
+> - [x] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -133,7 +133,7 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
 > - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
@@ -165,7 +165,7 @@
 > #### Easy wins
 > - [ ] cat /etc/passwd
 > - [ ] Try username same as password
-> - [x] docker ps
+> - [ ] [[0000032|docker ps]]
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 > - [ ] [[0000028|mysql --version]]
 >
@@ -179,8 +179,7 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] Docker
-> 	- [ ] cat /etc/resolv.conf
+> - [ ] [[2375 Docker API|Docker]]
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
