@@ -27,7 +27,7 @@
 > 
 >  #### Toolkit
 > - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
-> - [ ] [[Root Commands]]
+> - [ ] [[Root Methods]]
 > - [ ] [[4 Shell Upgrade| Shell Upgrade]]
 > - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
 > - [ ] [[Reverse Shell Resources]]
@@ -169,6 +169,7 @@
 > - [ ] cat /etc/passwd
 > - [ ] Try username same as password
 > - [ ] [[0000032|docker ps]]
+> - [ ] Disk Group
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 > - [ ] [[0000028|mysql --version]]
 >
@@ -228,6 +229,7 @@
 
 > [!note]- Priv Esc Techniques
 > #### Ports
+> - [ ]  [[3000 Grafana| Port 3000 Grafana]]
 > - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
 > 
 >  #### Python

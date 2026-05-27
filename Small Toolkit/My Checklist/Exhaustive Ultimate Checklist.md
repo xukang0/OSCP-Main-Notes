@@ -27,7 +27,7 @@
 > 
 >  #### Toolkit
 > - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
-> - [ ] [[Root Commands]]
+> - [ ] [[Root Methods]]
 > - [ ] [[4 Shell Upgrade| Shell Upgrade]]
 > - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
 > - [ ] [[Reverse Shell Resources]]
