@@ -24,6 +24,12 @@
 > - [ ] [[0000004|steghide --extract -sf image.jpg]]
 > - [ ] [[0000005|searchsploit all port service versions]]
 > - [ ] [[0 Port Number Table|Check Port Number Table]]
+> 
+>  #### Toolkit
+> - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
+> 
+>  #### Root 
+> - [ ] [[0000030|echo [user] ALL=(ALL) ALL >> /etc/sudoers]]
 
 ## 2. Service Enumeration
 
@@ -210,6 +216,7 @@
 > 
 >  #### Wordpress
 > - [ ] cat /srv/http/wp-config.php
+> 
 >  #### Root 
 > - [ ] [[0000030|echo [user] ALL=(ALL) ALL >> /etc/sudoers]]
 
@@ -234,6 +241,7 @@
 >
 > #### Cron
 >  - [ ] /etc/cron.d | e2scrub_all , PHP
+>  - [ ] [[LD_LIBRARY_PATH Hijack]] 
 >
 >  #### Kernel
 >  - [ ] [CVE-2022-0847] Dirtypipe

@@ -183,11 +183,11 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
-> - [ ] crontab -l
+> - [x] cat /etc/crontab
+> - [x] ls -la /etc/cron* | e2scrub_all , PHP
+> - [x] crontab -l
 > - [ ] systemctl list-timers --all
-> - [ ] grep -R "" /etc/cron*
+> - [x] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
 > 
 >  #### Special Permissions
