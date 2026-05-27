@@ -1,18 +1,29 @@
 Docker Port 2375
 
+Check if part of docker group
 ```
 id
 ```
 
+```powershell
+eleanor@peppo:~$ id  
+uid=1000(eleanor) gid=1000(eleanor) groups=1000(eleanor),999(docker)
+```
+
+Check if part of docker group
 ```  
 groups
 ```
+
+---
 
 That 172.18.x.x IP range with a gateway at 172.18.0.1 screamed **Docker bridge network**. We’re not on the host — we’re trapped in a container.
 
 ```
 cat /etc/resolv.conf
 ```
+
+---
 
 Confirmation of docker
 
@@ -26,11 +37,15 @@ which docker
 docker --version
 ```
 
+---
+
 check docker location
 
 ```
 ls -l /var/run/docker.sock
 ```
+
+---
 
 try docker ps
 
@@ -43,6 +58,8 @@ or
 ```
 docker ps -a
 ```
+
+---
 
 if docker ps works = root
 

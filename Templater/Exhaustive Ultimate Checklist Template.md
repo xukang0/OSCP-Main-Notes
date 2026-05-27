@@ -165,7 +165,7 @@
 > #### Easy wins
 > - [ ] cat /etc/passwd
 > - [ ] Try username same as password
-> - [ ] docker ps
+> - [ ] [[0000032|docker ps]]
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 > - [ ] [[0000028|mysql --version]]
 >
@@ -179,8 +179,7 @@
 > - [ ] grep -Ff grepcredwords.txt -C 2
 >   
 > #### PE Vectors (Ruling Out)
-> - [ ] Docker
-> 	- [ ] cat /etc/resolv.conf
+> - [ ] [[2375 Docker API|Docker]]
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)

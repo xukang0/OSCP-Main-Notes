@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -28,6 +28,7 @@
 >  #### Toolkit
 > - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
 > - [ ] [[Root Commands]]
+> - [ ] [[4 Shell Upgrade| Shell Upgrade]]
 
 ## 2. Service Enumeration
 
@@ -104,9 +105,6 @@
 > #### Wordpress Scan
 > - [ ] Default creds
 > - [ ] [[Wordpress Scan]]
-> 
-> #### Wordpress Scan
-> - [ ] [[PostgresSQL]] | Superuser Standard RCE
 
 
 ---
@@ -135,7 +133,7 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
 > - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
@@ -167,7 +165,7 @@
 > #### Easy wins
 > - [ ] cat /etc/passwd
 > - [ ] Try username same as password
-> - [ ] docker ps
+> - [x] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 > - [ ] [[0000028|mysql --version]]
 >
