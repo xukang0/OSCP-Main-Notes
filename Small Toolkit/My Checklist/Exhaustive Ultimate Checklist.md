@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -24,6 +24,10 @@
 > - [ ] [[0000004|steghide --extract -sf image.jpg]]
 > - [ ] [[0000005|searchsploit all port service versions]]
 > - [ ] [[0 Port Number Table|Check Port Number Table]]
+> 
+>  #### Toolkit
+> - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
+> - [ ] [[Root Commands]]
 
 ## 2. Service Enumeration
 
@@ -31,13 +35,13 @@
 
 
 > [!note]- Web Checklist
-> - [x] [[0000006|Visit site]]
-> - [x] View source
-> - [x] Identify tech/CMS
-> - [x] [[0000008|whatweb]]
+> - [ ] [[0000006|Visit site]]
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [x] [[0000010|curl -i domain]]
+> - [ ] [[0000010|curl -i domain]]
 >
 > #### Brute Force
 > - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
@@ -117,6 +121,10 @@
 > - [ ] enum4linux [IP]
 >
 
+> [!note]- Redis (6379)
+> #### Redis 5.0.9
+> - [ ] [[6379 Redis]]
+>
 
 ---
 ## 4. Privilege Escalation
@@ -183,11 +191,11 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] ls -la /etc/cron* | e2scrub_all , PHP
-> - [x] crontab -l
+> - [ ] cat /etc/crontab
+> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
+> - [ ] crontab -l
 > - [ ] systemctl list-timers --all
-> - [x] grep -R "" /etc/cron*
+> - [ ] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
 > 
 >  #### Special Permissions
@@ -206,6 +214,7 @@
 > 
 >  #### Wordpress
 > - [ ] cat /srv/http/wp-config.php
+> 
 >  #### Root 
 > - [ ] [[0000030|echo [user] ALL=(ALL) ALL >> /etc/sudoers]]
 
@@ -230,6 +239,7 @@
 >
 > #### Cron
 >  - [ ] /etc/cron.d | e2scrub_all , PHP
+>  - [ ] [[LD_LIBRARY_PATH Hijack]] 
 >
 >  #### Kernel
 >  - [ ] [CVE-2022-0847] Dirtypipe
