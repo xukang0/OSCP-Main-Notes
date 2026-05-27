@@ -59,7 +59,7 @@
 | 3306      | TCP      | [[3306 MySQL\|MySQL / MariaDB]]                      | Database enumeration/exploitation                                                    |     |
 | 3389      | TCP      | RDP                                                  | Remote Desktop; OSCP: brute-force if allowed                                         |     |
 | 3690      | TCP      | SVN                                                  | Version control                                                                      |     |
-| 5432      | TCP      | [[Postresql]]                                        | Database enumeration/exploitation                                                    |     |
+| 5432      | TCP      | [[Synced OSCP Notes/OSCP Main Notes/Cheatsheets/PostgresSQL]]                                        | Database enumeration/exploitation                                                    |     |
 | 5900      | TCP      | [[dosbox\|VNC]]                                      | Remote GUI access ( Internal Port )                                                  |     |
 | 5901      | TCP      | [[dosbox\|VNC]]                                      | Remote GUI access ( Internal Port )                                                  |     |
 | 5985      | TCP      | [[Tools/Evil-Winrm\|Evil-Winrm]] (HTTP)              | Windows Remote Management; remote PowerShell access                                  |     |

