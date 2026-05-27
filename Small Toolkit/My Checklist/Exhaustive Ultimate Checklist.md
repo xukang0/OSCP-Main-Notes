@@ -125,7 +125,7 @@
 >
 >  #### LinPEAS
 > - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
-> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
@@ -149,12 +149,12 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] [[GTFOChecker]]
+> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [x] [[0000018|getcap -r / 2>/dev/null]]
+> - [x] [[GTFOChecker]]
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
+> - [x] cat /etc/passwd
 > - [ ] Try username same as password
 > - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
@@ -175,7 +175,7 @@
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [ ] sudo -l
+> - [x] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)

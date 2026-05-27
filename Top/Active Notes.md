@@ -62,6 +62,14 @@
 ---
 ## Discovered Credentials
 
+1|Adams|Andrew|General Manager|||andrew@chinookcorp.com
+2|Edwards|Nancy|nancy@chinookcorp.com
+3|Peacock|Jane||jane@chinookcorp.com
+4|Park|Margaret||margaret@chinookcorp.com
+5|Johnson|Steve||steve@chinookcorp.com
+6|Mitchell|Michael|IT Manager||michael@chinookcorp.com
+7|King|Robert|IT Staff|robert@chinookcorp.com
+8|Callahan|Laura|IT Staff|6|1|laura@chinookcorp.com
 
 | Username | Password | Notes |
 | -------- | -------- | ----- |
@@ -72,6 +80,8 @@
 
 WordPress Plugin Tutor.1.5.3 - Local File Inclusion                               | php/webapps/48058.txt
 WordPress Plugin tutor.1.5.3 - Persistent Cross-Site Scripting 
+
+Lateral movement to Commander
 
 
 
