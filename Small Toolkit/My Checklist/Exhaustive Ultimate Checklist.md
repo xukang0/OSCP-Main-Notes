@@ -124,7 +124,7 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
 > - [x] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
@@ -183,10 +183,10 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
-> - [ ] crontab -l
-> - [ ] systemctl list-timers --all
+> - [x] cat /etc/crontab
+> - [x] ls -la /etc/cron* | e2scrub_all , PHP
+> - [x] crontab -l
+> - [x] systemctl list-timers --all
 > - [ ] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
 > 

@@ -62,6 +62,19 @@
 ---
 ## Discovered Credentials
 
+```commander
+CommanderKeenVorticons1990
+```
+
+define( 'DB_NAME', 'wordpress' );
+define( 'DB_USER', 'commander' );
+define( 'DB_PASSWORD', 'CommanderKeenVorticons1990' );
+define( 'DB_HOST', 'localhost' );
+
+```admin
+$P$BoktR9dJnCOMHiLEnYkPfS1Ae/7vPq/
+```
+
 1|Adams|Andrew|General Manager|||andrew@chinookcorp.com
 2|Edwards|Nancy|nancy@chinookcorp.com
 3|Peacock|Jane||jane@chinookcorp.com

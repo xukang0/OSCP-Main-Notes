@@ -198,14 +198,20 @@
 >- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
 
-> [!note]- Database
+> [!note]- Others
 >  #### DBMaria
 > - [ ] find / -type f -name "*.db" 2>/dev/null
+> - [ ]  [[Sqlite| .db]] file found
+> - [ ] [[3306 MySQL|MySQL Login Creds Found]]
+> 
+>  #### Wordpress
+> - [ ] cat /srv/http/wp-config.php
 
 > [!note]- SUID / Capabilities / Sudo
 >  #### FREE WINS SUID
 > - [ ] /usr/bin/[[php7.4]]
 > - [ ] /usr/bin/find
+> - [ ] [[dosbox|/usr/bin/dosbox]]
 > 
 >  #### FREE WINS SUDO
 > - [ ] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
