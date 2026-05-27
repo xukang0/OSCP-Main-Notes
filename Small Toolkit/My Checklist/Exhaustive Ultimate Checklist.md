@@ -124,8 +124,8 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
-> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
@@ -149,12 +149,12 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities
-> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [x] [[0000018|getcap -r / 2>/dev/null]]
-> - [x] [[GTFOChecker]]
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
+> - [ ] cat /etc/passwd
 > - [ ] Try username same as password
 > - [ ] docker ps
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
@@ -175,7 +175,7 @@
 > - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (LINUX)
-> - [x] sudo -l
+> - [ ] sudo -l
 > - [ ] strings /usr/bin/usage_management
 > 
 >#### Priv Checks (Windows)
@@ -183,10 +183,10 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] ls -la /etc/cron* | e2scrub_all , PHP
-> - [x] crontab -l
-> - [x] systemctl list-timers --all
+> - [ ] cat /etc/crontab
+> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
+> - [ ] crontab -l
+> - [ ] systemctl list-timers --all
 > - [ ] grep -R "" /etc/cron*
 > - [ ] [[pspy]]
 > 
@@ -198,14 +198,22 @@
 >- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
 
-> [!note]- Database
+> [!note]- Others
 >  #### DBMaria
 > - [ ] find / -type f -name "*.db" 2>/dev/null
+> - [ ]  [[Sqlite| .db]] file found
+> - [ ] [[3306 MySQL|MySQL Login Creds Found]]
+> 
+>  #### Wordpress
+> - [ ] cat /srv/http/wp-config.php
+>  #### Root 
+> - [ ] [[0000030|echo [user] ALL=(ALL) ALL >> /etc/sudoers]]
 
 > [!note]- SUID / Capabilities / Sudo
 >  #### FREE WINS SUID
 > - [ ] /usr/bin/[[php7.4]]
 > - [ ] /usr/bin/find
+> - [ ] [[dosbox|/usr/bin/dosbox]]
 > 
 >  #### FREE WINS SUDO
 > - [ ] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
