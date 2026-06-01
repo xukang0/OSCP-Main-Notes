@@ -38,18 +38,18 @@
 
 
 > [!note]- Web Checklist
-> - [ ] [[0000006|Visit site]]
-> - [ ] View source
-> - [ ] Identify tech/CMS
-> - [ ] [[0000008|whatweb]]
+> - [x] [[0000006|Visit site]]
+> - [x] View source
+> - [x] Identify tech/CMS
+> - [x] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [ ] [[0000010|curl -i domain]]
+> - [x] [[0000010|curl -i domain]]
 >
 > #### Brute Force
-> - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
-> - [ ] [[0000012|Vhost brute force]]
-> - [ ] [[0000013|Feroxbuster File directories sweep]]
+> - [x] [[0000011|Feroxbuster Directories brute force (medium)]]
+> - [x] [[0000012|Vhost brute force]]
+> - [x] [[0000013|Feroxbuster File directories sweep]]
 >
 > #### Vulnerability Testing
 > - [ ] [[0000014|LFI (../../../../etc/passwd)]]
@@ -135,23 +135,23 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
-> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] groups
-> - [ ] ip a
-> - [ ] uname -a
-> - [ ] env
+> - [x] whoami
+> - [x] id
+> - [x] groups
+> - [x] ip a
+> - [x] uname -a
+> - [x] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | [[0000024|ss -tlpn]]
-> - [ ] Running Processes | [[0000025|ps auxww]]
+> - [x] Internal ports | [[0000024|ss -tlpn]]
+> - [x] Running Processes | [[0000025|ps auxww]]
 > - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -160,18 +160,18 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities / Sudo
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] sudo -l
+> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [x] [[0000018|getcap -r / 2>/dev/null]]
+> - [x] sudo -l
 > - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
 > - [ ] Try username same as password
-> - [ ] [[0000032|docker ps]]
+> - [x] [[0000032|docker ps]]
 > - [ ] Disk Group
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
-> - [ ] [[0000028|mysql --version]]
+> - [x] [[0000028|mysql --version]]
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
