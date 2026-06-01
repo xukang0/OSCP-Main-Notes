@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-http://challs.nusgreyhats.org:34467
+
 ```
 
 ```
