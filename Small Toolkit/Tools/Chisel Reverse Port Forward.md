@@ -40,12 +40,12 @@ https://github.com/jpillora/chisel/releases/tag/v1.11.5
 
 Windows
 ```
-wget https://github.com/jpillora/chisel/releases/download/v1.10.1/chisel_1.10.1_windows_amd64.gz && gunzip chisel_1.10.1_windows_amd64.gz
+cd /tmp && wget https://github.com/jpillora/chisel/releases/download/v1.10.1/chisel_1.10.1_windows_amd64.gz && gunzip chisel_1.10.1_windows_amd64.gz
 ```
 
 Linux x86 amd64
 ```
-wget https://github.com/jpillora/chisel/releases/download/v1.11.5/chisel_1.11.5_linux_amd64.gz && gunzip chisel_1.11.5_linux_amd64.gz
+cd /tmp && wget https://github.com/jpillora/chisel/releases/download/v1.11.5/chisel_1.11.5_linux_amd64.gz && gunzip chisel_1.11.5_linux_amd64.gz
 ```
 
 ---
