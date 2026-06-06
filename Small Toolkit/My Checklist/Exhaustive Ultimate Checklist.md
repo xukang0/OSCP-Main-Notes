@@ -142,10 +142,10 @@
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [x] [[0000033|whoami | id | groups | ip a | uname -a | env]]
+> - [ ] [[0000033|whoami | id | groups | ip a | uname -a | env]]
 > 
 > #### Advanced Enumeration 
-> - [x] Internal Ports & Running Processes | [[0000024|ss -tlpn && ps auxww]]
+> - [ ] Internal Ports & Running Processes | [[0000024|ss -tlpn && ps auxww]]
 > - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -154,10 +154,10 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities / Sudo
-> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [x] [[0000018|getcap -r / 2>/dev/null]]
-> - [x] sudo -l
-> - [x] [[GTFOChecker]]
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] sudo -l
+> - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
@@ -196,8 +196,8 @@
 >  - [ ] ls -la /usr/bin/
 >
 >  #### Writable Content
->- [x] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
->- [x] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
+>- [ ] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
+>- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
 
 > [!note]- Others
@@ -219,12 +219,15 @@
 > - [ ] [[dosbox|/usr/bin/dosbox]]
 > 
 >  #### FREE WINS SUDO
-> - [x] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
+> - [ ] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
 
 > [!note]- Priv Esc Techniques
 > #### Ports
 > - [ ]  [[3000 Grafana| Port 3000 Grafana]]
 > - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
+> 
+>  #### Web
+> - [ ]  [[Jenkins Priv Esc|Jenkins Internal Server and File Read]]
 > 
 >  #### Path Hijacking
 >  - [ ] [[Python Library Hijacking]]
