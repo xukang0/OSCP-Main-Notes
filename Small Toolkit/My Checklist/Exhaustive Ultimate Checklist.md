@@ -196,8 +196,8 @@
 >  - [ ] ls -la /usr/bin/
 >
 >  #### Writable Content
->- [ ] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
->- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
+>- [x] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
+>- [x] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
 
 > [!note]- Others
@@ -219,7 +219,7 @@
 > - [ ] [[dosbox|/usr/bin/dosbox]]
 > 
 >  #### FREE WINS SUDO
-> - [ ] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
+> - [x] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
 
 > [!note]- Priv Esc Techniques
 > #### Ports

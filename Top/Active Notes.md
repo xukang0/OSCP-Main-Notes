@@ -145,11 +145,59 @@ vmdak : RonnyCache001
 ---
 ## Steps to User.txt
 
+SQLI injection on admin login page
+
+```powershell
+Username: admin' or '1'='1  
+Password: poop (can be any garbage value)
+```
+
+Fast5 Prison Management System
+
+https://www.exploit-db.com/exploits/52017
+
+Further research about this Prison Management System also shows us that we can upload a shell to gain RCE by heading to Home > Edit Photo
+
+Intercept req using burpsuite, upload shell.php disguised as png file first, then edit in burpsuite back to php.
+
+Right click on user photo and open link to see photo and trigger reverse shell. 
+
+Reverse shell as www-data received
+
+```
+grep -rEi --include=\*.{php,env,conf,ini} -E "['\"]?(password|pass|db_pass|db_passwd)['\"]?\s*[:=]\s*['\"][^'\" ]+['\"]" /var/www/ --exclude-dir={node_modules,vendor,cache,logs,.git}
+```
+
+Reveals
+
+root:sqlCr3ds3xp0seD
+
+Connect using mysql and find From these two tables, we can obtain the passwords “escobar2012” and “RonnyCache001”.
+
+hydra -L user.txt -P pass.txt 192.168.142.103 ssh -t 4
+
+vmdak : RonnyCache001
+
+vmdak can read local.txt
+
 
 
 ---
 ## Steps to root.txt
 
+internal port 8080 discovered. [[Chisel Reverse Port Forward]] and access locally. 
+
+jenkins page asking for password. 
+
+https://github.com/godylockz/CVE-2024-23897
+
+Use this CVE to read the password
+
+https://blog.pentesteracademy.com/abusing-jenkins-groovy-script-console-to-get-shell-98b951fa64a6
+
+Follow guide and enter console. [[Jenkins Priv Esc]]
+
+Cmd in console and get reverse shell as root
 
 ---
 

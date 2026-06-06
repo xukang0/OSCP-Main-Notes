@@ -226,6 +226,9 @@
 > - [ ]  [[3000 Grafana| Port 3000 Grafana]]
 > - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
 > 
+>  #### Web
+> - [ ]  [[Jenkins Priv Esc|Jenkins Internal Server and File Read]]
+> 
 >  #### Path Hijacking
 >  - [ ] [[Python Library Hijacking]]
 >  - [ ] [[LD_LIBRARY_PATH Hijack]] 
