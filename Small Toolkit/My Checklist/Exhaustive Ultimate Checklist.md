@@ -135,23 +135,23 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
-> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Review yellow findings
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] groups
-> - [ ] ip a
-> - [ ] uname -a
-> - [ ] env
+> - [x] whoami
+> - [x] id
+> - [x] groups
+> - [x] ip a
+> - [x] uname -a
+> - [x] env
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | [[0000024|ss -tlpn]]
-> - [ ] Running Processes | [[0000025|ps auxww]]
+> - [x] Internal ports | [[0000024|ss -tlpn]]
+> - [x] Running Processes | [[0000025|ps auxww]]
 > - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -160,18 +160,18 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities / Sudo
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] sudo -l
+> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [x] [[0000018|getcap -r / 2>/dev/null]]
+> - [x] sudo -l
 > - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
+> - [x] cat /etc/passwd
 > - [ ] Try username same as password
-> - [ ] [[0000032|docker ps]]
+> - [x] [[0000032|docker ps]]
 > - [ ] Disk Group
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
-> - [ ] [[0000028|mysql --version]]
+> - [x] [[0000028|mysql --version]]
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -184,26 +184,26 @@
 >   
 > #### PE Vectors (Ruling Out)
 > - [ ] [[2375 Docker API|Docker]]
-> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+> - [x] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
 > 
 >#### Priv Checks (Windows)
 > - [ ] whoami /priv
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
+> - [x] cat /etc/crontab
 > - [ ] ls -la /etc/cron* | e2scrub_all , PHP
-> - [ ] crontab -l
+> - [x] crontab -l
 > - [ ] systemctl list-timers --all
 > - [ ] grep -R "" /etc/cron*
-> - [ ] [[pspy]]
+> - [x] [[pspy]]
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
 >
 >  #### Writable Content
->- [ ] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
->- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
+>- [x] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
+>- [x] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
 
 > [!note]- Others

