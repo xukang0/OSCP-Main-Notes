@@ -142,16 +142,10 @@
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [ ] whoami
-> - [ ] id
-> - [ ] groups
-> - [ ] ip a
-> - [ ] uname -a
-> - [ ] env
+> - [x] [[0000033|whoami | id | groups | ip a | uname -a | env]]
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal ports | [[0000024|ss -tlpn]]
-> - [ ] Running Processes | [[0000025|ps auxww]]
+> - [x] Internal Ports & Running Processes | [[0000024|ss -tlpn && ps auxww]]
 > - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -160,10 +154,10 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities / Sudo
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] sudo -l
-> - [ ] [[GTFOChecker]]
+> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [x] [[0000018|getcap -r / 2>/dev/null]]
+> - [x] sudo -l
+> - [x] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd

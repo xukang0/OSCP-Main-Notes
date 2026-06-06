@@ -32,6 +32,14 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ---
 
+## Search creds
+
+```
+grep -rEi --include=\*.{php,env,conf,ini} -E "['\"]?(password|pass|db_pass|db_passwd)['\"]?\s*[:=]\s*['\"][^'\" ]+['\"]" /var/www/ --exclude-dir={node_modules,vendor,cache,logs,.git}
+```
+
+---
+
 
 Login to database
 
