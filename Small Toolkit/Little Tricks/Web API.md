@@ -40,3 +40,32 @@ Included /logs?file=/etc/passwd in GET req
 ```
 
 Change Req to POST
+
+## Curl request example
+
+```powershell                                                                                                               
+┌──(kali㉿kali)-[~/Desktop/PGPlay/XposedAPI]
+└─$ curl http://192.168.209.134:13337/restart                            
+<html>
+    <head>
+        <title>Remote Service Software Management API</title>
+        <script>
+            function restart(){
+                if(confirm("Do you really want to restart the app?")){
+                    var x = new XMLHttpRequest();
+                    x.open("POST", document.URL.toString());
+                    x.send('{"confirm":"true"}');
+                    window.location.assign(window.location.origin.toString());
+                }
+            }
+        </script>
+    </head>
+    <body>
+    <script>restart()</script>
+    </body>
+</html> 
+
+┌──(kali㉿kali)-[~/Desktop/PGPlay/XposedAPI]
+└─$ curl http://192.168.209.134:13337/restart --data '{"confirm":"true"}'
+Restart Successful.    
+```

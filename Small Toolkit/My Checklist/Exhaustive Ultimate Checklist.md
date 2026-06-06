@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -38,16 +38,16 @@
 
 
 > [!note]- Web Checklist
-> - [x] [[0000006|Visit site]]
-> - [x] View source
-> - [x] Identify tech/CMS
-> - [x] [[0000008|whatweb]]
+> - [ ] [[0000006|Visit site]]
+> - [ ] View source
+> - [ ] Identify tech/CMS
+> - [ ] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [x] [[0000010|curl -i domain]]
+> - [ ] [[0000010|curl -i domain]]
 >
 > #### Brute Force
-> - [x] [[0000011|Feroxbuster Directories brute force (medium)]]
+> - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
 > - [ ] [[0000012|Vhost brute force]]
 > - [ ] [[0000013|Feroxbuster File directories sweep]]
 >
@@ -56,6 +56,7 @@
 > - [ ] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
 > - [ ] [[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
 > - [ ] [[0000027|URL Webshell]]
+> - [ ] [[Web API]]
 > - [ ] [[0000016|Command Injection (;whoami)]]
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)
@@ -135,7 +136,7 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
 > - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Linux Exploit Suggester
