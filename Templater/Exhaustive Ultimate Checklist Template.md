@@ -174,7 +174,7 @@
 >   - [ ] interesting files
 > 
 > #### Password supersearch
-> - [ ] grep -Ff grepcredwords.txt -C 2
+> - [ ] [[Search Credentials and Files|Search Creds]]
 >   
 > #### PE Vectors (Ruling Out)
 > - [ ] [[2375 Docker API|Docker]]
@@ -225,6 +225,7 @@
 > #### Ports
 > - [ ]  [[3000 Grafana| Port 3000 Grafana]]
 > - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
+> - [ ]  [[10050 Zabbix|Port 10050 Zabbix]]
 > 
 >  #### Web
 > - [ ]  [[Jenkins Priv Esc|Jenkins Internal Server and File Read]]
