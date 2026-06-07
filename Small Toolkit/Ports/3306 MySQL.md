@@ -29,7 +29,9 @@ const command = `sudo nmap ${ip} -sV -sC -p3306 --script mysql*`;
 dv.paragraph("```bash\n" + command + "\n```");
 
 ```
-
+```
+mysql -u [user] -p[pw] -h [hostIP] [DBname]
+```
 ---
 
 ## Search creds

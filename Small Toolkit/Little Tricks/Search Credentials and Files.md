@@ -16,7 +16,7 @@ find / -type f \( -name "*.conf" -o -name "*.config" -o -name "*.php" -o -name "
 Pinpoint directories to reduce noise
 
 ```
-find /var/www/ /etc/ /opt/ -type f \( -name "*.conf" -o -name "*.env" \) 2>/dev/null
+find /var/www/ /etc/ /opt/ -type f \( -name "*.conf*" -o -name "*.env" \) 2>/dev/null
 ```
 
 One Condition

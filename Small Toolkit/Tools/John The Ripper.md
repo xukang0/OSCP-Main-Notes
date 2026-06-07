@@ -5,6 +5,10 @@ john -w=/usr/share/wordlists/rockyou.txt hash.txt
 ```
 john --single [filename]
 ```
+
+```
+john --show hash.txt
+```
 Zip2john
 ---
 
