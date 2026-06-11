@@ -5,16 +5,16 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [ ] [[0000021| [PG Practice] Initial Setup ]]
+>   - [x] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
->   - [x] [[0000023| [HTB Seasonal] Initial Setup ]]
+>   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
 > - [x] [[0000001|Full -A Scan]]
 > - [x] [[0000001|UDP Scan]]
 > 
 > #### Host
-> - [x] [[0000003|Add discovered hosts to /etc/hosts]]
+> - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
 
 ---
 ## 2. Foothold
@@ -136,16 +136,16 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
-> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [x] [[0000033|whoami | id | groups | ip a | uname -a | env]]
+> - [ ] [[0000033|whoami | id | groups | ip a | uname -a | env]]
 > 
 > #### Advanced Enumeration 
-> - [x] Internal Ports & Running Processes | [[0000024|ss -tlpn && ps auxww]]
+> - [ ] Internal Ports & Running Processes | [[0000024|ss -tlpn && ps auxww]]
 > - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -154,10 +154,10 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities / Sudo
-> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [x] [[0000018|getcap -r / 2>/dev/null]]
-> - [x] sudo -l
-> - [x] [[GTFOChecker]]
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] sudo -l
+> - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
@@ -165,7 +165,7 @@
 > - [ ] [[0000032|docker ps]]
 > - [ ] Disk Group
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
-> - [x] [[0000028|mysql --version]]
+> - [ ] [[0000028|mysql --version]]
 >
 > #### Vulnerability Testing
 > - [ ] ls -la /var/www
@@ -186,6 +186,7 @@
 >
 > #### Scheduled Tasks
 > - [ ] cat /etc/crontab
+> - [ ] [[incrontab]]
 > - [ ] ls -la /etc/cron* | e2scrub_all , PHP
 > - [ ] crontab -l
 > - [ ] systemctl list-timers --all

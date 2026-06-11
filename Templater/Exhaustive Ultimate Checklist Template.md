@@ -83,7 +83,7 @@
 >
 > #### User Login
 > - [ ] Default credentials
-> - [ ] admin:admin
+> - [ ] creds search [service]
 >
 > #### Reset Password (Email)
 > - [ ] If invalid email = does not match our records, SQLi (test' or 1=1;-- -)  [[SQL Injection|link]]

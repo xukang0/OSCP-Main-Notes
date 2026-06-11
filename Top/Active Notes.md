@@ -18,24 +18,90 @@
 |      |         |       |
 
 ```powershell
-22/tcp  open  ssh       OpenSSH 7.4 (protocol 2.0)
+PORT      STATE SERVICE     VERSION
+21/tcp    open  ftp         vsftpd 3.0.3
+| ftp-syst: 
+|   STAT: 
+| FTP server status:
+|      Connected to 192.168.45.248
+|      Logged in as ftp
+|      TYPE: ASCII
+|      No session bandwidth limit
+|      Session timeout in seconds is 300
+|      Control connection is plain text
+|      Data connections will be plain text
+|      At session startup, client count was 1
+|      vsFTPd 3.0.3 - secure, fast, stable
+|_End of status
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+
+
+22/tcp    open  ssh         OpenSSH 8.0 (protocol 2.0)
 | ssh-hostkey: 
-|   2048 4e:60:38:6f:e7:78:6c:ca:58:62:a1:f1:56:ae:8d:30 (RSA)
-|   256 12:41:55:26:9d:ad:3d:e8:bf:4e:31:aa:d7:d1:a5:d2 (ECDSA)
-|_  256 8e:b6:96:e0:21:83:5d:1d:ce:8d:e2:6a:dd:38:c6:75 (ED25519)
+|   3072 b1:e2:9d:f1:f8:10:db:a5:aa:5a:22:94:e8:92:61:65 (RSA)
+|   256 74:dd:fa:f2:51:dd:74:38:2b:b2:ec:82:e5:91:82:28 (ECDSA)
+|_  256 48:bc:9d:eb:bd:4d:ac:b3:0b:5d:67:da:56:54:2b:a0 (ED25519)
 
-80/tcp  open  http      Apache httpd 2.4.6 ((CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16)
-|_http-title: Did not follow redirect to http://connected.htb/
-|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16
 
-443/tcp open  ssl/https Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16
-|_http-server-header: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.16
-|_ssl-date: TLS randomness does not represent time
-| ssl-cert: Subject: commonName=pbxconnect/organizationName=SomeOrganization/stateOrProvinceName=SomeState/countryName=--
-| Not valid before: 2025-11-30T14:07:27
-|_Not valid after:  2026-11-30T14:07:27
-|_http-title: 400 Bad Request
+80/tcp    open  http        Apache httpd 2.4.37 ((centos))
+|_http-title: CentOS \xE6\x8F\x90\xE4\xBE\x9B\xE7\x9A\x84 Apache HTTP \xE6\x9C\x8D\xE5\x8A\xA1\xE5\x99\xA8\xE6\xB5\x8B\xE8\xAF\x95\xE9\xA1\xB5
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-server-header: Apache/2.4.37 (centos)
 
+
+139/tcp   open  netbios-ssn Samba smbd 4
+
+
+445/tcp   open  netbios-ssn Samba smbd 4
+
+
+18000/tcp open  biimenu?
+| fingerprint-strings: 
+|   GenericLines: 
+|     HTTP/1.1 400 Bad Request
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.0 403 Forbidden
+|     Content-Type: text/html; charset=UTF-8
+|     Content-Length: 3102
+|     <!DOCTYPE html>
+|     <html lang="en">
+|     <head>
+|     <meta charset="utf-8" />
+|     <title>Action Controller: Exception caught</title>
+|     <style>
+|     body {
+|     background-color: #FAFAFA;
+|     color: #333;
+|     margin: 0px;
+|     body, p, ol, ul, td {
+|     font-family: helvetica, verdana, arial, sans-serif;
+|     font-size: 13px;
+|     line-height: 18px;
+|     font-size: 11px;
+|     white-space: pre-wrap;
+|     pre.box {
+|     border: 1px solid #EEE;
+|     padding: 10px;
+|     margin: 0px;
+|     width: 958px;
+|     header {
+|     color: #F0F0F0;
+|     background: #C52F24;
+|     padding: 0.5em 1.5em;
+|     margin: 0.2em 0;
+|     line-height: 1.1em;
+|     font-size: 2em;
+|     color: #C52F24;
+|     line-height: 25px;
+|     .details {
+|_    bord
+
+
+50000/tcp open  http        Werkzeug httpd 1.0.1 (Python 3.6.8)
+|_http-server-header: Werkzeug/1.0.1 Python/3.6.8
+|_http-title: Site doesn't have a title (text/html; charset=utf-8).
 ```
 
 
@@ -43,7 +109,7 @@
 ## Software Versions
 
 ```powershell
-redis_version:3.2.12
+
 ```
 
 
@@ -56,6 +122,11 @@ redis_version:3.2.12
 ---
 ## Discovered Credentials
 
+User\cmeeks (Local User) 
+
+Cmeeks          Disk      cmeeks Files
+
+HETEMIT        Wk Sv PrQ Unx NT SNT Samba 4.11.2
 
 | Username | Password | Notes |
 | -------- | -------- | ----- |
@@ -64,61 +135,13 @@ redis_version:3.2.12
 ---
 ## Attack Angles
 
-```powershell
-[asterisk@connected incron.d]$ cat legacy
+FTP anonymous login
 
-/var/spool/asterisk/sysadmin/vpnget IN_CLOSE_WRITE /usr/sbin/sysadmin_openvpn -d
-/var/spool/asterisk/sysadmin/intrusion_detection_stop IN_CLOSE_WRITE /etc/init.d/fail2ban stop
-/var/spool/asterisk/sysadmin/update_system_cron IN_CLOSE_WRITE /usr/sbin/sysadmin_update_set_cron
-/var/spool/asterisk/sysadmin/portmgmt_setup IN_CLOSE_WRITE /usr/sbin/sysadmin_portmgmt
-/var/spool/asterisk/sysadmin/wanrouter_restart IN_CLOSE_WRITE /usr/sbin/sysadmin_wanrouter_restart
-/var/spool/asterisk/sysadmin/dahdi_restart IN_CLOSE_WRITE /usr/sbin/sysadmin_dahdi_restart
-/usr/local/asterisk/ha_trigger IN_CLOSE_WRITE /usr/sbin/sysadmin_ha
-
-
-[asterisk@connected incron.d]$ cat local
-
-/usr/local/asterisk/incron IN_CLOSE_WRITE /usr/bin/sysadmin_manager --local $#
-
-[asterisk@connected incron.d]$ cat sysadmin
-
-/var/spool/asterisk/incron IN_MODIFY,IN_ATTRIB,IN_CLOSE_WRITE /usr/bin/sysadmin_manager $#
-```
-
-/usr/bin/lsmd -d
-
-/usr/sbin/incrond
-
-/usr/sbin/smartd -n -q never
-
-/usr/bin/redis-server 127.0.0.1:6379
-
-/usr/sbin/asterisk -f -vvvg -c
-
-/usr/bin/python /usr/local/bin/pnp_server
-
-!grep -iE "mysql|db|password" /etc/asterisk/*.conf
-
-/usr/local/bin/dialplan-exec PBX_SECRET_2025 id
-
-username=>freepbxuser
-password=>mZzDpAGKTmPJ
-database=>asteriskcdrdb
-
-admin    |       |           | 05c689686a4fad5ce3ec76e7ae5708b1fe2da43a 
-
-```
-*7¡Vamos!
-```
 
 
 
 ---
 ## Steps to User.txt
-
-This script to get access to user asterisk reverse shell
-
-https://github.com/watchtowrlabs/watchTowr-vs-FreePBX-CVE-2025-57819
 
 
 
