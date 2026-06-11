@@ -136,16 +136,16 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
-> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [ ] [[0000033|whoami | id | groups | ip a | uname -a | env]]
+> - [x] [[0000033|whoami | id | groups | ip a | uname -a | env]]
 > 
 > #### Advanced Enumeration 
-> - [ ] Internal Ports & Running Processes | [[0000024|ss -tlpn && ps auxww]]
+> - [x] Internal Ports & Running Processes | [[0000024|ss -tlpn && ps auxww]]
 > - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -154,16 +154,16 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities / Sudo
-> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [ ] [[0000018|getcap -r / 2>/dev/null]]
-> - [ ] sudo -l
-> - [ ] [[GTFOChecker]]
+> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [x] [[0000018|getcap -r / 2>/dev/null]]
+> - [x] sudo -l
+> - [x] [[GTFOChecker]]
 > 
 > #### Easy wins
-> - [ ] cat /etc/passwd
+> - [x] cat /etc/passwd
 > - [ ] Try username same as password
-> - [ ] [[0000032|docker ps]]
-> - [ ] Disk Group
+> - [x] [[0000032|docker ps]]
+> - [x] Disk Group
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 > - [ ] [[0000028|mysql --version]]
 >
@@ -185,13 +185,13 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] [[incrontab]]
+> - [x] cat /etc/crontab
+> - [x] [[incrontab]]
 > - [ ] ls -la /etc/cron* | e2scrub_all , PHP
-> - [ ] crontab -l
-> - [ ] systemctl list-timers --all
+> - [x] crontab -l
+> - [x] systemctl list-timers --all
 > - [ ] grep -R "" /etc/cron*
-> - [ ] [[pspy]]
+> - [x] [[pspy]]
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/

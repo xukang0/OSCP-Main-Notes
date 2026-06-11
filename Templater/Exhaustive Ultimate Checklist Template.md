@@ -31,6 +31,7 @@
 > - [ ] [[4 Shell Upgrade| Shell Upgrade]]
 > - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
 > - [ ] [[Reverse Shell Resources]]
+> - [ ] [[Web Requests API]]
 
 ## 2. Service Enumeration
 
