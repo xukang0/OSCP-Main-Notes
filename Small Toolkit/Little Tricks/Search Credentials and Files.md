@@ -7,6 +7,11 @@ grep -ri "PASSWORD" / 2>/dev/null | grep "DB"
 ```
 grep -ri "PASSWORD" / 2>/dev/null | grep "$DB['PASSWORD']"
 ```
+
+ Search Creds in Github Repo
+```
+"$pass"
+```
 ## Search interesting files
 
 ```

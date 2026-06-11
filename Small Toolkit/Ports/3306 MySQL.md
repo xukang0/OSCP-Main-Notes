@@ -32,6 +32,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 mysql -u [user] -p[pw] -h [hostIP] [DBname]
 ```
+
+--skip-ssl
+
 ---
 
 ## Search creds

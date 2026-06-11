@@ -39,6 +39,7 @@
 >
 > #### Brute Force
 > - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
+> - [ ] [[0000011|Feroxbuster WebList brute force]]
 > - [ ] [[0000012|Vhost brute force]]
 > - [ ] [[0000013|Feroxbuster File directories sweep]]
 >

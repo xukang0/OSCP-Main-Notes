@@ -13,14 +13,9 @@
 ---
 ## Open Ports
 
-| Port | Service | Notes |
-| ---- | ------- | ----- |
-|      |         |       |
-
 ```powershell
 
 ```
-
 
 ---
 ## Software Versions
@@ -29,39 +24,25 @@
 
 ```
 
-
 ---
 ## Discovered Subdomains
-
-
-
 
 ---
 ## Discovered Credentials
 
-
-| Username | Password | Notes |
-| -------- | -------- | ----- |
-|          |          |       |
+---
+## Interesting Files/Paths
 
 ---
-## Attack Angles
-
-
-
-
+## Attack Ideas
 
 ---
 ## Steps to User.txt
 
-
-
 ---
 ## Steps to root.txt
 
-
 ---
-
 ## User Flag
 
 ```
