@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -31,6 +31,7 @@
 > - [ ] [[4 Shell Upgrade| Shell Upgrade]]
 > - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
 > - [ ] [[Reverse Shell Resources]]
+> - [ ] [[Web Requests API]]
 
 ## 2. Service Enumeration
 
@@ -83,7 +84,7 @@
 >
 > #### User Login
 > - [ ] Default credentials
-> - [ ] admin:admin
+> - [ ] creds search [service]
 >
 > #### Reset Password (Email)
 > - [ ] If invalid email = does not match our records, SQLi (test' or 1=1;-- -)  [[SQL Injection|link]]
@@ -136,16 +137,16 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
-> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Linux Exploit Suggester
 > 
 > #### Basic Enumeration
-> - [x] [[0000033|whoami | id | groups | ip a | uname -a | env]]
+> - [ ] [[0000033|whoami | id | groups | ip a | uname -a | env]]
 > 
 > #### Advanced Enumeration 
-> - [x] Internal Ports & Running Processes | [[0000024|ss -tlpn && ps auxww]]
+> - [ ] Internal Ports & Running Processes | [[0000024|ss -tlpn && ps auxww]]
 > - [ ] [[0000026|ls -la /etc/systemd/system/]]
 > - [ ] cat /etc/fstab | grep hidepid
 > - [ ] enumerate configuration files for passwords
@@ -154,16 +155,16 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities / Sudo
-> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [x] [[0000018|getcap -r / 2>/dev/null]]
-> - [x] sudo -l
-> - [x] [[GTFOChecker]]
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] sudo -l
+> - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
-> - [x] cat /etc/passwd
+> - [ ] cat /etc/passwd
 > - [ ] Try username same as password
-> - [x] [[0000032|docker ps]]
-> - [x] Disk Group
+> - [ ] [[0000032|docker ps]]
+> - [ ] Disk Group
 > - [ ] ls -la /etc/passwd allowing group modification to root grp
 > - [ ] [[0000028|mysql --version]]
 >
@@ -185,13 +186,13 @@
 > - [ ] whoami /groups
 >
 > #### Scheduled Tasks
-> - [x] cat /etc/crontab
-> - [x] [[incrontab]]
+> - [ ] cat /etc/crontab
+> - [ ] [[incrontab]]
 > - [ ] ls -la /etc/cron* | e2scrub_all , PHP
-> - [x] crontab -l
-> - [x] systemctl list-timers --all
+> - [ ] crontab -l
+> - [ ] systemctl list-timers --all
 > - [ ] grep -R "" /etc/cron*
-> - [x] [[pspy]]
+> - [ ] [[pspy]]
 > 
 >  #### Special Permissions
 >  - [ ] ls -la /usr/bin/
