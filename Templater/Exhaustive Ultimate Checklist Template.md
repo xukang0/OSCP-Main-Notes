@@ -22,16 +22,6 @@
 > [!note]- General
 >  #### General
 > - [ ] [[0000004|steghide --extract -sf image.jpg]]
-> - [ ] [[0000005|searchsploit all port service versions]]
-> - [ ] [[0 Port Number Table|Check Port Number Table]]
-> 
->  #### Toolkit
-> - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
-> - [ ] [[Root Methods]]
-> - [ ] [[4 Shell Upgrade| Shell Upgrade]]
-> - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
-> - [ ] [[Reverse Shell Resources]]
-> - [ ] [[Web Requests API]]
 
 ## 2. Service Enumeration
 
@@ -56,8 +46,6 @@
 > - [ ] [[0000014|LFI (../../../../etc/passwd)]]
 > - [ ] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
 > - [ ] [[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
-> - [ ] [[0000027|URL Webshell]]
-> - [ ] [[Web API]]
 > - [ ] [[0000016|Command Injection (;whoami)]]
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)

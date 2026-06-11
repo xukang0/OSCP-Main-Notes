@@ -1,6 +1,6 @@
 Connect
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `telnet ${ip} 25`;
 
@@ -8,12 +8,25 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 brute force usernames
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `smtp-user-enum -M RCPT -U /usr/share/wordlists/footprinting-wordlist.txt -t ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+```
+cat smtp_usernames.txt
+```
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `smtp-user-enum -M VRFY -D postfish.off -U smtp_usernames.txt -t ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 
 | **Command**  | **Description**                                                                                  |
 | ------------ | ------------------------------------------------------------------------------------------------ |
@@ -27,3 +40,42 @@ dv.paragraph("```bash\n" + command + "\n```");
 | `EXPN`       | The client also checks if a mailbox is available for messaging with this command.                |
 | `NOOP`       | The client requests a response from the server to prevent disconnection due to time-out.         |
 | `QUIT`       | The client terminates the session.                                                               |
+
+
+Bigger Scan
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `smtp-user-enum -M VRFY -U /usr/share/wordlists/metasploit/namelist.txt -t ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
+
+```powershell
+nc -nv 192.168.53.137 25  
+
+(UNKNOWN) [192.168.53.137] 25 (smtp) open  
+
+220 postfish.off ESMTP Postfix (Ubuntu)  
+
+MAIL FROM: it@postfish.off  
+
+250 2.1.0 Ok  
+
+RCPT TO: brian.moore@postfish.off  
+
+250 2.1.5 Ok  
+
+DATA  
+
+354 End data with <CR><LF>.<CR><LF>  
+
+hi  
+.  
+
+250 2.0.0 Ok: queued as 0D913458E8  
+
+QUIT  
+221 2.0.0 Bye
+```
