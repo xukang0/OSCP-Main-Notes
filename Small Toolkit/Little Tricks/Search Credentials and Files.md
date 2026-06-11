@@ -37,3 +37,15 @@ List
 .db
 .php
 .env
+
+## Search Flags
+
+Local.txt
+```
+find / -iname local.txt -type f 2>/dev/null
+```
+
+Local.txt
+```
+find / -iname proof.txt -type f 2>/dev/null
+```
