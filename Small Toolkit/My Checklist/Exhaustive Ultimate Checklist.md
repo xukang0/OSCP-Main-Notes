@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [ ] [[0000021| [PG Practice] Initial Setup ]]
+>   - [x] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [ ] [[0000001|Full -A Scan]]
-> - [ ] [[0000001|UDP Scan]]
+> - [x] [[0000001|Full -A Scan]]
+> - [x] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -22,16 +22,6 @@
 > [!note]- General
 >  #### General
 > - [ ] [[0000004|steghide --extract -sf image.jpg]]
-> - [ ] [[0000005|searchsploit all port service versions]]
-> - [ ] [[0 Port Number Table|Check Port Number Table]]
-> 
->  #### Toolkit
-> - [ ] [[0000031|find / -name [filename] 2>/dev/null]] | Search entire system for path of file
-> - [ ] [[Root Methods]]
-> - [ ] [[4 Shell Upgrade| Shell Upgrade]]
-> - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
-> - [ ] [[Reverse Shell Resources]]
-> - [ ] [[Web Requests API]]
 
 ## 2. Service Enumeration
 
@@ -56,8 +46,6 @@
 > - [ ] [[0000014|LFI (../../../../etc/passwd)]]
 > - [ ] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
 > - [ ] [[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
-> - [ ] [[0000027|URL Webshell]]
-> - [ ] [[Web API]]
 > - [ ] [[0000016|Command Injection (;whoami)]]
 > - [ ] PHP code inclusion
 > - [ ] File upload (if available)
@@ -104,7 +92,6 @@
 > - [ ] SSH as is
 > - [ ] [CyberChef](https://cyberchef.org)
 > - [ ] [[Hashcat]]
-> - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/John The Ripper|John The Ripper]]
 > 
 > #### Wordpress Scan
 > - [ ] Default creds
@@ -173,9 +160,6 @@
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
-> 
-> #### Password supersearch
-> - [ ] [[Search Credentials and Files|Search Creds]]
 >   
 > #### PE Vectors (Ruling Out)
 > - [ ] [[2375 Docker API|Docker]]
