@@ -92,7 +92,6 @@
 > - [ ] SSH as is
 > - [ ] [CyberChef](https://cyberchef.org)
 > - [ ] [[Hashcat]]
-> - [ ] [[Synced OSCP Notes/Small Toolkit/Tools/John The Ripper|John The Ripper]]
 > 
 > #### Wordpress Scan
 > - [ ] Default creds
@@ -161,9 +160,6 @@
 > - [ ] ls -a ~
 >   - [ ] .bash_history
 >   - [ ] interesting files
-> 
-> #### Password supersearch
-> - [ ] [[Search Credentials and Files|Search Creds]]
 >   
 > #### PE Vectors (Ruling Out)
 > - [ ] [[2375 Docker API|Docker]]

@@ -49,3 +49,10 @@ Local.txt
 ```
 find / -iname proof.txt -type f 2>/dev/null
 ```
+
+---
+
+> [!note]- Web Checklist
+>  #### Writable Content
+>- [ ] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
+>- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files

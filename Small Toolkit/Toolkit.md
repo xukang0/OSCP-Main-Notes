@@ -37,7 +37,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## User Machine Access
 
- [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
+[[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
+[[Synced OSCP Notes/Small Toolkit/Tools/John The Ripper|John The Ripper]]
 
 ---
 ## Hunting Root
