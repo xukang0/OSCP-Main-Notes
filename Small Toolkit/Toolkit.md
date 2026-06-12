@@ -47,4 +47,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 [[Search Credentials and Files]]
 
+[[pspy]]
+
 [[Root Methods]]

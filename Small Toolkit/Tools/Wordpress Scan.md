@@ -1,3 +1,8 @@
+https://wpscan.com/profile/
+
+lixukang3@gmail.com
+ILTSTN96
+
 ```
 wpscan --update
 ```
@@ -16,7 +21,7 @@ Scan all (Users,Plugins, Themes)
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `wpscan --url http://${discoveredDomain} -e`;
+const command = `wpscan --url http://${discoveredDomain} -e --api-token xRTTe06gPq2NLkl0WNubIs3s1HMCxj6qEnkoLG6waF0`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

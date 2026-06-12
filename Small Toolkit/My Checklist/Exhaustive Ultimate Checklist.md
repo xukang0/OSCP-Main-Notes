@@ -221,6 +221,7 @@
 >  - [ ] [[Python Library Hijacking]]
 >  - [ ] [[LD_LIBRARY_PATH Hijack]] 
 >  - [ ] [[Cronjob Path Hijack]]
+>  - [ ] [[Wildcard Hijack]]
 >
 > #### Exiftool
 >  - [ ] [[Vulnerable ExifTool DjVu Priv Esc]]
