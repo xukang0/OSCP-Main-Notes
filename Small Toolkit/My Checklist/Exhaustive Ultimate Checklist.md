@@ -5,16 +5,16 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [ ] [[0000021| [PG Practice] Initial Setup ]]
+>   - [x] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [ ] [[0000001|Full -A Scan]]
-> - [ ] [[0000001|UDP Scan]]
+> - [x] [[0000001|Full -A Scan]]
+> - [x] [[0000001|UDP Scan]]
 > 
 > #### Host
-> - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
+> - [x] [[0000003|Add discovered hosts to /etc/hosts]]
 
 ---
 ## 2. Foothold
@@ -29,18 +29,18 @@
 
 
 > [!note]- Web Checklist
-> - [ ] [[0000006|Visit site]]
-> - [ ] View source
+> - [x] [[0000006|Visit site]]
+> - [x] View source
 > - [ ] Identify tech/CMS
-> - [ ] [[0000008|whatweb]]
+> - [x] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [ ] [[0000010|curl -i domain]]
+> - [x] [[0000010|curl -i domain]]
 >
 > #### Brute Force
-> - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
-> - [ ] [[0000011|Feroxbuster WebList brute force]]
-> - [ ] [[0000012|Vhost brute force]]
+> - [x] [[0000011|Feroxbuster Directories brute force (medium)]]
+> - [x] [[0000011|Feroxbuster WebList brute force]]
+> - [x] [[0000012|Vhost brute force]]
 > - [ ] [[0000013|Feroxbuster File directories sweep]]
 >
 > #### Vulnerability Testing
@@ -125,8 +125,8 @@
 > [!note]- Priv Esc
 >
 >  #### LinPEAS
-> - [ ] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
-> - [ ] Run [[Linux Smart Enumeration|LSE.sh]]
+> - [x] Run [[LinWinPEAS]] | [[0000002|parsePEAS-ng]]
+> - [x] Run [[Linux Smart Enumeration|LSE.sh]]
 > - [ ] [[3. Privilege Escalation|HackTricks]]
 > - [ ] Linux Exploit Suggester
 > 

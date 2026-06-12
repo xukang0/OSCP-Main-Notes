@@ -47,10 +47,6 @@ mysql -u [user] -p[pw] -h [hostIP] [DBname]
 Login to database
 
 ```shell-session
-Retric@htb[/htb]$ mysql -u root -p<password>
-```
-
-```shell-session
 mysql> SHOW DATABASES;
 
 +--------------------+

