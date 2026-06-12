@@ -73,7 +73,7 @@ a2a90ca2f9f0ea04d267b16fb8e63800
 
 pfpinfo.php shows SPX_key
 
-[[SPX]] to file read index.php which contains admin hash
+[[SPX PG Machine]] to file read index.php which contains admin hash
 
 cracking admin hash allows tiny file manager acess
 

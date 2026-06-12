@@ -51,3 +51,7 @@ sudo -i
 ```
 
 sudo /usr/bin/make install -C /home/profiler/php-spx
+
+[[SPX PG Machine|SPX PG Machine]]
+
+---
