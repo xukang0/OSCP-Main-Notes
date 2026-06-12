@@ -1,9 +1,3 @@
-https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
-
-```
-wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
-```
-
 ```
 cd ~/Desktop/Tools/LinPEAS && python3 -m http.server 8888
 ```
@@ -38,6 +32,12 @@ winPEASx64.exe
 ```
 
 ---
+
+https://github.com/peass-ng/PEASS-ng/tree/master/linPEAS
+
+```
+wget https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh
+```
 
 ## Serve Output in Web Browser | ParsePEAS
 
