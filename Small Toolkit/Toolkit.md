@@ -50,3 +50,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 [[pspy]]
 
 [[Root Methods]]
+
+Wildcard Hijack
+[Wildcard Spare Tricks](https://blog.1nf1n1ty.team/hacktricks/linux-hardening/privilege-escalation/wildcards-spare-tricks)
