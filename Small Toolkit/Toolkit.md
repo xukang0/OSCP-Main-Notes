@@ -29,6 +29,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 #### Web
 [[Web Requests API]]
 [[0000027|URL Webshell]]
+[[Synced OSCP Notes/Small Toolkit/Niche Interactions/SPX]]
+
 
 [[Reverse Shell Resources]]
 

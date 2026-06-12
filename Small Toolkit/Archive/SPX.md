@@ -73,7 +73,7 @@ a2a90ca2f9f0ea04d267b16fb8e63800
 
 pfpinfo.php shows SPX_key
 
-[[Synced OSCP Notes/Small Toolkit/Niche Interactions/SPX]] to file read index.php which contains admin hash
+[[SPX]] to file read index.php which contains admin hash
 
 cracking admin hash allows tiny file manager acess
 

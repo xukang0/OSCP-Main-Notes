@@ -10,7 +10,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 Simple Scan for Boxes
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `sudo nmap -sV ${ip}`;
 
