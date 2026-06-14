@@ -1,6 +1,6 @@
 [[0 Port Number Table]]
 
-[[Kitty Terminal|Kitty]]
+[[Terminal Mastery|Kitty]]
 
 Listener
 
