@@ -1,5 +1,7 @@
 [[0 Port Number Table]]
 
+[[Kitty Terminal|Kitty]]
+
 Listener
 
 ```
@@ -42,6 +44,8 @@ cat huge_payload.txt | xsel --clipboard --input
 
 ---
 ## User Machine Access
+
+[[TMUX]]
 
 [[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
 [[Synced OSCP Notes/Small Toolkit/Tools/John The Ripper|John The Ripper]]
