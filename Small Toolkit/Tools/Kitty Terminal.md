@@ -6,6 +6,9 @@ SPLIT new Pane LEFT/RIGHT
 SPLIT new Pane UP/DOWN
 ``Ctrl =``
 
+NAVIGATE Panes
+``Alt ArrowKeys``
+
 CLOSE current Pane
 `Ctrl Shift W`
 
@@ -36,3 +39,14 @@ REVERSE search history
 
 CLEAR screen
 ``Ctrl L``
+
+CLEAR line in front of cursor
+``Ctrl K``
+
+REVERSE CMD search
+``Ctrl R``
+#### Nano
+
+CLEAR full line
+``Ctrl K``
+
