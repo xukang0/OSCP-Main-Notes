@@ -38,7 +38,7 @@ cat huge_payload.txt | xsel --clipboard --input
 [[Synced OSCP Notes/Small Toolkit/Niche Interactions/SPX]]
 
 
-[[Reverse Shell Resources]]
+[[Synced OSCP Notes/Small Toolkit/Little Tricks/Reverse Shell Resources/Reverse Shell Resources|Reverse Shell Resources]]
 
 [[4 Shell Upgrade|Shell Upgrade]]
 

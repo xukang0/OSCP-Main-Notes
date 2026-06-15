@@ -1,3 +1,39 @@
+## VPN
+
+Start TMUX session
+```
+tmux new -s vpn
+```
+### Step 2: Start your VPN
+
+```
+sudo openvpn --config seasonalHTB.ovpn
+```
+
+### Step 3: Detach from the session (Put it in the background)
+
+Default is Ctrl B
+```
+Ctrl A + D
+```
+
+### How to manage your background VPN later
+
+- **To see active sessions:**
+```
+tmux ls
+```
+
+  Reattach
+```
+tmux a -t vpn
+```
+
+ Kill VPN
+
+```
+tmux kill-session -t vpn
+```
 # Your actual workflow (OSCP style)
 
 ## 1. Get initial access (SSH or shell)
