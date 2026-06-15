@@ -61,6 +61,8 @@ Host script results:
 |   Workgroup: WORKGROUP\x00
 |_  System time: 2026-06-15T03:59:06-07:00
 |_clock-skew: mean: 1h23m59s, deviation: 3h07m49s, median: 0s
+
+137/udp   open          netbios-ns
 ```
 
 ---
@@ -84,6 +86,16 @@ Host script results:
 
 ---
 ## Steps to User.txt
+
+http://192.168.129.45/
+
+HP login page
+
+Test admin:admin creds > Gain access
+
+HP power manager 4.2 discovered
+
+
 
 ---
 ## Steps to root.txt
