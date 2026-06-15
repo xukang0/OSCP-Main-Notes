@@ -243,4 +243,4 @@
 
 ## 5. WINDOWS
 
-[[Windows Starting KIt]]
+[[Windows Starter Kit]]

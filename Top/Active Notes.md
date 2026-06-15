@@ -95,10 +95,16 @@ Test admin:admin creds > Gain access
 
 HP power manager 4.2 discovered
 
+https://github.com/AC8999/CVE-2009-3999-HP-Power-Manager-4.2-Build-7-Buffer-Overflow
 
+This script gives system32 shell.
 
 ---
 ## Steps to root.txt
+
+whoami /priv shows SeImpersonatePrivilege
+
+
 
 ---
 ## User Flag
