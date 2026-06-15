@@ -104,7 +104,7 @@ This script gives system32 shell.
 
 whoami /priv shows SeImpersonatePrivilege
 
-
+[[SeImpersonatePrivilege]] juicypotato x32 steps to achieve root
 
 ---
 ## User Flag
