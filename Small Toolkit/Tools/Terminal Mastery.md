@@ -23,7 +23,7 @@ ZOOM current Pane
 OPEN new Tab
 ``Ctrl Shift T``
 
-CLOSE new Tab
+CLOSE Tab
 `Ctrl Shift Q`
 
 #### Typing
