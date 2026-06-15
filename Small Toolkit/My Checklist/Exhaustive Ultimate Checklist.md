@@ -5,13 +5,13 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -241,4 +241,6 @@
 
 ---
 
-## 5. Post Access
+## 5. WINDOWS
+
+[[Windows Starter Kit]]
