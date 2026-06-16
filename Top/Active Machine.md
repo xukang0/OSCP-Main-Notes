@@ -4,7 +4,7 @@
 | ------- | ---------- | ----- |
 |         |            |       |
 
-MACHINE:: Kevin
+MACHINE:: Internal
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -12,7 +12,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   192.168.239.45
+IP::   192.168.147.40
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
