@@ -16,7 +16,7 @@
 | 110       | TCP      | [[110 POP3]]                                                  | Email retrieval                                                                      |     |
 | 111       | TCP/UDP  | [[111 RPCBind]]                                               | Common on Linux; OSCP: NFS enumeration                                               |     |
 | 123       | UDP      | NTP                                                           | Time synchronization                                                                 |     |
-| 135       | TCP      | RPC                                                           | Microsoft Remote Procedure Call Service                                              |     |
+| 135       | TCP      | [[135 RPC]]                                                   | Microsoft Remote Procedure Call Service                                              |     |
 | 137       | UDP      | NetBIOS Name Service                                          | Windows name resolution; enumeration with nbtscan                                    |     |
 | 138       | UDP      | NetBIOS Datagram                                              | Windows LAN communication                                                            |     |
 | 139       | TCP      | NetBIOS Session [[139 445 SMB\|SMB]]                          | SMB over NetBIOS; OSCP: Windows share enumeration                                    |     |

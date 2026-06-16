@@ -1,29 +1,26 @@
 #### Panes
 
 SPLIT new Pane LEFT/RIGHT
-``Ctrl \``
+``Ctrl E``
 
 SPLIT new Pane UP/DOWN
-``Ctrl =``
-
-NAVIGATE Panes
-``Alt ArrowKeys``
+``Ctrl O``
 
 CLOSE current Pane
 `Ctrl Shift W`
 
-REARRANGE current Pane Layout
-`Ctrl Shift L`
+NAVIGATE Panes
+``Alt ArrowKeys``
 
 ZOOM current Pane
-`Ctrl Shift Z`
+`Ctrl Mouse Scroll`
 
 #### Tabs
 
 OPEN new Tab
 ``Ctrl Shift T``
 
-CLOSE Tab
+CLOSE ALL
 `Ctrl Shift Q`
 
 #### Typing

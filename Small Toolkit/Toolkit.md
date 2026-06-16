@@ -29,6 +29,8 @@ Clipboard
 cat huge_payload.txt | xsel --clipboard --input
 ```
 
+[[Metasploit]]
+
 ---
 ## Hunting User Machine Access
 

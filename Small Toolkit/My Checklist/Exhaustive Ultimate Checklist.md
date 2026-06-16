@@ -10,8 +10,8 @@
 >   - [x] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [ ] [[0000001|Full -A Scan]]
-> - [ ] [[0000001|UDP Scan]]
+> - [x] [[0000001|Full -A Scan]]
+> - [x] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]

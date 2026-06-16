@@ -20,6 +20,12 @@ grep meterpreter grep reverse_tcp show payloads
 
 set payload [no.]
 
+IN MTERPRETER
+
+```
+shell
+```
+
 meterpreter dump LTM hash
 ```
 lsa_dump_sam

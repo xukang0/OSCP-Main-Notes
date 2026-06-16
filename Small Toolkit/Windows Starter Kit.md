@@ -9,6 +9,11 @@ Upgrading Shell
 powershell -ep bypass
 ```
 
+ls
+```
+dir 
+```
+
 whoami && id
 ```
 whoami /priv 

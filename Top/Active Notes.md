@@ -61,6 +61,8 @@ Host script results:
 |   NetBIOS computer name: INTERNAL\x00
 |   Workgroup: WORKGROUP\x00
 
+53/udp    open          domain
+137/udp   open          netbios-ns
 ```
 
 ---
