@@ -1,3 +1,4 @@
+[[Terminal Border Padding]]
 #### Panes
 
 SPLIT new Pane LEFT/RIGHT

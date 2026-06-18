@@ -6,6 +6,9 @@ Bash
 
 ```
 mkdir -p ~/.config/gtk-3.0/
+```
+
+```
 nano ~/.config/gtk-3.0/gtk.css
 ```
 
@@ -17,7 +20,7 @@ CSS
 
 ```
 VteTerminal, TerminalScreen, vte-terminal {
-    padding: 12px 12px 12px 12px;
-    -VteTerminal-inner-border: 12px 12px 12px 12px;
+    padding: 7px 12px 7px 12px;
+    -VteTerminal-inner-border: 7px 12px 7px 12px;
 }
 ```
