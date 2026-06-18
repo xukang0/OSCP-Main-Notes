@@ -15,6 +15,8 @@ NAVIGATE Panes
 ZOOM current Pane
 `Ctrl Mouse Scroll`
 
+FOCUS current pane
+`Ctrl Shift X`
 #### Tabs
 
 OPEN new Tab

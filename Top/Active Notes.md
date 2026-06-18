@@ -14,62 +14,65 @@
 ## Open Ports
 
 ```powershell
-53/tcp    open  domain        Microsoft DNS 6.0.6001 (17714650) (Windows Server 2008 SP1)
-| dns-nsid: 
-|_  bind.version: Microsoft DNS 6.0.6001 (17714650)
+21/tcp    open  ftp           Microsoft ftpd
+| ftp-syst: 
+|_  SYST: Windows_NT
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| 04-29-20  10:31PM       <DIR>          ImapRetrieval
+| 06-18-26  12:36AM       <DIR>          Logs
+| 04-29-20  10:31PM       <DIR>          PopRetrieval
+|_04-29-20  10:32PM       <DIR>          Spool
+80/tcp    open  http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+| http-methods: 
+|_  Potentially risky methods: TRACE
+|_http-title: IIS Windows
 135/tcp   open  msrpc         Microsoft Windows RPC
 139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
-445/tcp   open  microsoft-ds  Windows Server (R) 2008 Standard 6001 Service Pack 1 microsoft-ds (workgroup: WORKGROUP)
-3389/tcp  open  ms-wbt-server Microsoft Terminal Service
-| ssl-cert: Subject: commonName=internal
-| Not valid before: 2025-01-05T19:52:51
-|_Not valid after:  2025-07-07T19:52:51
-| rdp-ntlm-info: 
-|   Target_Name: INTERNAL
-|   NetBIOS_Domain_Name: INTERNAL
-|   NetBIOS_Computer_Name: INTERNAL
-|   DNS_Domain_Name: internal
-|   DNS_Computer_Name: internal
-|   Product_Version: 6.0.6001
-|_  System_Time: 2026-06-16T09:22:27+00:00
-|_ssl-date: 2026-06-16T09:22:37+00:00; -1s from scanner time.
-5357/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-|_http-server-header: Microsoft-HTTPAPI/2.0
-|_http-title: Service Unavailable
-49152/tcp open  msrpc         Microsoft Windows RPC
-49153/tcp open  msrpc         Microsoft Windows RPC
-49154/tcp open  msrpc         Microsoft Windows RPC
-49155/tcp open  msrpc         Microsoft Windows RPC
-49156/tcp open  msrpc         Microsoft Windows RPC
-49157/tcp open  msrpc         Microsoft Windows RPC
-49158/tcp open  msrpc         Microsoft Windows RPC
-Device type: general purpose
-Running: Microsoft Windows 7|2008|8.1
-OS CPE: cpe:/o:microsoft:windows_7 cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_8.1
-OS details: Microsoft Windows 7 SP1 or Windows Server 2008 R2 or Windows 8.1
-
-Host script results:
-| smb-security-mode: 
-|   account_used: guest
-|   authentication_level: user
-|   challenge_response: supported
-|_  message_signing: disabled (dangerous, but default)
-| smb-os-discovery: 
-|   OS: Windows Server (R) 2008 Standard 6001 Service Pack 1 (Windows Server (R) 2008 Standard 6.0)
-|   OS CPE: cpe:/o:microsoft:windows_server_2008::sp1
-|   Computer name: internal
-|   NetBIOS computer name: INTERNAL\x00
-|   Workgroup: WORKGROUP\x00
-
-53/udp    open          domain
-137/udp   open          netbios-ns
+445/tcp   open  microsoft-ds?
+5040/tcp  open  unknown
+9998/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
+|_http-server-header: Microsoft-IIS/10.0
+| uptime-agent-info: HTTP/1.1 400 Bad Request\x0D
+| Content-Type: text/html; charset=us-ascii\x0D
+| Server: Microsoft-HTTPAPI/2.0\x0D
+| Date: Thu, 18 Jun 2026 07:44:45 GMT\x0D
+| Connection: close\x0D
+| Content-Length: 326\x0D
+| \x0D
+| <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">\x0D
+| <HTML><HEAD><TITLE>Bad Request</TITLE>\x0D
+| <META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>\x0D
+| <BODY><h2>Bad Request - Invalid Verb</h2>\x0D
+| <hr><p>HTTP Error 400. The request verb is invalid.</p>\x0D
+|_</BODY></HTML>\x0D
+| http-title: Site doesn't have a title (text/html; charset=utf-8).
+|_Requested resource was /interface/root
+17001/tcp open  remoting      MS .NET Remoting services
+49664/tcp open  msrpc         Microsoft Windows RPC
+49665/tcp open  msrpc         Microsoft Windows RPC
+49666/tcp open  msrpc         Microsoft Windows RPC
+49667/tcp open  msrpc         Microsoft Windows RPC
+49668/tcp open  msrpc         Microsoft Windows RPC
+49669/tcp open  msrpc         Microsoft Windows RPC
 ```
 
 ---
 ## Software Versions
 
 ```powershell
-
+ =================================================
+|    OS Information via RPC for 192.168.203.65    |
+ =================================================
+[*] Enumerating via unauthenticated SMB session on 445/tcp
+[+] Found OS information via SMB
+[*] Enumerating via 'srvinfo'
+[-] Skipping 'srvinfo' run, not possible with provided credentials
+[+] After merging OS information we have the following result:
+OS: Windows 10, Windows Server 2019, Windows Server 2016
+OS version: '10.0'
+OS release: '1903'
+OS build: '18362'
 ```
 
 ---
@@ -77,6 +80,9 @@ Host script results:
 
 ---
 ## Discovered Credentials
+
+Webmail admin:admin
+
 
 ---
 ## Interesting Files/Paths

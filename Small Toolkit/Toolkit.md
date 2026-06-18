@@ -29,6 +29,16 @@ Clipboard
 cat huge_payload.txt | xsel --clipboard --input
 ```
 
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `echo "${ip} ${discoveredDomain}" | sudo tee -a /etc/hosts`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 [[Metasploit]]
 
 ---

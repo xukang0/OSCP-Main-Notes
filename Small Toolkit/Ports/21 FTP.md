@@ -56,6 +56,13 @@ Get (file), mget, put
 
 ![[Pasted image 20250512172800.png]]
 
+Grab every directory and file from / root dir
+
+```
+mirror / .
+```
+
+
 cd, ls
 
 exit

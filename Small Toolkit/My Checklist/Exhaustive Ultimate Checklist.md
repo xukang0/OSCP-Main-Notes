@@ -6,8 +6,8 @@
 > [!note]- Initial
 >  #### Setup
 >   - [x] [[0000021| [PG Practice] Initial Setup ]]
->   - [x] [[0000022| [HTB] Initial Setup ]]
->   - [x] [[0000023| [HTB Seasonal] Initial Setup ]]
+>   - [ ] [[0000022| [HTB] Initial Setup ]]
+>   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
 > - [x] [[0000001|Full -A Scan]]
