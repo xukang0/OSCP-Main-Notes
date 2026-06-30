@@ -54,6 +54,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 
 [[Synced OSCP Notes/Small Toolkit/Little Tricks/Reverse Shell Resources/Reverse Shell Resources|Reverse Shell Resources]]
+[[msfvenom]]
 
 [[4 Shell Upgrade|Shell Upgrade]]
 

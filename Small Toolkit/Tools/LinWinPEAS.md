@@ -1,5 +1,5 @@
 ```
-cd ~/Desktop/Tools/LinPEAS && python3 -m http.server 8888
+cd ~/Desktop/Tools/PEAS && python3 -m http.server 8888
 ```
 
 Directly execute into bash without downloading anyt
