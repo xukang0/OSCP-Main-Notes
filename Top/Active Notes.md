@@ -60,7 +60,11 @@ HOP RTT      ADDRESS
 ## Software Versions
 
 ```powershell
+PHP 7.4.6
 
+Windows NT SLORT 10.0 build 19042 (Windows 10) AMD64 x64
+
+OpenSSL 1.1.1g
 ```
 
 ---
@@ -72,11 +76,24 @@ HOP RTT      ADDRESS
 ---
 ## Interesting Files/Paths
 
+	C:\Apache24\conf/openssl.cnf 
+
+C:\Users\rupert\AppData\Local 
+
+	C:\Users\rupert\OneDrive
+AMD64 
+
+	\\SLORT  LOGON SERVER
+
 ---
 ## Attack Ideas
 
 ---
 ## Steps to User.txt
+
+http://192.168.123.53:4443/dashboard shows xampp page.
+
+PHPInfo page can be accessed. 
 
 ---
 ## Steps to root.txt

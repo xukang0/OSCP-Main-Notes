@@ -59,7 +59,7 @@ Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
 PHP wrapper LFI
 
-[[LFI]]
+[[Linux LFI]]
 
 Then PHP Wrapper upload RCE
 

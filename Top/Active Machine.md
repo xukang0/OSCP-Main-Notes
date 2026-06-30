@@ -28,7 +28,7 @@ const command = `${KaliIP}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain:: 192.168.151.53:8080
+Discovered Web Domain:: 192.168.123.53
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";

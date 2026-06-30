@@ -1,6 +1,6 @@
 [[SMBmap]]
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `smbclient -L ${ip} -U {username}`;
 
@@ -8,7 +8,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 -L : List available shares on the target. -U : Login identity to use.
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Notes");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `smbclient //${ip}/Dancing -U Guest`;
 
@@ -19,7 +19,7 @@ Now we can display a list (`-L`) of the server's shares with the `smbclient` c
 
 NULL SESSION ANONYMOUS LOGIN
 ```dataviewjs
-const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const command = `smbclient -N -L //${ip}`;
 

