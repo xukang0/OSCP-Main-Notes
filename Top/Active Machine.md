@@ -4,7 +4,7 @@
 | ------- | ---------- | ----- |
 |         |            |       |
 
-MACHINE:: Algernon
+MACHINE:: Slort
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -12,7 +12,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   192.168.203.65
+IP::   192.168.123.53
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -20,7 +20,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  192.168.45.165
+KALI IP::  192.168.45.243
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -28,7 +28,7 @@ const command = `${KaliIP}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   algernon
+Discovered Web Domain:: 192.168.151.53:8080
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";

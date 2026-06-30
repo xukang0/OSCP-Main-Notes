@@ -14,65 +14,53 @@
 ## Open Ports
 
 ```powershell
-21/tcp    open  ftp           Microsoft ftpd
+PORT      STATE SERVICE       VERSION
+21/tcp    open  ftp           FileZilla ftpd 0.9.41 beta
 | ftp-syst: 
-|_  SYST: Windows_NT
-| ftp-anon: Anonymous FTP login allowed (FTP code 230)
-| 04-29-20  10:31PM       <DIR>          ImapRetrieval
-| 06-18-26  12:36AM       <DIR>          Logs
-| 04-29-20  10:31PM       <DIR>          PopRetrieval
-|_04-29-20  10:32PM       <DIR>          Spool
-80/tcp    open  http          Microsoft IIS httpd 10.0
-|_http-server-header: Microsoft-IIS/10.0
-| http-methods: 
-|_  Potentially risky methods: TRACE
-|_http-title: IIS Windows
+|_  SYST: UNIX emulated by FileZilla
 135/tcp   open  msrpc         Microsoft Windows RPC
 139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
 445/tcp   open  microsoft-ds?
+3306/tcp  open  mysql         MariaDB 10.3.24 or later (unauthorized)
+4443/tcp  open  http          Apache httpd 2.4.43 ((Win64) OpenSSL/1.1.1g PHP/7.4.6)
+|_http-server-header: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6
+| http-title: Welcome to XAMPP
+|_Requested resource was http://192.168.151.53:4443/dashboard/
 5040/tcp  open  unknown
-9998/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-|_http-server-header: Microsoft-IIS/10.0
-| uptime-agent-info: HTTP/1.1 400 Bad Request\x0D
-| Content-Type: text/html; charset=us-ascii\x0D
-| Server: Microsoft-HTTPAPI/2.0\x0D
-| Date: Thu, 18 Jun 2026 07:44:45 GMT\x0D
-| Connection: close\x0D
-| Content-Length: 326\x0D
-| \x0D
-| <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""http://www.w3.org/TR/html4/strict.dtd">\x0D
-| <HTML><HEAD><TITLE>Bad Request</TITLE>\x0D
-| <META HTTP-EQUIV="Content-Type" Content="text/html; charset=us-ascii"></HEAD>\x0D
-| <BODY><h2>Bad Request - Invalid Verb</h2>\x0D
-| <hr><p>HTTP Error 400. The request verb is invalid.</p>\x0D
-|_</BODY></HTML>\x0D
-| http-title: Site doesn't have a title (text/html; charset=utf-8).
-|_Requested resource was /interface/root
-17001/tcp open  remoting      MS .NET Remoting services
+8080/tcp  open  http          Apache httpd 2.4.43 ((Win64) OpenSSL/1.1.1g PHP/7.4.6)
+|_http-open-proxy: Proxy might be redirecting requests
+| http-title: Welcome to XAMPP
+|_Requested resource was http://192.168.151.53:8080/dashboard/
+|_http-server-header: Apache/2.4.43 (Win64) OpenSSL/1.1.1g PHP/7.4.6
 49664/tcp open  msrpc         Microsoft Windows RPC
 49665/tcp open  msrpc         Microsoft Windows RPC
 49666/tcp open  msrpc         Microsoft Windows RPC
 49667/tcp open  msrpc         Microsoft Windows RPC
 49668/tcp open  msrpc         Microsoft Windows RPC
 49669/tcp open  msrpc         Microsoft Windows RPC
+
+Host script results:
+| smb2-security-mode: 
+|   3.1.1: 
+|_    Message signing enabled but not required
+| smb2-time: 
+|   date: 2026-06-22T11:54:32
+|_  start_date: N/A
+
+TRACEROUTE (using port 135/tcp)
+HOP RTT      ADDRESS
+1   47.56 ms 192.168.45.1
+2   47.53 ms 192.168.45.254
+3   47.58 ms 192.168.251.1
+4   40.19 ms 192.168.151.53
+
 ```
 
 ---
 ## Software Versions
 
 ```powershell
- =================================================
-|    OS Information via RPC for 192.168.203.65    |
- =================================================
-[*] Enumerating via unauthenticated SMB session on 445/tcp
-[+] Found OS information via SMB
-[*] Enumerating via 'srvinfo'
-[-] Skipping 'srvinfo' run, not possible with provided credentials
-[+] After merging OS information we have the following result:
-OS: Windows 10, Windows Server 2019, Windows Server 2016
-OS version: '10.0'
-OS release: '1903'
-OS build: '18362'
+
 ```
 
 ---
@@ -80,9 +68,6 @@ OS build: '18362'
 
 ---
 ## Discovered Credentials
-
-Webmail admin:admin
-
 
 ---
 ## Interesting Files/Paths
