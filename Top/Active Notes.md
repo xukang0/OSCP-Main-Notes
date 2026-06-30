@@ -95,6 +95,16 @@ http://192.168.123.53:4443/dashboard shows xampp page.
 
 PHPInfo page can be accessed. 
 
+Feroxbuster port 4443 /site found.
+
+RFI usuable, msfvenom payload RFI grab triggers reverse shell to slort/rupert
+
+at C:\Backup, TFTE.EXE can be deleted and run every 5 minutes
+
+Craft windows reverse shell on kali attacker and transfer onto target
+
+TFTE.EXE executes and triggers admin shell
+
 ---
 ## Steps to root.txt
 

