@@ -99,14 +99,15 @@ Feroxbuster port 4443 /site found.
 
 RFI usuable, msfvenom payload RFI grab triggers reverse shell to slort/rupert
 
+
+---
+## Steps to root.txt
+
 at C:\Backup, TFTE.EXE can be deleted and run every 5 minutes
 
 Craft windows reverse shell on kali attacker and transfer onto target
 
 TFTE.EXE executes and triggers admin shell
-
----
-## Steps to root.txt
 
 ---
 ## User Flag
