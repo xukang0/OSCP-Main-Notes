@@ -9,6 +9,12 @@ Upgrading Shell
 powershell -ep bypass
 ```
 
+or
+
+```
+C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe -ep bypass
+```
+
 ls
 ```
 dir 

