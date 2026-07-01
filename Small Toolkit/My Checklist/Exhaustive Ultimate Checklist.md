@@ -29,13 +29,13 @@
 
 
 > [!note]- Web Checklist
-> - [x] [[0000006|Visit site]]
-> - [x] View source
+> - [ ] [[0000006|Visit site]]
+> - [ ] View source
 > - [ ] Identify tech/CMS
-> - [x] [[0000008|whatweb]]
+> - [ ] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [x] [[0000010|curl -i domain]]
+> - [ ] [[0000010|curl -i domain]]
 >
 > #### Brute Force
 > - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]

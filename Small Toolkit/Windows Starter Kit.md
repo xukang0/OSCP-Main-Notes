@@ -25,6 +25,16 @@ whoami /groups
 
 Look for dangerous privileges like `SeImpersonatePrivilege` (leads to instant Potato exploits) or `SeBackupPrivilege`.
 
+if not working 
+
+```
+cd C:\Windows\System32>
+```
+
+```
+whoami.exe /priv
+```
+
 ---
 
 `cat /etc/passwd` 
