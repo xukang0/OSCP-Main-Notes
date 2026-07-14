@@ -1,3 +1,11 @@
+1. Portswigger Web App Mastery
+2. Finish Lainkusanagi
+3. NTUC Course
+4. OSCP
+5. Crest
+6. Spam writeups
+7. scripting knowledge
+
 [[0 Port Number Table]]
 
 [[Terminal Mastery|Kitty]]

