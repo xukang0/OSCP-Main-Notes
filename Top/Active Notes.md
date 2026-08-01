@@ -105,6 +105,14 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## Steps to root.txt
 
+Landed in NT Authority/Local
+
+So use [[FullPowers]]
+
+To regain [[SeImpersonatePrivilege]]
+
+Catch reverse sehll into NT Authority/SYSTEM
+
 ---
 ## User Flag
 

