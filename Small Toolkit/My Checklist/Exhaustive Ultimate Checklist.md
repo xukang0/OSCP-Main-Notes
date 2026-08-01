@@ -7,14 +7,14 @@
 >  #### Setup
 >   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
->   - [x] [[0000023| [HTB Seasonal] Initial Setup ]]
+>   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
-> - [x] [[0000003|Add discovered hosts to /etc/hosts]]
+> - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
 
 ---
 ## 2. Foothold
@@ -29,17 +29,17 @@
 
 
 > [!note]- Web Checklist
-> - [x] [[0000006|Visit site]]
-> - [x] View source
-> - [x] Identify tech/CMS
+> - [ ] [[0000006|Visit site]]
+> - [ ] View source
+> - [ ] Identify tech/CMS
 > - [ ] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
-> - [x] [[0000010|curl -i domain]]
+> - [ ] [[0000010|curl -i domain]]
 >
 > #### Brute Force
-> - [x] [[0000011|Feroxbuster Directories brute force (medium)]]
-> - [x] [[0000011|Feroxbuster WebList brute force]]
+> - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
+> - [ ] [[0000011|Feroxbuster WebList brute force]]
 > - [ ] [[0000012|Vhost brute force]]
 > - [ ] [[0000013|Feroxbuster File directories sweep]]
 >

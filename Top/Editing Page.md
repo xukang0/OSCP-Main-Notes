@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-' UNION SELECT username || '~' || password FROM users--
+
 ```
 
 ```

