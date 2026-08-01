@@ -111,7 +111,7 @@ So use [[FullPowers]]
 
 To regain [[SeImpersonatePrivilege]]
 
-Catch reverse sehll into NT Authority/SYSTEM
+Catch reverse shell into NT Authority/SYSTEM
 
 ---
 ## User Flag
