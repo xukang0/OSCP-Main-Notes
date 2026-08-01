@@ -14,16 +14,24 @@
 ## Open Ports
 
 ```powershell
-80/tcp open  http    Apache httpd 2.4.48 ((Win64) OpenSSL/1.1.1k PHP/8.0.7)
-|_http-title: Craft
-|_http-server-header: Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/8.0.7
+135/tcp   open  msrpc         Microsoft Windows RPC
+139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds?
+3128/tcp  open  http-proxy    Squid http proxy 4.14
+|_http-title: ERROR: The requested URL could not be retrieved
+|_http-server-header: squid/4.14
+49667/tcp open  msrpc         Microsoft Windows RPC
 ```
 
 ---
 ## Software Versions
 
 ```powershell
-Apache/2.4.48 (Win64) OpenSSL/1.1.1k PHP/8.0.7], IP[192.168.232.169], OpenSSL[1.1.1k], PHP[8.0.7]
+OS: Windows 10, Windows Server 2019, Windows Server 2016
+OS version: '10.0'
+OS release: '1809'
+OS build: '17763'
+
 ```
 
 ---
