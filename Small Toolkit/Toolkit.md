@@ -54,6 +54,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 #### Password Cracking
 [[Base64 Terminal Decode]]
+[[PDFCrack]]
+#### File Manipulation (Copy/Move)
+[[SCP]]
+#### Reverse Shell
+[[Netcat.exe]]
 
 ---
 ## Hunting User Machine Access

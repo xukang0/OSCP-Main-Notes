@@ -1,15 +1,10 @@
-Nice and simple one 👍 — `scp` is basically **`cp` over SSH**.
-
-I’ll give you the **90% use cases first**, then a couple of pro tips.
+`scp` is basically **`cp` over SSH**.
 
 ---
-
 ## 🔹 Basic syntax (remember this)
-
 `scp [options] source destination`
 
 ---
-
 ## 📤 Copy **from your local machine → remote**
 
 `scp file.txt user@10.10.10.10:/home/user/`
@@ -24,7 +19,14 @@ Example (HTB-style):
 
 ## 📥 Copy **from remote → your local machine**
 
-`scp user@10.10.10.10:/etc/passwd .`
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `scp [user]${ip}:/etc/passwd .`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 
 ➡️ Downloads `/etc/passwd` into your current directory.
 

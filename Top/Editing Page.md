@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-
+scp ariah@192.168.107.99:C:/ftp/Infrastructure.pdf .
 ```
 
 ```
