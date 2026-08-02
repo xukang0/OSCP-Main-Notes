@@ -59,6 +59,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 [[SCP]]
 #### Reverse Shell
 [[Netcat.exe]]
+[[Synced OSCP Notes/Small Toolkit/Little Tricks/Reverse Shell Resources/Reverse Shell Resources|Reverse Shell Resources]]
+[[msfvenom]]
 
 ---
 ## Hunting User Machine Access
@@ -71,9 +73,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 [[Synced OSCP Notes/Small Toolkit/Niche Interactions/SPX|SPX]]
 
-
-[[Synced OSCP Notes/Small Toolkit/Little Tricks/Reverse Shell Resources/Reverse Shell Resources|Reverse Shell Resources]]
-[[msfvenom]]
 
 [[4 Shell Upgrade|Shell Upgrade]]
 
@@ -109,3 +108,4 @@ Wildcard Hijack
 #### Priv Esc
 
 [[SeImpersonatePrivilege]]
+[[Hijack EXE]]

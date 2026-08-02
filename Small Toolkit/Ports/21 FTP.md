@@ -44,7 +44,14 @@ passive
 To turn passive mode off
 
 ---
+## Download Everything Off FTP with LFTP
 
+```
+mirror .
+```
+
+
+---
 ## Manual
 
 "dir" 
