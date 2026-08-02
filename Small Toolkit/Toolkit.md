@@ -111,3 +111,7 @@ Wildcard Hijack
 
 [[SeImpersonatePrivilege]]
 [[Hijack EXE]]
+
+---
+
+[[OSCP Admin Requirements]]
