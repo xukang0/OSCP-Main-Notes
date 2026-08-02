@@ -245,3 +245,13 @@
 ## 5. WINDOWS
 
 [[Windows Starter Kit]]
+
+> [!note]- Priv Esc Techniques
+> #### Privileges
+> - [ ]  [[SeImpersonatePrivilege]]
+> 
+> #### Hijack
+> - [ ]  [[Hijack EXE]]
+> 
+>  #### Misc
+> - [ ]  [[AlwaysInstallElevated]]

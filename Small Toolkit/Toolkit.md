@@ -73,6 +73,8 @@ Creds search nexus
 [[Linux LFI]]
 [[Windows LFI RFI]]
 
+[[Wordpress Scan]]
+
 [[Synced OSCP Notes/Small Toolkit/Niche Interactions/SPX|SPX]]
 
 
@@ -110,6 +112,7 @@ Wildcard Hijack
 #### Priv Esc
 
 [[SeImpersonatePrivilege]]
+[[AlwaysInstallElevated]]
 [[Hijack EXE]]
 
 ---
