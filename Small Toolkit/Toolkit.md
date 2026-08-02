@@ -65,6 +65,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## Hunting User Machine Access
 
+Creds search nexus
+
 #### Web
 [[Web Requests API]]
 [[0000027|URL Webshell]]
