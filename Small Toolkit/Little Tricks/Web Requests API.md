@@ -1,10 +1,6 @@
-You should **not be overly concerned**, but you should absolutely treat this as a priority area to patch.
-
-It is completely normal to find command-line interaction with web apps intimidating at first. When you use tools like Burp Suite or a browser, you get a clean, visual interface. When you use `curl`, you are stripped of that luxury and forced to look at raw HTTP syntax.
-
-However, because the OSCP and modern penetration testing rely heavily on automating exploits and interacting with APIs or web entry points from restricted environments (like a limited reverse shell), mastering `curl` is non-negotiable.
-
-Here is a practical, step-by-step roadmap to turn this weakness into a core strength.
+```
+curl -X POST -H "Content-Type: application/json" -d '{"user": "admin", "cmd": "id"}' http://192.168.1.100/api/v1/exec
+```
 
 ## 1. Understand the HTTP/Terminal Blueprint
 

@@ -35,6 +35,7 @@
 > - [ ] [[0000008|whatweb]]
 > - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
 > - [ ] Analyze error page
+> - [ ] Curl dead end redirects for error msg
 > - [ ] [[0000010|curl -i domain]]
 >
 > #### Brute Force

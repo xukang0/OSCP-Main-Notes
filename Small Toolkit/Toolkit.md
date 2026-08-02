@@ -50,6 +50,12 @@ dv.paragraph("```bash\n" + command + "\n```");
 [[Metasploit]]
 
 ---
+## Misc Utilities
+
+#### Password Cracking
+[[Base64 Terminal Decode]]
+
+---
 ## Hunting User Machine Access
 
 #### Web
