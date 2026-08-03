@@ -56,6 +56,7 @@
 | 3000      | TCP      | (Node.js Express framework)[[GOGS Port 3001 3000]]            | Root Potential \| ss -tlpn                                                           |     |
 | 3001      | TCP      | (Gogs)[[GOGS Port 3001 3000]]                                 | Root potential \ ss -tlpn                                                            |     |
 | 3128      | TCP      | Squid Proxy                                                   | HTTP proxy; pivoting possible                                                        |     |
+| 3145      | TCP      | [[zFTP reverse shell\|zftp]]                                  | zftp-admin                                                                           |     |
 | 3306      | TCP      | [[3306 MySQL\|MySQL / MariaDB]]                               | Database enumeration/exploitation                                                    |     |
 | 3389      | TCP      | RDP                                                           | Remote Desktop; OSCP: brute-force if allowed                                         |     |
 | 3690      | TCP      | SVN                                                           | Version control                                                                      |     |

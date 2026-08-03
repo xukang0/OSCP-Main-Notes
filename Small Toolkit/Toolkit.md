@@ -111,6 +111,8 @@ Wildcard Hijack
 [[Windows LFI RFI]]
 #### Priv Esc
 
+Windows exploit suggester.py
+
 [[SeImpersonatePrivilege]]
 [[AlwaysInstallElevated]]
 [[Hijack EXE]]

