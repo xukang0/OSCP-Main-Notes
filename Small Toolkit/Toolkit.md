@@ -53,7 +53,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Misc Utilities
 
 #### Password Cracking
-[[Base64 Terminal Decode]]
+[[Encode Decode]]
 [[PDFCrack]]
 #### File Manipulation (Copy/Move)
 [[SCP]]
