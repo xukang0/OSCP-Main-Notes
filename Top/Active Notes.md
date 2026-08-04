@@ -46,6 +46,8 @@
 ---
 ## Discovered Credentials
 
+divine : ControlFreak11
+
 ---
 ## Interesting Files/Paths
 
