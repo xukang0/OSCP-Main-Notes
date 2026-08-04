@@ -58,6 +58,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 [[PDFCrack]]
 #### File Manipulation (Copy/Move)
 [[SCP]]
+[[Copy File from Kali to Windows target]]
 #### Reverse Shell
 [[Netcat.exe]]
 [[Synced OSCP Notes/Small Toolkit/Little Tricks/Reverse Shell Resources/Reverse Shell Resources|Reverse Shell Resources]]

