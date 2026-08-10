@@ -63,7 +63,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 [[Netcat.exe]]
 [[Synced OSCP Notes/Small Toolkit/Little Tricks/Reverse Shell Resources/Reverse Shell Resources|Reverse Shell Resources]]
 [[msfvenom]]
-
 #### Exploit Creation
 [[Compiling exploit]]
 

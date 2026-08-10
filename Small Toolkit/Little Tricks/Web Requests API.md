@@ -1,7 +1,10 @@
 ```
-curl -X POST -H "Content-Type: application/json" -d '{"user": "admin", "cmd": "id"}' http://192.168.1.100/api/v1/exec
+curl -s -k -X POST -H "Content-Type: application/json" -d '{"user": "admin", "cmd": "id"}' http://192.168.1.100/api/v1/exec
 ```
 
+- **`-s`**: Keeps the output clean (no progress bar cluttering the exploit output).
+    
+- **`-k`**: Bypasses self-signed SSL errors (crucial for HTTPS lab targets).
 ## 1. Understand the HTTP/Terminal Blueprint
 
 To be comfortable with `curl`, you have to stop looking at it as a random command and start looking at it as a direct translation of raw HTTP.
