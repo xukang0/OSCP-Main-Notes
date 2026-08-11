@@ -113,6 +113,8 @@ Wildcard Hijack
 
 [[Windows Starter Kit]]
 [[Windows LFI RFI]]
+
+[[3389 RDP]]
 #### Priv Esc
 
 Windows exploit suggester.py

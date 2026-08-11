@@ -108,6 +108,13 @@ Then use SynaMan for priv esc.
 ---
 ## Discovered Credentials
 
+```
+admin;{SSHA256}aLatQQ3qEJHinsX4N/+V/45mJwFSkXN5w7vz3P6kHy4jrX+U7hXCkQ==;asadmin
+```
+
+arthur
+KingOfAtlantis
+
 ---
 ## Interesting Files/Paths
 
@@ -117,8 +124,22 @@ Then use SynaMan for priv esc.
 ---
 ## Steps to User.txt
 
+Discover Oracle Glassfish 4.1 and directory traversal and file read CVE. 
+
+Try to file read Synametric file manager 5.1.
+
+SynaMan/config/AppConfig.xml
+
+Find the creds arthur:KingOfAtlantis
+
+RDP using these creds
+
+local.txt on desktop
+
 ---
 ## Steps to root.txt
+
+
 
 ---
 ## User Flag
