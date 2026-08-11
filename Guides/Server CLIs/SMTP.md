@@ -19,10 +19,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 cat smtp_usernames.txt
 ```
 
+Gather possible usernames on all available resources and check for availability with enum script.
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `smtp-user-enum -M VRFY -D postfish.off -U smtp_usernames.txt -t ${ip}`;
+const command = `smtp-user-enum -M VRFY -D postfish.off -U Users.txt -t ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
