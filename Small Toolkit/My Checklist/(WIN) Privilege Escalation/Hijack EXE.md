@@ -15,3 +15,7 @@ Restart bd.exe so my new bd.exe can execute
 ```powershell
 PS C:\bd> shutdown /r
 ```
+
+```powershell
+PS C:\User> shutdown /r /t 0
+```

@@ -60,6 +60,7 @@
 | 3306      | TCP      | [[3306 MySQL\|MySQL / MariaDB]]                               | Database enumeration/exploitation                                                    |     |
 | 3389      | TCP      | [[3389 RDP\|RDP]]                                             | Remote Desktop; OSCP: brute-force if allowed                                         |     |
 | 3690      | TCP      | SVN                                                           | Version control                                                                      |     |
+| 4848      | TCP      | [[4848 Oracle GlassFish]]                                     |                                                                                      |     |
 | 5432      | TCP      | [[Synced OSCP Notes/OSCP Main Notes/Cheatsheets/PostgresSQL]] | Database enumeration/exploitation                                                    |     |
 | 5900      | TCP      | [[dosbox\|VNC]]                                               | Remote GUI access ( Internal Port )                                                  |     |
 | 5901      | TCP      | [[dosbox\|VNC]]                                               | Remote GUI access ( Internal Port )                                                  |     |

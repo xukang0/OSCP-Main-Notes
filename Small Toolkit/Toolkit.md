@@ -122,6 +122,7 @@ Windows exploit suggester.py
 [[SeImpersonatePrivilege]]
 [[AlwaysInstallElevated]]
 [[Hijack EXE]]
+[[Quarantine.exe]]
 
 ---
 
