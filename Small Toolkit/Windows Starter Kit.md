@@ -74,7 +74,7 @@ Linpeas.SH
 
 Alternatives:
 1. [[LinWinPEAS|winpeas.exe]] 
-2. PowerUp.ps1
+2. [[PowerUp.ps1]]
 run `Invoke-AllChecks` to automatically find misconfigured services.
 
 ---

