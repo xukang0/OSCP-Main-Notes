@@ -20,7 +20,7 @@
 | 137       | UDP      | NetBIOS Name Service                                          | Windows name resolution; enumeration with nbtscan                                    |     |
 | 138       | UDP      | NetBIOS Datagram                                              | Windows LAN communication                                                            |     |
 | 139       | TCP      | NetBIOS Session [[139 445 SMB\|SMB]]                          | SMB over NetBIOS; OSCP: Windows share enumeration                                    |     |
-| 143       | TCP      | IMAP                                                          | Email retrieval                                                                      |     |
+| 143       | TCP      | [[143 993 IMAP\|IMAP]]                                        | Email retrieval                                                                      |     |
 | 161       | UDP      | [[161 SNMP]]                                                  | Network management; OSCP: community string enumeration                               |     |
 | 162       | UDP      | [[161 SNMP]] Trap                                             | Alerts                                                                               |     |
 | 179       | TCP      | BGP                                                           | Border Gateway Protocol (rare for OSCP labs)                                         |     |
@@ -38,7 +38,7 @@
 | 636       | TCP      | LDAPS                                                         | Secure LDAP                                                                          |     |
 | 989       | TCP      | FTPS Data                                                     | FTP over TLS                                                                         |     |
 | 990       | TCP      | FTPS Control                                                  | FTP over TLS                                                                         |     |
-| 993       | TCP      | IMAPS                                                         | Secure IMAP                                                                          |     |
+| 993       | TCP      | [[143 993 IMAP\|IMAPS]]                                       | Secure IMAP                                                                          |     |
 | 995       | TCP      | POP3S                                                         | Secure POP3                                                                          |     |
 | 1080      | TCP      | SOCKS Proxy                                                   | OSCP: pivoting and tunneling                                                         |     |
 | 1433      | TCP      | Microsoft SQL Server                                          | OSCP: database enumeration/exploitation                                              |     |
