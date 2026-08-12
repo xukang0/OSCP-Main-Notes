@@ -71,6 +71,12 @@ CrabSharkJellyfish192
 ---
 ## Steps to User.txt
 
+Use [[80 WebDAV|Cadaver]] to scan port 80 and access share
+
+Put cmdasp.aspx webshell on and access it
+
+
+
 ---
 ## Steps to root.txt
 
