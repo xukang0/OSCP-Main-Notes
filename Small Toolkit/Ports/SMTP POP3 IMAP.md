@@ -8,6 +8,11 @@
 | `TCP/587` | SMTP Encrypted/[STARTTLS](https://en.wikipedia.org/wiki/Opportunistic_TLS) |
 | `TCP/993` | IMAP4 Encrypted                                                            |
 | `TCP/995` | POP3 Encrypted                                                             |
+|           |                                                                            |
+
+SMTP is connected to IMAP
+Both usually open together
+SMTP is the delivery truck, IMAP is the mailbox
 
 MX records
 
