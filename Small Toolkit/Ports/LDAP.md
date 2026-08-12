@@ -3,4 +3,11 @@ These devices store LDAP and SMB credentials, in order for the printer to query 
 ```
 sudo nc -lvnp 389
 ```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
+const command = `ldapsearch -v -x -b "DC=hutch,DC=offsec" -H "ldap://${ip}"`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: hutch.offsec, Site: Default-First-Site-Name)

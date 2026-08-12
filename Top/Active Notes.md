@@ -59,6 +59,9 @@
 ---
 ## Discovered Credentials
 
+fmcsorley
+CrabSharkJellyfish192
+
 ---
 ## Interesting Files/Paths
 

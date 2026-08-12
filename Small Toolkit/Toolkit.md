@@ -65,6 +65,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 [[msfvenom]]
 #### Exploit Creation
 [[Compiling exploit]]
+#### Connection
+[[Synced OSCP Notes/Tools/Evil-Winrm|Evil-Winrm]]
 
 ---
 ## Hunting User Machine Access

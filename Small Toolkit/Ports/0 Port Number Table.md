@@ -5,13 +5,13 @@
 | 21        | TCP      | [[21 FTP]] Control                                            | FTP login, banner grabbing                                                           |     |
 | 22        | TCP      | [[22 SSH]]                                                    | Remote shell access; OSCP: password/credential attacks                               |     |
 | 23        | TCP      | Telnet                                                        | Unencrypted remote login; legacy, useful for practice                                |     |
-| 25        | TCP      | [[SMTP]]                                                      | Email transfer; OSCP: mail relay misconfig                                           |     |
+| 25        | TCP      | [[25 SMTP\|SMTP]]                                             | Email transfer; OSCP: mail relay misconfig                                           |     |
 | 53        | TCP/UDP  | DNS                                                           | Domain name resolution; UDP common, TCP for zone transfer                            |     |
 | 67        | UDP      | DHCP Server                                                   | Dynamic IP assignment                                                                |     |
 | 68        | UDP      | DHCP Client                                                   | Dynamic IP assignment                                                                |     |
 | 69        | UDP      | TFTP                                                          | Trivial File Transfer; unauthenticated uploads possible                              |     |
 | 79        | TCP      | [[79 Finger\|Finger]]                                         |                                                                                      |     |
-| 80        | TCP      | [[80 - WEB\|HTTP]]                                            | Web services; OSCP: web app enumeration                                              |     |
+| 80        | TCP      | [[80 - WEB\|HTTP]] \| [[80 WebDAV]]                           | Web services; OSCP: web app enumeration                                              |     |
 | 88        | TCP      | Kerberos                                                      | Kerberos Authen Protocol for secure, ticket-based network authentication (microsoft) |     |
 | 110       | TCP      | [[110 POP3]]                                                  | Email retrieval                                                                      |     |
 | 111       | TCP/UDP  | [[111 RPCBind]]                                               | Common on Linux; OSCP: NFS enumeration                                               |     |
