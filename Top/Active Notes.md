@@ -71,14 +71,18 @@ CrabSharkJellyfish192
 ---
 ## Steps to User.txt
 
+[[389 LDAP]] ldapsearch to find creds
+
+use creds to enter Cadaver
+
 Use [[80 WebDAV|Cadaver]] to scan port 80 and access share
 
-Put cmdasp.aspx webshell on and access it
-
-
+Follow [[80 WebDAV]] steps.
 
 ---
 ## Steps to root.txt
+
+
 
 ---
 ## User Flag

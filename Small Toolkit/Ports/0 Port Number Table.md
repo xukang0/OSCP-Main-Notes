@@ -24,7 +24,7 @@
 | 161       | UDP      | [[161 SNMP]]                                                  | Network management; OSCP: community string enumeration                               |     |
 | 162       | UDP      | [[161 SNMP]] Trap                                             | Alerts                                                                               |     |
 | 179       | TCP      | BGP                                                           | Border Gateway Protocol (rare for OSCP labs)                                         |     |
-| 389       | TCP/UDP  | [[Synced OSCP Notes/Small Toolkit/Ports/LDAP\|LDAP]]          | Directory services; OSCP: user enumeration                                           |     |
+| 389       | TCP/UDP  | [[389 LDAP\|LDAP]]          | Directory services; OSCP: user enumeration                                           |     |
 | 443       | TCP      | HTTPS                                                         | Secure web; OSCP: web app enumeration, SSL/TLS tests                                 |     |
 | 445       | TCP      | [[139 445 SMB\|SMB]]                                          | Windows file sharing; OSCP: SMB enumeration, exploit                                 |     |
 | 465       | TCP      | [[465 SMTPS\|SMTPS]]                                          | Secure SMTP                                                                          |     |
