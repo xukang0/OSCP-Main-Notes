@@ -117,8 +117,11 @@ Wildcard Hijack
 [[3389 RDP]]
 #### Priv Esc
 
+[[LinWinPEAS|WinPEAS]]
+[[PowerUp.ps1]]
 Windows exploit suggester.py
 
+[[FullPowers]]
 [[SeImpersonatePrivilege]]
 [[AlwaysInstallElevated]]
 [[Hijack EXE]]

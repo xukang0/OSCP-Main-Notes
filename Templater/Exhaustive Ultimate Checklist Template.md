@@ -247,6 +247,10 @@
 [[Windows Starter Kit]]
 
 > [!note]- Priv Esc Techniques
+> #### Enumeration
+> - [ ] [[LinWinPEAS|WinPEAS]]
+> - [ ] [[PowerUp.ps1]]
+> 
 > #### Privileges
 > - [ ]  [[SeImpersonatePrivilege]]
 > 

