@@ -257,5 +257,8 @@
 > #### Hijack
 > - [ ]  [[Hijack EXE]]
 > 
+> #### Shares
+> - [ ]  [[NTLM Auth]]
+> 
 >  #### Misc
 > - [ ]  [[AlwaysInstallElevated]]
