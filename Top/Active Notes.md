@@ -60,7 +60,10 @@
 ## Software Versions
 
 ```powershell
-
+OS: Windows 10, Windows Server 2019, Windows Server 2016
+OS version: '10.0'
+OS release: '1809'
+OS build: '17763'
 ```
 
 ---

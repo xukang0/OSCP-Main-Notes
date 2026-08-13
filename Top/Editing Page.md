@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-
+ldapsearch -v -x -b "DC=vault,DC=offsec" -H "ldap://192.168.184.172"
 ```
 
 ```

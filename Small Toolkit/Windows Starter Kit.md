@@ -20,6 +20,14 @@ ls
 dir 
 ```
 
+
+---
+
+# SMB/NTP playbook
+
+[[445 - SMB]]
+# WHOAMI /PRIV
+
 whoami && id
 ```
 whoami /priv 
@@ -43,6 +51,8 @@ whoami.exe /priv
 
 ---
 
+# CAT /ETC/PASSWD
+
 `cat /etc/passwd` 
 
 Lists all local accounts and who belongs to the high-privilege groups.
@@ -57,6 +67,8 @@ net localgroup administrators
 
 ---
 
+# PS AUX
+
 `ps aux` (Look for root processes)
 ```
 tasklist /v
@@ -70,19 +82,14 @@ Look for third-party software running as `SYSTEM` (like an old antivirus, backup
 
 ---
 
+# Priv Esc Enumeration
+
 Linpeas.SH
 
 Alternatives:
 1. [[LinWinPEAS|winpeas.exe]] 
 2. [[PowerUp.ps1]]
 run `Invoke-AllChecks` to automatically find misconfigured services.
-
----
-
-Windows Admin Creds Search
-```
-findstr /SIM /C:"pass" *.ini *.cfg *.xml
-```
 
 ---
 
@@ -133,10 +140,21 @@ winpeas.exe
 ./winpeas.exe
 ```
 
+---
+# Windows Admin Creds Search
+
+Windows Admin Creds Search
+```
+findstr /SIM /C:"pass" *.ini *.cfg *.xml
+```
+
+---
+
+
 CHECK
 C:\xampp\htdocs
 
-Priv Esc
+# NT AUTHORITY/LOCAL FULLPOWERS
 
 If entering NT AUTHORITY/LOCAL, Use [[FullPowers]]
 
@@ -164,7 +182,7 @@ whoami /priv
 
 [[SeImpersonatePrivilege]]
 
-Search flags
+# Search flags
 
 ```
 cd C:\
