@@ -13,47 +13,36 @@
 ---
 ## Open Ports
 
-```powershell
-53/tcp    open  domain        Simple DNS Plus
-88/tcp    open  kerberos-sec  Microsoft Windows Kerberos (server time: 2026-08-13 13:28:19Z)
-135/tcp   open  msrpc         Microsoft Windows RPC
-139/tcp   open  netbios-ssn   Microsoft Windows netbios-ssn
-389/tcp   open  ldap          Microsoft Windows Active Directory LDAP (Domain: vault.offsec, Site: Default-First-Site-Name)
-445/tcp   open  microsoft-ds?
-464/tcp   open  kpasswd5?
-593/tcp   open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
-636/tcp   open  tcpwrapped
-3268/tcp  open  ldap          Microsoft Windows Active Directory LDAP (Domain: vault.offsec, Site: Default-First-Site-Name)
-3269/tcp  open  tcpwrapped
-3389/tcp  open  ms-wbt-server Microsoft Terminal Services
-| ssl-cert: Subject: commonName=DC.vault.offsec
-| Not valid before: 2026-08-12T13:18:48
-|_Not valid after:  2027-02-11T13:18:48
-| rdp-ntlm-info: 
-|   Target_Name: VAULT
-|   NetBIOS_Domain_Name: VAULT
-|   NetBIOS_Computer_Name: DC
-|   DNS_Domain_Name: vault.offsec
-|   DNS_Computer_Name: DC.vault.offsec
-|   DNS_Tree_Name: vault.offsec
-|   Product_Version: 10.0.17763
-|_  System_Time: 2026-08-13T13:29:21+00:00
-|_ssl-date: 2026-08-13T13:30:00+00:00; -1s from scanner time.
-5985/tcp  open  http          Microsoft HTTPAPI httpd 2.0 (SSDP/UPnP)
-|_http-server-header: Microsoft-HTTPAPI/2.0
-|_http-title: Not Found
-9389/tcp  open  mc-nmf        .NET Message Framing
-49666/tcp open  msrpc         Microsoft Windows RPC
-49667/tcp open  msrpc         Microsoft Windows RPC
-49673/tcp open  ncacn_http    Microsoft Windows RPC over HTTP 1.0
-49674/tcp open  msrpc         Microsoft Windows RPC
-49679/tcp open  msrpc         Microsoft Windows RPC
-49703/tcp open  msrpc         Microsoft Windows RPC
+```
+22/tcp    open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+| ssh-hostkey: 
+|   3072 91:ba:0d:d4:39:05:e3:13:55:57:8f:1b:46:90:db:e4 (RSA)
+|   256 0f:35:d1:a1:31:f2:f6:aa:75:e8:17:01:e7:1e:d1:d5 (ECDSA)
+|_  256 af:f1:53:ea:7b:4d:d7:fa:d8:de:0d:f2:28:fc:86:d7 (ED25519)
+80/tcp    open  http    Apache httpd 2.4.41 ((Ubuntu))
+| http-robots.txt: 1 disallowed entry 
+|_/secret.txt
+|_http-server-header: Apache/2.4.41 (Ubuntu)
+|_http-generator: WordPress 5.4.2
+|_http-title: OSCP Voucher &#8211; Just another WordPress site
+33060/tcp open  mysqlx  MySQL X protocol listener
+Device type: general purpose|router
+Running: Linux 5.X, MikroTik RouterOS 7.X
+OS CPE: cpe:/o:linux:linux_kernel:5 cpe:/o:mikrotik:routeros:7 cpe:/o:linux:linux_kernel:5.6.3
+OS details: Linux 5.0 - 5.14, MikroTik RouterOS 7.2 - 7.5 (Linux 5.6.3)
+Network Distance: 4 hops
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
+TRACEROUTE (using port 80/tcp)
+HOP RTT      ADDRESS
+1   87.25 ms 192.168.45.1
+2   87.23 ms 192.168.45.254
+3   87.27 ms 192.168.251.1
+4   87.21 ms 192.168.113.89
 
-53/udp  open  domain
-88/udp  open  kerberos-sec
-123/udp open  ntp
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 83.89 seconds
+
 ```
 
 ---

@@ -4,7 +4,7 @@
 | ------- | ---------- | ----- |
 |         |            |       |
 
-MACHINE:: Vault
+MACHINE:: Infosecprep
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -12,7 +12,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   192.168.184.172
+IP::   192.168.113.89
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -20,7 +20,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  192.168.45.230
+KALI IP::  192.168.45.202
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
