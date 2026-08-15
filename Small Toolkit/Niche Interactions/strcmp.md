@@ -1,0 +1,1 @@
+https://www.mayhemcode.com/2025/10/php-strcmp-vulnerability-explained.html
