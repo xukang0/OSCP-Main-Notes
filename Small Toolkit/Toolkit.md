@@ -117,7 +117,7 @@ Wildcard Hijack
 [[Windows LFI RFI]]
 
 [[3389 RDP]]
-
+[[NTLM Auth]]
 #### Priv Esc
 
 [[LinWinPEAS|WinPEAS]]
