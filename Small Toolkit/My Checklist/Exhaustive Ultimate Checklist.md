@@ -145,10 +145,10 @@
 > - [ ] ls 
 > 
 >  #### SUID / Capabilities / Sudo
-> - [x] [[0000017|find / -perm -4000 2>/dev/null]]
-> - [x] [[0000018|getcap -r / 2>/dev/null]]
-> - [x] sudo -l
-> - [x] [[GTFOChecker]]
+> - [ ] [[0000017|find / -perm -4000 2>/dev/null]]
+> - [ ] [[0000018|getcap -r / 2>/dev/null]]
+> - [ ] sudo -l
+> - [ ] [[GTFOChecker]]
 > 
 > #### Easy wins
 > - [ ] cat /etc/passwd
