@@ -24,13 +24,12 @@ const command = `nmap -Pn -sV -sC -p1433 ${ip}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 LOGIN
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-```
-python3 /home/kali/venvs/impacket-011/bin/mssqlclient.py [username]:'[passwd]'@[IP]
-```
+const command = `impacket-mssqlclient [User]:[Password]@${ip} -windows-auth`;
 
-```
-python3 /home/kali/venvs/impacket-011/bin/mssqlclient.py [username]:'[passwd]'@[IP] -windows-auth
+dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ```

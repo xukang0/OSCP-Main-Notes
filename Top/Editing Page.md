@@ -5,7 +5,7 @@ ldapsearch -v -x -b "DC=vault,DC=offsec" -H "ldap://192.168.184.172"
 ```
 
 ```
-
+python3 /home/kali/venvs/impacket-011/bin/mssqlclient.py [username]:'[passwd]'@[IP]
 ```
 
 ```
