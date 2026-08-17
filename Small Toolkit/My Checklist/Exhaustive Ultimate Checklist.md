@@ -5,7 +5,7 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000021| [PEN200] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
@@ -251,9 +251,12 @@
 > #### Enumeration
 > - [ ] [[LinWinPEAS|WinPEAS]]
 > - [ ] [[PowerUp.ps1]]
+> - [ ] [[PowerView.ps1]] 
 > 
 > #### Privileges
 > - [ ]  [[SeImpersonatePrivilege]]
+> - [ ]  [[SeBackupPrivilege]]
+> - [ ]  [[SeRestorePrivilege]]
 > 
 > #### Hijack
 > - [ ]  [[Hijack EXE]]
