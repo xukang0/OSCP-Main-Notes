@@ -251,6 +251,7 @@
 > #### Enumeration
 > - [ ] [[LinWinPEAS|WinPEAS]]
 > - [ ] [[PowerUp.ps1]]
+> - [ ] [[PowerView.ps1]] 
 > 
 > #### Privileges
 > - [ ]  [[SeImpersonatePrivilege]]
