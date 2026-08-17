@@ -254,6 +254,8 @@
 > 
 > #### Privileges
 > - [ ]  [[SeImpersonatePrivilege]]
+> - [ ]  [[SeBackupPrivilege]]
+> - [ ]  [[SeRestorePrivilege]]
 > 
 > #### Hijack
 > - [ ]  [[Hijack EXE]]
