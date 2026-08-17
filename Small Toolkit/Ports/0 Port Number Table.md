@@ -27,6 +27,7 @@
 | 389       | TCP/UDP  | [[389 LDAP\|LDAP]]                                            | Directory services; OSCP: user enumeration                                           |     |
 | 443       | TCP      | HTTPS                                                         | Secure web; OSCP: web app enumeration, SSL/TLS tests                                 |     |
 | 445       | TCP      | [[139 445 SMB\|SMB]]                                          | Windows file sharing; OSCP: SMB enumeration, exploit                                 |     |
+| 464       | TCP      | kpasswd                                                       | Kerberos Change & Set Password Protocol                                              |     |
 | 465       | TCP      | [[465 SMTPS\|SMTPS]]                                          | Secure SMTP                                                                          |     |
 | 514       | UDP      | Syslog                                                        | Log collection                                                                       |     |
 | 515       | TCP      | [[515 Printer]]                                               | Printer service                                                                      |     |
@@ -34,6 +35,7 @@
 | 546       | UDP      | DHCPv6 Client                                                 | IPv6 Dynamic IP                                                                      |     |
 | 547       | UDP      | DHCPv6 Server                                                 | IPv6 Dynamic IP                                                                      |     |
 | 587       | TCP      | SMTP (Submission)                                             | Outbound mail submission                                                             |     |
+| 593       | TCP      | RPC over HTTP                                                 | HTTP RPC Ephemeral Mapper                                                            |     |
 | 631       | TCP/UDP  | IPP / CUPS                                                    | Printing service                                                                     |     |
 | 636       | TCP      | LDAPS                                                         | Secure LDAP                                                                          |     |
 | 989       | TCP      | FTPS Data                                                     | FTP over TLS                                                                         |     |
@@ -58,6 +60,7 @@
 | 3128      | TCP      | Squid Proxy                                                   | HTTP proxy; pivoting possible                                                        |     |
 | 3145      | TCP      | [[zFTP reverse shell\|zftp]]                                  | zftp-admin                                                                           |     |
 | 3268      | TCP      | [[389 LDAP\|LDAP]]                                            |                                                                                      |     |
+| 3269      | TCP      | Global Catalog LDAPS                                          |                                                                                      |     |
 | 3306      | TCP      | [[3306 MySQL\|MySQL / MariaDB]]                               | Database enumeration/exploitation                                                    |     |
 | 3389      | TCP      | [[3389 RDP\|RDP]]                                             | Remote Desktop; OSCP: brute-force if allowed                                         |     |
 | 3690      | TCP      | SVN                                                           | Version control                                                                      |     |
@@ -76,6 +79,7 @@
 | 8443      | TCP      | HTTPS Alternate                                               | Web service                                                                          |     |
 | 9000      | TCP      | Webmin                                                        | Admin panel; OSCP: misconfiguration enumeration                                      |     |
 | 9090      | TCP      | HTTP Alternate                                                | Web service                                                                          |     |
+| 9389      | TCP      | Active Directory Web Services                                 |                                                                                      |     |
 | 10050     | TCP      | Zabbix                                                        | Server to Agent                                                                      |     |
 | 10051     | TCP      | Zabbix                                                        | Agent to Server                                                                      |     |
 | 10161     | TCP      | [[161 SNMP\|SNMP]]                                            |                                                                                      |     |

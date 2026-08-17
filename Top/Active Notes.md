@@ -61,7 +61,8 @@ PORT      STATE         SERVICE
 49701/tcp open  msrpc         Microsoft Windows RPC
 49781/tcp open  msrpc         Microsoft Windows RPC
 
-
+INVESTIGATE 443
+INVESTIGATE 47001
 
 9/udp     open|filtered discard
 53/udp    open          domain
@@ -86,6 +87,10 @@ PORT      STATE         SERVICE
 ## Software Versions
 
 ```powershell
+OS: Windows 10, Windows Server 2019, Windows Server 2016
+OS version: '10.0'
+OS release: '1809'
+OS build: '17763'
 
 ```
 

