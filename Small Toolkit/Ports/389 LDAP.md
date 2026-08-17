@@ -6,7 +6,7 @@ sudo nc -lvnp 389
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `ldapsearch -v -x -b "DC=hutch,DC=offsec" -H "ldap://${ip}"`;
+const command = `ldapsearch -v -x -b "DC=hutch,DC=offsec" -H "ldap://${ip}" > ldapsearchoutput.txt`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

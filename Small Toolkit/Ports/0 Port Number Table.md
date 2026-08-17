@@ -6,7 +6,7 @@
 | 22        | TCP      | [[22 SSH]]                                                    | Remote shell access; OSCP: password/credential attacks                               |     |
 | 23        | TCP      | Telnet                                                        | Unencrypted remote login; legacy, useful for practice                                |     |
 | 25        | TCP      | [[25 SMTP\|SMTP]]                                             | Email transfer; OSCP: mail relay misconfig                                           |     |
-| 53        | TCP/UDP  | DNS                                                           | Domain name resolution; UDP common, TCP for zone transfer                            |     |
+| 53        | TCP/UDP  | [[53 DNS\|DNS]]                                               | Domain name resolution; UDP common, TCP for zone transfer                            |     |
 | 67        | UDP      | DHCP Server                                                   | Dynamic IP assignment                                                                |     |
 | 68        | UDP      | DHCP Client                                                   | Dynamic IP assignment                                                                |     |
 | 69        | UDP      | TFTP                                                          | Trivial File Transfer; unauthenticated uploads possible                              |     |

