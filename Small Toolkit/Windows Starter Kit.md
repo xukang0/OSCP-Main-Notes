@@ -177,6 +177,8 @@ whoami /priv
 ```
 
 [[SeImpersonatePrivilege]]
+[[SeRestorePrivilege]]
+[[SeBackupPrivilege]]
 
 # Search flags
 
