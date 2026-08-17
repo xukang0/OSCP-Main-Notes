@@ -72,6 +72,15 @@ OS build: '17763'
 ---
 ## Discovered Credentials
 
+```
+anirudh
+```
+
+```
+SecureHM
+```
+
+
 ---
 ## Interesting Files/Paths
 

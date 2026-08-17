@@ -22,10 +22,6 @@ dir
 
 
 ---
-
-# SMB/NTP playbook
-
-[[445 - SMB]]
 # WHOAMI /PRIV
 
 whoami && id
