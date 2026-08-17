@@ -266,3 +266,4 @@
 > 
 >  #### Misc
 > - [ ]  [[AlwaysInstallElevated]]
+> - [ ] cmdkey /list
