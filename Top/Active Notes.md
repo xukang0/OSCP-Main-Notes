@@ -100,6 +100,8 @@ OS build: '17763'
 ---
 ## Discovered Credentials
 
+MSSQLSvc : trustno1
+
 ---
 ## Interesting Files/Paths
 

