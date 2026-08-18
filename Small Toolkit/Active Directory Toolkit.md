@@ -17,6 +17,10 @@ Kerberoasting is a technique that allows attackers to request a Kerberos ticket 
 
 Transfer [[Rubeus.exe]] into VICTIM TARGET
 
+Once Creds are obtained, use [[Runas]]
+
+
+
 
 
 
