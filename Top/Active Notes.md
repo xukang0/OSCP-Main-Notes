@@ -115,7 +115,7 @@ Directory Fuzz /uploads/
 
 Realize buy tickets can upload files
 
-Use [[Synced OSCP Notes/Small Toolkit/Little Tricks/File Upload Bypass|File Upload Bypass]] php inclusion to be able to upload wwwshell.php16 and then catch a reverse shell
+Use [[Synced OSCP Notes/Small Toolkit/Niche Interactions/File Upload Bypass|File Upload Bypass]] php inclusion to be able to upload wwwshell.php16 and then catch a reverse shell
 
 Use [[PowerView.ps1]] to view users with SPN set
 

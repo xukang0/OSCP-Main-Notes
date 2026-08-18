@@ -22,8 +22,12 @@ Start listener
 cd ~/Desktop/Tools && python3 penelope.py -p 4444 -O / --oscp-safe
 ```
 
-Dot Source Invoke-RunasCs.ps1
 ```
+powershell -ep bypass
+```
+
+Dot Source Invoke-RunasCs.ps1
+```powershell
 . .\Invoke-RunasCs.ps1
 ```
 

