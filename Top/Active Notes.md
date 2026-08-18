@@ -111,6 +111,18 @@ MSSQLSvc : trustno1
 ---
 ## Steps to User.txt
 
+Directory Fuzz /uploads/ 
+
+Realize buy tickets can upload files
+
+Use [[Synced OSCP Notes/Small Toolkit/Little Tricks/File Upload Bypass|File Upload Bypass]] php inclusion to be able to upload wwwshell.php16 and then catch a reverse shell
+
+Use [[PowerView.ps1]] to view users with SPN set
+
+Use [[Rubeus.exe]] to kerberoast
+
+use [[Runas]] with creds to become svc_mssql
+
 ---
 ## Steps to root.txt
 

