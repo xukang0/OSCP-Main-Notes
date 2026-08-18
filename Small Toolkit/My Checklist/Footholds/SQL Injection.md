@@ -277,7 +277,7 @@ sqlmap -r reset.req -p email --batch --level 3 -D [database_name] -T [table_name
 
 ---
 
-[[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
+[[Hashcat|Hashcat]]
 
 ---
 

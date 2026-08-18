@@ -91,8 +91,8 @@ Creds search nexus
 
 [[TMUX]]
 
-[[Synced OSCP Notes/Small Toolkit/Tools/Hashcat|Hashcat]]
-[[Synced OSCP Notes/Small Toolkit/Tools/John The Ripper|John The Ripper]]
+[[Hashcat|Hashcat]]
+[[John The Ripper|John The Ripper]]
 
 ---
 ## Hunting Root

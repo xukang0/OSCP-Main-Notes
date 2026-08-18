@@ -1,3 +1,5 @@
+Notable Paths to Take a look at
+
 Test for local file inclusion
 ```
 ?page=C:/Windows/System32/drivers/etc/hosts
