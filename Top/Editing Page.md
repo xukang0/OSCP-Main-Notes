@@ -13,11 +13,11 @@ smbclient \\192.168.242.175\Password Audit
 ```
 
 ```
-
+evil-winrm -i 192.168.242.175 -u V.Ventz -p 'HotelCalifornia194!'
 ```
 
 ```
-
+xfreerdp3 /u:V.Ventz /p:'HotelCalifornia194!' /v:192.168.242.175
 ```
 
 ```

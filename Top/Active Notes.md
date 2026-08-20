@@ -65,7 +65,7 @@ RDP is open
 ## Software Versions
 
 ```powershell
-
+Windows 10 / Server 2019 Build 17763 x64 
 ```
 
 ---
