@@ -1,3 +1,27 @@
+
+## NMAP Vuln Script Scan
+
+#### TCP
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `sudo nmap -sVC -vvv ${ip} --script vuln`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+#### UDP
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `sudo nmap -sV -sC -sU -vvv ${ip} --script vuln`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
+
+## NetExec Credential Usage Sweep
+
 Upon Entry, Once Creds for unknown usage is obtained, use netexec to check across all services, nxc-sweep is used to automatically check all services
 
 ```dataviewjs

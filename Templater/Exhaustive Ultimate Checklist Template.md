@@ -268,3 +268,12 @@
 >  #### Misc
 > - [ ]  [[AlwaysInstallElevated]]
 > - [ ] cmdkey /list
+
+
+## 6. AD
+
+[[Active Directory Toolkit]]
+
+> [!note]- Enumeration
+> - [ ] [[0000035|NMAP Vuln Script]]
+
