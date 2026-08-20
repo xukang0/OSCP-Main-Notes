@@ -20,6 +20,18 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ---
 
+## Time Sync
+
+Syncs our machine with the Domain server’s time as if we have more than a 5 min gap we will have issues.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `sudo ntpdate ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
+
 ## NetExec Credential Usage Sweep
 
 Upon Entry, Once Creds for unknown usage is obtained, use netexec to check across all services, nxc-sweep is used to automatically check all services
