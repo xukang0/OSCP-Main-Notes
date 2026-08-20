@@ -20,3 +20,4 @@ cd /usr/share/seclists/Miscellaneous/
 ```
 sudo vim grepcredwords.txt
 ```
+

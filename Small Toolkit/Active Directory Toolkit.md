@@ -43,6 +43,8 @@ const command = `cd ~/Desktop/Tools/Windows && ./nxc-sweep ${ip} -u '[USER]' -p 
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+---
+
 
 
 
