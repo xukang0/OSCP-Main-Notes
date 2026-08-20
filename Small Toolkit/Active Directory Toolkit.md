@@ -1,3 +1,16 @@
+Upon Entry, Once Creds for unknown usage is obtained, use netexec to check across all services, nxc-sweep is used to automatically check all services
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `cd ~/Desktop/Tools/Windows && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+
+
+
 Transfer [[PowerView.ps1]] to target first
 
 Verify commands are loaded

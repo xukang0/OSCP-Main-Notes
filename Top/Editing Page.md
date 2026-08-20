@@ -1,15 +1,15 @@
 [[Editing Copy Page]]
 
 ```
-
+smbclient -U V.Ventz -L //192.168.242.175/Password Audit
 ```
 
 ```
-
+HotelCalifornia194!
 ```
 
 ```
-
+smbclient \\192.168.242.175\Password Audit
 ```
 
 ```
