@@ -65,6 +65,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 [[msfvenom]]
 #### Exploit Creation
 [[Compiling exploit]]
+#### Credential Searching
+[[Password Supersearch]]
+[[CredsHunter]]
 #### Connection
 [[Synced OSCP Notes/Tools/Evil-Winrm|Evil-Winrm]]
 
