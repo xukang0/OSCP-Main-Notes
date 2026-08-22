@@ -5,14 +5,14 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [x] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000021| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000021| [PEN200] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]
 >
 >  #### NMAP
-> - [x] [[0000001|Full -A Scan]]
-> - [x] [[0000001|UDP Scan]]
+> - [ ] [[0000001|Full -A Scan]]
+> - [ ] [[0000001|UDP Scan]]
 > 
 > #### Host
 > - [ ] [[0000003|Add discovered hosts to /etc/hosts]]
@@ -268,3 +268,16 @@
 >  #### Misc
 > - [ ]  [[AlwaysInstallElevated]]
 > - [ ] cmdkey /list
+
+
+## 6. AD
+
+[[Active Directory Toolkit]]
+
+> [!note]- Active Directory
+> #### Enumeration
+> - [ ] [[0000035|NMAP Vuln Script]]
+> 
+> #### Misc
+> - [ ] [[0000036|Time Sync]]
+
