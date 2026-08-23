@@ -113,6 +113,10 @@ Host script results:
 ---
 ## Steps to root.txt
 
+	Once you have access to the domain controller, retrieve the NTLM hash of the domain administrator account _BEYOND\Administrator_ and enter it as answer to this exercise.
+
+Please make sure you are dumping the NTLM hash of the domain administrator user with RID 500 by utilizing dcsync attack via mimikatz, not by extracting creds from SAM file. The hashes will be different.
+
 ---
 ## User Flag
 

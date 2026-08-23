@@ -8,13 +8,19 @@ searchsploit unrealircd
 
 ## Show full path to exploit
 
-searchsploit -p unrealircd
+Examine exploit
+```
+searchsploit -x unrealircd
+```
 
 ---
 
 ## Copy exploit to your working directory
 
+Mirror file
+```
 searchsploit -m exploits/unix/irc/16922.c
+```
 
 ---
 if c.

@@ -25,6 +25,15 @@ const command = `wpscan --url http://${discoveredDomain} -e --api-token xRTTe06g
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+PEN200 Version (EDIT)
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `wpscan --url http://${discoveredDomain} --enumerate vp,u --api-token xRTTe06gPq2NLkl0WNubIs3s1HMCxj6qEnkoLG6waF0 -o [folder]/wpscan`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 Precise scan
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
