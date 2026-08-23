@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-
+cd ~/Desktop/Tools/Windows && ./nxc-sweep 192.168.117.244 -u '[USER]' -p 'dqsTwTpZPn#nL'
 ```
 
 ```

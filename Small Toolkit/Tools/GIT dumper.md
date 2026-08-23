@@ -3,9 +3,12 @@ wget https://raw.githubusercontent.com/arthaud/git-dumper/refs/heads/master/git_
 ```
 
 Also installed in 
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-```
-cd /home/kali/Desktop/MyTools/[git_dumper.py]
+const command = `python3 ~/Desktop/Tools/git_dumper.py http://${ip}/.git gitdump`;
+
+dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---

@@ -54,13 +54,13 @@ Look through foreign systems for authorized_keys
 Likely file locations
 
 ```
-/home/user/.ssh/authorized_keys
+/home/[user]/.ssh/authorized_keys
 ```
 
 SSH Private Key
 
 ```
-/home/user/.ssh/id_ed25519
+/home/[user]/.ssh/id_ed25519
 ```
 
 ---

@@ -74,7 +74,7 @@ ssh into daedmola
 
 Linpeas shows git repo cronjob
 
-[[GIT]] clone repo into local
+[[Synced OSCP Notes/Tools/GIT]] clone repo into local
 
 nano backups.sh and append reverse shell
 

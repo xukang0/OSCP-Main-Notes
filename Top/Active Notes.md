@@ -101,6 +101,10 @@ Host script results:
 ---
 ## Discovered Credentials
 
+tequieromucho
+
+sshpass -p "dqsTwTpZPn#nL" rsync john@192.168.50.245:/current_webapp/ /srv/www/wordpress/
+
 ---
 ## Interesting Files/Paths
 
