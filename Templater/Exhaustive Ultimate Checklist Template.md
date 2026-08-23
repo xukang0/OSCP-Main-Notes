@@ -5,7 +5,7 @@
 
 > [!note]- Initial
 >  #### Setup
->   - [ ] [[0000021| [PG Practice] Initial Setup ]]
+>   - [ ] [[0000037| [PG Practice] Initial Setup ]]
 >   - [ ] [[0000021| [PEN200] Initial Setup ]]
 >   - [ ] [[0000022| [HTB] Initial Setup ]]
 >   - [ ] [[0000023| [HTB Seasonal] Initial Setup ]]

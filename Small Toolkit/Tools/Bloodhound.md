@@ -1,9 +1,5 @@
 ```
-cd ~/Desktop/Tools/Windows/Bloodhound
-```
-
-```
-sudo docker compose down -v
+cd ~/Desktop/Tools/Windows/Bloodhound && sudo docker compose down -v
 ```
 
 ```
