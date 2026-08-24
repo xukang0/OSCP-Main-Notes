@@ -1,3 +1,6 @@
+wget file from kali to window target
+transfer file from kali to window target
+
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
