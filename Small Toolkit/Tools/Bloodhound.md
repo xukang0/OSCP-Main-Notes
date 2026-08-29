@@ -59,6 +59,17 @@ localhost:8080
 
 ---
 
+Kill Docker compose bloodhound
+
+```
+sudo docker comppose down -v
+```
+
+```
+docker stop $(docker ps -q)
+```
+---
+
 ## Raw queries
 
 ```
