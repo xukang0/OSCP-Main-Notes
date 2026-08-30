@@ -40,6 +40,10 @@ const command = `sudo nmap -sV --script=http-enum -oA [filename] ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+scripts
+```
+ls -1 /usr/share/nmap/scripts/
+```
 ## Target Specification
 
 | Switch    | Description                  | Example                  |
