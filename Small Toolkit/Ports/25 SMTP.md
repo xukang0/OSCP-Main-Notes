@@ -10,6 +10,10 @@ const command = `telnet ${ip} 25`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+```
+VRFY [user]
+```
+
 brute force usernames
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";

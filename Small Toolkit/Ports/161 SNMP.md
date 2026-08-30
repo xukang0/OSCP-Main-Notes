@@ -27,3 +27,31 @@ const command = `snmp-check ${ip} -c public`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+---
+
+**Essential Commands to Keep in Your Cheatsheet:**
+
+- **Find Community Strings:**
+    
+    Bash
+    
+    ```
+    onesixtyone -c /usr/share/seclists/Discovery/SNMP/common-snmp-community-strings.txt <TARGET_IP>
+    ```
+    
+- **Automated Overview:**
+    
+    Bash
+    
+    ```
+    snmp-check <TARGET_IP> -c public
+    ```
+    
+- **Manual Full Walk:**
+    
+    Bash
+    
+    ```
+    snmpwalk -v2c -c public <TARGET_IP>
+    ```
