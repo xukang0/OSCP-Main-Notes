@@ -51,6 +51,8 @@ whoami.exe /priv
 
 `cat /etc/passwd` 
 
+**C:\Windows\System32\drivers\etc\hosts**
+
 Lists all local accounts and who belongs to the high-privilege groups.
 
 ```

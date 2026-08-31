@@ -12,3 +12,14 @@ Wordpress
 XSS
 Session Hijacking / Cookie Stealing
 	Basic Reflected / Stored Proof of Concept (PoC)
+
+Directory Traversal
+	URL encoding bypass
+
+Local File Inclusion
+	log poisoning
+Remote File Inclusion
+File Upload Vulnerability
+
+Linux 
+Check home directory for ssh keys
