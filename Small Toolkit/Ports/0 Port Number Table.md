@@ -47,6 +47,7 @@
 | 1434      | UDP      | MS SQL Monitor                                                | SQL Server discovery                                                                 |     |
 | 1521      | TCP      | Oracle DB                                                     | Database enumeration                                                                 |     |
 | 1723      | TCP/UDP  | PPTP VPN                                                      | Legacy VPN                                                                           |     |
+| 1978      | TCP      | [[WifiMouse\|MouseServer.exe]]                                |                                                                                      |     |
 | 2049      | TCP/UDP  | NFS                                                           | Linux/Unix file sharing; OSCP: enumeration/exploitation                              |     |
 | 2082      | TCP      | cPanel                                                        | Hosting control panel                                                                |     |
 | 2083      | TCP      | cPanel SSL                                                    | Secure hosting control panel                                                         |     |

@@ -109,6 +109,12 @@ You can manage processes with commands like: 
 
 `kill` (kill processes), 
 
+Kill port
+```
+sudo fuser -k 8080/tcp
+```
+
+
 `bg` (send process to background), 
 
 `fg` (bring background process to foreground), and 
