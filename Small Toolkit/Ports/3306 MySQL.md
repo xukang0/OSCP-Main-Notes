@@ -117,6 +117,8 @@ show columns from users;
 SELECt * FROM [table_name] WHERE [row_name] LIKE "target_name"
 ```
 
+![[Pasted image 20260831192503.png]]
+
 ![[Pasted image 20250512163753.png]]
 
 ```

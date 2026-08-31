@@ -1,5 +1,10 @@
 # ⚡ Basic Usage
 
+Update database
+```
+sudo apt update && sudo apt install exploitdb
+```
+
 ## Search for exploits
 
 searchsploit apache 2.4.10  

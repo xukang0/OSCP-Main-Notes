@@ -21,5 +21,7 @@ Local File Inclusion
 Remote File Inclusion
 File Upload Vulnerability
 
+Command Injection
+
 Linux 
 Check home directory for ssh keys
