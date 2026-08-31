@@ -44,7 +44,7 @@
 > - [ ] [[0000011|Feroxbuster WebList brute force]]
 > - [ ] [[0000012|Vhost brute force]]
 > - [ ] [[0000013|Feroxbuster File directories sweep]]
-> - [ ] 
+> - [ ] [[0000038|Feroxbuster API discovery]]
 >
 > #### Vulnerability Testing
 > - [ ] [[0000014|LFI (../../../../etc/passwd)]]
