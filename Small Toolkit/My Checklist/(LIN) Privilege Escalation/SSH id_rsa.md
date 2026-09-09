@@ -39,3 +39,5 @@ const command = `ssh root@${ip} -i id_rsa.clean`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+---
+

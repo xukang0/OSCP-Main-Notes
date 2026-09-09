@@ -2,6 +2,8 @@ SMTP and IMAP are usually open together
 SMTP is the delivery truck, IMAP is the mailbox.
 [[143 993 IMAP]]
 
+Just a tip: If you see port 25 or SMTP on the target, always look through /var/mail/ and /var/spool/mail.
+
 Connect
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
