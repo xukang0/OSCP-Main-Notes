@@ -15,6 +15,7 @@ Session Hijacking / Cookie Stealing
 
 Directory Traversal
 	URL encoding bypass
+[[Path Traversal Vulnerabilities]]
 
 Local File Inclusion
 	log poisoning
