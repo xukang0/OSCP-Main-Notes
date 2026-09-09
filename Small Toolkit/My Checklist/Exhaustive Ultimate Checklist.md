@@ -210,6 +210,7 @@
 > 
 >  #### FREE WINS SUDO
 > - [ ] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
+> - [ ] [[0000039|GTFOBins Systemctl]] 
 
 > [!note]- Priv Esc Techniques
 > #### Ports
