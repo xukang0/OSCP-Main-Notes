@@ -30,6 +30,13 @@ const command = `sudo ntpdate ${ip}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
+
+## LDAP 389
+[[389 LDAP]]
+Try to ping yourself with a listener opener, the printer might try to authenticate back to listener using the password accidentally
+
+---
+
 ## NetExec Credential Usage Sweep
 
 Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check across all services, nxc-sweep is used to automatically check all services

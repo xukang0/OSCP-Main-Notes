@@ -62,6 +62,12 @@
 ---
 ## Discovered Credentials
 
+LDAP 389
+printer.return.local
+svc-printer
+
+svc-printer:
+
 ---
 ## Interesting Files/Paths
 
@@ -70,6 +76,12 @@
 
 ---
 ## Steps to User.txt
+
+Visited port 80 to find an ldap printer setting webpage.
+
+Can specify server to ping, 
+
+pinged ldap 389 for a credential
 
 ---
 ## Steps to root.txt
