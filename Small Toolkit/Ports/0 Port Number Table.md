@@ -69,8 +69,8 @@
 | 5432      | TCP      | [[Synced OSCP Notes/OSCP Main Notes/Cheatsheets/PostgresSQL]] | Database enumeration/exploitation                                                    |     |
 | 5900      | TCP      | [[dosbox\|VNC]]                                               | Remote GUI access ( Internal Port )                                                  |     |
 | 5901      | TCP      | [[dosbox\|VNC]]                                               | Remote GUI access ( Internal Port )                                                  |     |
-| 5985      | TCP      | [[Tools/Evil-Winrm\|Evil-Winrm]] (HTTP)                       | Windows Remote Management; remote PowerShell access                                  |     |
-| 5986      | TCP      | [[Tools/Evil-Winrm\|Evil-Winrm]] (HTTP)                       | Encrypted WinRM; remote PowerShell access                                            |     |
+| 5985      | TCP      | [[Synced OSCP Notes/Small Toolkit/Tools/Evil-Winrm\|Evil-Winrm]] (HTTP)                       | Windows Remote Management; remote PowerShell access                                  |     |
+| 5986      | TCP      | [[Synced OSCP Notes/Small Toolkit/Tools/Evil-Winrm\|Evil-Winrm]] (HTTP)                       | Encrypted WinRM; remote PowerShell access                                            |     |
 | 6000–6005 | TCP      | X11 Display                                                   | Linux graphical remote access; OSCP rarely needed                                    |     |
 | 6379      | TCP      | [[6379 Redis \| Redis]]                                       | In-memory database; OSCP: misconfig exploitation                                     |     |
 | 6667      | TCP      | IRC                                                           | Chat protocol; OSCP: sometimes pivoting                                              |     |

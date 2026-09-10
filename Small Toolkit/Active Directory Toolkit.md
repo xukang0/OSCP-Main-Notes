@@ -48,6 +48,11 @@ const command = `cd ~/Desktop/Tools/Windows && ./nxc-sweep ${ip} -u '[USER]' -p 
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+In NetExec (and its predecessor CrackMapExec), seeing (Pwn3d!) next to a set of credentials means that the provided username and password are valid and possess administrative or code execution privileges on that target
+
+[[5985 5986 WinRM]]
+
 ---
 ## Impacket-secretsdump
 

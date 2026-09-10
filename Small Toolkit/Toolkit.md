@@ -69,7 +69,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 [[Password Supersearch]]
 [[CredsHunter]]
 #### Connection
-[[Synced OSCP Notes/Tools/Evil-Winrm|Evil-Winrm]]
+[[Synced OSCP Notes/Small Toolkit/Tools/Evil-Winrm|Evil-Winrm]]
 
 ---
 ## Hunting User Machine Access

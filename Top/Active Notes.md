@@ -66,13 +66,29 @@ LDAP 389
 printer.return.local
 svc-printer
 
-svc-printer:
+svc-printer:1edFg43012!!
 
 ---
 ## Interesting Files/Paths
 
 ---
 ## Attack Ideas
+
+PRIVILEGES INFORMATION
+----------------------
+
+Privilege Name                Description                         State
+============================= =================================== =======
+X SeMachineAccountPrivilege     Add workstations to domain          Enabled
+SeLoadDriverPrivilege         Load and unload device drivers      Enabled
+SeSystemtimePrivilege         Change the system time              Enabled
+SeBackupPrivilege             Back up files and directories       Enabled
+SeRestorePrivilege            Restore files and directories       Enabled
+SeShutdownPrivilege           Shut down the system                Enabled
+SeChangeNotifyPrivilege       Bypass traverse checking            Enabled
+SeRemoteShutdownPrivilege     Force shutdown from a remote system Enabled
+SeIncreaseWorkingSetPrivilege Increase a process working set      Enabled
+SeTimeZonePrivilege           Change the time zone                Enabled
 
 ---
 ## Steps to User.txt
@@ -82,6 +98,12 @@ Visited port 80 to find an ldap printer setting webpage.
 Can specify server to ping, 
 
 pinged ldap 389 for a credential
+
+Netexecsweep p3wns winrm
+
+Evil-winrm works
+
+
 
 ---
 ## Steps to root.txt
