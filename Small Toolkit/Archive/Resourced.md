@@ -22,7 +22,7 @@ xfreerdp3 /u:V.Ventz /p:'HotelCalifornia194!' /v:192.168.242.175
 ```
 
 ```
-cd ~/Desktop/Tools/Windows && ./nxc-sweep 192.168.242.175 -u 'Administrator' -p 'ItachiUchiha888'
+cd ~/Desktop/Tools/Windows && ./n-sweep 192.168.242.175 -u 'Administrator' -p 'ItachiUchiha888'
 ```
 
 ```
