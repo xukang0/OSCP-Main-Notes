@@ -150,7 +150,10 @@ Transfer [[Rubeus.exe]] into VICTIM TARGET
 Once Creds are obtained, use [[Runas]]
 
 
-
+[[SeManageVolume]]
+[[SeBackupPrivilege]]
+[[SeRestorePrivilege]]
+[[SeImpersonatePrivilege]]
 
 
 
