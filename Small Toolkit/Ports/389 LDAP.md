@@ -5,6 +5,24 @@ Try to ping yourself with a listener opener, the printer might try to authentica
 ```
 sudo nc -lvnp 389
 ```
+
+---
+# dump domain information from ldap  
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `ldapdomaindump -u '[$domain]\[$user]' -p [PW] ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+# jq query to parse usernames/descriptions  
+
+```
+cat domain_users.json | jq '.[].attributes | {sAMAccountName, description}'
+```
+
+---
+
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 

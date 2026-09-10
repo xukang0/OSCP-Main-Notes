@@ -35,9 +35,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 [[389 LDAP]]
 Try to ping yourself with a listener opener, the printer might try to authenticate back to listener using the password accidentally
 
+Then try LDAP dump. There might be password and username
+
 ---
 
-## NetExec Credential Usage Sweep
+## Both User and PW Obtained : NetExec Credential Usage Sweep
 
 Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check across all services, nxc-sweep is used to automatically check all services
 
@@ -54,6 +56,29 @@ In NetExec (and its predecessor CrackMapExec), seeing (Pwn3d!) next to a set of 
 [[5985 5986 WinRM]]
 
 ---
+
+## Only PW, looking for Users : looksupid
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = ` nxc smb ${ip} -u 'asdf' -p '' --rid-brute`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+![[Pasted image 20260910111923.png]]
+
+Add these usernames into user_list
+### password spray  
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `nxc smb ${ip} -u [userlist] -p [pw] --continue-on-success | grep '[+]'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
+
 ## Impacket-secretsdump
 
 If following files are available :

