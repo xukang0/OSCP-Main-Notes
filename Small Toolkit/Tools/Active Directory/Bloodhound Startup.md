@@ -1,4 +1,13 @@
+[[Bloodhound]]
+---
+Run bloodhound remotely from KALI ATTACKER targeting AD system
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
+const command = `bloodhound-python -u '[user]' -p '[pw]' -d ${discoveredDomain} -dc ${ip} -ns ${ip} -c All`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ---
 
 Host sharphound.ps1
@@ -55,6 +64,12 @@ sudo docker compose up
 
 ```
 localhost:8080
+```
+
+Creds
+
+```
+admin : [initialpass]
 ```
 
 ---
