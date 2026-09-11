@@ -90,6 +90,11 @@ FQDN: SAUNA.EGOTISTICAL-BANK.LOCAL
 ---
 ## Discovered Credentials
 
+fsmith/Thestrokes23
+```
+Thestrokes23
+```
+
 ---
 ## Interesting Files/Paths
 
@@ -98,6 +103,20 @@ FQDN: SAUNA.EGOTISTICAL-BANK.LOCAL
 
 ---
 ## Steps to User.txt
+
+Since there are no usernames, run kerbrute. 
+
+Discover f.smith and add to Users.txt
+
+f.smith is asrep roastable.
+
+Cracking his hash reveals his creds fsmith/Thestrokes23
+
+netexec sweep shows winrm p3wned!
+
+Login through evilwin-rm
+
+Flag on his desktop
 
 ---
 ## Steps to root.txt

