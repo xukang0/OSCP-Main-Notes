@@ -294,6 +294,22 @@ Once Creds are obtained, use [[Runas]]
 reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon"
 ```
 
+## whoami /groups
+
+```
+whoami /groups
+```
+
+```
+net groups
+```
+
+Any foreign groups, research.
+
+
+
+
+
 ---
 
 ## LOGINs

