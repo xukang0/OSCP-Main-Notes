@@ -193,6 +193,16 @@ EvilwinRM brings me into alfresco and flag is found
 ---
 ## Steps to root.txt
 
+Running bloodhound and viewing it shows path to htb.local DC
+
+[[Bloodhound]]
+
+GenericAll to add myself to group "Exchange Windows Permissions"
+
+Then WriteDACL abuse to give myself DSYNC rights to dump hash with secrets dump
+
+Login to administrator account using hash pass
+
 ---
 ## User Flag
 

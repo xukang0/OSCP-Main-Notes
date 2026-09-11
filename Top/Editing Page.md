@@ -33,7 +33,7 @@ xLqra7P3QnuePdbn_2fiug7_fuvChdKA
 ```
 
 ```
-
+cd ~/Desktop/Tools/Windows && ./nxc-sweep 10.129.95.210 -u 'Retric' -p 'pass123'
 ```
 
 ```
