@@ -14,7 +14,52 @@
 ## Open Ports
 
 ```powershell
+Open 10.129.228.120:53 DNS
+Open 10.129.228.120:80 HTTP
+Open 10.129.228.120:88 Kerb
+Open 10.129.228.120:135 RPC
+Open 10.129.228.120:139 SMB
+Open 10.129.228.120:389 LDAP
+Open 10.129.228.120:445
+Open 10.129.228.120:464
+Open 10.129.228.120:593
+Open 10.129.228.120:3268
+Open 10.129.228.120:5985 WinRM
+Open 10.129.228.120:9389
+Open 10.129.228.120:49668
+Open 10.129.228.120:49673
+Open 10.129.228.120:49674
+Open 10.129.228.120:49686
+Open 10.129.228.120:49694
 
+53/tcp    open  domain        syn-ack ttl 127 (generic dns response: SERVFAIL)
+| fingerprint-strings: 
+|   DNS-SD-TCP: 
+|     _services
+|     _dns-sd
+|     _udp
+|_    local
+80/tcp    open  http          syn-ack ttl 127 Apache httpd 2.4.52 ((Win64) OpenSSL/1.1.1m PHP/8.1.1)
+| http-methods: 
+|   Supported Methods: GET POST OPTIONS HEAD TRACE
+|_  Potentially risky methods: TRACE
+|_http-title: g0 Aviation
+|_http-server-header: Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1
+88/tcp    open  kerberos-sec  syn-ack ttl 127 Microsoft Windows Kerberos (server time: 2026-09-12 20:43:06Z)
+135/tcp   open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack ttl 127 Microsoft Windows netbios-ssn
+389/tcp   open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: flight.htb, Site: Default-First-Site-Name)
+445/tcp   open  microsoft-ds? syn-ack ttl 127
+464/tcp   open  kpasswd5?     syn-ack ttl 127
+593/tcp   open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+3268/tcp  open  ldap          syn-ack ttl 127 Microsoft Windows Active Directory LDAP (Domain: flight.htb, Site: Default-First-Site-Name)
+5985/tcp  open  http          syn-ack ttl 127 Microsoft HTTPAPI httpd 2.0 
+9389/tcp  open  mc-nmf        syn-ack ttl 127 .NET Message Framing
+49668/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49673/tcp open  ncacn_http    syn-ack ttl 127 Microsoft Windows RPC over HTTP 1.0
+49674/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49686/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
+49694/tcp open  msrpc         syn-ack ttl 127 Microsoft Windows RPC
 ```
 
 ---
@@ -27,6 +72,8 @@
 ---
 ## Discovered Subdomains
 
+FQDN: g0.flight.htb
+
 ---
 ## Discovered Credentials
 
@@ -36,8 +83,19 @@
 ---
 ## Attack Ideas
 
+Open 10.129.228.120:53 DNS X
+Open 10.129.228.120:80 HTTP 
+Open 10.129.228.120:88 Kerb
+Open 10.129.228.120:135 RPC
+Open 10.129.228.120:139 SMB
+Open 10.129.228.120:389 LDAP
+
 ---
 ## Steps to User.txt
+
+nmap scan shows domain name is flight.htb
+
+
 
 ---
 ## Steps to root.txt

