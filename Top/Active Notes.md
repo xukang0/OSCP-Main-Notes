@@ -82,6 +82,16 @@ svc_apache
 S@Ss!K@*t13
 ```
 
+S.Moon
+```
+S@Ss!K@*t13
+```
+
+C.Bum
+```
+Tikkycoll_431012284
+```
+
 ---
 ## Interesting Files/Paths
 
@@ -107,6 +117,28 @@ url has RFI
 Call back to our smb where Responder catches and gives us ntlmv2 hash
 
 Crack it and get creds for svc_apache
+
+nxc sweep shows smb shares "Web" "Users" and "Shared" exists
+
+SMB share Users show user C.Bum exists
+
+rid brute gives list of users
+
+S.Moon seems to use the same password as svc_apache does
+
+S.Moon has smb write access
+
+Use ntlm_theft to put allfiles into smb and trigger responder for ntlmv2 hash
+
+crack for C.Bum creds
+
+C.Bum has access to Shared folder
+
+Put php webshell into school.flight.htb share
+
+Curl the nc64 to get reverse shell as svc_apache
+
+Use Runas to enter C.Bum Desktop to get flag
 
 ---
 ## Steps to root.txt

