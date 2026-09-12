@@ -1,3 +1,13 @@
+[[Windows LFI RFI]]
+
+Try both / and \
+
+Try absolute paths
+
+/etc/passwd
+
+C:\Windows\System32\drivers\etc\hosts
+
 ### Simple Relative
 
 URL parameters can be escaped

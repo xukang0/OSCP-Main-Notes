@@ -77,6 +77,11 @@ FQDN: g0.flight.htb
 ---
 ## Discovered Credentials
 
+svc_apache
+```
+S@Ss!K@*t13
+```
+
 ---
 ## Interesting Files/Paths
 
@@ -90,12 +95,18 @@ Open 10.129.228.120:135 RPC
 Open 10.129.228.120:139 SMB
 Open 10.129.228.120:389 LDAP
 
+index.php indicates its a php website
+
 ---
 ## Steps to User.txt
 
 nmap scan shows domain name is flight.htb
 
+url has RFI
 
+Call back to our smb where Responder catches and gives us ntlmv2 hash
+
+Crack it and get creds for svc_apache
 
 ---
 ## Steps to root.txt

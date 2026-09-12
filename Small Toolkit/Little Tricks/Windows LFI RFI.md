@@ -1,3 +1,5 @@
+[[Path Traversal Vulnerabilities]]
+
 Notable Paths to Take a look at
 
 Test for local file inclusion
