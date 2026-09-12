@@ -306,7 +306,8 @@ net groups
 
 Any foreign groups, research.
 
-
+If Azure spotted, try ADSync
+[[Azure Admins Group]]
 
 
 
