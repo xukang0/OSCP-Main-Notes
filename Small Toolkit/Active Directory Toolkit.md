@@ -183,7 +183,7 @@ gpp-decrypt [hash]
 
 Whenever getting access to domain credentials it is important to test a few of the tools from `impacket`. In this case we will use `GetUserSPNs.py` to extract encrypted passwords of any kerberoastable service accounts.
 
-User:: svc_loanmgr
+User:: svc_deploy
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine"); const ip = page?.IP ?? "NO IP FOUND"; const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND"; const pagea = dv.page("Synced OSCP Notes/Small Toolkit/Active Directory Toolkit"); const user = pagea?.["User"] ?? "NO USER FOUND";
 ```
@@ -309,7 +309,18 @@ Any foreign groups, research.
 If Azure spotted, try ADSync
 [[Azure Admins Group]]
 
+## Powershell History
 
+MODIFY
+A User:: legacyy
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Small Toolkit/Active Directory Toolkit");
+const user = page?.["A User"] ?? "NO USER FOUND";
+
+const command = `cd C:\\Users\\${user}\\AppData\\Roaming\\Microsoft\\Windows\\PowerShell\\PSReadLine`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 ---
 

@@ -1,23 +1,23 @@
 [[Editing Copy Page]]
 
 ```
-smbclient //10.129.227.113/Shares -c 'prompt OFF; recurse ON; mget *'
+
 ```
 
 ```
-$CertPath = "/home/kali/Desktop/HTB/Timelapse/SMB/Dev/legacy_dev_auth.pfx"
+
 ```
 
 ```
-smbclient -U 'guest' '//10.129.227.113/'
+
 ```
 
 ```
-smbclient -U 'guest%supremelegacy' //10.129.227.113/[sharename] -c 'recurse ON; ls'
+
 ```
 
 ```
-smbclient -U 'thecybergeek' '//10.129.227.113/DB01'
+
 ```
 
 ```

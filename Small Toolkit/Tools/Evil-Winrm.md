@@ -1,3 +1,4 @@
+-S (SSL Enabled)
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -6,7 +7,6 @@ const command = `evil-winrm -i ${ip} -u <username> -p '<password>'`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 Pass the Hash
-
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
