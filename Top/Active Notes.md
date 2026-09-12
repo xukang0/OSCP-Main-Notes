@@ -81,10 +81,33 @@ Open 10.129.228.253:49727
 ---
 ## Discovered Subdomains
 
+FQDN: dc.sequel.htb 
+enum4linux-ng
+
 ---
 ## Discovered Credentials
 
 PublicUser : GuestUserCantWrite1
+
+Tom.Henn
+Brandon.Brown
+Ryan.Cooper
+sql_svc
+James.Roberts
+Nicole.Thompson
+
+[SMB] NTLMv2-SSP Username : sequel\sql_svc
+sql_svc : REGGIE1234ronnie
+
+```
+REGGIE1234ronnie
+```
+
+Ryan.Cooper
+```
+NuclearMosquito3
+```
+
 
 ---
 ## Interesting Files/Paths
@@ -99,8 +122,36 @@ nmap shows domain name is sequel.htb
 
 PDF File on SMB give creds  
 
+enum4linux-ng shows FQDN: dc.sequel.htb 
+
+nxc sweep PublicUser : GuestUserCantWrite1 shows LDAPS and SMB
+
+Nothing.
+
+RID Brute gives me a list of usernames
+
+In the PDF login to mssql database. Try to read a file off my local kali through the database
+
+responder catches ntlmv2 hash
+
+crack and get creds
+
+nxc sweep says winRM pawned under svc_sql
+
+Login through evilwin-rm
+
+In root dir there is a sql folder
+
+error.bak reveals Ryan.Cooper password
+
+EvilWin-RM into Ryan.Cooper
+
+Flag on his desktop
+
 ---
 ## Steps to root.txt
+
+
 
 ---
 ## User Flag

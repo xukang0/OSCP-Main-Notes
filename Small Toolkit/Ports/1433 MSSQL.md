@@ -24,6 +24,15 @@ const command = `nmap -Pn -sV -sC -p1433 ${ip}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 LOGIN
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `impacket-mssqlclient [User]:[Password]@${ip} -windows-auth`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+or
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -60,7 +69,7 @@ Changed database context to 'htbusers'.
 ```
 
 ```
-SELECT table_name FROM htbusers.INFORMATION_SCHEMA.TABLES
+SELECT table_name FROM [htbusers].INFORMATION_SCHEMA.TABLES
 ```
 
 RESULT

