@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-
+smbclient //10.129.228.253/Public -c 'recurse;ls'
 ```
 
 ```

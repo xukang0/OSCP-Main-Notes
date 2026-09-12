@@ -3,7 +3,7 @@
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `ldapsearch -x -h ${ip} -s base namingcontexts`;
+const command = `ldapsearch -x -H ldap://${ip} -s base namingContexts`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -45,6 +45,18 @@ const command = `kerbrute userenum -d ${discoveredDomain} /usr/share/seclists/Us
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+## looking for Users : looksupid --rid-brute
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = ` nxc smb ${ip} -u 'asdf' -p '' --rid-brute`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+![[Pasted image 20260910111923.png]]
+
+Add these usernames into user_list
 
 ---
 
@@ -89,17 +101,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ---
 
-## Only PW, looking for Users : looksupid
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = ` nxc smb ${ip} -u 'asdf' -p '' --rid-brute`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-![[Pasted image 20260910111923.png]]
-
-Add these usernames into user_list
 ### password spray  
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -308,7 +310,7 @@ Any foreign groups, research.
 
 If Azure spotted, try ADSync
 [[Azure Admins Group]]
-
+[[LAPS]]
 ## Powershell History
 
 MODIFY
