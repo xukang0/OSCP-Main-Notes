@@ -35,6 +35,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 mysql -u [user] -p[pw] -h [hostIP] [DBname]
 ```
 
+Run single command
+```
+mysql.exe -uMrGibbonsDB -p"MisterGibbs!Parrot!?1" -e "SHOW DATABASES;"
+```
+
 --skip-ssl
 
 ---
@@ -209,6 +214,13 @@ http://inlanefreight.htb/test2.php?c=[cmd here]
 
 ---
 
+# Active Directory Internal SQL Database
+
+Run single command
+
+```
+mysql.exe -uMrGibbonsDB -p"MisterGibbs!Parrot!?1" -e "SHOW DATABASES;"
+```
 # SQL Injection
 
 ```

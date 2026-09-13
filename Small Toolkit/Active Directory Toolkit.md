@@ -186,7 +186,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 Run single commands
 ```
-\mysql.exe -uMrGibbonsDB -p"MisterGibbs!Parrot!?1" -e "SHOW DATABASES;"
+mysql.exe -uMrGibbonsDB -p"MisterGibbs!Parrot!?1" -e "SHOW DATABASES;"
 ```
 
 ---
