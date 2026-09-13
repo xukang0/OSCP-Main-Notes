@@ -17,7 +17,7 @@ Attempt to as-rep these list of users
 
 1 hit, audit2020 gives kerberos hash
 
-john cracks the hash and we have creds for 'audit2020:#00^BlackKnight'
+john cracks the hash and we have creds for 'support:#00^BlackKnight'
 
 Run nxc sweep on these creds, as well as test the password against all users
 
@@ -33,4 +33,11 @@ SMB profiles$ give us a whole bunch of profile names. Added to user1 file
 
 [[Sanitizing Files]] and getting a clean user1 file
 
-asrep roast it + trying audit2020 pw on it. None hit.
+asrep roast it + trying support pw on it. None hit.
+
+Try ldap. ldapsearch negative
+
+Running bloodhound-python and ingesting, discover support has force password change over audit2020
+
+Change creds with rpcclient to audit2020:Retric!
+

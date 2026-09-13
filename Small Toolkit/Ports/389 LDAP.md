@@ -26,6 +26,13 @@ cat domain_users.json | jq '.[].attributes | {sAMAccountName, description}'
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
+const command = `ldapsearch -H ldap://${ip} -x -s base namingcontexts`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
 const command = `ldapsearch -v -x -b "DC=hutch,DC=offsec" -H "ldap://${ip}" > ldapsearchoutput.txt`;
 
 dv.paragraph("```bash\n" + command + "\n```");

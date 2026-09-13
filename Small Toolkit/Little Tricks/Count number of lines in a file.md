@@ -1,0 +1,3 @@
+```
+wc -l [filename]
+```

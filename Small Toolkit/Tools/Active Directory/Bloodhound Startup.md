@@ -4,7 +4,7 @@ Run bloodhound remotely from KALI ATTACKER targeting AD system
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `bloodhound-python -u '[user]' -p '[pw]' -d ${discoveredDomain} -dc ${ip} -ns ${ip} -c All`;
+const command = `bloodhound-python -u '[user]' -p '[pw]' -d ${discoveredDomain} -dc [FQDN] -ns ${ip} -c All`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
