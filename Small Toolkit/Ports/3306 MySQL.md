@@ -40,6 +40,10 @@ Run single command
 mysql.exe -uMrGibbonsDB -p"MisterGibbs!Parrot!?1" -e "SHOW DATABASES;"
 ```
 
+```
+mysql.exe -u[user] -p"[PW]" [database name] -e "select [columnheader],passwordStrong,passwordStrongSalt from [table];"
+```
+
 --skip-ssl
 
 ---

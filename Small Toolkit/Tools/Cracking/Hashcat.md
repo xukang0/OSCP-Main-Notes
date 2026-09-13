@@ -23,13 +23,6 @@ That is a classic Base64 padding indicator.
 |64|SHA256|
 
 ```
-hashid [hash]
-```
-
-![[Pasted image 20250528033219.png]]
-
-
-```
 echo [hash] > hash
 ```
 
@@ -76,6 +69,15 @@ TAKE NOTE :
 If `\/` seen in hash, correct it to just '/' 
 
 ---
+
+## Hash the Salt
+
+The hash is 64 hex characters, which is likely salted SHA256. `hashcat` can take this in the format `<hash>:<salt>`
+
+```
+hashcat [hash] /usr/share/wordlists/rockyou.txt
+```
+
 
 
 Masks

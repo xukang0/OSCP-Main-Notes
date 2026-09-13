@@ -52,3 +52,7 @@ On Gibbon-LMS there is a config.php file with database creds
 
 in C:\xampp\mysql\bin\sql.exe can execute mysql
 
+Gibbonperson table and pull out password salt, password and username
+
+Hashcat salt crack gives creds
+

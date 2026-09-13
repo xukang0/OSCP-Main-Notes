@@ -434,6 +434,14 @@ Once Creds are obtained, use [[Runas]]
 
 ---
 
+## Hash the Salt
+
+The hash is 64 hex characters, which is likely salted SHA256. `hashcat` can take this in the format `<hash>:<salt>`
+
+```
+hashcat [hash] /usr/share/wordlists/rockyou.txt
+```
+
 ### LSASS
 
 LSASS.dmp > Pypykatz > NT hash > Pass the Hash

@@ -72,6 +72,13 @@ $databaseUsername = 'MrGibbonsDB';
 $databasePassword = 'MisterGibbs!Parrot!?1';
 $databaseName = 'gibbon';
 
+f.frizzle	067f746faca44f170c6cd9d7c4bdac6bc342c608687733f80ff784242b0b0c03	/aACFhikmNopqrRTVz2489
+
+f.frizzle
+```
+Jenni_Luvs_Magic23
+```
+
 ---
 ## Interesting Files/Paths
 
