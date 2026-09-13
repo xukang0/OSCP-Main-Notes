@@ -405,13 +405,14 @@ Transfer [[Rubeus.exe]] into VICTIM TARGET
 Once Creds are obtained, use [[Runas]]
 
 ---
-
 # Pivoting
 
 Check which ports are open in the target but not on KALI ATTACKER
 ```
 netstat -a -p tcp | findstr LISTENING
 ```
+
+[[inetpub]]
 
 If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 
