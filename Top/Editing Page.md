@@ -1,15 +1,15 @@
 [[Editing Copy Page]]
 
 ```
-
+cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep 10.129.229.17 -u audit2020 -p '#00^BlackKnight'
 ```
 
 ```
-
+cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep 10.129.229.17 -u users -p '#00^BlackKnight --continue-on-success'
 ```
 
 ```
-
+smbclient //10.129.229.17/profiles$ -c 'recurse;ls'
 ```
 
 ```

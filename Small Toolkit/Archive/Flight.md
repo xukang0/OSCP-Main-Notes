@@ -35,6 +35,20 @@
 ## Software Versions
 
 ```powershell
+|    Domain Information via SMB session for 10.129.229.17    |
+[*] Enumerating via unauthenticated SMB session on 445/tcp
+[+] Found domain information via SMB
+NetBIOS computer name: DC01
+NetBIOS domain name: BLACKFIELD
+DNS domain: BLACKFIELD.local
+FQDN: DC01.BLACKFIELD.local
+Derived membership: domain member
+Derived domain: BLACKFIELD
+
+OS: Windows 10, Windows Server 2019, Windows Server 2016
+OS version: '10.0'
+OS release: '1809'
+OS build: '17763'
 
 ```
 
@@ -43,6 +57,11 @@
 
 ---
 ## Discovered Credentials
+
+audit2020
+```
+#00^BlackKnight
+```
 
 ---
 ## Interesting Files/Paths
