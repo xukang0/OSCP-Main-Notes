@@ -6,3 +6,6 @@ Check who is apart of the group
 ```
 icacls development
 ```
+
+inetput executes aspx files
+

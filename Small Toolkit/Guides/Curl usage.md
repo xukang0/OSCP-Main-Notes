@@ -1,6 +1,8 @@
 
 SMB Share File execution trigger
 
+Only for Shares that host a HTTP server (Web RCE)
+
 [[Flight]]
 
 ```

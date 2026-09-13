@@ -1,3 +1,7 @@
+KILL LIGOLO
+```
+sudo ip link delete ligolo
+```
 ## 🔹 Step 0 — Identify Architecture
 
 ### Linux
@@ -67,6 +71,7 @@ Fix:
 
 Or reset:
 
+KILL LIGOLO
 ```
 sudo ip link delete ligolo
 ```

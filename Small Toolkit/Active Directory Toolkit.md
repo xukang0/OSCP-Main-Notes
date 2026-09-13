@@ -31,7 +31,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
-
 ## Port 80 : HTTP
 
 [[Windows LFI RFI]]
@@ -411,10 +410,10 @@ Once Creds are obtained, use [[Runas]]
 
 Check which ports are open in the target but not on KALI ATTACKER
 ```
-netstat -ano | findstr LISTENING
+netstat -a -p tcp | findstr LISTENING
 ```
 
-If HTTP server is only accessible enough, [[Ligolo]]
+If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 
 # Lateral Movement
 
