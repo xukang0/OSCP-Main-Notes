@@ -1,3 +1,5 @@
+Windows AD
+
 [[Active Notes Template]]
 ## Provided Credentials
 ---
@@ -79,7 +81,61 @@ SMB Forensic share
 ---
 ## Steps to User.txt
 
+nmap scan shows domain is blackfield.local
 
+Add it to /etc/hosts
+
+53DNS axfr transfer failed
+
+88Kerberos open, run kerbrute and rid lookup for users
+
+managed to get a good list of users from rid lookup
+
+Attempt to as-rep these list of users
+
+1 hit, audit2020 gives kerberos hash
+
+john cracks the hash and we have creds for 'support:#00^BlackKnight'
+
+Run nxc sweep on these creds, as well as test the password against all users
+
+Password doesnt work for any other users
+
+RPCclient fails
+
+SMBClient anonymous listing shows "profiles$"
+
+Enum4linux-ng gives us OS information and domain information. Windows 10, Windows server 2019 and windows server 2016
+
+SMB profiles$ give us a whole bunch of profile names. Added to user1 file
+
+[[Sanitizing Files]] and getting a clean user1 file
+
+asrep roast it + trying support pw on it. None hit.
+
+Try ldap. ldapsearch negative
+
+Running bloodhound-python and ingesting, discover support has force password change over audit2020
+
+Change creds with rpcclient to audit2020:Retric!
+
+audit2020 has access to forensic share
+
+there is lsass.zip inside
+
+download and unzip and use pypykatz to dump lsass
+
+NT hash for DC01$ and svc_backup
+
+NT hash can be passed for Evil Win RM. 
+
+Enter svc_backup account. Flag on his desktop
+
+svc_backup has priv for SeBackupPrivilege and SeRestorePrivilege
+
+[[SeBackupPrivilege]] ntds.dit and system secretsdump for hash
+
+pass the hash into evilwin-rm
 
 ---
 ## Steps to root.txt

