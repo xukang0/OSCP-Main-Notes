@@ -166,3 +166,7 @@ john --format=NT hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
 ```
 
 ---
+
+# GPO-Abuse
+
+[[GPO Abuse]]

