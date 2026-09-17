@@ -3,8 +3,9 @@
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
 |         |            |       |
+|         |            |       |
 
-MACHINE:: TheFrizz
+MACHINE:: Administrator
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -12,7 +13,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   10.129.232.168
+IP::   10.129.44.84
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -28,7 +29,7 @@ const command = `${KaliIP}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain:: frizz.htb
+Discovered Web Domain:: administrator.htb
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";

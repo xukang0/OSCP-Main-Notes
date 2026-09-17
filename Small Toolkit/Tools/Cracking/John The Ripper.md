@@ -1,3 +1,9 @@
+Full list of 2john tools
+```
+ls /usr/sbin/*2john /usr/bin/*2john /usr/share/john/*2john 2>/dev/null
+```
+
+---
 ```
 john -w=/usr/share/wordlists/rockyou.txt hash.txt
 ```

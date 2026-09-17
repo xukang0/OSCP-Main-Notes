@@ -1,4 +1,4 @@
 
-[[Current Affairs Notes Template]]]
+[[Current Affairs Notes Template]]
 
 # Steps to User flag

