@@ -52,3 +52,32 @@ Shadow.backup
 john shadow.backup --wordlist=/usr/share/wordlists/rockyou.txt
 ```
 
+---
+
+keepass2 john.
+
+recovery.kdbx : File version '40000' is currently not supported!
+
+So need a later version of john that can only be simulated through snapd
+
+```
+sudo systemctl start snapd.service snapd.socket
+```
+
+```
+sudo cp /usr/share/wordlists/rockyou.txt .
+```
+
+```
+snap run john-the-ripper.keepass2john recovery.kdbx >hash
+```
+
+```
+sudo chown kali:kali rockyou.txt && sudo chmod 664 rockyou.txt && ls -l hash rockyou.txt
+```
+
+```
+snap run john-the-ripper hash --wordlist=rockyou.txt --format=KeePass
+```
+
+---

