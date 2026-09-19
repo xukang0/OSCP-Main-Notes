@@ -1,11 +1,11 @@
 [[Editing Copy Page]]
 
 ```
-net rpc group addmem "DEVELOPERS" "Retric" -U "dc.puppy.htb"/'levi.james'%'KingofAkron2025!' -S 10.129.232.75
+
 ```
 
 ```
-net rpc group addmem "TargetGroup" "TargetUser" -U "DOMAIN"/"ControlledUser"%"Password" -S "DomainController"
+
 ```
 
 ```

@@ -501,12 +501,6 @@ If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 [[SeBackupPrivilege]]
 [[SeRestorePrivilege]]
 [[SeImpersonatePrivilege]]
-
-## AutoLogon
-```
-reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon"
-```
-
 ## whoami /groups
 
 ```
@@ -524,6 +518,12 @@ Any foreign groups, research.
 If Azure spotted, try ADSync
 [[Azure Admins Group]]
 [[LAPS]]
+## AutoLogon
+```
+reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon"
+```
+
+[[Synced OSCP Notes/Small Toolkit/Guides/AD/Windows Credential Manager|Windows Credential Manager]]
 ### Check Recycle Bin
 
 ```

