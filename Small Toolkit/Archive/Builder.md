@@ -1,4 +1,4 @@
-Windows, Jenkins 2.441, script console, privatekey, jenkins decrypt, file read linux, file read jenkins poc
+Jenkins 2.441, script console, privatekey, jenkins decrypt, file read linux, file read jenkins poc
 
 [[Active Notes Template]]
 ## Provided Credentials

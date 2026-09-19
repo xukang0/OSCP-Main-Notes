@@ -64,6 +64,17 @@ SSH Private Key
 ```
 
 ---
+Local port forward locahost 8443 to target port 8443 so we can view the internal port 8443 website through our machine
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `sshpass -p '[PW]' ssh [user]@${ip} -L 8443:127.0.0.1:8443`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+---
 
 port forward our connection to the remote host's internal port
 ```dataviewjs

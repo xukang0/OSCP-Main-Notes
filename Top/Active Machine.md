@@ -5,7 +5,7 @@
 |         |            |       |
 |         |            |       |
 
-MACHINE:: Builder
+MACHINE:: servmon
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -13,7 +13,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   10.129.230.220
+IP::   10.129.44.222
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -29,7 +29,7 @@ const command = `${KaliIP}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain:: 10.129.230.220:8080
+Discovered Web Domain:: 10.129.227.77
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
