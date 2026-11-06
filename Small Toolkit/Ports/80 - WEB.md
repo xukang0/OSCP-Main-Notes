@@ -1,3 +1,11 @@
+Identify the likely web root
+
+On Debian-based Linux systems, Apache commonly uses:
+
+```
+/var/www/html/
+```
+
 
 ---
 Visit the web Address

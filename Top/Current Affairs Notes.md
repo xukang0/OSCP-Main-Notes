@@ -3,44 +3,29 @@
 
 # Steps to User flag
 
-135 RPCclient nothing
+Run rust scan, ports 80 and 3306 open
 
-445 SMB enum4linux-ng finds domain information and OS info
+3306 doesnt have anything interesting so far, focus on 80
 
-after fuzzing web page port 50000, there is a /askjeeves page
+visiting webpage shows a default slick page.
 
-Its a jenkies control panel
+Decide to directory fuzz against ip address
 
-at logs page there are interesting historical commands
+/bugtracker is revealed, showing a mantis bug tracker page
 
-following my jenkins priv esc guide, 
+http://192.168.228.204/bugtracker/admin/install.php shows that webpage can interact with sql database
 
-https://github.com/godylockz/CVE-2024-23897
+Updating Configuration File (config/config_inc.php)
 
-this cve recorded in the past works as i tried to read /etc/hosts file of windows machine
+Google search vaguely suggests that the creds to the sql database is in this file
 
-use [[Jenkins Priv Esc]] to get RCE through groovy script
+The goal now is to try to read this file
 
-able to access C:\Users\Administrator\.jenkins but not cd .. into administrator desktop
+Search for Mantis arbitrary file read
 
-I am shell as jeeves\kohsuke
+https://mantisbt.org/bugs/view.php?id=23173
 
-I realize SeImpersonatePrivilege is enabled so its easy priv esc [[SeImpersonatePrivilege]]
+links to 
 
-Since its windows 10 and x64 bit I choose to use godpotato.exe
-
----
-
-stopped at trying to priv esc into admin account
-
-how to regain shell : 
-
-groovy script , peneloper listener port 8044.
-
-Figure out how to use WES.py through gemini
-
-
-
-
-
+https://github.com/allyshka/Rogue-MySql-Server/blob/master/roguemysql.php
 
