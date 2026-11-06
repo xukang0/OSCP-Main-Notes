@@ -40,7 +40,9 @@ evilwin-rm to enter. L.Livingstone Desktop contains local.txt
 
 Using bloodhound, L.Livingstone has genericall over resourcedc.resourced.local. This one has DCSync to resourced.local
 
+Follow genericall > [[RBCD]] to pivot into resourcedc.resouced.local to gain root shell
 
+proof.txt in administrator desktop
 
 
 
