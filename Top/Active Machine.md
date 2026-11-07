@@ -6,7 +6,7 @@
 | 2       | 192.168.162.96 |       |
 | 3       | 192.168.162.95 |       |
 
-MACHINE:: Machine2
+MACHINE:: Machine3
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -14,7 +14,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   192.168.162.96
+IP::   192.168.162.95
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -30,7 +30,7 @@ const command = `${KaliIP}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   secura.yzx
+Discovered Web Domain::   secure.secura.yzx
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";

