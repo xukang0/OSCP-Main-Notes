@@ -71,12 +71,12 @@ nc64.exe > 64 bit
 
 Copy nc.exe to current dir & listener
 ```
-cp ~/Desktop/Tools/NC/nc.exe . && python -m http.server 80
+cd ~/Desktop/Tools/NC/ && python -m http.server 80
 ```
 
 Copy nc64.exe to current dir & listener
 ```
-cp ~/Desktop/Tools/NC/nc64.exe . && python -m http.server 80
+cd ~/Desktop/Tools/NC/ && python -m http.server 80
 ```
 
 nc.exe

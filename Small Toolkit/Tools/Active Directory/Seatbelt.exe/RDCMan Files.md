@@ -3,3 +3,5 @@ The `RDCManFiles` command searches for Remote Desktop Connection Manager (RDCMan
 ```powershell
 .\seatbelt.exe CredEnum RDCManFiles outputfile="C:\Users\eric.wallows\Documents\seatbelt-targeted.txt"
 ```
+
+[[3389 RDP]]

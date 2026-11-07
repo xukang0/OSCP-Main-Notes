@@ -98,6 +98,15 @@ Look for third-party software running as `SYSTEM` (like an old antivirus, backup
 
 ---
 
+# SS -TLPN
+
+```
+netstat -ano | findstr LISTENING
+```
+
+
+
+---
 # Priv Esc Enumeration
 
 Linpeas.SH

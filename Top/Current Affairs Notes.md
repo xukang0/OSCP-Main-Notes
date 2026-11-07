@@ -24,6 +24,14 @@ SMB Shares
 LDAP
 RPC
 
+Charlotte creds show win-rm pwned
+
+Flag on her desktop
+
+whoami/priv shows SeImpersonatePrivilege. Priv esc using PrintSpoofer
+
+Get shell as secura\dc01
+
 # Machine 2
 
 # Steps to User flag
@@ -39,6 +47,19 @@ FQDN: era.secura.yzx
 With Eric.wallows creds and nxc weep, he has access to
 
 RPC
+
+After entering through Evil-WinRM as era/apache,
+
+netstat ano shows 3306 running, locate mysql.exe
+
+.\mysql.exe -u root -h 127.0.0.1 -e "use creds; select * from creds;"
+
+administrator	Almost4There8.?
+charlotte	Game2On4.!
+
+Check creds with nxc. Only charlotte creds valid.
+
+whoami /priv shows SeMachineAccountPrivilege and SeImpersonatePrivilege
 
 # Machine 3
 
@@ -92,6 +113,14 @@ Using Seatbelt.exe, RDCMan.settings shows
         <password>New2Era4.!</password>
 
 Login to era.secura.yzx
+
+<profileName scope="Local">SECURE\apache</profileName>
+<userName>apache</userName>
+<domain>SECURE</domain>
+
+evil-winrm -i 192.168.162.96 -u era.secura.yzx\\apache 
+
+works
 
 
 

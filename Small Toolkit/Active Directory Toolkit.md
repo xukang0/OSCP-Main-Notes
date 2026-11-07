@@ -305,6 +305,8 @@ const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u 
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+-d [domain]
+
 In NetExec (and its predecessor CrackMapExec), seeing (Pwn3d!) next to a set of credentials means that the provided username and password are valid and possess administrative or code execution privileges on that target
 
 [[5985 5986 WinRM]]
@@ -524,6 +526,12 @@ Any foreign groups, research.
 If Azure spotted, try ADSync
 [[Azure Admins Group]]
 [[LAPS]]
+## AD/ACL Techniques
+
+[[ACL Abuse]]
+
+[[CoerceToTGT]]
+
 ## AutoLogon
 ```
 reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon"

