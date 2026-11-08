@@ -5,7 +5,6 @@
 4. [[WriteOwner]]
 5. [[ForceChangePassword]]
 
-
 AD Exploitation
 1. [[CoerceToTGT]]
 2. [[RBCD]]

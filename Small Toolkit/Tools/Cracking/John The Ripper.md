@@ -18,8 +18,14 @@ john --show hash.txt
 Zip2john
 ---
 
+# Note : 7z > unzip
+
 ```
-zip2john [file] > hashes
+zip2john [file] > hash.txt
+```
+
+```
+john -w=/usr/share/wordlists/rockyou.txt hash.txt
 ```
 
 ![[Pasted image 20250528032644.png]]
@@ -27,6 +33,14 @@ zip2john [file] > hashes
 john -w=/usr/share/wordlists/rockyou.txt hashes 
 
 ![[Pasted image 20250528032857.png]]
+
+This gives the encryption password
+
+```
+7z -x [file]
+```
+
+---
 
 office2john
 

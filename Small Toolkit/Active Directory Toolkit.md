@@ -494,6 +494,10 @@ netstat -a -p tcp | findstr LISTENING
 
 If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 
+# Mistakes
+
+1. Not enumerating thoroughly after landing on a new user
+
 # Lateral Movement
 
 [[Runas]]
@@ -586,6 +590,8 @@ const command = `impacket-psexec ${discoveredDomain}/Administrator:'[PW}'@${ip}`
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 Pass the hash psexec
+
+FULL HASH LMHASH:NTHASH
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 

@@ -15,7 +15,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 Dot Source
 ```powershell
-. C:\Users\Public\PowerView.ps1
+. .\PowerView.ps1
 ```
 
 ---

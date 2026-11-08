@@ -1,12 +1,15 @@
 [[Active Machine Template]]
 
-| Machine | IP Address     | Notes |
-| ------- | -------------- | ----- |
-| 1       | 192.168.162.97 | AD    |
-| 2       | 192.168.162.96 |       |
-| 3       | 192.168.162.95 |       |
+| Machine | IP Address      | Notes |
+| ------- | --------------- | ----- |
+| DC01    | 10.10.162.140   |       |
+| MS01    | 192.168.162.141 | creds |
+| MS02    | 10.10.162.142   |       |
+| Aero    | 192.168.162.143 |       |
+| Crystal | 192.168.162.144 |       |
+| Hermes  | 192.168.162.145 |       |
 
-MACHINE:: Machine3
+MACHINE:: DC01
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -14,7 +17,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   192.168.162.95
+IP::   192.168.162.143
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -30,7 +33,7 @@ const command = `${KaliIP}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   secure.secura.yzx
+Discovered Web Domain::  192.168.162.143
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";

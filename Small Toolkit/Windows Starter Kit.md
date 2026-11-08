@@ -50,6 +50,14 @@ whoami.exe /priv
 The next piece of information we are interested in are other users and groups on the system. We can use the [_net user_](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/cc771865\(v=ws.11\)) command or the [_Get-LocalUser_](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.localaccounts/get-localuser?view=powershell-5.1) Cmdlet to obtain a list of all local users. Let's use the latter by starting PowerShell and running **Get-LocalUser**.
 
 ```
+net group /domain
+```
+
+```
+net group "Domain Admins" /domain
+```
+
+```
 Get-LocalGroup
 ```
 

@@ -1,17 +1,7 @@
-```
-wget https://raw.githubusercontent.com/arthaud/git-dumper/refs/heads/master/git_dumper.py
-```
+# /.git files
 
-Also installed in 
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+## Install Git Dumper
 
-const command = `python3 ~/Desktop/Tools/git_dumper.py http://${ip}/.git gitdump`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-
----
 Start external python environment
 
 ```
@@ -19,12 +9,7 @@ python3 -m venv .venv && source .venv/bin/activate && pip install git-dumper
 ```
 
 ---
-
-Install Git Dumper
-
----
-
-Dump out .git into current directory
+## Dump out .git into current directory
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -36,15 +21,37 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
 
-Check git status
+## Running git commands in KALI ATTACKER
+
+```
+cd gitdump
+```
+
+then run these commands
+
+---
+## Check git log
+
+```
+git log
+```
+
+---
+## Show git commit
+
+```
+git show [Commit ID]
+```
+
+---
+## Check git status
 
 ```
 git status
 ```
 
 ---
-
-Restore git
+## Restore git
 
 ```
 git restore --staged . && git diff
