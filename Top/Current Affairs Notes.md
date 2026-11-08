@@ -49,7 +49,31 @@ Get hashes
 Use psexec to enter tom_admin and become DC
 
 # Steps to Aero
-=======
+
+port 80, 81, 443, 3000, 3001 all useless
+
+Feroxbuster for ip adress shows /sub and /index.php
+
+/index php tells us pico version number 
+
+Pico 3.0.0-alpha.2.
+
+Feroxbuster /api discoveres /heartbeat
+
+at /api/heartbeat, found aerospike db
+
+searchsploit aerospike db reveals poc
+
+Use poc to get RCE on aero user
+
+LSE.sh shows /usr/bin/screen-4.5.0
+
+POC detailing steps to take for root
+
+https://github.com/YasserREED/screen-v4.5.0-priv-escalate
+
+Get root and flag on /root/proof.txt
+
 # Steps to User flag
 
 Running Machine 2 creds using nxc sweep, creds pwned for winrm, ssh, smb shares, 

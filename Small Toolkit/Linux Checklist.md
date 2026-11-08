@@ -288,3 +288,4 @@
 Mistakes
 
 1. unzip sitebackup3 does not prompt pw only 7z does
+2. Not running main feroxbuster fuzz after /api discovered

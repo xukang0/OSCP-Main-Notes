@@ -1,3 +1,5 @@
+[[SSH id_rsa]]
+
 nmap -p 22 --script ssh-brute \
   --script-args userdb=/usr/share/wordlists/metasploit/namelist.txt,passdb=/usr/share/wordlists/rockyou.txt \
   192.168.X.X
