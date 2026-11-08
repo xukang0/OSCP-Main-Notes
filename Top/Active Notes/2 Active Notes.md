@@ -15,12 +15,12 @@
 
 ```powershell
 22/tcp    open  ssh           syn-ack ttl 125 OpenSSH for_Windows_8.1 (protocol 
-80/tcp    open  http          syn-ack ttl 125 Apache httpd 2.4.51 ((Win64) PHP/7.4.26)
+80/tcp YES   open  http          syn-ack ttl 125 Apache httpd 2.4.51 ((Win64) PHP/7.4.26)
 81/tcp    open  http          syn-ack ttl 125 Apache httpd 2.4.51 ((Win64) PHP/7.4.26)
 135/tcp   open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
 139/tcp   open  netbios-ssn   syn-ack ttl 125 Microsoft Windows netbios-ssn
 445/tcp   open  microsoft-ds? syn-ack ttl 125
-3306/tcp  open  mysql         syn-ack ttl 125 MySQL (unauthorized)
+3306/tcp YES  open  mysql         syn-ack ttl 125 MySQL (unauthorized)
 3307/tcp  open  mysql         syn-ack ttl 125 MariaDB 10.3.24 or later (unauthorized)
 5040/tcp  open  unknown       syn-ack ttl 125
 5985/tcp  open  http          syn-ack ttl 125 Microsoft HTTPAPI httpd 2.0 

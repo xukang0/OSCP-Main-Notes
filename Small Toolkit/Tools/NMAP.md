@@ -1,6 +1,6 @@
 ## Common Nmap Commands
 
-Aggressive scan, single host, TCP SYN, :
+Aggressive scan, single host, TCP SYN, :cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep 192.168.162.141 -u 'Mary.Williams' -H '9a3121977ee93af56ebd0ef4f527a35e'
 ```dataviewjs
 const page = dv.page("Templater/IP");const ip = page?.IP ?? "NO IP FOUND";
 
