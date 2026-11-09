@@ -69,7 +69,8 @@ NT Authority achieved, no flag in this computer. Compromised.
 Succeed and nmap scan MS02
 
 135/tcp   open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
-139/tcp   open  netbios-ssn   syn-ack ttl 64 Microsoft Windows netbios-ssn
+139/tcp   open  netbios-ssn   
+syn-ack ttl 64 Microsoft Windows netbios-ssn
 445/tcp   open  microsoft-ds? syn-ack ttl 64
 1433/tcp  open  ms-sql-s      syn-ack ttl 64 Microsoft SQL Server 2019 
 5040/tcp  open  unknown       syn-ack ttl 64
@@ -90,3 +91,23 @@ Find some creds somewhere for
 MySQL server
 
 or SMB enumeration
+
+Get a list of user accounts then use bloodhound to find out who is high value target. And also test all creds again.
+
+RID brute with Eric Creds finds nothing on both MS01 and MS02
+
+Spraying list of users with Eric password gives nothing
+
+Asrep roast against DC doesnt work
+
+nxc sweep against MS02 using Eric Creds show MSSQL validated.
+
+On bloodhound, since there are SVC accounts, kerberoast DC01.
+
+Get kerb hashes and crack with john for creds
+
+
+
+
+
+

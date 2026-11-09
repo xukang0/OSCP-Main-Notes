@@ -1,6 +1,10 @@
 ## Time Sync
 
 Syncs our machine with the Domain server’s time as if we have more than a 5 min gap we will have issues./
+
+```
+sudo timedatectl set-ntp false
+```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -345,7 +349,7 @@ gpp-decrypt [hash]
 ```
 
 ---
-## Service Accounts : Requires PW
+## Service Accounts : Requires SVC accounts and creds of a standard user
 
 Whenever getting access to domain credentials it is important to test a few of the tools from `impacket`. In this case we will use `GetUserSPNs.py` to extract encrypted passwords of any kerberoastable service accounts.
 

