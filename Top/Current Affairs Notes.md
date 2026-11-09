@@ -164,3 +164,39 @@ sudo -i for root
 flag in /root/proof.txt
 
 
+# Steps to Hermes
+
+Allign Clock skew
+
+Note : 
+1. MouseServer open
+2. Evil Win-rm open
+3. RDP open
+
+FTP nothing
+
+Skipped investigating his website
+
+RPC nothing
+
+From Enum4linux :
+
+Anonymous smbclient denied
+
+[+] Found domain information via SMB
+NetBIOS computer name: OSCP
+NetBIOS domain name: ''
+DNS domain: oscp
+FQDN: oscp
+Derived membership: workgroup member
+Derived domain: unknown
+
+OS: Windows 10, Windows Server 2019, Windows Server 2016
+OS version: '10.0'
+OS release: '2004'
+OS build: '19041'
+
+Port 1978 is WifiMouse, [[WifiMouse]] to get oscp/offsec shell.
+
+Flag on user offsec Desktop
+
