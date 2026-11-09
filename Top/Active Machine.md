@@ -2,14 +2,14 @@
 
 | Machine | IP Address      | Notes |
 | ------- | --------------- | ----- |
-| DC01    | 10.10.162.140   |       |
-| MS01    | 192.168.162.141 | creds |
-| MS02    | 10.10.162.142   |       |
-| Aero    | 192.168.162.143 |       |
-| Crystal | 192.168.162.144 |       |
-| Hermes  | 192.168.162.145 |       |
+| DC01    | 192.168.162.146 |       |
+| MS01    | 192.168.162.147 | creds |
+| MS02    | 10.10.162.148   |       |
+| Kiero   | 192.168.162.149 |       |
+| Berlin  | 192.168.162.150 |       |
+| Gust    | 192.168.162.151 |       |
 
-MACHINE:: DC01
+MACHINE:: OSCPB/MS02
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -18,7 +18,7 @@ const command = `${machine}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 
-IP::   192.168.162.145
+IP::   10.10.162.148
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -34,7 +34,7 @@ const command = `${KaliIP}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::  192.168.162.143
+Discovered Web Domain::  oscp.exam
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";

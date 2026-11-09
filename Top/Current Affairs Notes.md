@@ -1,202 +1,92 @@
 
 [[Current Affairs Notes Template]]
 
-# Steps to AD SET
+# Steps to MS01 
 
-Running Machine 2 creds using nxc sweep, creds pwned for winrm, ssh, smb shares, 
+Open 192.168.162.147:21
+Open 192.168.162.147:22
+Open 192.168.162.147:135
+Open 192.168.162.147:139
+Open 192.168.162.147:445
+Open 192.168.162.147:5040
+Open 192.168.162.147:5985
+Open 192.168.162.147:5986 Evil WINRM
+Open 192.168.162.147:7680 
+Open 192.168.162.147:8000 INV
+Open Inv 192.168.162.147:8080 INV
+Open Inv 192.168.162.147:8443 INV
+Open 192.168.162.147:47001
+Open 192.168.162.147:49670
+Open 192.168.162.147:49671
+Open 192.168.162.147:49669
+Open 192.168.162.147:49668
+Open 192.168.162.147:49667
+Open 192.168.162.147:49666
+Open 192.168.162.147:49665
+Open 192.168.162.147:49664
 
-Use creds for RID brute for a list of users as well (MS01:users1)
+| ssl-cert: Subject: commonName=MS01.oscp.exam
+| Subject Alternative Name: DNS:MS01.oscp.exam
+| Issuer: commonName=MS01.oscp.exam
 
-Evil win-rm into Eric.Willows. There are a few user accounts inside
+Domain is oscp.exam
 
-Found mysql on ms01.oscp.exam. Error message says this hostname not allowed to connect
+add to /etc/hosts
 
-Interesting stuff in C:\setup, but ultimately led nowhere
+Gameplan : 
 
-oscp\eric.wallows has SeImpersonatePriv
+Investigate open web ports, 
+8000 : Default IIS
+8080
+8443 : 
 
-Enumeration shows machine is windows 10 pro.
+None of them yield results, attempt to feroxbuster. Nothing.
 
-SharpEfsPotato works. NT authority/system. Part of Administrators group
+NXC sweep shows SSH, WinRM, SMB succeeds with Eric.Wallows.
 
-Enumerated every single Desktop and Documents of Users
+cant access SMB file with Eric creds
 
-LaZagne gives some hashes
+SeImpersonatePrivilege on Eric.Wallows [[SeImpersonatePrivilege]]
 
-Administrator:500:aad3b435b51404eeaad3b435b51404ee:3c4495bbd678fac8c9d218be4f2bbc7b:::
-Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
-DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
-WDAGUtilityAccount:504:aad3b435b51404eeaad3b435b51404ee:11ba4cb6993d434d8dbba9ba45fd9011:::
-Mary.Williams:1002:aad3b435b51404eeaad3b435b51404ee:9a3121977ee93af56ebd0ef4f527a35e:::
-support:1003:aad3b435b51404eeaad3b435b51404ee:d9358122015c5b159574a88b3c0d2071:::
-cloudbase-init:1004:aad3b435b51404eeaad3b435b51404ee:cb47daeda02df568b81ca633a210a76a:::
-Admin:1005:aad3b435b51404eeaad3b435b51404ee:bd063c2d424044053dadc6a197c8e222:::
+Use SharpEfsPotato to become NT Authority on MS01
 
-Useless.
+No flags anywhere. 
 
-Use ligolo to reach internal subnet of MS02.
+Try to run bloodhound
 
-Try nxc-sweep of celia.almeda hash against MS02. Works. 
+Eric.Wallows deadend as well as MS01
 
-Nxc shows winrm Pwned. Enter celia almeda
+Try to ligolo pivot to MS02
 
-In C:\Windows.old\Windows\System32\ there is SAM and SECURITY
+Succeed and nmap scan MS02
 
-Download and run impacket
+NT Authority achieved, no flag in this computer. Compromised.
 
-Get hashes
+# Steps to MS02 
 
-Use psexec to enter tom_admin and become DC
+### User flag
 
-# Steps to Aero
+Succeed and nmap scan MS02
 
-port 80, 81, 443, 3000, 3001 all useless
+135/tcp   open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack ttl 64 Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds? syn-ack ttl 64
+1433/tcp  open  ms-sql-s      syn-ack ttl 64 Microsoft SQL Server 2019 
+5040/tcp  open  unknown       syn-ack ttl 64
+49664/tcp open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
+49665/tcp open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
+49666/tcp open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
+49667/tcp open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
+49668/tcp open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
+49669/tcp open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
+49670/tcp open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
+49671/tcp open  msrpc         syn-ack ttl 64 Microsoft Windows RPC
+49700/tcp open  ms-sql-s      syn-ack ttl 64 Microsoft SQL Server 2019
 
-Feroxbuster for ip adress shows /sub and /index.php
+Ideas : 
 
-/index php tells us pico version number 
+Find some creds somewhere for 
 
-Pico 3.0.0-alpha.2.
+MySQL server
 
-Feroxbuster /api discoveres /heartbeat
-
-at /api/heartbeat, found aerospike db
-
-searchsploit aerospike db reveals poc
-
-Use poc to get RCE on aero user
-
-LSE.sh shows /usr/bin/screen-4.5.0
-
-POC detailing steps to take for root
-
-https://github.com/YasserREED/screen-v4.5.0-priv-escalate
-
-Get root and flag on /root/proof.txt
-
-# Steps to User flag
-
-Running Machine 2 creds using nxc sweep, creds pwned for winrm, ssh, smb shares, 
-
-Use creds for RID brute for a list of users as well (MS01:users1)
-
-Evil win-rm into Eric.Willows. There are a few user accounts inside
-
-Found mysql on ms01.oscp.exam. Error message says this hostname not allowed to connect
-
-Interesting stuff in C:\setup, but ultimately led nowhere
-
-oscp\eric.wallows has SeImpersonatePriv
-
-Enumeration shows machine is windows 10 pro.
-
-SharpEfsPotato works. NT authority/system. Part of Administrators group
-
-Enumerated every single Desktop and Documents of Users
-
-LaZagne gives some hashes
-
-Administrator:500:aad3b435b51404eeaad3b435b51404ee:3c4495bbd678fac8c9d218be4f2bbc7b:::
-Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
-DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
-WDAGUtilityAccount:504:aad3b435b51404eeaad3b435b51404ee:11ba4cb6993d434d8dbba9ba45fd9011:::
-Mary.Williams:1002:aad3b435b51404eeaad3b435b51404ee:9a3121977ee93af56ebd0ef4f527a35e:::
-support:1003:aad3b435b51404eeaad3b435b51404ee:d9358122015c5b159574a88b3c0d2071:::
-cloudbase-init:1004:aad3b435b51404eeaad3b435b51404ee:cb47daeda02df568b81ca633a210a76a:::
-Admin:1005:aad3b435b51404eeaad3b435b51404ee:bd063c2d424044053dadc6a197c8e222:::
-
-Useless.
-
-Use ligolo to reach internal subnet of MS02.
-
-Try nxc-sweep of celia.almeda hash against MS02. Works. 
-
-Nxc shows winrm Pwned. Enter celia almeda
-
-
-
-# Steps to Crystal
-
-Ports 21,22 and 80 open
-
-Running feroxbuster against 80, there is /cms/ and /.git/
-
-ftp anonymous login failed
-
-Since .git exists, [[GIT dumper]]
-
-Git logs shows commits, view them and find creds for DB
-
-Breakingbad92
-
-also stuart with the same creds
-
-Attempt username dean against ftp and ssh
-
-Stuart@ip with the password allows access to ftp, where there is local.txt
-
-Stuart@ip allows access to ssh
-
-Running linpeas shows:
-
-1. SUID bit set pkexec
-2. ╔══════════╣ Readable files inside /tmp, /var/tmp, /private/tmp, /private/var/at/tmp, /private/var/tmp, and backup folders (limit 70) (T1552.001)
--rw-r--r-- 1 root root 20 Nov  8 15:41 /tmp/netdev.tmp
--rw-rw-r-- 1 stuart stuart 4331 Nov  8 16:21 /tmp/cf31-probe-1528.py
--rw-r--r-- 1 stuart stuart 26890 Apr  5  2018 /opt/backup/sitebackup1.zip
--rw-r--r-- 1 stuart stuart 25312 Mar  5  2020 /opt/backup/sitebackup3.zip
--rw-r--r-- 1 stuart stuart 24701 Nov 18  2022 /opt/backup/sitebackup2.zip
-
-pkexec nope
-
-sitebackup3 zip2john for pw codeblue
-
-7z this file for prompt
-
-chloe : Ee24zIK4cDhJHL4H
-
-su chloe to get root
-
-su chloe has all:all in sudo -l
-
-sudo -i for root
-
-flag in /root/proof.txt
-
-
-# Steps to Hermes
-
-Allign Clock skew
-
-Note : 
-1. MouseServer open
-2. Evil Win-rm open
-3. RDP open
-
-FTP nothing
-
-Skipped investigating his website
-
-RPC nothing
-
-From Enum4linux :
-
-Anonymous smbclient denied
-
-[+] Found domain information via SMB
-NetBIOS computer name: OSCP
-NetBIOS domain name: ''
-DNS domain: oscp
-FQDN: oscp
-Derived membership: workgroup member
-Derived domain: unknown
-
-OS: Windows 10, Windows Server 2019, Windows Server 2016
-OS version: '10.0'
-OS release: '2004'
-OS build: '19041'
-
-Port 1978 is WifiMouse, [[WifiMouse]] to get oscp/offsec shell.
-
-Flag on user offsec Desktop
-
+or SMB enumeration

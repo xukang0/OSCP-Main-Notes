@@ -17,7 +17,7 @@ uname -m
 **CMD**
 
 ```cmd
-systeminfo | findstr /i "System Type
+powershell $env:PROCESSOR_ARCHITECTURE
 ```
 
 **PowerShell**
@@ -95,14 +95,14 @@ On KALI ATTACKER
 cd ~/Desktop/Tools/Ligolo/Agent && python -m http.server 80
 ```
 
+- `x86_64` → amd64
+- `aarch64` → arm64
+
 Contains
 
 Windows
 1. WindowsAMD64Agent.exe
 2. WindowsARM64Agent.exe
-Linux
-3. LinuxAMD64Agent.exe
-4. LinuxARM64Agent.exe
 
 Transfer agent.exe onto target > Outfile agent.exe
 
@@ -172,11 +172,11 @@ Look for internal TARGET subnet (e.g. `172.16.5.0/23`)
 
 in KALI TERMINAL, Add specific IP route
 
-REMEMBER to turn 10.10.10.X into 0 due to /32 subnet so 10.10.10.0
+REMEMBER to turn 10.10.10.X into 0 due to /24 subnet so 10.10.10.0
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `sudo ip route add ${ip}/32 dev ligolo`;
+const command = `sudo ip route add ${ip}/24 dev ligolo`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

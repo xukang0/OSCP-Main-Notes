@@ -22,6 +22,14 @@ dir
 
 
 ---
+# Tree
+
+```
+tree /F /A
+```
+
+---
+
 # WHOAMI /PRIV
 
 whoami && id
@@ -105,7 +113,6 @@ Get-Process
 Look for third-party software running as `SYSTEM` (like an old antivirus, backup software, or web server).
 
 ---
-
 # SS -TLPN
 
 ```
@@ -113,15 +120,12 @@ netstat -ano | findstr LISTENING
 ```
 
 
-
 ---
 # Priv Esc Enumeration
 
-Linpeas.SH
-
-Alternatives:
 1. [[LinWinPEAS|winpeas.exe]] 
 2. [[PowerUp.ps1]]
+3. [[SharpUp.exe]]
 run `Invoke-AllChecks` to automatically find misconfigured services.
 
 ---

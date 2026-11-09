@@ -1,11 +1,11 @@
 [[Editing Copy Page]]
 
 ```
-
+10.10.162.0/32
 ```
 
 ```
-
+sudo ip route add 10.10.162.0/32 dev ligolo
 ```
 
 ```
