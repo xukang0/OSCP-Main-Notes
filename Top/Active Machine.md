@@ -9,7 +9,7 @@
 | Berlin  | 192.168.162.150 |       |
 | Gust    | 192.168.162.151 |       |
 
-MACHINE:: OSCPB/MS02
+MACHINE:: OSCPB/Kiero
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -18,7 +18,7 @@ const command = `${machine}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 
-IP::   10.10.162.148
+IP::   192.168.162.149
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 

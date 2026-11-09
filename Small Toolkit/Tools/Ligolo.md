@@ -1,3 +1,9 @@
+add link for port 1234 on MS01 to connect to KALI 80
+listener_add --addr 0.0.0.0:1234 --to 127.0.0.1:80
+Listener_list
+Listener_stop
+
+
 KILL LIGOLO
 ```
 sudo ip link delete ligolo

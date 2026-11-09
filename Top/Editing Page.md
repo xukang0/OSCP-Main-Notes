@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-10.10.162.0/32
+impacket-mssqlclient 'sql_svc':'Dolphin1'@10.10.162.148 -windows-auth
 ```
 
 ```
@@ -33,7 +33,7 @@ impacket-mssqlclient 'sql_svc':'Dolphin1'@10.10.162.148 -windows-auth
 ```
 
 ```
-
+snmpbulkwalk -c public -v2c 192.168.162.149 .
 ```
 
 ```

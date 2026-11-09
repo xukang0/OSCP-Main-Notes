@@ -5,6 +5,16 @@
 
 ---
 
+SNMP Enumeration
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `snmpwalk -v2c -c public ${ip} .1.3.6.1.4.1.8072.1.3`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
+
 SNMP Bulkwalk Enumeration
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -16,6 +26,12 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 snmpbulkwalk -c public -v2c 10.10.11.136 .
 ```
+
+SEARCH FOR STRING: "Resetting password of kiero to the default value"
+
+means
+
+kiero:kiero
 
 ---
 
