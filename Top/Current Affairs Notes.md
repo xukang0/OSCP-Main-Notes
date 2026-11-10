@@ -106,6 +106,24 @@ On bloodhound, since there are SVC accounts, kerberoast DC01.
 
 Get kerb hashes and crack with john for creds
 
+get sql_svc creds, login mssql database and xp_cmdshell cmd execution
+
+get RCE on kali for sql_svc
+
+get SAM and SECURITY in windows.old
+
+impacket psexec for root on MS02
+
+# Steps to DC01
+
+Logged in as tom_admin.
+
+Bloodhound shows GenericAll over dc01.oscp.exam. 
+
+[[RBCD]] and get root on DC01
+
+Proof.txt on administrator desktop
+
 # Steps to Kiero
 ### User flag
 

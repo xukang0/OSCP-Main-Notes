@@ -388,7 +388,7 @@ If following files are available :
 2. SYSTEM
 3. SAM
 
-[[Impacket-secretsdump]]
+[[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
 
 Paste the output into hash.txt
 

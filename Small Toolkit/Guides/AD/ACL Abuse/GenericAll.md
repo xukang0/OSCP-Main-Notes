@@ -27,5 +27,5 @@ $SecPassword = ConvertTo-SecureString "pass123!" -AsPlainText -Force Set-ADAccou
 1. Group Membership Modification
 
 #### **If target is a Computer:**
-1. Shadow Credentials
+1. [[Shadow Credentials]]
 2. [[RBCD]]

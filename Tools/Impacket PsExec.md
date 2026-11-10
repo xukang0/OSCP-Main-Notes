@@ -2,9 +2,10 @@ To use `impacket-psexec`, we need to provide the domain/username, the password,
 
   Attacking SMB
   
-Pass the hash psexec
+## Pass the hash psexec
 
 FULL HASH LMHASH:NTHASH
+IP ADDRESS : MACHINE U TARGET NOT DC
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 

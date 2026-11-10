@@ -6,6 +6,12 @@ cd ~/Desktop/Tools/Windows/Bloodhound && sudo docker compose down -v
 ```
 
 ```
+sudo docker compose up
+```
+
+or
+
+```
 cd ~/Desktop/Tools/Windows/Bloodhound && sudo fuser -k 8080/tcp && sudo docker compose up
 ```
 
