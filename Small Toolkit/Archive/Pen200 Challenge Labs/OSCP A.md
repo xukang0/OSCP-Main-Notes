@@ -70,6 +70,8 @@ LSE.sh shows /usr/bin/screen-4.5.0
 
 POC detailing steps to take for root
 
+/usr/bin/screen priv esc
+
 https://github.com/YasserREED/screen-v4.5.0-priv-escalate
 
 Get root and flag on /root/proof.txt

@@ -166,7 +166,13 @@ Get rootz /root/proof.txt
 # Steps to Berlin
 ### User flag
 
+Check FTP access first
 
+Visit webpage
+
+https://github.com/Goultarde/CVE-2022-42889-text4shell
+
+get RCE
 
 ### Root flag
 

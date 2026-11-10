@@ -108,6 +108,9 @@ Contains
 Windows
 1. WindowsAMD64Agent.exe
 2. WindowsARM64Agent.exe
+Linux
+3. LinuxAMD64Agent
+4. LinuxARM64Agent
 
 Transfer agent.exe onto target > Outfile agent.exe
 

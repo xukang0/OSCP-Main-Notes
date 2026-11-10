@@ -84,7 +84,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `start /b chisel.exe client ${KaliIP}:9999 R:[PORT]:127.0.0.1:[PORT]`;
+const command = `start /b chisel.exe client ${KaliIP}:9999 R:[KALIPORT]:127.0.0.1:[TARGETPORT]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

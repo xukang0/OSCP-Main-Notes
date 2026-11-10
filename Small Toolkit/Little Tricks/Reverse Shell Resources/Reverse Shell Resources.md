@@ -2,6 +2,8 @@ https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet
 
 https://www.revshells.com
 
+https://shellgenerator.dev
+
 [[msfvenom]]
 
 Find out which architecture is supported
