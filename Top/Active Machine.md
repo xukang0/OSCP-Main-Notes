@@ -9,7 +9,7 @@
 | Berlin  | 192.168.162.150 |       |
 | Gust    | 192.168.162.151 |       |
 
-MACHINE:: OSCPB/Berlin
+MACHINE:: OSCPC/
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -18,7 +18,7 @@ const command = `${machine}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 
-IP::   192.168.162.150
+IP::   
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -26,7 +26,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  192.168.45.178
+KALI IP:: 
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
@@ -34,7 +34,7 @@ const command = `${KaliIP}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::  192.168.162.150:8080
+Discovered Web Domain::  
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";

@@ -1,4 +1,6 @@
 [[SSH id_rsa]]
+[[SSH Authorized Keys]]
+[[Reaching internal hidden SSH ports]]
 
 nmap -p 22 --script ssh-brute \
   --script-args userdb=/usr/share/wordlists/metasploit/namelist.txt,passdb=/usr/share/wordlists/rockyou.txt \
