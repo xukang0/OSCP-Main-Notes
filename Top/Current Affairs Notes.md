@@ -176,6 +176,21 @@ get RCE
 
 ### Root flag
 
+linpeas shows JDWP.
+
+https://github.com/IOActive/jdwp-shellifier/tree/master
+
+[[jdwp-shellifier]]
+
+Chisel port forward 8000.
+
+Chisel port forward 5000 (Trigger server) based on /opt/
+
+run script with cmd to change bin bash perms
+
+Trigger 5000 with nc -nv IP 5000
+
+Go back onto dev and /bin/bash -p for root
 
 
 

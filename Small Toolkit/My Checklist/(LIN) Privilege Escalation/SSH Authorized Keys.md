@@ -1,13 +1,21 @@
 To generate a key pair
 
+id_rsa
+```
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa
+```
+
+id_ed25519
 ```
 ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519
 ```
 
 Your SSH public key is normally stored in `~/.ssh/` and has a `.pub` extension.
 
+id_ed25519.pub or id_rsa.pub
+
 ```
-echo MYPUBKEY > /root/.ssh/authorized_keys
+echo MYPUBKEY > /home/[user]/.ssh/authorized_keys
 ```
 
 Once your public key has been successfully added to the target's `/root/.ssh/authorized_keys`, you connect using the matching private key from your Kali machine.
