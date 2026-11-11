@@ -38,7 +38,6 @@ crackstation this hash for password December31
 nxc says administrator:December31 works for SSH
 
 Root for MS01
-
 # Steps to MS02 
 
 ### User flag
@@ -56,6 +55,8 @@ Download PSUpload.ps1 + upload SAM and SECURITY into kali (technical errors, rev
 Impacket secretsdump to get tom_admin hash
 
 use tom_admin creds to psexec into MS02 root
+
+Root for MS02
 
 # Steps to DC01
 
