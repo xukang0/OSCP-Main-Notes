@@ -1,3 +1,7 @@
+```
+cd C:\windows.old\Windows\System32
+```
+
 
 ```
 impacket-secretsdump -ntds ntds.dit -system SYSTEM LOCAL > hash.txt

@@ -8,6 +8,7 @@
 | Frankfurt | 192.168.162.156 |       |
 | Charlie   | 192.168.162.157 |       |
 | Pascha    | 192.168.162.155 |       |
+|           |                 |       |
 
 MACHINE:: OSCPC/MS01
 ```dataviewjs
@@ -17,7 +18,6 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-
 IP::   10.10.162.154
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
