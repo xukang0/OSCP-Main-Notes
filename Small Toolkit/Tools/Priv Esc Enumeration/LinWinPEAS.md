@@ -23,6 +23,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 WinPEAS
 
+(SKIP)
 ```
 wget https://github.com/peass-ng/PEASS-ng/releases/download/20260212-43b28429/winPEASx64.exe
 ```

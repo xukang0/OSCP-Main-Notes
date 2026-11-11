@@ -8,5 +8,9 @@ sqlite3 sql.db
 ```
 
 ```
+.recover
+```
+
+```
 select * from users;
 ```

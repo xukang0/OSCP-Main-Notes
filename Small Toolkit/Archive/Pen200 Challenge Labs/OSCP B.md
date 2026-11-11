@@ -208,7 +208,7 @@ flag on his desktop
 
 ### Root flag
 
-
+[[SeImpersonatePrivilege]]
 
 
 
