@@ -18,7 +18,7 @@ const command = `${machine}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 
-IP::   192.168.162.153
+IP::   10.10.162.154
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 

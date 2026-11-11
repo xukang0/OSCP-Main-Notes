@@ -288,7 +288,7 @@ Custom Details
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]'`;
+const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD] --continue-on-success'`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -516,6 +516,7 @@ If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 
 [[Runas]]
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
+[[PSHistory]]
 
 # Priv Esc
 

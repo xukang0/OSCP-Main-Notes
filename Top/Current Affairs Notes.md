@@ -27,6 +27,16 @@ WinPeas shows internal network
 
 Ligolo using support account. Ping MS02 and DC01 it works.
 
+Run nxc sweep on MS02. Eric.Wallows has access to mssql on MS02
+
+impacket-mssqlclient 'Eric.Wallows':EricLikesRunning800@10.10.162.154 -windows-auth to get into MSSQL. : rabbithole
+
+./admintool.exe error shows the source code which includes a valid hash
+
+crackstation this hash for password December31
+
+nxc says administrator:December31 works for SSH
+
 
 
 # Steps to MS02 

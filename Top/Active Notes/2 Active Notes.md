@@ -55,6 +55,10 @@ INSERT OR IGNORE INTO 'partners'('id', 'name', 'password', 'desc') VALUES (2, 's
 INSERT OR IGNORE INTO 'partners'('id', 'name', 'password', 'desc') VALUES (3, 'bcorp', 'e7966b31d1cad8a83f12ecec236c384c', '-');
 INSERT OR IGNORE INTO 'partners'('id', 'name', 'password', 'desc') VALUES (4, 'acorp', 'df5fb539ff32f7fde5f3c05d8c8c1a6e', '-');
 
+cloudbase-init 91f8e3711ffdaa895cd01a89762a727e : unknown
+ms01$ fc7c8431a3fa6d042828a5d1b49fe1ab : unknown
+support : d9358122015c5b159574a88b3c0d2071 :Freedom
+administrator : 3c4495bbd678fac8c9d218be4f2bbc7b : December31
 
 ---
 ## Interesting Files/Paths

