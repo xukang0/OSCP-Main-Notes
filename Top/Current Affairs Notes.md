@@ -37,7 +37,9 @@ crackstation this hash for password December31
 
 nxc says administrator:December31 works for SSH
 
+Check powershell history of all users in root MS01
 
+administrator : hghgib6vHT3bVWf
 
 # Steps to MS02 
 
