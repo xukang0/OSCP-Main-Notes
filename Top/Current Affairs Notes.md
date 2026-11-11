@@ -37,15 +37,25 @@ crackstation this hash for password December31
 
 nxc says administrator:December31 works for SSH
 
-Check powershell history of all users in root MS01
-
-administrator : hghgib6vHT3bVWf
+Root for MS01
 
 # Steps to MS02 
 
 ### User flag
 
+Check powershell history of all users in root MS01
 
+administrator : hghgib6vHT3bVWf
+
+This allows access into mssql user sql_svc
+
+RCE to gain a shell
+
+Download PSUpload.ps1 + upload SAM and SECURITY into kali (technical errors, revert machine to fix. Run 3 commands at once and 3 listeners)
+
+Impacket secretsdump to get tom_admin hash
+
+use tom_admin creds to psexec into MS02 root
 
 # Steps to DC01
 

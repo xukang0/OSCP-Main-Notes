@@ -3,6 +3,10 @@
 Listener_list
 Listener_stop
 
+```
+listener_add --addr 0.0.0.0:4444 --to 127.0.0.1:4444 --tcp
+```
+
 KILL LIGOLO
 ```
 sudo ip link delete ligolo
@@ -47,11 +51,7 @@ $env:PROCESSOR_ARCHITECTURE
 ## 🔹 Step 2 — Create the TUN interface and bring it up:
 
 ```
-sudo ip tuntap add user kali mode tun ligolo
-```
-
-```
-sudo ip link set dev ligolo up
+sudo ip tuntap add user kali mode tun ligolo && sudo ip link set dev ligolo up
 ```
 
 ## 🔹 Step 3 — Start the Ligolo proxy server

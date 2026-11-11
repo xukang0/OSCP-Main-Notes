@@ -57,7 +57,7 @@ INSERT OR IGNORE INTO 'partners'('id', 'name', 'password', 'desc') VALUES (4, 'a
 
 cloudbase-init 91f8e3711ffdaa895cd01a89762a727e : unknown
 ms01$ fc7c8431a3fa6d042828a5d1b49fe1ab : unknown
-support : d9358122015c5b159574a88b3c0d2071 :Freedom
+support : d9358122015c5b159574a88b3c0d2071 :Freedom1
 administrator : 3c4495bbd678fac8c9d218be4f2bbc7b : December31
 
 ---
