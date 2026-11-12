@@ -38,6 +38,8 @@
 ---
 ## Discovered Credentials
 
+jack:3PUKsX98BMupBiCf
+
 ---
 ## Interesting Files/Paths
 

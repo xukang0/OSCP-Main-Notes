@@ -69,7 +69,25 @@ Login with [[Impacket PsExec]] for DC01 root
 # Steps to Frankfurt
 ### User flag
 
+Found /phpadmin/ and /webmail/. Both lead to login pages
 
+both services has no default creds. phpmyadmin root:{blank} fails
+
+Found an authenticated RCE exploit for phpmyadmin
+
+SNMP walk finds jack:3PUKsX98BMupBiCf
+
+SSH jack not working. Account Disabled. Same for FTP
+
+Jack can login to VESTA port 8083
+
+https://github.com/CSpanias/vesta-rce-exploit
+Found a vesta authenticated rce exploit.
+
+Exploits says a root shell is achieved.
+
+cat /home/jack/local.txt
+cat /root/proof.txt
 ### Root flag
 
 
