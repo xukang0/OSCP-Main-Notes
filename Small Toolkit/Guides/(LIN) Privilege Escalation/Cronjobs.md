@@ -2,4 +2,4 @@ https://medium.com/@betigetin/linux-privilege-escalation-by-exploiting-cron-jobs
 
 
 [[Cronjob Path Hijack]]
-[[Wildcard Hijack]]
+[[Cronjob Wildcard Hijack]]

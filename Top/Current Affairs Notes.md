@@ -111,6 +111,9 @@ EDB 50234. Edit the script with listener_ip and port and use python
 get a shell as cassie
 
 lse.sh finds /etc/cron.d/2minutes:*/2 * * * * root cd /opt/admin && tar -zxf /tmp/backup.tar.gz *
+
+[[Cronjob Wildcard Hijack]]
+
 ### Root flag
 
 

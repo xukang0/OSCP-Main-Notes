@@ -104,7 +104,7 @@ Use [[6379 Redis]] method to gain alice shell
 
 backup.sh cronjob shows tar wildcard file
 
-[[Wildcard Hijack]] and add +s to /bin/bash
+[[Cronjob Wildcard Hijack]] and add +s to /bin/bash
 
 /bin/bash -p for root
 
