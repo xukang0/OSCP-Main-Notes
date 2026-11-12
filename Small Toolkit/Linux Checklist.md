@@ -27,36 +27,35 @@
 ### 🌐 [[80 - WEB | Web]] (80/443)
 
 
-> [!note]- Web Checklist
-> - [ ] [[0000006|Visit site]]
-> - [ ] View source
-> - [ ] Identify tech/CMS
-> - [ ] [[0000008|whatweb]]
-> - [ ] [[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
-> - [ ] Analyze error page
-> - [ ] [[Nickel|Curl dead end redirects for error msg]]
-> - [ ] [[0000010|curl -i domain]]
->
-> #### Brute Force
-> - [ ] [[0000011|Feroxbuster Directories brute force (medium)]]
-> - [ ] [[0000011|Feroxbuster WebList brute force]]
-> - [ ] [[0000012|Vhost brute force]]
-> - [ ] [[0000013|Feroxbuster File directories sweep]]
-> - [ ] [[0000038|Feroxbuster API discovery]]
->
-> #### Vulnerability Testing
-> - [ ] [[0000014|LFI (../../../../etc/passwd)]]
-> - [ ] [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
-> - [ ] [[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
-> - [ ] [[0000016|Command Injection (;whoami)]]
-> - [ ] PHP code inclusion
-> - [ ] File upload (if available)
-> - [ ] [[Hexedit]]
->
-> #### Hidden Content
-> - [ ] Check JS files
-> - [ ] Check comments
-> - [ ] Check backups (.bak, .zip)
+[[0000006|Visit site]]
+View source
+Identify tech/CMS
+[[0000008|whatweb]]
+[[0000009|Test parameters (?id=1, ?page=) | ?[parameter]=0]]
+ Analyze error page
+ [[Nickel|Curl dead end redirects for error msg]]
+[[0000010|curl -i domain]]
+
+### Brute Force
+[[0000011|Feroxbuster Directories brute force (medium)]]
+[[0000011|Feroxbuster WebList brute force]]
+ [[0000012|Vhost brute force]]
+[[0000013|Feroxbuster File directories sweep]]
+[[0000038|Feroxbuster API discovery]]
+
+### Vulnerability Testing
+[[0000014|LFI (../../../../etc/passwd)]]
+[[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
+ [[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
+ [[0000016|Command Injection (;whoami)]]
+PHP code inclusion
+File upload (if available)
+[[Hexedit]]
+
+### Hidden Content
+Check JS files
+Check comments
+Check backups (.bak, .zip)
 
 #### Contingencies
 

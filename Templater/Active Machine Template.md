@@ -3,6 +3,11 @@
 | Machine | IP Address | Notes |
 | ------- | ---------- | ----- |
 |         |            |       |
+|         |            | creds |
+|         |            |       |
+|         |            |       |
+|         |            |       |
+|         |            |       |
 
 MACHINE:: machine
 ```dataviewjs

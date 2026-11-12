@@ -24,6 +24,11 @@ If SSH open, try name:name of any person you find
 [[Impacket PsExec]]
 [[1433 MSSQL]]
 
+#### General Priv Esc Enumeration
+
+[[LinWinPEAS]]
+
 #### Directory Enumeration
 
 [[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
+

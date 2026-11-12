@@ -30,6 +30,18 @@ dv.paragraph("```bash\n" + command + "\n```");
 sc.exe qc [servicename]
 ```
 
+```
+icacls [servicename]
+```
+
+Check startup
+```
+Get-WinEvent -FilterHashtable @{
+    LogName = 'System'
+    ProviderName = 'Service Control Manager'
+} -MaxEvents 15 | Format-List TimeCreated, Id, Message
+```
+
 Example output
 ```powershell
 sc.exe qc VeyonService
