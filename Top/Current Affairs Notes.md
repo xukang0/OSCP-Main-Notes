@@ -94,13 +94,27 @@ cat /root/proof.txt
 # Steps to Charlie
 ### User flag
 
+ftp anonymous login with folder backup
 
+download and see list of pdfs
 
+exiftool pdf to see list of authors.
+
+Try author:author on Usermin login port 20000
+
+on dashboard says version 1.820
+
+searchsploit Usermin. Find Usermin 1.820 - Remote Code Execution (RCE) (Authenticated) 
+
+EDB 50234. Edit the script with listener_ip and port and use python
+
+get a shell as cassie
+
+lse.sh finds /etc/cron.d/2minutes:*/2 * * * * root cd /opt/admin && tar -zxf /tmp/backup.tar.gz *
 ### Root flag
 
 
-
-# Steps to Pascha2
+# Steps to Pascha
 ### User flag
 
 

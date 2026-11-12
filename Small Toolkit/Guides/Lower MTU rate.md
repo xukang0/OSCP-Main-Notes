@@ -1,3 +1,8 @@
+
+```
+sudo ip l s dev tun0 mtu 1250
+```
+
 ### 2. How do you lower MTU in Kali?
 
 First, identify your network interfaces:

