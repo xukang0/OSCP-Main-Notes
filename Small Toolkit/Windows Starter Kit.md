@@ -1,8 +1,23 @@
+## Time Sync
+
+Syncs our machine with the Domain server’s time as if we have more than a 5 min gap we will have issues./
+
+```
+sudo timedatectl set-ntp false
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `sudo ntpdate -s ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
 ### The Technical Mapping
 
-| **Linux Action**                                       | **Windows Translation**                 | **Command/Tool**                                                                                                                                      |
-| ------------------------------------------------------ | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Web Exploits** (PHP/Python payload)                  | **Web Exploits** (.ASPX / .NET payload) | If you find a file upload on IIS, your standard `php-reverse-shell` won't work. You must upload a `.aspx` web shell (like the classic `cmdasp.aspx`). |
+| **Linux Action**                      | **Windows Translation**                 | **Command/Tool**                                                                                                                                      |
+| ------------------------------------- | --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Web Exploits** (PHP/Python payload) | **Web Exploits** (.ASPX / .NET payload) | If you find a file upload on IIS, your standard `php-reverse-shell` won't work. You must upload a `.aspx` web shell (like the classic `cmdasp.aspx`). |
 
 Upgrading Shell
 ```

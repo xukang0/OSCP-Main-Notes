@@ -116,9 +116,18 @@ lse.sh finds /etc/cron.d/2minutes:*/2 * * * * root cd /opt/admin && tar -zxf /tm
 
 ### Root flag
 
+Catch root shell on listener.
 
+Flags
 # Steps to Pascha
 ### User flag
+
+Open 192.168.162.155:80
+Open 192.168.162.155:5986
+Open 192.168.162.155:7680
+Open 192.168.162.155:9099
+Open 192.168.162.155:9999
+Open 192.168.162.155:35913
 
 
 ### Root flag
