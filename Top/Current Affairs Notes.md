@@ -60,16 +60,20 @@ Root for MS02
 
 # Steps to DC01
 
+Bloodhound shows allextendedright and dsync  tom_admin over OSCP.EXAM
 
+[[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]] to dump administrator DC01 hash
 
-# Steps to Kiero
+Login with [[Impacket PsExec]] for DC01 root
+
+# Steps to Frankfurt
 ### User flag
 
 
 ### Root flag
 
 
-# Steps to Berlin
+# Steps to Charlie
 ### User flag
 
 
@@ -78,7 +82,7 @@ Root for MS02
 
 
 
-# Steps to Gust
+# Steps to Pascha2
 ### User flag
 
 

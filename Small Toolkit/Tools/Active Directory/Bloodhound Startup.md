@@ -6,7 +6,7 @@ cd ~/Desktop/Tools/Windows/Bloodhound && sudo docker compose down -v
 ```
 
 ```
-sudo docker compose up
+cd ~/Desktop/Tools/Windows/Bloodhound && sudo docker compose up
 ```
 
 or
