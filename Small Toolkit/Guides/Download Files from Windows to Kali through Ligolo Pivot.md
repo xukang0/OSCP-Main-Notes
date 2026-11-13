@@ -30,7 +30,7 @@ listener_add --addr 0.0.0.0:4445 --to 127.0.0.1:4445
 Import Powershell script to upload a file to KALI upload server. (Executes immediately)
 
 ```
-cd ~/Desktop/Tools/Windows && python -m http.server 4445
+cd ~/Desktop/Tools/Windows && python -m http.server 80
 ```
 
 On TARGET

