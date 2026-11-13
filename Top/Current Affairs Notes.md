@@ -1,4 +1,100 @@
 
 [[Current Affairs Notes Template]]
 
-# Steps to User flag
+---
+# Steps to MS01 
+
+### User flag
+
+135/tcp   open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+139/tcp   open  netbios-ssn   syn-ack ttl 125 Microsoft Windows netbios-ssn
+445/tcp   open  microsoft-ds? syn-ack ttl 125
+5040/tcp  open  unknown       syn-ack ttl 125
+5985/tcp  open  http          syn-ack ttl 125 Microsoft HTTPAPI httpd 2.0 
+5986/tcp  open  ssl/wsmans?   syn-ack ttl 125
+47001/tcp open  http          syn-ack ttl 125 Microsoft HTTPAPI httpd 2.0 
+49664/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+49665/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+49666/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+49667/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+49668/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+49669/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+49670/tcp open  msrpc         syn-ack ttl 125 Microsoft Windows RPC
+
+enum4linux-ng shows domain name zeus.corp
+
+Computer name is CLIENT01
+
+SMB has a share named SQL
+
+Eric.Wallows is a domain member
+
+Kerberoasting succeeds and shows nothing : No svc accounts?
+
+nxc sweep shows win-rm, rpc, and smb pwned. (all services)
+
+SMB eric creds logon not supported
+
+
+
+### Root flag
+
+
+
+
+---
+
+# Steps to MS02 
+
+### User flag
+
+
+
+
+### Root flag
+
+
+
+# Steps to DC01
+
+### User flag
+
+
+
+### Root flag
+
+
+
+
+---
+
+# Steps to Frankfurt
+### User flag
+
+
+
+### Root flag
+
+---
+# Steps to Charlie
+### User flag
+
+
+
+### Root flag
+
+
+
+---
+# Steps to Pascha
+### User flag
+
+
+
+### Root flag
+
+
+
+
+
+

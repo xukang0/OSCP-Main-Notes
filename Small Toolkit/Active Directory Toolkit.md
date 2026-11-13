@@ -300,7 +300,7 @@ Custom Details
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD] --continue-on-success'`;
+const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u '[USER]' -p '[PASSWORD]' --continue-on-success`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

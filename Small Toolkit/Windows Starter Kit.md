@@ -45,6 +45,14 @@ tree /F /A
 
 ---
 
+# Searching for Files Powershell
+
+```
+Get-ChildItem -Path C:\ -Filter mysql.exe -Recurse -ErrorAction SilentlyContinue
+```
+
+---
+
 # WHOAMI /PRIV
 
 whoami && id

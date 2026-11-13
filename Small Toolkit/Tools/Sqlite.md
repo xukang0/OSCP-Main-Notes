@@ -14,3 +14,15 @@ sqlite3 sql.db
 ```
 select * from users;
 ```
+
+---
+
+```
+Get-ChildItem -Path C:\ -Filter mysql.exe -Recurse -ErrorAction SilentlyContinue
+```
+
+.sql
+
+```
+mysql -u username -p database_name < file.sql
+```
