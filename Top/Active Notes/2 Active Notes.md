@@ -45,6 +45,18 @@ PORT      STATE SERVICE       REASON          VERSION
 ---
 ## Discovered Credentials
 
+Mimikatz
+CLIENT01 : 37cd766f789605754be10d2c42a84af1
+o.foller : decca5b9babc228de4cedeb29a6b9abf
+cloudbase-init : 3ec413a3c92107884e7c75fb9a0caa84
+
+└─$ cat connection.sql 
+$SqlServer    = 'DC01'
+$Database     = 'master'
+$SqlAuthLogin = 'zeus.corp\db_user'
+$SqlAuthPw    = 'Password123!'
+
+
 ---
 ## Interesting Files/Paths
 

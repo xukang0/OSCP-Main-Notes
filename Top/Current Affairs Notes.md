@@ -35,11 +35,19 @@ nxc sweep shows win-rm, rpc, and smb pwned. (all services)
 
 SMB eric creds logon not supported
 
+Evilrm into eric.wallows. Run Mimikatz
 
+CLIENT01$ : 37cd766f789605754be10d2c42a84af1 validates with nxc sweep
+
+o.foller only works for RPC
+
+since client01 has smb sql read and write access try psexec. Doesnt work
 
 ### Root flag
 
+Realize Eric.Wallows shell has SeImpersonatePrivilege. Become NT authority and root
 
+Flag on administrator desktop
 
 
 ---

