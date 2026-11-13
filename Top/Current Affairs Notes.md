@@ -43,11 +43,14 @@ o.foller only works for RPC
 
 since client01 has smb sql read and write access try psexec. Doesnt work
 
+Connection.sql has creds for DC01 MSSQL
+
 ### Root flag
 
 Realize Eric.Wallows shell has SeImpersonatePrivilege. Become NT authority and root
 
 Flag on administrator desktop
+
 
 
 ---

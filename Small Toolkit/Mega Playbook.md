@@ -24,6 +24,7 @@ If SSH open, try name:name of any person you find
 
 [[PSHistory]]
 [[Impacket PsExec]]
+[[SMB NTLMv2 Relay]]
 #### Creds, what to do?
 
 [[Impacket PsExec]]
@@ -39,3 +40,4 @@ If SSH open, try name:name of any person you find
 
 [[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
 
+https://github.com/G4sp4rCS/backup-operator-to-domain-admin-POC/tree/main
