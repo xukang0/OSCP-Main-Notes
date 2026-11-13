@@ -3,6 +3,7 @@ You own it completely.
 #### **If target is a User:** 
 1. Force reset their password.
 - **Change the Target’s Password**: Using `net user <username> <password> /domain`, the attacker can reset the user’s password.
+- [[Targeted Kerberoasting]]
 1. Shadow Credentials
 #### Change password
 ```dataviewjs

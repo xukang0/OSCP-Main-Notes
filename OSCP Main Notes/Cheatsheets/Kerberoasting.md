@@ -49,7 +49,7 @@ john -w=/usr/share/wordlists/rockyou.txt hash.txt
 
 or
 ```
-hashcat -m 13100 hashes /usr/share/wordlists/rockyou.txt
+hashcat -m 13100 [hashes] /usr/share/wordlists/rockyou.txt
 ```
 
 If no results = password is not in the wordlist

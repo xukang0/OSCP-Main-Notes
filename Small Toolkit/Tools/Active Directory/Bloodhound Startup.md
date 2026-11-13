@@ -75,6 +75,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 .\SharpHound.exe -c All --domain secura.yzx --domaincontroller dc01.secura.yzx
 
+[[File Transfer Guide]]
+
 ---
 ## Host azurehound.exe
 

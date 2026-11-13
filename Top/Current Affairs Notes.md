@@ -51,7 +51,7 @@ Realize Eric.Wallows shell has SeImpersonatePrivilege. Become NT authority and r
 
 Flag on administrator desktop
 
-
+o.foller hash and creds on nxc sweep shows winrm p3wned
 
 ---
 
@@ -59,17 +59,27 @@ Flag on administrator desktop
 
 ### User flag
 
-
-
+Enter o.foller through winrm
 
 ### Root flag
 
+o.follower has [[SeImpersonatePrivilege]], [[SharpEfsPotato]]
 
+Flag on administrator desktop
 
 # Steps to DC01
 
 ### User flag
 
+There is an onboarding document on z.thomas desktop
+
+bloodhound says z.thomas has genericall to D.Chambers
+
+z.thomas :  ^1+>pdRLwyct]j,CYmyi
+
+nxc sweep says z.thomas has winrm access to DC01
+
+User flag on z.thomas desktop
 
 
 ### Root flag
