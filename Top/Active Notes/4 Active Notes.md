@@ -55,6 +55,17 @@ Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
 ---
 ## Discovered Credentials
 
+uid=sa;password=WhileChirpTuesday218
+
+sa/WhileChirpTuesday218 and joe/Flowers1 doesnt seem to work anywhere
+
+Secret  : _SC_SNMPTRAP / service 'SNMPTRAP' with username : MEDTECH\joe
+cur/text: Flowers1
+
+Secret  : _SC_SQLTELEMETRY$SQLEXPRESS / service 'SQLTELEMETRY$SQLEXPRESS' with username : NT Service\SQLTELEMETRY$SQLEXPRESS
+
+Secret  : _SC_SSDPSRV / service 'SSDPSRV' with username : MEDTECH\joe
+cur/text: Flowers1
 ---
 ## Interesting Files/Paths
 

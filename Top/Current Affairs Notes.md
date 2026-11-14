@@ -2,9 +2,9 @@
 [[Current Affairs Notes Template]]
 
 ---
-# Steps to Machine 1 
+# Steps to WEB02 
 
-### User flag
+### Initial access
 
 Nmap scans shows
 
@@ -25,10 +25,15 @@ FQDN: WEB02.dmz.medtech.com
 Derived membership: domain member
 Derived domain: MEDTECH
 
+Test' on medtech patient portal shows mssql error.
+
+Get RCE to land on nt service\mssql$sqlexpress
 
 ### Root flag
 
+SeImpersonatePriv exists [[SharpEfsPotato]]
 
+Flag on Administrator desktop
 
 
 ---
@@ -37,7 +42,11 @@ Derived domain: MEDTECH
 
 ### User flag
 
+in joe downloads on WEB02 root, there is test.zip 
 
+Inside contains web.config with creds to user SA.
+
+Realize WEB02 root has access to internel subnet. Ligolo pivot to internal subnet. Nmap scan.
 
 
 ### Root flag
