@@ -10,11 +10,17 @@ Revert machine
 #### Initial access stuck
 
 If SSH open, try name:name of any person you find
+[[SQL Injection]]
 
 
 
 ---
 # Active Directory
+
+#### Initial Access
+
+[[SQL Injection]]
+[[Feroxbuster]]
 
 #### If user, looking to gain machine root.
 

