@@ -37,8 +37,7 @@ Flag on Administrator desktop
 
 
 ---
-
-# Steps to MS02 
+# Steps to FILES02 
 
 ### User flag
 
@@ -48,11 +47,18 @@ Inside contains web.config with creds to user SA.
 
 Realize WEB02 root has access to internel subnet. Ligolo pivot to internal subnet. Nmap scan.
 
+mimikatz lsa secrets dump on web02 root gives joe:Flowers1
 
+nxc winrm on FIles02 shows pwned
+
+Evilwinrm into joe for local.txt
 ### Root flag
 
+SeImpersonatePriv on FILE02, proof.txt on administrator desktop
 
+Found Yoshi, Wario and Joe
 
+---
 # Steps to DC01
 
 ### User flag

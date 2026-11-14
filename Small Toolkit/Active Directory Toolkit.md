@@ -314,6 +314,11 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check across all services, nxc-sweep is used to automatically check all services
 
+nxc-sweep-smb
+```
+cp ~/Desktop/Tools/Windows/nxc-sweep-smb . && ./nxc-sweep-smb ip.txt -u '[USER]' -p '[PASSWORD]'
+```
+
 Custom Details
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
