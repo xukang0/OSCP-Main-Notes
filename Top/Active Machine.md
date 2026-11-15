@@ -13,7 +13,7 @@
 | 9       | 172.16.162.82   | CLIENT01                   |
 | 10      | 172.16.162.83   | CLIENT02                   |
 
-MACHINE:: Medtech/Machine1
+MACHINE:: Medtech/Machine2
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 

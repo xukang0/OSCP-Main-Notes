@@ -58,16 +58,36 @@ SeImpersonatePriv on FILE02, proof.txt on administrator desktop
 
 Found Yoshi, Wario and Joe
 
+Conduct bloodhound collection
+
+Leon is Domain admin
+
+In PS history i can see that wario creates a credential on CLIENT02
+
+
+
 ---
-# Steps to DC01
+# Steps to CLIENT 02
 
 ### User flag
 
+Joe has fileBackupMonitoring.log which contains hashes for goomba, daisy, wario, and toad
 
+nxc sweep hashes with username shows wario hash works for client 01, 02, dev4, prod1
+
+Evilwinrm on client 02, tgt with earlier information.
+
+Flag on his desktop
 
 ### Root flag
 
+Winpeas shows auditTracker.exe in developmentexecutable
 
+Put msfvenom shell.exe replacing auditTracker.exe and sc.exe start auditTracker to catch reverse shell
+
+land as root
+
+flag on desktop
 
 
 ---

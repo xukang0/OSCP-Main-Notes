@@ -319,6 +319,11 @@ nxc-sweep-smb
 cp ~/Desktop/Tools/Windows/nxc-sweep-smb . && ./nxc-sweep-smb ip.txt -u '[USER]' -p '[PASSWORD]'
 ```
 
+nxc-sweep-service
+```
+cp ~/Desktop/Tools/Windows/nxc-sweep-service . && ./nxc-sweep-smb ssh ip.txt -u '[USER]' -p '[PASSWORD]' --continue-on-success
+```
+
 Custom Details
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";

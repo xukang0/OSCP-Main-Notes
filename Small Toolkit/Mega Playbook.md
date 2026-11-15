@@ -33,6 +33,7 @@ If SSH open, try name:name of any person you find
 [[PSHistory]]
 [[Impacket PsExec]]
 [[SMB NTLMv2 Relay]]
+Spray existing users and passwords
 #### Creds, what to do?
 
 [[Impacket PsExec]]
