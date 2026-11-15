@@ -291,6 +291,12 @@ Nmap scan report for CLIENT02.medtech.com (172.16.162.83)
 
 uid=sa;password=WhileChirpTuesday218
 
+joe : Flowers1
+
+Wario : Mushroom!
+
+leon : rabbit:)
+
 sa/WhileChirpTuesday218 and joe/Flowers1 doesnt seem to work anywhere
 
 Secret  : _SC_SNMPTRAP / service 'SNMPTRAP' with username : MEDTECH\joe
@@ -309,6 +315,9 @@ Backup      goomba                       6872 Backup Completed. NTLM: 8e9e151681
 
 Backup      daisy                        6872 Backup Completed. NTLM: abf36048c1cf88f5603381c5128feb8e3
 
+Administrator : 6bff4295a37d9c810ab95210a732f25a
+
+offsec/century62hisan51
 
 ---
 ## Interesting Files/Paths
