@@ -25,6 +25,7 @@ If SSH open, try name:name of any person you find
 #### If user, looking to gain machine root.
 
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
+[[Watch-Command]]
 
 #### If admin user, looking to move laterally.
 
@@ -34,6 +35,7 @@ If SSH open, try name:name of any person you find
 [[Impacket PsExec]]
 [[SMB NTLMv2 Relay]]
 Spray existing users and passwords
+Crackstation existing hashes
 #### Creds, what to do?
 
 [[Impacket PsExec]]

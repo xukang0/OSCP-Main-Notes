@@ -406,6 +406,13 @@ LocalSystem > Run as Root
 
 [[Hijack EXE]]
 
+backup.exe
+```
+Get-CimInstance Win32_Service |
+Where-Object {$_.PathName -match "backup\.exe"} |
+Select-Object Name, DisplayName, State, StartMode, StartName, PathName
+```
+
 ---
 # Windows Admin Creds Search
 

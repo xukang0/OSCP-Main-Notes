@@ -9,3 +9,9 @@ ForEach-Object {
     Get-Content $_.FullName
 }
 ```
+
+---
+
+```
+type C:\Users\leon\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+```

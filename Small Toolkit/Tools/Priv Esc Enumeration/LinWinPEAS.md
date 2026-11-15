@@ -28,6 +28,8 @@ WinPEAS
 wget https://github.com/peass-ng/PEASS-ng/releases/download/20260212-43b28429/winPEASx64.exe
 ```
 
+---
+
 ```
 cd ~/Desktop/Tools/Windows && python -m http.server 80
 ```

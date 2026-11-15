@@ -310,7 +310,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ---
-## Both User and PW Obtained : NetExec Credential Usage Sweep
+## Both User and PW Obtained : NetExec Credential Usage Sweep NXC-SWEEP
 
 Upon Entry, Once Creds for unknown usage is obtained, use [[NetExec]]to check across all services, nxc-sweep is used to automatically check all services
 
@@ -321,7 +321,7 @@ cp ~/Desktop/Tools/Windows/nxc-sweep-smb . && ./nxc-sweep-smb ip.txt -u '[USER]'
 
 nxc-sweep-service
 ```
-cp ~/Desktop/Tools/Windows/nxc-sweep-service . && ./nxc-sweep-smb ssh ip.txt -u '[USER]' -p '[PASSWORD]' --continue-on-success
+cp ~/Desktop/Tools/Windows/nxc-sweep-service . && ./nxc-sweep-service ssh ip.txt -u '[USER]' -p '[PASSWORD]' --continue-on-success
 ```
 
 Custom Details

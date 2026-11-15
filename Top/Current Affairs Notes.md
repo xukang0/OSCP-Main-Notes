@@ -91,6 +91,36 @@ flag on desktop
 
 
 ---
+# Steps to CLIENT 01
+
+### User flag
+
+nxc rdp sweep shows wario creds work for client01 and dev04
+
+Also shows yoshi:fdf36048c1cf88f5630381c5e38feb8e pwned against rdp
+
+This has on crack station is Mushroom! so yoshi : Mushroom! and wario : Mushroom!
+### Root flag
+
+evil winrm onto yoshi for root flag. 
+
+---
+# Steps to DEV04
+
+### User flag
+
+nxc sweep shows yoshi:Mushroom! works for RDP onto DEV04.
+
+Flag on his desktop
+### Root flag
+
+There is C:\TEMP\backup.exe
+
+Hijack this exe with shell.exe and get NT authority reverse shell on kali
+
+flag on his desktop
+
+---
 
 # Steps to Frankfurt
 ### User flag
