@@ -1,13 +1,13 @@
 [[Active Machine Template]]
 
-| Machine | IP Address      | Notes |
-| ------- | --------------- | ----- |
-| DC01    | 192.168.162.161 |       |
-| MS02    | 192.168.162.162 |       |
-| Gyoza   | 192.168.162.163 | creds |
-|         |                 |       |
-|         |                 |       |
-|         |                 |       |
+| Machine     | IP Address      | Notes |
+| ----------- | --------------- | ----- |
+| DC01        | 192.168.162.161 |       |
+| DC02        | 192.168.162.162 |       |
+| Gyoza / sub | 192.168.162.163 | creds |
+|             |                 |       |
+|             |                 |       |
+|             |                 |       |
 
 MACHINE:: Poseidon/MS01
 ```dataviewjs

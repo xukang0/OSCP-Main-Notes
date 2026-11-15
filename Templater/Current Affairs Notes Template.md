@@ -12,6 +12,9 @@
 
 
 
+### Pivoting
+
+
 
 ---
 
@@ -26,6 +29,9 @@
 
 
 
+### Pivoting
+
+
 # Steps to DC01
 
 ### User flag
@@ -34,6 +40,9 @@
 
 ### Root flag
 
+
+
+### Pivoting
 
 
 
