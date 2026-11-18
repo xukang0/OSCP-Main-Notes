@@ -21,6 +21,8 @@ If SSH open, try name:name of any person you find
 ---
 # Active Directory
 
+
+[[Initial Enumeration]]
 #### Initial Access
 
 [[SQL Injection]]

@@ -1,15 +1,15 @@
 [[Active Machine Template]]
 
-| Machine     | IP Address      | Notes |
-| ----------- | --------------- | ----- |
-| DC01        | 192.168.162.161 |       |
-| DC02        | 192.168.162.162 |       |
-| Gyoza / sub | 192.168.162.163 | creds |
-|             |                 |       |
-|             |                 |       |
-|             |                 |       |
+| Machine | IP Address      | Notes |
+| ------- | --------------- | ----- |
+| DC01    |                 |       |
+| DC01    | 192.168.245.169 |       |
+| MS01    | 192.168.245.170 | creds |
+| MS02    | 192.168.245.171 |       |
+|         |                 |       |
+|         |                 |       |
 
-MACHINE:: Poseidon/MS01
+MACHINE:: Feast/MS01
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -17,7 +17,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   192.168.162.163
+IP::   192.168.245.169
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -25,7 +25,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  192.168.45.178
+KALI IP::  192.168.45.186
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 

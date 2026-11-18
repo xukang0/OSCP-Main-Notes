@@ -28,20 +28,20 @@ sudo rustscan -a ip.txt -b 500 --ulimit 5000 -- -sC -sV -Pn --append-output -oN 
 
 Nmap TCP double check
 ```
-sudo nmap -sS -p- -Pn -A -n -T3 -iL ip.txt -oA medtech_scan
+sudo nmap -sS -p- -Pn -A -n -T3 -iL ip.txt -oA nmap_scan
 ```
 
 ### UDP Scan
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `sudo nmap -sU -sS -sV --top-ports 20 --max-retries 1 -Pn -oA udp_scan ${ip}`;
+const command = `sudo nmap -sU -sS -sV --top-ports 20 --max-retries 1 -Pn -oN udp_scan ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 Nmap UDP Multiple IPs
 ```
-sudo nmap -iL ip.txt -sU -sS -sV --version-intensity 0 --top-ports 20 --max-retries 1 -T4 -Pn -oA udp_scan
+sudo nmap -iL ip.txt -sU -sS -sV --version-intensity 0 --top-ports 20 --max-retries 1 -T4 -Pn -oN udp_scan
 ```
 
 After finding open ports, consult [[0 Port Number Table]].
