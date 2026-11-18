@@ -6,7 +6,13 @@
 
 ### User flag
 
+On nmap, found out domain name is feast.com. Add to /etc/hosts
 
+Port 80 open on MS01. Investigate
+
+192.168.245.170 shows cloudsync with a login page. Given creds allows login. 
+
+Webpage runs php
 
 ### Root flag
 
