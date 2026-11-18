@@ -13,6 +13,10 @@ const command = `sudo ntpdate -s ${ip}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
+
+[[lazagne.exe]]
+[[privesccheck]]
+[[LinWinPEAS]]
 ### The Technical Mapping
 
 | **Linux Action**                      | **Windows Translation**                 | **Command/Tool**                                                                                                                                      |
