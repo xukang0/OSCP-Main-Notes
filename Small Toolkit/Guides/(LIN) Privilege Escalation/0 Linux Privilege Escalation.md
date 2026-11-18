@@ -1,5 +1,25 @@
 
 ```
+find / -perm -4000 2>/dev/null
+```
+
+```
+ls -la /usr/bin/psexec
+```
+
+```
+psexec --version
+```
+
+---
+
+```
+arch
+```
+
+---
+
+```
 sudo -l
 ```
 

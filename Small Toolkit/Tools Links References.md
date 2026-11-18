@@ -1,0 +1,1 @@
+PythonDetector.py https://ph03n1x.net/python-version-detector/

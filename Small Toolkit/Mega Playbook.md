@@ -1,10 +1,12 @@
-# If stuck
+# General
 
 Lower MTU rate
 `sudo ip l s dev tun0 mtu 1250`
 
 Revert machine
+[[Python Detector]]
 
+[[Locating & Fixing Exploits]]
 # Linux
 
 [[Initial Enumeration]]
