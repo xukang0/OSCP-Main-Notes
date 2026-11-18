@@ -1,11 +1,11 @@
 [[Editing Copy Page]]
 
 ```
-
+feroxbuster -u http://192.168.245.170/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -t 42 --filter-status 400,401,403,404 -n
 ```
 
 ```
-
+feroxbuster -u http://192.168.245.170/ -w /usr/share/seclists/Discovery/Web-Content/common.txt -t 42 --filter-status 400,401,403,404 -n
 ```
 
 ```

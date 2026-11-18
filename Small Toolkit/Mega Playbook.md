@@ -1,10 +1,16 @@
 # General
 
+
+
 Lower MTU rate
 `sudo ip l s dev tun0 mtu 1250`
 
 Revert machine
 [[Python Detector]]
+
+```
+export MS01 = IP
+```
 
 [[Locating & Fixing Exploits]]
 # Linux
@@ -21,8 +27,8 @@ If SSH open, try name:name of any person you find
 ---
 # Active Directory
 
-
 [[Initial Enumeration]]
+Nmap + Web
 #### Initial Access
 
 [[SQL Injection]]
