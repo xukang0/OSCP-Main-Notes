@@ -28,6 +28,8 @@ WhiteWinterWolf enhanced webshell (WWWShell.php)
 wget https://raw.githubusercontent.com/WhiteWinterWolf/wwwolf-php-webshell/refs/heads/master/webshell.php 
 ```
 
+---
+
 ```
 cd ~/Desktop/Tools/Shells && 
 ```
@@ -130,6 +132,10 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 
 PHP METHOD 1
+
+```
+cp /usr/share/laudanum/php/php-reverse-shell.php rev.php
+```
 
 [Pentestmonkey php reverse shell](https://github.com/pentestmonkey/php-reverse-shell/blob/master/php-reverse-shell.php)
 

@@ -33,6 +33,9 @@ Nmap + Web
 
 [[SQL Injection]]
 [[Feroxbuster]]
+[[AWS s3 bucket]]
+
+RCE shell upload, if RCE shell does not work, try a WWWshell Webshell. Then upload nc64.exe onto system and execute RCE
 
 #### If user, looking to gain machine root.
 
@@ -43,6 +46,7 @@ Nmap + Web
 
 [[Bloodhound Startup]]
 
+[[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
 [[PSHistory]]
 [[Impacket PsExec]]
 [[SMB NTLMv2 Relay]]

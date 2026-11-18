@@ -105,6 +105,17 @@ PORT      STATE SERVICE       REASON          VERSION
 ---
 ## Discovered Credentials
 
+MS01$ : 91c20f01a967575bdac376bab307c2ea
+
+admin : 018a0ba353ef0848be427697b7de73f4
+
+administrator : 36d7ea9d3983e6337b4cf28f24d93c3a
+
+default/old password : alfpass123
+
+cloudbase init :
+ ffhBnbtKAUg5aiKjxgBC (cur)
+ jDvdFCpIPSVBC72T49PZ
 ---
 ## Interesting Files/Paths
 

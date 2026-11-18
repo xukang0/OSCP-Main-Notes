@@ -4,7 +4,7 @@
 ---
 # Steps to MS01 
 
-### User flag
+### Root flag
 
 On nmap, found out domain name is feast.com. Add to /etc/hosts
 
@@ -14,13 +14,17 @@ Port 80 open on MS01. Investigate
 
 Webpage runs php
 
-### Root flag
+There is hint of s3 aws bucket
 
+Nmap scan on .168, then feroxbuster on port 80 reveals the aws s3 bucket
 
+use [[AWS s3 bucket]] to get RCE
+
+Land as nt authority MS01 and get flag on desktop
 
 ### Pivoting
 
-
+Found alfpass123 in mimikatz
 
 ---
 

