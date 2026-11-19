@@ -171,13 +171,17 @@ If Azure spotted, try ADSync
 3. [[WriteDACL]]  
 4. [[WriteOwner]]  
 5. [[ForceChangePassword]]  
+6. [[AddMember]]
+7. [[AllExtendedRights]]
+8. [[WriteProperty]]
+9. [[AddSelf]]
   
 AD Exploitation  
-6. [[CoerceToTGT]]  
-7. [[RBCD]]  
-8. [[GPO Abuse]]  
-9. [[DCSync]]  
-10. [[Shadow Credentials]]
+10. [[CoerceToTGT]]  
+11. [[RBCD]]  
+12. [[GPO Abuse]]  
+13. [[DCSync]]  
+14. [[Shadow Credentials]]
 
 #### Have creds, login methods
 
