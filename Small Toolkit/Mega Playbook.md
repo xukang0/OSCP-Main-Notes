@@ -88,6 +88,8 @@ Crackstation existing hashes
 
 [[Impacket PsExec]]
 [[1433 MSSQL]]
+[[NXC-Sweep]]
+[[cPassword]]
 
 #### General Priv Esc Enumeration
 

@@ -289,15 +289,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 
 ---
-# cPassword
-
-we can use `gpp-decrypt` which uses AES-256 key to decrypt the data. `gpp-decrypt` is a utility specifically designed to decrypt the `cPassword` (or "cipher-password") attribute found in Group Policy Preferences (GPP) XML files on a Windows domain.
-
-```
-gpp-decrypt [hash]
-```
-
----
 ## Service Accounts : Requires SVC accounts and creds of a standard user
 
 Whenever getting access to domain credentials it is important to test a few of the tools from `impacket`. In this case we will use `GetUserSPNs.py` to extract encrypted passwords of any kerberoastable service accounts.
