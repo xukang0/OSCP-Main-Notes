@@ -59,6 +59,7 @@ Nmap + Web
 [[AWS s3 bucket]]
 [[SMB NTLMv2 Relay]]
 [[NTLM Theft]]
+[[NTLM Auth]]
 
 RCE shell upload, if RCE shell does not work, try a WWWshell Webshell. Then upload nc64.exe onto system and execute RCE
 
@@ -76,7 +77,11 @@ RCE shell upload, if RCE shell does not work, try a WWWshell Webshell. Then uplo
 [[PSHistory]]
 [[Impacket PsExec]]
 [[SMB NTLMv2 Relay]]
+[[NTLM Theft]]
+[[NTLM Auth]]
+[[As-Rep Roasting]]
 Spray existing users and passwords
+Same password as user
 Crackstation existing hashes
 #### Creds, what to do?
 

