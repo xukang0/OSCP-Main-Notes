@@ -1,3 +1,8 @@
+On Target Windows machine, check if RDP is enabled
+```
+reg query "HKLM\SYSTEM\CurrentControlSet\Control\Terminal Server" /v fDenyTSConnections
+```
+
 RDP TCP/3389
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";

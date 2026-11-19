@@ -187,3 +187,7 @@ AD Exploitation
 
 [[Impacket PsExec]]
 [[wmiexec]]
+[[xfreeRDP3]]
+[[winrs]]  > authorised for remote management
+[[DCOM]] > TCP 135 + dynamic RPC
+[[Remote Powershell]]
