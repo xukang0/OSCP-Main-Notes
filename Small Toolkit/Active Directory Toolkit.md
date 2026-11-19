@@ -668,7 +668,9 @@ const command = `impacket-wmiexec -hashes '${hash}' -dc-ip ${ip} administrator@$
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-
+```
+impacket-wmiexec 'DOMAIN/user:password@TARGET'
+```
 
 
 

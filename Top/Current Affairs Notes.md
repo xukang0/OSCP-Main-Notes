@@ -26,18 +26,44 @@ Land as nt authority MS01 and get flag on desktop
 
 Found alfpass123 in mimikatz
 
+There is a passwords.txt in xampp
+
+creds to mysql
+
+Grant myself local RDP privilege.
+
+RDP and finally able to access mysql
+
+use cloudsync database and select * from users;
+
+Gives several creds
+
+john.doe       | 65fbef05e01fac390cb3fa073fb3e8cf : (MD5) anthony
+jane.smith     | e99a18c428cb38d5f260853678922e03 : abc123
+ bob.johnson    | 9fd8301ac24fb88e65d9d7cd1dd1b1ec : butterfly
+ eric.wallows   | 179379cb0fc81ec454606fee56daa46e : None
+ jeff.borrows   | cf9ee5bcb36b4936dd7064ee9b2f139e : naruto
+  alice.williams | d914e3ecf6cc481114a3f534a5faf90b : andrew
+  charlie.brown  | c03a5a4ba81cd3d8e59840a6f0eddad7 : tweety
+
+Try to crackstation them first. Add them into users and passwords list. Nxc spray them
+
+Only jeff.borrows:naruto works against dc01
+
+nxc-sweep shows RDP available.doesnt work
+
+Bloodhound shows jeff.borrows has genericall over mario lemieux. Directly change mario password.
+
+Nxc-sweep mario across all services across all machines. MS02 pwned evilwinrm
+
 ---
 
 # Steps to MS02 
-
-### User flag
-
-
-
-
 ### Root flag
 
+whoami /groups shows mario.lemieux is a localadministrator.
 
+flag on his desktop
 
 ### Pivoting
 

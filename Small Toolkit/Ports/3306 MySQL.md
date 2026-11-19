@@ -107,6 +107,10 @@ Dumps all content out
 select * from username
 ```
 
+```
+SELECT [column1], [column2] FROM [database].[table];
+```
+
 
 ---
 

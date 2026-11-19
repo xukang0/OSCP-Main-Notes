@@ -110,13 +110,59 @@ MS01$ : 91c20f01a967575bdac376bab307c2ea
 admin : 018a0ba353ef0848be427697b7de73f4
 
 administrator : 36d7ea9d3983e6337b4cf28f24d93c3a
-
+ 
 default/old password : alfpass123
 
 cloudbase init :
  ffhBnbtKAUg5aiKjxgBC (cur)
- jDvdFCpIPSVBC72T49PZ
+
+jDvdFCpIPSVBC72T49PZ
+
+1) MySQL (phpMyAdmin):
+
+   User: root
+   Password:
+   (means no password!)
+
+2) FileZilla FTP:
+
+   [ You have to create a new user on the FileZilla Interface ] 
+
+3) Mercury (not in the USB & lite version): 
+
+   Postmaster: Postmaster (postmaster@localhost)
+   Administrator: Admin (admin@localhost)
+
+   User: newuser  
+   Password: wampp 
+
+4) WEBDAV: 
+
+   User: xampp-dav-unsecure
+   Password: ppmax2011
+   Attention: WEBDAV is not active since XAMPP Version 1.7.4.
+   For activation please comment out the httpd-dav.conf and
+   following modules in the httpd.conf
+   
+   LoadModule dav_module modules/mod_dav.so
+   LoadModule dav_fs_module modules/mod_dav_fs.so  
+   
+   Please do not forget to refresh the WEBDAV authentification (users and passwords).
+
+john.doe       | 65fbef05e01fac390cb3fa073fb3e8cf 
+jane.smith     | e99a18c428cb38d5f260853678922e03
+ bob.johnson    | 9fd8301ac24fb88e65d9d7cd1dd1b1ec
+ eric.wallows   | 179379cb0fc81ec454606fee56daa46e
+ jeff.borrows   | cf9ee5bcb36b4936dd7064ee9b2f139e
+  alice.williams | d914e3ecf6cc481114a3f534a5faf90b
+  charlie.brown  | c03a5a4ba81cd3d8e59840a6f0eddad7
+Try to crackstation them first
+
+
+
+
 ---
+
 ## Interesting Files/Paths
 
 ---
