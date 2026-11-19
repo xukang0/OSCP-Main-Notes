@@ -334,7 +334,7 @@ If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 [[LinWinPEAS]]
 [[0 Seatbelt.exe]]
 ## whoami /priv
-[[SeManageVolume]]
+[[SeManageVolumePrivilege]]
 [[SeBackupPrivilege]]
 [[SeRestorePrivilege]]
 [[SeImpersonatePrivilege]]

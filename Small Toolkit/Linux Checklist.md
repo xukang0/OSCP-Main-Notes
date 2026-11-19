@@ -259,7 +259,7 @@ ls -la /usr/bin/
 > - [ ]  [[SeImpersonatePrivilege]]
 > - [ ]  [[SeBackupPrivilege]]
 > - [ ]  [[SeRestorePrivilege]]
-> - [ ]  [[SeManageVolume]]
+> - [ ]  [[SeManageVolumePrivilege]]
 > 
 > #### Hijack
 > - [ ]  [[Hijack EXE]]

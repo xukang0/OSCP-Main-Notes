@@ -131,10 +131,8 @@ Crackstation existing hashes
 
 ---
 #### Creds, what to do?
-
 [[NXC-Sweep]]
 [[cPassword]]
-
 #### Login methods
 [[Impacket PsExec]] > SMB (445), administrative privileges
 [[Synced OSCP Notes/Small Toolkit/Tools/Evil-Winrm|Evil-Winrm]] >  WinRM (5985/5986),  remote shell permissions
@@ -148,21 +146,16 @@ Crackstation existing hashes
 
 ---
 #### General Priv Esc Enumeration
-
 [[LinWinPEAS]]
 [[SharpUp.exe]]
 [[PowerUp.ps1]]
 [[0 Seatbelt.exe]]
 #### Directory Enumeration
-
 [[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
 
-https://github.com/G4sp4rCS/backup-operator-to-domain-admin-POC/tree/main
-
-#### Priv Esc
-
+#### whoami /priv
 [[SeImpersonatePrivilege]] > [[SharpEfsPotato]]
-[[SeManageVolume]]
+[[SeManageVolumePrivilege]]
 [[SeBackupPrivilege]]
 [[SeRestorePrivilege]]
 

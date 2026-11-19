@@ -259,7 +259,7 @@
 > - [ ]  [[SeImpersonatePrivilege]]
 > - [ ]  [[SeBackupPrivilege]]
 > - [ ]  [[SeRestorePrivilege]]
-> - [ ]  [[SeManageVolume]]
+> - [ ]  [[SeManageVolumePrivilege]]
 > 
 > #### Hijack
 > - [ ]  [[Hijack EXE]]
