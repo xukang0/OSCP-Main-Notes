@@ -34,10 +34,8 @@ If SSH open, try name:name of any person you find
 [[SQL Injection]]
 
 
-
 ---
 # Active Directory
-
 
 #### General
 
@@ -45,6 +43,16 @@ Disable Antivirus
 ```
 Set-MpPreference -DisableRealtimeMonitoring $true
 ```
+Show Hidden Files in Directory
+```
+dir -Force
+```
+Check Recycle bin
+```
+cd '$RECYCLE.BIN'
+```
+
+Recycle Bins have two types of files. The ones that start with `$I` store metadata about the file. The `$R` file holds the original content.
 
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/Net|Net]]
 [[NXC-Sweep]]
@@ -53,6 +61,7 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 #### Initial Enumeration
 [[Initial Enumeration]]
 Nmap + Web
+[[NetExec]]
 
 ---
 #### Initial Access
@@ -97,6 +106,11 @@ Group Policy Preferences have historically exposed credentials through an attrib
 [[SMB NTLMv2 Relay]]
 [[NTLM Theft]]
 [[NTLM Auth]]
+#### AutoLogon
+```
+reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon"
+```
+[[Synced OSCP Notes/Small Toolkit/Guides/AD/Windows Credential Manager|Windows Credential Manager]]
 
 If you have a list of usernames, but no password
 [[As-Rep Roasting]]
@@ -143,8 +157,13 @@ Any foreign groups, research.
 If Azure spotted, try ADSync
 [[Azure Admins Group]]
 [[LAPS]]
-## AD/ACL Techniques
+#### AD/ACL Techniques
 
 [[ACL Abuse]]
 
 [[CoerceToTGT]]
+
+#### Have creds, login methods
+
+[[Impacket PsExec]]
+[[wmiexec]]
