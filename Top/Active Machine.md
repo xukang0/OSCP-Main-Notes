@@ -1,44 +1,56 @@
-[[Active Machine Template]]
+[[Active Notes Template]]
+## Provided Credentials
+---
 
-| Machine | IP Address      | Notes |
-| ------- | --------------- | ----- |
-| storage | 192.168.245.168 |       |
-| DC01    | 192.168.245.169 |       |
-| MS01    | 192.168.245.170 | creds |
-| MS02    | 192.168.245.171 |       |
-|         |                 |       |
-|         |                 |       |
-
-MACHINE:: Feast/MS01
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
-
-const command = `${machine}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   192.168.245.170
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `${ip}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  192.168.45.186
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `${KaliIP}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
 ```
-Discovered Web Domain::   ms01.feast.com
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");
-const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `http://${discoveredDomain}/`;
+```
 
-dv.paragraph("```bash\n" + command + "\n```");
+---
+## Open Ports
+
+```powershell
+
+```
+
+---
+## Software Versions
+
+```powershell
+
+```
+
+---
+## Discovered Subdomains
+
+---
+## Discovered Credentials
+
+---
+## Interesting Files/Paths
+
+---
+## Attack Ideas
+
+---
+## Steps to User.txt
+
+---
+## Steps to root.txt
+
+---
+## User Flag
+
+```
+
+```
+
+## Root Flag
+
+```
+
 ```
