@@ -1,6 +1,17 @@
 # General
 
+#### Time Sync
 
+```
+sudo timedatectl set-ntp false
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `sudo ntpdate -s ${ip}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 Lower MTU rate
 `sudo ip l s dev tun0 mtu 1250`

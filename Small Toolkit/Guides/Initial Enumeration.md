@@ -160,3 +160,5 @@ Check backups (.bak, .zip)
 > - [ ] Default creds
 > - [ ] [[Wordpress Scan]]
 
+
+[[Searchsploit]]
