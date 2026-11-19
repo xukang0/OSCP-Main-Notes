@@ -38,9 +38,21 @@ If SSH open, try name:name of any person you find
 ---
 # Active Directory
 
+
+#### General
+
+Disable Antivirus
+```
+Set-MpPreference -DisableRealtimeMonitoring $true
+```
+
+[[Synced OSCP Notes/Small Toolkit/Guides/AD/Net|Net]]
+
+#### Initial Enumeration
 [[Initial Enumeration]]
 Nmap + Web
 #### Initial Access
+
 
 [[SQL Injection]]
 [[Feroxbuster]]
@@ -60,6 +72,7 @@ RCE shell upload, if RCE shell does not work, try a WWWshell Webshell. Then uplo
 [[Bloodhound Startup]]
 
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
+[[Rubeus.exe]]
 [[PSHistory]]
 [[Impacket PsExec]]
 [[SMB NTLMv2 Relay]]

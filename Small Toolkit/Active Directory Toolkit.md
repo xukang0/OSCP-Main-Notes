@@ -340,7 +340,7 @@ const command = `cp ~/Desktop/Tools/Windows/nxc-sweep . && ./nxc-sweep ${ip} -u 
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-user and hash
+user and NT hash
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 

@@ -4,7 +4,7 @@
 ---
 # Steps to MS01 
 
-### User flag
+### Root flag
 
 Test given creds with nxc
 
@@ -22,12 +22,14 @@ hash captured
 
 Administrator:500:aad3b435b51404eeaad3b435b51404ee:15759746f66f2da88d58f0160f8ee676:::
 Admin:1001:aad3b435b51404eeaad3b435b51404ee:3d560aa3cba6bb673b7ef3a30628bf16:::
-### Root flag
 
+use psexec to enter NT authority of .174
 
+Flag on administrator desktop
 
 ### Pivoting
 
+There is a pcapng file on Administrator documents. With wireshark, fine Yulia.weber:Laser777
 
 
 ---

