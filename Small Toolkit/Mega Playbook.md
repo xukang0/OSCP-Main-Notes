@@ -78,7 +78,6 @@ SMB Share Enumeration > [[SMB]]
 ---
 #### Initial Access
 
-
 [[SQL Injection]]
 [[Feroxbuster]]
 [[AWS s3 bucket]]
@@ -144,6 +143,9 @@ Dumping
 [[NTLM Theft]]
 [[NTLM Auth]]
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/LSASS|LSASS]]
+
+Kerberos Techniques
+[[Pass The Hash (PtH)]]
 
 If you have a list of usernames, but no password
 [[ASREP Roasting]]

