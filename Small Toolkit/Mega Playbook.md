@@ -45,6 +45,8 @@ Nmap + Web
 [[SQL Injection]]
 [[Feroxbuster]]
 [[AWS s3 bucket]]
+[[SMB NTLMv2 Relay]]
+[[NTLM Theft]]
 
 RCE shell upload, if RCE shell does not work, try a WWWshell Webshell. Then upload nc64.exe onto system and execute RCE
 

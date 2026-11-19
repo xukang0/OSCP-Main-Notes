@@ -22,7 +22,7 @@ SMB Cred Connect
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `smbclient //${discoveredDomain}/shared -u [user] -p '[password]'`;
+const command = `smbclient //${discoveredDomain}/shared -U "laser/eric.wallows%EricLikesRunning800"`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -35,4 +35,16 @@ Whilst having Responder on:
 
 ```
 sudo responder -I tun0
+```
+
+---
+
+```
+john -w=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+or
+
+```
+hashcat -a 0 -m 5600 hash.txt /usr/share/wordlists/rockyou.txt
 ```
