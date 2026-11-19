@@ -1,0 +1,3 @@
+```
+strings file.pcapng
+```

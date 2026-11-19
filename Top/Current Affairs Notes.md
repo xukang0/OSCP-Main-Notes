@@ -29,21 +29,24 @@ Flag on administrator desktop
 
 ### Pivoting
 
-There is a pcapng file on Administrator documents. With wireshark, fine Yulia.weber:Laser777
+There is a pcapng file on Administrator documents. With wireshark, fine Yulia.weber: Yulia@Laser777
 
 
 ---
 
-# Steps to MS02 
+# Steps to DC01 
 
 ### User flag
 
-
-
+Can RDP into yulia. local.txt on her desktop
 
 ### Root flag
 
+Since yulia has genericwrite over boris
 
+[[[Targeted Kerberoasting]]
+
+dump boris crawford kerberos hash
 
 ### Pivoting
 
