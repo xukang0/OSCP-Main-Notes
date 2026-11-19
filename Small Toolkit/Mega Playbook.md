@@ -100,10 +100,15 @@ Group Policy Preferences have historically exposed credentials through an attrib
 
 [[Bloodhound Startup]]
 
+Creds related
+[[Autologon]]
+[[Synced OSCP Notes/Small Toolkit/Guides/AD/Windows Credential Manager|Windows Credential Manager]]
+[[PSHistory]]
+
+Dumping
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
 [[Rubeus.exe]]
 [[Runas]]
-[[PSHistory]]
 [[Impacket PsExec]]
 [[SMB NTLMv2 Relay]]
 [[NTLM Theft]]
@@ -119,11 +124,6 @@ If you have creds of a domain user, and/discover which SVC accounts exist
 
 Sometimes the svc account guy has a personal account as well which he reuses the same password for
 
-Autologon
-```
-reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon"
-```
-[[Synced OSCP Notes/Small Toolkit/Guides/AD/Windows Credential Manager|Windows Credential Manager]]
 
 Spray existing users and passwords
 Same password as user
@@ -132,10 +132,21 @@ Crackstation existing hashes
 ---
 #### Creds, what to do?
 
-[[Impacket PsExec]]
-[[1433 MSSQL]]
 [[NXC-Sweep]]
 [[cPassword]]
+
+#### Login methods
+[[Impacket PsExec]] > SMB (445), administrative privileges
+[[Synced OSCP Notes/Small Toolkit/Tools/Evil-Winrm|Evil-Winrm]] >  WinRM (5985/5986),  remote shell permissions
+[[wmiexec]] > RPC/DCOM connectivity, typically local admin
+[[xfreeRDP3]] >  RDP (3389), RDP logon permissions
+[[DCOM]] > TCP 135 + dynamic RPC + local admin
+[[1433 MSSQL]] > impacketmssqlclient
+
+[[winrs]]  > authorised for remote management
+[[Remote Powershell]]
+
+---
 #### General Priv Esc Enumeration
 
 [[LinWinPEAS]]
@@ -183,11 +194,3 @@ AD Exploitation
 13. [[DCSync]]  
 14. [[Shadow Credentials]]
 
-#### Have creds, login methods
-
-[[Impacket PsExec]]
-[[wmiexec]]
-[[xfreeRDP3]]
-[[winrs]]  > authorised for remote management
-[[DCOM]] > TCP 135 + dynamic RPC
-[[Remote Powershell]]
