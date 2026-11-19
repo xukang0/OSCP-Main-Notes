@@ -47,6 +47,7 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 ```
 
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/Net|Net]]
+[[NXC-Sweep]]
 
 #### Initial Enumeration
 [[Initial Enumeration]]
