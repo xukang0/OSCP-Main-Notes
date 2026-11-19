@@ -119,10 +119,10 @@ Credential Discovery
 [[GMSA]]
 [[WinSCP]]
 [[FileZilla]]
+[[PuTTY]]
 
 Directory Enumeration
 [[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
-[[PuTTY]]
 SSH key discovery
 
 **Services:**
