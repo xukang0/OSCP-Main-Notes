@@ -117,6 +117,23 @@ Credential Discovery
 [[GPP]] > cPassword
 [[Unattended Files]]
 [[GMSA]]
+[[WinSCP]]
+[[FileZilla]]
+
+Directory Enumeration
+[[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
+[[PuTTY]]
+SSH key discovery
+
+**Services:**
+```
+wmic service get name,startname,pathname
+```
+
+**Search common configuration and script files:**
+```
+Get-ChildItem C:\ -Include *.config,*.ini,*.xml,*.ps1,*.bat,*.cmd -File -Recurse -ErrorAction SilentlyContinue
+```
 
 Dumping
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
@@ -164,9 +181,6 @@ Crackstation existing hashes
 [[SharpUp.exe]]
 [[PowerUp.ps1]]
 [[0 Seatbelt.exe]]
-#### Directory Enumeration
-[[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
-
 #### whoami /priv
 [[SeImpersonatePrivilege]] > [[SharpEfsPotato]]
 [[SeManageVolumePrivilege]]
