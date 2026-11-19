@@ -146,6 +146,11 @@ Dumping
 
 Kerberos Techniques
 [[Pass The Hash (PtH)]]
+[[Overpass The Hash]]
+[[Pass The Ticket]]
+[[Kerberoasting]]
+[[Silver Ticket]]
+[[Golden Ticket]]
 
 If you have a list of usernames, but no password
 [[ASREP Roasting]]

