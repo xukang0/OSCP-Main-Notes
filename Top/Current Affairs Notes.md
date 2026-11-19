@@ -48,6 +48,11 @@ Since yulia has genericwrite over boris
 
 dump boris crawford kerberos hash
 
+with john i get boris.crawford : zxcvbnm
+
+nxc sweep shows pwned on winrm dc01
+
+since boris.crawford is domain admin, flag is on his desktop
 ### Pivoting
 
 
