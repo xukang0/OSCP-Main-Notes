@@ -186,7 +186,7 @@ If Azure spotted, try ADSync
 AD Exploitation  
 10. [[CoerceToTGT]]  
 11. [[RBCD]]  
-12. [[GPO Abuse]]  
+12. [[GPO Abuse]]  > WriteGPLink
 13. [[DCSync]]  
 14. [[Shadow Credentials]]
 15. [[LAPS]]

