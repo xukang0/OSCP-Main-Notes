@@ -113,6 +113,7 @@ Dumping
 [[SMB NTLMv2 Relay]]
 [[NTLM Theft]]
 [[NTLM Auth]]
+[[Synced OSCP Notes/Small Toolkit/Guides/AD/LSASS|LSASS]]
 
 If you have a list of usernames, but no password
 [[ASREP Roasting]]
@@ -158,6 +159,8 @@ Crackstation existing hashes
 [[SeManageVolumePrivilege]]
 [[SeBackupPrivilege]]
 [[SeRestorePrivilege]]
+[[SeDebugPrivilege]]
+[[SeTakeOwnershipPrivilege]]
 
 Any foreign groups, research.
 [[GPO Abuse]]
