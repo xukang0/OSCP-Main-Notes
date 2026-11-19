@@ -35,6 +35,16 @@ If SSH open, try name:name of any person you find
 
 
 ---
+# Windows
+
+#### General Priv Esc Enumeration
+[[LinWinPEAS]]
+[[SharpUp.exe]]
+[[PowerUp.ps1]]
+[[0 Seatbelt.exe]]
+[[WES-NG]]
+
+---
 # Active Directory
 
 #### General
@@ -100,10 +110,13 @@ Group Policy Preferences have historically exposed credentials through an attrib
 
 [[Bloodhound Startup]]
 
-Creds related
+Credential Discovery
 [[Autologon]]
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/Windows Credential Manager|Windows Credential Manager]]
 [[PSHistory]]
+[[GPP]] > cPassword
+[[Unattended Files]]
+[[GMSA]]
 
 Dumping
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
@@ -133,7 +146,7 @@ Crackstation existing hashes
 ---
 #### Creds, what to do?
 [[NXC-Sweep]]
-[[cPassword]]
+[[GPP]]
 #### Login methods
 [[Impacket PsExec]] > SMB (445), administrative privileges
 [[Synced OSCP Notes/Small Toolkit/Tools/Evil-Winrm|Evil-Winrm]] >  WinRM (5985/5986),  remote shell permissions

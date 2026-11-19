@@ -1,3 +1,6 @@
+```
+cmdkey /list
+```
 
 Credentials folder (Credentials)
 ```
