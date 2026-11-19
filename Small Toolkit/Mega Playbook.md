@@ -49,9 +49,12 @@ Set-MpPreference -DisableRealtimeMonitoring $true
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/Net|Net]]
 [[NXC-Sweep]]
 
+---
 #### Initial Enumeration
 [[Initial Enumeration]]
 Nmap + Web
+
+---
 #### Initial Access
 
 
@@ -64,23 +67,47 @@ Nmap + Web
 
 RCE shell upload, if RCE shell does not work, try a WWWshell Webshell. Then upload nc64.exe onto system and execute RCE
 
+---
 #### If user, looking to gain machine root.
 
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
 [[Watch-Command]]
+[[Sqlite]]
 
+#### Web
+If [[Windows LFI RFI]], call back to [[Responder]] for ntlm hash
+[[inetpub]] in file system
+
+Check for value files like lsass.zip
+
+SYSVOL contains Group Policy files, scripts and configuration data. Those can sometimes reveal credentials, service configurations or other weaknesses.
+
+Group Policy Preferences have historically exposed credentials through an attribute called `cpassword` in services.xml
+
+---
 #### If admin user, looking to move laterally.
 
 [[Bloodhound Startup]]
 
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
 [[Rubeus.exe]]
+[[Runas]]
 [[PSHistory]]
 [[Impacket PsExec]]
 [[SMB NTLMv2 Relay]]
 [[NTLM Theft]]
 [[NTLM Auth]]
+
+If you have a list of usernames, but no password
 [[As-Rep Roasting]]
+
+If you have creds of a domain user, and/discover which SVC accounts exist
+[[Kerberoasting]]
+
+[[Active Directory Toolkit|-k nxc kerberos ticket]]
+
+Sometimes the svc account guy has a personal account as well which he reuses the same password for
+
 Spray existing users and passwords
 Same password as user
 Crackstation existing hashes
@@ -96,7 +123,7 @@ Crackstation existing hashes
 [[LinWinPEAS]]
 [[SharpUp.exe]]
 [[PowerUp.ps1]]
-
+[[0 Seatbelt.exe]]
 #### Directory Enumeration
 
 [[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
@@ -106,3 +133,18 @@ https://github.com/G4sp4rCS/backup-operator-to-domain-admin-POC/tree/main
 #### Priv Esc
 
 [[SeImpersonatePrivilege]] > [[SharpEfsPotato]]
+[[SeManageVolume]]
+[[SeBackupPrivilege]]
+[[SeRestorePrivilege]]
+
+Any foreign groups, research.
+[[GPO Abuse]]
+
+If Azure spotted, try ADSync
+[[Azure Admins Group]]
+[[LAPS]]
+## AD/ACL Techniques
+
+[[ACL Abuse]]
+
+[[CoerceToTGT]]
