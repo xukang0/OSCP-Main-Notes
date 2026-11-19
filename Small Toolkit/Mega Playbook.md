@@ -61,7 +61,9 @@ Recycle Bins have two types of files. The ones that start with `$I` store metada
 #### Initial Enumeration
 [[Initial Enumeration]]
 Nmap + Web
-[[NetExec]]
+Initial Domain Enumeration > [[NetExec]]
+RPC Domain Enumeration > [[135 RPC]]
+SMB Share Enumeration > [[SMB]]
 
 ---
 #### Initial Access
@@ -94,7 +96,7 @@ SYSVOL contains Group Policy files, scripts and configuration data. Those can so
 Group Policy Preferences have historically exposed credentials through an attribute called `cpassword` in services.xml
 
 ---
-#### If admin user, looking to move laterally.
+#### If admin user, no new creds, looking to move laterally.
 
 [[Bloodhound Startup]]
 
@@ -106,14 +108,9 @@ Group Policy Preferences have historically exposed credentials through an attrib
 [[SMB NTLMv2 Relay]]
 [[NTLM Theft]]
 [[NTLM Auth]]
-#### AutoLogon
-```
-reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon"
-```
-[[Synced OSCP Notes/Small Toolkit/Guides/AD/Windows Credential Manager|Windows Credential Manager]]
 
 If you have a list of usernames, but no password
-[[As-Rep Roasting]]
+[[ASREP Roasting]]
 
 If you have creds of a domain user, and/discover which SVC accounts exist
 [[Kerberoasting]]
@@ -122,16 +119,23 @@ If you have creds of a domain user, and/discover which SVC accounts exist
 
 Sometimes the svc account guy has a personal account as well which he reuses the same password for
 
+Autologon
+```
+reg.exe query "HKLM\software\microsoft\windows nt\currentversion\winlogon"
+```
+[[Synced OSCP Notes/Small Toolkit/Guides/AD/Windows Credential Manager|Windows Credential Manager]]
+
 Spray existing users and passwords
 Same password as user
 Crackstation existing hashes
+
+---
 #### Creds, what to do?
 
 [[Impacket PsExec]]
 [[1433 MSSQL]]
 [[NXC-Sweep]]
 [[cPassword]]
-
 #### General Priv Esc Enumeration
 
 [[LinWinPEAS]]
@@ -157,11 +161,23 @@ Any foreign groups, research.
 If Azure spotted, try ADSync
 [[Azure Admins Group]]
 [[LAPS]]
+
+[[ADCS]]
 #### AD/ACL Techniques
 
-[[ACL Abuse]]
-
-[[CoerceToTGT]]
+[[ACL Abuse]]  
+1. [[GenericAll]]  
+2. [[GenericWrite]]  
+3. [[WriteDACL]]  
+4. [[WriteOwner]]  
+5. [[ForceChangePassword]]  
+  
+AD Exploitation  
+6. [[CoerceToTGT]]  
+7. [[RBCD]]  
+8. [[GPO Abuse]]  
+9. [[DCSync]]  
+10. [[Shadow Credentials]]
 
 #### Have creds, login methods
 

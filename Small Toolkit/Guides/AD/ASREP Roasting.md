@@ -23,3 +23,7 @@ const command = `impacket-GetNPUsers -request -usersfile users ${discoveredDomai
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+```
+impacket-GetNPUsers DOMAIN/ -usersfile users.txt -dc-ip <DC_IP>
+```

