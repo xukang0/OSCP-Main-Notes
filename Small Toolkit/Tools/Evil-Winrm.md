@@ -38,3 +38,13 @@ const command = `evil-winrm -i ${discoveredDomain} -S -k ${filename}.key -c ${fi
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+
+---
+
+```
+evil-winrm -i 10.10.10.X -u user -p 'password'
+```
+
+```
+evil-winrm -i 10.10.10.X -u user -H <NTLM_HASH>
+```

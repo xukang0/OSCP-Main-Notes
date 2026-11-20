@@ -120,6 +120,7 @@ Credential Discovery
 [[WinSCP]]
 [[FileZilla]]
 [[PuTTY]]
+[[DPAPI]]
 
 Directory Enumeration
 [[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
@@ -177,10 +178,12 @@ Crackstation existing hashes
 #### Creds, what to do?
 [[NXC-Sweep]]
 [[GPP]]
-#### Login methods
+#### Lateral Movement Login methods
 [[Impacket PsExec]] > SMB (445), administrative privileges
 [[Synced OSCP Notes/Small Toolkit/Tools/Evil-Winrm|Evil-Winrm]] >  WinRM (5985/5986),  remote shell permissions
 [[wmiexec]] > RPC/DCOM connectivity, typically local admin
+[[smbexec]]
+[[atexec]]
 [[xfreeRDP3]] >  RDP (3389), RDP logon permissions
 [[DCOM]] > TCP 135 + dynamic RPC + local admin
 [[1433 MSSQL]] > impacketmssqlclient

