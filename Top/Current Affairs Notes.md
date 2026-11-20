@@ -1,57 +1,16 @@
 
 [[Current Affairs Notes Template]]
 
----
-# Steps to MS01 
-
+# Steps to Aero
 ### User flag
 
+Dirbust port 80, 81, and 443 found api/heartbeat
 
+Mention of aerospike
 
-### Root flag
+Exploit db found poc get RCE
 
-
-
-### Pivoting
-
-
-
----
-
-# Steps to MS02 
-
-### User flag
-
-
-
-
-### Root flag
-
-
-
-### Pivoting
-
-
-# Steps to DC01
-
-### User flag
-
-
-
-### Root flag
-
-
-
-### Pivoting
-
-
-
----
-
-# Steps to Frankfurt
-### User flag
-
-
+Flag on aero /home dir
 
 ### Root flag
 

