@@ -1,3 +1,6 @@
+Add IPs to ip.txt
+
+---
 Add hosts to /etc/hosts 
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
