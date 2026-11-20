@@ -153,6 +153,11 @@ Kerberos Techniques
 [[Silver Ticket]]
 [[Golden Ticket]]
 
+Delegation Attacks
+[[Unconstrained Delegation]]
+[[Constrained Delegation]]
+[[RBCD]]
+
 If you have a list of usernames, but no password
 [[ASREP Roasting]]
 
