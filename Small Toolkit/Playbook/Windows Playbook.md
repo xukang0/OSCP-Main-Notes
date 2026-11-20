@@ -12,10 +12,15 @@ const command = `ping ${ip}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ttl = 61 > Linux
-ttl = 126 > Windows
+ttl = 125 > Windows
 
 ---
 # Windows
+
+[[Windows Initial Enumeration]]
+
+#### Initial access stuck
+
 
 ### **Credential discovery**
 
