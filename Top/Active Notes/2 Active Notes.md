@@ -83,6 +83,35 @@ Open 192.168.245.141:49713
 ---
 ## Discovered Credentials
 
+MS01$ : cbe2aba6fb6a9a54c889087fab8afeba
+
+Mary.Williams : 9a3121977ee93af56ebd0ef4f527a35e NO Crack
+
+Celia.Almeda : e728ecbadfb02f51ce8eed753f3ff3fd No Crack
+
+admin : 2f0330d04480d07becb77bdb3bd995a9 no Crack
+
+cloudbase-init : fe0cab7f85305845bc7e016fcd51ee8d No Crack
+
+support : d9358122015c5b159574a88b3c0d2071 Freedom1
+
+Secret  : _SC_wampmariadb64 / service 'wampmariadb64' with username : .\Mary.Williams
+cur/text: 69jHwjGN2bPQFvJ no crack
+
+Secret  : DefaultPassword
+cur/text: 7k8XHk3dMtmpnC7 no crack
+
+Mysql
+    CHANGE MASTER TO MASTER_HOST='125.564.12.1', MASTER_PORT=3306,
+;    MASTER_USER='joe', MASTER_PASSWORD='secret';
+
+
+
+|         |          |
+| ------- | -------- |
+| support | Freedom1 |
+
+
 ---
 ## Interesting Files/Paths
 
@@ -96,6 +125,14 @@ SMB share enumeration SEEN
 mySQL 3306 3307
 
 port 81 attendance and payroll input
+
+Spray creds against all users SEEN
+
+Celia.Almeda has read access to a share called Users on DC01. 
+
+EvilWinRM on MS02 pwned.  SEEN
+
+MSSQL access on MS02
 
 ---
 ## Steps to User.txt
@@ -127,6 +164,29 @@ Enumerate internal subnet IPs. Nmap scan both internal ports.
 Notice Eric.Wallows has SeImpersonatePrivilege > [[SharpEfsPotato]]
 
 Gain NT authority on MS01
+
+# Pivoting
+
+Run mimikatz.exe. Found interesting hashes for some user accounts. Attempt to crackstation them.
+
+Seems like Support : Freedom1 is found. Add this to passwords and creds.
+
+nxc spray everything to understand what support can be used for. Unfortunately, support creds doesnt work for SMB
+
+Bloodhound enumeration to understand the system better. Nothing much interesting
+
+Try to spray all hashes against usernames. Celia.Almeda works.
+
+Celia.Almeda has read access to a share called Users on DC01. EvilWinRM on MS02 pwned. MSSQL access on MS02
+
+# MS02 Local
+
+Celia.Almeda can enter MS02 and has user access to MS02
+
+Try to priv esc
+
+# MS02 Root
+
 
 
 

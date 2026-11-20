@@ -1,7 +1,7 @@
 # Transfer 
 
 ```
-cd ~/Desktop/Tools/Windows/mimikatz && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/Windows/mimikatz
 ```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";

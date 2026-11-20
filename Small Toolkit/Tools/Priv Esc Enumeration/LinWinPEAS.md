@@ -1,5 +1,5 @@
 ```
-cd ~/Desktop/Tools/PEAS && python3 -m http.server 8888
+python3 -m http.server 8888 --directory ~/Desktop/Tools/PEAS
 ```
 
 Directly execute into bash without downloading anyt
@@ -31,7 +31,7 @@ wget https://github.com/peass-ng/PEASS-ng/releases/download/20260212-43b28429/wi
 ---
 
 ```
-cd ~/Desktop/Tools/Windows && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/Windows
 ```
 
 ```dataviewjs

