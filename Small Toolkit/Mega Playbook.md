@@ -73,7 +73,8 @@ Recycle Bins have two types of files. The ones that start with `$I` store metada
 Nmap + Web
 Initial Domain Enumeration > [[NetExec]]
 RPC Domain Enumeration > [[135 RPC]]
-SMB Share Enumeration > [[SMB]]
+SMB Share Enumeration > [[139 445 SMB]]
+[[LDAP Enumeration]]
 
 ---
 #### Initial Access
