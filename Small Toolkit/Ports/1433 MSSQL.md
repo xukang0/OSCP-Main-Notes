@@ -41,6 +41,10 @@ const command = `impacket-mssqlclient '${discoveredDomain}/[user]:[PW]@${discove
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+PTH
+```
+impacket-mssqlclient DOMAIN/username@192.168.245.141 -windows-auth -hashes :NTHASH
+```
 
 ```
 SELECT name FROM master.dbo.sysdatabases

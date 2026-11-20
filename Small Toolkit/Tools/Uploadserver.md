@@ -16,7 +16,7 @@ uploadserver 4445
 Import Powershell script to upload a file to KALI upload server. (Executes immediately)
 
 ```
-cd ~/Desktop/Tools/Windows && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/Windows
 ```
 
 On TARGET

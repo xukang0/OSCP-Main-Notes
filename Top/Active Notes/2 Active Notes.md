@@ -105,6 +105,8 @@ Mysql
     CHANGE MASTER TO MASTER_HOST='125.564.12.1', MASTER_PORT=3306,
 ;    MASTER_USER='joe', MASTER_PASSWORD='secret';
 
+web_svc : Diamond1
+
 
 
 |         |          |
@@ -132,7 +134,7 @@ Celia.Almeda has read access to a share called Users on DC01.
 
 EvilWinRM on MS02 pwned.  SEEN
 
-MSSQL access on MS02
+MSSQL access on MS02 SEEN
 
 ---
 ## Steps to User.txt
@@ -183,7 +185,13 @@ Celia.Almeda has read access to a share called Users on DC01. EvilWinRM on MS02 
 
 Celia.Almeda can enter MS02 and has user access to MS02
 
+Celia.Almeda can enter MSSQL using PTH but nothing inside
+
 Try to priv esc
+
+Seems like kerberoasting gives kerb hashes for web_svc and sql_svc
+
+Crack the hashes. Web_svc gives Diamond1. SQL_svc cannot be cracked
 
 # MS02 Root
 

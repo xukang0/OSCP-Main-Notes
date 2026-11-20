@@ -117,7 +117,7 @@ Credential Discovery
 [[DPAPI]]
 
 Directory Enumeration
-[[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]]
+[[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]] > Check C:\
 SSH key discovery
 
 **Services:**
@@ -131,11 +131,11 @@ Get-ChildItem C:\ -Include *.config,*.ini,*.xml,*.ps1,*.bat,*.cmd -File -Recurse
 ```
 
 Dumping
-[[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
+[[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]] > !
 [[Rubeus.exe]]
 [[Runas]]
 [[Impacket PsExec]]
-[[SMB NTLMv2 Relay]]
+[[SMB NTLMv2 Relay]] > !
 [[NTLM Theft]]
 [[NTLM Auth]]
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/LSASS|LSASS]]
@@ -144,7 +144,7 @@ Kerberos Techniques : Service accounts
 [[Pass The Hash (PtH)]]
 [[Overpass The Hash]]
 [[Pass The Ticket]]
-[[Kerberoasting]]
+[[Kerberoasting]] > !
 [[Silver Ticket]]
 [[Golden Ticket]]
 
@@ -154,7 +154,7 @@ Delegation Attacks
 [[RBCD]]
 
 If you have a list of usernames, but no password
-[[ASREP Roasting]]
+[[ASREP Roasting]] 
 
 If you have creds of a domain user, and/discover which SVC accounts exist
 [[Kerberoasting]]

