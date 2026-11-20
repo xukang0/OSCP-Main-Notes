@@ -27,3 +27,11 @@ nxc smb <DC_IP> -u USER -p PASS --pass-pol
 ```
 nxc smb <DC_IP> -u USER -p PASS
 ```
+#### If untrusted domain / local account suspected
+```
+nxc mssql <IP> -u <USER> -p '<PASS>' -d <HOSTNAME>
+```
+#### Alternatively, explicitly try local authentication
+```
+nxc mssql <IP> -u <USER> -p '<PASS>' --local-auth
+```

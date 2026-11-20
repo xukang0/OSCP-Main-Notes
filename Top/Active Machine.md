@@ -2,12 +2,12 @@
 
 ```dataviewjs
 const machines = [
-    ["", "10.10.245.146", ""],
-    ["MS01", "192.168.245.147", "creds"],
-    ["", "10.10.245.148", ""],
-    ["S1", "192.168.245.149", ""],
-    ["S2", "192.168.245.150", ""],
-    ["S3", "192.168.245.151", ""]
+    ["", "10.10.245.152", ""],
+    ["MS01", "192.168.245.153", "creds"],
+    ["", "10.10.245.154", ""],
+    ["S1", "192.168.245.156", ""],
+    ["S2", "192.168.245.157", ""],
+    ["S3", "192.168.245.155", ""]
 ];
 
 const table = dv.container.createEl("table");
@@ -53,7 +53,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::  10.10.245.148
+IP::  192.168.245.153
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 

@@ -47,3 +47,12 @@ dv.paragraph("```bash\n" + command + "\n```");
 -d [domain]
 
 In NetExec (and its predecessor CrackMapExec), seeing (Pwn3d!) next to a set of credentials means that the provided username and password are valid and possess administrative or code execution privileges on that target
+
+#### If untrusted domain / local account suspected
+```
+nxc mssql <IP> -u <USER> -p '<PASS>' -d <HOSTNAME>
+```
+#### Alternatively, explicitly try local authentication
+```
+nxc mssql <IP> -u <USER> -p '<PASS>' --local-auth
+```
