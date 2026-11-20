@@ -122,6 +122,12 @@ On his C:\Users, we see more interesting user accounts. Add to users. There is a
 
 With ping test, seems like MS01 can reach internal subnet. Ligolo pivot. Tested and I can reach internal subnet
 
+Enumerate internal subnet IPs. Nmap scan both internal ports. 
+
+Notice Eric.Wallows has SeImpersonatePrivilege > [[SharpEfsPotato]]
+
+Gain NT authority on MS01
+
 
 
 ---

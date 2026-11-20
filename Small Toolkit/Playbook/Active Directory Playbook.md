@@ -140,7 +140,7 @@ Dumping
 [[NTLM Auth]]
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/LSASS|LSASS]]
 
-Kerberos Techniques
+Kerberos Techniques : Service accounts
 [[Pass The Hash (PtH)]]
 [[Overpass The Hash]]
 [[Pass The Ticket]]

