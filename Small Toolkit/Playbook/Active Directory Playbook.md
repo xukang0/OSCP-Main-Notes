@@ -53,7 +53,7 @@ Recycle Bins have two types of files. The ones that start with `$I` store metada
 
 ---
 #### Initial Enumeration
-[[Initial Enumeration]]
+[[Active Directory Initial Enumeration]]
 Nmap + Web
 Initial Domain Enumeration > [[NetExec]]
 RPC Domain Enumeration > [[135 RPC]]
@@ -104,7 +104,7 @@ Group Policy Preferences have historically exposed credentials through an attrib
 
 [[Bloodhound Startup]]
 
-Credential Discovery
+##### `Credential Discovery`
 [[Autologon]]
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/Windows Credential Manager|Windows Credential Manager]]
 [[PSHistory]]
@@ -115,9 +115,11 @@ Credential Discovery
 [[FileZilla]]
 [[PuTTY]]
 [[DPAPI]]
+Check C:\Users, C:\
 
-Directory Enumeration
-[[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]] > Check C:\
+##### `Directory Enumeration`
+[[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]] > Check C:\windows.old\Windows\System32
+
 SSH key discovery
 
 **Services:**
@@ -130,7 +132,7 @@ wmic service get name,startname,pathname
 Get-ChildItem C:\ -Include *.config,*.ini,*.xml,*.ps1,*.bat,*.cmd -File -Recurse -ErrorAction SilentlyContinue
 ```
 
-Dumping
+##### `Dumping`
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]] > !
 [[Rubeus.exe]]
 [[Runas]]
@@ -140,7 +142,7 @@ Dumping
 [[NTLM Auth]]
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/LSASS|LSASS]]
 
-Kerberos Techniques : Service accounts
+##### `Kerberos Techniques : Service accounts`
 [[Pass The Hash (PtH)]]
 [[Overpass The Hash]]
 [[Pass The Ticket]]
@@ -148,7 +150,7 @@ Kerberos Techniques : Service accounts
 [[Silver Ticket]]
 [[Golden Ticket]]
 
-Delegation Attacks
+##### Delegation Attacks`
 [[Unconstrained Delegation]]
 [[Constrained Delegation]]
 [[RBCD]]

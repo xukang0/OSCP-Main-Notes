@@ -45,7 +45,7 @@ for (const [machine, ip, notes] of machines) {
 }
 ```
 
-MACHINE:: OSCPA2/AD/MS01
+MACHINE:: OSCPA2/S1
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
 
@@ -53,7 +53,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   192.168.245.141
+IP::   192.168.245.143
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
