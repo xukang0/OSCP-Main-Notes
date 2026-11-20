@@ -37,15 +37,10 @@ $env:PROCESSOR_ARCHITECTURE
 
 > ⚠️ Always match **agent/proxy binary architecture** to the target.
 
----
 
-## 🔹 Step 1 — Download Ligolo Binaries (SKIP)
-
-🔗 Release:  
 [https://github.com/nicocha30/ligolo-ng/releases/tag/v0.8.2](https://github.com/nicocha30/ligolo-ng/releases/tag/v0.8.2)
 
 ---
-
 # Step 2 & 3 in KALI ATTACKER
 
 ## 🔹 Step 2 — Create the TUN interface and bring it up:
@@ -60,7 +55,7 @@ sudo ip tuntap add user kali mode tun ligolo && sudo ip link set dev ligolo up
 - **Target (Pivot host)** → `agent`
 
 ```
-cd ~/Desktop/Tools/Ligolo && ./proxy -laddr 0.0.0.0:11601 -selfcert
+cd ~/Desktop/Tools/Ligolo/ && ./proxy -laddr 0.0.0.0:11601 -selfcert
 ```
 
 ---
@@ -97,7 +92,7 @@ sudo ip link set ligolo up
 
 On KALI ATTACKER
 ```
-cd ~/Desktop/Tools/Ligolo/Agent && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/Ligolo/Agent
 ```
 
 - `x86_64` → amd64

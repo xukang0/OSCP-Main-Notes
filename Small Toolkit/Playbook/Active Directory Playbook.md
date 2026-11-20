@@ -45,7 +45,7 @@ Check Recycle bin
 ```
 cd '$RECYCLE.BIN'
 ```
-
+ 
 Recycle Bins have two types of files. The ones that start with `$I` store metadata about the file. The `$R` file holds the original content.
 
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/Net|Net]]
@@ -71,6 +71,16 @@ SMB Share Enumeration > [[139 445 SMB]]
 [[NTLM Auth]]
 
 RCE shell upload, if RCE shell does not work, try a WWWshell Webshell. Then upload nc64.exe onto system and execute RCE
+
+---
+#### Pivoting
+
+Ping Test
+```
+Test-NetConnection PIVOT_INTERNAL_IP -Port 4444
+```
+
+[[Ligolo]]
 
 ---
 #### If user, looking to gain machine root.

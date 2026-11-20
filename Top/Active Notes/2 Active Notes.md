@@ -116,6 +116,13 @@ On ms01.oscp.exam port 80, there is a company website. Some additional names to 
 
 Port 81 is an attendance and payroll website. POTENTIALLY interesting
 
+We can enter SSH EricWallows as well as as evilwinrm. Proceed to enumerate his filesystem
+
+On his C:\Users, we see more interesting user accounts. Add to users. There is also a web_svc account.
+
+With ping test, seems like MS01 can reach internal subnet. Ligolo pivot. Tested and I can reach internal subnet
+
+
 
 ---
 ## Steps to root.txt
