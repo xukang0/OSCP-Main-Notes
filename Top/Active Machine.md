@@ -2,12 +2,12 @@
 
 | Machine | IP Address      | Notes |
 | ------- | --------------- | ----- |
-|         | 10.10.106.140   |       |
-|         | 192.168.106.141 | creds |
-|         | 10.10.106.142   |       |
-| S 1     | 192.168.106.143 |       |
-| S 2     | 192.168.106.144 |       |
-| S 3     | 192.168.106.145 |       |
+|         | 10.10.245.140   |       |
+|         | 192.168.245.141 | creds |
+|         | 10.10.245.142   |       |
+| S 1     | 192.168.245.143 |       |
+| S 2     | 192.168.245.144 |       |
+| S 3     | 192.168.245.145 |       |
 
 MACHINE:: OSCPA2/AD
 ```dataviewjs
@@ -17,7 +17,7 @@ const command = `${machine}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-IP::   IP
+IP::   192.168.245.141
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
@@ -25,7 +25,7 @@ const command = `${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-KALI IP::  KALIIP
+KALI IP::  192.168.45.186
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
