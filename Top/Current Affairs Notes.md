@@ -6,15 +6,14 @@
 
 ### User flag
 
-
+nxc sweep shows Eric.Wallows creds works for winrm
 
 ### Root flag
 
-
-
+Eric.Wallows has seimpersonate priv
 ### Pivoting
 
-
+Ligolo pivot since MS01 can reach internal subnet
 
 ---
 

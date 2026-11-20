@@ -20,7 +20,7 @@ Full Rustscan TCP Scan
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `sudo rustscan -a ${ip} -b 500 --ulimit 5000 -- -sC -sV -Pn`;
+const command = `sudo rustscan -a ${ip} -b 500 --ulimit 5000 -- -sC -sV -Pn -oN ${ip}_TCP`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -38,7 +38,7 @@ sudo nmap -sS -p- -Pn -A -n -T3 -iL ip.txt -oA nmap_scan
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `sudo nmap -sU -sS -sV --top-ports 20 --max-retries 1 -Pn -oN udp_scan ${ip}`;
+const command = `sudo nmap -sU -sS -sV --top-ports 20 --max-retries 1 -Pn -oN ${ip}_udp ${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```

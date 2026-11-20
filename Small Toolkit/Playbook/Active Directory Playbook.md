@@ -1,6 +1,7 @@
 [[Linux Playbook]]
 [[Windows Playbook]]
 
+[[0000021| [PEN200] Initial Setup ]]
 # General
 
 #### Time Sync
@@ -76,8 +77,8 @@ RCE shell upload, if RCE shell does not work, try a WWWshell Webshell. Then uplo
 #### Pivoting
 
 Ping Test
-```
-Test-NetConnection PIVOT_INTERNAL_IP -Port 4444
+```powershell
+Test-NetConnection PIVOT_INTERNAL_IP
 ```
 
 [[Ligolo]]

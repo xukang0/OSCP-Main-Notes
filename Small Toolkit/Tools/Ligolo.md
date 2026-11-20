@@ -188,6 +188,10 @@ Verify:
 ip route list
 ```
 
+```
+ip route get [targetIP]
+```
+
 Fix : Delete route
 ```
 sudo ip route del 10.129.42.0/24 dev ligolo
