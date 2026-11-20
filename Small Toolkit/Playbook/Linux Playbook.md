@@ -1,6 +1,8 @@
 [[Windows Playbook]]
 [[Active Directory Playbook]]
 
+[[0000021| [PEN200] Initial Setup ]]
+
 ---
 
 Find out if box is windows or linux
@@ -24,6 +26,7 @@ ttl = 126 > Windows
 If SSH open, try name:name of any person you find
 [[SQL Injection]]
 [[Hydra]]
+tree -a
 
 #### General Priv Esc Enumeration
 
@@ -90,7 +93,9 @@ ls -la /etc/passwd allowing group modification to root grp
 >- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 >
 
-> [!note]- Others
+>  #### Others
+zip file > John2zip
+
 >  #### DBMaria
 > - [ ] find / -type f -name "*.db" 2>/dev/null
 > - [ ]  [[Sqlite| .db]] file found
