@@ -131,44 +131,41 @@ Check backups (.bak, .zip)
 
 #### Contingencies
 
-> [!tip]- Admin Page
-> 
-> > #### Admin Login
-> - [ ] Discover software version
-> - [ ] Research about software
-> - [ ] Search and Try Default credentials
-> - [ ] Research CVEs related to version
->
-> #### Registration
-> - [ ] Register an account
-> - [ ] Login using registered account
->
-> #### User Login
-> - [ ] Default credentials
-> - [ ] creds search [service]
->
-> #### Reset Password (Email)
-> - [ ] If invalid email = does not match our records, SQLi (test' or 1=1;-- -)  [[SQL Injection|link]]
->
-> #### Admin Dashboards
-> - [ ] Search for framework CVEs
-> - [ ] Search for dependencies CVEs
-> - [ ] File Uploads for PHP arbitrary code execution [[Arbitrary File Upload Vulnerability|link]]
+#### Admin Login
+Discover software version
+Research about software
+Search and Try Default credentials
+Research CVEs related to version
 
-> [!tip]- Others
->  #### .git / git dumper
-> - [ ] Run [[GIT dumper]]
-> - [ ] Search for creds
-> - [ ] Check commit history
-> 
-> #### Hash Found
-> - [ ] SSH as is
-> - [ ] [CyberChef](https://cyberchef.org)
-> - [ ] [[Hashcat]]
-> 
-> #### Wordpress Scan
-> - [ ] Default creds
-> - [ ] [[Wordpress Scan]]
+#### Registration
+Register an account
+Login using registered account
+
+User Login
+Default credentials
+creds search [service]
+
+Reset Password (Email)
+If invalid email = does not match our records, SQLi (test' or 1=1;-- -)  [[SQL Injection|link]]
+
+#### Admin Dashboards
+Search for framework CVEs
+Search for dependencies CVEs
+File Uploads for PHP arbitrary code execution [[Arbitrary File Upload Vulnerability|link]]
+
+Others
+#### .git / git dumper
+Run [[GIT dumper]]
+Search for creds
+Check commit history
+#### Hash Found
+SSH as is
+ [CyberChef](https://cyberchef.org)
+ [[Hashcat]]
+
+#### Wordpress Scan
+Default creds
+[[Wordpress Scan]]
 
 
 [[Searchsploit]]
