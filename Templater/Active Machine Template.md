@@ -1,13 +1,49 @@
 [[Active Machine Template]]
 
-| Machine | IP Address | Notes |
-| ------- | ---------- | ----- |
-|         |            |       |
-|         |            | creds |
-|         |            |       |
-|         |            |       |
-|         |            |       |
-|         |            |       |
+```dataviewjs
+const machines = [
+    ["", "10.10.245.140", ""],
+    ["MS01", "192.168.245.141", "creds"],
+    ["", "10.10.245.142", ""],
+    ["S1", "192.168.245.143", ""],
+    ["S2", "192.168.245.144", ""],
+    ["S3", "192.168.245.145", ""]
+];
+
+const table = dv.container.createEl("table");
+table.style.width = "100%";
+
+const header = table.createEl("tr");
+
+["Machine", "IP Address", "Notes"].forEach(name => {
+    header.createEl("th", { text: name });
+});
+
+for (const [machine, ip, notes] of machines) {
+    const row = table.createEl("tr");
+
+    row.createEl("td", { text: machine });
+    
+    const ipCell = row.createEl("td");
+    const button = ipCell.createEl("button", {
+        text: ip
+    });
+
+    button.style.cursor = "pointer";
+
+    button.addEventListener("click", async () => {
+        try {
+            await navigator.clipboard.writeText(ip);
+            button.textContent = "Copied!";
+            setTimeout(() => button.textContent = ip, 1000);
+        } catch (error) {
+            button.textContent = "Copy failed";
+        }
+    });
+
+    row.createEl("td", { text: notes });
+}
+```
 
 MACHINE:: machine
 ```dataviewjs

@@ -89,18 +89,32 @@ Open 192.168.245.141:49713
 ---
 ## Attack Ideas
 
-port 80 and 81 web enumeration
+port 80 and 81 web enumeration SEEN
 
-SMB share enumeration
+SMB share enumeration SEEN
 
 mySQL 3306 3307
+
+port 81 attendance and payroll input
 
 ---
 ## Steps to User.txt
 
-Running NXC using Eric.Wallow creds, it says WinRM and SSH pwned
+Running NXC using Eric.Wallow creds, it says WinRM and SSH pwned. SMB shares visible.
 
+Try to authenticate using SMB Eric Creds. Logon failure. Domain name is oscp.exam. Name of the machine is MS01.
 
+Add these information to /etc/hosts
+
+Since RPC open, try to enumerate domain information
+
+Since we have no access to DC, RPC does not work.
+
+Using nxc smb rid brute force gives us a list of domain users. Add to users
+
+On ms01.oscp.exam port 80, there is a company website. Some additional names to add to users.
+
+Port 81 is an attendance and payroll website. POTENTIALLY interesting
 
 
 ---

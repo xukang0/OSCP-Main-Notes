@@ -74,6 +74,13 @@ const command = `smbclient -L \\\\${ip}`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `smbclient //${ip}/share -U 'user%pass'`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
 #### LDAP Enumeration
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
