@@ -29,46 +29,6 @@ export MS01 = IP
 [[Locating & Fixing Exploits]]
 
 ---
-# Linux
-
-[[Initial Enumeration]]
-
-#### Initial access stuck
-
-If SSH open, try name:name of any person you find
-[[SQL Injection]]
-[[Hydra]]
-
-#### General Priv Esc Enumeration
-
-
-
----
-# Windows
-
-### **Credential discovery**
-
-- `cmdkey /list`
-- `whoami /all`
-- PowerShell history
-- Unattended installation files
-- `C:\Windows\Panther\`
-- `C:\Windows.old\`
-- SAM/SYSTEM/SECURITY hives
-- Credential Manager
-- Saved RDP credentials
-- Application configuration files
-- IIS configuration files
-- Registry-stored credentials
-
-#### General Priv Esc Enumeration
-[[LinWinPEAS]]
-[[SharpUp.exe]]
-[[PowerUp.ps1]]
-[[0 Seatbelt.exe]]
-[[WES-NG]]
-
----
 # Active Directory
 
 #### General
@@ -221,6 +181,7 @@ Crackstation existing hashes
 [[SharpUp.exe]]
 [[PowerUp.ps1]]
 [[0 Seatbelt.exe]]
+[[WES-NG]]
 #### whoami /priv
 [[SeImpersonatePrivilege]] > [[SharpEfsPotato]]
 [[SeManageVolumePrivilege]]
