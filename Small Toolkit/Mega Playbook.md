@@ -24,6 +24,8 @@ export MS01 = IP
 ```
 
 [[Locating & Fixing Exploits]]
+
+---
 # Linux
 
 [[Initial Enumeration]]
@@ -32,6 +34,10 @@ export MS01 = IP
 
 If SSH open, try name:name of any person you find
 [[SQL Injection]]
+[[Hydra]]
+
+#### General Priv Esc Enumeration
+
 
 
 ---

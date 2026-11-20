@@ -36,6 +36,21 @@ Identify tech/CMS
  [[Nickel|Curl dead end redirects for error msg]]
 [[0000010|curl -i domain]]
 
+### **Credential discovery**
+
+- `/home/*/.ssh/`
+- `/root/.ssh/` (if accessible)
+- `/etc/shadow` (if readable)
+- `/etc/passwd` (check for unusual entries)
+- `/var/www/` configuration files
+- `.bash_history`
+- `.mysql_history`
+- `.ssh/config`
+- Application configuration files
+- Environment variables
+- Process arguments (`ps auxww`)
+- Credentials in scripts and backups
+
 ### Brute Force
 [[0000011|Feroxbuster Directories brute force (medium)]]
 [[0000011|Feroxbuster WebList brute force]]
