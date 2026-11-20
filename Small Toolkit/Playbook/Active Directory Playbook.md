@@ -1,3 +1,6 @@
+[[Linux Playbook]]
+[[Windows Playbook]]
+
 # General
 
 #### Time Sync
