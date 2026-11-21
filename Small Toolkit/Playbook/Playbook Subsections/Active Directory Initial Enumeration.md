@@ -20,7 +20,15 @@ Full Rustscan TCP Scan
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `sudo rustscan -a ${ip} -b 500 --ulimit 5000 -- -sC -sV -Pn -oN ${ip}_TCP`;
+const command = `sudo rustscan -a ${ip} -b 500 --ulimit 5000 -- -sC -sV -Pn -oN ${ip}_Fast_Rustscan`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+(Slower) Full Rustscan TCP Scan
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+
+const command = `sudo rustscan -a ${ip} -b 100 --ulimit 5000 --timeout 5000 -- -sC -sV -Pn -oN ${ip}_Slow_Rustscan`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
