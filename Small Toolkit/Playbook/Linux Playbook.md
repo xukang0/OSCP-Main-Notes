@@ -44,6 +44,77 @@ ttl = 61 > Linux
 ttl = 126 > Windows
 
 ---
+##### `Test Connectivity from TARGET to KALI`
+On KALI start listener
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `nc -lvnp 4444`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+On TARGET, ping KALI
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `nc -nv ${KaliIP} 4444`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+---
 # Linux
 
 [[Linux Initial Enumeration]]
@@ -318,6 +389,181 @@ button.addEventListener("click", async () => {
 });
 ```
 
+#### `Writable Content`
+Writeable Directories
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+Writeable Files
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `find / -path /proc -prune -o -type f -perm -o+w 2>/dev/null`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+#### `Scheduled Tasks`
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `cat /etc/crontab`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+[[incrontab]]
+ls -la /etc/cron* | e2scrub_all , PHP
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `crontab -l`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `systemctl list-timers --all`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+grep -R "" /etc/cron*
+[[pspy]]
+
 #### Vulnerability Testing
 ls -la /var/www
 ls -a ~
@@ -331,27 +577,22 @@ interesting files
 #### Priv Checks (Windows)
 whoami /priv
 whoami /groups
->
-#### Scheduled Tasks
-cat /etc/crontab
-[[incrontab]]
-ls -la /etc/cron* | e2scrub_all , PHP
-crontab -l
-systemctl list-timers --all
-grep -R "" /etc/cron*
-[[pspy]]
 
 #### Special Permissions
 ls -la /usr/bin/
-
-#### Writable Content
-[[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
-[[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
 
 
 >  #### Others
 zip file > John2zip
 [[PwnKit]]
+Raptor2UC MySQL
+
+>  #### Path Hijacking
+>  - [ ] [[Python Library Hijacking]]
+>  - [ ] [[LD_LIBRARY_PATH Hijack]] 
+>  - [ ] [[Cronjob Path Hijack]]
+[[Cronjob Wildcard Hijack]]
+
 
 >  #### DBMaria
 > - [ ] find / -type f -name "*.db" 2>/dev/null
@@ -364,6 +605,28 @@ zip file > John2zip
 >  #### Root 
 > - [ ] [[0000030|echo [user] ALL=(ALL) ALL >> /etc/sudoers]]
 
+> #### Ports
+> - [ ]  [[3000 Grafana| Port 3000 Grafana]]
+> - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
+> - [ ]  [[10050 Zabbix|Port 10050 Zabbix]]
+> 
+>  #### Web
+> - [ ]  [[Jenkins Priv Esc|Jenkins Internal Server and File Read]]
+> 
+
+>
+> #### Exiftool
+>  - [ ] [[Vulnerable ExifTool DjVu Priv Esc]]
+
+>  #### Kernel
+>  - [ ] [CVE-2022-0847] Dirtypipe
+> 
+>  #### Systemctl modifiication
+> - [ ] [[0000026|Modifying a service in /etc/systemd/system/]]
+> 
+>  #### MySQL
+> - [ ] [[0000029|ZoneMinder Console v1.29.0 OS-Shell]]
+
 > [!note]- SUID / Capabilities / Sudo
 >  #### FREE WINS SUID
 > - [ ] /usr/bin/[[php7.4]]
@@ -374,33 +637,6 @@ zip file > John2zip
 > - [ ] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system
 > - [ ] [[0000039|GTFOBins Systemctl]] 
 
-> [!note]- Priv Esc Techniques
-> #### Ports
-> - [ ]  [[3000 Grafana| Port 3000 Grafana]]
-> - [ ]  [[Node Inspector | Port 9229 Node Inspector]]
-> - [ ]  [[10050 Zabbix|Port 10050 Zabbix]]
-> 
->  #### Web
-> - [ ]  [[Jenkins Priv Esc|Jenkins Internal Server and File Read]]
-> 
->  #### Path Hijacking
->  - [ ] [[Python Library Hijacking]]
->  - [ ] [[LD_LIBRARY_PATH Hijack]] 
->  - [ ] [[Cronjob Path Hijack]]
->  - [ ] [[Cronjob Wildcard Hijack]]
->
-> #### Exiftool
->  - [ ] [[Vulnerable ExifTool DjVu Priv Esc]]
->
-> #### Cron
->  - [ ] /etc/cron.d | e2scrub_all , PHP
->
->  #### Kernel
->  - [ ] [CVE-2022-0847] Dirtypipe
-> 
->  #### Systemctl modifiication
-> - [ ] [[0000026|Modifying a service in /etc/systemd/system/]]
-> 
->  #### MySQL
-> - [ ] [[0000029|ZoneMinder Console v1.29.0 OS-Shell]]
+
+
 
