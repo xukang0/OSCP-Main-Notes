@@ -1,5 +1,10 @@
 ```dataviewjs
-const command = `wmic service get name,startname,pathname`;
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `${KaliIP} ${IP}`;
 
 const button = dv.container.createEl("button", {
     text: command
@@ -17,8 +22,12 @@ button.style.cssText = `
 `;
 
 button.addEventListener("click", async () => {
-    await navigator.clipboard.writeText(command);
-    button.textContent = "Copied!";
-    setTimeout(() => button.textContent = command, 250);
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
 });
 ```
