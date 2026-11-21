@@ -118,6 +118,7 @@ Group Policy Preferences have historically exposed credentials through an attrib
 [[PuTTY]]
 [[DPAPI]]
 Check C:\Users, C:\
+dotPEEK > Read .exe (On Native laptop)
 
 ##### `Directory Enumeration`
 [[Impacket-secretsdump SAM SECURITY SYSTEM NTDS.DIT]] > Check C:\windows.old\Windows\System32

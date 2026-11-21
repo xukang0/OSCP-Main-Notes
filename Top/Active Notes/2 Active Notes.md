@@ -99,7 +99,16 @@ There is no pass-pol
 
 Kerberoasting with fiona.clark gives svc_helpdesk and svc_mssql. Only svc_mssql cracks to Service1
 
+using dotpeek on native laptop to inspect ResetPassword.exe downloaded from SMB NETLOGON share, find svc_helpdesk password
 
+  private static string service_username = "svc_helpdesk";
+  private static string service_Password = "U299iYRmikYTHDbPbxPoYYfa2j4x4cdg"; Its not crackable.
+
+Run bloodhound scan
+
+Fionaclark has Genericall to : svc_helpdesk , IAIN.WHITE, JOANNA.WOOD, and BETHAN.WEBSTER
+
+All are members of svc_helpdesk. For now try GenericALl to enter SVC_helpdesk
 
 ---
 ## Steps to root.txt

