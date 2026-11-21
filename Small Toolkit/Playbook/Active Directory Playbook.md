@@ -107,7 +107,7 @@ button.addEventListener("click", async () => {
 ---
 #### If user, looking to gain machine root.
 
-[[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
+[[Synced OSCP Notes/Small Toolkit/Guides/AD/Mimikatz|Mimikatz]]
 [[Watch-Command]]
 [[Sqlite]]
 [[Kerberoasting]] > Discover service accounts creds 
@@ -223,7 +223,7 @@ button.addEventListener("click", async () => {
 ```
 
 ##### `Dumping`
-[[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]] > !
+[[Synced OSCP Notes/Small Toolkit/Guides/AD/Mimikatz|Mimikatz]] > !
 [[Rubeus.exe]]
 [[Runas]]
 [[Impacket PsExec]]

@@ -325,7 +325,7 @@ If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 # Lateral Movement
 
 [[Runas]]
-[[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
+[[Synced OSCP Notes/Small Toolkit/Guides/AD/Mimikatz|Mimikatz]]
 [[PSHistory]]
 
 # Priv Esc

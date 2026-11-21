@@ -1,7 +1,7 @@
 When you see `SeDebugPrivilege` **enabled**, think:
 
 1. **Target:** LSASS (`lsass.exe`).
-2. **Tool:** [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]].
+2. **Tool:** [[Synced OSCP Notes/Small Toolkit/Guides/AD/Mimikatz|Mimikatz]].
 3. **Attempt:**
 
     ```
