@@ -26,37 +26,41 @@ const header = table.createEl("tr");
 });
 
 function createCopyButton(cell, value) {
-    const text = String(value ?? "");
+    const text = String(value ?? "").trim();
+
     const button = cell.createEl("button", {
         text: text || "—"
     });
 
     button.style.cssText = `
         font-family: monospace;
-        cursor: pointer;
+        cursor: ${text ? "pointer" : "default"};
         padding: 4px 8px;
+        opacity: ${text ? "1" : "0.5"};
     `;
 
-    button.addEventListener("click", async () => {
-        if (!text) return;
+    if (!text) return;
 
+    button.addEventListener("click", async () => {
         try {
             await navigator.clipboard.writeText(text);
             button.textContent = "Copied!";
             setTimeout(() => button.textContent = text, 1000);
         } catch {
             button.textContent = "Copy failed";
+            setTimeout(() => button.textContent = text, 1000);
         }
     });
 }
 
+// Machine rows
 for (const host of hosts) {
     const machine = page?.[host.name];
     const ip = page?.[`${host.name}IP`];
     const fqdn = page?.[host.fqdn];
     const notes = page?.[`${host.name}NOTES`];
 
-    if (!machine && !ip) continue;
+    if (![machine, ip, fqdn, notes].some(v => v != null && String(v).trim() !== "")) continue;
 
     const row = table.createEl("tr");
 
@@ -70,6 +74,19 @@ for (const host of hosts) {
 
     row.createEl("td", { text: String(notes ?? "") });
 }
+
+// Kali row
+const kaliIP = page?.["KALI IP"];
+
+const kaliRow = table.createEl("tr");
+
+kaliRow.createEl("td", { text: "KALI" });
+
+const kaliIPCell = kaliRow.createEl("td");
+createCopyButton(kaliIPCell, kaliIP);
+
+kaliRow.createEl("td", { text: "—" });
+kaliRow.createEl("td", { text: "Attacker Machine" });
 ```
 
 MACHINE:: MS01
