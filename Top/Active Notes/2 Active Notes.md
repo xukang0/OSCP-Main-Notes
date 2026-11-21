@@ -56,10 +56,24 @@ Port 3305 : Ubuntu default page
 
 Page 8080 : Tomcat manager
 
+Attempt to dirr bust against all web ports
 
+We find /javascript/ (no access) and /zm/
+
+/zm/ leads us to an interesting ZoneMinder Console - Running - default v1.29.0 dashboard
+
+attemp to searchsploit for this 
+
+There is a ZoneMinder Snapshots < 1.37.33 - Unauthenticated RCE.
+
+use PythonDetector to find out it is python3
+
+Upload perl RCE shell and get RCE as www-data
 
 ---
 ## Steps to root.txt
+
+No Sudo -l, cap or SUID
 
 ---
 ## User Flag
