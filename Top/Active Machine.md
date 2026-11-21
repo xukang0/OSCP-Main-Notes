@@ -1,80 +1,114 @@
+
 [[Active Machine Template]]
 
 ```dataviewjs
-const machines = [
-    ["", "10.10.245.152", ""],
-    ["MS01", "192.168.245.153", "creds"],
-    ["", "10.10.245.154", ""],
-    ["S1", "192.168.245.156", ""],
-    ["S2", "192.168.245.157", ""],
-    ["S3", "192.168.245.155", ""]
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const hosts = [
+    { name: "HOST1", fqdn: "HOST1FQDN" },
+    { name: "HOST2", fqdn: "HOST2FQDN" },
+    { name: "HOST3", fqdn: "HOST3FQDN" },
+    { name: "HOST4", fqdn: "S1FQDN" },
+    { name: "HOST5", fqdn: "S2FQDN" },
+    { name: "HOST6", fqdn: "S3FQDN" }
 ];
 
 const table = dv.container.createEl("table");
 table.style.width = "100%";
+table.style.borderCollapse = "collapse";
 
 const header = table.createEl("tr");
 
-["Machine", "IP Address", "Notes"].forEach(name => {
-    header.createEl("th", { text: name });
+["Machine", "IP Address", "FQDN", "Notes"].forEach(name => {
+    const th = header.createEl("th", { text: name });
+    th.style.textAlign = "left";
+    th.style.padding = "8px";
 });
 
-for (const [machine, ip, notes] of machines) {
-    const row = table.createEl("tr");
-
-    row.createEl("td", { text: machine });
-    
-    const ipCell = row.createEl("td");
-    const button = ipCell.createEl("button", {
-        text: ip
+function createCopyButton(cell, value) {
+    const text = String(value ?? "");
+    const button = cell.createEl("button", {
+        text: text || "—"
     });
 
-    button.style.cursor = "pointer";
+    button.style.cssText = `
+        font-family: monospace;
+        cursor: pointer;
+        padding: 4px 8px;
+    `;
 
     button.addEventListener("click", async () => {
+        if (!text) return;
+
         try {
-            await navigator.clipboard.writeText(ip);
+            await navigator.clipboard.writeText(text);
             button.textContent = "Copied!";
-            setTimeout(() => button.textContent = ip, 1000);
-        } catch (error) {
+            setTimeout(() => button.textContent = text, 1000);
+        } catch {
             button.textContent = "Copy failed";
         }
     });
+}
 
-    row.createEl("td", { text: notes });
+for (const host of hosts) {
+    const machine = page?.[host.name];
+    const ip = page?.[`${host.name}IP`];
+    const fqdn = page?.[host.fqdn];
+    const notes = page?.[`${host.name}NOTES`];
+
+    if (!machine && !ip) continue;
+
+    const row = table.createEl("tr");
+
+    row.createEl("td", { text: String(machine ?? "") });
+
+    const ipCell = row.createEl("td");
+    createCopyButton(ipCell, ip);
+
+    const fqdnCell = row.createEl("td");
+    createCopyButton(fqdnCell, fqdn);
+
+    row.createEl("td", { text: String(notes ?? "") });
 }
 ```
 
-MACHINE:: Nagoya
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const machine = page?.MACHINE ?? "NO MACHINE FOUND";
+MACHINE:: MS01
 
-const command = `${machine}`;
+IP:: 192.168.245.141
 
-dv.paragraph("```bash\n" + command + "\n```");
-```
-IP::  192.168.132.21
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+KALI IP:: 10.10.14.5
 
-const command = `${ip}`;
+Discovered Web Domain:: example.com
 
-dv.paragraph("```bash\n" + command + "\n```");
-```
-KALI IP::  192.168.45.186
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+---
+### `DC01`
+HOST1:: DC01
+HOST1IP:: 
+HOST1NOTES:: Domain Controller
+HOST1FQDN::
 
-const command = `${KaliIP}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-Discovered Web Domain::   nagoya-industries.com
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");
-const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
-
-const command = `http://${discoveredDomain}/`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
+### `MS02`
+HOST2:: MS02
+HOST2IP:: 
+HOST2NOTES::
+HOST2FQDN::
+### `MS01`
+HOST3:: MS01
+HOST3IP:: 
+HOST3NOTES:: creds
+HOST3FQDN::
+### `S1`
+HOST4:: S1
+HOST4IP:: 
+HOST4NOTES:: Standalone
+S1FQDN::
+### `S2`
+HOST5:: S2
+HOST5IP:: 
+HOST5NOTES:: Standalone
+S2FQDN::
+### `S3`
+HOST6:: S3
+HOST6IP:: 
+HOST6NOTES:: Standalone
+S3FQDN::
