@@ -7,12 +7,39 @@
 
 Find out if box is windows or linux
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-const command = `ping ${ip}`;
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-dv.paragraph("```bash\n" + command + "\n```");
+const command = `ping ${IP}`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
+
 ttl = 61 > Linux
 ttl = 126 > Windows
 
@@ -26,7 +53,39 @@ ttl = 126 > Windows
 If SSH open, try name:name of any person you find
 [[SQL Injection]]
 [[Hydra]]
-tree -a
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `tree -a`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
 
 Python Detector
 ```dataviewjs
@@ -96,40 +155,41 @@ Try username same as password
 Disk Group
 ls -la /etc/passwd allowing group modification to root grp
 [[0000028|mysql --version]]
+
+#### Vulnerability Testing
+ls -la /var/www
+ls -a ~
+.bash_history
+interesting files
+ 
+#### PE Vectors (Ruling Out)
+ [[2375 Docker API|Docker]]
+/etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
+
+#### Priv Checks (Windows)
+whoami /priv
+whoami /groups
 >
-> #### Vulnerability Testing
-> - [ ] ls -la /var/www
-> - [ ] ls -a ~
->   - [ ] .bash_history
->   - [ ] interesting files
->   
-> #### PE Vectors (Ruling Out)
-> - [ ] [[2375 Docker API|Docker]]
-> - [ ] /etc/sudoers.d/ben | ben ALL=(ALL) NOPASSWD:ALL
-> 
->#### Priv Checks (Windows)
-> - [ ] whoami /priv
-> - [ ] whoami /groups
->
-> #### Scheduled Tasks
-> - [ ] cat /etc/crontab
-> - [ ] [[incrontab]]
-> - [ ] ls -la /etc/cron* | e2scrub_all , PHP
-> - [ ] crontab -l
-> - [ ] systemctl list-timers --all
-> - [ ] grep -R "" /etc/cron*
-> - [ ] [[pspy]]
-> 
->  #### Special Permissions
->  - [ ] ls -la /usr/bin/
->
->  #### Writable Content
->- [ ] [[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
->- [ ] [[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
->
+#### Scheduled Tasks
+cat /etc/crontab
+[[incrontab]]
+ls -la /etc/cron* | e2scrub_all , PHP
+crontab -l
+systemctl list-timers --all
+grep -R "" /etc/cron*
+[[pspy]]
+
+#### Special Permissions
+ls -la /usr/bin/
+
+#### Writable Content
+[[0000019|find / -path /proc -prune -o -type d -perm -o+w 2>/dev/null]] | Directories
+[[0000020|find / -path /proc --prune --o --type f --perm --o+w 2>/dev/null]] | Files
+
 
 >  #### Others
 zip file > John2zip
+[[PwnKit]]
 
 >  #### DBMaria
 > - [ ] find / -type f -name "*.db" 2>/dev/null
