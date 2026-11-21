@@ -15,3 +15,7 @@ const command = `sudo ntpdate -s ${ip}`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 ---
+
+```
+sudo systemctl restart systemd-timesyncd
+```

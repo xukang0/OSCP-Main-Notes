@@ -110,8 +110,18 @@ Fionaclark has Genericall to : svc_helpdesk , IAIN.WHITE, JOANNA.WOOD, and BETHA
 
 All are members of svc_helpdesk. For now try GenericALl to enter SVC_helpdesk
 
+helpdesk group has genericall to christopher.lewis who is a developer with RPD access
+
+Change the password of christopher.lewis using svc_helpdesk. Nxc confirms
+
+NXC confirms winrm pwned with christopher lewis. We have our first shell access.
+
+local.txt is at C:\
+
 ---
 ## Steps to root.txt
+
+
 
 ---
 ## User Flag
