@@ -106,7 +106,7 @@ activeRow.createEl("td", {
 MACHINE:: Pebbles
 IP:: 192.168.132.52
 KALI IP:: 192.168.45.186
-Discovered Web Domain:: NoDomain
+Discovered Web Domain:: 192.168.132.52
 
 ---
 ### `DC01`

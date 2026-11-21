@@ -1,67 +1,4 @@
-Add hosts to /etc/hosts 
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
-
-const command = `echo "${ip} ${discoveredDomain}" | sudo tee -a /etc/hosts`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
----
 # Port Scanning
-
-```dataviewjs
-
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");
-
-const KaliIP = String(page?.["KALI IP"] ?? "NO KALI IP FOUND");
-const IP = String(page?.IP ?? "NO IP FOUND");
-
-const button = dv.container.createEl("button");
-
-button.style.cssText = `
-    font-family: var(--font-monospace);
-    font-size: 0.85em;
-    padding: 2px 6px;
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 4px;
-    background: var(--code-background);
-    cursor: pointer;
-`;
-
-const kaliSpan = button.createEl("span", { text: KaliIP });
-kaliSpan.style.color = "var(--color-purple)";
-
-const separator = button.createEl("span", { text: " " });
-separator.style.color = "var(--text-muted)";
-
-const ipSpan = button.createEl("span", { text: IP });
-ipSpan.style.color = "var(--color-orange)";
-
-button.addEventListener("click", async () => {
-    const command = `${KaliIP} ${IP}`;
-
-    try {
-        await navigator.clipboard.writeText(command);
-
-        const originalKali = kaliSpan.textContent;
-        const originalIP = ipSpan.textContent;
-
-        kaliSpan.textContent = "Copied!";
-        ipSpan.textContent = "";
-
-        setTimeout(() => {
-            kaliSpan.textContent = originalKali;
-            ipSpan.textContent = originalIP;
-        }, 1000);
-
-    } catch {
-        kaliSpan.textContent = "Copy failed";
-    }
-});
-
-```
 
 ### TCP Scan
 
@@ -116,9 +53,44 @@ const command = `telnet ${ip} [port]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
-
 ---
 
+Add hosts to /etc/hosts 
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `echo "${IP} ${discoveredDomain}" | sudo tee -a /etc/hosts`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+---
 
 # Web
 

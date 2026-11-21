@@ -2,7 +2,7 @@
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
 const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
-const IP = page?.IP ?? "NO IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
 const command = `${KaliIP} ${IP}`;
 
