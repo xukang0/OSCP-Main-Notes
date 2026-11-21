@@ -15,7 +15,9 @@ john --single [filename]
 ```
 john --show hash.txt
 ```
+
 Zip2john
+
 ---
 
 # Note : 7z > unzip
@@ -26,6 +28,11 @@ zip2john [file] > hash.txt
 
 ```
 john -w=/usr/share/wordlists/rockyou.txt hash.txt
+```
+
+If needed, clear this file
+```
+gedit /home/kali/.john/john.pot
 ```
 
 ![[Pasted image 20250528032644.png]]
