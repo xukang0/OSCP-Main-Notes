@@ -143,10 +143,140 @@ Hydra crack
 ls 
 
 ##### `SUID / Capabilities / Sudo`
-[[0000017|find / -perm -4000 2>/dev/null]]
-[[0000018|getcap -r / 2>/dev/null]]
-sudo -l
-[[GTFOChecker]]
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `sudo -l`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `getcap -r / 2>/dev/null`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `find / -perm -4000 2>/dev/null`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+GTFOChecker
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `~/Desktop/Tools/GTFOChecker/gtfoChecker`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
 
 #### Easy wins
 cat /etc/passwd
@@ -154,7 +284,39 @@ Try username same as password
 [[0000032|docker ps]]
 Disk Group
 ls -la /etc/passwd allowing group modification to root grp
-[[0000028|mysql --version]]
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `mysql --version`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
 
 #### Vulnerability Testing
 ls -la /var/www
