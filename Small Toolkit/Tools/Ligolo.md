@@ -213,4 +213,85 @@ If ping works → pivot is **fully functional** ✅
 
 ---
 
+## **Access to agent’s local ports (127.0.0.1):**
 
+If you need to access the local ports of the currently connected agent, there’s a “magic” CIDR hardcoded in Ligolo-ng: _240.0.0.0/4_ (This is an unused IPv4 subnet). If you query an IP address on this subnet, Ligolo-ng will automatically redirect traffic to the agent’s local IP address (127.0.0.1).
+
+Now, back to your kali machine run this to do port forwarding.
+
+```dataviewjs
+const command = "sudo ip route add 240.0.0.1/32 dev ligolo";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
+```
+
+Enumerate localhost ports
+```dataviewjs
+const command = "nmap 240.0.0.1 -sCV";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
+```
+
+Access future local port services with 240.0.0.1
+```dataviewjs
+const command = "impacket-mssqlclient svc_mssql:'Service1'@240.0.0.1 -windows-auth -p 1433";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
+```

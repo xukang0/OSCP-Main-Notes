@@ -128,7 +128,9 @@ Only user who belongs to domain admins is "Administrator"
 
 No path from owned to tier 0 according to bloodhound. So i guess creds need to be dumped.
 
+I need to forward localport 1433 to my kali [[Ligolo]] learnt from nagoya box.
 
+access mssql 240.0.0.1 mssqlclient and get access to svc_mssql
 
 ---
 ## User Flag
