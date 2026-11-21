@@ -89,6 +89,7 @@ Test-NetConnection PIVOT_INTERNAL_IP
 [[Synced OSCP Notes/OSCP Main Notes/Windows/Mimikatz|Mimikatz]]
 [[Watch-Command]]
 [[Sqlite]]
+[[Kerberoasting]] > Discover service accounts creds 
 
 #### Web
 If [[Windows LFI RFI]], call back to [[Responder]] for ntlm hash

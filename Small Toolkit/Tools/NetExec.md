@@ -1,7 +1,12 @@
 ### Initial Domain Enumeration
 #### Domain users
 ```
-nxc smb <DC_IP> -u USER -p PASS --users
+nxc smbIP -u 'USER' -p 'PASS' --users'
+```
+
+With Filtering
+```
+nxc smb 192.168.200.21 -u 'andrea.hayes' -p 'Nagoya2023' --users | awk -F'  +' '/SMB.*[0-9]+.*445/ && $4 !~ /^\[/ && $4 != "" {print $4}'
 ```
 #### Domain groups
 ```

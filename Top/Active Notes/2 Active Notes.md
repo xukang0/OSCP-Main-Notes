@@ -91,6 +91,11 @@ Visiting their webpage, nothing special. But there is a list of names of team me
 
 This box requires cred engineering. So skip and assumed breach
 
+Fiona.clark has read access to smb shares
+
+With her creds dumb list of users with nxc.
+
+There is no pass-pol
 
 ---
 ## Steps to root.txt
