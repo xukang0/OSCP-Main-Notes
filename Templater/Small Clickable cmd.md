@@ -19,6 +19,6 @@ button.style.cssText = `
 button.addEventListener("click", async () => {
     await navigator.clipboard.writeText(command);
     button.textContent = "Copied!";
-    setTimeout(() => button.textContent = command, 1000);
+    setTimeout(() => button.textContent = command, 250);
 });
 ```

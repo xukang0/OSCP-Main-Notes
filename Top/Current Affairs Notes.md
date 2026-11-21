@@ -15,6 +15,14 @@ Eric.Wallows has seimpersonate priv
 
 Ligolo pivot since MS01 can reach internal subnet
 
+Mssql svc can enter mssql database. xp_cmdshell disabled. 
+
+Try silver ticket forging to become administrator.
+
+Get mssql RCE and see SeImpersonate Priv
+
+SharpEfs Potato for Root
+
 ---
 
 # Steps to MS02 

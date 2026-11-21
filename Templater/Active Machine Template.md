@@ -35,7 +35,7 @@ for (const [machine, ip, notes] of machines) {
         try {
             await navigator.clipboard.writeText(ip);
             button.textContent = "Copied!";
-            setTimeout(() => button.textContent = ip, 1000);
+            setTimeout(() => button.textContent = ip, 250);
         } catch (error) {
             button.textContent = "Copy failed";
         }
