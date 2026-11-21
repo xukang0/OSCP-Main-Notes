@@ -103,13 +103,10 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: No Active Machine
-
-IP:: No IP
-
-KALI IP:: No Kal IP 
-
-Discovered Web Domain:: No Domain
+MACHINE:: NoActiveMachine
+IP:: NoIP
+KALI IP:: NoKaliIP 
+Discovered Web Domain:: NoDomain
 
 ---
 ### `DC01`

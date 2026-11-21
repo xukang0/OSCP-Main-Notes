@@ -103,13 +103,10 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: No Active Machine
-
-IP:: No IP
-
-KALI IP:: No Kal IP 
-
-Discovered Web Domain:: No Domain
+MACHINE:: Pebbles
+IP:: 192.168.132.52
+KALI IP:: 192.168.45.186
+Discovered Web Domain:: NoDomain
 
 ---
 ### `DC01`
