@@ -117,6 +117,7 @@ Group Policy Preferences have historically exposed credentials through an attrib
 [[FileZilla]]
 [[PuTTY]]
 [[DPAPI]]
+cmdkey /list
 Check C:\Users, C:\
 dotPEEK > Read .exe (On Native laptop)
 

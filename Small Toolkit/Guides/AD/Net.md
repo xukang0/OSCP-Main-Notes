@@ -24,14 +24,14 @@ net accounts /domain
 
 ## **2. Group enumeration**
 
-|Command|Purpose|
-|---|---|
-|`net localgroup`|List local groups|
-|`net localgroup "Administrators"`|Local Administrators members|
-|`net localgroup "Remote Desktop Users"`|Local RDP group members|
-|`net group /domain`|List domain groups|
-|`net group "Domain Admins" /domain`|Domain Admins members|
-|`net group "Domain Users" /domain`|Domain Users members|
+| Command                                 | Purpose                      |
+| --------------------------------------- | ---------------------------- |
+| `net localgroup`                        | List local groups            |
+| `net localgroup "Administrators"`       | Local Administrators members |
+| `net localgroup "Remote Desktop Users"` | Local RDP group members      |
+| `net group /domain`                     | List domain groups           |
+| `net group "Domain Admins" /domain`     | Domain Admins members        |
+| `net group "Domain Users" /domain`      | Domain Users members         |
 
 Examples:
 

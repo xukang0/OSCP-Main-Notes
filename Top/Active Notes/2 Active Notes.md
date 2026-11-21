@@ -72,6 +72,10 @@ craig.carr:Spring2023
 fiona.clark:Summer2023
 andrea.hayes:Nagoya2023
 
+svc_helpdesk : U299iYRmikYTHDbPbxPoYYfa2j4x4cdg
+svc_mssql : Service1
+
+
 ---
 ## Interesting Files/Paths
 
@@ -120,6 +124,10 @@ local.txt is at C:\
 
 ---
 ## Steps to root.txt
+
+Only user who belongs to domain admins is "Administrator"
+
+No path from owned to tier 0 according to bloodhound. So i guess creds need to be dumped.
 
 
 
