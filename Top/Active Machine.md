@@ -76,26 +76,40 @@ for (const host of hosts) {
 }
 
 // Kali row
-const kaliIP = page?.["KALI IP"];
-
 const kaliRow = table.createEl("tr");
-
 kaliRow.createEl("td", { text: "KALI" });
 
 const kaliIPCell = kaliRow.createEl("td");
-createCopyButton(kaliIPCell, kaliIP);
+createCopyButton(kaliIPCell, page?.["KALI IP"]);
 
 kaliRow.createEl("td", { text: "—" });
 kaliRow.createEl("td", { text: "Attacker Machine" });
+
+// Active Machine row
+const activeRow = table.createEl("tr");
+
+activeRow.createEl("td", {
+    text: String(page?.MACHINE ?? "—")
+});
+
+const activeIPCell = activeRow.createEl("td");
+createCopyButton(activeIPCell, page?.IP);
+
+const domainCell = activeRow.createEl("td");
+createCopyButton(domainCell, page?.["Discovered Web Domain"]);
+
+activeRow.createEl("td", {
+    text: "Active Machine"
+});
 ```
 
-MACHINE:: machine
+MACHINE:: No Active Machine
 
-IP:: exampleIP
+IP:: No IP
 
-KALI IP:: exampleKalIP 
+KALI IP:: No Kal IP 
 
-Discovered Web Domain:: example.com
+Discovered Web Domain:: No Domain
 
 ---
 ### `DC01`
