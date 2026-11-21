@@ -77,8 +77,29 @@ RCE shell upload, if RCE shell does not work, try a WWWshell Webshell. Then uplo
 #### Pivoting
 
 Ping Test
-```powershell
-Test-NetConnection PIVOT_INTERNAL_IP
+```dataviewjs
+const command = "Test-NetConnection PIVOT_INTERNAL_IP";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
 ```
 
 [[Ligolo]]
@@ -117,7 +138,30 @@ Group Policy Preferences have historically exposed credentials through an attrib
 [[FileZilla]]
 [[PuTTY]]
 [[DPAPI]]
-cmdkey /list
+```dataviewjs
+const command = "cmdkey /list";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
+```
 Check C:\Users, C:\
 dotPEEK > Read .exe (On Native laptop)
 
@@ -126,14 +170,56 @@ dotPEEK > Read .exe (On Native laptop)
 
 SSH key discovery
 
-**Services:**
-```
-wmic service get name,startname,pathname
+Services
+```dataviewjs
+const command = "wmic service get name,startname,pathname";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
 ```
 
 **Search common configuration and script files:**
-```
-Get-ChildItem C:\ -Include *.config,*.ini,*.xml,*.ps1,*.bat,*.cmd -File -Recurse -ErrorAction SilentlyContinue
+```dataviewjs
+const command = "Get-ChildItem C:\ -Include *.config,*.ini,*.xml,*.ps1,*.bat,*.cmd -File -Recurse -ErrorAction SilentlyContinue";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
 ```
 
 ##### `Dumping`
