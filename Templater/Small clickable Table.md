@@ -1,5 +1,5 @@
 ```dataviewjs
-const command = "wmic service get name,startname,pathname";
+const command = `wmic service get name,startname,pathname`;
 
 const table = dv.container.createEl("table");
 table.style.width = "100%";

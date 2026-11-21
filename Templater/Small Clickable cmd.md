@@ -1,6 +1,5 @@
-Services
 ```dataviewjs
-const command = "wmic service get name,startname,pathname";
+const command = `wmic service get name,startname,pathname`;
 
 const button = dv.container.createEl("button", {
     text: command
