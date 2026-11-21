@@ -89,11 +89,11 @@ kaliRow.createEl("td", { text: "—" });
 kaliRow.createEl("td", { text: "Attacker Machine" });
 ```
 
-MACHINE:: MS01
+MACHINE:: machine
 
-IP:: 192.168.245.141
+IP:: exampleIP
 
-KALI IP:: 10.10.14.5
+KALI IP:: exampleKalIP 
 
 Discovered Web Domain:: example.com
 
