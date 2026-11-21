@@ -5,7 +5,7 @@ TCP/1433, UDP/1434
 | [[#NMAP Enumeration]]           |                   |
 | [[#LOGIN Syntax]]               |                   |
 | [[#Run commands through NXC]]   |                   |
-| [[#Basic Usage]]                |                   |
+| [[#Basic Database Usage]]       |                   |
 | [[#XP_CMDSHELL RCE]]            | RCE               |
 | [[#Capture MSSQL Service Hash]] | Responder / Creds |
 
@@ -231,7 +231,7 @@ button.addEventListener("click", async () => {
 ```
 
 ---
-## Basic Usage
+## Basic Database Usage
 
 Show me every database in this master system
 ```dataviewjs
