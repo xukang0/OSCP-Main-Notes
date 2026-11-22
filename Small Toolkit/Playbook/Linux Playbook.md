@@ -628,11 +628,12 @@ Raptor2UC MySQL
 >  #### MySQL
 > - [ ] [[0000029|ZoneMinder Console v1.29.0 OS-Shell]]
 
-> [!note]- SUID / Capabilities / Sudo
+SUID / Capabilities / Sudo
 >  #### FREE WINS SUID
 > - [ ] /usr/bin/[[php7.4]]
 > - [ ] /usr/bin/find
 > - [ ] [[dosbox|/usr/bin/dosbox]]
+/usr/bin/[[gcore]]
 > 
 >  #### FREE WINS SUDO
 > - [ ] [[0000026|/bin/systemctl]] | Potential Modification of service in /etc/systemd/system

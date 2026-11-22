@@ -111,8 +111,26 @@ Dirr FUZZ (IMPT)
 ---
 ## Steps to User.txt
 
+Exhibitor for zookeeper version 1 
+
+Searching for a relevant CVE online, there is an exploitDB entry "Exhibitor Web UI 1.7.1 - Remote Code Execution" https://www.exploit-db.com/exploits/48654
+
+Manually perform steps and get RCE
+
+land on charles and local.txt
+
 ---
 ## Steps to root.txt
+
+sudo -l reveals /usr/bin/gcore
+
+[[gcore]]
+
+get root user password
+
+su root
+
+cat /root/proof.txt
 
 ---
 ## User Flag
