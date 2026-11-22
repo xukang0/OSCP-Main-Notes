@@ -238,7 +238,7 @@ button.addEventListener("click", async () => {
 [[Pass The Ticket]]
 [[Kerberoasting]] > !
 [[Silver Ticket]] > If MSSQL and no xp_cmdshell
-[[Golden Ticket]]
+[[Golden Ticket]] > Post exploitation, only if have krbgt hash
 
 ##### Delegation Attacks`
 [[Unconstrained Delegation]]

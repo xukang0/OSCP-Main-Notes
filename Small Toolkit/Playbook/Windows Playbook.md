@@ -17,7 +17,7 @@ ttl = 125 > Windows
 ---
 # Windows
 
-[[Windows Initial Enumeration]]
+[[Active Directory Initial Enumeration]]
 
 #### Initial access stuck
 
@@ -44,3 +44,11 @@ ttl = 125 > Windows
 [[0 Seatbelt.exe]]
 [[WES-NG]]
 PrivEscCheck
+
+#### whoami /priv
+[[SeImpersonatePrivilege]] > [[SharpEfsPotato]]
+[[SeManageVolumePrivilege]]
+[[SeBackupPrivilege]]
+[[SeRestorePrivilege]]
+[[SeDebugPrivilege]]
+[[SeTakeOwnershipPrivilege]]
