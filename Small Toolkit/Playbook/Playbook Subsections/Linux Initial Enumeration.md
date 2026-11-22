@@ -105,6 +105,7 @@ Analyze error page
 
 #### Brute Force
 [[0000011|Feroxbuster Directories brute force (medium)]]
+/usr/share/seclists/Discovery/Web-Content/raft-medium-directories.txt
 [[0000011|Feroxbuster WebList brute force]]
 [[0000012|Vhost brute force]]
 [[0000013|Feroxbuster File directories sweep]]
