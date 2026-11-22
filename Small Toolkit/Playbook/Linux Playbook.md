@@ -563,6 +563,7 @@ button.addEventListener("click", async () => {
 ```
 grep -R "" /etc/cron*
 [[pspy]]
+[[proc]]
 
 #### Vulnerability Testing
 ls -la /var/www
