@@ -103,10 +103,10 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: Pebbles
-IP:: 192.168.132.52
+MACHINE:: Pelican
+IP:: 192.168.213.98
 KALI IP:: 192.168.45.186
-Discovered Web Domain:: 192.168.132.52
+Discovered Web Domain:: NoDomain
 
 ---
 ### `DC01`
