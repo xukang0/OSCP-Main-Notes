@@ -43,3 +43,4 @@ ttl = 125 > Windows
 [[PowerUp.ps1]]
 [[0 Seatbelt.exe]]
 [[WES-NG]]
+PrivEscCheck
