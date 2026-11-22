@@ -137,6 +137,8 @@ received a reverse shell connection and local flag
 
 sudo -l reveals /usr/bin/gcore
 
+[[gcore]]
+
 ps auxww shows pid513 password-store
 
 password store shows creds ClogKingpinInning731

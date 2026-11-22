@@ -1,3 +1,5 @@
+PG Practice [[Pelican]]
+
 /usr/bin/gcore
 
 ```dataviewjs
