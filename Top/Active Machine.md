@@ -103,10 +103,10 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: Monitoring
-IP:: 192.168.170.136
+MACHINE:: Hutch
+IP:: 192.168.128.122
 KALI IP:: 192.168.45.186
-Discovered Web Domain:: 192.168.170.136
+Discovered Web Domain:: hutch.offsec
 
 ---
 ### `DC01`

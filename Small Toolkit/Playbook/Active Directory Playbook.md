@@ -94,6 +94,7 @@ RPC Domain Enumeration > [[135 RPC]]
 SMB Share Enumeration > [[139 445 SMB]]
 [[LDAP Enumeration]]
 
+[[Web Enumeration Protocol]]
 #### Grab banner name
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
