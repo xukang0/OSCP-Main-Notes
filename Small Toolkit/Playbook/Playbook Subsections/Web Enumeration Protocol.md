@@ -254,6 +254,8 @@ button.addEventListener("click", async () => {
 
 #### Vulnerability Testing
 [[0000014|LFI (../../../../etc/passwd)]]
+[[RFI Remote File Inclusion]]
+
 [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
 [[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
 [[0000016|Command Injection (;whoami)]]
