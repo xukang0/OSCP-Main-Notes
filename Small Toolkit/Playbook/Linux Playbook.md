@@ -117,7 +117,7 @@ button.addEventListener("click", async () => {
 ---
 # Linux
 
-[[Linux Initial Enumeration]]
+[[Port Service Enumeration]]
 
 #### Initial access stuck
 

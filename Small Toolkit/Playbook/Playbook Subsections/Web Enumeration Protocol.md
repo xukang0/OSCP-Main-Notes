@@ -279,6 +279,7 @@ Check backups (.bak, .zip)
 #### Admin Login
 Discover software version
 Search and Try Default credentials
+https://www.defaultcredentials.org/en/credentials/
 
 #### Registration
 Register an account

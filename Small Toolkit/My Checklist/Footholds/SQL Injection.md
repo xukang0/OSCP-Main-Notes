@@ -11,6 +11,8 @@
 | [[#Union Injection]]           |       |
 |                                |       |
 
+https://portswigger.net/web-security/sql-injection#what-is-sql-injection-sqli
+
 4 Databases RCE
 https://medium.com/@0x3adly/from-sql-injection-to-rce-leveraging-vulnerability-for-maximum-impact-2fb356907eed
 

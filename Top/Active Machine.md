@@ -103,10 +103,10 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: Jacko
-IP:: 192.168.213.66
+MACHINE:: Monitoring
+IP:: 192.168.170.136
 KALI IP:: 192.168.45.186
-Discovered Web Domain:: 192.168.213.66
+Discovered Web Domain:: 192.168.170.136
 
 ---
 ### `DC01`
