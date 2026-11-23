@@ -193,7 +193,7 @@
 > [!note]- Others
 >  #### DBMaria
 > - [ ] find / -type f -name "*.db" 2>/dev/null
-> - [ ]  [[Sqlite| .db]] file found
+> - [ ]  [[SQLite| .db]] file found
 > - [ ] [[3306 MySQL|MySQL Login Creds Found]]
 > 
 >  #### Wordpress

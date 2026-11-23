@@ -321,7 +321,7 @@ If HTTP server is only accessible enough, [[Chisel Reverse Port Forward]]
 
 # Initial Foothold
 
-[[Sqlite]]
+[[SQLite]]
 # Lateral Movement
 
 [[Runas]]

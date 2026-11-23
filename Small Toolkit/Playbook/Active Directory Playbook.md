@@ -189,7 +189,7 @@ button.addEventListener("click", async () => {
 
 [[Synced OSCP Notes/Small Toolkit/Guides/AD/Mimikatz|Mimikatz]]
 [[Watch-Command]]
-[[Sqlite]]
+[[SQLite]]
 [[Kerberoasting]] > Discover service accounts creds 
 
 #### Web

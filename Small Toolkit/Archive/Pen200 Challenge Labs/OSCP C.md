@@ -13,7 +13,7 @@ No ldap for bloodhound
 
 Ipconfig shows no internal subnet
 
-Feroxbuster port 8000 of MS01. There is http://ip:8000/partner/db which downloads an sql db to my system. Open it with [[Sqlite]]
+Feroxbuster port 8000 of MS01. There is http://ip:8000/partner/db which downloads an sql db to my system. Open it with [[SQLite]]
 
 Use the .recover function. Get creds
 

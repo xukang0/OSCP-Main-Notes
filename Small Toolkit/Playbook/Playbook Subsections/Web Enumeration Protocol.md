@@ -253,7 +253,7 @@ button.addEventListener("click", async () => {
 
 
 #### Vulnerability Testing
-[[0000014|LFI (../../../../etc/passwd)]]
+[[LFI Local File Inclusion]]
 [[RFI Remote File Inclusion]]
 
 [[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
