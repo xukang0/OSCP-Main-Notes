@@ -256,8 +256,13 @@ button.addEventListener("click", async () => {
 [[LFI Local File Inclusion]]
 [[RFI Remote File Inclusion]]
 
-[[0000015|SQLi (test' or 1=1;-- -) ]] | [[SQL Injection]]
-[[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
+[[SQL Injection]]
+
+[[1433 MSSQL]]
+[[3306 MySQL]]
+[[PostgresSQL]]
+[[SQLite]]
+
 [[0000016|Command Injection (;whoami)]]
 PHP code inclusion
 File upload (if available)

@@ -1,19 +1,53 @@
+**Default port:** `5432`  
 Manual page (https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546#psql
-
-[PostgreSQL RCE](https://github.com/squid22/PostgreSQL_RCE?source=post_page-----6560a2a51947---------------------------------------)
 
 https://blog.1nf1n1ty.team/hacktricks/network-services-pentesting/pentesting-postgresql
 
-[Manual method RCE](https://medium.com/r3d-buck3t/command-execution-with-postgresql-copy-command-a79aef9c2767)
+| Content                         | Notes             |
+| ------------------------------- | ----------------- |
+| [[#Basic Authentication]]       |                   |
+| [[#Basic Usage]]                |                   |
+| [[#More Commands]]              |                   |
+| [[#RCE Resources]]              |                   |
 
-Magic words
+---
+## Basic Authentication
+
+Authentication with Database and Port
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-const command = `psql -h ${ip} -U postgres -p 5432`;
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-dv.paragraph("```bash\n" + command + "\n```");
+const command = `psql -h ${IP} -U {USER} -d {DATABASE} -p 5432`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
+
 Default Username & Passwords:  
 ● postgres : postgres  
 ● postgres : password  
@@ -23,10 +57,358 @@ Default Username & Passwords:
 
 ---
 
-NOTE: Press Q to back, do not upgrade shell
+## Basic Usage
 
+Displays the PostgreSQL server version.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `SELECT version();`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
-\du+
+
+Displays the database user you are currently authenticated as.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `SELECT current_user;`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+List databases
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `\\l`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+![[Pasted image 20260302222749.png]]
+
+Connect to database
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `\\connect {DATABASE}`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `\\c {DATABASE}`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+![[Pasted image 20260302222830.png]]
+
+List tables
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `\\dt`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+![[Pasted image 20260302222901.png]]
+
+Describe a table
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `\\d table_name`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+View all data present in table
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `SELECT * FROM table_name;`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+![[Pasted image 20260302222941.png]]
+
+Connect to another database
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `\\c database_name`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+Lists database roles (users) and their additional details.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `\\du+`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
 
                                     List of roles
@@ -35,37 +417,80 @@ NOTE: Press Q to back, do not upgrade shell
  postgres  | Superuser, Create role, Create DB, Replication, Bypass RLS | 
 
 
-Listing all the available databases, we observe the presence of the cozyhosting database
+Quit
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `\\q`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
-\list
-``` 
 
-![[Pasted image 20260302222749.png]]
+## More Commands
 
-We connect to the database by utilizing the \connect directive.
+Some interesting flags (to see all, use `-h` or `--help` depending on your psql version):
 
-```
-\connect cozyhosting
-```
+- `-E`: will describe the underlaying queries of the `\` commands (cool for learning!)
+- `-l`: psql will list all databases and then exit (useful if the user you connect with doesn't has a default database, like at AWS RDS)
 
-![[Pasted image 20260302222830.png]]
+Most `\d` commands support additional param of `__schema__.name__` and accept wildcards like `*.*`
 
-Once we've successfully connected to the database, we can use the \dt command to list all the available tables within the database.
+- `\?`: Show help (list of available commands with an explanation)
+- `\q`: Quit/Exit
+- `\c __database__`: Connect to a database
+- `\d __table__`: Show table definition (columns, etc.) including triggers
+- `\d+ __table__`: More detailed table definition including description and physical disk size
+- `\l`: List databases
+- `\dy`: List events
+- `\df`: List functions
+- `\di`: List indexes
+- `\dn`: List schemas
+- `\dt *.*`: List tables from all schemas (if `*.*` is omitted will only show SEARCH_PATH ones)
+- `\dT+`: List all data types
+- `\dv`: List views
+- `\dx`: List all extensions installed
+- `\df+ __function__` : Show function SQL code.
+- `\x`: Pretty-format query results instead of the not-so-useful ASCII tables
+- `\copy (SELECT * FROM __table_name__) TO 'file_path_and_name.csv' WITH CSV`: Export a table as CSV
+- `\des+`: List all foreign servers
+- `\dE[S+]`: List all foreign tables
+- `\! __bash_command__`: execute `__bash_command__` (e.g. `\! ls`)
 
-```
-\dt
-```
+User Related:
 
-![[Pasted image 20260302222901.png]]
-
-We proceed by utilizing the SELECT statement to view all the data present in the users table.
-
-```
-select * from users;
-```
-
-![[Pasted image 20260302222941.png]]
+- `\du`: List users
+- `\du __username__`: List a username if present.
+- `create role __test1__`: Create a role with an existing username.
+- `create role __test2__ noinherit login password __passsword__;`: Create a role with username and password.
+- `set role __test__;`: Change role for current session to `__test__`.
+- `grant __test2__ to __test1__;`: Allow `__test1__` to set its role as `__test2__`.
+- `\deu+`: List all user mapping on server
 
 ---
 
@@ -137,40 +562,8 @@ dv.paragraph("```bash\n" + command + "\n```");
 
 ---
 
-Some interesting flags (to see all, use `-h` or `--help` depending on your psql version):
+# RCE Resources
 
-- `-E`: will describe the underlaying queries of the `\` commands (cool for learning!)
-- `-l`: psql will list all databases and then exit (useful if the user you connect with doesn't has a default database, like at AWS RDS)
+[Manual method RCE](https://medium.com/r3d-buck3t/command-execution-with-postgresql-copy-command-a79aef9c2767)
 
-Most `\d` commands support additional param of `__schema__.name__` and accept wildcards like `*.*`
-
-- `\?`: Show help (list of available commands with an explanation)
-- `\q`: Quit/Exit
-- `\c __database__`: Connect to a database
-- `\d __table__`: Show table definition (columns, etc.) including triggers
-- `\d+ __table__`: More detailed table definition including description and physical disk size
-- `\l`: List databases
-- `\dy`: List events
-- `\df`: List functions
-- `\di`: List indexes
-- `\dn`: List schemas
-- `\dt *.*`: List tables from all schemas (if `*.*` is omitted will only show SEARCH_PATH ones)
-- `\dT+`: List all data types
-- `\dv`: List views
-- `\dx`: List all extensions installed
-- `\df+ __function__` : Show function SQL code.
-- `\x`: Pretty-format query results instead of the not-so-useful ASCII tables
-- `\copy (SELECT * FROM __table_name__) TO 'file_path_and_name.csv' WITH CSV`: Export a table as CSV
-- `\des+`: List all foreign servers
-- `\dE[S+]`: List all foreign tables
-- `\! __bash_command__`: execute `__bash_command__` (e.g. `\! ls`)
-
-User Related:
-
-- `\du`: List users
-- `\du __username__`: List a username if present.
-- `create role __test1__`: Create a role with an existing username.
-- `create role __test2__ noinherit login password __passsword__;`: Create a role with username and password.
-- `set role __test__;`: Change role for current session to `__test__`.
-- `grant __test2__ to __test1__;`: Allow `__test1__` to set its role as `__test2__`.
-- `\deu+`: List all user mapping on server
+[PostgreSQL RCE](https://github.com/squid22/PostgreSQL_RCE?source=post_page-----6560a2a51947---------------------------------------)

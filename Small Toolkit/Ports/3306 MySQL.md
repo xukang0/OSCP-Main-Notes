@@ -2,6 +2,17 @@ TCP/3306
 
 [[SQL Injection]]
 
+| Content                   | Notes                           |
+| ------------------------- | ------------------------------- |
+| [[#Locate]]               | Locate MySQL and NMAP vuln scan |
+| [[#Basic Connection]]     | Basic Authentication            |
+| [[#No Interactive Panel]] |                                 |
+| [[#Import `.sql`]]        |                                 |
+| [[#Basic Database Usage]] |                                 |
+| [[#Advanced]]             | Misc / Untested                 |
+
+## Locate
+
 Locate mysql.exe file path on Windows
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
@@ -429,7 +440,7 @@ button.addEventListener("click", async () => {
 
 
 ---
-### Basic Usage
+### Basic Database Usage
 
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
