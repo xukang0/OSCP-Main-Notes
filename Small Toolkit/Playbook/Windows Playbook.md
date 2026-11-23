@@ -18,6 +18,7 @@ ttl = 125 > Windows
 # Windows
 
 [[Port Service Enumeration]]
+[[Web Enumeration Protocol]]
 
 #### Initial access stuck
 
