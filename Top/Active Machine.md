@@ -106,7 +106,7 @@ activeRow.createEl("td", {
 MACHINE:: Jacko
 IP:: 192.168.213.66
 KALI IP:: 192.168.45.186
-Discovered Web Domain:: NoDomain
+Discovered Web Domain:: 192.168.213.66
 
 ---
 ### `DC01`

