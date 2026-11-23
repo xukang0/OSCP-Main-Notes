@@ -255,6 +255,7 @@ button.addEventListener("click", async () => {
 #### Vulnerability Testing
 [[LFI Local File Inclusion]]
 [[RFI Remote File Inclusion]]
+[[Path Traversal Vulnerabilities]]
 
 [[SQL Injection]]
 
