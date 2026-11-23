@@ -35,7 +35,7 @@ button.addEventListener("click", async () => {
 });
 ```
 
-[[0000006|Visit site]]
+Investigate Site
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
@@ -69,6 +69,7 @@ button.addEventListener("click", async () => {
     }
 });
 ```
+
 View source
 Identify tech/CMS
 [[0000008|whatweb]]
