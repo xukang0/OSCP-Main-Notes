@@ -216,9 +216,41 @@ button.addEventListener("click", async () => {
     }
 });
 ```
+Feroxbuster API discovery
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-[[0000013|Feroxbuster File directories sweep]]
-[[0000038|Feroxbuster API discovery]]
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `feroxbuster -u http://${discoveredDomain}/ -w /usr/share/seclists/Discovery/Web-Content/api/api-endpoints.txt -H "Accept: application/json" -s 200,204,301,302,307,308,401,403,405,422 -t 50 -d 2`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
 
 #### Vulnerability Testing
 [[0000014|LFI (../../../../etc/passwd)]]
