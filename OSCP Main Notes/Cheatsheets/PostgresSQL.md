@@ -3,12 +3,12 @@ Manual page (https://gist.github.com/Kartones/dd3ff5ec5ea238d4c546#psql
 
 https://blog.1nf1n1ty.team/hacktricks/network-services-pentesting/pentesting-postgresql
 
-| Content                         | Notes             |
-| ------------------------------- | ----------------- |
-| [[#Basic Authentication]]       |                   |
-| [[#Basic Usage]]                |                   |
-| [[#More Commands]]              |                   |
-| [[#RCE Resources]]              |                   |
+| Content                   | Notes |
+| ------------------------- | ----- |
+| [[#Basic Authentication]] |       |
+| [[#Basic Usage]]          |       |
+| [[#More Commands]]        |       |
+| [[#RCE Resources]]        |       |
 
 ---
 ## Basic Authentication

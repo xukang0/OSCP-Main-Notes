@@ -666,6 +666,8 @@ button.addEventListener("click", async () => {
 });
 ```
 
+[[SQL Injection]]
+
 ---
 ## Capture MSSQL Service Hash
 
