@@ -87,7 +87,7 @@ button.addEventListener("click", async () => {
 
 ---
 #### Initial Enumeration
-[[Active Directory Initial Enumeration]]
+[[Port Service Enumeration]]
 Nmap + Web
 Initial Domain Enumeration > [[NetExec]]
 RPC Domain Enumeration > [[135 RPC]]

