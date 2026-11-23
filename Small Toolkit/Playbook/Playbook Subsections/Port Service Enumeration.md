@@ -84,51 +84,6 @@ After finding open ports, consult [[0 Port Number Table]].
 
 Visit https://speedguide.net/ports.php
 
-#### Grab banner name
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `telnet ${ip} [port]`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-#### NXC enumeration
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `nxc smb ${ip} [port] -u '' -p '' --shares`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `smbclient -L \\\\${ip}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `smbclient //${ip}/share -U 'user%pass'`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-#### LDAP Enumeration
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `nxc ldap ${ip}`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
-```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
-
-const command = `ldapsearch -x -H ldap://${ip} -s base namingcontexts`;
-
-dv.paragraph("```bash\n" + command + "\n```");
-```
 ---
 
 [[Web Enumeration Protocol]]
