@@ -103,8 +103,8 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: Pelican
-IP:: 192.168.213.98
+MACHINE:: Jacko
+IP:: 192.168.213.66
 KALI IP:: 192.168.45.186
 Discovered Web Domain:: NoDomain
 
