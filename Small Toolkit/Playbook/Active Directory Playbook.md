@@ -145,6 +145,46 @@ dv.paragraph("```bash\n" + command + "\n```");
 ---
 #### Initial Access
 
+[[Kerbrute]]
+
+
+[[LDAP Enumeration]] | [[389 LDAP]]
+May contain credentials
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `ldapsearch -v -x -b "DC=hutch,DC=offsec" -H "ldap://${IP}" > ldapsearchoutput.txt`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+[[80 WebDAV]]/[[WebDAV]]
 [[SQL Injection]]
 [[Feroxbuster]]
 [[AWS s3 bucket]]
@@ -196,6 +236,113 @@ button.addEventListener("click", async () => {
 #### Web
 If [[Windows LFI RFI]], call back to [[Responder]] for ntlm hash
 [[inetpub]] in file system
+
+Check C:\ for LAPS, Microsoft’s Local Administrator Password Solution (LAPS) was installed in the C:\Program Files directory. [[389 LDAP]] If your account has permission to read `ms-MCS-AdmPwd`, you may retrieve the local administrator password.
+
+Legacy LAPS
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const IP = page?.IP ?? "NO IP FOUND";
+
+const command = `ldapsearch -x -H ldap://${IP} \\
+-D 'DOMAIN\\username' -w 'PASSWORD' \\
+-b 'DC=domain,DC=local' \\
+'(ms-MCS-AdmPwd=*)' ms-MCS-AdmPwd`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+**New Windows LAPS:**
+The newer schema uses different attributes:
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `msLAPS-Password`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `msLAPS-EncryptedPassword`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
 
 Check for value files like lsass.zip
 
