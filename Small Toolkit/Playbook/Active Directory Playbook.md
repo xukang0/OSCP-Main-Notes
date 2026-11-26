@@ -48,6 +48,41 @@ cd '$RECYCLE.BIN'
 ```
 Recycle Bins have two types of files. The ones that start with `$I` store metadata about the file. The `$R` file holds the original content.
 
+Hunt flags
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `dir /s/b local.txt`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
 Fix broken cmd path 
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");
@@ -104,13 +139,113 @@ const command = `telnet ${ip} [port]`;
 dv.paragraph("```bash\n" + command + "\n```");
 ```
 #### NXC enumeration
+
+NXC SMB share enumeration
 ```dataviewjs
-const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
 
-const command = `nxc smb ${ip} [port] -u '' -p '' --shares`;
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
 
-dv.paragraph("```bash\n" + command + "\n```");
+const command = `nxc smb ${IP} [port] -u '' -p '' --shares`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
 ```
+
+NXC SMB Users enumeration
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `nxc smb ${IP} -u 'USER' -p 'PASSWORD' --users`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+If local account,
+```dataviewjs
+const page = dv.page("Synced OSCP Notes/Top/Active Machine");
+
+const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
+const IP = page?.IP ?? "NO IP FOUND";const discoveredDomain = page?.["Discovered Web Domain"] ?? "NO DOMAIN FOUND";
+
+const command = `--local-auth`;
+
+const button = dv.container.createEl("button", {
+    text: command
+});
+
+button.style.cssText = `
+    font-family: monospace;
+    font-size: 0.85em;
+    padding: 2px 6px;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 4px;
+    background: var(--code-background);
+    color: var(--text-normal);
+    cursor: pointer;
+`;
+
+button.addEventListener("click", async () => {
+    try {
+        await navigator.clipboard.writeText(command);
+        button.textContent = "Copied!";
+        setTimeout(() => button.textContent = command, 250);
+    } catch {
+        button.textContent = "Copy failed";
+    }
+});
+```
+
+#### SMB share access
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
