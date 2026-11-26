@@ -103,10 +103,10 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: Hutch
-IP:: 192.168.128.122
-KALI IP:: 192.168.45.186
-Discovered Web Domain:: hutch.offsec
+MACHINE:: NoActiveMachine
+IP:: NoIP
+KALI IP:: NoKaliIP 
+Discovered Web Domain:: NoDomain
 
 ---
 ### `DC01`
