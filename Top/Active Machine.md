@@ -103,28 +103,28 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: NoActiveMachine
-IP:: NoIP
-KALI IP:: NoKaliIP 
-Discovered Web Domain:: NoDomain
+MACHINE:: MS01
+IP:: 192.168.123.206
+KALI IP:: 192.168.49.123 
+Discovered Web Domain:: WS26.oscp.exam
 
 ---
 ### `DC01`
 HOST1:: DC01
-HOST1IP:: 
+HOST1IP:: 172.16.123.200
 HOST1NOTES:: Domain Controller
 HOST1FQDN::
 
 ### `MS02`
 HOST2:: MS02
-HOST2IP:: 
+HOST2IP:: 172.16.123.202
 HOST2NOTES::
 HOST2FQDN::
 ### `MS01`
 HOST3:: MS01
-HOST3IP:: 
+HOST3IP:: 192.168.123.206
 HOST3NOTES:: creds
-HOST3FQDN::
+HOST3FQDN:: WS26.oscp.exam
 ### `S1`
 HOST4:: S1
 HOST4IP:: 
