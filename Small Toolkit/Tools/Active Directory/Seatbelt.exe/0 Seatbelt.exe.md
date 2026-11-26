@@ -1,7 +1,7 @@
 # Transfer to target
 
 ```
-cd ~/Desktop/Tools/Windows && python -m http.server 80
+python -m http.server 80 --directory ~/Desktop/Tools/Windows
 ```
 
 ```dataviewjs
