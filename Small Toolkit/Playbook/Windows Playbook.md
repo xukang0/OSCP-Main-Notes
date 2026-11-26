@@ -165,6 +165,7 @@ button.addEventListener("click", async () => {
 ```
 ### **Credential discovery**
 
+[[LaZagne.exe]]
 - `cmdkey /list`
 - `whoami /all`
 - PowerShell history
