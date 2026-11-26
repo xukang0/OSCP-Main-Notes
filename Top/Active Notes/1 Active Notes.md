@@ -42,6 +42,7 @@
 ---
 ## Steps to root.txt
 
+ROOTED DC at 711AM. 50 POINTS
 ---
 ## User Flag
 
