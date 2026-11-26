@@ -103,10 +103,10 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: S3
-IP:: 192.168.123.112
+MACHINE:: S2
+IP:: 192.168.123.111
 KALI IP:: 192.168.49.123 
-Discovered Web Domain:: almondblossoms.ai
+Discovered Web Domain:: 192.168.123.111
 
 ---
 ### `DC01`
