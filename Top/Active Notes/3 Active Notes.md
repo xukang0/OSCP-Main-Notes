@@ -169,6 +169,255 @@ INSERT INTO users (email, password, first_name, last_name, phone, company, accou
 
       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
 
+MariaDB []> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| offsecnic_db       |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.250 sec)
+
+MariaDB []> use phpmyadmin;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [phpmyadmin]> show tables;
++------------------------+
+| Tables_in_phpmyadmin   |
++------------------------+
+| pma__bookmark          |
+| pma__central_columns   |
+| pma__column_info       |
+| pma__designer_settings |
+| pma__export_templates  |
+| pma__favorite          |
+| pma__history           |
+| pma__navigationhiding  |
+| pma__pdf_pages         |
+| pma__recent            |
+| pma__relation          |
+| pma__savedsearches     |
+| pma__table_coords      |
+| pma__table_info        |
+| pma__table_uiprefs     |
+| pma__tracking          |
+| pma__userconfig        |
+| pma__usergroups        |
+| pma__users             |
++------------------------+
+19 rows in set (0.253 sec)
+
+MariaDB [phpmyadmin]> SHOW columns from pma_users;
+ERROR 1146 (42S02): Table 'phpmyadmin.pma_users' doesn't exist
+MariaDB [phpmyadmin]> SHOW columns from 'pma_users';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''pma_users'' at line 1
+MariaDB [phpmyadmin]> SHOW columns from pma__users;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| username  | varchar(64) | NO   | PRI | NULL    |       |
+| usergroup | varchar(64) | NO   | PRI | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+2 rows in set (0.252 sec)
+
+MariaDB [phpmyadmin]> SHOW columns from pma__userconfig;
++-------------+-------------+------+-----+---------------------+-------------------------------+
+| Field       | Type        | Null | Key | Default             | Extra                         |
++-------------+-------------+------+-----+---------------------+-------------------------------+
+| username    | varchar(64) | NO   | PRI | NULL                |                               |
+| timevalue   | timestamp   | NO   |     | current_timestamp() | on update current_timestamp() |
+| config_data | text        | NO   |     | NULL                |                               |
++-------------+-------------+------+-----+---------------------+-------------------------------+
+3 rows in set (0.250 sec)
+
+MariaDB [phpmyadmin]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| offsecnic_db       |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+6 rows in set (0.251 sec)
+
+MariaDB [phpmyadmin]> use test;
+Database changed
+MariaDB [test]> show columns from test;
+ERROR 1146 (42S02): Table 'test.test' doesn't exist
+MariaDB [test]> show tables;
+Empty set (0.248 sec)
+
+MariaDB [test]> use offsecnic_db
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [offsecnic_db]> use offsecnic_db;
+Database changed
+MariaDB [offsecnic_db]> show tables;
++------------------------+
+| Tables_in_offsecnic_db |
++------------------------+
+| smtp_settings          |
+| users                  |
++------------------------+
+2 rows in set (0.255 sec)
+
+MariaDB [offsecnic_db]> show columns from users;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int(11)      | NO   | PRI | NULL    | auto_increment |
+| email      | varchar(255) | NO   | UNI | NULL    |                |
+| password   | varchar(255) | NO   |     | NULL    |                |
+| first_name | varchar(100) | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.253 sec)
+
+MariaDB [offsecnic_db]> select * from users;
++----+---------------------+--------------------------------------------------------------+------------+
+| id | email               | password                                                     | first_name |
++----+---------------------+--------------------------------------------------------------+------------+
+|  1 | o.soaw@oscp.exam    | $2y$10$abcdefghijklmnopqrstuvABCDE1234567890abcdEFGHijklmnoP | Oscar      |
+|  2 | j.smith@oscp.exam   | $2y$10$ZyxwvutsrqponmlkjihgFE9876543210zyxwVUTSRqponMLKjihgf | Jasper     |
+|  3 | d.arnault@oscp.exam | $2y$10$MnopQRStuvWXYZabcd1234EFGHijkl5678MNOPqrstUVwxYZabCde | David      |
+|  4 | p.follo@oscp.exam   | $2y$10$r4Nd0mSaltStr1ngForBcryptHashValueABCDEfghijkLMNOPqrs | Pablo      |
++----+---------------------+--------------------------------------------------------------+------------+
+4 rows in set (0.580 sec)
+
+MariaDB [offsecnic_db]> select * from smtp_settings;
++----+----------------+------+-------------------+----------------------------+------------+-------------------+----------------------+-----------+---------------------+---------------------+
+| id | host           | port | username          | password                   | encryption | from_email        | from_name            | is_active | created_at          | updated_at          |
++----+----------------+------+-------------------+----------------------------+------------+-------------------+----------------------+-----------+---------------------+---------------------+
+|  1 | smtp.oscp.exam |  587 | l.perry@oscp.exam | CredentialShieldDiamond559 | tls        | noreply@oscp.exam | Offsec Notifications |         1 | 2026-02-16 12:31:06 | 2026-02-16 12:31:06 |
++----+----------------+------+-------------------+----------------------------+------------+-------------------+----------------------+-----------+---------------------+---------------------+
+1 row in set (0.251 sec)
+
+MariaDB [offsecnic_db]> ^C
+MariaDB [offsecnic_db]> use mysql;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+show tables;
+Database changed
+MariaDB [mysql]> show tables;
++---------------------------+
+| Tables_in_mysql           |
++---------------------------+
+| column_stats              |
+| columns_priv              |
+| db                        |
+| event                     |
+| func                      |
+| general_log               |
+| global_priv               |
+| gtid_slave_pos            |
+| help_category             |
+| help_keyword              |
+| help_relation             |
+| help_topic                |
+| index_stats               |
+| innodb_index_stats        |
+| innodb_table_stats        |
+| plugin                    |
+| proc                      |
+| procs_priv                |
+| proxies_priv              |
+| roles_mapping             |
+| servers                   |
+| slow_log                  |
+| table_stats               |
+| tables_priv               |
+| time_zone                 |
+| time_zone_leap_second     |
+| time_zone_name            |
+| time_zone_transition      |
+| time_zone_transition_type |
+| transaction_registry      |
+| user                      |
++---------------------------+
+31 rows in set (0.248 sec)
+
+MariaDB [mysql]> show columns from user;
++------------------------+---------------------+------+-----+----------+-------+
+| Field                  | Type                | Null | Key | Default  | Extra |
++------------------------+---------------------+------+-----+----------+-------+
+| Host                   | char(60)            | NO   |     |          |       |
+| User                   | char(80)            | NO   |     |          |       |
+| Password               | longtext            | YES  |     | NULL     |       |
+| Select_priv            | varchar(1)          | YES  |     | NULL     |       |
+| Insert_priv            | varchar(1)          | YES  |     | NULL     |       |
+| Update_priv            | varchar(1)          | YES  |     | NULL     |       |
+| Delete_priv            | varchar(1)          | YES  |     | NULL     |       |
+| Create_priv            | varchar(1)          | YES  |     | NULL     |       |
+| Drop_priv              | varchar(1)          | YES  |     | NULL     |       |
+| Reload_priv            | varchar(1)          | YES  |     | NULL     |       |
+| Shutdown_priv          | varchar(1)          | YES  |     | NULL     |       |
+| Process_priv           | varchar(1)          | YES  |     | NULL     |       |
+| File_priv              | varchar(1)          | YES  |     | NULL     |       |
+| Grant_priv             | varchar(1)          | YES  |     | NULL     |       |
+| References_priv        | varchar(1)          | YES  |     | NULL     |       |
+| Index_priv             | varchar(1)          | YES  |     | NULL     |       |
+| Alter_priv             | varchar(1)          | YES  |     | NULL     |       |
+| Show_db_priv           | varchar(1)          | YES  |     | NULL     |       |
+| Super_priv             | varchar(1)          | YES  |     | NULL     |       |
+| Create_tmp_table_priv  | varchar(1)          | YES  |     | NULL     |       |
+| Lock_tables_priv       | varchar(1)          | YES  |     | NULL     |       |
+| Execute_priv           | varchar(1)          | YES  |     | NULL     |       |
+| Repl_slave_priv        | varchar(1)          | YES  |     | NULL     |       |
+| Repl_client_priv       | varchar(1)          | YES  |     | NULL     |       |
+| Create_view_priv       | varchar(1)          | YES  |     | NULL     |       |
+| Show_view_priv         | varchar(1)          | YES  |     | NULL     |       |
+| Create_routine_priv    | varchar(1)          | YES  |     | NULL     |       |
+| Alter_routine_priv     | varchar(1)          | YES  |     | NULL     |       |
+| Create_user_priv       | varchar(1)          | YES  |     | NULL     |       |
+| Event_priv             | varchar(1)          | YES  |     | NULL     |       |
+| Trigger_priv           | varchar(1)          | YES  |     | NULL     |       |
+| Create_tablespace_priv | varchar(1)          | YES  |     | NULL     |       |
+| Delete_history_priv    | varchar(1)          | YES  |     | NULL     |       |
+| ssl_type               | varchar(9)          | YES  |     | NULL     |       |
+| ssl_cipher             | longtext            | NO   |     |          |       |
+| x509_issuer            | longtext            | NO   |     |          |       |
+| x509_subject           | longtext            | NO   |     |          |       |
+| max_questions          | bigint(20) unsigned | NO   |     | 0        |       |
+| max_updates            | bigint(20) unsigned | NO   |     | 0        |       |
+| max_connections        | bigint(20) unsigned | NO   |     | 0        |       |
+| max_user_connections   | bigint(21)          | NO   |     | 0        |       |
+| plugin                 | longtext            | NO   |     |          |       |
+| authentication_string  | longtext            | NO   |     |          |       |
+| password_expired       | varchar(1)          | NO   |     |          |       |
+| is_role                | varchar(1)          | YES  |     | NULL     |       |
+| default_role           | longtext            | NO   |     |          |       |
+| max_statement_time     | decimal(12,6)       | NO   |     | 0.000000 |       |
++------------------------+---------------------+------+-----+----------+-------+
+47 rows in set (0.252 sec)
+
+MariaDB [mysql]> select User, Password, password_expired from users;
+ERROR 1146 (42S02): Table 'mysql.users' doesn't exist
+MariaDB [mysql]> select User, Password, password_expired from user;
++----------------+-------------------------------------------+------------------+
+| User           | Password                                  | password_expired |
++----------------+-------------------------------------------+------------------+
+| root           |                                           | N                |
+| offsecnic_user | *96886EC85CCBBED6ED7938C33D55A8D4C846790D | N                |
+| root           |                                           | N                |
+| root           |                                           | N                |
+| pma            |                                           | N                |
++----------------+-------------------------------------------+------------------+
+5 rows in set (0.248 sec)
+
+MariaDB [mysql]> 
+
+
 
 ---
 ## Interesting Files/Paths
