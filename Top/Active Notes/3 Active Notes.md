@@ -118,6 +118,28 @@ PORT      STATE SERVICE       REASON          VERSION
 ---
 ## Interesting Files/Paths
 
+```
++---Administrator
+|   +---Contacts
+|   +---Desktop
+|   |       Microsoft Edge.lnk
+|   |       proof.txt
+|   |
++---administrator.OSCP
+|   +---Documents
+|   |   \---WindowsPowerShell
+|   |       \---Scripts
+|   |           \---InstalledScriptInfos
+|   +---Downloads
+|   |       DefenderRemover.exe
+|   |       WinDefCtl.7z
+|   |       WinDefCtl.exe
+|   |       WinDefCtl_arm64.exe
+|   |       WinRAR-723.exe
++---Public
+|   |   Offsec.jpg
+
+```
 ---
 ## Attack Ideas
 
@@ -127,11 +149,19 @@ Some user names on the 80 443 websites
 
 Test callback using domain search but no answer from nc -lvnp
 
+There are still interesting files to explore on the other users on MS01 as r.andrews
+
 ---
 ## Steps to User.txt
 
 ---
 ## Steps to root.txt
+
+ROOT MS01 at 6:04PM
+
+![[Pasted image 20261126180856.png]]
+
+![[Pasted image 20261126180719.png]]
 
 ---
 ## User Flag
