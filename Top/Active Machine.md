@@ -103,23 +103,23 @@ activeRow.createEl("td", {
 });
 ```
 
-MACHINE:: MS01
-IP:: 192.168.123.206
+MACHINE:: SRV22
+IP:: 172.16.123.202
 KALI IP:: 192.168.49.123 
 Discovered Web Domain:: WS26.oscp.exam
 
 ---
 ### `DC01`
-HOST1:: DC01
+HOST1:: DC20
 HOST1IP:: 172.16.123.200
 HOST1NOTES:: Domain Controller
-HOST1FQDN::
+HOST1FQDN:: dc20.oscp.exam
 
 ### `MS02`
-HOST2:: MS02
+HOST2:: SRV22
 HOST2IP:: 172.16.123.202
 HOST2NOTES::
-HOST2FQDN::
+HOST2FQDN:: srv22.oscp.exam
 ### `MS01`
 HOST3:: MS01
 HOST3IP:: 192.168.123.206

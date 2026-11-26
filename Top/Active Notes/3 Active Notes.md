@@ -115,6 +115,9 @@ PORT      STATE SERVICE       REASON          VERSION
 ---
 ## Discovered Credentials
 
+mssql : qazwsx
+
+
 ---
 ## Interesting Files/Paths
 
@@ -164,6 +167,19 @@ ROOT MS01 at 6:04PM
 ![[Pasted image 20261126180719.png]]
 
 ---
+
+# Steps to PIVOT
+
+Checked mimikatz
+Kerberoasting half fail?
+checked recyclebin
+Nothing interesting in DC SMB share
+Enumerated Offsec.jpg with exiftool
+Enumerated the scripts folder
+Checked ldapsearch
+
+
+
 ## User Flag
 
 ```
